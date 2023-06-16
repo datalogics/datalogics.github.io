@@ -1,11 +1,5 @@
 var NAVTREEINDEX9 =
 {
-"class_datalogics_1_1_p_d_f_l_1_1_underline_annotation.html#a7c3b36af3a32e258cb1420676ae61f40":[3,0,0,0,131,11],
-"class_datalogics_1_1_p_d_f_l_1_1_underline_annotation.html#a7d8ce42d16807b3f931a9ce644b4223f":[3,0,0,0,131,5],
-"class_datalogics_1_1_p_d_f_l_1_1_underline_annotation.html#a80bc5013338f212e7dbdfbf028b6e827":[3,0,0,0,131,8],
-"class_datalogics_1_1_p_d_f_l_1_1_underline_annotation.html#a840af7342d9e93be96e18583567ea20a":[3,0,0,0,131,19],
-"class_datalogics_1_1_p_d_f_l_1_1_underline_annotation.html#a8c0efaf850bd9272241d30afdca5fecf":[3,0,0,0,131,2],
-"class_datalogics_1_1_p_d_f_l_1_1_underline_annotation.html#a9902d34fc1bed6d830782a5cf827019e":[3,0,0,0,131,15],
 "class_datalogics_1_1_p_d_f_l_1_1_underline_annotation.html#a9e80bd02a7affce056bb4d41aec0ec9d":[3,0,0,0,131,0],
 "class_datalogics_1_1_p_d_f_l_1_1_underline_annotation.html#aaaf2094f308ccb7aeb975dd52d510b51":[3,0,0,0,131,6],
 "class_datalogics_1_1_p_d_f_l_1_1_underline_annotation.html#ac27ea4c6da68897806d3b950d7210b4d":[3,0,0,0,131,13],
@@ -249,5 +243,11 @@ var NAVTREEINDEX9 =
 "namespace_datalogics_1_1_p_d_f_l.html#a29bb235ba82676bbadf72a8c73a558d3a29d301e8c91de3d2cfbe4d2bed11efa7":[2,0,0,0,211,0],
 "namespace_datalogics_1_1_p_d_f_l.html#a29bb235ba82676bbadf72a8c73a558d3a4c4fa31e5c5ac75b2008656b672ab556":[2,0,0,0,211,2],
 "namespace_datalogics_1_1_p_d_f_l.html#a29bb235ba82676bbadf72a8c73a558d3a7e5ad739bc168f602b5f19968075a0d8":[2,0,0,0,211,1],
-"namespace_datalogics_1_1_p_d_f_l.html#a2a151737e37063a0658b68449d95f70a":[2,0,0,0,193]
+"namespace_datalogics_1_1_p_d_f_l.html#a2a151737e37063a0658b68449d95f70a":[2,0,0,0,193],
+"namespace_datalogics_1_1_p_d_f_l.html#a2a151737e37063a0658b68449d95f70aa086247a9b57fde6eefee2a0c4752242d":[2,0,0,0,193,2],
+"namespace_datalogics_1_1_p_d_f_l.html#a2a151737e37063a0658b68449d95f70aa21b363db94159e9020e7d3a7dcf6b0f4":[2,0,0,0,193,0],
+"namespace_datalogics_1_1_p_d_f_l.html#a2a151737e37063a0658b68449d95f70aa224dc78c6ef7472c8aea7b36e12dcd97":[2,0,0,0,193,3],
+"namespace_datalogics_1_1_p_d_f_l.html#a2a151737e37063a0658b68449d95f70aa23436b784a6d96f3c3351a7e706739bf":[2,0,0,0,193,12],
+"namespace_datalogics_1_1_p_d_f_l.html#a2a151737e37063a0658b68449d95f70aa2ae66baee90b1d103d4e63e96e19f7fe":[2,0,0,0,193,11],
+"namespace_datalogics_1_1_p_d_f_l.html#a2a151737e37063a0658b68449d95f70aa3c3c37ed6e0fc1f35c3e8e6b40a15bb0":[2,0,0,0,193,4]
 };

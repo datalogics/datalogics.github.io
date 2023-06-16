@@ -1,8 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"class_datalogics_1_1_p_d_f_l_1_1_p_d_f_x_convert_result.html#a0a8734709bd56249d03024991ce40097":[3,0,0,0,98,1],
-"class_datalogics_1_1_p_d_f_l_1_1_p_d_f_x_convert_result.html#a483965b6c650c6dce14fc68974a00766":[3,0,0,0,98,2],
-"class_datalogics_1_1_p_d_f_l_1_1_p_d_f_x_convert_result.html#a94af617305929282ab1019f8c9b75451":[3,0,0,0,98,0],
 "class_datalogics_1_1_p_d_f_l_1_1_page.html":[3,0,0,0,77],
 "class_datalogics_1_1_p_d_f_l_1_1_page.html#a055bd64d0e22a365d6efd457c8b4c398":[3,0,0,0,77,31],
 "class_datalogics_1_1_p_d_f_l_1_1_page.html#a06bbff87d7a90e25d5a8637ff021b8a4":[3,0,0,0,77,36],
@@ -78,15 +75,13 @@ var NAVTREEINDEX6 =
 "class_datalogics_1_1_p_d_f_l_1_1_page_label.html#ac75719527aad233494c0f777ad448d6d":[3,0,0,0,79,2],
 "class_datalogics_1_1_p_d_f_l_1_1_page_label.html#adb9d37e0f32546cc00cef9a1e400ec4f":[3,0,0,0,79,9],
 "class_datalogics_1_1_p_d_f_l_1_1_page_range.html":[3,0,0,0,80],
-"class_datalogics_1_1_p_d_f_l_1_1_page_range.html#a00a87e1d2faeaa0fb56c7efd767a3e68":[3,0,0,0,80,7],
-"class_datalogics_1_1_p_d_f_l_1_1_page_range.html#a0d59d35eba047e39997741d0e9008966":[3,0,0,0,80,2],
-"class_datalogics_1_1_p_d_f_l_1_1_page_range.html#a364ca6554c124ac7fcc8d512cd368668":[3,0,0,0,80,5],
+"class_datalogics_1_1_p_d_f_l_1_1_page_range.html#a00a87e1d2faeaa0fb56c7efd767a3e68":[3,0,0,0,80,5],
+"class_datalogics_1_1_p_d_f_l_1_1_page_range.html#a364ca6554c124ac7fcc8d512cd368668":[3,0,0,0,80,4],
 "class_datalogics_1_1_p_d_f_l_1_1_page_range.html#a4a208e4774ade395a9fbc66a31a0f035":[3,0,0,0,80,1],
-"class_datalogics_1_1_p_d_f_l_1_1_page_range.html#a99fdc3c0d6d187451a57dc74d3b9bd4e":[3,0,0,0,80,4],
-"class_datalogics_1_1_p_d_f_l_1_1_page_range.html#aaa4af8187e0123db3c6639ddace5985a":[3,0,0,0,80,8],
+"class_datalogics_1_1_p_d_f_l_1_1_page_range.html#a99fdc3c0d6d187451a57dc74d3b9bd4e":[3,0,0,0,80,3],
+"class_datalogics_1_1_p_d_f_l_1_1_page_range.html#aaa4af8187e0123db3c6639ddace5985a":[3,0,0,0,80,6],
 "class_datalogics_1_1_p_d_f_l_1_1_page_range.html#ac24dcad1d786267271edf433fd8796a3":[3,0,0,0,80,0],
-"class_datalogics_1_1_p_d_f_l_1_1_page_range.html#ad9f7a786d8d9db4a812534646e63c0f5":[3,0,0,0,80,3],
-"class_datalogics_1_1_p_d_f_l_1_1_page_range.html#aeca262ce4f8ed7f949ff65137d41b117":[3,0,0,0,80,6],
+"class_datalogics_1_1_p_d_f_l_1_1_page_range.html#ad9f7a786d8d9db4a812534646e63c0f5":[3,0,0,0,80,2],
 "class_datalogics_1_1_p_d_f_l_1_1_paper_source.html":[3,0,0,0,81],
 "class_datalogics_1_1_p_d_f_l_1_1_paper_source.html#a06e5c197ac93b4bac68527c3f04eeae2":[3,0,0,0,81,6],
 "class_datalogics_1_1_p_d_f_l_1_1_paper_source.html#a0c782ac87196b08a3bde5d4e7984581c":[3,0,0,0,81,19],
@@ -249,5 +244,10 @@ var NAVTREEINDEX6 =
 "class_datalogics_1_1_p_d_f_l_1_1_print_params.html#a1eca706b875b6687ad5621989f734cc6":[3,0,0,0,105,48],
 "class_datalogics_1_1_p_d_f_l_1_1_print_params.html#a231b8a6356befcb18df6381ae2d90806":[3,0,0,0,105,73],
 "class_datalogics_1_1_p_d_f_l_1_1_print_params.html#a255f362afc610355dbf2b463d7a1ec50":[3,0,0,0,105,62],
-"class_datalogics_1_1_p_d_f_l_1_1_print_params.html#a26101dba2910412ff612a6871169c8d2":[3,0,0,0,105,21]
+"class_datalogics_1_1_p_d_f_l_1_1_print_params.html#a26101dba2910412ff612a6871169c8d2":[3,0,0,0,105,21],
+"class_datalogics_1_1_p_d_f_l_1_1_print_params.html#a277fbb493ea77db7b99cf5367bb9adec":[3,0,0,0,105,47],
+"class_datalogics_1_1_p_d_f_l_1_1_print_params.html#a2a7fa4c2685427192c6756435eecd157":[3,0,0,0,105,75],
+"class_datalogics_1_1_p_d_f_l_1_1_print_params.html#a2add12feb107303647f2f7556aefbd4b":[3,0,0,0,105,8],
+"class_datalogics_1_1_p_d_f_l_1_1_print_params.html#a2c20feaf438967668c5f848b7785a289":[3,0,0,0,105,55],
+"class_datalogics_1_1_p_d_f_l_1_1_print_params.html#a2c620b996b003f659c25abe5b09b5c8d":[3,0,0,0,105,66]
 };
