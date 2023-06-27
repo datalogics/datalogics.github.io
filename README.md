@@ -13,8 +13,9 @@ C --> K[Getting Started]
 C --> H[Reference Documentation]
 D --> I[Getting Started]
 D --> J[API Reference Documentation]
-D --> K[Release Notes]
+D --> L[Release Notes]
+D --> N[Software Acknowledgements]
+C --> M[Optimizer Release Notes]
 ```
 
 Datalogics HTML Documentation for various language interfaces.
-
