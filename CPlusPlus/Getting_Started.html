@@ -1,20 +1,213 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en-US", xmlns="http://www.w3.org/1999/xhtml">
   <head>
-<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
- <title>Getting Started with the APDFL C/C++ Interface</title>
-<link rel="shortcut icon" href="../Datalogics.ico" type="image/x-icon">
-<link href="../dle.css" rel="stylesheet" type="text/css" />
-  </head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
-     <script>
-         window.dataLayer = window.dataLayer || [];
-         function gtag(){dataLayer.push(arguments);}
-         gtag('js', new Date());
-         gtag('config', 'G-L4MQFNK7VK');
-   </script>
-  <body>
-    <h1>Getting Started with the APDFL C/C++ Interface</h1>
-  </body>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <title>Getting Started with the APDFL C/C++ Interface</title>
+    <link rel="stylesheet" href="resources/css/template.css">
+    <link rel="icon" type="image/x-icon" href="../Datalogics.ico">
+    <meta charset="UTF-8">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-L4MQFNK7VK');
+</script>
+<body>
+    <div id="page_header">
+        <img id="logo" src="resources/img/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo">
+        <h1 style="margin-left: 330px;">Getting Started with the APDFL C/C++ Interface</h1>
+    </div>
+    <div id="containter">
+        <div id="content">
+            <div id="sidebar">
+                <!--content_left-->
+                <h3>Table of Contents</h3>
+                <ul style="display: block;">
+                    <li class="dropdown">
+                        <!--To link to a specific part of a page give holding <tag> an id="name_of_link" then use that name in href="#name_of_link"-->
+                        <input type="checkbox" id="parent1"><label for="parent1"><a href="#intro">Introduction</a></label> <!--Main Parent Link-->
+                        <ul>
+                            <li class="dropdown_child"><a href="#supenv">Supported Environments</a></li> <!-- Sublink in dropdown-->
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <input type="checkbox" id="parent2"><label for="parent2"><a href="#get_started">Getting Started</a></label>
+                        <ul>
+                            <li class="dropdown_child"><a href="#introduction">Introduction</a></li>
+                            <li class="dropdown_child"><a href="#prelim">Preliminaries</a></li>
+                            <li class="dropdown_child"><a href="#sdks">Installing the SDK</a></li>
+                            <li class="dropdown_child"><a href="#license">Licensing</a></li>
+                            <li class="dropdown_child"><a href="#bnr">Building and Running</a></li>
+                            <li class="dropdown_child"><a href="#ready">Createing Your Own</a></li>
+                            <li class="dropdown_child"><a href="#help">Help</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <input type="checkbox" id="parent3"><label for="parent3"><a href="#licensing">Licensing</a></label>
+                        <ul>
+                            <li class="dropdown_child"><a href="#cpyinfo">Copyright Information</a></li>
+                            <li class="dropdown_child"><a href="#cntinfo">Contact Information</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <input type="checkbox" id="parent4"><label for="parent4"><a href="#resources">Resources Explained</a></label>
+                        <ul>
+                            <li class="dropdown_child"><a href="#font">Font</a></li>
+                            <li class="dropdown_child"><a href="#cmap">CMap</a></li>
+                            <li class="dropdown_child"><a href="#jops">Joboptions</a></li>
+                            <li class="dropdown_child"><a href="#clr">Color</a></li>
+                            <li class="dropdown_child"><a href="#unic">Unicode</a></li>
+                            <li class="dropdown_child"><a href="#offmet">OfficeMetrics</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="content_right">
+                <section id="intro">
+                    <header>
+                        <h2>Introduction</h2>
+                    </header>
+                    <nav>
+                        <p>The Datalogics PDF Library includes a comprehensive set of APIs for your PDF manipulation needs.</p>
+                        <h3 id="supenv">Supported environments</h3>
+                        <table class="section_table indent1">
+                            <tbody>
+                                <tr class="section_table_header">
+                                    <td>OS</td>
+                                    <td>Architecture</td>
+                                    <td>Development</td>
+                                </tr>
+                                <tr>
+                                    <td>Windows</td>
+                                    <td>x64</td>
+                                    <td>Visual Studio 2022, 2019, or 2017</td>
+                                </tr>
+                                <tr>
+                                    <td>Linux</td>
+                                    <td>x64 or ARM64 with glibc 2.17+</td>
+                                    <td>Clang 3.9+, or gcc 4.8+</td>
+                                </tr>
+                                <tr>
+                                    <td>macOS</td>
+                                    <td>x64 or ARM64</td>
+                                    <td>Xcode 13+</td>
+                                </tr>
+                                <tr>
+                                    <td>Solaris</td>
+                                    <td>SPARC</td>
+                                    <td>gcc 4.8+, or Developer Studio 12.5+</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </nav>
+                </section>
+                <section id="get_started">
+                    <header>
+                        <h2>Getting Started</h2>
+                    </header>
+                    <nav>
+                        <dl>
+                            <dt><h3 id="introduction">Introduction</h3></dt>
+                            <dd><p>Built upon Adobe source code used for Acrobat, Datalogics Adobe PDF Library SDK provides stable, reliable code and the flexibility to develop with C++ (interfaces are also available for C#, VB (VB.NET), and Java). APDFL is the most complete SDK for PDF creation, manipulation and management. Best for enterprise/larger organizations of developers and independent software vendors (ISVs) who need to incorporate Adobe's PDF functionality into their own internal or external applications.</p></dd>
+                        </dl>
+                        <dl>
+                            <dt><h3 id="prelim">Preliminaries</h3></dt>
+                            <dd>
+                                <p>Most of the code samples in APDFL are designed to demonstrate how an API works by completing a simple programming task.</p>
+                                <p>We assume a basic level of technical understanding of the PDF file format, individual sample category directory markdown files go into more details.</p>
+                                <p>Many of these sample programs automatically generate an output file or set of files. These output files, generally PDF or graphics files (JPG or BMP), are stored in the directory where the application has been run. If you run a sample program a second or third time, it will overwrite any output files that were created and stored earlier. However, if you run a sample program, generate a PDF output file, and then open that PDF file and try to run that sample program again, you will see an error message. The program will not be able to overwrite an existing output file if that file is currently open in another program.</p>
+                                <p><em>(Note: that the Forms Extension product and samples are available by talking to Datalogics Sales.)</em></p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><h3 id="sdks">Installing the SDK</h3></dt>
+                            <dd><p>The SDK can be found in the <a href="https://www.datalogics.com/adobe-pdf-library">Adobe PDF Library</a> and installed using Visual Studio client.</p></dd>
+                        </dl>
+                        <dl>
+                            <dt><h3 id="license">Licensing</h3></dt>
+                            <dd>See <a href="#licensing">Licensing</a> for information on License Management.</dd>
+                        </dl>
+                        <dl>
+                            <dt><h3 id="bnr">Building and Running Samples</h3></dt>
+                            <dd>
+                                <p>Samples can be found on <a href="https://github.com/datalogics/apdfl-cplusplus-samples">GitHub</a>.</p>
+                                <p><em>They can be built and run easily in an IDE such as Visual Studio 2022, 2019, or 2017.</em></p>
+                                <p><b>Note</b>: Samples are setup to write their output files to the program's executable directory along with any other dependencies.</p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><h3 id="ready">Ready to start your coding your own Application?</h3></dt>
+                            <dd>See our <a href="./API_Reference.html">API Reference Guide</a> to search for the API you need and find detailed information.</dd>
+                        </dl>
+                        <dl>
+                            <dt><h3 id="help">Need Assistance?</h3></dt>
+                            <dd>Please contact <b><a href="" onclick="location.href='mailto:evalsupport@datalogics.com; return false;">evalsupport@datalogics.com</a></b> for assistance getting started.</dd>
+                        </dl>
+                    </nav>
+                </section>
+                <section id="licensing">
+                    <header>
+                        <h2>Licensing</h2>
+                    </header>
+                    <nav>
+                        <p>The Activation application can be run directly and you can enter an Activation Key.</p>
+                        <dl>
+                            <dt><h3 id="cpyinfo">Copyright Information</h3></dt>
+                            <dd>Portions © 1984-2023  Adobe, Incorporated; Portions © 2000-2023 Datalogics, Inc. All rights reserved.<br>Use of Datalogics software is subject to the applicable license agreement.</dd>
+                            <dd>Adobe® PDF Library™</dd>
+                            <dd>Adobe is a registered trademark of Adobe, Incorporated.<br> Adobe PDF Library is a trademark of Adobe, Incorporated.</dd>
+                            <dt><h3 id="cntinfo">Contact Info</h3></dt>
+                            <dd><b>Datalogics, Incorporated<br>101 North Wacker Drive, Suite 1800<br>Chicago, IL  60606-7301<br>Phone: (312) 853-8200<br>Fax: (312) 853-8282<p> www.datalogics.com</p></b></dd>
+                        </dl>
+                    </nav>
+                </section>
+                <section id="resources">
+                    <header>
+                        <h2>Resources Explained</h2>
+                    </header>
+                    <nav>
+                        <p>Its recommended that you include all of the files in the <b>Resources</b> directory with your application.</p>
+                        <p class="indent1">These files are used for rendering, conversion, printing, and other operations. The Library will look for the <b>Resources</b> directory in the standard installed location. However custom paths to the individual paths can be specified during the Library Initialization.<br></p>
+                        <dl>
+                            <dt><h3 id="font">Font</h3></dt>
+                            <dd>Font files that cover most typical documents that are used besides OS fonts.</dd>
+                        </dl>
+                        <dl>
+                            <dt><h3 id="cmap">CMap</h3></dt>
+                            <dd>Predefined mappings between character encodings and specific, predefined character identifier sets used during font handling.</dd>
+                        </dl>
+                        <dl>
+                            <dt><h3 id="jops">Joboptions</h3></dt>
+                            <dd>An options file for driving the XPS2PDF plugin</dd>
+                        </dl>
+                        <dl>
+                            <dt><h3 id="clr">Color</h3></dt>
+                            <dd>Color profiles utilized during color conversion.</dd>
+                        </dl>
+                        <dl>
+                            <dt><h3 id="unic">Unicode</h3></dt>
+                            <dd>Unicode mappings utilized during font handling.</dd>
+                        </dl>
+                        <dl>
+                            <dt><h3 id="offmet">OfficeMetrics</h3></dt>
+                            <dd>Typographic files used for converting PDF to Office documents.</dd>
+                        </dl>
+                    </nav>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!--div id="page_footer">
+        <ul>
+            <li><a href="">Link 1</a></li>
+            <li><a href="">Link 2</a></li>
+            <li><a href="">Link 3</a></li>
+        </ul>
+        <p>&copy;2023 Datalogics</p>
+    </div-->
+</body>
+<script src="resources/js/template.js"></script>
 </html>
