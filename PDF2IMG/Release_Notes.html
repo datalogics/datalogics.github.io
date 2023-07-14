@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US", xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>PDF2IMG Release Notes</title>
+<link rel="shortcut icon" href="https://docs.datalogics.com/Datalogics.ico" type="image/x-icon">
+<link href="https://docs.datalogics.com/dle.css" rel="stylesheet" type="text/css" />
+  </head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+     <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         gtag('config', 'G-L4MQFNK7VK');
+   </script>
+<body>
+<div>
+    <h1>PDF2IMG Release Notes</h1>
+<p><strong>Version 4.5.0 </strong>(April 17, 2023)<br />
+  Enhancements:</p>
+  <ul>
+    <li>Updates open source library libtiff to version 4.4.0.</li>
+    <li>We no longer ship a License Manages Linux 32-Bit installer.</li>
+    <li>A new PDF2IMG Docker image version 1.3 has been uploaded to Artifactory.</li>
+    </ul>
+<p>Problem Corrections:</p>
+<ul>
+    <li>SF#45414 (East:Seiko-Epso) – Corrects an issue in which rendering a Page with an Invalid Dash Phase specified could hang.</li>
+    <li>SF#45467 (East:Epson) – Corrects an issue in which certain CJK glyphs could fail to render correctly on Linux.</li>
+    <li>SF#45577 (SoftTools) – Corrects an issue in which rendering a document with very large values could result in some content not being drawn.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Version 4.3.0</strong> (December 22, 2022)<br />
+Enhancements:</p>
+<ul>
+<li class="x_MsoListParagraph">Updates open source PNG (libPNG) library to version 1.6.38.</li>
+<li class="x_MsoListParagraph">Adds PDF2IMG docker image with "latest" tag to docker hub.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Version 4.2.0 </strong>(July 7, 2022)<br />
+Problem Corrections:</p>
+<ul>
+<li class="x_MsoNormal">SF#42354 – Corrects an issue where there was a version mismatch between a file reference and the project file.</li>
+<li class="x_MsoNormal">SF#42399 – Corrects an issue in whitespace margin detection where certain page layouts would throw an error when trying to remove them.</li>
+<li class="x_MsoNormal">SF#42435 – Corrects an issue where the LoadInput API would fail to load a XPS file that does not have the .xps file extension.</li>
+<li class="x_MsoNormal">SF#44832 – Corrects an issue where when converting from PDF to TIFF the background would sometime be grey or black instead of white.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Version 4.1.0</strong> (April 13, 2021)<br />
+Problem Corrections:</p>
+<ul>
+<li>SF#42468 – Corrects an issue in which resample could cause an unexpected artifact during rasterization.</li>
+<li>SF#43381 – Correct an issue in which rasterizing Type 3 fonts with large character sizes at specific resolutions resulted in a crash.</li>
+<li>SF#43432 – Corrects an issue in which -smoothing and -asprinted options did not work together when converting an ai file.</li>
+<li>SF#43535 – Corrects an issue in which content went missing when converting pdf to image with -smoothing=all -noenhancethinlines flags.</li>
+<li>SF#43560 – Correct an issue in which converting a certain pdf to an image resulted in a segment fault on Linux.</li>
+<li>SF#43776 – Corrects an issue in which resolution set higher than 381 on Windows platform caused corrupted output.</li>
+<li>SF#43926 – Corrects an issue in which running pdf2img to convert a specific document with a certain resolution failed.</li>
+<li>SF#44167 – Corrects an issue in which pdf to image conversion failed with -OPP -digits=1 -smoothing=line,text,images -pages=1 -resolution=384 -asprinted -resampler=none command option.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Version 4.0.2</strong> (May 22, 2020)<br />
+Enhancements:</p>
+<ul>
+<li>Adds new PDF output options for rasterizing each PDF page and saving as separate PDF files or one combined PDF file.</li>
+<li>Preserves previous feature to split PDF input to one PDF output per page without rasterizing, but this now requires a new option to be selected.</li>
+<li>SF#42828 – Extends "-jpegquality" option to apply to TIFF output when JPG compression is used.</li>
+<li>SF#43010 – Adds new option "-optimizerender" to improve rasterization performance for vector-heavy documents. Optimization is now disabled by default.</li>
+<li>Updates shipped source and projects to VS2017 (Windows)</li>
+<li>Removes boost library dependencies (Linux)</li>
+<li>Updates compiler support to gcc 4.8+ | glibc 2.17 (Linux)</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul>
+<li>SF#42385 – Corrects an issue in which transparent backgrounds were not being rendered for some RGBA output.</li>
+<li>SF#42951 – Corrects an issue in which a PDF signature was missing when converted to TIFF.</li>
+<li>SF#39462 – Corrects an issue that caused a crash when converting to TIFF.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Version 3.3.0</strong> (May 30, 2019)<br />
+Problem Corrections:</p>
+<ul>
+<li>Resolves an issue where a single page in a PDF document was taking 15 to 20 minutes to render because of vector images. Changes the setting for the kPDPageThreadIPParse flag in drawParam to default to multi-threaded processing, rather than the original single threaded processing. PNG, TIF and JPG images covered.</li>
+<li>Corrects a problem where PDF2IMG was failing to complete processing for a PDF document where a customer had set the Names parameter to “All” for the DeviceN color space. This violates a rule in the ISO 32000 standard, followed by PDF2IMG, that reserves DeviceN to Separation only.  Set the relaxation flag (PDPrefSetAllowRelexedSyntax) to true to ignore this specification. Relaxing this parsing restriction allows PDF2IMG to continue to draw the pages to TIF images. The user needs to add the "-relaxParseSyntax" option to the command line syntax.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Version 3.2.0</strong> (April 28, 2019)<br />
+Problem Corrections:</p>
+<ul>
+<li>Corrects a situation where outdated binary files were sometimes applied to the product after an upgrade or after the software was re-installed.</li>
+<li>Resolves an issue where license extensions could fail without administrator access to the installation directory.</li>
+<li>Removes underscore characters from the product name in the installer and in the Windows uninstall menu. Product is consistently displayed as "PDF2IMG Standard," "PDF2IMG Pro," and "PDF2IMG Premium."</li>
+<li>Changes name of installer files to conform to standard naming conventions for command line applications.</li>
+<li>Adds compatibility for self-hosted license server.</li>
+</ul>
+<p><strong>Version 3.0.0</strong> (November 8, 2018)</p>
+<p>Enhancements:</p>
+<ul>
+<li>Separates PDF2IMG into three product offerings, PDF2IMG Standard, Pro, and Premium.</li>
+<li>Updates the license-managed platform to support automatic evaluations and subscription services, offered online.</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul>
+<li>Product installation now places the required Adobe PDF Library components for PDF2IMG in a location that is less likely to interfere with other systems that also use the Adobe PDF Library.</li>
+</ul>
+<p><strong>Version 2.5P1e</strong> (April 25, 2018)</p>
+<p>Problem Corrections:</p>
+<ul>
+<li>Removes .NET framework requirement from the Windows installer to correct a problem with installing on Windows 10 platforms.</li>
+<li>Updates open source graphics libraries (libjpeg, libtiff, PNGLib, ZLib) to latest versions in to address security concerns.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Version 2.5P1d</strong> (February 5, 2018)</p>
+<p>Enhancements:</p>
+<ul>
+<li>Adds new directory, "Resources," to provide support files with the distribution.</li>
+<li>Adds ICC profiles to the distribution.</li>
+<li>Adds new .NET interface to the Windows 32-bit distribution.</li>
+<li>Adds new command line option (-removewhitespace), and new API to the .NET interface (GetPageBoxWithWhiteSpaceRemoved) that remove white space margins from around the page.</li>
+<li>Adds two APIs to the C++ interface (pdf2img_get_page_width, pdf2img_get_page_height) and the .NET interface (GetPageWidth, GetPageHeight) that return the page width and height of a document from an initialized ImageConversion object.</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul>
+<li>Prevents a rasterization error that could occur for very large image sizes by improving a previous limitation of the resampler.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Version 2.5P1b</strong> (November 8, 2017)</p>
+<p>Problem Corrections:</p>
+<ul>
+<li>Corrects a regression that broke a previous resolution, which supports the conversion of password-protected PDF documents using a password input parameter.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Version 2.5P1a</strong> (September 18, 2017)</p>
+<p>Enhancements:</p>
+<ul>
+<li>Updates to PDF2IMG to use Adobe PDF Library version 15.0.4.</li>
+<li>Adds a feature to the pdfregion command line argument that allows a user to define a custom region by using a set of four coordinates. The coordinates define the position and size of a bounding area on a page.</li>
+<li>Adds new blendingspace command line argument that allows the user to select a color profile (or .icc file) for blending transparencies on a page rather than simply using the default CMYK color space provided with the PDF2IMG software.</li>
+<li>Adds new.NET interface to Windows 64 version of software.</li>
+</ul>
+<p><strong>Version 2.4P1k</strong> (August 6, 2015)</p>
+<p>Problem Corrections:</p>
+<ul>
+<li>Resolves an issue in how default color spaces were being applied when rendering, such as profileCMYK</li>
+<li>Resolves an issue in which the "-outputintent" option was always being used when rendering</li>
+</ul>
+<p><strong>Version 2.4P1h</strong> (November 19, 2014)</p>
+<p>Problem Corrections:</p>
+<ul>
+<li>Fixes XPS to PDF regression for Linux 32-bit</li>
+<li>Fixes a regression in which using the -fontlist= option on Win32 did not generate output</li>
+</ul>
+<p><strong>Version 2.4P1e</strong> (August 29, 2014)</p>
+<p>Problem Corrections:</p>
+<ul>
+<li>Fixes gray color model crash</li>
+<li>Fixes a problem where all output pages (images) have a gray line to the right side of the images</li>
+</ul>
+<p><strong>Version 2.4P1d</strong> (July 8, 2014)</p>
+<p>Problem Corrections:</p>
+<ul>
+<li>Fixes Linux 32/64 eval build issues.</li>
+<li>Corrects a regression issue causing a segmentation fault in Win32 and Linux32.</li>
+</ul>
+<p><strong>Version 2.4P1c</strong> (June 24, 2014)</p>
+<p>Enhancements:</p>
+<ul>
+<li>Adds support for L*a*b* output</li>
+<li>Disables default resource search for increased startup performance</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul>
+<li>Fixes an issue where PDF2IMG was delivering an access violation error when the resampler is set to Auto or Bicubic, both for the C# application and the command line executable.</li>
+</ul>
+<p><strong>Version 2.4P1b</strong> (April 1, 2014)</p>
+<p>Problem Corrections:</p>
+<ul>
+<li>Removes max dimension test.</li>
+<li>Regression fix from previous release.</li>
+</ul>
+<p><strong>Version 2.4P1a</strong> (February 20, 2014)</p>
+<p>Enhancements:</p>
+<ul>
+<li>Resampling now available for improved image rendering quality of thumbnails.</li>
+<li>PDF2IMG improvements for thumbnail and rendering quality issues.</li>
+</ul>
+<table align="center">
+  <tr>
+    <td>
+        <a href="http://www.datalogics.com/" style="text-align:center">Datalogics</a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
