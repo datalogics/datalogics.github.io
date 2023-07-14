@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US", xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <title>Release Notes, Datalogics PDF Optimizer</title>
+<link rel="shortcut icon" href="https://docs.datalogics.com/Datalogics.ico" type="image/x-icon">
+<link href="https://docs.datalogics.com/dle.css" rel="stylesheet" type="text/css" />
+  </head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+     <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         gtag('config', 'G-L4MQFNK7VK');
+   </script>
+  <body>
+        <h1>Release Notes, Datalogics PDF Optimizer</h1>
+  
+	<div class="entry-content"><p><strong>Version 3.0</strong> (March 8, 2022)<br/>
+<p>New Features:</p>
+<ul>
+<li>Improves PDF file compression when using PDFOptimizer.
+<ul>
+<li>Includes new compressionLow.json, compressionMedium.json, and compressionHigh.json profiles with the product.
+<ul>
+<li>These are finely tuned compression-driven profiles to produce smaller output PDF documents. These profiles offer different balances of the reduction in the file size and preservation of the data.</li>
+<li>Note: If you are not sure what level of compression you need, it is recommended to use the compressionMedium profile.</li>
+</ul>
+</li>
+<li>The lossless, maximum, mobile, and standard profiles have been removed from the package. The profiles will continue to work if these profiles are being used currently.</li>
+</ul>
+</li>
+<li>SF#43117 – Improves the handling of an image that contains more data than expected.</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul>
+<li>SF#43685 – Corrects an issue in which a confusing error message could be displayed when the output file was larger than the input file.</li>
+<li>SF#44128 – Corrects an issue in font optimization that could create an incorrect output.</li>
+<li>SF#44166 – Corrects an issue in which PDFOptimizer could exit silently due to a syntax error in a JSON profile.</li>
+<li>SF#44274 – Adds a new condition to the PDPrefSetRelaxedSyntax logic to complete the processing of a defective pdf.</li>
+<li>Corrects an issue in which an internal error could occur when trying to flatten transparencies</li>
+<li class="gmail_default">Corrects an issue in which a generic error could be reported after an unsuccessful PDF/A conversion.</li>
+<li class="gmail_default">Corrects an issue in which discarding Unused Forms would not work as expected.</li>
+</ul>
+<p><strong>Version 2.1</strong> (May 13, 2021)<br />
+New Features:</p>
+<ul>
+<li>Adds support for PDF/A variant-specific compliant profiles. Previously, users could choose the "archival" profile (which was not the default profile for PDF Optimizer, but it was available) to optimize their input files to meet PDFA-3b compliance standards.</li>
+</ul>
+<p style="padding-left: 24px;">The previous "archival" profile COULD support additional PDF/A compliance variants; however, users were required to make that specification manually when using the "archival" profile.</p>
+<p style="padding-left: 24px;">Now, we removed the "archival" profile (whose default was one variant) that required manual interaction to utilize multiple PDF/A variants, and we include 5 distinct PDF/A variant profiles so users can simply choose the compliance/archival/standard variant at the profile level without needing to tweak the profile itself.</p>
+<p style="padding-left: 24px;">New profile identifiers are:</p>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li>PDFA-1b.json</li>
+<li>PDFA-2b.json</li>
+<li>PDFA-2u.json</li>
+<li>PDFA-3b.json</li>
+<li>PDFA-3u.json</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Adds support for Digimaster-specific print profile.</li>
+</ul>
+<p style="padding-left: 24px;">Previously, no Digimaster profile existed leaving Digimaster printer users to "fend for themselves" as it relates to configuration for their printing needs. Now, Digimaster printer users have a baseline profile that is specific to the Digimaster print experience which downsamples images to 600dpi (when applicable), and converts all images to black and white by default to align with the standard optimization experience our Digimaster customers who optimize for print expect.</p>
+<p class="gmail_default">Problem Corrections:</p>
+<ul>
+<li class="gmail_default">SF#43687 – Corrects an issue processing documents with minor syntax issues.</li>
+</ul>
+<p><strong>Version 2.0.2</strong> (April 12, 2021)</p>
+<p>Problem Corrections:</p>
+<ul>
+<li>SF#43687 – Corrects an issue processing documents with minor syntax issues.</li>
+</ul>
+<p><strong>Version 2.0.1</strong> (September 22, 2020)</p>
+<p>Enhancements:</p>
+<ul>
+<li>Adds a summary report to the command line output describing overview results of optimization.</li>
+<li>Adds an option 'log' to save a detailed report describing all actions performed by PDF Optimizer to a specified location.</li>
+<li>Adds an option 'quiet' to suppress the default summary report in command line output.</li>
+<li>Combines the PDF Optimizer installer with the PDF Checker installer for both Windows and Linux platforms.</li>
+</ul>
+<p><strong>Version 1.7.2</strong> (December 20, 2019)</p>
+<p>Problem Corrections:</p>
+<ul>
+<li>Corrects an issue in which a Color Key Mask Image could be mishandled by the Optimizer.</li>
+<li>Corrects an issue in which optimized images could become corrupted when shared on different pages.</li>
+</ul>
+<p><strong>Note</strong>: This release includes PDF Optimizer cases resolved in Adobe PDF Library release 15.0.4PlusP6f:</p>
+<ul>
+<li>Corrects an issue in which optimizing a document page with no Resources could raise an exception.</li>
+<li>Corrects a regression in which optimized images could become corrupted when shared on different pages.</li>
+</ul>
+<p><strong>Version 1.7.0</strong> (November 4, 2019)</p>
+<p>Enhancements:</p>
+<ul>
+<li>Adds new conformance levels for PDF/A conversion (PDF/A-2b, PDF/A-2u, PDF/A-3b, and PDF/A-3u)</li>
+<li>Adds an option to preserve the original PDF version of the source document when generating an output PDF file, rather than always saving it as PDF 1.7</li>
+<li>Adds an option to remove the output intent from a PDF document to reduce file size</li>
+<li>Adds an option to remove XMP padding from metadata content to reduce file size</li>
+<li>Adds four new JSON profile files to the installation package:
+<ul>
+<li>maximum.json - Designed to reduce the size of the PDF document as much as possible without regard to the quality of the output</li>
+<li>lossless.json - Designed to compress the document as much as possible while preserving the visual quality of the output file</li>
+<li>archival.json - Designed to make an archived version of the document for long-term storage (saved using the PDF/A-3b format)</li>
+<li>printing.json - Designed for PDF documents intended to be printed</li>
+</ul>
+</li>
+</ul>
+<p><strong>Version 1.6.1</strong> (April 16, 2019)</p>
+<p>Problem Corrections:</p>
+<ul>
+<li>Resolves issue where license extensions could fail if the user did not have administrator access to the installation directory.</li>
+</ul>
+<p><strong>Version 1.5.1</strong> (January 21, 2019)</p>
+<p>Enhancements:</p>
+<ul>
+<li>Updates name of product in installer and Windows uninstall menu to make sure that the product is consistently displayed as "PDF Optimizer."</li>
+<li>Changes name of installer files to conform to standard naming conventions for command line applications.</li>
+<li>Product now includes the ability to install the latest version of PDF Checker, 1.4.1.</li>
+<li>Adds End User License Agreement (EULA).</li>
+<li>Adds new option "remove-unused-fonts" in the "fonts" section of the JSON profile, defaulting to true.</li>
+<li>Adds new error code for attempting to process signed PDF documents.</li>
+<li>Updates format for command line parameters for consistency with other PDF Datalogics products while allowing for backwards compatibility.</li>
+<li>Adds compatibility to the software to host the licensing system on a local server.</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul>
+<li>Corrects an issue where when specifying the PDF/A option, output was jumbled for specific font.</li>
+<li>Updates the installation process so that PDF Optimizer is removed from the Windows Environment variable for PATH when program is uninstalled from the system.</li>
+<li>Corrects a problem with installation on Windows in which the installer would not wait for the user to enter an activation key.</li>
+<li>Corrects an issue where PDFOptimizerRemoveAllBase14Fonts could remove fonts in cases where it should not have.</li>
+<li>Corrects an issue where Default Font resources could be misidentified by PDF Optimizer as not actually being in use in a document.</li>
+<li>Corrects an issue in which images were incorrectly removed from annotations.</li>
+</ul>
+<p><strong>Version 1.4.1</strong> (November 7, 2018)</p>
+<p>Enhancements:</p>
+<ul>
+<li>Updates user content with instructions for generating license with new activation key.</li>
+<li>Updates Datalogics icons in Windows installer to higher resolutions</li>
+<li>This release updates PDF Checker to version 1.3.1.</li>
+<li>Improves optimization by removingimages in the document's resources that aren't used in the document's content.</li>
+<li>Improves optimization by resampling and/or recompressing Indexed images in most cases.</li>
+<li>Improves ability of product to discard page overhead for a document.</li>
+<li>Permits processing of documents with minor syntax errors.</li>
+<li>Updates license managed platforms to support automated evaluations and subscription services.</li>
+<li>Product installation now places required Adobe PDF Library components in a location less likely to conflict with other programs that also use the Adobe PDF Library.</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul>
+<li>Corrects an issue in which embedding fonts could drop character glyphs from text.</li>
+<li>Corrects an issue with subsetting previously embedded CIDType2 fonts, in which the CIDToGIDMap entry, when present in the font, was not used in setting the glyphs to be used in the subset.</li>
+<li>Corrects an issue where font merging was prematurely ended if many similar subset names were found.</li>
+<li>Corrects an issue in which fonts could be embedded with a substitute font when a font reference is not found as a system resource.  Also corrected an issue in which re-embedding fonts could lead to fonts that were no longer working. Improved logic to abandon font subsetting when the result would end up with a font that has no glyphs.</li>
+<li>Corrects an issue where identical ICCBased streams used in Images were not always consolidated.</li>
+<li>Corrects an issue where re-subsetting fonts could create an empty font subset.</li>
+<li>Corrects an issue in which unused forms could be misidentified.</li>
+<li>Corrects a performance issue removing unused images and forms in a document with many images or forms.</li>
+<li>Corrects a potential memory leak.</li>
+</ul>
+<p><strong>Version 1.3.1 </strong>(July 13, 2018)</p>
+<p>Enhancements:</p>
+<ul>
+<li>Adds new option to re-subset previously subset fonts.</li>
+<li>Adds new option to down-convert images from 16 bits per component (bpc) to 8 bpc.</li>
+</ul>
+<p><strong>Version 1.2 </strong>(April 19, 2018)</p>
+<p>Enhancements:</p>
+<ul>
+<li>New option added to Fonts category, "unembed-standard-14-fonts," defaulting to "on."</li>
+<li>Changes the default value to "off" for the "discard-bookmarks" option in the standard profile.</li>
+</ul>
+<p><strong>Version 1.1 </strong>(March 22, 2018)</p>
+<p>Enhancements:</p>
+<ul>
+<li>PDF Optimizer Includes latest version of the PDF Checker tool.</li>
+<li>For Windows, the PDF Optimizer installer includes an option to subsequently run the PDF Checker installer.</li>
+<li>For Linux, the distribution includes a PDF Checker self extracting installation file, which prompts the user to accept a license agreement. Then, the process allows for the installation of PDF Checker in a default directory under the current or designated directory.</li>
+<li>Adds support of a new JSON <a style="color: #0000cd;" href="https://dev.datalogics.com/pdf-optimizer/setting-up-your-profile/color-conversion" target="_blank" rel="noopener noreferrer">Color Conversion</a> category. User may select a color profile to apply, define a conversion intent, and replace existing calibrated profiles in the PDF document with a different profile.</li>
+<li>Adds support of a new JSON category to allow a user to save a PDF export file so that it is compliant with the PDF/A-1b <a style="color: #0000cd;" href="https://dev.datalogics.com/pdf-optimizer/setting-up-your-profile/pdf-a-conversion/" target="_blank" rel="noopener noreferrer">(PDF Archive)</a> format.</li>
+<li>The <a style="color: #0000cd;" href="https://dev.datalogics.com/pdf-optimizer/setting-up-your-profile/transparency" target="_blank" rel="noopener noreferrer"> transparency</a> quality settings have been adjusted to more appropriate values for high, medium, and low-quality output.</li>
+<li>Improves merging of font subsets when the PDSaveOptimizeFonts flag is used.</li>
+<li>PDF Optimizer now by default first looks for the profile in the installation directory. If the product cannot find that profile file there, it looks at the command line statement, and treats the profile included there as the path to the profile file.</li>
+<li>Application and installer are now signed with the certificate from Datalogics.</li>
+<li>Adds specific error for when the user is unable to save output results to the output file specified.</li>
+<li>Changes default installation directory to "Program Files/Datalogics/ PDFOptimizer."</li>
+<li>Adds a new process that looks for situations that would require incremental saves for an export PDF document, such as a signed PDF document or a need to include usage rights. The process ends with an error message, rather than continuing to process the optimization.</li>
+<li>Adds optimization for 16-bit per channel (bpc) J2K images (a compression format for JPEG image files) and applies subsampling to JPEG compression.</li>
+<li>Adds new option "write-output-even-if-increase-in-size" that can be used to decide whether to keep outputs when they cannot be reduced in size.</li>
+<li>Renames the option "optimize-only-if-reduction-in-size" to "optimize-images-only-if-reduction-in-size" for clarity.</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul>
+<li>Corrects an issue when flattening is enabled with certain documents that specified a Page Blending Color Space.</li>
+<li>Corrects Details information shown under Windows pdfoptimizer.exe file.  File description shows "Datalogics PDF Optimizer" while the original filename shows "pdfoptimizer.exe".</li>
+<li>Corrects Linux issue where multiple copies of the Adobe PDF Library were included in the installation package.</li>
+<li>Removes a potential problem starting up the program on certain Windows machines in which "api-ms-win-core-libraryloader-l1-1-1.dll" is reported as missing.</li>
+<li>Corrects a problem with optimization in which text could become damaged when subsetting Type1 fonts with a custom encoding.</li>
+<li>Corrects a problem where reading Images category flags would not always be honored.</li>
+<li>Corrects a problem where an image containing a soft mask object could be corrupts when optimized.</li>
+<li>Corrects a problem with removing comments that could cause optimization to fail.</li>
+</ul>
+<p><strong>Version 1.0 </strong>(December 4, 2017)</p>
+<ul>
+<li>Initial public release.</li>
+</ul>
+</body>
+</html>
