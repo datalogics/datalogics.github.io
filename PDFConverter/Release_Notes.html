@@ -36,7 +36,44 @@
                     <h1>Release Notes, Adobe PDF Converter</h1>             
             
     <div class="entry-content"><p><strong>Please note that the Adobe PDF Converter was formerly known as Adobe Normalizer.</strong></p>
-<p>Most releases of PDF Converter are provided for Windows 32 and 64, Linux 32 and 64, Solaris Intel 32 and 64, Mac, and IBM AIX.</p>
+<p><strong>PDF Converter v3.2PlusP1b</strong> (July 24, 2023)</p>
+<p>New Features:</p>
+<ul type="disc">
+<li>Upgrade to use Adobe PDF Converter SDK 3.2</li>
+<li>Upgrade APDFL libraries to the latest v18 release</li>
+<li>Update libpng to version 1.6.40</li>
+</ul>
+<p>New features from Adobe PDF Converter SDK 3.2:</p>
+<ul type="disc">
+<li>New Era Japanese Ligature support is added in Adobe PDF Converter SDK 3.2</li>
+<li>APC CSL 3.2 has updated CMaps to support the New Era Japanese ligature in APC SDK</li>
+<li>Algorithm for Image Data conversion in ConvertToIndexedImage() API is optimized to improve the performance in APC SDK</li>
+<li>Composite font deletion mechanism is improved by adding modification to MakeFontFlush() API</li>
+</ul>
+<p>New features from Adobe PDF Converter SDK 3.1:</p>
+<ul type="disc">
+<li>PDF/X-4 Compliant PDF generation - APC can now generate and check PDF/X-4 compliant PDF. Following API have been added: APCSetPDFX4Setting()</li>
+<li>Added /PDFX4:2010 as new value of CheckCompliance joboption key for generating PDF/X-4 compliant PDF</li>
+<li>Added Page skip feature for generating PDF of specific pages, this feature can also be used for counting total number of pages in postscript
+<li>Following APIs and callbacks have been added: APCPageSkipEnable(), APCPageSkipDisable(), APCDisableProcessingInPageSkip(), NSGetNextDeviceActivatePageNumber(), NSTotalNumberofPages()</li>
+<li>Following Memory Callbacks has been modified: NSMoreMemoryProc(), NSFreeMemoryProc()</li>
+</ul>
+<p>New features from Adobe PDF Converter SDK 2.0:</p>
+<ul type="disc">
+<li>The Adobe PDF Converter 2.0 supports conversion of PPML file to PDF. PPML 2.1 is the latest version that is supported as of now</li>
+<li>API used for conversion: APCConvertPPMLToPDF()</li>
+<li>Addition of new keys to the job Options file given to Adobe PDF Converter are: /PassThroughFlateImage: If this parameter is enabled, then input Flate images are bypassed to output PDF document as it is. /DownsampleMonoImageMask: If false, disables the down-sampling of monochrome image mask</li>
+<li>Configure RAM Disk Size to change the maximum amount of file size that can be placed in RAM by changing ramDiskSize parameter in NSClientConfig. Increasing this parameter to some extent is known to improve PSToPDF conversion performance</li>
+<li>APCConfigureImageJob() product can optionally provide option to change PDF stream compression. For more information, see Conversion of Image Files to PDF</li>
+<li>Disable auto-embedding of Type 1 Font whose CharStrings dict length > 229. For more information, see NSJobParams</li>
+<li>Selectively disable filtering of objects present outside of a pagesize. This can be used to pass information using text outside the page. It can be turned on/off by command line option - deOptimizationLevel</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul type="disc">
+<li>SF#45729 – Corrects a font issue in the CSL package that could cause a crash.</li>
+<li>SF#45409 - Corrects multiple issues where multibyte strings were not being handled correctly when working with the Japanese language.</li>
+</ul>
+<p>&nbsp;</p>
 <p><strong>PDF Converter v1.1PlusP4a</strong> (May 22, 2023)</p>
 <p>New Features:</p>
 <ul type="disc">
