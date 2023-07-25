@@ -1,0 +1,892 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix-members.html">List of all members</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">com.datalogics.PDFL.Matrix Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a89a2278be7cc2bcc420294ebc5685d9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#a89a2278be7cc2bcc420294ebc5685d9d">concat</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> Mt)</td></tr>
+<tr class="separator:a89a2278be7cc2bcc420294ebc5685d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98be30613886e8155909d32b3625a1ec"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#a98be30613886e8155909d32b3625a1ec">delete</a> ()</td></tr>
+<tr class="separator:a98be30613886e8155909d32b3625a1ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5787f0f3e36f69f09b5177ee3bf9c595"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#a5787f0f3e36f69f09b5177ee3bf9c595">equals</a> (Object rhs)</td></tr>
+<tr class="separator:a5787f0f3e36f69f09b5177ee3bf9c595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa216a442e40fc7f082218562955bfc15"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#aa216a442e40fc7f082218562955bfc15">getA</a> ()</td></tr>
+<tr class="separator:aa216a442e40fc7f082218562955bfc15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bad3bf204a1c1af2f2adeef29545e31"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#a8bad3bf204a1c1af2f2adeef29545e31">getB</a> ()</td></tr>
+<tr class="separator:a8bad3bf204a1c1af2f2adeef29545e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf68ab1b1185c6a74dcac3a7c5f95e7e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#abf68ab1b1185c6a74dcac3a7c5f95e7e">getC</a> ()</td></tr>
+<tr class="separator:abf68ab1b1185c6a74dcac3a7c5f95e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ae768b709a00a017d33884ef5806659"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#a2ae768b709a00a017d33884ef5806659">getD</a> ()</td></tr>
+<tr class="separator:a2ae768b709a00a017d33884ef5806659"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfa8ad0a38200e7f5f948c2c1a3d73be"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#abfa8ad0a38200e7f5f948c2c1a3d73be">getH</a> ()</td></tr>
+<tr class="separator:abfa8ad0a38200e7f5f948c2c1a3d73be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf82bf5256a7076ce7376d1c6ed8f736"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#abf82bf5256a7076ce7376d1c6ed8f736">getV</a> ()</td></tr>
+<tr class="separator:abf82bf5256a7076ce7376d1c6ed8f736"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af742c49580bfb5ca2db839b28ebddaef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#af742c49580bfb5ca2db839b28ebddaef">invert</a> ()</td></tr>
+<tr class="separator:af742c49580bfb5ca2db839b28ebddaef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6935159937fc529a194d7425d8cdbea5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#a6935159937fc529a194d7425d8cdbea5">Matrix</a> ()</td></tr>
+<tr class="separator:a6935159937fc529a194d7425d8cdbea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f658985989e4161ee014c577e99679e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#a1f658985989e4161ee014c577e99679e">Matrix</a> (double na, double nb, double nc, double nd, double nh, double nv)</td></tr>
+<tr class="separator:a1f658985989e4161ee014c577e99679e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef6d35ae8329ed480e3fa48a3d2af2d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#aef6d35ae8329ed480e3fa48a3d2af2d6">rotate</a> (double T)</td></tr>
+<tr class="separator:aef6d35ae8329ed480e3fa48a3d2af2d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a364c1571961ba3461d8418d6e1d9166b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#a364c1571961ba3461d8418d6e1d9166b">scale</a> (double sx, double sy)</td></tr>
+<tr class="separator:a364c1571961ba3461d8418d6e1d9166b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66c0aad8744bf30195c1ec6a364a1861"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#a66c0aad8744bf30195c1ec6a364a1861">setA</a> (double value)</td></tr>
+<tr class="separator:a66c0aad8744bf30195c1ec6a364a1861"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c1dba5b24d42abdad1e930c53145722"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#a1c1dba5b24d42abdad1e930c53145722">setB</a> (double value)</td></tr>
+<tr class="separator:a1c1dba5b24d42abdad1e930c53145722"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf9d8214340aa0dcf7642c09564eafb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#acf9d8214340aa0dcf7642c09564eafb4">setC</a> (double value)</td></tr>
+<tr class="separator:acf9d8214340aa0dcf7642c09564eafb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4051037186f46661e65ad83a3a7e2d04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#a4051037186f46661e65ad83a3a7e2d04">setD</a> (double value)</td></tr>
+<tr class="separator:a4051037186f46661e65ad83a3a7e2d04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e83658ee705e216ed78bb1e67f8e87a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#a6e83658ee705e216ed78bb1e67f8e87a">setH</a> (double value)</td></tr>
+<tr class="separator:a6e83658ee705e216ed78bb1e67f8e87a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c949051b08f7198f99feff3989dbe38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#a8c949051b08f7198f99feff3989dbe38">setV</a> (double value)</td></tr>
+<tr class="separator:a8c949051b08f7198f99feff3989dbe38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a473ab90872f5a4d2653dcce21fe4556d"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#a473ab90872f5a4d2653dcce21fe4556d">toString</a> ()</td></tr>
+<tr class="separator:a473ab90872f5a4d2653dcce21fe4556d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7293cfeb19c08560b1c63a2f9ab9484b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#a7293cfeb19c08560b1c63a2f9ab9484b">translate</a> (double tx, double ty)</td></tr>
+<tr class="separator:a7293cfeb19c08560b1c63a2f9ab9484b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ab69592368c4f907b33a846b102a40c30"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#ab69592368c4f907b33a846b102a40c30">multiply</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> m1, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> m2)</td></tr>
+<tr class="separator:ab69592368c4f907b33a846b102a40c30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a4bc5e1184c3210e6a5a9ecf6dc27d2b1"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#a4bc5e1184c3210e6a5a9ecf6dc27d2b1">delete</a> (Boolean disposing)</td></tr>
+<tr class="separator:a4bc5e1184c3210e6a5a9ecf6dc27d2b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d02d405692a0164d1631f7e07d993f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#a0d02d405692a0164d1631f7e07d993f9">finalize</a> ()</td></tr>
+<tr class="separator:a0d02d405692a0164d1631f7e07d993f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae9610731d7165789afdf387ad79216d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#aae9610731d7165789afdf387ad79216d">Matrix</a> (long cPtr, boolean cMemoryOwn)</td></tr>
+<tr class="separator:aae9610731d7165789afdf387ad79216d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a8029440688245d0a9f1151d3cfacb916"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#a8029440688245d0a9f1151d3cfacb916">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> obj)</td></tr>
+<tr class="separator:a8029440688245d0a9f1151d3cfacb916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A transformation matrix in a PDF file is specified by six numbers. The matrix is usually in the form of an array containing the six elements [a b c d h v]. </p>
+<p>A translation is specified as [ 1 0 0 1 tx ty], where tx and ty are the distance to translate from the origin of the coordinate system in the horizontal and vertical dimension, respectively. </p>
+<p>A scaling is obtained by [sx 0 0 sy 0 0]. This scales the coordinates so that 1 unit in the horizontal and vertical dimension of the new coordinate system is the same size as sx and sy units, respectively, as in the previous coordinate system. </p>
+<p>A rotation is produced by [ cos T sin T -sin T cos T 0 0 ], which has the effect of rotating the coordinate system axes by an angle T (degrees) counterclockwise. </p>
+<p>This material indicates that the matrix specifying a transformation is premultiplied with the current transformation matrix, i.e., </p>
+<p>M' = Mt * M </p>
+<p>The implementation of the Scale, Rotate, and Translate convenience functions of Matrix reflect the same order of operations, so that they are consistent with the PDF Reference manual. They are also consistent with the scale, rotate, and translate operators in PostScript, from which the coordinate system model in PDF is derived. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aae9610731d7165789afdf387ad79216d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae9610731d7165789afdf387ad79216d">&#9670;&nbsp;</a></span>Matrix() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Matrix.Matrix </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>cPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>cMemoryOwn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6935159937fc529a194d7425d8cdbea5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6935159937fc529a194d7425d8cdbea5">&#9670;&nbsp;</a></span>Matrix() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Matrix.Matrix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>the default constructor creates a transformation matrix to translate the rectangle 1 element (1/72nd of an inch) from the origin. </p>
+
+</div>
+</div>
+<a id="a1f658985989e4161ee014c577e99679e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f658985989e4161ee014c577e99679e">&#9670;&nbsp;</a></span>Matrix() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Matrix.Matrix </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>na</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>nb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>nc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>nd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>nh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>nv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a89a2278be7cc2bcc420294ebc5685d9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89a2278be7cc2bcc420294ebc5685d9d">&#9670;&nbsp;</a></span>concat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> com.datalogics.PDFL.Matrix.concat </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a>&#160;</td>
+          <td class="paramname"><em>Mt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Concatenate a matrix onto an existing matrix. The product returned is: </p>
+<p>M' = Mt * M </p>
+<p>This corresponds to the action of the cm operator. </p>
+<dl class="section return"><dt>Returns</dt><dd>the transformed matrix </dd></dl>
+
+</div>
+</div>
+<a id="a98be30613886e8155909d32b3625a1ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98be30613886e8155909d32b3625a1ec">&#9670;&nbsp;</a></span>delete() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.Matrix.delete </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4bc5e1184c3210e6a5a9ecf6dc27d2b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bc5e1184c3210e6a5a9ecf6dc27d2b1">&#9670;&nbsp;</a></span>delete() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.Matrix.delete </td>
+          <td>(</td>
+          <td class="paramtype">Boolean&#160;</td>
+          <td class="paramname"><em>disposing</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5787f0f3e36f69f09b5177ee3bf9c595"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5787f0f3e36f69f09b5177ee3bf9c595">&#9670;&nbsp;</a></span>equals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.Matrix.equals </td>
+          <td>(</td>
+          <td class="paramtype">Object&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0d02d405692a0164d1631f7e07d993f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d02d405692a0164d1631f7e07d993f9">&#9670;&nbsp;</a></span>finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Matrix.finalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa216a442e40fc7f082218562955bfc15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa216a442e40fc7f082218562955bfc15">&#9670;&nbsp;</a></span>getA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.Matrix.getA </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8bad3bf204a1c1af2f2adeef29545e31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bad3bf204a1c1af2f2adeef29545e31">&#9670;&nbsp;</a></span>getB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.Matrix.getB </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abf68ab1b1185c6a74dcac3a7c5f95e7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf68ab1b1185c6a74dcac3a7c5f95e7e">&#9670;&nbsp;</a></span>getC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.Matrix.getC </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8029440688245d0a9f1151d3cfacb916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8029440688245d0a9f1151d3cfacb916">&#9670;&nbsp;</a></span>getCPtr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static long com.datalogics.PDFL.Matrix.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a>&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text.html#a13cf818313cb87009639098508e41533">com.datalogics.PDFL.Text.addGlyphs()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html#ac5bea8c5eb7e2acb5aa8caac9db45e68">com.datalogics.PDFL.Content.addPage()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text.html#ac6e3af0192f692195469f1987e24b34b">com.datalogics.PDFL.Text.changeMatrixForTextRun()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text.html#a413505b6b95cff6e125e6f492e595a6c">com.datalogics.PDFL.Text.changeTextMatrixForTextRun()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#a89a2278be7cc2bcc420294ebc5685d9d">com.datalogics.PDFL.Matrix.concat()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html#afb73fdbd2ba44874c4a19bdf956bc72a">com.datalogics.PDFL.Point.distanceTransform()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#ab69592368c4f907b33a846b102a40c30">com.datalogics.PDFL.Matrix.multiply()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_params.html#aa1c8d301197303bf2d1257bfac638520">com.datalogics.PDFL.DrawParams.setMatrix()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a417520d327ced87abe28d6c9dbe2382b">com.datalogics.PDFL.Element.setMatrix()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_run.html#ad28edb437de19330f34c09617e0ac855">com.datalogics.PDFL.TextRun.TextRun()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html#aac371e2da56d4b4a64c7374c0f84b642">com.datalogics.PDFL.Point.transform()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_quad.html#a285f8556819e46edff38ace4e62ca2fe">com.datalogics.PDFL.Quad.transform()</a>, and <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a3fb5f2ba222759d44322b39db7ee1429">com.datalogics.PDFL.Rect.transform()</a>.</p>
+
+</div>
+</div>
+<a id="a2ae768b709a00a017d33884ef5806659"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ae768b709a00a017d33884ef5806659">&#9670;&nbsp;</a></span>getD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.Matrix.getD </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abfa8ad0a38200e7f5f948c2c1a3d73be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfa8ad0a38200e7f5f948c2c1a3d73be">&#9670;&nbsp;</a></span>getH()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.Matrix.getH </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abf82bf5256a7076ce7376d1c6ed8f736"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf82bf5256a7076ce7376d1c6ed8f736">&#9670;&nbsp;</a></span>getV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.Matrix.getV </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af742c49580bfb5ca2db839b28ebddaef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af742c49580bfb5ca2db839b28ebddaef">&#9670;&nbsp;</a></span>invert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> com.datalogics.PDFL.Matrix.invert </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Invert the Matrix object and return a new Matrix object. </p>
+
+</div>
+</div>
+<a id="ab69592368c4f907b33a846b102a40c30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab69592368c4f907b33a846b102a40c30">&#9670;&nbsp;</a></span>multiply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> com.datalogics.PDFL.Matrix.multiply </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a>&#160;</td>
+          <td class="paramname"><em>m1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a>&#160;</td>
+          <td class="paramname"><em>m2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Multiply two transformation matrices. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m1</td><td>a matrix </td></tr>
+    <tr><td class="paramname">m2</td><td>a matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the matrix product m1 x m2 </dd></dl>
+
+</div>
+</div>
+<a id="aef6d35ae8329ed480e3fa48a3d2af2d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef6d35ae8329ed480e3fa48a3d2af2d6">&#9670;&nbsp;</a></span>rotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> com.datalogics.PDFL.Matrix.rotate </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>T</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Rotate a matrix by T degrees counterclockwise units. Rotation is done by creating the matrix [ cos T sin T -sin T cos T 0 0 ], and calling the Concat function with that matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>The rotation, counterclockwise </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the result [cos T sin T -sin T 0 0] * M </dd></dl>
+
+</div>
+</div>
+<a id="a364c1571961ba3461d8418d6e1d9166b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a364c1571961ba3461d8418d6e1d9166b">&#9670;&nbsp;</a></span>scale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> com.datalogics.PDFL.Matrix.scale </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>sx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>sy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Scale a matrix by (sx,sy) units. Scaling is done by creating the matrix [sx 0 0 sy 0 0], and calling the Concat function with that matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sx</td><td>X scaling factor </td></tr>
+    <tr><td class="paramname">sy</td><td>Y scaling factor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the result [sx 0 0 sy 0 0] * M </dd></dl>
+
+</div>
+</div>
+<a id="a66c0aad8744bf30195c1ec6a364a1861"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66c0aad8744bf30195c1ec6a364a1861">&#9670;&nbsp;</a></span>setA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Matrix.setA </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1c1dba5b24d42abdad1e930c53145722"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c1dba5b24d42abdad1e930c53145722">&#9670;&nbsp;</a></span>setB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Matrix.setB </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf9d8214340aa0dcf7642c09564eafb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf9d8214340aa0dcf7642c09564eafb4">&#9670;&nbsp;</a></span>setC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Matrix.setC </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4051037186f46661e65ad83a3a7e2d04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4051037186f46661e65ad83a3a7e2d04">&#9670;&nbsp;</a></span>setD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Matrix.setD </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6e83658ee705e216ed78bb1e67f8e87a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e83658ee705e216ed78bb1e67f8e87a">&#9670;&nbsp;</a></span>setH()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Matrix.setH </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8c949051b08f7198f99feff3989dbe38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c949051b08f7198f99feff3989dbe38">&#9670;&nbsp;</a></span>setV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Matrix.setV </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a473ab90872f5a4d2653dcce21fe4556d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a473ab90872f5a4d2653dcce21fe4556d">&#9670;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.datalogics.PDFL.Matrix.toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7293cfeb19c08560b1c63a2f9ab9484b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7293cfeb19c08560b1c63a2f9ab9484b">&#9670;&nbsp;</a></span>translate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> com.datalogics.PDFL.Matrix.translate </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ty</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Translate a matrix by (tx,ty) units. Translation is done by creating the matrix [ 1 0 0 1 tx ty ], and calling the Concat function with that matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tx</td><td>X translation distance </td></tr>
+    <tr><td class="paramname">ty</td><td>Y translation distance </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the result [1 0 0 1 tx ty] * M </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+</body>
+</html>

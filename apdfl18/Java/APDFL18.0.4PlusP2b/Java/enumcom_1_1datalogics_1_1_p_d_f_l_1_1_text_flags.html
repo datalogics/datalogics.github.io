@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('enumcom_1_1datalogics_1_1_p_d_f_l_1_1_text_flags.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_text_flags-members.html">List of all members</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a>  </div>
+  <div class="headertitle">
+<div class="title">com.datalogics.PDFL.TextFlags Enum Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aa8a21e1261b8538d2a1d958b152029ae"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_text_flags.html#aa8a21e1261b8538d2a1d958b152029ae">FlagsToInt</a> (java.lang.Iterable&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_text_flags.html">TextFlags</a> &gt; flags)</td></tr>
+<tr class="separator:aa8a21e1261b8538d2a1d958b152029ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a896f46406402898e07605508b818f0e7"><td class="memItemLeft" align="right" valign="top">static java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_text_flags.html">TextFlags</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_text_flags.html#a896f46406402898e07605508b818f0e7">IntToFlags</a> (int value)</td></tr>
+<tr class="separator:a896f46406402898e07605508b818f0e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a66ca71d2468461ce8643f37c7cb284cc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_text_flags.html#a66ca71d2468461ce8643f37c7cb284cc">TEXT_CHAR</a></td></tr>
+<tr class="separator:a66ca71d2468461ce8643f37c7cb284cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67c2a493b4a8a9a8d1dae4177f0a761e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_text_flags.html#a67c2a493b4a8a9a8d1dae4177f0a761e">TEXT_GET_BOUNDS</a></td></tr>
+<tr class="separator:a67c2a493b4a8a9a8d1dae4177f0a761e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fb6e019e0d29aa92f41b588203cdce5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_text_flags.html#a2fb6e019e0d29aa92f41b588203cdce5">TEXT_PAGE_SPACE</a></td></tr>
+<tr class="separator:a2fb6e019e0d29aa92f41b588203cdce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34bd5dde96bef2bf969bf426da53c17b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_text_flags.html#a34bd5dde96bef2bf969bf426da53c17b">TEXT_RUN</a></td></tr>
+<tr class="separator:a34bd5dde96bef2bf969bf426da53c17b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa8a21e1261b8538d2a1d958b152029ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8a21e1261b8538d2a1d958b152029ae">&#9670;&nbsp;</a></span>FlagsToInt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int com.datalogics.PDFL.TextFlags.FlagsToInt </td>
+          <td>(</td>
+          <td class="paramtype">java.lang.Iterable&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_text_flags.html">TextFlags</a> &gt;&#160;</td>
+          <td class="paramname"><em>flags</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text.html#a13cf818313cb87009639098508e41533">com.datalogics.PDFL.Text.addGlyphs()</a>.</p>
+
+</div>
+</div>
+<a id="a896f46406402898e07605508b818f0e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a896f46406402898e07605508b818f0e7">&#9670;&nbsp;</a></span>IntToFlags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static java.util.EnumSet&lt;<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_text_flags.html">TextFlags</a>&gt; com.datalogics.PDFL.TextFlags.IntToFlags </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a66ca71d2468461ce8643f37c7cb284cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66ca71d2468461ce8643f37c7cb284cc">&#9670;&nbsp;</a></span>TEXT_CHAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.TextFlags.TEXT_CHAR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a67c2a493b4a8a9a8d1dae4177f0a761e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67c2a493b4a8a9a8d1dae4177f0a761e">&#9670;&nbsp;</a></span>TEXT_GET_BOUNDS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.TextFlags.TEXT_GET_BOUNDS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2fb6e019e0d29aa92f41b588203cdce5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fb6e019e0d29aa92f41b588203cdce5">&#9670;&nbsp;</a></span>TEXT_PAGE_SPACE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.TextFlags.TEXT_PAGE_SPACE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a34bd5dde96bef2bf969bf426da53c17b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34bd5dde96bef2bf969bf426da53c17b">&#9670;&nbsp;</a></span>TEXT_RUN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.TextFlags.TEXT_RUN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+</body>
+</html>

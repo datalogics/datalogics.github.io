@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library .NET Framework Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-csharp-dotnet-framework-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://www.nuget.org/packages/Adobe.PDF.Library.LM.NETFramework" id="pkglink"><img id="pkg-download-img" alt="Nuget Trial Download" src="https://img.shields.io/nuget/dt/Adobe.PDF.Library.LM.NETFramework?color=blue&label=APDFL%20.NET%20Framework%20Free%20Trial&logo=NuGet&style=plastic"/></a>
+        </p>
+      </div></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_p_d_f_processor_p_d_f_a_conversion_option_8cs.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
+  <div class="headertitle">
+<div class="title">PDFProcessorPDFAConversionOption.cs File Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespace_datalogics"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_datalogics.html">Datalogics</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_datalogics_1_1_p_d_f_l"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html">Datalogics.PDFL</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a9e58eaac057132c6ed96a159f8fed6cf"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a9e58eaac057132c6ed96a159f8fed6cf">Datalogics.PDFL.PDFProcessorPDFAConversionOption</a> { <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a9e58eaac057132c6ed96a159f8fed6cfa9072cd5a6e1a9fa18cd02595e12f1520">Datalogics.PDFL.KPDFProcessorConvertToPDFA1aRGB</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a9e58eaac057132c6ed96a159f8fed6cfad2980e73d77090001ee0fad15052b6ed">Datalogics.PDFL.KPDFProcessorConvertToPDFA1aCMYK</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a9e58eaac057132c6ed96a159f8fed6cfac56698a346bf1e29f1e49528804e89b1">Datalogics.PDFL.KPDFProcessorConvertToPDFA1bRGB</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a9e58eaac057132c6ed96a159f8fed6cfa1a7dfc15e9b3f10f7b1ceb22b6a5c8b8">Datalogics.PDFL.KPDFProcessorConvertToPDFA1bCMYK</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a9e58eaac057132c6ed96a159f8fed6cfad8a8adfe7d3989044e9635560629f0ab">Datalogics.PDFL.KPDFProcessorConvertToPDFA2aRGB</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a9e58eaac057132c6ed96a159f8fed6cfada0fc2eeb8badd888271417f441d3145">Datalogics.PDFL.KPDFProcessorConvertToPDFA2aCMYK</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a9e58eaac057132c6ed96a159f8fed6cfa7d913efd07ee087d850eb3a1debabf24">Datalogics.PDFL.KPDFProcessorConvertToPDFA2bRGB</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a9e58eaac057132c6ed96a159f8fed6cfa17c09b6a4b7046d073fabe34cafbb2b5">Datalogics.PDFL.KPDFProcessorConvertToPDFA2bCMYK</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a9e58eaac057132c6ed96a159f8fed6cfabf5402fa1745fecc2cd8c1b47a26fcef">Datalogics.PDFL.KPDFProcessorConvertToPDFA2uRGB</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a9e58eaac057132c6ed96a159f8fed6cfa31ddaaa01e2c93ab26d4c5c3e06a2819">Datalogics.PDFL.KPDFProcessorConvertToPDFA2uCMYK</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a9e58eaac057132c6ed96a159f8fed6cfa6844dbf7900f4aa4bb9066a566756bdb">Datalogics.PDFL.KPDFProcessorConvertToPDFA3aRGB</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a9e58eaac057132c6ed96a159f8fed6cfa28775508406c54bb013dacc0e81b8566">Datalogics.PDFL.KPDFProcessorConvertToPDFA3aCMYK</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a9e58eaac057132c6ed96a159f8fed6cfa34c4391ceb661119182fcb1f857d5b62">Datalogics.PDFL.KPDFProcessorConvertToPDFA3bRGB</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a9e58eaac057132c6ed96a159f8fed6cfaf2aecaa78a70d777e4424471d5f690bc">Datalogics.PDFL.KPDFProcessorConvertToPDFA3bCMYK</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a9e58eaac057132c6ed96a159f8fed6cfa095b63a08ad0df254a803799766ce7d7">Datalogics.PDFL.KPDFProcessorConvertToPDFA3uRGB</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a9e58eaac057132c6ed96a159f8fed6cfa6c964163759774ece89548a1580e454d">Datalogics.PDFL.KPDFProcessorConvertToPDFA3uCMYK</a>
+<br />
+ }</td></tr>
+<tr class="separator:a9e58eaac057132c6ed96a159f8fed6cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+</body>
+</html>
