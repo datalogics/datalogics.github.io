@@ -1,0 +1,648 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library .NET Framework Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-csharp-dotnet-framework-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://www.nuget.org/packages/Adobe.PDF.Library.LM.NETFramework" id="pkglink"><img id="pkg-download-img" alt="Nuget Trial Download" src="https://img.shields.io/nuget/dt/Adobe.PDF.Library.LM.NETFramework?color=blue&label=APDFL%20.NET%20Framework%20Free%20Trial&logo=NuGet&style=plastic"/></a>
+        </p>
+      </div></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_datalogics_1_1_p_d_f_l_1_1_post_script_calculator_function.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="class_datalogics_1_1_p_d_f_l_1_1_post_script_calculator_function-members.html">List of all members</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#properties">Properties</a>  </div>
+  <div class="headertitle">
+<div class="title">Datalogics.PDFL.PostScriptCalculatorFunction Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p> 
+ <a href="class_datalogics_1_1_p_d_f_l_1_1_post_script_calculator_function.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:addaa23ef49089e26b10843c929ff971d"><td class="memItemLeft" align="right" valign="top">virtual System.Collections.Generic.IList&lt; System.Double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html#addaa23ef49089e26b10843c929ff971d">Apply</a> (System.Collections.Generic.IList&lt; System.Double &gt; args)</td></tr>
+<tr class="separator:addaa23ef49089e26b10843c929ff971d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95a1fa6f3eb1533cd24adf35e1b07faa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html#a95a1fa6f3eb1533cd24adf35e1b07faa">Dispose</a> ()</td></tr>
+<tr class="separator:a95a1fa6f3eb1533cd24adf35e1b07faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b8c5f788e17ca9cd6d8c8e35ae62334"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_post_script_calculator_function.html#a3b8c5f788e17ca9cd6d8c8e35ae62334">Dispose</a> (bool disposing)</td></tr>
+<tr class="separator:a3b8c5f788e17ca9cd6d8c8e35ae62334"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a655eeaa2af9409dbf3d4f188618eaecc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_post_script_calculator_function.html#a655eeaa2af9409dbf3d4f188618eaecc">PostScriptCalculatorFunction</a> (System.Collections.Generic.IList&lt; System.Double &gt; domain, System.Collections.Generic.IList&lt; System.Double &gt; range, string code)</td></tr>
+<tr class="separator:a655eeaa2af9409dbf3d4f188618eaecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a138a16c067b76691b4209bf323b0f092"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_post_script_calculator_function.html#a138a16c067b76691b4209bf323b0f092">ToString</a> ()</td></tr>
+<tr class="separator:a138a16c067b76691b4209bf323b0f092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aa12f80638f842e5c4dc4bb4ef44432cc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html#aa12f80638f842e5c4dc4bb4ef44432cc">operator!=</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html">Function</a> a, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html">Function</a> b)</td></tr>
+<tr class="separator:aa12f80638f842e5c4dc4bb4ef44432cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5052c3f2380244a4f84b5953da7f9825"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html#a5052c3f2380244a4f84b5953da7f9825">operator==</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html">Function</a> a, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html">Function</a> b)</td></tr>
+<tr class="separator:a5052c3f2380244a4f84b5953da7f9825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:ac985650ff7ce8df6d94bd062497b7d7f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_post_script_calculator_function.html#ac985650ff7ce8df6d94bd062497b7d7f">Code</a><code> [get]</code></td></tr>
+<tr class="separator:ac985650ff7ce8df6d94bd062497b7d7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2810d95aa501badb77008240b37a36f8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html">Function</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html#a2810d95aa501badb77008240b37a36f8">Default</a><code> [get]</code></td></tr>
+<tr class="separator:a2810d95aa501badb77008240b37a36f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ba0e5429e98d9fa76a34ee554dde97a"><td class="memItemLeft" align="right" valign="top">System.Collections.Generic.IList&lt; System.Double &gt;?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html#a2ba0e5429e98d9fa76a34ee554dde97a">Domain</a><code> [get, set]</code></td></tr>
+<tr class="separator:a2ba0e5429e98d9fa76a34ee554dde97a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57d0cc4c9ee1c23cc37e0d6b2965ffa3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html">Function</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html#a57d0cc4c9ee1c23cc37e0d6b2965ffa3">Identity</a><code> [get]</code></td></tr>
+<tr class="separator:a57d0cc4c9ee1c23cc37e0d6b2965ffa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23bbafc8a849f2c158f09760a5843059"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html#a23bbafc8a849f2c158f09760a5843059">NInputs</a><code> [get]</code></td></tr>
+<tr class="separator:a23bbafc8a849f2c158f09760a5843059"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04bc9c804c091fba9ccb607c3cbcd84f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html#a04bc9c804c091fba9ccb607c3cbcd84f">NOutputs</a><code> [get]</code></td></tr>
+<tr class="separator:a04bc9c804c091fba9ccb607c3cbcd84f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00e0edfe6da415ee08c3e27e09b2cfaa"><td class="memItemLeft" align="right" valign="top">System.Collections.Generic.IList&lt; System.Double &gt;?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html#a00e0edfe6da415ee08c3e27e09b2cfaa">Range</a><code> [get, set]</code></td></tr>
+<tr class="separator:a00e0edfe6da415ee08c3e27e09b2cfaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9de17232840a94f266a7708c0438c1c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_stream.html">PDFStream</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_post_script_calculator_function.html#a9de17232840a94f266a7708c0438c1c9">Stream</a><code> [get]</code></td></tr>
+<tr class="separator:a9de17232840a94f266a7708c0438c1c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A function represented as a stream containing code written in a small subset of the PostScript language. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a655eeaa2af9409dbf3d4f188618eaecc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a655eeaa2af9409dbf3d4f188618eaecc">&#9670;&nbsp;</a></span>PostScriptCalculatorFunction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.PostScriptCalculatorFunction.PostScriptCalculatorFunction </td>
+          <td>(</td>
+          <td class="paramtype">System.Collections.Generic.IList&lt; System.Double &gt;&#160;</td>
+          <td class="paramname"><em>domain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">System.Collections.Generic.IList&lt; System.Double &gt;&#160;</td>
+          <td class="paramname"><em>range</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>code</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create PostScript calculator function, represented as a stream containing code written in a small subset of the PostScript language.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">domain</td><td>an array of 2 * m numbers, where m is the number of input values </td></tr>
+    <tr><td class="paramname">range</td><td>an array of 2 * n numbers, where n is the number of output values </td></tr>
+    <tr><td class="paramname">code</td><td>the code of the function, written in a subset of the PostScript language </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="addaa23ef49089e26b10843c929ff971d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addaa23ef49089e26b10843c929ff971d">&#9670;&nbsp;</a></span>Apply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual System.Collections.Generic.IList&lt;System.Double&gt; Datalogics.PDFL.Function.Apply </td>
+          <td>(</td>
+          <td class="paramtype">System.Collections.Generic.IList&lt; System.Double &gt;&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Apply the function to supplied input values</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>input values for the function. The number of input values must agree with the number of inputs the function takes.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a list of the result values from the function </dd></dl>
+
+<p>Reimplemented in <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_named_function.html#a6cdd7ce9ce0f20ee633b3746dab40dc1">Datalogics.PDFL.NamedFunction</a>.</p>
+
+</div>
+</div>
+<a id="a95a1fa6f3eb1533cd24adf35e1b07faa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95a1fa6f3eb1533cd24adf35e1b07faa">&#9670;&nbsp;</a></span>Dispose() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Function.Dispose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3b8c5f788e17ca9cd6d8c8e35ae62334"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b8c5f788e17ca9cd6d8c8e35ae62334">&#9670;&nbsp;</a></span>Dispose() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void Datalogics.PDFL.PostScriptCalculatorFunction.Dispose </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>disposing</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html#ad480422c28a10ed2d1881b3de3118eb7">Datalogics.PDFL.Function</a>.</p>
+
+</div>
+</div>
+<a id="aa12f80638f842e5c4dc4bb4ef44432cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa12f80638f842e5c4dc4bb4ef44432cc">&#9670;&nbsp;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool Datalogics.PDFL.Function.operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html">Function</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html">Function</a>&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5052c3f2380244a4f84b5953da7f9825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5052c3f2380244a4f84b5953da7f9825">&#9670;&nbsp;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool Datalogics.PDFL.Function.operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html">Function</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html">Function</a>&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a138a16c067b76691b4209bf323b0f092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a138a16c067b76691b4209bf323b0f092">&#9670;&nbsp;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override string Datalogics.PDFL.PostScriptCalculatorFunction.ToString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p></p>
+<p>A string value describing the function. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="ac985650ff7ce8df6d94bd062497b7d7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac985650ff7ce8df6d94bd062497b7d7f">&#9670;&nbsp;</a></span>Code</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Datalogics.PDFL.PostScriptCalculatorFunction.Code</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>The code of the function, written in a subset of the PostScript language. </p>
+
+</div>
+</div>
+<a id="a2810d95aa501badb77008240b37a36f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2810d95aa501badb77008240b37a36f8">&#9670;&nbsp;</a></span>Default</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html">Function</a> Datalogics.PDFL.Function.Default</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2ba0e5429e98d9fa76a34ee554dde97a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ba0e5429e98d9fa76a34ee554dde97a">&#9670;&nbsp;</a></span>Domain</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">System.Collections.Generic.IList&lt;System.Double&gt;? Datalogics.PDFL.Function.Domain</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The domain of the function. 2 * m elements, where m is the number of inputs to the function.</p>
+<p>Each successive pair of elements gives the minimum and maximum values for one of the inputs.</p>
+<p>Input values to the function are clamped to these minimum and maximum values. </p>
+
+</div>
+</div>
+<a id="a57d0cc4c9ee1c23cc37e0d6b2965ffa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57d0cc4c9ee1c23cc37e0d6b2965ffa3">&#9670;&nbsp;</a></span>Identity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html">Function</a> Datalogics.PDFL.Function.Identity</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a23bbafc8a849f2c158f09760a5843059"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23bbafc8a849f2c158f09760a5843059">&#9670;&nbsp;</a></span>NInputs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Datalogics.PDFL.Function.NInputs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>The number of inputs to the function. </p>
+
+</div>
+</div>
+<a id="a04bc9c804c091fba9ccb607c3cbcd84f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04bc9c804c091fba9ccb607c3cbcd84f">&#9670;&nbsp;</a></span>NOutputs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Datalogics.PDFL.Function.NOutputs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>The number of outputs from the function. </p>
+
+</div>
+</div>
+<a id="a00e0edfe6da415ee08c3e27e09b2cfaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00e0edfe6da415ee08c3e27e09b2cfaa">&#9670;&nbsp;</a></span>Range</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">System.Collections.Generic.IList&lt;System.Double&gt;? Datalogics.PDFL.Function.Range</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The range of the function. 2 * n elements, where n is the number of outputs from the function.</p>
+<p>Each successive pair of elements gives the minimum and maximum values for one of the outputs.</p>
+<p>Output values from the function are clamped to these minimum and maximum values. </p>
+
+</div>
+</div>
+<a id="a9de17232840a94f266a7708c0438c1c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9de17232840a94f266a7708c0438c1c9">&#9670;&nbsp;</a></span>Stream</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_stream.html">PDFStream</a> Datalogics.PDFL.PostScriptCalculatorFunction.Stream</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>The underlying stream for this PostScriptCalculatorFunction. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+</body>
+</html>

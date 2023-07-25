@@ -1,0 +1,1164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library .NET Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-csharp-dotnet-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://www.nuget.org/packages/Adobe.PDF.Library.LM.NET" id="pkglink"><img id="pkg-download-img" alt="Nuget Trial Download" src="https://img.shields.io/nuget/dt/Adobe.PDF.Library.LM.NET?color=blue&label=APDFL%20.NET%20Free%20Trial&logo=NuGet&style=plastic"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_datalogics_1_1_p_d_f_l_1_1_font.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="class_datalogics_1_1_p_d_f_l_1_1_font-members.html">List of all members</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#properties">Properties</a>  </div>
+  <div class="headertitle">
+<div class="title">Datalogics.PDFL.Font Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p> 
+ <a href="class_datalogics_1_1_p_d_f_l_1_1_font.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a7bff203902fd4412315474b6bac4363a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a7bff203902fd4412315474b6bac4363a">Dispose</a> ()</td></tr>
+<tr class="separator:a7bff203902fd4412315474b6bac4363a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a92d850ce69d70fdfd24bcd9ff67e49"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a7a92d850ce69d70fdfd24bcd9ff67e49">Dispose</a> (bool disposing)</td></tr>
+<tr class="separator:a7a92d850ce69d70fdfd24bcd9ff67e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d9d1ab83b5b15eb69500f419b5d6181"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a7d9d1ab83b5b15eb69500f419b5d6181">EmbedNow</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html">Document</a> doc)</td></tr>
+<tr class="separator:a7d9d1ab83b5b15eb69500f419b5d6181"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6123cc390ebc73426210ea225e77d161"><td class="memItemLeft" align="right" valign="top">uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a6123cc390ebc73426210ea225e77d161">FindIndexOfFirstUnrepresentableChar</a> (string text)</td></tr>
+<tr class="separator:a6123cc390ebc73426210ea225e77d161"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad15daad8466f1a425fc0dad2e8f9f725"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#ad15daad8466f1a425fc0dad2e8f9f725">Font</a> (string fontName)</td></tr>
+<tr class="separator:ad15daad8466f1a425fc0dad2e8f9f725"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c326df1cae29108430d88a50899289f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a1c326df1cae29108430d88a50899289f">Font</a> (string fontName, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a63ad57c0ffe8a9ced89cfefd572dfef4">FontCreateFlags</a> createFlags)</td></tr>
+<tr class="separator:a1c326df1cae29108430d88a50899289f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a978f6a7c1f64bd9efed19376341abc7b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a978f6a7c1f64bd9efed19376341abc7b">Font</a> (string fontName, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a63ad57c0ffe8a9ced89cfefd572dfef4">FontCreateFlags</a> createFlags, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#ab1e5f7b0f0f334863e111bc10d28bc95">WritingMode</a> wrMode)</td></tr>
+<tr class="separator:a978f6a7c1f64bd9efed19376341abc7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b7a2631fbf26029a682264aa305384f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a7b7a2631fbf26029a682264aa305384f">IsFromDoc</a> ()</td></tr>
+<tr class="separator:a7b7a2631fbf26029a682264aa305384f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1929a03ff9ad15c37bdf79b632abc35"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#ad1929a03ff9ad15c37bdf79b632abc35">IsTextRepresentable</a> (string text)</td></tr>
+<tr class="separator:ad1929a03ff9ad15c37bdf79b632abc35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acac9bd99a449ab76cd83223a791620aa"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#acac9bd99a449ab76cd83223a791620aa">MeasureTextWidth</a> (string text, double fontSize)</td></tr>
+<tr class="separator:acac9bd99a449ab76cd83223a791620aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a231345cc8003adc555d2b731e072dcd3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a231345cc8003adc555d2b731e072dcd3">Ascent</a><code> [get]</code></td></tr>
+<tr class="memdesc:a231345cc8003adc555d2b731e072dcd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">the Ascent value from the font descriptor. This is the maximum height above the baseline reached by glyphs in this font, excluding the height of glyphs for accented characters. <a href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a231345cc8003adc555d2b731e072dcd3">More...</a><br /></td></tr>
+<tr class="separator:a231345cc8003adc555d2b731e072dcd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d7c7a2960566240d63c6a4bc8151712"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a3d7c7a2960566240d63c6a4bc8151712">AvgWidth</a><code> [get]</code></td></tr>
+<tr class="memdesc:a3d7c7a2960566240d63c6a4bc8151712"><td class="mdescLeft">&#160;</td><td class="mdescRight">the AvgWidth value from the font descriptor. This is the average width of glyphs in the font, or 0 if the value is not defined in the font descriptor. <a href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a3d7c7a2960566240d63c6a4bc8151712">More...</a><br /></td></tr>
+<tr class="separator:a3d7c7a2960566240d63c6a4bc8151712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb69c6d5f95d130f1cfd99c499acbb86"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#abb69c6d5f95d130f1cfd99c499acbb86">CapHeight</a><code> [get]</code></td></tr>
+<tr class="memdesc:abb69c6d5f95d130f1cfd99c499acbb86"><td class="mdescLeft">&#160;</td><td class="mdescRight">the CapHeight value from the font descriptor. This is the vertical coordinate of the top of flat capital letters, measured from the baseline, or 0 if the value is not defined in the font descriptor. <a href="class_datalogics_1_1_p_d_f_l_1_1_font.html#abb69c6d5f95d130f1cfd99c499acbb86">More...</a><br /></td></tr>
+<tr class="separator:abb69c6d5f95d130f1cfd99c499acbb86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59899449726a6e7dff61f9decb96eab5"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a59899449726a6e7dff61f9decb96eab5">CidFontType</a><code> [get]</code></td></tr>
+<tr class="separator:a59899449726a6e7dff61f9decb96eab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae09f53313c6d26b5de49790dd01b2fb6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#ae09f53313c6d26b5de49790dd01b2fb6">Descent</a><code> [get]</code></td></tr>
+<tr class="memdesc:ae09f53313c6d26b5de49790dd01b2fb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">the Descent value from the font descriptor. This is the maximum depth below the baseline reached by glyphs in this font. The value is a negative number. <a href="class_datalogics_1_1_p_d_f_l_1_1_font.html#ae09f53313c6d26b5de49790dd01b2fb6">More...</a><br /></td></tr>
+<tr class="separator:ae09f53313c6d26b5de49790dd01b2fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a936790686a0b5be0fc6d3945344ec5e9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a936790686a0b5be0fc6d3945344ec5e9">Embedded</a><code> [get]</code></td></tr>
+<tr class="separator:a936790686a0b5be0fc6d3945344ec5e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9622ecefa6e42cf9c59c1ad73b1d90b7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a9622ecefa6e42cf9c59c1ad73b1d90b7">Encoding</a><code> [get]</code></td></tr>
+<tr class="separator:a9622ecefa6e42cf9c59c1ad73b1d90b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55e7a9bc780394ef0f6b43a673e66ae7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_encoding_info.html">EncodingInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a55e7a9bc780394ef0f6b43a673e66ae7">EncodingInfo</a><code> [get]</code></td></tr>
+<tr class="separator:a55e7a9bc780394ef0f6b43a673e66ae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c530abf870e00d8412fa3255838452d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#ac9786b60f1764d83f9c5c09f0221817a">FontFlags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a8c530abf870e00d8412fa3255838452d">Flags</a><code> [get]</code></td></tr>
+<tr class="separator:a8c530abf870e00d8412fa3255838452d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5abb60f131b803090f176fc8754304cb"><td class="memItemLeft" align="right" valign="top">static System.Collections.Generic.IList&lt; <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html">Font</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a5abb60f131b803090f176fc8754304cb">FontList</a><code> [get]</code></td></tr>
+<tr class="separator:a5abb60f131b803090f176fc8754304cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13d035aaf18e11ca049dada0b074e879"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a13d035aaf18e11ca049dada0b074e879">FullName</a><code> [get]</code></td></tr>
+<tr class="separator:a13d035aaf18e11ca049dada0b074e879"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e8bd3fc9ffca5429393e1e735e3f7cd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a3e8bd3fc9ffca5429393e1e735e3f7cd">ItalicAngle</a><code> [get]</code></td></tr>
+<tr class="memdesc:a3e8bd3fc9ffca5429393e1e735e3f7cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">the ItalicAngle value from the font descriptor. This is the angle, expressed in degrees counterclockwise from the vertical, of the dominant vertical strokes of the font, defined in the font descriptor. <a href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a3e8bd3fc9ffca5429393e1e735e3f7cd">More...</a><br /></td></tr>
+<tr class="separator:a3e8bd3fc9ffca5429393e1e735e3f7cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a667974899a007c8d718e6b5e1414c6c9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a667974899a007c8d718e6b5e1414c6c9">Leading</a><code> [get]</code></td></tr>
+<tr class="memdesc:a667974899a007c8d718e6b5e1414c6c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">the Leading value from the font descriptor. This is the spacing between baselines of consecutive lines of text, or 0 if the value is not defined in the font descriptor. <a href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a667974899a007c8d718e6b5e1414c6c9">More...</a><br /></td></tr>
+<tr class="separator:a667974899a007c8d718e6b5e1414c6c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae11b2f3423052e0e5cde690c77467cf8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#ae11b2f3423052e0e5cde690c77467cf8">MaxWidth</a><code> [get]</code></td></tr>
+<tr class="memdesc:ae11b2f3423052e0e5cde690c77467cf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">the MaxWidth value from the font descriptor. This is the maximum glyph width present in the font, or 0 if the value is not defined in the font descriptor. <a href="class_datalogics_1_1_p_d_f_l_1_1_font.html#ae11b2f3423052e0e5cde690c77467cf8">More...</a><br /></td></tr>
+<tr class="separator:ae11b2f3423052e0e5cde690c77467cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88d5425ec0dfdc03fd57bfacb77e0fd3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a88d5425ec0dfdc03fd57bfacb77e0fd3">MissingWidth</a><code> [get]</code></td></tr>
+<tr class="memdesc:a88d5425ec0dfdc03fd57bfacb77e0fd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">the MissingWidth value from the font descriptor. This is the width given to characters that do not have corresponding glyphs defined in the font, or 0 if the value is not defined in the font descriptor. <a href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a88d5425ec0dfdc03fd57bfacb77e0fd3">More...</a><br /></td></tr>
+<tr class="separator:a88d5425ec0dfdc03fd57bfacb77e0fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62ca3f1246c20600b6871565736ca5e7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a62ca3f1246c20600b6871565736ca5e7">Name</a><code> [get]</code></td></tr>
+<tr class="separator:a62ca3f1246c20600b6871565736ca5e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6864a11758f632841f1bd5bd06bb27af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a6864a11758f632841f1bd5bd06bb27af">PDFDict</a><code> [get]</code></td></tr>
+<tr class="separator:a6864a11758f632841f1bd5bd06bb27af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a171a30cd0504421cb9dfc91a3d5fa20a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a171a30cd0504421cb9dfc91a3d5fa20a">StemH</a><code> [get]</code></td></tr>
+<tr class="memdesc:a171a30cd0504421cb9dfc91a3d5fa20a"><td class="mdescLeft">&#160;</td><td class="mdescRight">the StemH value from the font descriptor. This is the vertical thickness of the dominant horizontal stems of the font's glyphs, or 0 if the value is not defined in the font descriptor. <a href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a171a30cd0504421cb9dfc91a3d5fa20a">More...</a><br /></td></tr>
+<tr class="separator:a171a30cd0504421cb9dfc91a3d5fa20a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a413d413bc3a706bae84b7557b6fa7082"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a413d413bc3a706bae84b7557b6fa7082">StemV</a><code> [get]</code></td></tr>
+<tr class="memdesc:a413d413bc3a706bae84b7557b6fa7082"><td class="mdescLeft">&#160;</td><td class="mdescRight">the StemV value from the font descriptor. This is the horizontal thickness of the dominant vertical stems of the font's glyphs, or 0 if the value is not defined in the font descriptor. <a href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a413d413bc3a706bae84b7557b6fa7082">More...</a><br /></td></tr>
+<tr class="separator:a413d413bc3a706bae84b7557b6fa7082"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0be08f299d51347bf93b68e06aca7392"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a0be08f299d51347bf93b68e06aca7392">Type</a><code> [get]</code></td></tr>
+<tr class="separator:a0be08f299d51347bf93b68e06aca7392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a212a3dc49f59ad5fb873f622096f43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#ab1e5f7b0f0f334863e111bc10d28bc95">WritingMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a1a212a3dc49f59ad5fb873f622096f43">WritingMode</a><code> [get]</code></td></tr>
+<tr class="memdesc:a1a212a3dc49f59ad5fb873f622096f43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the writing mode of the font. The writing mode of the fontwhether it will place glyphs horizontally or vertically. Text written with this font will run in the direction of the writing mode <a href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a1a212a3dc49f59ad5fb873f622096f43">More...</a><br /></td></tr>
+<tr class="separator:a1a212a3dc49f59ad5fb873f622096f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ec405e4bf25150bf6f5b372b5cf0234"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a6ec405e4bf25150bf6f5b372b5cf0234">XHeight</a><code> [get]</code></td></tr>
+<tr class="memdesc:a6ec405e4bf25150bf6f5b372b5cf0234"><td class="mdescLeft">&#160;</td><td class="mdescRight">the XHeight value from the font descriptor. This is the vertical coordinate of the top of flat nonascending lowercase letters in fonts that have Latin characters, as measured from the baseline, or 0 if the value is not defined in the font descriptor. <a href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a6ec405e4bf25150bf6f5b372b5cf0234">More...</a><br /></td></tr>
+<tr class="separator:a6ec405e4bf25150bf6f5b372b5cf0234"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents a font. Defines the typeface, size, style (bold, italic), Unicode values, and other details. </p>
+<p>The Font class represents a font installed on the system.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad15daad8466f1a425fc0dad2e8f9f725"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad15daad8466f1a425fc0dad2e8f9f725">&#9670;&nbsp;</a></span>Font() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.Font.Font </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>fontName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Find a font with the specified name, and construct a Font object from it. </p>
+<p>Otherwise, it makes a font with the default encoding (MacRomanEncoding on Macs, WinAnsiEncoding elsewhere, or for symbol fonts, their own custom encoding). There is not a way to specify another encoding for the font.</p>
+<p>When setting text, it checks to see if the text is representable in the font's encoding. If it is not, then DLE makes a "unicode font" with an Identity-H encoding and uses that to set the text. For non-Type0 fonts, this may result in two versions of a font in the output document.</p>
+<p>PDFL enforces the following requirements on fonts:</p>
+<ul>
+<li>
+TrueTypes used as CID fonts must be embedded.</li>
+<li>
+All CID fonts that are embedded must be subsetted.</li>
+<li>
+CID fonts that are marked as embedded get their DoNotEmbed flag turned off (or else PDFL won't make a PDEFont from the SysFont).</li>
+</ul>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">BadInput</td><td>A font with the specified name could not be found.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1c326df1cae29108430d88a50899289f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c326df1cae29108430d88a50899289f">&#9670;&nbsp;</a></span>Font() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.Font.Font </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>fontName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a63ad57c0ffe8a9ced89cfefd572dfef4">FontCreateFlags</a>&#160;</td>
+          <td class="paramname"><em>createFlags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Find a font with the specified name, and construct a Font object from it. </p>
+<p>Otherwise, it makes a font with the default encoding (MacRomanEncoding on Macs, WinAnsiEncoding elsewhere, or for symbol fonts, their own custom encoding). There is not a way to specify another encoding for the font.</p>
+<p>When setting text, it checks to see if the text is representable in the font's encoding. If it is not, then DLE makes a "unicode font" with an Identity-H encoding and uses that to set the text. For non-Type0 fonts, this may result in two versions of a font in the output document.</p>
+<p>PDFL enforces the following requirements on fonts:</p>
+<ul>
+<li>
+TrueTypes used as CID fonts must be embedded.</li>
+<li>
+All CID fonts that are embedded must be subsetted.</li>
+<li>
+CID fonts that are marked as embedded get their DoNotEmbed flag turned off (or else PDFL won't make a PDEFont from the SysFont).</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fontName</td><td>the name of the font to create </td></tr>
+    <tr><td class="paramname">createFlags</td><td>flags specifying embedding and other options for the use of a font in the document</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">BadInput</td><td>A font with the specified name could not be found.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a978f6a7c1f64bd9efed19376341abc7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a978f6a7c1f64bd9efed19376341abc7b">&#9670;&nbsp;</a></span>Font() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.Font.Font </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>fontName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a63ad57c0ffe8a9ced89cfefd572dfef4">FontCreateFlags</a>&#160;</td>
+          <td class="paramname"><em>createFlags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#ab1e5f7b0f0f334863e111bc10d28bc95">WritingMode</a>&#160;</td>
+          <td class="paramname"><em>wrMode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Find a font with the specified name, and construct a Font object from it. </p>
+<p>Otherwise, it makes a font with the default encoding (MacRomanEncoding on Macs, WinAnsiEncoding elsewhere, or for symbol fonts, their own custom encoding). There is not a way to specify another encoding for the font.</p>
+<p>When setting text, it checks to see if the text is representable in the font's encoding. If it is not, then DLE makes a "unicode font" with an Identity-H or Identity-V encoding and uses that to set the text. For non-Type0 fonts, this may result in two versions of a font in the output document.</p>
+<p>PDFL enforces the following requirements on fonts:</p>
+<ul>
+<li>
+TrueTypes used as CID fonts must be embedded.</li>
+<li>
+All CID fonts that are embedded must be subsetted.</li>
+<li>
+CID fonts that are marked as embedded get their DoNotEmbed flag turned off (or else PDFL won't make a PDEFont from the SysFont).</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fontName</td><td>the name of the font to create </td></tr>
+    <tr><td class="paramname">createFlags</td><td>flags specifying embedding and other options for the use of a font in the document </td></tr>
+    <tr><td class="paramname">wrMode</td><td>determines whether text will be printed horizontally or vertically</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">BadInput</td><td>A font with the specified name could not be found.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7bff203902fd4412315474b6bac4363a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bff203902fd4412315474b6bac4363a">&#9670;&nbsp;</a></span>Dispose() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Font.Dispose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7a92d850ce69d70fdfd24bcd9ff67e49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a92d850ce69d70fdfd24bcd9ff67e49">&#9670;&nbsp;</a></span>Dispose() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Datalogics.PDFL.Font.Dispose </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>disposing</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Destructor. </p>
+
+</div>
+</div>
+<a id="a7d9d1ab83b5b15eb69500f419b5d6181"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d9d1ab83b5b15eb69500f419b5d6181">&#9670;&nbsp;</a></span>EmbedNow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Font.EmbedNow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html">Document</a>&#160;</td>
+          <td class="paramname"><em>doc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Embeds the Font.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">doc</td><td>the Document the Font is embedded into</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6123cc390ebc73426210ea225e77d161"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6123cc390ebc73426210ea225e77d161">&#9670;&nbsp;</a></span>FindIndexOfFirstUnrepresentableChar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint Datalogics.PDFL.Font.FindIndexOfFirstUnrepresentableChar </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Find the index of the first character that cannot be represented in this font. This will return the index of the first character in the string for which the font has no glyph. If all characters can be represented (i.e. if IsTextRepresentable() would return true), this will return the length of the string.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>the text to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The index of the first character that cannot be represented in this font.</dd></dl>
+
+</div>
+</div>
+<a id="a7b7a2631fbf26029a682264aa305384f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b7a2631fbf26029a682264aa305384f">&#9670;&nbsp;</a></span>IsFromDoc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.Font.IsFromDoc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad1929a03ff9ad15c37bdf79b632abc35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1929a03ff9ad15c37bdf79b632abc35">&#9670;&nbsp;</a></span>IsTextRepresentable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.Font.IsTextRepresentable </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Is this text representable in this font?</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>the text to check</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acac9bd99a449ab76cd83223a791620aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acac9bd99a449ab76cd83223a791620aa">&#9670;&nbsp;</a></span>MeasureTextWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.Font.MeasureTextWidth </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>fontSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Measures the width of the specified text in points, using the Font at the specified size.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>the Text to be measured </td></tr>
+    <tr><td class="paramname">fontSize</td><td>the Font size to be used </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a231345cc8003adc555d2b731e072dcd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a231345cc8003adc555d2b731e072dcd3">&#9670;&nbsp;</a></span>Ascent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.Font.Ascent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the Ascent value from the font descriptor. This is the maximum height above the baseline reached by glyphs in this font, excluding the height of glyphs for accented characters.</p>
+<dl class="section return"><dt>Returns</dt><dd>The Ascent value of the font in glyph space units.</dd></dl>
+
+</div>
+</div>
+<a id="a3d7c7a2960566240d63c6a4bc8151712"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d7c7a2960566240d63c6a4bc8151712">&#9670;&nbsp;</a></span>AvgWidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.Font.AvgWidth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the AvgWidth value from the font descriptor. This is the average width of glyphs in the font, or 0 if the value is not defined in the font descriptor.</p>
+<dl class="section return"><dt>Returns</dt><dd>The AvgWidth value of the font in glyph space units, or 0 if not defined.</dd></dl>
+
+</div>
+</div>
+<a id="abb69c6d5f95d130f1cfd99c499acbb86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb69c6d5f95d130f1cfd99c499acbb86">&#9670;&nbsp;</a></span>CapHeight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.Font.CapHeight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the CapHeight value from the font descriptor. This is the vertical coordinate of the top of flat capital letters, measured from the baseline, or 0 if the value is not defined in the font descriptor.</p>
+<dl class="section return"><dt>Returns</dt><dd>The CapHeight value of the font in glyph space units, or 0 if not defined.</dd></dl>
+
+</div>
+</div>
+<a id="a59899449726a6e7dff61f9decb96eab5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59899449726a6e7dff61f9decb96eab5">&#9670;&nbsp;</a></span>CidFontType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Datalogics.PDFL.Font.CidFontType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae09f53313c6d26b5de49790dd01b2fb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae09f53313c6d26b5de49790dd01b2fb6">&#9670;&nbsp;</a></span>Descent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.Font.Descent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the Descent value from the font descriptor. This is the maximum depth below the baseline reached by glyphs in this font. The value is a negative number.</p>
+<dl class="section return"><dt>Returns</dt><dd>The descent value of the font. \xrefitem pdelayer_apis "PDE Layer" "PDE Layer" PDSysFont PDSysFontGetAttrs \xrefitem pdelayer_apis "PDE Layer" "PDE Layer" PDEFont PDEFontGetAttrs \xrefitem pdlayer_apis "PD Layer" "PD Layer" PDFont PDFontGetMetrics </dd></dl>
+
+</div>
+</div>
+<a id="a936790686a0b5be0fc6d3945344ec5e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a936790686a0b5be0fc6d3945344ec5e9">&#9670;&nbsp;</a></span>Embedded</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.Font.Embedded</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Tests that Font is embedded in the document it was created for returns true if the font is embedded and returns false if it is not</p>
+
+</div>
+</div>
+<a id="a9622ecefa6e42cf9c59c1ad73b1d90b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9622ecefa6e42cf9c59c1ad73b1d90b7">&#9670;&nbsp;</a></span>Encoding</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Datalogics.PDFL.Font.Encoding</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Return the encoding of the font. </p>
+<dl class="section return"><dt>Returns</dt><dd>The encoding of the font, eg:<ul>
+<li>
+WinAnsiEncoding</li>
+<li>
+MacRomanEncoding</li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a55e7a9bc780394ef0f6b43a673e66ae7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55e7a9bc780394ef0f6b43a673e66ae7">&#9670;&nbsp;</a></span>EncodingInfo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_encoding_info.html">EncodingInfo</a> Datalogics.PDFL.Font.EncodingInfo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Get the populated CEncoding object. </p>
+
+</div>
+</div>
+<a id="a8c530abf870e00d8412fa3255838452d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c530abf870e00d8412fa3255838452d">&#9670;&nbsp;</a></span>Flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#ac9786b60f1764d83f9c5c09f0221817a">FontFlags</a> Datalogics.PDFL.Font.Flags</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Get the font flags for a font. </p>
+
+</div>
+</div>
+<a id="a5abb60f131b803090f176fc8754304cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5abb60f131b803090f176fc8754304cb">&#9670;&nbsp;</a></span>FontList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">System.Collections.Generic.IList&lt;<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html">Font</a>&gt; Datalogics.PDFL.Font.FontList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a13d035aaf18e11ca049dada0b074e879"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13d035aaf18e11ca049dada0b074e879">&#9670;&nbsp;</a></span>FullName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Datalogics.PDFL.Font.FullName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Get the Full Name of the font. </p>
+<dl class="section return"><dt>Returns</dt><dd>The Full Name of the font. Note: This method only returns a meaningful result for TrueType-based technology fonts. </dd></dl>
+
+</div>
+</div>
+<a id="a3e8bd3fc9ffca5429393e1e735e3f7cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e8bd3fc9ffca5429393e1e735e3f7cd">&#9670;&nbsp;</a></span>ItalicAngle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.Font.ItalicAngle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the ItalicAngle value from the font descriptor. This is the angle, expressed in degrees counterclockwise from the vertical, of the dominant vertical strokes of the font, defined in the font descriptor.</p>
+<dl class="section return"><dt>Returns</dt><dd>The ItalicAngle value of the font in degrees.</dd></dl>
+
+</div>
+</div>
+<a id="a667974899a007c8d718e6b5e1414c6c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a667974899a007c8d718e6b5e1414c6c9">&#9670;&nbsp;</a></span>Leading</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.Font.Leading</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the Leading value from the font descriptor. This is the spacing between baselines of consecutive lines of text, or 0 if the value is not defined in the font descriptor.</p>
+<dl class="section return"><dt>Returns</dt><dd>The leading value of the font, or 0 if not present.</dd></dl>
+
+</div>
+</div>
+<a id="ae11b2f3423052e0e5cde690c77467cf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae11b2f3423052e0e5cde690c77467cf8">&#9670;&nbsp;</a></span>MaxWidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.Font.MaxWidth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the MaxWidth value from the font descriptor. This is the maximum glyph width present in the font, or 0 if the value is not defined in the font descriptor.</p>
+<dl class="section return"><dt>Returns</dt><dd>The MaxWidth value of the font in glyph space units, or 0 if not present.</dd></dl>
+
+</div>
+</div>
+<a id="a88d5425ec0dfdc03fd57bfacb77e0fd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88d5425ec0dfdc03fd57bfacb77e0fd3">&#9670;&nbsp;</a></span>MissingWidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.Font.MissingWidth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the MissingWidth value from the font descriptor. This is the width given to characters that do not have corresponding glyphs defined in the font, or 0 if the value is not defined in the font descriptor.</p>
+<dl class="section return"><dt>Returns</dt><dd>The MissingWidth value of the font in glyph space units, or 0 if not present.</dd></dl>
+
+</div>
+</div>
+<a id="a62ca3f1246c20600b6871565736ca5e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62ca3f1246c20600b6871565736ca5e7">&#9670;&nbsp;</a></span>Name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Datalogics.PDFL.Font.Name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Get the name of the font. </p>
+<dl class="section return"><dt>Returns</dt><dd>The name of the font.</dd></dl>
+
+</div>
+</div>
+<a id="a6864a11758f632841f1bd5bd06bb27af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6864a11758f632841f1bd5bd06bb27af">&#9670;&nbsp;</a></span>PDFDict</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a> Datalogics.PDFL.Font.PDFDict</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retrieve the PDFDict representation of this object</p>
+
+</div>
+</div>
+<a id="a171a30cd0504421cb9dfc91a3d5fa20a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a171a30cd0504421cb9dfc91a3d5fa20a">&#9670;&nbsp;</a></span>StemH</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.Font.StemH</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the StemH value from the font descriptor. This is the vertical thickness of the dominant horizontal stems of the font's glyphs, or 0 if the value is not defined in the font descriptor.</p>
+<dl class="section return"><dt>Returns</dt><dd>The StemH value of the font in glyph space units, or 0 if not present.</dd></dl>
+
+</div>
+</div>
+<a id="a413d413bc3a706bae84b7557b6fa7082"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a413d413bc3a706bae84b7557b6fa7082">&#9670;&nbsp;</a></span>StemV</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.Font.StemV</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the StemV value from the font descriptor. This is the horizontal thickness of the dominant vertical stems of the font's glyphs, or 0 if the value is not defined in the font descriptor.</p>
+<dl class="section return"><dt>Returns</dt><dd>The StemV value of the font in glyph space units, or 0 if not present.</dd></dl>
+
+</div>
+</div>
+<a id="a0be08f299d51347bf93b68e06aca7392"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0be08f299d51347bf93b68e06aca7392">&#9670;&nbsp;</a></span>Type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Datalogics.PDFL.Font.Type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Get the type of the font. </p>
+<dl class="section return"><dt>Returns</dt><dd>The type of the font.<ul>
+<li>
+Type0</li>
+<li>
+Type1</li>
+<li>
+MMType1</li>
+<li>
+TrueType</li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a1a212a3dc49f59ad5fb873f622096f43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a212a3dc49f59ad5fb873f622096f43">&#9670;&nbsp;</a></span>WritingMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#ab1e5f7b0f0f334863e111bc10d28bc95">WritingMode</a> Datalogics.PDFL.Font.WritingMode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the writing mode of the font. The writing mode of the fontwhether it will place glyphs horizontally or vertically. Text written with this font will run in the direction of the writing mode</p>
+<dl class="section return"><dt>Returns</dt><dd>The WritingMode of the font.</dd></dl>
+
+</div>
+</div>
+<a id="a6ec405e4bf25150bf6f5b372b5cf0234"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ec405e4bf25150bf6f5b372b5cf0234">&#9670;&nbsp;</a></span>XHeight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.Font.XHeight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the XHeight value from the font descriptor. This is the vertical coordinate of the top of flat nonascending lowercase letters in fonts that have Latin characters, as measured from the baseline, or 0 if the value is not defined in the font descriptor.</p>
+<dl class="section return"><dt>Returns</dt><dd>The XHeight value of the font in glyph space units, or 0 if not present.</dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_segmentation_mode.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_segmentation_mode-members.html">List of all members</a> &#124;
+<a href="#pub-attribs">Public Attributes</a>  </div>
+  <div class="headertitle">
+<div class="title">com.datalogics.PDFL.PageSegmentationMode Enum Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:afe04db348259ca0ba51b8d4b370fddde"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_segmentation_mode.html#afe04db348259ca0ba51b8d4b370fddde">AUTOMATIC</a></td></tr>
+<tr class="separator:afe04db348259ca0ba51b8d4b370fddde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa80831d64931eb1a21cc19cf2c83ca10"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_segmentation_mode.html#aa80831d64931eb1a21cc19cf2c83ca10">AUTOMATIC_OSD</a></td></tr>
+<tr class="separator:aa80831d64931eb1a21cc19cf2c83ca10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8edbf1f56ee459548dc11a690c800451"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_segmentation_mode.html#a8edbf1f56ee459548dc11a690c800451">CIRCLE_WORD</a></td></tr>
+<tr class="separator:a8edbf1f56ee459548dc11a690c800451"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae958c9e6ab361425ed29be7e0fab84f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_segmentation_mode.html#ae958c9e6ab361425ed29be7e0fab84f1">OSDONLY</a></td></tr>
+<tr class="separator:ae958c9e6ab361425ed29be7e0fab84f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c1fdaccde9309f2780c5bb98f04ad4d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_segmentation_mode.html#a4c1fdaccde9309f2780c5bb98f04ad4d">RAW_LINE</a></td></tr>
+<tr class="separator:a4c1fdaccde9309f2780c5bb98f04ad4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3891efaa43013226015c8689d14ac28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_segmentation_mode.html#af3891efaa43013226015c8689d14ac28">SINGLE_BLOCK</a></td></tr>
+<tr class="separator:af3891efaa43013226015c8689d14ac28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05d323d2771115ea954a4e381437fb68"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_segmentation_mode.html#a05d323d2771115ea954a4e381437fb68">SINGLE_BLOCK_VERTICAL</a></td></tr>
+<tr class="separator:a05d323d2771115ea954a4e381437fb68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60cdaf1f00f0d1f8d6c2e21a1c05c557"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_segmentation_mode.html#a60cdaf1f00f0d1f8d6c2e21a1c05c557">SINGLE_CHAR</a></td></tr>
+<tr class="separator:a60cdaf1f00f0d1f8d6c2e21a1c05c557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0cb2e31dda5e6969f0e1bc8ae88abdf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_segmentation_mode.html#ad0cb2e31dda5e6969f0e1bc8ae88abdf">SINGLE_COLUMN</a></td></tr>
+<tr class="separator:ad0cb2e31dda5e6969f0e1bc8ae88abdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef6e828ba9226175b7aa6c0e0fb0f048"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_segmentation_mode.html#aef6e828ba9226175b7aa6c0e0fb0f048">SINGLE_LINE</a></td></tr>
+<tr class="separator:aef6e828ba9226175b7aa6c0e0fb0f048"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff7c4f5affba5c6b70e7295b0fd3caa1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_segmentation_mode.html#aff7c4f5affba5c6b70e7295b0fd3caa1">SINGLE_WORD</a></td></tr>
+<tr class="separator:aff7c4f5affba5c6b70e7295b0fd3caa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c6b616c28a9f62bb53253af49ea6f0a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_segmentation_mode.html#a1c6b616c28a9f62bb53253af49ea6f0a">SPARSE_TEXT</a></td></tr>
+<tr class="separator:a1c6b616c28a9f62bb53253af49ea6f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad99334512567089a2ad02b9c9193412c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_segmentation_mode.html#ad99334512567089a2ad02b9c9193412c">SPARSE_TEXT_OSD</a></td></tr>
+<tr class="separator:ad99334512567089a2ad02b9c9193412c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Specify how the OCR engine will view the page, and how it detects text segments. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="afe04db348259ca0ba51b8d4b370fddde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe04db348259ca0ba51b8d4b370fddde">&#9670;&nbsp;</a></span>AUTOMATIC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PageSegmentationMode.AUTOMATIC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Automatic without OSD. </p>
+
+</div>
+</div>
+<a id="aa80831d64931eb1a21cc19cf2c83ca10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa80831d64931eb1a21cc19cf2c83ca10">&#9670;&nbsp;</a></span>AUTOMATIC_OSD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PageSegmentationMode.AUTOMATIC_OSD</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Automatic page segmentation with OSD. </p>
+
+</div>
+</div>
+<a id="a8edbf1f56ee459548dc11a690c800451"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8edbf1f56ee459548dc11a690c800451">&#9670;&nbsp;</a></span>CIRCLE_WORD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PageSegmentationMode.CIRCLE_WORD</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Assume a single word in a circle. </p>
+
+</div>
+</div>
+<a id="ae958c9e6ab361425ed29be7e0fab84f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae958c9e6ab361425ed29be7e0fab84f1">&#9670;&nbsp;</a></span>OSDONLY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PageSegmentationMode.OSDONLY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Orientation and script detection (OSD). </p>
+
+</div>
+</div>
+<a id="a4c1fdaccde9309f2780c5bb98f04ad4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c1fdaccde9309f2780c5bb98f04ad4d">&#9670;&nbsp;</a></span>RAW_LINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PageSegmentationMode.RAW_LINE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Treat as a raw line with no input processing. </p>
+
+</div>
+</div>
+<a id="af3891efaa43013226015c8689d14ac28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3891efaa43013226015c8689d14ac28">&#9670;&nbsp;</a></span>SINGLE_BLOCK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PageSegmentationMode.SINGLE_BLOCK</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Assume a single block of text. </p>
+
+</div>
+</div>
+<a id="a05d323d2771115ea954a4e381437fb68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05d323d2771115ea954a4e381437fb68">&#9670;&nbsp;</a></span>SINGLE_BLOCK_VERTICAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PageSegmentationMode.SINGLE_BLOCK_VERTICAL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Assume a single block of vertically aligned text. </p>
+
+</div>
+</div>
+<a id="a60cdaf1f00f0d1f8d6c2e21a1c05c557"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60cdaf1f00f0d1f8d6c2e21a1c05c557">&#9670;&nbsp;</a></span>SINGLE_CHAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PageSegmentationMode.SINGLE_CHAR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Assume a single char. </p>
+
+</div>
+</div>
+<a id="ad0cb2e31dda5e6969f0e1bc8ae88abdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0cb2e31dda5e6969f0e1bc8ae88abdf">&#9670;&nbsp;</a></span>SINGLE_COLUMN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PageSegmentationMode.SINGLE_COLUMN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Assume a single column of text. </p>
+
+</div>
+</div>
+<a id="aef6e828ba9226175b7aa6c0e0fb0f048"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef6e828ba9226175b7aa6c0e0fb0f048">&#9670;&nbsp;</a></span>SINGLE_LINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PageSegmentationMode.SINGLE_LINE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Assume a single line of text. </p>
+
+</div>
+</div>
+<a id="aff7c4f5affba5c6b70e7295b0fd3caa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff7c4f5affba5c6b70e7295b0fd3caa1">&#9670;&nbsp;</a></span>SINGLE_WORD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PageSegmentationMode.SINGLE_WORD</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Assume a single word. </p>
+
+</div>
+</div>
+<a id="a1c6b616c28a9f62bb53253af49ea6f0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c6b616c28a9f62bb53253af49ea6f0a">&#9670;&nbsp;</a></span>SPARSE_TEXT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PageSegmentationMode.SPARSE_TEXT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Find all text in no particular order. </p>
+
+</div>
+</div>
+<a id="ad99334512567089a2ad02b9c9193412c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad99334512567089a2ad02b9c9193412c">&#9670;&nbsp;</a></span>SPARSE_TEXT_OSD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PageSegmentationMode.SPARSE_TEXT_OSD</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sparse text with OSD. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+</body>
+</html>

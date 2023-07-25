@@ -1,0 +1,623 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags-members.html">List of all members</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a>  </div>
+  <div class="headertitle">
+<div class="title">com.datalogics.PDFL.DrawFlags Enum Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ac755480ccbd9f8ff9ab45e569b9ea63b"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#ac755480ccbd9f8ff9ab45e569b9ea63b">FlagsToInt</a> (java.lang.Iterable&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html">DrawFlags</a> &gt; flags)</td></tr>
+<tr class="separator:ac755480ccbd9f8ff9ab45e569b9ea63b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf41755f32f849cb6f22d398f70e3c99"><td class="memItemLeft" align="right" valign="top">static java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html">DrawFlags</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#adf41755f32f849cb6f22d398f70e3c99">IntToFlags</a> (int value)</td></tr>
+<tr class="separator:adf41755f32f849cb6f22d398f70e3c99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a0a130549f69481cd0b87d7a3b8491774"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a0a130549f69481cd0b87d7a3b8491774">DIRECTLY_IMPOSED</a></td></tr>
+<tr class="separator:a0a130549f69481cd0b87d7a3b8491774"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5968ce5ccfae2b263efef182fb9ab8ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a5968ce5ccfae2b263efef182fb9ab8ab">DISPLAY_OVER_PRINT_PREVIEW</a></td></tr>
+<tr class="separator:a5968ce5ccfae2b263efef182fb9ab8ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6daff07b4c417d1346ea43a1f06edd7e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a6daff07b4c417d1346ea43a1f06edd7e">DO_LAZY_ERASE</a></td></tr>
+<tr class="separator:a6daff07b4c417d1346ea43a1f06edd7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c52b7cf8290388c3e7fb2454dda2560"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a7c52b7cf8290388c3e7fb2454dda2560">DO_NOT_DOWNLOAD_FONTS</a></td></tr>
+<tr class="separator:a7c52b7cf8290388c3e7fb2454dda2560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61512d5e6ffa47e1975a6a3d10a9ecad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a61512d5e6ffa47e1975a6a3d10a9ecad">DO_NOT_SUBSTITUTE_WORKING_SPACES</a></td></tr>
+<tr class="separator:a61512d5e6ffa47e1975a6a3d10a9ecad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea6dc060b302ea86fcc76b2a906965c1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#aea6dc060b302ea86fcc76b2a906965c1">EMIT_PAGE_GROUP</a></td></tr>
+<tr class="separator:aea6dc060b302ea86fcc76b2a906965c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90abb75decea09b80e7aef045b9ab13b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a90abb75decea09b80e7aef045b9ab13b">FORCE_GDIPORT</a></td></tr>
+<tr class="separator:a90abb75decea09b80e7aef045b9ab13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0a4b38ec6db1f1c3575f20096932c65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#af0a4b38ec6db1f1c3575f20096932c65">IS_PRINT_PREVIEWING</a></td></tr>
+<tr class="separator:af0a4b38ec6db1f1c3575f20096932c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3ae8c42ab2fc4b2a5f91330c39753a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#ab3ae8c42ab2fc4b2a5f91330c39753a3">IS_PRINTING</a></td></tr>
+<tr class="separator:ab3ae8c42ab2fc4b2a5f91330c39753a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa34145ce2695647d1b206e5cec719def"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#aa34145ce2695647d1b206e5cec719def">IS_PSPRINTING</a></td></tr>
+<tr class="separator:aa34145ce2695647d1b206e5cec719def"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02b77cb1d878305c3edeb6aa872b9564"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a02b77cb1d878305c3edeb6aa872b9564">OPTIMIZE_FOR_INTERACTIVE</a></td></tr>
+<tr class="separator:a02b77cb1d878305c3edeb6aa872b9564"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d0f002c175aca81fef606d7462b6726"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a7d0f002c175aca81fef606d7462b6726">PASS_METADATATO_AGMPORT</a></td></tr>
+<tr class="separator:a7d0f002c175aca81fef606d7462b6726"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70c05dfcdfbe9d6327ff4e75bcb9578e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a70c05dfcdfbe9d6327ff4e75bcb9578e">PASS_OCTO_AGMPORT</a></td></tr>
+<tr class="separator:a70c05dfcdfbe9d6327ff4e75bcb9578e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11416acf1ecdc26c62f4de85bd3585c3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a11416acf1ecdc26c62f4de85bd3585c3">PASS_OPITO_AGMPORT</a></td></tr>
+<tr class="separator:a11416acf1ecdc26c62f4de85bd3585c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac2d9a860ca1f2fce05f06ac95bfe54f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#aac2d9a860ca1f2fce05f06ac95bfe54f">SUPPRESS_RASTER_ALPHA</a></td></tr>
+<tr class="separator:aac2d9a860ca1f2fce05f06ac95bfe54f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33ffb32c6fc2abf20610df51208c42df"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a33ffb32c6fc2abf20610df51208c42df">SWAP_COMPONENTS</a></td></tr>
+<tr class="separator:a33ffb32c6fc2abf20610df51208c42df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff35d5e6f6ef9f539849a16f88733def"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#aff35d5e6f6ef9f539849a16f88733def">USE_ANNOT_FACES</a></td></tr>
+<tr class="separator:aff35d5e6f6ef9f539849a16f88733def"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22b0ac8bbae562c86dd53ebe206f1bcb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a22b0ac8bbae562c86dd53ebe206f1bcb">USE_PRINTER_MARK_ANNOTS</a></td></tr>
+<tr class="separator:a22b0ac8bbae562c86dd53ebe206f1bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac21dc105f6fb5b1b637a847afb07912c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#ac21dc105f6fb5b1b637a847afb07912c">USE_STAMP_ANNOTS_ONLY</a></td></tr>
+<tr class="separator:ac21dc105f6fb5b1b637a847afb07912c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a364c1e07b3bd479b0a81d0f54d3578e7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a364c1e07b3bd479b0a81d0f54d3578e7">USE_TRAP_ANNOTS</a></td></tr>
+<tr class="separator:a364c1e07b3bd479b0a81d0f54d3578e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71212599ef489c288dcef216af4f3297"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a71212599ef489c288dcef216af4f3297">WORKING_SPACES_ONLY_FOR_CHANGE</a></td></tr>
+<tr class="separator:a71212599ef489c288dcef216af4f3297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0cf71c2ef5ccc60511d6235374a5f75"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#ac0cf71c2ef5ccc60511d6235374a5f75">WRITING_TO_EMF</a></td></tr>
+<tr class="separator:ac0cf71c2ef5ccc60511d6235374a5f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac755480ccbd9f8ff9ab45e569b9ea63b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac755480ccbd9f8ff9ab45e569b9ea63b">&#9670;&nbsp;</a></span>FlagsToInt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int com.datalogics.PDFL.DrawFlags.FlagsToInt </td>
+          <td>(</td>
+          <td class="paramtype">java.lang.Iterable&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html">DrawFlags</a> &gt;&#160;</td>
+          <td class="paramname"><em>flags</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a065bd3f71c18be04ded520ac5a6032d3">com.datalogics.PDFL.PageImageParams.PageImageParams()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_params.html#a44da33e2ee37993dbc204977f5f02e23">com.datalogics.PDFL.DrawParams.setFlags()</a>, and <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a5072fb37333f5a3524e0de403c81853c">com.datalogics.PDFL.PageImageParams.setPageDrawFlags()</a>.</p>
+
+</div>
+</div>
+<a id="adf41755f32f849cb6f22d398f70e3c99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf41755f32f849cb6f22d398f70e3c99">&#9670;&nbsp;</a></span>IntToFlags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static java.util.EnumSet&lt;<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html">DrawFlags</a>&gt; com.datalogics.PDFL.DrawFlags.IntToFlags </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_params.html#aad7156c43c58bc075a243626bcaa197d">com.datalogics.PDFL.DrawParams.getFlags()</a>, and <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#ab42f1cc90601b4e38109935081af90a9">com.datalogics.PDFL.PageImageParams.getPageDrawFlags()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a0a130549f69481cd0b87d7a3b8491774"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a130549f69481cd0b87d7a3b8491774">&#9670;&nbsp;</a></span>DIRECTLY_IMPOSED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.DIRECTLY_IMPOSED</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Directly imposed page. </p>
+
+</div>
+</div>
+<a id="a5968ce5ccfae2b263efef182fb9ab8ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5968ce5ccfae2b263efef182fb9ab8ab">&#9670;&nbsp;</a></span>DISPLAY_OVER_PRINT_PREVIEW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.DISPLAY_OVER_PRINT_PREVIEW</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Display overprint preview. </p>
+
+</div>
+</div>
+<a id="a6daff07b4c417d1346ea43a1f06edd7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6daff07b4c417d1346ea43a1f06edd7e">&#9670;&nbsp;</a></span>DO_LAZY_ERASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.DO_LAZY_ERASE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Erase the page while rendering only as needed. </p>
+
+</div>
+</div>
+<a id="a7c52b7cf8290388c3e7fb2454dda2560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c52b7cf8290388c3e7fb2454dda2560">&#9670;&nbsp;</a></span>DO_NOT_DOWNLOAD_FONTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.DO_NOT_DOWNLOAD_FONTS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Do not download fonts during rendering. Use this flag to prevent fonts from being downloaded/named to the output. Active when writing GDI output, such as to a metafile or printer on Windows. </p>
+
+</div>
+</div>
+<a id="a61512d5e6ffa47e1975a6a3d10a9ecad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61512d5e6ffa47e1975a6a3d10a9ecad">&#9670;&nbsp;</a></span>DO_NOT_SUBSTITUTE_WORKING_SPACES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.DO_NOT_SUBSTITUTE_WORKING_SPACES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Do not substitute working spaces. </p>
+
+</div>
+</div>
+<a id="aea6dc060b302ea86fcc76b2a906965c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea6dc060b302ea86fcc76b2a906965c1">&#9670;&nbsp;</a></span>EMIT_PAGE_GROUP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.EMIT_PAGE_GROUP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Emit a page group. </p>
+
+</div>
+</div>
+<a id="a90abb75decea09b80e7aef045b9ab13b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90abb75decea09b80e7aef045b9ab13b">&#9670;&nbsp;</a></span>FORCE_GDIPORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.FORCE_GDIPORT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>If set, this forces the window draw code to attempt to use GDI instructions internally instead of assuming the incoming Platform device context contains enough information to allow APDFL to make a useful determination. Only honored on Windows. Useful when drawing to a window during print preview, when the supplied hDC is for the screen and does not allow APDFL to adequately instantiate drawing bounds. </p>
+
+</div>
+</div>
+<a id="af0a4b38ec6db1f1c3575f20096932c65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0a4b38ec6db1f1c3575f20096932c65">&#9670;&nbsp;</a></span>IS_PRINT_PREVIEWING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.IS_PRINT_PREVIEWING</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Same as ForceGDIPort. </p>
+
+</div>
+</div>
+<a id="ab3ae8c42ab2fc4b2a5f91330c39753a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3ae8c42ab2fc4b2a5f91330c39753a3">&#9670;&nbsp;</a></span>IS_PRINTING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.IS_PRINTING</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The page is being printed. </p>
+
+</div>
+</div>
+<a id="aa34145ce2695647d1b206e5cec719def"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa34145ce2695647d1b206e5cec719def">&#9670;&nbsp;</a></span>IS_PSPRINTING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.IS_PSPRINTING</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>PostScript printing. </p>
+
+</div>
+</div>
+<a id="a02b77cb1d878305c3edeb6aa872b9564"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02b77cb1d878305c3edeb6aa872b9564">&#9670;&nbsp;</a></span>OPTIMIZE_FOR_INTERACTIVE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.OPTIMIZE_FOR_INTERACTIVE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7d0f002c175aca81fef606d7462b6726"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d0f002c175aca81fef606d7462b6726">&#9670;&nbsp;</a></span>PASS_METADATATO_AGMPORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.PASS_METADATATO_AGMPORT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pass metadata to AGM port. </p>
+
+</div>
+</div>
+<a id="a70c05dfcdfbe9d6327ff4e75bcb9578e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70c05dfcdfbe9d6327ff4e75bcb9578e">&#9670;&nbsp;</a></span>PASS_OCTO_AGMPORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.PASS_OCTO_AGMPORT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pass optional content to AGM port. </p>
+
+</div>
+</div>
+<a id="a11416acf1ecdc26c62f4de85bd3585c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11416acf1ecdc26c62f4de85bd3585c3">&#9670;&nbsp;</a></span>PASS_OPITO_AGMPORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.PASS_OPITO_AGMPORT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pass open prepress interface (OPI) to AGM port. </p>
+
+</div>
+</div>
+<a id="aac2d9a860ca1f2fce05f06ac95bfe54f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac2d9a860ca1f2fce05f06ac95bfe54f">&#9670;&nbsp;</a></span>SUPPRESS_RASTER_ALPHA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.SUPPRESS_RASTER_ALPHA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Suppress raster alpha. </p>
+
+</div>
+</div>
+<a id="a33ffb32c6fc2abf20610df51208c42df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33ffb32c6fc2abf20610df51208c42df">&#9670;&nbsp;</a></span>SWAP_COMPONENTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.SWAP_COMPONENTS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Render colors in BGR order rather than RGB. It is only valid for calls to Page.DrawContents and only when outputing to an RGB colorspace. </p>
+
+</div>
+</div>
+<a id="aff35d5e6f6ef9f539849a16f88733def"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff35d5e6f6ef9f539849a16f88733def">&#9670;&nbsp;</a></span>USE_ANNOT_FACES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.USE_ANNOT_FACES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Draw annotation appearances. </p>
+
+</div>
+</div>
+<a id="a22b0ac8bbae562c86dd53ebe206f1bcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22b0ac8bbae562c86dd53ebe206f1bcb">&#9670;&nbsp;</a></span>USE_PRINTER_MARK_ANNOTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.USE_PRINTER_MARK_ANNOTS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Use printer's mark annotations. </p>
+
+</div>
+</div>
+<a id="ac21dc105f6fb5b1b637a847afb07912c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac21dc105f6fb5b1b637a847afb07912c">&#9670;&nbsp;</a></span>USE_STAMP_ANNOTS_ONLY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.USE_STAMP_ANNOTS_ONLY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>If set, only consider Stamp annotations. This overrides UseAnnotFaces. </p>
+
+</div>
+</div>
+<a id="a364c1e07b3bd479b0a81d0f54d3578e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a364c1e07b3bd479b0a81d0f54d3578e7">&#9670;&nbsp;</a></span>USE_TRAP_ANNOTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.USE_TRAP_ANNOTS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Use trap network annotations. </p>
+
+</div>
+</div>
+<a id="a71212599ef489c288dcef216af4f3297"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71212599ef489c288dcef216af4f3297">&#9670;&nbsp;</a></span>WORKING_SPACES_ONLY_FOR_CHANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.WORKING_SPACES_ONLY_FOR_CHANGE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>If this is set, only use a working space instead of a device space if the process color model of the target device is different than that of the source. </p>
+
+</div>
+</div>
+<a id="ac0cf71c2ef5ccc60511d6235374a5f75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0cf71c2ef5ccc60511d6235374a5f75">&#9670;&nbsp;</a></span>WRITING_TO_EMF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.DrawFlags.WRITING_TO_EMF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicate that the drawing is writing to an Enhanced MetaFile. This prevents fonts from being downloaded, but may advise other flags in the future. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+</body>
+</html>

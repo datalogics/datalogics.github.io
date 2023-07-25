@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library .NET Framework Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-csharp-dotnet-framework-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://www.nuget.org/packages/Adobe.PDF.Library.LM.NETFramework" id="pkglink"><img id="pkg-download-img" alt="Nuget Trial Download" src="https://img.shields.io/nuget/dt/Adobe.PDF.Library.LM.NETFramework?color=blue&label=APDFL%20.NET%20Framework%20Free%20Trial&logo=NuGet&style=plastic"/></a>
+        </p>
+      </div></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict-members.html">List of all members</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#properties">Properties</a>  </div>
+  <div class="headertitle">
+<div class="title">Datalogics.PDFL.OptionalContentMembershipDict Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p> 
+ <a href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a108d22dc140d0ad2134bff5fc5e01e8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict.html#a108d22dc140d0ad2134bff5fc5e01e8d">Dispose</a> ()</td></tr>
+<tr class="separator:a108d22dc140d0ad2134bff5fc5e01e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65dd4e0575325d604bad9e5c48a0c4dc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict.html#a65dd4e0575325d604bad9e5c48a0c4dc">Dispose</a> (bool disposing)</td></tr>
+<tr class="separator:a65dd4e0575325d604bad9e5c48a0c4dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26c179130ef6cdc6e11f160b1dc315fa"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict.html#a26c179130ef6cdc6e11f160b1dc315fa">Equals</a> (object obj)</td></tr>
+<tr class="separator:a26c179130ef6cdc6e11f160b1dc315fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9480b86312aedca5055346197328a1fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict.html#a9480b86312aedca5055346197328a1fd">OptionalContentMembershipDict</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html">Document</a> doc, System.Collections.Generic.IList&lt; <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a> &gt; ocgs, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a7c123c83f0bbaa9516a565cc6acf579c">VisibilityPolicy</a> vp)</td></tr>
+<tr class="separator:a9480b86312aedca5055346197328a1fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa38de9c5cd1405cf1e976cd517a1896b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict.html#aa38de9c5cd1405cf1e976cd517a1896b">OptionalContentMembershipDict</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html">Document</a> doc, System.Collections.Generic.IList&lt; <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a> &gt; ocgs, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a7c123c83f0bbaa9516a565cc6acf579c">VisibilityPolicy</a> vp, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_array.html">PDFArray</a> visibilityExpression)</td></tr>
+<tr class="separator:aa38de9c5cd1405cf1e976cd517a1896b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6533671310f05ef961b8edfd14f9b5d"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict.html#ae6533671310f05ef961b8edfd14f9b5d">ToString</a> ()</td></tr>
+<tr class="separator:ae6533671310f05ef961b8edfd14f9b5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a077a3fa0a0d2b5aebf5c9ec26c5e693c"><td class="memItemLeft" align="right" valign="top">System.Collections.Generic.IList&lt; <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict.html#a077a3fa0a0d2b5aebf5c9ec26c5e693c">OptionalContentGroups</a><code> [get]</code></td></tr>
+<tr class="separator:a077a3fa0a0d2b5aebf5c9ec26c5e693c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2e7e141d6617a44454fe6b770f28587"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_array.html">PDFArray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict.html#aa2e7e141d6617a44454fe6b770f28587">VisibilityExpression</a><code> [get]</code></td></tr>
+<tr class="separator:aa2e7e141d6617a44454fe6b770f28587"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4f13a5a50b81fb1ae91a9eecbcb1fcc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a7c123c83f0bbaa9516a565cc6acf579c">VisibilityPolicy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict.html#aa4f13a5a50b81fb1ae91a9eecbcb1fcc">VisibilityPolicy</a><code> [get]</code></td></tr>
+<tr class="separator:aa4f13a5a50b81fb1ae91a9eecbcb1fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Attaches content to one or more optional content groups. </p>
+<p>Form, container, and annotation objects can be associated with one or more optional content groups. By associating them with an optional content group, they become part of that 'layer', and the user can control the visibility of the content.</p>
+<p>Note that by placing other element objects in a container, they can also be associated with an optional content group.</p>
+<p>An OptionalContentMembershipDict connects content to the OptionalContentGroup; it contains a list of OptionalContentGroups, and rules for determining visibility when the OptionalContentGroups have conflicting on/off states in the active OptionalContentContext.</p>
+<p>An OptionalContentMembershipDict cannot be changed once created; you must create a new OptionalContentMembershipDict and change the objects to point to it.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9480b86312aedca5055346197328a1fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9480b86312aedca5055346197328a1fd">&#9670;&nbsp;</a></span>OptionalContentMembershipDict() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.OptionalContentMembershipDict.OptionalContentMembershipDict </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html">Document</a>&#160;</td>
+          <td class="paramname"><em>doc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">System.Collections.Generic.IList&lt; <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a> &gt;&#160;</td>
+          <td class="paramname"><em>ocgs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a7c123c83f0bbaa9516a565cc6acf579c">VisibilityPolicy</a>&#160;</td>
+          <td class="paramname"><em>vp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a new OptionalContentMembershipDict.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">doc</td><td>The document that the new OptionalContentMembershipDict will belong to. </td></tr>
+    <tr><td class="paramname">ocgs</td><td>The list of OptionalContentGroups this MembershipDict refers to. </td></tr>
+    <tr><td class="paramname">vp</td><td>The VisibilityPolicy of this MembershipDict.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa38de9c5cd1405cf1e976cd517a1896b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa38de9c5cd1405cf1e976cd517a1896b">&#9670;&nbsp;</a></span>OptionalContentMembershipDict() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.OptionalContentMembershipDict.OptionalContentMembershipDict </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html">Document</a>&#160;</td>
+          <td class="paramname"><em>doc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">System.Collections.Generic.IList&lt; <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a> &gt;&#160;</td>
+          <td class="paramname"><em>ocgs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a7c123c83f0bbaa9516a565cc6acf579c">VisibilityPolicy</a>&#160;</td>
+          <td class="paramname"><em>vp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_array.html">PDFArray</a>&#160;</td>
+          <td class="paramname"><em>visibilityExpression</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a new OptionalContentMembershipDict.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">doc</td><td>The document that the new OptionalContentMembershipDict will belong to. </td></tr>
+    <tr><td class="paramname">ocgs</td><td>The list of OptionalContentGroups this MembershipDict refers to. </td></tr>
+    <tr><td class="paramname">vp</td><td>The VisibilityPolicy of this MembershipDict. </td></tr>
+    <tr><td class="paramname">visibilityExpression</td><td>The VisibilityExpression of this MembershipDict.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a108d22dc140d0ad2134bff5fc5e01e8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a108d22dc140d0ad2134bff5fc5e01e8d">&#9670;&nbsp;</a></span>Dispose() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.OptionalContentMembershipDict.Dispose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a65dd4e0575325d604bad9e5c48a0c4dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65dd4e0575325d604bad9e5c48a0c4dc">&#9670;&nbsp;</a></span>Dispose() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Datalogics.PDFL.OptionalContentMembershipDict.Dispose </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>disposing</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a26c179130ef6cdc6e11f160b1dc315fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26c179130ef6cdc6e11f160b1dc315fa">&#9670;&nbsp;</a></span>Equals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override bool Datalogics.PDFL.OptionalContentMembershipDict.Equals </td>
+          <td>(</td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae6533671310f05ef961b8edfd14f9b5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6533671310f05ef961b8edfd14f9b5d">&#9670;&nbsp;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override string Datalogics.PDFL.OptionalContentMembershipDict.ToString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a077a3fa0a0d2b5aebf5c9ec26c5e693c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a077a3fa0a0d2b5aebf5c9ec26c5e693c">&#9670;&nbsp;</a></span>OptionalContentGroups</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">System.Collections.Generic.IList&lt;<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a>&gt; Datalogics.PDFL.OptionalContentMembershipDict.OptionalContentGroups</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the list of OptionalContentGroups for this membership dictionary. This may consist of one OCG or several.</p>
+<dl class="section return"><dt>Returns</dt><dd>An array containing OptionalContentGroups. </dd></dl>
+
+</div>
+</div>
+<a id="aa2e7e141d6617a44454fe6b770f28587"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2e7e141d6617a44454fe6b770f28587">&#9670;&nbsp;</a></span>VisibilityExpression</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_array.html">PDFArray</a> Datalogics.PDFL.OptionalContentMembershipDict.VisibilityExpression</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>GetVisibilityExpression Gets the Visibility Expression for this membership dictionary. </p>
+<dl class="section return"><dt>Returns</dt><dd>A Visibility Expression array. </dd></dl>
+
+</div>
+</div>
+<a id="aa4f13a5a50b81fb1ae91a9eecbcb1fcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4f13a5a50b81fb1ae91a9eecbcb1fcc">&#9670;&nbsp;</a></span>VisibilityPolicy</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a7c123c83f0bbaa9516a565cc6acf579c">VisibilityPolicy</a> Datalogics.PDFL.OptionalContentMembershipDict.VisibilityPolicy</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the Visbility Policy for this membership dictionary.</p>
+<dl class="section return"><dt>Returns</dt><dd>A Visibility Policy. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+</body>
+</html>

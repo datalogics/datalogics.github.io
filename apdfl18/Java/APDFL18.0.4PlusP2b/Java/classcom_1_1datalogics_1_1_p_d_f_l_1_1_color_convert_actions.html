@@ -1,0 +1,1158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions-members.html">List of all members</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">com.datalogics.PDFL.ColorConvertActions Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a7d9be9959d8bbee28e1a8f67e040476a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a7d9be9959d8bbee28e1a8f67e040476a">ColorConvertActions</a> ()</td></tr>
+<tr class="separator:a7d9be9959d8bbee28e1a8f67e040476a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26dbb414a8f2772d03594f635751862b"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a26dbb414a8f2772d03594f635751862b">delete</a> ()</td></tr>
+<tr class="separator:a26dbb414a8f2772d03594f635751862b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8cb8e6713fd898cae0edc74d1ecb835"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_action_type.html">ColorConvertActionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#ad8cb8e6713fd898cae0edc74d1ecb835">getAction</a> ()</td></tr>
+<tr class="separator:ad8cb8e6713fd898cae0edc74d1ecb835"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e2c2af326823b96b871fa1c0473dae0"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a0e2c2af326823b96b871fa1c0473dae0">getColorantName</a> ()</td></tr>
+<tr class="separator:a0e2c2af326823b96b871fa1c0473dae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a572347334136d602ed37c8e025ef401f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_render_intent.html">RenderIntent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a572347334136d602ed37c8e025ef401f">getConvertIntent</a> ()</td></tr>
+<tr class="separator:a572347334136d602ed37c8e025ef401f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3279d24e0d51fe62f57c0306a23a5657"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_profile.html">ColorProfile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a3279d24e0d51fe62f57c0306a23a5657">getConvertProfile</a> ()</td></tr>
+<tr class="separator:a3279d24e0d51fe62f57c0306a23a5657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c7dcc1181b9c8b0151e1dafe83b64e0"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a8c7dcc1181b9c8b0151e1dafe83b64e0">getConvertProfilePath</a> ()</td></tr>
+<tr class="separator:a8c7dcc1181b9c8b0151e1dafe83b64e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13947e30a669a676324f8ca5622971e0"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a13947e30a669a676324f8ca5622971e0">getEmbedColorProfile</a> ()</td></tr>
+<tr class="separator:a13947e30a669a676324f8ca5622971e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3940a66e2aef0a3f18650dd35d8c035f"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a3940a66e2aef0a3f18650dd35d8c035f">getInkAlias</a> ()</td></tr>
+<tr class="separator:a3940a66e2aef0a3f18650dd35d8c035f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44aab60d50d708e2f6058e1ba03d616c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_render_intent.html">RenderIntent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a44aab60d50d708e2f6058e1ba03d616c">getIntentToMatch</a> ()</td></tr>
+<tr class="separator:a44aab60d50d708e2f6058e1ba03d616c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a79faaba8ab3a547262121a58d07b38"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a4a79faaba8ab3a547262121a58d07b38">getIsInkAction</a> ()</td></tr>
+<tr class="separator:a4a79faaba8ab3a547262121a58d07b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33d61ef85660c01a79f2f1c0f6cea561"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a33d61ef85660c01a79f2f1c0f6cea561">getIsProcessColor</a> ()</td></tr>
+<tr class="separator:a33d61ef85660c01a79f2f1c0f6cea561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab711c4c874e452244c532951c2eb4455"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#ab711c4c874e452244c532951c2eb4455">getMaxFontSizeMatch</a> ()</td></tr>
+<tr class="separator:ab711c4c874e452244c532951c2eb4455"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b95d144556de8f49c9db8f74314e025"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a2b95d144556de8f49c9db8f74314e025">getMinFontSizeMatch</a> ()</td></tr>
+<tr class="separator:a2b95d144556de8f49c9db8f74314e025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e71cba59aae722ff78c99b3b4a0ddc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_obj_attrs.html">ColorConvertObjAttrs</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a0e71cba59aae722ff78c99b3b4a0ddc1">getMustMatchAllAttrs</a> ()</td></tr>
+<tr class="separator:a0e71cba59aae722ff78c99b3b4a0ddc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaec605f452ee3fa99d421f1996089525"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_c_space_type.html">ColorConvertCSpaceType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#aaec605f452ee3fa99d421f1996089525">getMustMatchAllCSAttrs</a> ()</td></tr>
+<tr class="separator:aaec605f452ee3fa99d421f1996089525"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bfe2928bf235a0c44f32f9ba95ec80e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_obj_attrs.html">ColorConvertObjAttrs</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a6bfe2928bf235a0c44f32f9ba95ec80e">getMustMatchAnyAttrs</a> ()</td></tr>
+<tr class="separator:a6bfe2928bf235a0c44f32f9ba95ec80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bfc7902dbc08b42ac7a68a612d3d04c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_c_space_type.html">ColorConvertCSpaceType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a2bfc7902dbc08b42ac7a68a612d3d04c">getMustMatchAnyCSAttrs</a> ()</td></tr>
+<tr class="separator:a2bfc7902dbc08b42ac7a68a612d3d04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf24ddc9cb25f47ab3d93072a6d8aae6"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#aaf24ddc9cb25f47ab3d93072a6d8aae6">getPreserveBlack</a> ()</td></tr>
+<tr class="separator:aaf24ddc9cb25f47ab3d93072a6d8aae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62fc2973d908ac53452a5e55eebe33d3"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a62fc2973d908ac53452a5e55eebe33d3">getPreserveCMYKPrimaries</a> ()</td></tr>
+<tr class="separator:a62fc2973d908ac53452a5e55eebe33d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71428cdfe50f4ec02f9b2b7cc44a0be4"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a71428cdfe50f4ec02f9b2b7cc44a0be4">getPromoteGrayToCMYK</a> ()</td></tr>
+<tr class="separator:a71428cdfe50f4ec02f9b2b7cc44a0be4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dd88e07a72b15656e6a68cb8464ce9e"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a0dd88e07a72b15656e6a68cb8464ce9e">getUseBlackPointCompensation</a> ()</td></tr>
+<tr class="separator:a0dd88e07a72b15656e6a68cb8464ce9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9862dd2fa680b78c5303aa0819784d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#aa9862dd2fa680b78c5303aa0819784d0">setAction</a> (<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_action_type.html">ColorConvertActionType</a> newAction)</td></tr>
+<tr class="separator:aa9862dd2fa680b78c5303aa0819784d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85a80a19237185077ef13c7fd9e0f9ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a85a80a19237185077ef13c7fd9e0f9ff">setColorantName</a> (String newName)</td></tr>
+<tr class="separator:a85a80a19237185077ef13c7fd9e0f9ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17e41f3dc5588bbc7fadae60e775daa0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a17e41f3dc5588bbc7fadae60e775daa0">setConvertIntent</a> (<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_render_intent.html">RenderIntent</a> newIntent)</td></tr>
+<tr class="separator:a17e41f3dc5588bbc7fadae60e775daa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae78ff07146dd84be063224d4ef101543"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#ae78ff07146dd84be063224d4ef101543">setConvertProfile</a> (<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_profile.html">ColorProfile</a> newProfile)</td></tr>
+<tr class="separator:ae78ff07146dd84be063224d4ef101543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ed52a9ab3b5f1405206b304c4729864"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a8ed52a9ab3b5f1405206b304c4729864">setConvertProfilePath</a> (String newProfilePath)</td></tr>
+<tr class="separator:a8ed52a9ab3b5f1405206b304c4729864"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4819d85e8d9425d492bc3d6a2b38a39d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a4819d85e8d9425d492bc3d6a2b38a39d">setEmbedColorProfile</a> (boolean newEmbedCProfile)</td></tr>
+<tr class="separator:a4819d85e8d9425d492bc3d6a2b38a39d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81ba0e1be2dc8d4f3650294205ecedfa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a81ba0e1be2dc8d4f3650294205ecedfa">setInkAlias</a> (String newAlias)</td></tr>
+<tr class="separator:a81ba0e1be2dc8d4f3650294205ecedfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf984a2a8fe974d866ada66dbcbbb86d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#abf984a2a8fe974d866ada66dbcbbb86d">setIntentToMatch</a> (<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_render_intent.html">RenderIntent</a> newIntent)</td></tr>
+<tr class="separator:abf984a2a8fe974d866ada66dbcbbb86d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a946b01127e0c32eaea3c01ead32aa0b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a946b01127e0c32eaea3c01ead32aa0b4">setIsInkAction</a> (boolean newIsInkAction)</td></tr>
+<tr class="separator:a946b01127e0c32eaea3c01ead32aa0b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a919c380b4661a3ac1a686c6c2fdab442"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a919c380b4661a3ac1a686c6c2fdab442">setIsProcessColor</a> (boolean newIsProcessColor)</td></tr>
+<tr class="separator:a919c380b4661a3ac1a686c6c2fdab442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23751df79992a65e6493367946760c66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a23751df79992a65e6493367946760c66">setMaxFontSizeMatch</a> (double newSize)</td></tr>
+<tr class="separator:a23751df79992a65e6493367946760c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa60fedab8c34607d0202938d02ae332c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#aa60fedab8c34607d0202938d02ae332c">setMinFontSizeMatch</a> (double newSize)</td></tr>
+<tr class="separator:aa60fedab8c34607d0202938d02ae332c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4d37ee1be8372afea0bd5669de19ae2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#ae4d37ee1be8372afea0bd5669de19ae2">setMustMatchAllAttrs</a> (<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_obj_attrs.html">ColorConvertObjAttrs</a> newAttrs)</td></tr>
+<tr class="separator:ae4d37ee1be8372afea0bd5669de19ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ad48e467dfec1384d190a42fca60f6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a7ad48e467dfec1384d190a42fca60f6a">setMustMatchAllCSAttrs</a> (<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_c_space_type.html">ColorConvertCSpaceType</a> newCSAttrs)</td></tr>
+<tr class="separator:a7ad48e467dfec1384d190a42fca60f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd745a1c13e91001be3b624ee60f28aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#afd745a1c13e91001be3b624ee60f28aa">setMustMatchAnyAttrs</a> (<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_obj_attrs.html">ColorConvertObjAttrs</a> newAttrs)</td></tr>
+<tr class="separator:afd745a1c13e91001be3b624ee60f28aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a260ba1b25034606549823bd01023927b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a260ba1b25034606549823bd01023927b">setMustMatchAnyCSAttrs</a> (<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_c_space_type.html">ColorConvertCSpaceType</a> newCSAttrs)</td></tr>
+<tr class="separator:a260ba1b25034606549823bd01023927b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ec9c517098a56ae7a9abacebb8d9c0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a0ec9c517098a56ae7a9abacebb8d9c0b">setPreserveBlack</a> (boolean newPreserveBlack)</td></tr>
+<tr class="separator:a0ec9c517098a56ae7a9abacebb8d9c0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a632a0ff58f4628c85c189ee5ce1cd3ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a632a0ff58f4628c85c189ee5ce1cd3ac">setPreserveCMYKPrimaries</a> (boolean newPreserveCMYKPrimaries)</td></tr>
+<tr class="separator:a632a0ff58f4628c85c189ee5ce1cd3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd14121e72c2fc07e5177bbc7b316a0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#acd14121e72c2fc07e5177bbc7b316a0a">setPromoteGrayToCMYK</a> (boolean newPromoteGrayToCMYK)</td></tr>
+<tr class="separator:acd14121e72c2fc07e5177bbc7b316a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e49a75699b4f24e4d718127871d29ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a7e49a75699b4f24e4d718127871d29ec">setUseBlackPointCompensation</a> (boolean newBlackPointCompensation)</td></tr>
+<tr class="separator:a7e49a75699b4f24e4d718127871d29ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a7a30d5151a977705e88b1461a5592c6d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a7a30d5151a977705e88b1461a5592c6d">ColorConvertActions</a> (long cPtr, boolean cMemoryOwn)</td></tr>
+<tr class="separator:a7a30d5151a977705e88b1461a5592c6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5529976a0b4bb6ec63582632f369ff05"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#a5529976a0b4bb6ec63582632f369ff05">delete</a> (Boolean disposing)</td></tr>
+<tr class="separator:a5529976a0b4bb6ec63582632f369ff05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af871dc24b53fce9e6bbf8589453851ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#af871dc24b53fce9e6bbf8589453851ce">finalize</a> ()</td></tr>
+<tr class="separator:af871dc24b53fce9e6bbf8589453851ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:afe026e4f70db12aac040aee3466f91a3"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#afe026e4f70db12aac040aee3466f91a3">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html">ColorConvertActions</a> obj)</td></tr>
+<tr class="separator:afe026e4f70db12aac040aee3466f91a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class that defines color conversion actions for an object described by certain attributes. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a7a30d5151a977705e88b1461a5592c6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a30d5151a977705e88b1461a5592c6d">&#9670;&nbsp;</a></span>ColorConvertActions() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.ColorConvertActions.ColorConvertActions </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>cPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>cMemoryOwn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7d9be9959d8bbee28e1a8f67e040476a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d9be9959d8bbee28e1a8f67e040476a">&#9670;&nbsp;</a></span>ColorConvertActions() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.ColorConvertActions.ColorConvertActions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Default constructor for the ColorConvertActions class.Sets default values to the members. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a26dbb414a8f2772d03594f635751862b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26dbb414a8f2772d03594f635751862b">&#9670;&nbsp;</a></span>delete() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.ColorConvertActions.delete </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_params.html#a0c6a2794f332fc7a2a378ecd019b6968">com.datalogics.PDFL.ColorConvertParams.getColorConvActions()</a>.</p>
+
+</div>
+</div>
+<a id="a5529976a0b4bb6ec63582632f369ff05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5529976a0b4bb6ec63582632f369ff05">&#9670;&nbsp;</a></span>delete() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.ColorConvertActions.delete </td>
+          <td>(</td>
+          <td class="paramtype">Boolean&#160;</td>
+          <td class="paramname"><em>disposing</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af871dc24b53fce9e6bbf8589453851ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af871dc24b53fce9e6bbf8589453851ce">&#9670;&nbsp;</a></span>finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ColorConvertActions.finalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad8cb8e6713fd898cae0edc74d1ecb835"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8cb8e6713fd898cae0edc74d1ecb835">&#9670;&nbsp;</a></span>getAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_action_type.html">ColorConvertActionType</a> com.datalogics.PDFL.ColorConvertActions.getAction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets / sets the action, specifying what to do when an object matches this Settings record. </p>
+
+</div>
+</div>
+<a id="a0e2c2af326823b96b871fa1c0473dae0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e2c2af326823b96b871fa1c0473dae0">&#9670;&nbsp;</a></span>getColorantName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.datalogics.PDFL.ColorConvertActions.getColorantName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>For ink actions (which describe a single colorant, whether used in Separation or DeviceN, and which are not matched using the above matching fields) this describes the colorant of the ink. </p>
+
+</div>
+</div>
+<a id="a572347334136d602ed37c8e025ef401f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a572347334136d602ed37c8e025ef401f">&#9670;&nbsp;</a></span>getConvertIntent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_render_intent.html">RenderIntent</a> com.datalogics.PDFL.ColorConvertActions.getConvertIntent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets / sets the intent that overrides the object's original render intent when performing color conversion.UseProfileIntent means that the intent of the object must not be overridden. </p>
+
+</div>
+</div>
+<a id="a3279d24e0d51fe62f57c0306a23a5657"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3279d24e0d51fe62f57c0306a23a5657">&#9670;&nbsp;</a></span>getConvertProfile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_profile.html">ColorProfile</a> com.datalogics.PDFL.ColorConvertActions.getConvertProfile </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets / sets the target ColorProfile for the conversion.If the output intent is embedded, this should be the output intent profile. </p>
+
+</div>
+</div>
+<a id="a8c7dcc1181b9c8b0151e1dafe83b64e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c7dcc1181b9c8b0151e1dafe83b64e0">&#9670;&nbsp;</a></span>getConvertProfilePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.datalogics.PDFL.ColorConvertActions.getConvertProfilePath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets / sets the target ColorProfile for the conversion using the profile found at the path provided.If the output intent is embedded, this should be the output intent profile.NOTE: If specifying a path, ConvertProfile must be set to Null_ColorProfile. </p>
+
+</div>
+</div>
+<a id="afe026e4f70db12aac040aee3466f91a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe026e4f70db12aac040aee3466f91a3">&#9670;&nbsp;</a></span>getCPtr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static long com.datalogics.PDFL.ColorConvertActions.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html">ColorConvertActions</a>&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a13947e30a669a676324f8ca5622971e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13947e30a669a676324f8ca5622971e0">&#9670;&nbsp;</a></span>getEmbedColorProfile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.ColorConvertActions.getEmbedColorProfile </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>If true, embed the target profile.If false, the resulting color is Device, if possible. </p>
+
+</div>
+</div>
+<a id="a3940a66e2aef0a3f18650dd35d8c035f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3940a66e2aef0a3f18650dd35d8c035f">&#9670;&nbsp;</a></span>getInkAlias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.datalogics.PDFL.ColorConvertActions.getInkAlias </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets / sets the ink alias, this only applies to ink actions. </p>
+
+</div>
+</div>
+<a id="a44aab60d50d708e2f6058e1ba03d616c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44aab60d50d708e2f6058e1ba03d616c">&#9670;&nbsp;</a></span>getIntentToMatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_render_intent.html">RenderIntent</a> com.datalogics.PDFL.ColorConvertActions.getIntentToMatch </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets / sets the rendering intent of the object.If this is UseProfileIntent this action applies to any intent. </p>
+
+</div>
+</div>
+<a id="a4a79faaba8ab3a547262121a58d07b38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a79faaba8ab3a547262121a58d07b38">&#9670;&nbsp;</a></span>getIsInkAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.ColorConvertActions.getIsInkAction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Marks this Action to be applied to inks. </p>
+
+</div>
+</div>
+<a id="a33d61ef85660c01a79f2f1c0f6cea561"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33d61ef85660c01a79f2f1c0f6cea561">&#9670;&nbsp;</a></span>getIsProcessColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.ColorConvertActions.getIsProcessColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>True if this ink is a process ink. </p>
+
+</div>
+</div>
+<a id="ab711c4c874e452244c532951c2eb4455"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab711c4c874e452244c532951c2eb4455">&#9670;&nbsp;</a></span>getMaxFontSizeMatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.ColorConvertActions.getMaxFontSizeMatch </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets / sets the maximum font size to match for text objects. </p>
+
+</div>
+</div>
+<a id="a2b95d144556de8f49c9db8f74314e025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b95d144556de8f49c9db8f74314e025">&#9670;&nbsp;</a></span>getMinFontSizeMatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.ColorConvertActions.getMinFontSizeMatch </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets / sets the minimum font size to match for text objects. </p>
+
+</div>
+</div>
+<a id="a0e71cba59aae722ff78c99b3b4a0ddc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e71cba59aae722ff78c99b3b4a0ddc1">&#9670;&nbsp;</a></span>getMustMatchAllAttrs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_obj_attrs.html">ColorConvertObjAttrs</a> com.datalogics.PDFL.ColorConvertActions.getMustMatchAllAttrs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A bit field that gets / sets the attributes an element must match to be color converted.The element must match ALL these attributes to be color converted. </p>
+
+</div>
+</div>
+<a id="aaec605f452ee3fa99d421f1996089525"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaec605f452ee3fa99d421f1996089525">&#9670;&nbsp;</a></span>getMustMatchAllCSAttrs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_c_space_type.html">ColorConvertCSpaceType</a> com.datalogics.PDFL.ColorConvertActions.getMustMatchAllCSAttrs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A bit field that gets / sets the Color Space attributes an object must match to be color converted.The element must match ALL these Color Space attributes to be color converted. </p>
+
+</div>
+</div>
+<a id="a6bfe2928bf235a0c44f32f9ba95ec80e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bfe2928bf235a0c44f32f9ba95ec80e">&#9670;&nbsp;</a></span>getMustMatchAnyAttrs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_obj_attrs.html">ColorConvertObjAttrs</a> com.datalogics.PDFL.ColorConvertActions.getMustMatchAnyAttrs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A bit field that gets / sets the attributes an element must match to be color converted.The element can match ONE OR MORE of these attributes to be color converted. </p>
+
+</div>
+</div>
+<a id="a2bfc7902dbc08b42ac7a68a612d3d04c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bfc7902dbc08b42ac7a68a612d3d04c">&#9670;&nbsp;</a></span>getMustMatchAnyCSAttrs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_c_space_type.html">ColorConvertCSpaceType</a> com.datalogics.PDFL.ColorConvertActions.getMustMatchAnyCSAttrs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A bit field that gets / sets the Color Space attributes an object must match to be color converted.The element can match ONE OR MORE Color Space attributes to be color converted. </p>
+
+</div>
+</div>
+<a id="aaf24ddc9cb25f47ab3d93072a6d8aae6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf24ddc9cb25f47ab3d93072a6d8aae6">&#9670;&nbsp;</a></span>getPreserveBlack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.ColorConvertActions.getPreserveBlack </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>If true, perform a black-preserving transform when converting. </p>
+
+</div>
+</div>
+<a id="a62fc2973d908ac53452a5e55eebe33d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62fc2973d908ac53452a5e55eebe33d3">&#9670;&nbsp;</a></span>getPreserveCMYKPrimaries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.ColorConvertActions.getPreserveCMYKPrimaries </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>If true, use a primary-preserving CMYK to CMYK transform. </p>
+
+</div>
+</div>
+<a id="a71428cdfe50f4ec02f9b2b7cc44a0be4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71428cdfe50f4ec02f9b2b7cc44a0be4">&#9670;&nbsp;</a></span>getPromoteGrayToCMYK()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.ColorConvertActions.getPromoteGrayToCMYK </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>If true, promote DeviceGray objects to DeviceCMYK with k = 1.0 - gray value. </p>
+
+</div>
+</div>
+<a id="a0dd88e07a72b15656e6a68cb8464ce9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dd88e07a72b15656e6a68cb8464ce9e">&#9670;&nbsp;</a></span>getUseBlackPointCompensation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.ColorConvertActions.getUseBlackPointCompensation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>If true, turn on black point compensation for color conversions. </p>
+
+</div>
+</div>
+<a id="aa9862dd2fa680b78c5303aa0819784d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9862dd2fa680b78c5303aa0819784d0">&#9670;&nbsp;</a></span>setAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ColorConvertActions.setAction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_action_type.html">ColorConvertActionType</a>&#160;</td>
+          <td class="paramname"><em>newAction</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85a80a19237185077ef13c7fd9e0f9ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85a80a19237185077ef13c7fd9e0f9ff">&#9670;&nbsp;</a></span>setColorantName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ColorConvertActions.setColorantName </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>newName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a17e41f3dc5588bbc7fadae60e775daa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17e41f3dc5588bbc7fadae60e775daa0">&#9670;&nbsp;</a></span>setConvertIntent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ColorConvertActions.setConvertIntent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_render_intent.html">RenderIntent</a>&#160;</td>
+          <td class="paramname"><em>newIntent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae78ff07146dd84be063224d4ef101543"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae78ff07146dd84be063224d4ef101543">&#9670;&nbsp;</a></span>setConvertProfile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ColorConvertActions.setConvertProfile </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_profile.html">ColorProfile</a>&#160;</td>
+          <td class="paramname"><em>newProfile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ed52a9ab3b5f1405206b304c4729864"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ed52a9ab3b5f1405206b304c4729864">&#9670;&nbsp;</a></span>setConvertProfilePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ColorConvertActions.setConvertProfilePath </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>newProfilePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4819d85e8d9425d492bc3d6a2b38a39d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4819d85e8d9425d492bc3d6a2b38a39d">&#9670;&nbsp;</a></span>setEmbedColorProfile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ColorConvertActions.setEmbedColorProfile </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>newEmbedCProfile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a81ba0e1be2dc8d4f3650294205ecedfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81ba0e1be2dc8d4f3650294205ecedfa">&#9670;&nbsp;</a></span>setInkAlias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ColorConvertActions.setInkAlias </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>newAlias</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abf984a2a8fe974d866ada66dbcbbb86d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf984a2a8fe974d866ada66dbcbbb86d">&#9670;&nbsp;</a></span>setIntentToMatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ColorConvertActions.setIntentToMatch </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_render_intent.html">RenderIntent</a>&#160;</td>
+          <td class="paramname"><em>newIntent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a946b01127e0c32eaea3c01ead32aa0b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a946b01127e0c32eaea3c01ead32aa0b4">&#9670;&nbsp;</a></span>setIsInkAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ColorConvertActions.setIsInkAction </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>newIsInkAction</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a919c380b4661a3ac1a686c6c2fdab442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a919c380b4661a3ac1a686c6c2fdab442">&#9670;&nbsp;</a></span>setIsProcessColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ColorConvertActions.setIsProcessColor </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>newIsProcessColor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a23751df79992a65e6493367946760c66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23751df79992a65e6493367946760c66">&#9670;&nbsp;</a></span>setMaxFontSizeMatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ColorConvertActions.setMaxFontSizeMatch </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>newSize</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa60fedab8c34607d0202938d02ae332c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa60fedab8c34607d0202938d02ae332c">&#9670;&nbsp;</a></span>setMinFontSizeMatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ColorConvertActions.setMinFontSizeMatch </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>newSize</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae4d37ee1be8372afea0bd5669de19ae2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4d37ee1be8372afea0bd5669de19ae2">&#9670;&nbsp;</a></span>setMustMatchAllAttrs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ColorConvertActions.setMustMatchAllAttrs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_obj_attrs.html">ColorConvertObjAttrs</a>&#160;</td>
+          <td class="paramname"><em>newAttrs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7ad48e467dfec1384d190a42fca60f6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ad48e467dfec1384d190a42fca60f6a">&#9670;&nbsp;</a></span>setMustMatchAllCSAttrs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ColorConvertActions.setMustMatchAllCSAttrs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_c_space_type.html">ColorConvertCSpaceType</a>&#160;</td>
+          <td class="paramname"><em>newCSAttrs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afd745a1c13e91001be3b624ee60f28aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd745a1c13e91001be3b624ee60f28aa">&#9670;&nbsp;</a></span>setMustMatchAnyAttrs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ColorConvertActions.setMustMatchAnyAttrs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_obj_attrs.html">ColorConvertObjAttrs</a>&#160;</td>
+          <td class="paramname"><em>newAttrs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a260ba1b25034606549823bd01023927b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a260ba1b25034606549823bd01023927b">&#9670;&nbsp;</a></span>setMustMatchAnyCSAttrs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ColorConvertActions.setMustMatchAnyCSAttrs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_convert_c_space_type.html">ColorConvertCSpaceType</a>&#160;</td>
+          <td class="paramname"><em>newCSAttrs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ec9c517098a56ae7a9abacebb8d9c0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ec9c517098a56ae7a9abacebb8d9c0b">&#9670;&nbsp;</a></span>setPreserveBlack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ColorConvertActions.setPreserveBlack </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>newPreserveBlack</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a632a0ff58f4628c85c189ee5ce1cd3ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a632a0ff58f4628c85c189ee5ce1cd3ac">&#9670;&nbsp;</a></span>setPreserveCMYKPrimaries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ColorConvertActions.setPreserveCMYKPrimaries </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>newPreserveCMYKPrimaries</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acd14121e72c2fc07e5177bbc7b316a0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd14121e72c2fc07e5177bbc7b316a0a">&#9670;&nbsp;</a></span>setPromoteGrayToCMYK()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ColorConvertActions.setPromoteGrayToCMYK </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>newPromoteGrayToCMYK</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7e49a75699b4f24e4d718127871d29ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e49a75699b4f24e4d718127871d29ec">&#9670;&nbsp;</a></span>setUseBlackPointCompensation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ColorConvertActions.setUseBlackPointCompensation </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>newBlackPointCompensation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+</body>
+</html>
