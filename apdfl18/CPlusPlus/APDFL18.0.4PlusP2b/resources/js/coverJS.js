@@ -30,7 +30,6 @@ for(var i in searchIndex) {
 
 searchInput.addEventListener("input", e=>{
     const searchStr = e.target.value.toLowerCase()
-    //console.log(searchStr)
     if(searchStr.length >= 0) {
         searchTerms.forEach(term =>{
             if(searchStr.length != 0) {
@@ -46,17 +45,6 @@ searchInput.addEventListener("input", e=>{
                 term[1].parentElement.style.display = "none"
             }
         })
-
-        /*const hideTitle = document.getElementByClassName("title")
-        hideTitle.every(child =>{
-            if(child.hidden = false){
-                hideTitle.style.display = "table-row"
-                return true
-            }
-            hideTitle.style.display = "none"
-            return true
-        })
-        */
     }
 })
 
