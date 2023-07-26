@@ -533,6 +533,7 @@ PDF Edit Layer: General
 <dt><a href="#_t_PDEGlyphRun">_t_PDEGlyphRun</a></dt><dd> -  A data structure used for adding Unicode text.</dd>
 <dt><a href="#_t_PDEGraphicState">_t_PDEGraphicState</a></dt><dd> -  Attributes of a PDEElement or a PDEText sub-element.</dd>
 <dt><a href="#_t_PDEGraphicStateEx">_t_PDEGraphicStateEx</a></dt><dd> -  Attributes of a PDEElement or a PDEText sub-element.</dd>
+<dt><a href="#_t_PDESpanItem">_t_PDESpanItem</a></dt><dd> - </dd>
 </dl></nav>
 <section><div class="infoRow"><h3 id="_t_PDEColorSpec"><strong><span style="color:grey;">_t_PDEColorSpec</span></strong></h3>
 
@@ -1005,6 +1006,39 @@ PDF Edit Layer: General
 <tr><td><a href="pdelayer_PDEElement.html#PDEElementHasGStateEx" title=" Gets the graphics state information for an element."><code>PDEElementHasGStateEx</code></a></td><td><a href="pdelayer_PDEElement.html#PDEElementSetGStateEx" title=" Sets the graphics state information for an element."><code>PDEElementSetGStateEx</code></a></td></tr>
 <tr><td><a href="pdelayer_PDEText.html#PDETextGetGStateEx" title=" Gets the graphics state of a character or a text run."><code>PDETextGetGStateEx</code></a></td><td><a href="pdelayer_PDETextItem.html#PDETextItemGetGStateEx" title=" Gets the graphics state for a text item."><code>PDETextItemGetGStateEx</code></a></td></tr>
 <tr><td><a href="pdelayer_PDETextItem.html#PDETextItemSetGStateEx" title=" Sets the graphics state for a text item."><code>PDETextItemSetGStateEx</code></a></td><td><a href="pdelayer_PDEText.html#PDETextRunSetGStateEx" title=" Sets the graphics state of a text run."><code>PDETextRunSetGStateEx</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_PDESpanItem"><strong><span style="color:grey;">_t_PDESpanItem</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:1423</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDESpanItem {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>firstGlyph</code><code>;</code> </div>
+</td><td><span>The index into the glyphs array in a <a href="pdelayer_General.html#_t_PDEGlyphRun" title=" A data structure used for adding Unicode text.">PDEGlyphRun</a> object. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>nGlyphs</code><code>;</code> </div>
+</td><td><span>The number of glyphs in the span starting from firstGlyph. This can be zero, indicating there are no glyphs for this Unicode string. The firstGlyph indicates the glyph that precedes the Unicode string. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>firstUniChar</code><code>;</code> </div>
+</td><td><span>The index into the <code>uniText</code> array in a <a href="pdelayer_General.html#_t_PDEGlyphRun" title=" A data structure used for adding Unicode text.">PDEGlyphRun</a> object. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>nUniChars</code><code>;</code> </div>
+</td><td><span>The number of Unicode characters in the span starting from <code>firstUniChar</code>. This count can be zero, indicating there are no Unicode values for the range of glyphs. </span>
+</td></tr>
+<tr><td><code id="PDESpanItem"><code>}</code> <a href="pdelayer_General.html#_t_PDESpanItem"><code>PDESpanItem</code></a><code>,</code> <code>*</code><a href="pdelayer_General.html#_t_PDESpanItem"><code>PDESpanItemP</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEFont.html#_t_PDESpanSet"><code>_t_PDESpanSet</code></a></td><td><span></span>
+</td></tr></table>
 </nav>
 </section>
 </section>
