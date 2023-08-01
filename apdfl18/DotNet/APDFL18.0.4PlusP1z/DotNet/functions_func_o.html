@@ -83,7 +83,7 @@ $(document).ready(function(){initNavTree('functions_func_o.html',''); initResiza
 
 <h3><a id="index_o"></a>- o -</h3><ul>
 <li>OCREngine()
-: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_o_c_r_engine.html#a8443bfaae94c7db2f08ee19d05166764">Datalogics.PDFL.OCREngine</a>
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_o_c_r_engine.html#a578aa17e834aa11bc69728ead404a883">Datalogics.PDFL.OCREngine</a>
 </li>
 <li>OCRParams()
 : <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_o_c_r_params.html#a9eec2272c90c82b00d89dfa7b7fda162">Datalogics.PDFL.OCRParams</a>
@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('functions_func_o.html',''); initResiza
 , <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html#a5052c3f2380244a4f84b5953da7f9825">Datalogics.PDFL.Function</a>
 </li>
 <li>Optimize()
-: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_optimizer.html#a0201f2aedc9879d0fcc20eae5e5b3c3f">Datalogics.PDFL.PDFOptimizer</a>
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_optimizer.html#a3ad138e95637440ed6168144ba9249c9">Datalogics.PDFL.PDFOptimizer</a>
 </li>
 <li>OptionalContentConfig()
 : <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_config.html#a891702ac76625dd40004dcf8f83e878b">Datalogics.PDFL.OptionalContentConfig</a>
@@ -128,6 +128,60 @@ $(document).ready(function(){initNavTree('functions_func_o.html',''); initResiza
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right">
+      <label id="version-selector-label" for="version-selector">Looking for another verion?</label>
+      <select name="version-selector" id="version-select" onchange="versionChanged()">
+        <option value="1804_2b">v18.0.4PlusP2b</option>
+        <option value="1804_2a">v18.0.4PlusP2a</option>
+        <option value="1804_1z">v18.0.4PlusP1z</option>
+      </select>
+    </div>
+  <div>
 </div>
+<script>
+function versionChanged() {
+  var version = document.getElementById("version-select").value;
+  var currentLocation = window.location.href;
+  var newURL = "https://docs.datalogics.com/apdfl18/";
+  const endURL = "/Overview/index.html";
+  if (currentLocation.includes("DotNetFramework"))
+  {
+      newURL += "DotNetFramework/";
+  }
+  else if (currentLocation.includes("DotNet"))
+  {
+      newURL += "DotNet/";
+  }
+  else if (currentLocation.includes("Java"))
+  {
+      newURL += "Java/";
+  }
+  if (version == "1804_2b")
+  {
+      newURL += "APDFL18.0.4PlusP2b";
+  }
+  else if (version == "1804_2a")
+  {
+      newURL += "APDFL18.0.4PlusP2a";
+  }
+  else if (version == "1804_1z")
+  {
+      newURL += "APDFL18.0.4PlusP1z";
+  }
+  newURL += endURL;
+  window.location = newURL;
+}
+</script>
 </body>
 </html>

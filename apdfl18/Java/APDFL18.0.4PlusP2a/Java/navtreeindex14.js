@@ -1,5 +1,7 @@
 var NAVTREEINDEX14 =
 {
+"enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#a28059a34ce68941220fc983e1fd498b6":[3,0,0,0,0,5,15],
+"enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#a46fc3e7ca2508540e13e3ef8d2730357":[3,0,0,0,0,5,1],
 "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#a50038aa518e362e5839cc644a228f49e":[3,0,0,0,0,5,5],
 "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#a659ce7f69df23cb6998b93950c115d5b":[3,0,0,0,0,5,10],
 "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#a707a43d4975ac465ee28cf5749aa07d3":[3,0,0,0,0,5,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX14 =
 "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_ink_types.html":[3,0,0,0,0,84],
 "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_ink_types.html#a0eb1fdc81527aedaf3808404fdd17e9c":[3,0,0,0,0,84,1],
 "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_ink_types.html#a90888ab42292d7d38900d1f93189e864":[3,0,0,0,0,84,0],
-"enumcom_1_1datalogics_1_1_p_d_f_l_1_1_ink_types.html#ac0022a3787a1d0ebee8ddd343e92569e":[3,0,0,0,0,84,3],
-"enumcom_1_1datalogics_1_1_p_d_f_l_1_1_ink_types.html#ac5a7f15ad82fdac9b9a02b05d92adc8c":[3,0,0,0,0,84,2],
-"enumcom_1_1datalogics_1_1_p_d_f_l_1_1_language.html":[3,0,0,0,0,86]
+"enumcom_1_1datalogics_1_1_p_d_f_l_1_1_ink_types.html#ac0022a3787a1d0ebee8ddd343e92569e":[3,0,0,0,0,84,3]
 };

@@ -126,8 +126,8 @@ Properties</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>When a user clicks a link or bookmark in a PDF, an action occurs, moving the reader to a new location. </p>
 <p>An action can involve moving the reader to a new page in the file, for example.</p>
-<p>Also, with Acrobat a PDF file can have an Action that runs automatically when a user opens the file, or reaches a specific page.</p>
-<p>Applications can support Actions in custom annotation types they add. Only GoTo and URI Actions are currently supported; you can only use an Action with the interface to move from one part of a file to another or open an external web page. For more detail on working with Actions, see section 12.6 of the ISO 32000-1:2008, Document Management Portable Document Format Part 1: PDF 1.7, page 414.</p>
+<p>Also, with a PDF Viewer a PDF file can have an Action that runs automatically when a user opens the file, or reaches a specific page.</p>
+<p>Applications can support Actions in custom annotation types they add. Only GoTo and URI Actions are currently supported; you can only use an Action with the interface to move from one part of a file to another or open an external web page. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac3e14835f794b9402814b2eba6cc3bb1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac3e14835f794b9402814b2eba6cc3bb1">&#9670;&nbsp;</a></span>Action()</h2>
@@ -297,6 +297,60 @@ Properties</h2></td></tr>
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right">
+      <label id="version-selector-label" for="version-selector">Looking for another verion?</label>
+      <select name="version-selector" id="version-select" onchange="versionChanged()">
+        <option value="1804_2b">v18.0.4PlusP2b</option>
+        <option value="1804_2a">v18.0.4PlusP2a</option>
+        <option value="1804_1z">v18.0.4PlusP1z</option>
+      </select>
+    </div>
+  <div>
 </div>
+<script>
+function versionChanged() {
+  var version = document.getElementById("version-select").value;
+  var currentLocation = window.location.href;
+  var newURL = "https://docs.datalogics.com/apdfl18/";
+  const endURL = "/Overview/index.html";
+  if (currentLocation.includes("DotNetFramework"))
+  {
+      newURL += "DotNetFramework/";
+  }
+  else if (currentLocation.includes("DotNet"))
+  {
+      newURL += "DotNet/";
+  }
+  else if (currentLocation.includes("Java"))
+  {
+      newURL += "Java/";
+  }
+  if (version == "1804_2b")
+  {
+      newURL += "APDFL18.0.4PlusP2b";
+  }
+  else if (version == "1804_2a")
+  {
+      newURL += "APDFL18.0.4PlusP2a";
+  }
+  else if (version == "1804_1z")
+  {
+      newURL += "APDFL18.0.4PlusP1z";
+  }
+  newURL += endURL;
+  window.location = newURL;
+}
+</script>
 </body>
 </html>

@@ -344,7 +344,6 @@ Static Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>(Deprecated, function will be removed in 3.0. Instead, use the constructor for Annotation or a subclass of Annotation.) </p>
 <p>Adds an annotation at the specified location in a page's annotation array. </p>
-<p>ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, page 381. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">addAfter</td><td>The index into the page's annotation array where the annotation is added. The first annotation in the array has an index of zero. Passing a value of <code>-2</code> adds the annotation to the end of the array. Passing other negative values produces undefined results. </td></tr>
@@ -388,7 +387,6 @@ Static Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>(Deprecated, function will be removed in 3.0. Instead, use the constructor for Annotation or a subclass of Annotation.) </p>
 <p>Adds an annotation to the page. This method is equivalent to calling PDPageCreateAnnot() followed by PDPageAddAnnot(). </p>
-<p>ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, page 381. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">addAfter</td><td>Where to add the annotation in the page's annotation array. Passing a value of <code>-2</code> adds the annotation to the end of the array (this is generally what you should do unless you have a need to place the annotation at a special location in the array). Passing a value of <code>-1</code> adds the annotation to the beginning of the array. Passing other negative values produces undefined results. </td></tr>
@@ -1566,6 +1564,60 @@ Static Protected Member Functions</h2></td></tr>
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right">
+      <label id="version-selector-label" for="version-selector">Looking for another verion?</label>
+      <select name="version-selector" id="version-select" onchange="versionChanged()">
+        <option value="1804_2b">v18.0.4PlusP2b</option>
+        <option value="1804_2a">v18.0.4PlusP2a</option>
+        <option value="1804_1z">v18.0.4PlusP1z</option>
+      </select>
+    </div>
+  <div>
 </div>
+<script>
+function versionChanged() {
+  var version = document.getElementById("version-select").value;
+  var currentLocation = window.location.href;
+  var newURL = "https://docs.datalogics.com/apdfl18/";
+  const endURL = "/Overview/index.html";
+  if (currentLocation.includes("DotNetFramework"))
+  {
+      newURL += "DotNetFramework/";
+  }
+  else if (currentLocation.includes("DotNet"))
+  {
+      newURL += "DotNet/";
+  }
+  else if (currentLocation.includes("Java"))
+  {
+      newURL += "Java/";
+  }
+  if (version == "1804_2b")
+  {
+      newURL += "APDFL18.0.4PlusP2b";
+  }
+  else if (version == "1804_2a")
+  {
+      newURL += "APDFL18.0.4PlusP2a";
+  }
+  else if (version == "1804_1z")
+  {
+      newURL += "APDFL18.0.4PlusP1z";
+  }
+  newURL += endURL;
+  window.location = newURL;
+}
+</script>
 </body>
 </html>

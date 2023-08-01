@@ -202,8 +202,8 @@ Properties</h2></td></tr>
 <p></p>
 <p>Find a font with the specified name, and construct a Font object from it. </p>
 <p>Otherwise, it makes a font with the default encoding (MacRomanEncoding on Macs, WinAnsiEncoding elsewhere, or for symbol fonts, their own custom encoding). There is currently no way to specify another encoding for the font.</p>
-<p>When DLE sets text, it checks to see if the text is representable in the font's encoding. If it is not, then DLE makes a "unicode font" with an Identity-H encoding and uses that to set the text. For non-Type0 fonts, this may result in two versions of a font in the output document.</p>
-<p>DLE enforces the following requirements on fonts:</p>
+<p>When setting text, it checks to see if the text is representable in the font's encoding. If it is not, then DLE makes a "unicode font" with an Identity-H encoding and uses that to set the text. For non-Type0 fonts, this may result in two versions of a font in the output document.</p>
+<p>PDFL enforces the following requirements on fonts:</p>
 <ul>
 <li>
 TrueTypes used as CID fonts must be embedded.</li>
@@ -250,8 +250,8 @@ CID fonts that are marked as embedded get their DoNotEmbed flag turned off (or e
 <p></p>
 <p>Find a font with the specified name, and construct a Font object from it. </p>
 <p>Otherwise, it makes a font with the default encoding (MacRomanEncoding on Macs, WinAnsiEncoding elsewhere, or for symbol fonts, their own custom encoding). There is currently no way to specify another encoding for the font.</p>
-<p>When DLE sets text, it checks to see if the text is representable in the font's encoding. If it is not, then DLE makes a "unicode font" with an Identity-H encoding and uses that to set the text. For non-Type0 fonts, this may result in two versions of a font in the output document.</p>
-<p>DLE enforces the following requirements on fonts:</p>
+<p>When setting text, it checks to see if the text is representable in the font's encoding. If it is not, then DLE makes a "unicode font" with an Identity-H encoding and uses that to set the text. For non-Type0 fonts, this may result in two versions of a font in the output document.</p>
+<p>PDFL enforces the following requirements on fonts:</p>
 <ul>
 <li>
 TrueTypes used as CID fonts must be embedded.</li>
@@ -311,8 +311,8 @@ CID fonts that are marked as embedded get their DoNotEmbed flag turned off (or e
 <p></p>
 <p>Find a font with the specified name, and construct a Font object from it. </p>
 <p>Otherwise, it makes a font with the default encoding (MacRomanEncoding on Macs, WinAnsiEncoding elsewhere, or for symbol fonts, their own custom encoding). There is currently no way to specify another encoding for the font.</p>
-<p>When DLE sets text, it checks to see if the text is representable in the font's encoding. If it is not, then DLE makes a "unicode font" with an Identity-H or Identity-V encoding and uses that to set the text. For non-Type0 fonts, this may result in two versions of a font in the output document.</p>
-<p>DLE enforces the following requirements on fonts:</p>
+<p>When setting text, it checks to see if the text is representable in the font's encoding. If it is not, then DLE makes a "unicode font" with an Identity-H or Identity-V encoding and uses that to set the text. For non-Type0 fonts, this may result in two versions of a font in the output document.</p>
+<p>PDFL enforces the following requirements on fonts:</p>
 <ul>
 <li>
 TrueTypes used as CID fonts must be embedded.</li>
@@ -1079,6 +1079,60 @@ TrueType</li>
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right">
+      <label id="version-selector-label" for="version-selector">Looking for another verion?</label>
+      <select name="version-selector" id="version-select" onchange="versionChanged()">
+        <option value="1804_2b">v18.0.4PlusP2b</option>
+        <option value="1804_2a">v18.0.4PlusP2a</option>
+        <option value="1804_1z">v18.0.4PlusP1z</option>
+      </select>
+    </div>
+  <div>
 </div>
+<script>
+function versionChanged() {
+  var version = document.getElementById("version-select").value;
+  var currentLocation = window.location.href;
+  var newURL = "https://docs.datalogics.com/apdfl18/";
+  const endURL = "/Overview/index.html";
+  if (currentLocation.includes("DotNetFramework"))
+  {
+      newURL += "DotNetFramework/";
+  }
+  else if (currentLocation.includes("DotNet"))
+  {
+      newURL += "DotNet/";
+  }
+  else if (currentLocation.includes("Java"))
+  {
+      newURL += "Java/";
+  }
+  if (version == "1804_2b")
+  {
+      newURL += "APDFL18.0.4PlusP2b";
+  }
+  else if (version == "1804_2a")
+  {
+      newURL += "APDFL18.0.4PlusP2a";
+  }
+  else if (version == "1804_1z")
+  {
+      newURL += "APDFL18.0.4PlusP1z";
+  }
+  newURL += endURL;
+  window.location = newURL;
+}
+</script>
 </body>
 </html>

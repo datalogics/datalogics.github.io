@@ -1,5 +1,7 @@
 var NAVTREEINDEX15 =
 {
+"enumcom_1_1datalogics_1_1_p_d_f_l_1_1_ink_types.html#ac5a7f15ad82fdac9b9a02b05d92adc8c":[3,0,0,0,0,84,2],
+"enumcom_1_1datalogics_1_1_p_d_f_l_1_1_language.html":[3,0,0,0,0,86],
 "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_language.html#a02be14c0baeabe8a95cfaa51302b936b":[3,0,0,0,0,86,107],
 "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_language.html#a031318ac75c45ef113d98ebfddff8f1b":[3,0,0,0,0,86,9],
 "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_language.html#a047cc33eebe5e522f8d3c6163004873b":[3,0,0,0,0,86,56],
@@ -247,7 +249,5 @@ var NAVTREEINDEX15 =
 "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_x_convert_type.html#a3228a0b6dca69e69830626c996c030a6":[3,0,0,0,0,165,0],
 "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_x_convert_type.html#a5378cc0447831ebdbab818b84d91ae13":[3,0,0,0,0,165,1],
 "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_x_convert_type.html#a8882b6010683b4498fd66bc6ae828144":[3,0,0,0,0,165,3],
-"enumcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_x_convert_type.html#ab2a9bb28a2196d512958880d96368f88":[3,0,0,0,0,165,2],
-"enumcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_flattener_color_comp_set.html":[3,0,0,0,0,150],
-"enumcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_flattener_color_comp_set.html#a1b7df28c6843ca5a3b662d10986bab9e":[3,0,0,0,0,150,2]
+"enumcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_x_convert_type.html#ab2a9bb28a2196d512958880d96368f88":[3,0,0,0,0,165,2]
 };
