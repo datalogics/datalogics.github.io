@@ -574,7 +574,8 @@ var namespace_datalogics_1_1_p_d_f_l =
     [ "LogOutputFlags", "namespace_datalogics_1_1_p_d_f_l.html#a9109d60075fb108803f547ee828236e5", [
       [ "None", "namespace_datalogics_1_1_p_d_f_l.html#a9109d60075fb108803f547ee828236e5a6adf97f83acf6453d4a6a4b1070f3754", null ],
       [ "Console", "namespace_datalogics_1_1_p_d_f_l.html#a9109d60075fb108803f547ee828236e5abccaa4aa80831b76c11240a16447975f", null ],
-      [ "File", "namespace_datalogics_1_1_p_d_f_l.html#a9109d60075fb108803f547ee828236e5a0b27918290ff5323bea1e3b78a9cf04e", null ]
+      [ "File", "namespace_datalogics_1_1_p_d_f_l.html#a9109d60075fb108803f547ee828236e5a0b27918290ff5323bea1e3b78a9cf04e", null ],
+      [ "EventLog", "namespace_datalogics_1_1_p_d_f_l.html#a9109d60075fb108803f547ee828236e5affa44fa214a7ea318db17e175869588c", null ]
     ] ],
     [ "MirrorOptions", "namespace_datalogics_1_1_p_d_f_l.html#a2a572c9549dbb2b650d8133670c6e475", [
       [ "DontFlip", "namespace_datalogics_1_1_p_d_f_l.html#a2a572c9549dbb2b650d8133670c6e475ad1df8ccc09be28452d890be84ed934de", null ],

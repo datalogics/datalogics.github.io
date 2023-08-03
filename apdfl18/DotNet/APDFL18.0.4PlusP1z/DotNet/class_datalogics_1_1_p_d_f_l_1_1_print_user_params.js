@@ -7,6 +7,7 @@ var class_datalogics_1_1_p_d_f_l_1_1_print_user_params =
     [ "EnumeratePaperSources", "class_datalogics_1_1_p_d_f_l_1_1_print_user_params.html#a26d2644f00734a8e606cb1a0e15e0c18", null ],
     [ "PaperSourceIdByName", "class_datalogics_1_1_p_d_f_l_1_1_print_user_params.html#a156b629e1f26feb1516cc21cbe6b62d6", null ],
     [ "PosePrintDialog", "class_datalogics_1_1_p_d_f_l_1_1_print_user_params.html#a24c5753f735c82833ec925efe163f8df", null ],
+    [ "UpdateFromPrinterSettings", "class_datalogics_1_1_p_d_f_l_1_1_print_user_params.html#ac6d0a4410d1570c3b87a23c4d78c7867", null ],
     [ "UseDefaultPrinter", "class_datalogics_1_1_p_d_f_l_1_1_print_user_params.html#ac9f37c5f9c58a590d612eedb2fffd3f5", null ],
     [ "UseCropBox", "class_datalogics_1_1_p_d_f_l_1_1_print_user_params.html#ac2d6d0d2c031a096cd108578cac668d2", null ],
     [ "UseMediaBox", "class_datalogics_1_1_p_d_f_l_1_1_print_user_params.html#a625edcdadaf694b7c3d2e2b55bb17944", null ],

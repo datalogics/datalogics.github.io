@@ -83,7 +83,7 @@ $(document).ready(function(){initNavTree('functions_func_r.html',''); initResiza
 
 <h3><a id="index_r"></a>- r -</h3><ul>
 <li>Rect()
-: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_rect.html#a68afca8c61d780bba158f38abae134a1">Datalogics.PDFL.Rect</a>
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_rect.html#aa12d9776f09cd9682b3052b44c34d5a4">Datalogics.PDFL.Rect</a>
 </li>
 <li>RectIntersectsCharacter()
 : <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_text.html#a7ba47b49a2e37ba38ea32fd4f850b09a">Datalogics.PDFL.Text</a>
@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('functions_func_r.html',''); initResiza
 : <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_rect_segment.html#a44eefbc28b8ebfa06a8d3459c644d1b3">Datalogics.PDFL.RectSegment</a>
 </li>
 <li>Redaction()
-: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_redaction.html#a9d8e97ba667dd9c82b19c39134ba282d">Datalogics.PDFL.Redaction</a>
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_redaction.html#a1c7c56239597c9d5d25b0c9ced324407">Datalogics.PDFL.Redaction</a>
 </li>
 <li>RemoteDestination()
 : <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_remote_destination.html#a0f836193b67be43e40b44321bb26fc1c">Datalogics.PDFL.RemoteDestination</a>
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('functions_func_r.html',''); initResiza
 : <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_name_tree.html#ac7dd3fb9fdf82a329942100748096abd">Datalogics.PDFL.NameTree</a>
 , <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_number_tree.html#a220b1236f2face87172159e8548f6705">Datalogics.PDFL.NumberTree</a>
 , <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_array.html#af1e0a58ceae3a9f1de30ab94e516544c">Datalogics.PDFL.PDFArray</a>
-, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html#a56a7ffc4749da665dc92b10b8521379b">Datalogics.PDFL.PDFDict</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html#abdbd18148a910723e405ab52ae0d1f4d">Datalogics.PDFL.PDFDict</a>
 </li>
 <li>RemoveAnnotation()
 : <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_page.html#aa559c80b2e8eaacde98818bd8ee23b3c">Datalogics.PDFL.Page</a>
@@ -162,6 +162,60 @@ $(document).ready(function(){initNavTree('functions_func_r.html',''); initResiza
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right">
+      <label id="version-selector-label" for="version-selector">Looking for another verion?</label>
+      <select name="version-selector" id="version-select" onchange="versionChanged()">
+        <option value="1804_2b">v18.0.4PlusP2b</option>
+        <option value="1804_2a">v18.0.4PlusP2a</option>
+        <option value="1804_1z">v18.0.4PlusP1z</option>
+      </select>
+    </div>
+  <div>
 </div>
+<script>
+function versionChanged() {
+  var version = document.getElementById("version-select").value;
+  var currentLocation = window.location.href;
+  var newURL = "https://docs.datalogics.com/apdfl18/";
+  const endURL = "/Overview/index.html";
+  if (currentLocation.includes("DotNetFramework"))
+  {
+      newURL += "DotNetFramework/";
+  }
+  else if (currentLocation.includes("DotNet"))
+  {
+      newURL += "DotNet/";
+  }
+  else if (currentLocation.includes("Java"))
+  {
+      newURL += "Java/";
+  }
+  if (version == "1804_2b")
+  {
+      newURL += "APDFL18.0.4PlusP2b";
+  }
+  else if (version == "1804_2a")
+  {
+      newURL += "APDFL18.0.4PlusP2a";
+  }
+  else if (version == "1804_1z")
+  {
+      newURL += "APDFL18.0.4PlusP1z";
+  }
+  newURL += endURL;
+  window.location = newURL;
+}
+</script>
 </body>
 </html>

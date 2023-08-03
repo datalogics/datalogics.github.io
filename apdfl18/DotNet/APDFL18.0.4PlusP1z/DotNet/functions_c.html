@@ -223,7 +223,7 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <li>Color
 : <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_annotation.html#a7c3b36af3a32e258cb1420676ae61f40">Datalogics.PDFL.Annotation</a>
 , <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_bookmark.html#abdd6c475d6e936dcb6efdb448b910d32">Datalogics.PDFL.Bookmark</a>
-, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color.html#a3f308eacadfe41379663520e494608a9">Datalogics.PDFL.Color</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color.html#ae7efa74e83c264e8ad1bb0138c97cb51">Datalogics.PDFL.Color</a>
 , <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_free_text_annotation.html#adb2f23852c132e7d04e2b75ce5d34256">Datalogics.PDFL.FreeTextAnnotation</a>
 , <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_style.html#a268585e0d2de7b00b512416f5ccfc63b">Datalogics.PDFL.Style</a>
 , <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_watermark_text_params.html#a26f33b72de7e4548d22433ffa96583c6">Datalogics.PDFL.WatermarkTextParams</a>
@@ -318,8 +318,17 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 <li>ConvertStrokesToOutlines
 : <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a7abd34232efb6dee7d4f1ab71e0d366c">Datalogics.PDFL.FlattenTransparencyParams</a>
 </li>
+<li>ConvertToExcel()
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html#aca93c74c8ca4eb266f319296db8ac917">Datalogics.PDFL.Document</a>
+</li>
+<li>ConvertToPowerPoint()
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html#a6dad362a73338ce96d05f82e9238785d">Datalogics.PDFL.Document</a>
+</li>
 <li>ConvertToProcessUsingOPP
 : <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a77de825826f730951de96ee1880b770c">Datalogics.PDFL.SeparationParams</a>
+</li>
+<li>ConvertToWord()
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html#a63e09c1105939c23f17031eeee37d8fc">Datalogics.PDFL.Document</a>
 </li>
 <li>ConvertTrueTypeToType42
 : <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a0366310bb8cb58ebfce424d94ab9fcf4">Datalogics.PDFL.SeparationParams</a>
@@ -381,6 +390,60 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right">
+      <label id="version-selector-label" for="version-selector">Looking for another verion?</label>
+      <select name="version-selector" id="version-select" onchange="versionChanged()">
+        <option value="1804_2b">v18.0.4PlusP2b</option>
+        <option value="1804_2a">v18.0.4PlusP2a</option>
+        <option value="1804_1z">v18.0.4PlusP1z</option>
+      </select>
+    </div>
+  <div>
 </div>
+<script>
+function versionChanged() {
+  var version = document.getElementById("version-select").value;
+  var currentLocation = window.location.href;
+  var newURL = "https://docs.datalogics.com/apdfl18/";
+  const endURL = "/Overview/index.html";
+  if (currentLocation.includes("DotNetFramework"))
+  {
+      newURL += "DotNetFramework/";
+  }
+  else if (currentLocation.includes("DotNet"))
+  {
+      newURL += "DotNet/";
+  }
+  else if (currentLocation.includes("Java"))
+  {
+      newURL += "Java/";
+  }
+  if (version == "1804_2b")
+  {
+      newURL += "APDFL18.0.4PlusP2b";
+  }
+  else if (version == "1804_2a")
+  {
+      newURL += "APDFL18.0.4PlusP2a";
+  }
+  else if (version == "1804_1z")
+  {
+      newURL += "APDFL18.0.4PlusP1z";
+  }
+  newURL += endURL;
+  window.location = newURL;
+}
+</script>
 </body>
 </html>
