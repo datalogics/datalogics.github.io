@@ -17,11 +17,31 @@
 <body>
 <div>
     <h1>PDF2IMG Release Notes</h1>
-<p><strong>Version 4.5.0 </strong>(April 17, 2023)<br />
-  Enhancements:</p>
+<p><strong>Version 4.6.0 </strong>(August 21, 2023)<br/></p>
+<p>New Features:</p>
+  <ul>
+    <li>Add new -splitbylayers option to pdf2img command line program.</li>
+    <li>Add new pdf2img_set_split_layers() API to C library.</li>
+    <li>Add new SplitByLayers member to ImageConversionOptions class for .NET Framework library.</li>
+  </ul>
+<p>Changes:</p>
+  <ul>
+    <li>Updates open source library libTIFF to version 4.5.1.</li>
+    <li>Updates open source library libPNG to version 1.6.40.</li>
+    <li>We now only ship a Linux 64-Bit release.</li>
+    <li>A new PDF2IMG Docker image version 1.5 has been uploaded to Artifactory.</li>
+    </ul>
+<p>Problem Corrections:</p>
+<ul>
+    <li>SF#45733 – This corrects a crash that could occur when Rendering a Page as if Printed and a very large Dash Phase value was encountered.</li>
+    <li>SF#45322 – This corrects a problem Rasterizing documents with a Page Transparency Group of sRGB in use in some cases.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Version 4.5.0 </strong>(April 17, 2023)<br/></p>
+<p>Enhancements:</p>
   <ul>
     <li>Updates open source library libtiff to version 4.4.0.</li>
-    <li>We no longer ship a License Manages Linux 32-Bit installer.</li>
+    <li>We no longer ship a License Managed Linux 32-Bit installer.</li>
     <li>A new PDF2IMG Docker image version 1.3 has been uploaded to Artifactory.</li>
     </ul>
 <p>Problem Corrections:</p>
@@ -31,15 +51,15 @@
     <li>SF#45577 – Corrects an issue in which rendering a document with very large values could result in some content not being drawn.</li>
 </ul>
 <p>&nbsp;</p>
-<p><strong>Version 4.3.0</strong> (December 22, 2022)<br />
-Enhancements:</p>
+<p><strong>Version 4.3.0</strong> (December 22, 2022)<br/></p>
+<p>Enhancements:</p>
 <ul>
 <li class="x_MsoListParagraph">Updates open source PNG (libPNG) library to version 1.6.38.</li>
 <li class="x_MsoListParagraph">Adds PDF2IMG docker image with "latest" tag to docker hub.</li>
 </ul>
 <p>&nbsp;</p>
-<p><strong>Version 4.2.0 </strong>(July 7, 2022)<br />
-Problem Corrections:</p>
+<p><strong>Version 4.2.0 </strong>(July 7, 2022)<br/></p>
+<p>Problem Corrections:</p>
 <ul>
 <li class="x_MsoNormal">SF#42354 – Corrects an issue where there was a version mismatch between a file reference and the project file.</li>
 <li class="x_MsoNormal">SF#42399 – Corrects an issue in whitespace margin detection where certain page layouts would throw an error when trying to remove them.</li>
@@ -47,8 +67,8 @@ Problem Corrections:</p>
 <li class="x_MsoNormal">SF#44832 – Corrects an issue where when converting from PDF to TIFF the background would sometime be grey or black instead of white.</li>
 </ul>
 <p>&nbsp;</p>
-<p><strong>Version 4.1.0</strong> (April 13, 2021)<br />
-Problem Corrections:</p>
+<p><strong>Version 4.1.0</strong> (April 13, 2021)<br/></p>
+<p>Problem Corrections:</p>
 <ul>
 <li>SF#42468 – Corrects an issue in which resample could cause an unexpected artifact during rasterization.</li>
 <li>SF#43381 – Correct an issue in which rasterizing Type 3 fonts with large character sizes at specific resolutions resulted in a crash.</li>
@@ -60,8 +80,8 @@ Problem Corrections:</p>
 <li>SF#44167 – Corrects an issue in which pdf to image conversion failed with -OPP -digits=1 -smoothing=line,text,images -pages=1 -resolution=384 -asprinted -resampler=none command option.</li>
 </ul>
 <p>&nbsp;</p>
-<p><strong>Version 4.0.2</strong> (May 22, 2020)<br />
-Enhancements:</p>
+<p><strong>Version 4.0.2</strong> (May 22, 2020)<br/></p>
+<p>Enhancements:</p>
 <ul>
 <li>Adds new PDF output options for rasterizing each PDF page and saving as separate PDF files or one combined PDF file.</li>
 <li>Preserves previous feature to split PDF input to one PDF output per page without rasterizing, but this now requires a new option to be selected.</li>
@@ -78,15 +98,15 @@ Enhancements:</p>
 <li>SF#39462 – Corrects an issue that caused a crash when converting to TIFF.</li>
 </ul>
 <p>&nbsp;</p>
-<p><strong>Version 3.3.0</strong> (May 30, 2019)<br />
-Problem Corrections:</p>
+<p><strong>Version 3.3.0</strong> (May 30, 2019)<br/></p>
+<p>Problem Corrections:</p>
 <ul>
 <li>Resolves an issue where a single page in a PDF document was taking 15 to 20 minutes to render because of vector images. Changes the setting for the kPDPageThreadIPParse flag in drawParam to default to multi-threaded processing, rather than the original single threaded processing. PNG, TIF and JPG images covered.</li>
 <li>Corrects a problem where PDF2IMG was failing to complete processing for a PDF document where a customer had set the Names parameter to “All” for the DeviceN color space. This violates a rule in the ISO 32000 standard, followed by PDF2IMG, that reserves DeviceN to Separation only.  Set the relaxation flag (PDPrefSetAllowRelexedSyntax) to true to ignore this specification. Relaxing this parsing restriction allows PDF2IMG to continue to draw the pages to TIF images. The user needs to add the "-relaxParseSyntax" option to the command line syntax.</li>
 </ul>
 <p>&nbsp;</p>
-<p><strong>Version 3.2.0</strong> (April 28, 2019)<br />
-Problem Corrections:</p>
+<p><strong>Version 3.2.0</strong> (April 28, 2019)<br/></p>
+<p>Problem Corrections:</p>
 <ul>
 <li>Corrects a situation where outdated binary files were sometimes applied to the product after an upgrade or after the software was re-installed.</li>
 <li>Resolves an issue where license extensions could fail without administrator access to the installation directory.</li>
@@ -94,7 +114,7 @@ Problem Corrections:</p>
 <li>Changes name of installer files to conform to standard naming conventions for command line applications.</li>
 <li>Adds compatibility for self-hosted license server.</li>
 </ul>
-<p><strong>Version 3.0.0</strong> (November 8, 2018)</p>
+<p><strong>Version 3.0.0</strong> (November 8, 2018)<br/></p>
 <p>Enhancements:</p>
 <ul>
 <li>Separates PDF2IMG into three product offerings, PDF2IMG Standard, Pro, and Premium.</li>
@@ -104,14 +124,14 @@ Problem Corrections:</p>
 <ul>
 <li>Product installation now places the required Adobe PDF Library components for PDF2IMG in a location that is less likely to interfere with other systems that also use the Adobe PDF Library.</li>
 </ul>
-<p><strong>Version 2.5P1e</strong> (April 25, 2018)</p>
+<p><strong>Version 2.5P1e</strong> (April 25, 2018)<br/></p>
 <p>Problem Corrections:</p>
 <ul>
 <li>Removes .NET framework requirement from the Windows installer to correct a problem with installing on Windows 10 platforms.</li>
 <li>Updates open source graphics libraries (libjpeg, libtiff, PNGLib, ZLib) to latest versions in to address security concerns.</li>
 </ul>
 <p>&nbsp;</p>
-<p><strong>Version 2.5P1d</strong> (February 5, 2018)</p>
+<p><strong>Version 2.5P1d</strong> (February 5, 2018)<br/></p>
 <p>Enhancements:</p>
 <ul>
 <li>Adds new directory, "Resources," to provide support files with the distribution.</li>
