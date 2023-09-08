@@ -58,6 +58,7 @@ searchInput.addEventListener("input", e=>{
         })
         */
     }
+    localStorage.setItem("searchInput", document.getElementById("search-data").value)
 })
 
 var event = new Event("input")

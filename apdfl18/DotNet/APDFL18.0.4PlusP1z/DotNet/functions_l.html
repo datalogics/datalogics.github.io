@@ -139,7 +139,7 @@ $(document).ready(function(){initNavTree('functions_l.html',''); initResizable()
 , <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_stream.html#a134887bfe7417d253110900d5d7faecf">Datalogics.PDFL.PDFStream</a>
 </li>
 <li>Library()
-: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_library.html#a65d73fa1071e3152c4ce1a5720a417a8">Datalogics.PDFL.Library</a>
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_library.html#a7cda7503d0f17dc3ca74be0c36221e6d">Datalogics.PDFL.Library</a>
 </li>
 <li>LibraryException()
 : <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_library_exception.html#a851a5ca3ef09d30fdeec896817fd9636">Datalogics.PDFL.LibraryException</a>
@@ -166,7 +166,7 @@ $(document).ready(function(){initNavTree('functions_l.html',''); initResizable()
 : <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_print_params.html#ac2b0c8bbead6aed72ce3a65d4b2995de">Datalogics.PDFL.PrintParams</a>
 </li>
 <li>LinkAnnotation()
-: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html#a7fcd4cc26bd0ad3b68a7718d5c4429fe">Datalogics.PDFL.LinkAnnotation</a>
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html#a40eea6d190bdd25b27310b86d13d86c4">Datalogics.PDFL.LinkAnnotation</a>
 </li>
 <li>ListInks()
 : <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_page.html#a17f10e921ef429bd786bd7c941ce0b8f">Datalogics.PDFL.Page</a>
@@ -207,6 +207,60 @@ $(document).ready(function(){initNavTree('functions_l.html',''); initResizable()
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right">
+      <label id="version-selector-label" for="version-selector">Looking for another verion?</label>
+      <select name="version-selector" id="version-select" onchange="versionChanged()">
+        <option value="1804_2b">v18.0.4PlusP2b</option>
+        <option value="1804_2a">v18.0.4PlusP2a</option>
+        <option value="1804_1z">v18.0.4PlusP1z</option>
+      </select>
+    </div>
+  <div>
 </div>
+<script>
+function versionChanged() {
+  var version = document.getElementById("version-select").value;
+  var currentLocation = window.location.href;
+  var newURL = "https://docs.datalogics.com/apdfl18/";
+  const endURL = "/Overview/index.html";
+  if (currentLocation.includes("DotNetFramework"))
+  {
+      newURL += "DotNetFramework/";
+  }
+  else if (currentLocation.includes("DotNet"))
+  {
+      newURL += "DotNet/";
+  }
+  else if (currentLocation.includes("Java"))
+  {
+      newURL += "Java/";
+  }
+  if (version == "1804_2b")
+  {
+      newURL += "APDFL18.0.4PlusP2b";
+  }
+  else if (version == "1804_2a")
+  {
+      newURL += "APDFL18.0.4PlusP2a";
+  }
+  else if (version == "1804_1z")
+  {
+      newURL += "APDFL18.0.4PlusP1z";
+  }
+  newURL += endURL;
+  window.location = newURL;
+}
+</script>
 </body>
 </html>

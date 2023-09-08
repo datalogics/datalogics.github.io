@@ -61,7 +61,7 @@ Getting Started</h1>
 <h2>Licensing</h2>
 <p>See <a class="el" href="_licensing.html#licensing_section">Licensing</a> for information on License Management.</p>
 <h2>Building and Running Samples</h2>
-<p>Samples can be found on <a href="https://github.com/datalogics/apdfl-csharp-dotnet-samples">GitHub</a>.</p>
+<p>Samples can be found on <a href="https://github.com/datalogics/adobe-pdf-library-samples/tree/master/DotNET/Sample_Source">GitHub</a>.</p>
 <p><em>They can be built and run easily in an IDE such as Visual Studio 2022, Visual Studio 2022 for Mac, or VS Code.</em></p>
 <p><b>Otherwise</b>, here are instructions for using <b>dotnet</b> instead:</p>
 <p>&#160;&#160;&#160;&#160;Change to the directory of the program you want to work with:</p>
@@ -86,6 +86,60 @@ Getting Started</h1>
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right">
+      <label id="version-selector-label" for="version-selector">Looking for another verion?</label>
+      <select name="version-selector" id="version-select" onchange="versionChanged()">
+        <option value="1804_2b">v18.0.4PlusP2b</option>
+        <option value="1804_2a">v18.0.4PlusP2a</option>
+        <option value="1804_1z">v18.0.4PlusP1z</option>
+      </select>
+    </div>
+  <div>
 </div>
+<script>
+function versionChanged() {
+  var version = document.getElementById("version-select").value;
+  var currentLocation = window.location.href;
+  var newURL = "https://docs.datalogics.com/apdfl18/";
+  const endURL = "/Overview/index.html";
+  if (currentLocation.includes("DotNetFramework"))
+  {
+      newURL += "DotNetFramework/";
+  }
+  else if (currentLocation.includes("DotNet"))
+  {
+      newURL += "DotNet/";
+  }
+  else if (currentLocation.includes("Java"))
+  {
+      newURL += "Java/";
+  }
+  if (version == "1804_2b")
+  {
+      newURL += "APDFL18.0.4PlusP2b";
+  }
+  else if (version == "1804_2a")
+  {
+      newURL += "APDFL18.0.4PlusP2a";
+  }
+  else if (version == "1804_1z")
+  {
+      newURL += "APDFL18.0.4PlusP1z";
+  }
+  newURL += endURL;
+  window.location = newURL;
+}
+</script>
 </body>
 </html>

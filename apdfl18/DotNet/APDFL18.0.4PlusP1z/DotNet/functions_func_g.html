@@ -143,7 +143,7 @@ $(document).ready(function(){initNavTree('functions_func_g.html',''); initResiza
 , <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_content.html#a103281b18bde0b687074521abfc617a1">Datalogics.PDFL.Content</a>
 </li>
 <li>GetField()
-: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_collection_schema.html#af878299b269d35d2fb924dc7b687796b">Datalogics.PDFL.CollectionSchema</a>
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_collection_schema.html#ac53d9ab06de115fbfb1899282d046b14">Datalogics.PDFL.CollectionSchema</a>
 </li>
 <li>GetFilteredStream()
 : <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_stream.html#acd267b1340c6efc383daa1545832c3d5">Datalogics.PDFL.PDFStream</a>
@@ -229,6 +229,60 @@ $(document).ready(function(){initNavTree('functions_func_g.html',''); initResiza
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right">
+      <label id="version-selector-label" for="version-selector">Looking for another verion?</label>
+      <select name="version-selector" id="version-select" onchange="versionChanged()">
+        <option value="1804_2b">v18.0.4PlusP2b</option>
+        <option value="1804_2a">v18.0.4PlusP2a</option>
+        <option value="1804_1z">v18.0.4PlusP1z</option>
+      </select>
+    </div>
+  <div>
 </div>
+<script>
+function versionChanged() {
+  var version = document.getElementById("version-select").value;
+  var currentLocation = window.location.href;
+  var newURL = "https://docs.datalogics.com/apdfl18/";
+  const endURL = "/Overview/index.html";
+  if (currentLocation.includes("DotNetFramework"))
+  {
+      newURL += "DotNetFramework/";
+  }
+  else if (currentLocation.includes("DotNet"))
+  {
+      newURL += "DotNet/";
+  }
+  else if (currentLocation.includes("Java"))
+  {
+      newURL += "Java/";
+  }
+  if (version == "1804_2b")
+  {
+      newURL += "APDFL18.0.4PlusP2b";
+  }
+  else if (version == "1804_2a")
+  {
+      newURL += "APDFL18.0.4PlusP2a";
+  }
+  else if (version == "1804_1z")
+  {
+      newURL += "APDFL18.0.4PlusP1z";
+  }
+  newURL += endURL;
+  window.location = newURL;
+}
+</script>
 </body>
 </html>

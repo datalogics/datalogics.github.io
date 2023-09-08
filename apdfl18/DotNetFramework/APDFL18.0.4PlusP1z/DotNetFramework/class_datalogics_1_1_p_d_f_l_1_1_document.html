@@ -502,7 +502,7 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Creates a new document. The only Cos object in the document will be a Catalog. After the document is created, at least one page must be added using CreatePage or InsertPages before the Acrobat viewer can display or save the document. See section 7.7 of the &lt;a href="http://www.adobe.com/content/dam/Adobe/en/devnet/acrobat/pdfs/PDF32000_2008.pdf"&gt;ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7&lt;/a&gt;, page 70. </p>
+<p>Creates a new document. The only Cos object in the document will be a Catalog. After the document is created, at least one page must be added using CreatePage or InsertPages before the PDF Viewer can display or save the document.</p>
 
 </div>
 </div>
@@ -638,6 +638,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>Create a Document from an XPS file.</p>
 <p>Documents are converted one at a time. In multi-threaded applications, threads that are making simultaneous calls to this method will block and execute the method sequentially.</p>
+<p>NOTE: This method is only available on Windows or Linux.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">XPSFilename</td><td>The path to the XPS file to convert. </td></tr>
@@ -877,7 +878,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This function converts a PDF file to a Microsoft Excel Office file (.xlsx). </p>
+<p>This function converts a PDF file to a Microsoft Excel Office file (.xlsx).</p>
+<p>NOTE: This method is only available on Windows.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">inputPDFFileFilePath</td><td>The PDF file path to convert. </td></tr>
@@ -922,7 +924,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This function converts a PDF file to a Microsoft PowerPoint Office file (.pptx). </p>
+<p>This function converts a PDF file to a Microsoft PowerPoint Office file (.pptx).</p>
+<p>NOTE: This method is only available on Windows.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">inputPDFFileFilePath</td><td>The PDF file path to convert. </td></tr>
@@ -967,7 +970,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This function converts a PDF file to a Microsoft Word Office file (.docx). </p>
+<p>This function converts a PDF file to a Microsoft Word Office file (.docx).</p>
+<p>NOTE: This method is only available on Windows.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">inputPDFFileFilePath</td><td>The PDF file path to convert. </td></tr>
@@ -2201,7 +2205,7 @@ If it is also the case that <code>mergeAfterThisPage</code> denotes the last pag
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">pdErrOpNotPermitted</td><td>is raised unless <code>doc</code> is editable and&lt;c&gt;doc2 is not encrypted or the owner opened it.</td></tr>
-    <tr><td class="paramname">pdErrCantUseNewVersion</td><td>is raised if <code>doc2</code> is a newer major version than the Acrobat viewer understands.</td></tr>
+    <tr><td class="paramname">pdErrCantUseNewVersion</td><td>is raised if <code>doc2</code> is a newer major version than PDFL understands.</td></tr>
     <tr><td class="paramname">pdErrTooManyPagesForInsert</td><td>is raised if the insertion would result in a document with too many pages. </td></tr>
     <tr><td class="paramname">genErrBadParm</td><td>is raised if <code>mergeAfterThisPage</code> is an invalid page number or&lt;c&gt;doc has no pages.</td></tr>
     <tr><td class="paramname">genErrNoMemory</td><td>is raised if there is insufficient memory to perform the insertion. </td></tr>
@@ -2297,7 +2301,7 @@ If it is also the case that <code>mergeAfterThisPage</code> denotes the last pag
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">pdErrOpNotPermitted</td><td>is raised unless <code>doc</code> is editable and&lt;c&gt;doc2 is not encrypted or the owner opened it.</td></tr>
-    <tr><td class="paramname">pdErrCantUseNewVersion</td><td>is raised if <code>doc2</code> is a newer major version than the Acrobat viewer understands.</td></tr>
+    <tr><td class="paramname">pdErrCantUseNewVersion</td><td>is raised if <code>doc2</code> is a newer major version than PDFL understands.</td></tr>
     <tr><td class="paramname">pdErrTooManyPagesForInsert</td><td>is raised if the insertion would result in a document with too many pages. </td></tr>
     <tr><td class="paramname">genErrBadParm</td><td>is raised if <code>mergeAfterThisPage</code> is an invalid page number or&lt;c&gt;doc has no pages.</td></tr>
     <tr><td class="paramname">genErrNoMemory</td><td>is raised if there is insufficient memory to perform the insertion. </td></tr>
@@ -2889,7 +2893,7 @@ If it is also the case that <code>mergeAfterThisPage</code> denotes the last pag
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">pdErrOpNotPermitted</td><td>is raised unless <code>doc</code> is editable and&lt;c&gt;doc2 is not encrypted or the owner opened it.</td></tr>
-    <tr><td class="paramname">pdErrCantUseNewVersion</td><td>is raised if <code>doc2</code> is a newer major version than the Acrobat viewer understands.</td></tr>
+    <tr><td class="paramname">pdErrCantUseNewVersion</td><td>is raised if <code>doc2</code> is a newer major version than PDFL understands.</td></tr>
     <tr><td class="paramname">genErrBadParm</td><td>is raised if an invalid <code>startPage</code> or&lt;c&gt;numPages is specified.</td></tr>
     <tr><td class="paramname">genErrNoMemory</td><td>is raised if there is insufficient memory to perform the insertion. </td></tr>
   </table>
@@ -3017,7 +3021,7 @@ If it is also the case that <code>mergeAfterThisPage</code> denotes the last pag
       </table>
 </div><div class="memdoc">
 <p>Saves a document to disk. If a full save is requested to the original path, the file is saved to a file system-determined temporary file, the old file is deleted, and the temporary file is renamed to the save file name.</p>
-<p>A full save with linearization optimizes the PDF file. During optimization, all objects in a PDF file are rearranged, many of them acquiring not only a new file position, but also a new PDFObject number. At the end of the save operation, Acrobat flushes its information of the PD layer and below to synchronize its in-memory state with the new disk file just written. </p>
+<p>A full save with linearization optimizes the PDF file. During optimization, all objects in a PDF file are rearranged, many of them acquiring not only a new file position, but also a new PDFObject number. At the end of the save operation, PDFL flushes its information of the PD layer and below to synchronize its in-memory state with the new disk file just written. </p>
 <p>If the document has a signature, it will be saved incrementally regardless of the full save flag. This is required to preserve the exact contents of the document at the time of signing. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -3068,7 +3072,7 @@ If it is also the case that <code>mergeAfterThisPage</code> denotes the last pag
       </table>
 </div><div class="memdoc">
 <p>Saves a document to disk. If a full save is requested to the original path, the file is saved to a file system-determined temporary file, the old file is deleted, and the temporary file is renamed to the save file name.</p>
-<p>A full save with linearization optimizes the PDF file. During optimization, all objects in a PDF file are rearranged, many of them acquiring not only a new file position, but also a new PDFObject number. At the end of the save operation, Acrobat flushes its information of the PD layer and below to synchronize its in-memory state with the new disk file just written. </p>
+<p>A full save with linearization optimizes the PDF file. During optimization, all objects in a PDF file are rearranged, many of them acquiring not only a new file position, but also a new PDFObject number. At the end of the save operation, PDFL flushes its information of the PD layer and below to synchronize its in-memory state with the new disk file just written. </p>
 <p>If the document has a signature, it will be saved incrementally regardless of the full save flag. This is required to preserve the exact contents of the document at the time of signing. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -3115,8 +3119,8 @@ If it is also the case that <code>mergeAfterThisPage</code> denotes the last pag
       </table>
 </div><div class="memdoc">
 <p>Saves a document to disk. If a full save is requested to the original path, the file is saved to a file system-determined temporary file, the old file is deleted, and the temporary file is renamed to <code>newPath</code>.</p>
-<p>If the document was created with Document, at least one page must be added using CreatePage() orInsertPages() before Acrobat can save the document.</p>
-<p>A full save with linearization optimizes the PDF file. During optimization, all objects in a PDF file are rearranged, many of them acquiring not only a new file position, but also a new PDFObject number. At the end of the save operation, Acrobat flushes its information of the PD layer and below to synchronize its in-memory state with the new disk file just written. </p>
+<p>If the document was created with Document, at least one page must be added using CreatePage() orInsertPages() before a PDF Viewer can save the document.</p>
+<p>A full save with linearization optimizes the PDF file. During optimization, all objects in a PDF file are rearranged, many of them acquiring not only a new file position, but also a new PDFObject number. At the end of the save operation, PDFL flushes its information of the PD layer and below to synchronize its in-memory state with the new disk file just written. </p>
 <p>If the document has a signature, it will be saved incrementally regardless of the full save flag. This is required to preserve the exact contents of the document at the time of signing. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -3174,8 +3178,8 @@ If it is also the case that <code>mergeAfterThisPage</code> denotes the last pag
       </table>
 </div><div class="memdoc">
 <p>Saves a document to disk. If a full save is requested to the original path, the file is saved to a file system-determined temporary file, the old file is deleted, and the temporary file is renamed to <code>newPath</code>.</p>
-<p>If the document was created with Document, at least one page must be added using CreatePage() orInsertPages() before Acrobat can save the document.</p>
-<p>A full save with linearization optimizes the PDF file. During optimization, all objects in a PDF file are rearranged, many of them acquiring not only a new file position, but also a new PDFObject number. At the end of the save operation, Acrobat flushes its information of the PD layer and below to synchronize its in-memory state with the new disk file just written. </p>
+<p>If the document was created with Document, at least one page must be added using CreatePage() orInsertPages() before a PDF Viewer can save the document.</p>
+<p>A full save with linearization optimizes the PDF file. During optimization, all objects in a PDF file are rearranged, many of them acquiring not only a new file position, but also a new PDFObject number. At the end of the save operation, PDFL flushes its information of the PD layer and below to synchronize its in-memory state with the new disk file just written. </p>
 <p>If the document has a signature, it will be saved incrementally regardless of the full save flag. This is required to preserve the exact contents of the document at the time of signing. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -3995,7 +3999,7 @@ If it is also the case that <code>mergeAfterThisPage</code> denotes the last pag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get the instance ID for this document. See "File Identifiers," section 14.4 of the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, page 551.</p>
+<p>Get the instance ID for this document.</p>
 
 </div>
 </div>
@@ -4090,7 +4094,7 @@ If it is also the case that <code>mergeAfterThisPage</code> denotes the last pag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The document is optimized. If this flag is cleared, the Batch Optimizer plug-in and the Adobe PDF Library do not save the file optimized. You can, therefore, linearize a PDF file without optimizing it. Optimizing without linearizing is not allowed, however. This flag can only be set, never cleared.</p>
+<p>The document is optimized. If this flag is cleared, the Adobe PDF Library does not save the file optimized. You can, therefore, linearize a PDF file without optimizing it. Optimizing without linearizing is not allowed, however. This flag can only be set, never cleared.</p>
 <dl class="section return"><dt>Returns</dt><dd>The IsOptimized property</dd></dl>
 
 </div>
@@ -4184,7 +4188,7 @@ If it is also the case that <code>mergeAfterThisPage</code> denotes the last pag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The major PDF version number of the document. The PDF version is specified in the header of a PDF file in the string <code>"%PDF-xx. yy"</code> where&lt;c&gt;xx is the major version and&lt;c&gt;yy is the minor version. For example, version 1.2 has the string&lt;c&gt;"%PDF-1 .2". See Section 1.2, PDF Version Numbers, of theISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, page 727.</p>
+<p>The major PDF version number of the document. The PDF version is specified in the header of a PDF file in the string <code>"%PDF-xx. yy"</code> where&lt;c&gt;xx is the major version and&lt;c&gt;yy is the minor version.</p>
 <dl class="section return"><dt>Returns</dt><dd>The major PDF version number of the document.</dd></dl>
 
 </div>
@@ -4255,7 +4259,7 @@ If it is also the case that <code>mergeAfterThisPage</code> denotes the last pag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The minor PDF version number of the document. The PDF version is specified in the header of a PDF file in the string <code>"%PDF-xx. yy"</code> where&lt;c&gt;xx is the major version and&lt;c&gt;yy is the minor version. For example, version 1.2 has the string&lt;c&gt;"%PDF-1 .2". See Section 1.2, PDF Version Numbers, of theISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, page 727.</p>
+<p>The minor PDF version number of the document. The PDF version is specified in the header of a PDF file in the string <code>"%PDF-xx. yy"</code> where&lt;c&gt;xx is the major version and&lt;c&gt;yy is the minor version.</p>
 <p>Please note: Setting the minor version on a document only changes the version number in the document's file header. It willNOT actually change the PDF's contents and it willNOT alter the PDF to conform to the standard of the new minor version.</p>
 <p>The new minor version number will appear in the file header once the document is saved.</p>
 <dl class="section return"><dt>Returns</dt><dd>The minor PDF version number of the document.</dd></dl>
@@ -4479,7 +4483,7 @@ If it is also the case that <code>mergeAfterThisPage</code> denotes the last pag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get the permanent ID for this document. See "File Identifiers," section 14.4 of the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, page 551.</p>
+<p>Get the permanent ID for this document.</p>
 
 </div>
 </div>
@@ -4716,7 +4720,7 @@ If it is also the case that <code>mergeAfterThisPage</code> denotes the last pag
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The PDF version of the document, which is specified in the header of a PDF file in the string <code>"%PDF-xx.yy"</code> where&lt;c&gt;xx is the major version and&lt;c&gt;yy is the minor version. For example, version 1.2 has the string&lt;c&gt;"%PDF-1.2". See Section 1.2, PDF Version Numbers, of theISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, page 727.</p>
+<p>The PDF version of the document, which is specified in the header of a PDF file in the string <code>"%PDF-xx.yy"</code> where&lt;c&gt;xx is the major version and&lt;c&gt;yy is the minor version.</p>
 <p>Note that this returns a string containing both the major and minor versions. For version comparisons, use MajorVersion and MinorVersion.</p>
 <dl class="section return"><dt>Returns</dt><dd>A string containing the PDF version number of the document.</dd></dl>
 
@@ -4774,6 +4778,60 @@ If it is also the case that <code>mergeAfterThisPage</code> denotes the last pag
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right">
+      <label id="version-selector-label" for="version-selector">Looking for another verion?</label>
+      <select name="version-selector" id="version-select" onchange="versionChanged()">
+        <option value="1804_2b">v18.0.4PlusP2b</option>
+        <option value="1804_2a">v18.0.4PlusP2a</option>
+        <option value="1804_1z">v18.0.4PlusP1z</option>
+      </select>
+    </div>
+  <div>
 </div>
+<script>
+function versionChanged() {
+  var version = document.getElementById("version-select").value;
+  var currentLocation = window.location.href;
+  var newURL = "https://docs.datalogics.com/apdfl18/";
+  const endURL = "/Overview/index.html";
+  if (currentLocation.includes("DotNetFramework"))
+  {
+      newURL += "DotNetFramework/";
+  }
+  else if (currentLocation.includes("DotNet"))
+  {
+      newURL += "DotNet/";
+  }
+  else if (currentLocation.includes("Java"))
+  {
+      newURL += "Java/";
+  }
+  if (version == "1804_2b")
+  {
+      newURL += "APDFL18.0.4PlusP2b";
+  }
+  else if (version == "1804_2a")
+  {
+      newURL += "APDFL18.0.4PlusP2a";
+  }
+  else if (version == "1804_1z")
+  {
+      newURL += "APDFL18.0.4PlusP1z";
+  }
+  newURL += endURL;
+  window.location = newURL;
+}
+</script>
 </body>
 </html>

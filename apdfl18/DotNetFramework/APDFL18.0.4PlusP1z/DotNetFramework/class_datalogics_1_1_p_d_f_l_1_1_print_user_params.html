@@ -183,7 +183,7 @@ Properties</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A structure used to set parameters for print jobs. </p>
-<p>Two structures provide settings for setting parameters for print jobs, PrintUserParams and PrintParams. Adobe Systems created PrintUserParams first, and then created PrintParams as an extension of PrintUserParams, to provide more settings to account for changing technology.</p>
+<p>Two structures provide settings for setting parameters for print jobs, PrintUserParams and PrintParams. PrintUserParams was created first, and then PrintParams was created as an extension of PrintUserParams, to provide more settings to account for changing technology.</p>
 <p>When the system seeks to print a document it will pass the content and the print parameters, such as the page size, paper tray, and landscape v. portrait, to the print API in APDFL. If the setting is in PrintParams it will pass the document and parameters to PrintParams and then to PrintUserParams and from there to the print API to complete the printing process.</p>
 <p>The print logic may take different code paths depending on whether or not the print content is being sent to a printer or to a file, or if the printing uses PostScript or not. When you see a print setting that appears in both PrintUserParams and PrintParams, such as "ShrinktoFit," set the appropriate value in both of these classes. Also, PrintParams offers a variety of settings related to PostScript, but the use of PrintParams is not limited to PostScript.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -474,7 +474,7 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>When paper height and width are initialized to this value the printed product more closely resembles what comes out of Acrobat. This can eliminate some print problems, including PCL blank page problems. </p>
+<p>When paper height and width are initialized to this value the printed product more closely resembles what comes out of most PDF Viewers. This can eliminate some print problems, including PCL blank page problems. </p>
 
 </div>
 </div>
@@ -1111,6 +1111,60 @@ v3.01"</code>). Available devices can be found in the Windows Registry at&lt;c&g
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right">
+      <label id="version-selector-label" for="version-selector">Looking for another verion?</label>
+      <select name="version-selector" id="version-select" onchange="versionChanged()">
+        <option value="1804_2b">v18.0.4PlusP2b</option>
+        <option value="1804_2a">v18.0.4PlusP2a</option>
+        <option value="1804_1z">v18.0.4PlusP1z</option>
+      </select>
+    </div>
+  <div>
 </div>
+<script>
+function versionChanged() {
+  var version = document.getElementById("version-select").value;
+  var currentLocation = window.location.href;
+  var newURL = "https://docs.datalogics.com/apdfl18/";
+  const endURL = "/Overview/index.html";
+  if (currentLocation.includes("DotNetFramework"))
+  {
+      newURL += "DotNetFramework/";
+  }
+  else if (currentLocation.includes("DotNet"))
+  {
+      newURL += "DotNet/";
+  }
+  else if (currentLocation.includes("Java"))
+  {
+      newURL += "Java/";
+  }
+  if (version == "1804_2b")
+  {
+      newURL += "APDFL18.0.4PlusP2b";
+  }
+  else if (version == "1804_2a")
+  {
+      newURL += "APDFL18.0.4PlusP2a";
+  }
+  else if (version == "1804_1z")
+  {
+      newURL += "APDFL18.0.4PlusP1z";
+  }
+  newURL += endURL;
+  window.location = newURL;
+}
+</script>
 </body>
 </html>

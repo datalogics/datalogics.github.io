@@ -17,7 +17,44 @@
   <body>
         <h1>Release Notes, Datalogics PDF Optimizer</h1>
   
-	<div class="entry-content"><p><strong>Version 3.0</strong> (March 8, 2022)<br/>
+	<div class="entry-content">
+<p><strong>Version 3.3.0</strong> (August 10, 2023)<br/>
+<p>New Features:</p>
+<ul>
+  <li>Added PDF/X-6 Output Support</li>
+  <li>Added support for a Linux ARM version of PDF Optimizer</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul>
+  <li>SF#45283 Support for a new optional key 'object-type' in the 'color-conversion' category has been added, allowed values are 'all', 'images', 'text', line-art', and 'shading'.</li>
+  <li>SF#45755 This corrects a crash that could occur color converting some documents during optimization.</li>
+  <li>PDFOPT-247 - Correct a problem running compression in optimizer 3.2 with certain profiles results in an output file without images</li>
+</ul>
+
+<p><strong>Version 3.2</strong> (May 17, 2023)<br/>
+<p>New Features:</p>
+<ul>
+<li>The json category <b>pdfx-conversion</b> supports <b>type</b> values of <b>3</b> and <b>1a</b> now for PDF/X-3 and PDF/X-1a support respectively.</li>
+<li>With this release, the pdfoptimizer docker image version has been increased to 1.2.</li>
+</ul>
+<p><strong>Version 3.1.1</strong> (Feb 23, 2023)<br/>
+<p>New Features:</p>
+<ul>
+<li>PDF/X conversion is now supported via a new json category "pdfx-conversion" with keys of: "enabled" with allowed values of "on" or "off" and "type" with an allowed value of "4".  A new PDFX-4.json profile is distributed as well.</li>
+</ul>
+<ul>
+<li>A new option <b>consolidate-duplicate-objects</b> has been added which replaces the older option <b>consolidate-duplicate-images-and-forms</b>, the newer option can lead to better results.</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul>
+<li>PDFOPT-228 – This corrects an intermittent crash that could occur when running the program.</li>
+<li>PDFOPT-224 – Color conversion performance has been improved for large documents.</li>
+<li>PDFOPT-223 – Behavior has been changed to support optimizing Signed documents, the result will no longer be signed.</li>
+<li>PDFOPT-217 - Fixed a crash generating reports for certain input</li>
+<li>PDFOPT-221 – This improves the result when Color Conversion is enabled.</li>
+<li>PDFOPT-220 – This corrects a problem with Color Conversion for some documents.</li>
+</ul>
+<p><strong>Version 3.0</strong> (March 8, 2022)<br/>
 <p>New Features:</p>
 <ul>
 <li>Improves PDF file compression when using PDFOptimizer.
@@ -181,9 +218,9 @@ New Features:</p>
 <li>PDF Optimizer Includes latest version of the PDF Checker tool.</li>
 <li>For Windows, the PDF Optimizer installer includes an option to subsequently run the PDF Checker installer.</li>
 <li>For Linux, the distribution includes a PDF Checker self extracting installation file, which prompts the user to accept a license agreement. Then, the process allows for the installation of PDF Checker in a default directory under the current or designated directory.</li>
-<li>Adds support of a new JSON <a style="color: #0000cd;" href="https://dev.datalogics.com/pdf-optimizer/setting-up-your-profile/color-conversion" target="_blank" rel="noopener noreferrer">Color Conversion</a> category. User may select a color profile to apply, define a conversion intent, and replace existing calibrated profiles in the PDF document with a different profile.</li>
-<li>Adds support of a new JSON category to allow a user to save a PDF export file so that it is compliant with the PDF/A-1b <a style="color: #0000cd;" href="https://dev.datalogics.com/pdf-optimizer/setting-up-your-profile/pdf-a-conversion/" target="_blank" rel="noopener noreferrer">(PDF Archive)</a> format.</li>
-<li>The <a style="color: #0000cd;" href="https://dev.datalogics.com/pdf-optimizer/setting-up-your-profile/transparency" target="_blank" rel="noopener noreferrer"> transparency</a> quality settings have been adjusted to more appropriate values for high, medium, and low-quality output.</li>
+<li>Adds support of a new JSON Color Conversion category. User may select a color profile to apply, define a conversion intent, and replace existing calibrated profiles in the PDF document with a different profile.</li>
+<li>Adds support of a new JSON category to allow a user to save a PDF export file so that it is compliant with the PDF/A-1b (PDF Archive) format.</li>
+<li>The transparency quality settings have been adjusted to more appropriate values for high, medium, and low-quality output.</li>
 <li>Improves merging of font subsets when the PDSaveOptimizeFonts flag is used.</li>
 <li>PDF Optimizer now by default first looks for the profile in the installation directory. If the product cannot find that profile file there, it looks at the command line statement, and treats the profile included there as the path to the profile file.</li>
 <li>Application and installer are now signed with the certificate from Datalogics.</li>

@@ -183,7 +183,7 @@ Static Protected Member Functions</h2></td></tr>
 <tr class="separator:ac4111b47491bb5f88fbe4c9eeeceaae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Used to create a new instance of a library object or change properties. An Adobe PDF Library object can be used to create a new instance of a library or change the properties of an existing library. </p>
+<div class="textblock"><p>Used to create a new instance of a library object or change properties. A Library object can be used to create a new instance of a library or change the properties of an existing library. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5001796ce3017cb0fb4c238b5cb5c343"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5001796ce3017cb0fb4c238b5cb5c343">&#9670;&nbsp;</a></span>Library() <span class="overload">[1/9]</span></h2>
@@ -873,7 +873,7 @@ Static Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Gets default temporary storage.DLE uses Disk storage type by default.</p>
+<p>Gets default temporary storage.PDFL uses Disk storage type by default.</p>
 <dl class="section return"><dt>Returns</dt><dd>current temporary storage type. </dd></dl>
 
 </div>
@@ -919,8 +919,8 @@ Static Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The version of DLE. </p>
-<dl class="section return"><dt>Returns</dt><dd>the version of DLE as a string. </dd></dl>
+<p>The version of the PDFL interface. </p>
+<dl class="section return"><dt>Returns</dt><dd>the version of the PDFL interface as a string. </dd></dl>
 
 </div>
 </div>
@@ -1234,6 +1234,60 @@ Static Protected Member Functions</h2></td></tr>
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right">
+      <label id="version-selector-label" for="version-selector">Looking for another verion?</label>
+      <select name="version-selector" id="version-select" onchange="versionChanged()">
+        <option value="1804_2b">v18.0.4PlusP2b</option>
+        <option value="1804_2a">v18.0.4PlusP2a</option>
+        <option value="1804_1z">v18.0.4PlusP1z</option>
+      </select>
+    </div>
+  <div>
 </div>
+<script>
+function versionChanged() {
+  var version = document.getElementById("version-select").value;
+  var currentLocation = window.location.href;
+  var newURL = "https://docs.datalogics.com/apdfl18/";
+  const endURL = "/Overview/index.html";
+  if (currentLocation.includes("DotNetFramework"))
+  {
+      newURL += "DotNetFramework/";
+  }
+  else if (currentLocation.includes("DotNet"))
+  {
+      newURL += "DotNet/";
+  }
+  else if (currentLocation.includes("Java"))
+  {
+      newURL += "Java/";
+  }
+  if (version == "1804_2b")
+  {
+      newURL += "APDFL18.0.4PlusP2b";
+  }
+  else if (version == "1804_2a")
+  {
+      newURL += "APDFL18.0.4PlusP2a";
+  }
+  else if (version == "1804_1z")
+  {
+      newURL += "APDFL18.0.4PlusP1z";
+  }
+  newURL += endURL;
+  window.location = newURL;
+}
+</script>
 </body>
 </html>
