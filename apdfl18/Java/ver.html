@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US" style="overflow: hidden;">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://use.typekit.net/tdd5knf.css">
+    </head>
+    <body>
+        <div class="selector">
+            <div class="menu">
+                <div class="lang">
+                    <select id="verDrop" class="dropdown-content" onchange="goToPage(this.value)">
+                        <option value="APDFL18.0.4PlusP1z">APDFL18.0.4PlusP1z</option>
+                        <option value="APDFL18.0.4PlusP2a">APDFL18.0.4PlusP2a</option>
+                        <option value="APDFL18.0.4PlusP2b">APDFL18.0.4PlusP2b</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="ver.js"></script>
+</html>
+<script>
+    function verSelector() {
+        document.getElementById("verDrop").classList.toggle("show");
+    }
+
+    function goToPage(ver) {
+        if (window.location.href.includes("DotNetFramework"))
+        {
+            lang = "DotNetFramework"
+        }
+        else if (window.location.href.includes("DotNet"))
+        {
+            lang = "DotNet"
+        }
+        else if (window.location.href.includes("Java"))
+        {
+            lang = "Java"
+        }
+        else{
+            land = ""
+        }
+        if ((lang != "") || (lang != "-") || (ver != "") || (ver != "-")) {
+            window.top.location.href = "https://docs.datalogics.com/apdfl18/" + lang + "/" + ver + "/Overview/index.html"
+        }
+    } 
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+
