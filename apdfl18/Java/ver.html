@@ -17,9 +17,10 @@
             </div>
         </div>
     </body>
-    <script src="ver.js"></script>
 </html>
 <script>
+    document.addEventListener("DOMContentLoaded", function(){getContent()});
+
     function verSelector() {
         document.getElementById("verDrop").classList.toggle("show");
     }
@@ -44,6 +45,18 @@
             window.top.location.href = "https://docs.datalogics.com/apdfl18/" + lang + "/" + ver + "/Overview/index.html"
         }
     } 
+
+    function getContent() {
+        ver = document.getElementById("verDrop")
+        currVer = window.location.href.split("?=")[1]
+        console.log("version " + currVer)
+        for (const child of ver.children) {
+            if (child.value == currVer) {
+                ver.value = currVer
+                break
+            }
+        }
+    }
 
     window.onclick = function(event) {
         if (!event.target.matches('.dropbtn')) {
