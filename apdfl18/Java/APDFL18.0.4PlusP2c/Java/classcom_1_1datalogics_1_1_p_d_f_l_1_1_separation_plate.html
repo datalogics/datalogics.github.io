@@ -1,0 +1,777 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate-members.html">List of all members</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">com.datalogics.PDFL.SeparationPlate Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aac3a14974f0de5187ce29e72489bb731"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#aac3a14974f0de5187ce29e72489bb731">delete</a> ()</td></tr>
+<tr class="separator:aac3a14974f0de5187ce29e72489bb731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac570d01c7bf3ab9ee9141b1479365c6b"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#ac570d01c7bf3ab9ee9141b1479365c6b">getAlias</a> ()</td></tr>
+<tr class="separator:ac570d01c7bf3ab9ee9141b1479365c6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3196fa5d72cab85478500972daae9916"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a3196fa5d72cab85478500972daae9916">getAngle</a> ()</td></tr>
+<tr class="separator:a3196fa5d72cab85478500972daae9916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33b9f220a8f0f6920e709c365df116d5"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a33b9f220a8f0f6920e709c365df116d5">getColorantName</a> ()</td></tr>
+<tr class="separator:a33b9f220a8f0f6920e709c365df116d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e4efa0ea150d4d568767946b6c1bd6d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a3e4efa0ea150d4d568767946b6c1bd6d">getDensity</a> ()</td></tr>
+<tr class="separator:a3e4efa0ea150d4d568767946b6c1bd6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a221eeef6f6dbaaf94f2d16f9f51c1e52"><td class="memItemLeft" align="right" valign="top">java.io.OutputStream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a221eeef6f6dbaaf94f2d16f9f51c1e52">getEPSOutput</a> ()</td></tr>
+<tr class="separator:a221eeef6f6dbaaf94f2d16f9f51c1e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae44a398de1308b7d2bcb929931d9b81"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#aae44a398de1308b7d2bcb929931d9b81">getFrequency</a> ()</td></tr>
+<tr class="separator:aae44a398de1308b7d2bcb929931d9b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a948a4c96f0f6aa24f7d79d220360a3cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_ink_types.html">InkTypes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a948a4c96f0f6aa24f7d79d220360a3cf">getInkType</a> ()</td></tr>
+<tr class="separator:a948a4c96f0f6aa24f7d79d220360a3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23608bf2b45de13a3dc075e34374dff7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_preview_options.html">SeparationPreviewOptions</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a23608bf2b45de13a3dc075e34374dff7">getPreviewOption</a> ()</td></tr>
+<tr class="separator:a23608bf2b45de13a3dc075e34374dff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7014cc29809bbb974a65bfd3aac24d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#aa7014cc29809bbb974a65bfd3aac24d2">SeparationPlate</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_ink.html">Ink</a> colorant, java.io.OutputStream epsOutput)</td></tr>
+<tr class="separator:aa7014cc29809bbb974a65bfd3aac24d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1a8229d407e6d0588518557424ab0dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#af1a8229d407e6d0588518557424ab0dc">setAlias</a> (String theAlias)</td></tr>
+<tr class="separator:af1a8229d407e6d0588518557424ab0dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf51d8c8f972c7d6be6249dbf5df1b3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#aaf51d8c8f972c7d6be6249dbf5df1b3f">setAngle</a> (double theAngle)</td></tr>
+<tr class="separator:aaf51d8c8f972c7d6be6249dbf5df1b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ebb2e6c92e1886d1921acec6a750ab3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a7ebb2e6c92e1886d1921acec6a750ab3">setColorantName</a> (String theColorantName)</td></tr>
+<tr class="separator:a7ebb2e6c92e1886d1921acec6a750ab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f9290b75cc3f0bf4e7cd1aee7592887"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a2f9290b75cc3f0bf4e7cd1aee7592887">setDensity</a> (double theDensity)</td></tr>
+<tr class="separator:a2f9290b75cc3f0bf4e7cd1aee7592887"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e6e01e4dedce2dbc154ba58be8feb94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a6e6e01e4dedce2dbc154ba58be8feb94">setEPSOutput</a> (java.io.OutputStream s)</td></tr>
+<tr class="separator:a6e6e01e4dedce2dbc154ba58be8feb94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12496ad6d1ea4e51243979c9cce58fbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a12496ad6d1ea4e51243979c9cce58fbe">setFrequency</a> (double theFrequency)</td></tr>
+<tr class="separator:a12496ad6d1ea4e51243979c9cce58fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3f91af0a2dccf29fda6c98c480e8356"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#ab3f91af0a2dccf29fda6c98c480e8356">setInkType</a> (<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_ink_types.html">InkTypes</a> theInkType)</td></tr>
+<tr class="separator:ab3f91af0a2dccf29fda6c98c480e8356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e0d102a2560a2e99c0995f34a9e8d0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a7e0d102a2560a2e99c0995f34a9e8d0f">setPreviewOption</a> (<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_preview_options.html">SeparationPreviewOptions</a> thePreviewOption)</td></tr>
+<tr class="separator:a7e0d102a2560a2e99c0995f34a9e8d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:acbb0db44a00a80897c18563cf4a26843"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#acbb0db44a00a80897c18563cf4a26843">assignNozzleInternal</a> (BaseOutputNozzle n)</td></tr>
+<tr class="separator:acbb0db44a00a80897c18563cf4a26843"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c57039bdcaaba9ab43383142c75a12c"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a6c57039bdcaaba9ab43383142c75a12c">delete</a> (Boolean disposing)</td></tr>
+<tr class="separator:a6c57039bdcaaba9ab43383142c75a12c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71a9aa65f6ce48c8a07b92e8c6ac51e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a71a9aa65f6ce48c8a07b92e8c6ac51e0">finalize</a> ()</td></tr>
+<tr class="separator:a71a9aa65f6ce48c8a07b92e8c6ac51e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4de3eda31ef373a26808b8a1c317e7a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a4de3eda31ef373a26808b8a1c317e7a6">SeparationPlate</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_ink.html">Ink</a> colorant)</td></tr>
+<tr class="separator:a4de3eda31ef373a26808b8a1c317e7a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af81cfd6533aab97ed3eb465d90e1abd3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#af81cfd6533aab97ed3eb465d90e1abd3">SeparationPlate</a> (long cPtr, boolean cMemoryOwn)</td></tr>
+<tr class="separator:af81cfd6533aab97ed3eb465d90e1abd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a9337a9ef273a6bd63649decb38520663"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a9337a9ef273a6bd63649decb38520663">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html">SeparationPlate</a> obj)</td></tr>
+<tr class="separator:a9337a9ef273a6bd63649decb38520663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents a plate for making print separations.Used with PostScript. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af81cfd6533aab97ed3eb465d90e1abd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af81cfd6533aab97ed3eb465d90e1abd3">&#9670;&nbsp;</a></span>SeparationPlate() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.SeparationPlate.SeparationPlate </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>cPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>cMemoryOwn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa7014cc29809bbb974a65bfd3aac24d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7014cc29809bbb974a65bfd3aac24d2">&#9670;&nbsp;</a></span>SeparationPlate() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.SeparationPlate.SeparationPlate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_ink.html">Ink</a>&#160;</td>
+          <td class="paramname"><em>colorant</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">java.io.OutputStream&#160;</td>
+          <td class="paramname"><em>epsOutput</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>General constructor</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">colorant</td><td>A colorant to use for this SeparationPlate. </td></tr>
+    <tr><td class="paramname">epsOutput</td><td>A java.io.OutputStream which will receive the EPS output for this SeparationPlate. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4de3eda31ef373a26808b8a1c317e7a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4de3eda31ef373a26808b8a1c317e7a6">&#9670;&nbsp;</a></span>SeparationPlate() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.SeparationPlate.SeparationPlate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_ink.html">Ink</a>&#160;</td>
+          <td class="paramname"><em>colorant</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="acbb0db44a00a80897c18563cf4a26843"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbb0db44a00a80897c18563cf4a26843">&#9670;&nbsp;</a></span>assignNozzleInternal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.SeparationPlate.assignNozzleInternal </td>
+          <td>(</td>
+          <td class="paramtype">BaseOutputNozzle&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>For internal use only. Used by the native language constructors to set _epsStm. </p>
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#aa7014cc29809bbb974a65bfd3aac24d2">com.datalogics.PDFL.SeparationPlate.SeparationPlate()</a>.</p>
+
+</div>
+</div>
+<a id="aac3a14974f0de5187ce29e72489bb731"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac3a14974f0de5187ce29e72489bb731">&#9670;&nbsp;</a></span>delete() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.SeparationPlate.delete </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_params.html#a2227050e178f9ac01234c3a20ab81da7">com.datalogics.PDFL.SeparationParams.getPlates()</a>.</p>
+
+</div>
+</div>
+<a id="a6c57039bdcaaba9ab43383142c75a12c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c57039bdcaaba9ab43383142c75a12c">&#9670;&nbsp;</a></span>delete() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.SeparationPlate.delete </td>
+          <td>(</td>
+          <td class="paramtype">Boolean&#160;</td>
+          <td class="paramname"><em>disposing</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a71a9aa65f6ce48c8a07b92e8c6ac51e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71a9aa65f6ce48c8a07b92e8c6ac51e0">&#9670;&nbsp;</a></span>finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.SeparationPlate.finalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac570d01c7bf3ab9ee9141b1479365c6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac570d01c7bf3ab9ee9141b1479365c6b">&#9670;&nbsp;</a></span>getAlias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.datalogics.PDFL.SeparationPlate.getAlias </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Another name for this colorant. </p>
+
+</div>
+</div>
+<a id="a3196fa5d72cab85478500972daae9916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3196fa5d72cab85478500972daae9916">&#9670;&nbsp;</a></span>getAngle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.SeparationPlate.getAngle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The angle for this ink. The angle must be greater than or equal to zero. The default is 45.0. </p>
+
+</div>
+</div>
+<a id="a33b9f220a8f0f6920e709c365df116d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33b9f220a8f0f6920e709c365df116d5">&#9670;&nbsp;</a></span>getColorantName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.datalogics.PDFL.SeparationPlate.getColorantName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The name of the colorant from the Separation or DeviceN color space, or the process color name. </p>
+
+</div>
+</div>
+<a id="a9337a9ef273a6bd63649decb38520663"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9337a9ef273a6bd63649decb38520663">&#9670;&nbsp;</a></span>getCPtr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static long com.datalogics.PDFL.SeparationPlate.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html">SeparationPlate</a>&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3e4efa0ea150d4d568767946b6c1bd6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e4efa0ea150d4d568767946b6c1bd6d">&#9670;&nbsp;</a></span>getDensity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.SeparationPlate.getDensity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The density for this ink. The density must be greater than zero. The default is 1.0. </p>
+
+</div>
+</div>
+<a id="a221eeef6f6dbaaf94f2d16f9f51c1e52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a221eeef6f6dbaaf94f2d16f9f51c1e52">&#9670;&nbsp;</a></span>getEPSOutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">java.io.OutputStream com.datalogics.PDFL.SeparationPlate.getEPSOutput </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The java.io.OutputStream that will receive EPS output for this SeparationPlate. </p>
+
+</div>
+</div>
+<a id="aae44a398de1308b7d2bcb929931d9b81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae44a398de1308b7d2bcb929931d9b81">&#9670;&nbsp;</a></span>getFrequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.SeparationPlate.getFrequency </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The frequency for this ink. The frequency must be greater than zero. The default is 60.0. </p>
+
+</div>
+</div>
+<a id="a948a4c96f0f6aa24f7d79d220360a3cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a948a4c96f0f6aa24f7d79d220360a3cf">&#9670;&nbsp;</a></span>getInkType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_ink_types.html">InkTypes</a> com.datalogics.PDFL.SeparationPlate.getInkType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The ink type of this ink for trapping. The default is Normal. </p>
+
+</div>
+</div>
+<a id="a23608bf2b45de13a3dc075e34374dff7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23608bf2b45de13a3dc075e34374dff7">&#9670;&nbsp;</a></span>getPreviewOption()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_preview_options.html">SeparationPreviewOptions</a> com.datalogics.PDFL.SeparationPlate.getPreviewOption </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>How to handle the colorant for a separation preview. The default is EmitPlate. </p>
+
+</div>
+</div>
+<a id="af1a8229d407e6d0588518557424ab0dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1a8229d407e6d0588518557424ab0dc">&#9670;&nbsp;</a></span>setAlias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.SeparationPlate.setAlias </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>theAlias</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Another name for this colorant. </p>
+
+</div>
+</div>
+<a id="aaf51d8c8f972c7d6be6249dbf5df1b3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf51d8c8f972c7d6be6249dbf5df1b3f">&#9670;&nbsp;</a></span>setAngle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.SeparationPlate.setAngle </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>theAngle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The angle for this ink. The angle must be greater than or equal to zero. The default is 45.0. </p>
+
+</div>
+</div>
+<a id="a7ebb2e6c92e1886d1921acec6a750ab3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ebb2e6c92e1886d1921acec6a750ab3">&#9670;&nbsp;</a></span>setColorantName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.SeparationPlate.setColorantName </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>theColorantName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The name of the colorant from the Separation or DeviceN color space, or the process color name. </p>
+
+</div>
+</div>
+<a id="a2f9290b75cc3f0bf4e7cd1aee7592887"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f9290b75cc3f0bf4e7cd1aee7592887">&#9670;&nbsp;</a></span>setDensity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.SeparationPlate.setDensity </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>theDensity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The density for this ink. The density must be greater than zero. The default is 1.0. </p>
+
+</div>
+</div>
+<a id="a6e6e01e4dedce2dbc154ba58be8feb94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e6e01e4dedce2dbc154ba58be8feb94">&#9670;&nbsp;</a></span>setEPSOutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.SeparationPlate.setEPSOutput </td>
+          <td>(</td>
+          <td class="paramtype">java.io.OutputStream&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The java.io.OutputStream that will receive EPS output for this SeparationPlate. </p>
+
+</div>
+</div>
+<a id="a12496ad6d1ea4e51243979c9cce58fbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12496ad6d1ea4e51243979c9cce58fbe">&#9670;&nbsp;</a></span>setFrequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.SeparationPlate.setFrequency </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>theFrequency</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The frequency for this ink. The frequency must be greater than zero. The default is 60.0. </p>
+
+</div>
+</div>
+<a id="ab3f91af0a2dccf29fda6c98c480e8356"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3f91af0a2dccf29fda6c98c480e8356">&#9670;&nbsp;</a></span>setInkType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.SeparationPlate.setInkType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_ink_types.html">InkTypes</a>&#160;</td>
+          <td class="paramname"><em>theInkType</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The ink type of this ink for trapping. The default is Normal. </p>
+
+</div>
+</div>
+<a id="a7e0d102a2560a2e99c0995f34a9e8d0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e0d102a2560a2e99c0995f34a9e8d0f">&#9670;&nbsp;</a></span>setPreviewOption()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.SeparationPlate.setPreviewOption </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_preview_options.html">SeparationPreviewOptions</a>&#160;</td>
+          <td class="paramname"><em>thePreviewOption</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>How to handle the colorant for a separation preview. The default is EmitPlate. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another verion?</label>
+      <iframe id="ver" src="../../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>
