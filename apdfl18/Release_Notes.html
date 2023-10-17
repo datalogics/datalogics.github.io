@@ -24,7 +24,35 @@
    
 	<div class="entry-content"><p>This page lists updates, fixes, changes and enhancements made to the Adobe PDF Library v18 provided by Datalogics.</p>
 
-	<p><strong>APDFL v18.0.4PlusP2c</strong> (September 5, 2023)</p>
+<p><strong>APDFL v18.0.4PlusP2f</strong> (October 16, 2023)</p>
+<p>New Features:</p>
+<ul type="disc">
+<li>Office Conversion is now available on 64-bit Linux platforms.</li>
+<li>The ConvertToOffice C++ sample is now available on Linux.</li>
+<li>Corrects an issue in which subsetting a Type 0 Font could result in dropped glyphs on the page in some cases.</li>
+<li>With this release, the Java and .NET Interfaces version has been increased to 18.0.4.26.</li>
+<li>With this release, the Nuget package version has been increased to 18.26.0.</li>
+<li>With this release, the Maven package version has been increased to 18.26.0.</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul type="disc">
+<li>SF#45361 – Corrects an issue in which vertical text could shift after flattening the document.</li>
+<li>SF#45607 – Corrects a problem where some content could be missing for complicated documents when specifying a List of SeparationColorSpace objects to create a Page Rendering.</li>
+<li>SF#45663 – Adds the new print parameter 'useCustomPaperSize' which allows a user to bypass APDFL search for best paper tray size match and assumes the paper size matches the dimensions specified by the PaperWidth and PaperHeight parameters. SetPageSize must also be set to true. Windows Only.</li>
+<li>SF#45795 – Improves the quality of the PDF document whose images have had OCR performed in the .NET and Java interfaces.</li>
+<li>SF#45855 – Improves the performance for retrieving bookmark Page Numbers from large PDF documents with many pages.</li>
+<li>SF#45886 – Corrects an issue in which Flattening Transparency could result in a crash when the permitType3Fonts parameter was enabled for some documents.</li>
+<li>SF#45887 – Corrects an issue in which a user could convert a document to PDF/A-3u that was not compliant with regard to Text mapping to Unicode, when this is not possible the conversion now raises an exception.</li>
+<li>SF#45894 – Corrects a stack overflow that could occur converting a document to PDF/A when the document contained many annotations.</li>
+<li>SF#45895 – Corrects an issue generating Separations images using the GetImageSeparations() method of the .NET or Java interfaces on non-Windows systems when encountering invalid Separation Colorant names.</li>
+<li>SF#45900 – A new property ColorantNameArray has been added to the Ink class of the .NET and Java interfaces; This property is suitable for retrieving the name when the ColorantName can't be retrieved as a string.</li>
+<li>SF#45902 – Corrects a Stack Overflow error that could occur when adding a very complicated Page as as Form to another Page's Content.</li>
+<li>SF#45907 – Corrects an issue in which the ListInks() method of the Document class could return duplicates for some documents using the .NET or Java interface.</li>
+<li>SF#45909 - Corrects a performance issue converting a document to PDF/A when it contains many annotations.</li>
+<li>SF#45916 – Corrects an issue in which a crash could occur when attempting to render a corrupt PDF document.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>APDFL v18.0.4PlusP2c</strong> (September 5, 2023)</p>
 <p>New Features:</p>
 <ul type="disc">
 <li>Creates new NuGet package Adobe.PDF.Library.Resource containing the APDFL Runtime Resources.</li>
