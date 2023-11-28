@@ -1,0 +1,27 @@
+var classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate =
+[
+    [ "SeparationPlate", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#af81cfd6533aab97ed3eb465d90e1abd3", null ],
+    [ "SeparationPlate", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#aa7014cc29809bbb974a65bfd3aac24d2", null ],
+    [ "SeparationPlate", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a4de3eda31ef373a26808b8a1c317e7a6", null ],
+    [ "assignNozzleInternal", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#acbb0db44a00a80897c18563cf4a26843", null ],
+    [ "delete", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#aac3a14974f0de5187ce29e72489bb731", null ],
+    [ "delete", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a6c57039bdcaaba9ab43383142c75a12c", null ],
+    [ "finalize", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a71a9aa65f6ce48c8a07b92e8c6ac51e0", null ],
+    [ "getAlias", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#ac570d01c7bf3ab9ee9141b1479365c6b", null ],
+    [ "getAngle", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a3196fa5d72cab85478500972daae9916", null ],
+    [ "getColorantName", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a33b9f220a8f0f6920e709c365df116d5", null ],
+    [ "getCPtr", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a9337a9ef273a6bd63649decb38520663", null ],
+    [ "getDensity", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a3e4efa0ea150d4d568767946b6c1bd6d", null ],
+    [ "getEPSOutput", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a221eeef6f6dbaaf94f2d16f9f51c1e52", null ],
+    [ "getFrequency", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#aae44a398de1308b7d2bcb929931d9b81", null ],
+    [ "getInkType", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a948a4c96f0f6aa24f7d79d220360a3cf", null ],
+    [ "getPreviewOption", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a23608bf2b45de13a3dc075e34374dff7", null ],
+    [ "setAlias", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#af1a8229d407e6d0588518557424ab0dc", null ],
+    [ "setAngle", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#aaf51d8c8f972c7d6be6249dbf5df1b3f", null ],
+    [ "setColorantName", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a7ebb2e6c92e1886d1921acec6a750ab3", null ],
+    [ "setDensity", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a2f9290b75cc3f0bf4e7cd1aee7592887", null ],
+    [ "setEPSOutput", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a6e6e01e4dedce2dbc154ba58be8feb94", null ],
+    [ "setFrequency", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a12496ad6d1ea4e51243979c9cce58fbe", null ],
+    [ "setInkType", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#ab3f91af0a2dccf29fda6c98c480e8356", null ],
+    [ "setPreviewOption", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a7e0d102a2560a2e99c0995f34a9e8d0f", null ]
+];
