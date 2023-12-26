@@ -24,6 +24,31 @@
    
 	<div class="entry-content"><p>This page lists updates, fixes, changes and enhancements made to the Adobe PDF Library v18 provided by Datalogics.</p>
 
+<p><strong>APDFL v18.0.4PlusP2m</strong> (December 26, 2023)</p>
+<p>New Features:</p>
+<ul type="disc">
+<li>The System.Drawing.Common Nuget package dependency has been completely removed from the .NET library, any public APIs using members from that namespace have been removed.
+<ul type="disc">
+<li>SkiaSharp is already used and shown in our sample code to facilitate drawing to a bitmap. The System.Drawing.Common package only worked on Windows and is not suitable for .NET applications which are cross-platform https://learn.microsoft.com/en-us/dotnet/core/compatibility/core-libraries/6.0/system-drawing-common-windows-only.</li>
+<li>The .NET Framework library however continues to use System.Drawing.dll and should be used if you need to render to a System.Drawing.Bitmap.</li>
+</ul>
+<li>With this release, the Java and .NET Interfaces version has been increased to 18.0.4.30.</li>
+<li>With this release, the Nuget package version has been increased to 18.30.0</li>
+<li>With this release, the Maven package version has been increased to 18.30.0.</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul type="disc">
+<li>SF#45799 – Corrects an issue in which glyphs could become .notdef glyphs when subsetting a Type 1 font. </li>
+<li>SF#45878 – Corrects an issue in which rendering a very large image on a PDF page could result in missing content.</li>
+<li>SF#45914 – Improves rendering for a Soft Mask with an incorrectly specified Backdrop color to be more forgiving.</li>
+<li>SF#45940 – Corrects an issue in which creation of a font's /ToUnicode CMap entry could contain invalid syntax for the Destination Code.</li>
+<li>SF#45957 – Improves the preservation of Text Extractability after Flattening a document when the permitType3Fonts option is used in the C/C++ interface.</li>
+<li>SF#45987 – Improves font lookup on the OS.</li>
+<li>SF#46036 – Renames some members of the CircleAnnotation, LinkAnnotation, and SquareAnnotation classes of the .NET and Java interfaces so as to be less misleading; Width is now BorderStyleWidth, Style is now BorderStyle, DashPattern is now BorderStyleDashPattern.</li>
+<li>SF#46040 – Corrects an issue in which using the DrawContents() overload of the .NET and Java interfaces that support a List of SeparationColorSpaces could result in scrambled output.</li>
+<li>SF#46064 – Corrects an issue in which using the DrawContents() overload of the .NET and Java interfaces that support a List of SeparationColorSpaces could result in scrambled output.</li>
+</ul>
+<p>&nbsp;</p>
 <p><strong>APDFL v18.0.4PlusP2k</strong> (November 28, 2023)</p>
 <p>New Features:</p>
 <ul type="disc">
