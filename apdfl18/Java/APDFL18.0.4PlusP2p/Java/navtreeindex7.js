@@ -1,7 +1,5 @@
 var NAVTREEINDEX7 =
 {
-"classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict.html#a51d09368604b5bc134426aa754dd596f":[3,0,0,0,0,117,7],
-"classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict.html#a6fd78e0fcfff5ae2d7b9324c887f3fba":[3,0,0,0,0,117,9],
 "classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict.html#a72ab673a4e978673e5890c399521c45d":[3,0,0,0,0,117,6],
 "classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict.html#a74ed0f68a7b110af1167dddd581d01fd":[3,0,0,0,0,117,3],
 "classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict.html#a7be27dda38646f98bb947cacc4d51683":[3,0,0,0,0,117,4],
@@ -249,5 +247,7 @@ var NAVTREEINDEX7 =
 "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_optimizer.html":[3,0,0,0,0,158],
 "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_optimizer.html#a03a83fda2c070db8f6d742ecfa345ef8":[3,0,0,0,0,158,13],
 "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_optimizer.html#a0daf5e77af51f46ffc11faf0c5f97be5":[3,0,0,0,0,158,24],
-"classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_optimizer.html#a0e2fc7407cabb05793555350235b1f4e":[3,0,0,0,0,158,0]
+"classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_optimizer.html#a0e2fc7407cabb05793555350235b1f4e":[3,0,0,0,0,158,0],
+"classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_optimizer.html#a31df3bccbec85d61dbc2cceb2594b7f4":[3,0,0,0,0,158,21],
+"classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_optimizer.html#a322d3a79a123f52ce824e281c3334d57":[3,0,0,0,0,158,17]
 };

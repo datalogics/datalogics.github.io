@@ -1,7 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#ad1c2482b575b7a8112df5f52fb559a84":[3,0,0,0,0,46,4],
-"classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#ae355bd6ed68d9deebff59c03523190c9":[3,0,0,0,0,46,6],
 "classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#af6c55cf47bb9a28072ac895ab0b2873d":[3,0,0,0,0,46,1],
 "classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#af6fdbf1e92c9a2b0ad72f3a3c8c79aef":[3,0,0,0,0,46,11],
 "classcom_1_1datalogics_1_1_p_d_f_l_1_1_encoding_info.html":[3,0,0,0,0,49],
@@ -249,5 +247,7 @@ var NAVTREEINDEX3 =
 "classcom_1_1datalogics_1_1_p_d_f_l_1_1_free_text_annotation.html#aeb53a8b4741f5da91d4f28cb38849917":[3,0,0,0,0,66,13],
 "classcom_1_1datalogics_1_1_p_d_f_l_1_1_free_text_annotation.html#aeb7e527b20b69b347b223c7ef105cf17":[3,0,0,0,0,66,1],
 "classcom_1_1datalogics_1_1_p_d_f_l_1_1_free_text_annotation.html#aec4ecf5541b4ecc7224b0c416808c1f6":[3,0,0,0,0,66,50],
-"classcom_1_1datalogics_1_1_p_d_f_l_1_1_free_text_annotation.html#afa5e86775fcebd5fa0d41a0922222c4d":[3,0,0,0,0,66,5]
+"classcom_1_1datalogics_1_1_p_d_f_l_1_1_free_text_annotation.html#afa5e86775fcebd5fa0d41a0922222c4d":[3,0,0,0,0,66,5],
+"classcom_1_1datalogics_1_1_p_d_f_l_1_1_function.html":[3,0,0,0,0,67],
+"classcom_1_1datalogics_1_1_p_d_f_l_1_1_function.html#a06a99f2c39e801baefd49c7234bf3a5e":[3,0,0,0,0,67,7]
 };

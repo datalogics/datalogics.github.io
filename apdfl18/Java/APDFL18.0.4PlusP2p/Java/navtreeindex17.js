@@ -1,7 +1,5 @@
 var NAVTREEINDEX17 =
 {
-"enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a3fe16215073210ba420e2c84300d5309":[3,0,0,0,0,194,24],
-"enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a46140dc0253bc422f7d3753e300953dd":[3,0,0,0,0,194,10],
 "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a47d16650043e71f4fc6f68684ef5c0c0":[3,0,0,0,0,194,7],
 "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a4e3f5dff18d2ccf39b0925dcf30528ae":[3,0,0,0,0,194,20],
 "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a5e8907a7306b457e04b9b29b8b870970":[3,0,0,0,0,194,1],
@@ -123,8 +121,8 @@ var NAVTREEINDEX17 =
 "functions_d.html":[3,2,0,3],
 "functions_e.html":[3,2,0,4],
 "functions_f.html":[3,2,0,5],
-"functions_func.html":[3,2,1],
 "functions_func.html":[3,2,1,0],
+"functions_func.html":[3,2,1],
 "functions_func_b.html":[3,2,1,1],
 "functions_func_c.html":[3,2,1,2],
 "functions_func_d.html":[3,2,1,3],
@@ -162,8 +160,8 @@ var NAVTREEINDEX17 =
 "functions_t.html":[3,2,0,19],
 "functions_u.html":[3,2,0,20],
 "functions_v.html":[3,2,0,21],
-"functions_vars.html":[3,2,2,0],
 "functions_vars.html":[3,2,2],
+"functions_vars.html":[3,2,2,0],
 "functions_vars_b.html":[3,2,2,1],
 "functions_vars_c.html":[3,2,2,2],
 "functions_vars_d.html":[3,2,2,3],
@@ -200,5 +198,7 @@ var NAVTREEINDEX17 =
 "interfacecom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_l_constants.html":[3,0,0,0,0,154],
 "namespacecom_1_1datalogics_1_1_p_d_f_l.html":[2,0,0,0,0],
 "namespaces.html":[2,0],
-"pages.html":[]
+"pages.html":[],
+"":[2,0,0],
+"":[2,0,0,0]
 };
