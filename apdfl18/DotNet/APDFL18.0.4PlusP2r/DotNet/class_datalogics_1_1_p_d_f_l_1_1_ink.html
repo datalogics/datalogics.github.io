@@ -1,0 +1,657 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library .NET Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-csharp-dotnet-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://www.nuget.org/packages/Adobe.PDF.Library.LM.NET" id="pkglink"><img id="pkg-download-img" alt="Nuget Trial Download" src="https://img.shields.io/nuget/dt/Adobe.PDF.Library.LM.NET?color=blue&label=APDFL%20.NET%20Free%20Trial&logo=NuGet&style=plastic"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_datalogics_1_1_p_d_f_l_1_1_ink.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="class_datalogics_1_1_p_d_f_l_1_1_ink-members.html">List of all members</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#properties">Properties</a>  </div>
+  <div class="headertitle">
+<div class="title">Datalogics.PDFL.Ink Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p> 
+ <a href="class_datalogics_1_1_p_d_f_l_1_1_ink.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a4f9a0783fc9919faa50a02e8df26a2d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_ink.html#a4f9a0783fc9919faa50a02e8df26a2d8">Dispose</a> ()</td></tr>
+<tr class="separator:a4f9a0783fc9919faa50a02e8df26a2d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89cb0109ae869bef8121bd971d4ac595"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_ink.html#a89cb0109ae869bef8121bd971d4ac595">Dispose</a> (bool disposing)</td></tr>
+<tr class="separator:a89cb0109ae869bef8121bd971d4ac595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:aabd35e1229824a5f87807410f78b3a0b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_ink.html#aabd35e1229824a5f87807410f78b3a0b">Alias</a><code> [get, set]</code></td></tr>
+<tr class="separator:aabd35e1229824a5f87807410f78b3a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1db76b9b6f4b1f692f3445b67dae9772"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_ink.html#a1db76b9b6f4b1f692f3445b67dae9772">Angle</a><code> [get, set]</code></td></tr>
+<tr class="separator:a1db76b9b6f4b1f692f3445b67dae9772"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a446514dac7aab586eb79e7cb7084aba9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_ink.html#a446514dac7aab586eb79e7cb7084aba9">Black</a><code> [get]</code></td></tr>
+<tr class="separator:a446514dac7aab586eb79e7cb7084aba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfa12fb19bf2ae899bb198020e3cf025"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_ink.html#abfa12fb19bf2ae899bb198020e3cf025">Blue</a><code> [get]</code></td></tr>
+<tr class="separator:abfa12fb19bf2ae899bb198020e3cf025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdf5d48b06cb88c6941d67dea079f0af"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_ink.html#acdf5d48b06cb88c6941d67dea079f0af">ColorantName</a><code> [get, set]</code></td></tr>
+<tr class="separator:acdf5d48b06cb88c6941d67dea079f0af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56035b4cfe0bcbb5d1f19f41dfff037d"><td class="memItemLeft" align="right" valign="top">System.Byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_ink.html#a56035b4cfe0bcbb5d1f19f41dfff037d">ColorantNameArray</a><code> [get]</code></td></tr>
+<tr class="separator:a56035b4cfe0bcbb5d1f19f41dfff037d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfefe07ad5461fcefe83d230b477e881"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_ink.html#adfefe07ad5461fcefe83d230b477e881">Cyan</a><code> [get]</code></td></tr>
+<tr class="separator:adfefe07ad5461fcefe83d230b477e881"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4c886fe71aa0a53b1e677f99cbe22ee"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_ink.html#ac4c886fe71aa0a53b1e677f99cbe22ee">Density</a><code> [get, set]</code></td></tr>
+<tr class="separator:ac4c886fe71aa0a53b1e677f99cbe22ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1e5806215806e44320ccdd8a3ad68d0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_ink.html#ae1e5806215806e44320ccdd8a3ad68d0">Frequency</a><code> [get, set]</code></td></tr>
+<tr class="separator:ae1e5806215806e44320ccdd8a3ad68d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af749e05b8973eb5a102ad564d62c548f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_ink.html#af749e05b8973eb5a102ad564d62c548f">Green</a><code> [get]</code></td></tr>
+<tr class="separator:af749e05b8973eb5a102ad564d62c548f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a154ddbe90321b9e1091a851c8f1e0d98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a1e3068ec764ed2f53675823f368dad31">InkTypes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_ink.html#a154ddbe90321b9e1091a851c8f1e0d98">InkType</a><code> [get, set]</code></td></tr>
+<tr class="separator:a154ddbe90321b9e1091a851c8f1e0d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05e4fa161b98c565a5c8c5134949a449"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_ink.html#a05e4fa161b98c565a5c8c5134949a449">IsProcessColor</a><code> [get, set]</code></td></tr>
+<tr class="separator:a05e4fa161b98c565a5c8c5134949a449"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10f610a963b57c7490e3ea1d5453c1ff"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_ink.html#a10f610a963b57c7490e3ea1d5453c1ff">Magenta</a><code> [get]</code></td></tr>
+<tr class="separator:a10f610a963b57c7490e3ea1d5453c1ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5d89d6b9bf961826a0cd993d5d273b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a7efb402837c4569bb6fdc7e4377d7150">SeparationPreviewOptions</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_ink.html#aa5d89d6b9bf961826a0cd993d5d273b8">PreviewOption</a><code> [get, set]</code></td></tr>
+<tr class="separator:aa5d89d6b9bf961826a0cd993d5d273b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af75f31c331221ab9d279ad17956b3e77"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_ink.html#af75f31c331221ab9d279ad17956b3e77">Red</a><code> [get]</code></td></tr>
+<tr class="separator:af75f31c331221ab9d279ad17956b3e77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fe650783e2fcea4193e2f99b006fa3f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_ink.html#a6fe650783e2fcea4193e2f99b006fa3f">Yellow</a><code> [get]</code></td></tr>
+<tr class="separator:a6fe650783e2fcea4193e2f99b006fa3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The ink object represents the color in the color space, CYMK or RGB. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4f9a0783fc9919faa50a02e8df26a2d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f9a0783fc9919faa50a02e8df26a2d8">&#9670;&nbsp;</a></span>Dispose() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Ink.Dispose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a89cb0109ae869bef8121bd971d4ac595"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89cb0109ae869bef8121bd971d4ac595">&#9670;&nbsp;</a></span>Dispose() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Datalogics.PDFL.Ink.Dispose </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>disposing</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="aabd35e1229824a5f87807410f78b3a0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabd35e1229824a5f87807410f78b3a0b">&#9670;&nbsp;</a></span>Alias</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Datalogics.PDFL.Ink.Alias</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Another name for this colorant. </p>
+
+</div>
+</div>
+<a id="a1db76b9b6f4b1f692f3445b67dae9772"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1db76b9b6f4b1f692f3445b67dae9772">&#9670;&nbsp;</a></span>Angle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.Ink.Angle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The angle for this ink. </p>
+
+</div>
+</div>
+<a id="a446514dac7aab586eb79e7cb7084aba9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a446514dac7aab586eb79e7cb7084aba9">&#9670;&nbsp;</a></span>Black</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.Ink.Black</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Values for display of a colorswatch in a CMYK color space. </p>
+
+</div>
+</div>
+<a id="abfa12fb19bf2ae899bb198020e3cf025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfa12fb19bf2ae899bb198020e3cf025">&#9670;&nbsp;</a></span>Blue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Datalogics.PDFL.Ink.Blue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>RGB values for on-screen display of a colorswatch. </p>
+
+</div>
+</div>
+<a id="acdf5d48b06cb88c6941d67dea079f0af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdf5d48b06cb88c6941d67dea079f0af">&#9670;&nbsp;</a></span>ColorantName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Datalogics.PDFL.Ink.ColorantName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The name of the colorant from the Separation or DeviceN color space, or the process color name. </p>
+
+</div>
+</div>
+<a id="a56035b4cfe0bcbb5d1f19f41dfff037d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56035b4cfe0bcbb5d1f19f41dfff037d">&#9670;&nbsp;</a></span>ColorantNameArray</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">System.Byte [] Datalogics.PDFL.Ink.ColorantNameArray</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The name of the colorant from the Separation or DeviceN color space, or the process color name. NOTE: This property is suitable for retrieving the name when the ColorantName can't be retrieved as a string. </p>
+
+</div>
+</div>
+<a id="adfefe07ad5461fcefe83d230b477e881"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfefe07ad5461fcefe83d230b477e881">&#9670;&nbsp;</a></span>Cyan</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.Ink.Cyan</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Values for display of a colorswatch in a CMYK color space. </p>
+
+</div>
+</div>
+<a id="ac4c886fe71aa0a53b1e677f99cbe22ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4c886fe71aa0a53b1e677f99cbe22ee">&#9670;&nbsp;</a></span>Density</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.Ink.Density</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The density for this ink. </p>
+
+</div>
+</div>
+<a id="ae1e5806215806e44320ccdd8a3ad68d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1e5806215806e44320ccdd8a3ad68d0">&#9670;&nbsp;</a></span>Frequency</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.Ink.Frequency</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The frequency for this ink. </p>
+
+</div>
+</div>
+<a id="af749e05b8973eb5a102ad564d62c548f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af749e05b8973eb5a102ad564d62c548f">&#9670;&nbsp;</a></span>Green</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Datalogics.PDFL.Ink.Green</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>RGB values for on-screen display of a colorswatch. </p>
+
+</div>
+</div>
+<a id="a154ddbe90321b9e1091a851c8f1e0d98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a154ddbe90321b9e1091a851c8f1e0d98">&#9670;&nbsp;</a></span>InkType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a1e3068ec764ed2f53675823f368dad31">InkTypes</a> Datalogics.PDFL.Ink.InkType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The ink type of this ink for trapping. </p>
+
+</div>
+</div>
+<a id="a05e4fa161b98c565a5c8c5134949a449"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05e4fa161b98c565a5c8c5134949a449">&#9670;&nbsp;</a></span>IsProcessColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.Ink.IsProcessColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>True if this is a process color, false if this is a spot color. </p>
+
+</div>
+</div>
+<a id="a10f610a963b57c7490e3ea1d5453c1ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10f610a963b57c7490e3ea1d5453c1ff">&#9670;&nbsp;</a></span>Magenta</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.Ink.Magenta</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Values for display of a colorswatch in a CMYK color space. </p>
+
+</div>
+</div>
+<a id="aa5d89d6b9bf961826a0cd993d5d273b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5d89d6b9bf961826a0cd993d5d273b8">&#9670;&nbsp;</a></span>PreviewOption</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a7efb402837c4569bb6fdc7e4377d7150">SeparationPreviewOptions</a> Datalogics.PDFL.Ink.PreviewOption</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>How to handle the colorant for a separation preview. </p>
+
+</div>
+</div>
+<a id="af75f31c331221ab9d279ad17956b3e77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af75f31c331221ab9d279ad17956b3e77">&#9670;&nbsp;</a></span>Red</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Datalogics.PDFL.Ink.Red</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>RGB values for on-screen display of a colorswatch. </p>
+
+</div>
+</div>
+<a id="a6fe650783e2fcea4193e2f99b006fa3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fe650783e2fcea4193e2f99b006fa3f">&#9670;&nbsp;</a></span>Yellow</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.Ink.Yellow</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Values for display of a colorswatch in a CMYK color space. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another verion?</label>
+      <iframe id="ver" src="../../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>
