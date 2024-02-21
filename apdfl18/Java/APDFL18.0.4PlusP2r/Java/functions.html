@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('functions.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="contents">
+<div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
+
+<h3><a id="index_a"></a>- a -</h3><ul>
+<li>ABS_COLORIMETRIC
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_render_intent.html#a0fadb0e30d97e2e0903db342f1e2fd39">com.datalogics.PDFL.RenderIntent</a>
+</li>
+<li>ACCESSIBLE
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_permission_flags.html#af2f0d5b32c98917ab5a6a1117d1533db">com.datalogics.PDFL.PermissionFlags</a>
+, <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_permission_request_operation.html#a76ba3f8d2c4ab86fae4d0c6b49566bc3">com.datalogics.PDFL.PermissionRequestOperation</a>
+</li>
+<li>ACROBAT_5_CMYK
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_profile.html#ad7b40a1cf10c1de922ffe917d6568f1a">com.datalogics.PDFL.ColorProfile</a>
+</li>
+<li>ACROBAT_9_CMYK
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_profile.html#ac30dca056974d021fba211e0ca953668">com.datalogics.PDFL.ColorProfile</a>
+</li>
+<li>Action()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_action.html#ac5bc402ffaa54fa16e3cd495ef8850d3">com.datalogics.PDFL.Action</a>
+</li>
+<li>add()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_order_array.html#a6c4a6685719c2d662d1f61cd215036b1">com.datalogics.PDFL.OptionalContentOrderArray</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_array.html#a241f5c799134120a592e30a5f1f145a8">com.datalogics.PDFL.PDFArray</a>
+</li>
+<li>ADD_FLATE
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#ab5eeeb1e01f19c24fb4fec6d835661f7">com.datalogics.PDFL.SaveFlags</a>
+</li>
+<li>addAnnotation()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#a8e0d66862aa7143b526c76a1982dd94a">com.datalogics.PDFL.Page</a>
+</li>
+<li>addChild()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_bookmark.html#aaef46bfb4aad4ccbe5a2724b0af5ca2e">com.datalogics.PDFL.Bookmark</a>
+</li>
+<li>addCurve()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#a6b96d2193488c62eb22f69f0ddfa78cb">com.datalogics.PDFL.Path</a>
+</li>
+<li>addCurveV()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#a5ff6c0dd24f24ed361e54221f716dea4">com.datalogics.PDFL.Path</a>
+</li>
+<li>addCurveY()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#a62cb5cc552c3326ead6d82cd480e4255">com.datalogics.PDFL.Path</a>
+</li>
+<li>addElement()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html#a844fd0e5692b58d2443ac20223193399">com.datalogics.PDFL.Clip</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html#afba3f35911043f67e3bf68f58f0b5c11">com.datalogics.PDFL.Content</a>
+</li>
+<li>addField()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_collection_schema.html#af3f47e1a7bdf778405bd205f66235b70">com.datalogics.PDFL.CollectionSchema</a>
+</li>
+<li>addGlyphs()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text.html#a13cf818313cb87009639098508e41533">com.datalogics.PDFL.Text</a>
+</li>
+<li>addLine()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#ab51379d677298f250b42d8b5c207b31a">com.datalogics.PDFL.Path</a>
+</li>
+<li>addNewAnnotation()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#af7ac6e369b266556486b799ac2817994">com.datalogics.PDFL.Page</a>
+</li>
+<li>addNextSibling()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_bookmark.html#a8fb7639df149ab52dd425d2952535655">com.datalogics.PDFL.Bookmark</a>
+</li>
+<li>addPage()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html#ac5bea8c5eb7e2acb5aa8caac9db45e68">com.datalogics.PDFL.Content</a>
+</li>
+<li>addPreviousSibling()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_bookmark.html#ac9779e49cc83dcf1aded318f2e92a2cd">com.datalogics.PDFL.Bookmark</a>
+</li>
+<li>addRect()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#ac2b926a7fdabb59a627a82a26f58c7e9">com.datalogics.PDFL.Path</a>
+</li>
+<li>addRun()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text.html#ac714f58b8a9bea9c6df6d70d0159dd8e">com.datalogics.PDFL.Text</a>
+</li>
+<li>addScribble()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_ink_annotation.html#ac267cbb3aed6ca0441ea2d243016b6b7">com.datalogics.PDFL.InkAnnotation</a>
+</li>
+<li>addSubtree()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_bookmark.html#a6b35b5871592ec93d8b582f3297f736e">com.datalogics.PDFL.Bookmark</a>
+</li>
+<li>ADJACENT_TO_SPACE
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#ad5aed32df37aabb291bff9bce38a0599">com.datalogics.PDFL.WordAttributeFlags</a>
+</li>
+<li>ADOBE_RGB_1998
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_profile.html#a6541bf2c1df38c34ce2fdf67c932360f">com.datalogics.PDFL.ColorProfile</a>
+</li>
+<li>AES_256
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_encryption_type.html#aa9c7632cd389c27c6e30b2fda746ee23">com.datalogics.PDFL.EncryptionType</a>
+</li>
+<li>AES_256_ACRO_X
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_encryption_type.html#aa9c2b86f00f824e5aad0236aa4c37b20">com.datalogics.PDFL.EncryptionType</a>
+</li>
+<li>AFRIKAANS
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_language.html#ab2cd8b1d237b7a8eaea2a9e9db82b72c">com.datalogics.PDFL.Language</a>
+</li>
+<li>ALBANIAN
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_language.html#ac947d48ec6204094debbf0292d5b5bab">com.datalogics.PDFL.Language</a>
+</li>
+<li>ALL
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_object_compression_type.html#a075845d7d3f2374c9601c40e27102296">com.datalogics.PDFL.ObjectCompressionType</a>
+, <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_insert_flags.html#a12446d98bd0f2f4aae62a773c8258269">com.datalogics.PDFL.PageInsertFlags</a>
+, <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_permission_flags.html#ae3bdf02ffd094b33468ceae69c6cf3f8">com.datalogics.PDFL.PermissionFlags</a>
+</li>
+<li>ALL_ANNOTATIONS
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_add_page_flags.html#a1f008ef23f36f96de48bc2f04eb59e6a">com.datalogics.PDFL.AddPageFlags</a>
+</li>
+<li>ALL_CAP
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_font_flags.html#ac2cb77403cf2a9254e9a7da4fbcfef91">com.datalogics.PDFL.FontFlags</a>
+</li>
+<li>ALL_OFF
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_visibility_policy.html#a8002688ce8409a9e82e2692ce5c7d46f">com.datalogics.PDFL.VisibilityPolicy</a>
+</li>
+<li>ALL_ON
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_visibility_policy.html#aa57b4a3321a4298230dba829a74e1fad">com.datalogics.PDFL.VisibilityPolicy</a>
+</li>
+<li>ALL_OPERATIONS
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_permission_request_operation.html#af49d164250fa8b9852f452da8efe3a75">com.datalogics.PDFL.PermissionRequestOperation</a>
+</li>
+<li>ALL_OPTIONAL_CONTENT
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_drawing_policy.html#a87007d967d64daa7b58c45368013211c">com.datalogics.PDFL.OptionalContentDrawingPolicy</a>
+</li>
+<li>ALL_PAGES
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ab25fd75b729cbd7d4a0cd9fe009d63b5">com.datalogics.PDFL.Document</a>
+, <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_spec.html#a9d3306a09e9375adf91ae5167a1f8674">com.datalogics.PDFL.PageSpec</a>
+</li>
+<li>ALL_WIDTHS
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_font_create_flags.html#a20f51262d68b114a3812f722ba8ff7ce">com.datalogics.PDFL.FontCreateFlags</a>
+</li>
+<li>AMHARIC
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_language.html#a2822f5f8879f28b03de5b1177395e5a7">com.datalogics.PDFL.Language</a>
+</li>
+<li>ANNOT_MISSING_NORMAL_APPEARANCE_WARNING
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_render_warning.html#a2ecc783ac98bbd16960ee3ffc2ddd33c">com.datalogics.PDFL.PageRenderWarning</a>
+</li>
+<li>ANNOT_RTSWARNING
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_render_warning.html#a8998cd28d70a96711bcb34e2e480f988">com.datalogics.PDFL.PageRenderWarning</a>
+</li>
+<li>Annotation()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_annotation.html#af2b6072ac9adaa106fcde3c1155582d9">com.datalogics.PDFL.Annotation</a>
+</li>
+<li>ANNOTATION
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_watermark_draw_option.html#a0e0c05c457469776c53eb9ed261af9ae">com.datalogics.PDFL.WatermarkDrawOption</a>
+</li>
+<li>ANY_OFF
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_visibility_policy.html#a53744dadfce24ae718f5849e60481886">com.datalogics.PDFL.VisibilityPolicy</a>
+</li>
+<li>ANY_ON
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_visibility_policy.html#a8e98e903803f0eb5f4c46b8436debeba">com.datalogics.PDFL.VisibilityPolicy</a>
+</li>
+<li>ANY_OPERATION
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_permission_request_operation.html#adb2796759968b26d512b41d93bf4f1f7">com.datalogics.PDFL.PermissionRequestOperation</a>
+</li>
+<li>append()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image_collection.html#a0b9c9941de2889c0780e5b440c0aa001">com.datalogics.PDFL.ImageCollection</a>
+</li>
+<li>APPLE_RGB
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_profile.html#a8983ba0c0d83ee627a1b01ecead9230c">com.datalogics.PDFL.ColorProfile</a>
+</li>
+<li>apply()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_function.html#aad0c0ca288b265bffcaa65dd14b1be8e">com.datalogics.PDFL.Function</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_named_function.html#ad2fff049b4f9ce9d69278a43942fa3ee">com.datalogics.PDFL.NamedFunction</a>
+</li>
+<li>applyRedactions()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#aec2281b3e234f8629bb82078b31e3d77">com.datalogics.PDFL.Document</a>
+</li>
+<li>ASSAMESE
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_language.html#a45caa4b3c1a18593957eb305d6fd9dd3">com.datalogics.PDFL.Language</a>
+</li>
+<li>assignNozzleInternal()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_plate.html#acbb0db44a00a80897c18563cf4a26843">com.datalogics.PDFL.SeparationPlate</a>
+</li>
+<li>ATTACHMENTS
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_mode.html#a01ded85b57b2d8c6a0fd8259cfe41d4a">com.datalogics.PDFL.PageMode</a>
+</li>
+<li>AUTO
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_paper_source.html#a208b96d2870b21b575e3d725b905e50a">com.datalogics.PDFL.PaperSource</a>
+</li>
+<li>AUTO_SAVE
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a2be42f87b727993b0d83a552a5df542b">com.datalogics.PDFL.SaveFlags</a>
+</li>
+<li>AUTOMATIC
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_segmentation_mode.html#afe04db348259ca0ba51b8d4b370fddde">com.datalogics.PDFL.PageSegmentationMode</a>
+</li>
+<li>AUTOMATIC_OSD
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_segmentation_mode.html#aa80831d64931eb1a21cc19cf2c83ca10">com.datalogics.PDFL.PageSegmentationMode</a>
+</li>
+<li>AxialShadingPattern()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_axial_shading_pattern.html#a5df422357740b6e52d9ad7936ca38dff">com.datalogics.PDFL.AxialShadingPattern</a>
+</li>
+<li>AZERBAIJANI
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_language.html#a296dbd08aee135fc50c8eb33e75bea71">com.datalogics.PDFL.Language</a>
+</li>
+<li>AZERBAIJANI_CYRILLIC
+: <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_language.html#adbadc996a2b09b4a03da0f41e2bed953">com.datalogics.PDFL.Language</a>
+</li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another verion?</label>
+      <iframe id="ver" src="../../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>
