@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Acro Support Layer: ASTimeSpan</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Acro Support Layer: ASTimeSpan</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>ASTimeSpan Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#ASTimeSpan">ASTimeSpan</a></dt><dd> -  An ASTimeSpan represents an exact time span, measured in seconds.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASTimeSpan"><strong><span style="color:grey;">ASTimeSpan</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:3878</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>An <a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds.">ASTimeSpan</a> represents an exact time span, measured in seconds. The internal representation uses 64-bit signed integers to avoid the year 2037 problem. Negative timespans are allowed. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_ASTimeSpanRec</code> <code>*</code><code>ASTimeSpan</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASTimeSpan.htm#ASTimeSpanDup" title=" Creates a new time span object containing the same data as an existing time span object."><code>ASTimeSpanDup</code></a></td><td><a href="aslayer_ASTimeSpan.htm#ASTimeSpanNew" title=" Creates a time span object."><code>ASTimeSpanNew</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASDate.htm#ASDateAddTimeSpan" title=" Adds a time span (an exact number of seconds) to a date."><code>ASDateAddTimeSpan</code></a></td><td><a href="aslayer_ASDate.htm#ASDateExactDiff" title=" Calculates the exact difference in seconds between two date objects and stores the result in the provided ASTimeSpan object."><code>ASDateExactDiff</code></a></td></tr>
+<tr><td><a href="aslayer_ASDate.htm#ASDateSubtractTimeSpan" title=" Subtracts a time span (an exact number of seconds) from a date."><code>ASDateSubtractTimeSpan</code></a></td><td><a href="aslayer_ASTimeSpan.htm#ASTimeSpanAdd" title=" Adds two time spans, storing the result (an exact number of seconds) in another time span object."><code>ASTimeSpanAdd</code></a></td></tr>
+<tr><td><a href="aslayer_ASTimeSpan.htm#ASTimeSpanCompare" title=" Compares two time spans to determine if they are equal or if one represents fewer seconds than the other."><code>ASTimeSpanCompare</code></a></td><td><a href="aslayer_ASTimeSpan.htm#ASTimeSpanCopy" title=" Copies data from one time span object to another."><code>ASTimeSpanCopy</code></a></td></tr>
+<tr><td><a href="aslayer_ASTimeSpan.htm#ASTimeSpanDestroy" title=" Releases and destroys a time span object."><code>ASTimeSpanDestroy</code></a></td><td><a href="aslayer_ASTimeSpan.htm#ASTimeSpanDiff" title=" Calculates the exact difference in seconds between time span objects and stores the result in the provided ASTimeSpan object."><code>ASTimeSpanDiff</code></a></td></tr>
+<tr><td><a href="aslayer_ASTimeSpan.htm#ASTimeSpanDup" title=" Creates a new time span object containing the same data as an existing time span object."><code>ASTimeSpanDup</code></a></td><td><a href="aslayer_ASTimeSpan.htm#ASTimeSpanGetASInt32" title=" Gets the number of seconds from a time span object."><code>ASTimeSpanGetASInt32</code></a></td></tr>
+<tr><td><a href="aslayer_ASTimeSpan.htm#ASTimeSpanNegate" title=" Negates the time span value of a time span object."><code>ASTimeSpanNegate</code></a></td><td><a href="aslayer_ASTimeSpan.htm#ASTimeSpanSet" title=" The internal representation of a time span uses 64-bit signed integers (to avoid the year 2038 problem caused by 32-bit representation)."><code>ASTimeSpanSet</code></a></td></tr>
+<tr><td><a href="aslayer_ASTimeSpan.htm#ASTimeSpanSetFromASInt32" title=" Initializes a time span object to represent a time span of a specific number of seconds."><code>ASTimeSpanSetFromASInt32</code></a></td><td><a href="aslayer_ASTimeSpan.htm#ASTimeSpanSetFromString" title=" Converts a string to a number of seconds, and initializes a time span object to represent a time span of that number of seconds."><code>ASTimeSpanSetFromString</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>ASTimeSpan Functions</h2></header>
+<nav><dl>
+<dt><a href="#ASGetSecs">ASGetSecs</a></dt><dd> -  Returns the number of seconds elapsed since midnight, January 1, 1970, coordinated universal time, up to the current time.</dd>
+<dt><a href="#ASTimeSpanAdd">ASTimeSpanAdd</a></dt><dd> -  Adds two time spans, storing the result (an exact number of seconds) in another time span object.</dd>
+<dt><a href="#ASTimeSpanCompare">ASTimeSpanCompare</a></dt><dd> -  Compares two time spans to determine if they are equal or if one represents fewer seconds than the other.</dd>
+<dt><a href="#ASTimeSpanCopy">ASTimeSpanCopy</a></dt><dd> -  Copies data from one time span object to another.</dd>
+<dt><a href="#ASTimeSpanDestroy">ASTimeSpanDestroy</a></dt><dd> -  Releases and destroys a time span object.</dd>
+<dt><a href="#ASTimeSpanDiff">ASTimeSpanDiff</a></dt><dd> -  Calculates the exact difference in seconds between time span objects and stores the result in the provided ASTimeSpan object.</dd>
+<dt><a href="#ASTimeSpanDup">ASTimeSpanDup</a></dt><dd> -  Creates a new time span object containing the same data as an existing time span object.</dd>
+<dt><a href="#ASTimeSpanGetASInt32">ASTimeSpanGetASInt32</a></dt><dd> -  Gets the number of seconds from a time span object.</dd>
+<dt><a href="#ASTimeSpanNegate">ASTimeSpanNegate</a></dt><dd> -  Negates the time span value of a time span object.</dd>
+<dt><a href="#ASTimeSpanNew">ASTimeSpanNew</a></dt><dd> -  Creates a time span object.</dd>
+<dt><a href="#ASTimeSpanSet">ASTimeSpanSet</a></dt><dd> -  The internal representation of a time span uses 64-bit signed integers (to avoid the year 2038 problem caused by 32-bit representation).</dd>
+<dt><a href="#ASTimeSpanSetFromASInt32">ASTimeSpanSetFromASInt32</a></dt><dd> -  Initializes a time span object to represent a time span of a specific number of seconds.</dd>
+<dt><a href="#ASTimeSpanSetFromString">ASTimeSpanSetFromString</a></dt><dd> -  Converts a string to a number of seconds, and initializes a time span object to represent a time span of that number of seconds.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASGetSecs"><strong><span style="color:grey;">ASGetSecs</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1881</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Returns the number of seconds elapsed since midnight, January 1, 1970, coordinated universal time, up to the current time. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASCount" title=" A numeric count value."><code>ASCount</code></a> <code>ASGetSecs(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>See above. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASTimeSpanAdd"><strong><span style="color:grey;">ASTimeSpanAdd</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1888</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Adds two time spans, storing the result (an exact number of seconds) in another time span object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCalendarTimeSpan.htm#ASCalendarTimeSpanAddWithBase" title=" Adds two calendar time spans, storing the result in another calendar time span object."><code>ASCalendarTimeSpanAddWithBase</code></a>
+<a href="aslayer_ASDate.htm#ASDateAddTimeSpan" title=" Adds a time span (an exact number of seconds) to a date."><code>ASDateAddTimeSpan</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASTimeSpanAdd(</code><code>const</code> <a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>timeSpan1</code><code>,</code> <code>const</code> <a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>timeSpan2</code><code>,</code> <a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>result</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>timeSpan1</code></span>
+</td><td><span>The first time span to add. </span>
+</td></tr>
+<tr><td><span><code>timeSpan2</code></span>
+</td><td><span>The second time span to add. </span>
+</td></tr>
+<tr><td><span><code>result</code></span>
+</td><td><span>The time span object in which to store the result. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASTimeSpanCompare"><strong><span style="color:grey;">ASTimeSpanCompare</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1852</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Compares two time spans to determine if they are equal or if one represents fewer seconds than the other. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCalendarTimeSpan.htm#ASCalendarTimeSpanCompare" title=" Compares two calendar time spans with respect to a base date."><code>ASCalendarTimeSpanCompare</code></a>
+<a href="aslayer_ASDate.htm#ASDateCompare" title=" Tests whether one date is earlier or later than another."><code>ASDateCompare</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>ASTimeSpanCompare(</code><code>const</code> <a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>timeSpan1</code><code>,</code> <code>const</code> <a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>timeSpan2</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>timeSpan1</code></span>
+</td><td><span>The first time span. </span>
+</td></tr>
+<tr><td><span><code>timeSpan2</code></span>
+</td><td><span>The second time span. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><code>1</code> if <code>timeSpan1</code> <code>&gt;</code> <code>timeSpan2</code>, <code>0</code> if they are equal, and<code>-1</code> if <code>timeSpan1</code> <code>&lt;</code> <code>timeSpan2</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASTimeSpanCopy"><strong><span style="color:grey;">ASTimeSpanCopy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1616</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Copies data from one time span object to another. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASTimeSpan.htm#ASTimeSpanDup" title=" Creates a new time span object containing the same data as an existing time span object.">ASTimeSpanDup</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASTimeSpanCopy(</code><code>const</code> <a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>original</code><code>,</code> <a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>copy</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>original</code></span>
+</td><td><span>The time span to be copied. </span>
+</td></tr>
+<tr><td><span><code>copy</code></span>
+</td><td><span>The time span into which the data is copied. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASTimeSpanDestroy"><strong><span style="color:grey;">ASTimeSpanDestroy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1624</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Releases and destroys a time span object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanDup" title=" Creates a new time span object containing the same data as an existing time span object."><code>ASTimeSpanDup</code></a>
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanNew" title=" Creates a time span object."><code>ASTimeSpanNew</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASTimeSpanDestroy(</code><a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>timeSpan</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>timeSpan</code></span>
+</td><td><span>The time span. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASTimeSpanDiff"><strong><span style="color:grey;">ASTimeSpanDiff</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1926</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Calculates the exact difference in seconds between time span objects and stores the result in the provided <a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds.">ASTimeSpan</a> object. If <code>timeSpan2</code> is less than <code>timeSpan1</code>, the result is negative. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCalendarTimeSpan.htm#ASCalendarTimeSpanDiff" title=" Calculates the difference between calendar time span objects and stores the result in the provided ASCalendarTimeSpan object."><code>ASCalendarTimeSpanDiff</code></a>
+<a href="aslayer_ASDate.htm#ASDateExactDiff" title=" Calculates the exact difference in seconds between two date objects and stores the result in the provided ASTimeSpan object."><code>ASDateExactDiff</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASTimeSpanDiff(</code><code>const</code> <a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>timeSpan1</code><code>,</code> <code>const</code> <a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>timeSpan2</code><code>,</code> <a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>result</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>timeSpan1</code></span>
+</td><td><span>The first time span. </span>
+</td></tr>
+<tr><td><span><code>timeSpan2</code></span>
+</td><td><span>The second time span. </span>
+</td></tr>
+<tr><td><span><code>result</code></span>
+</td><td><span>The time span object in which to store the difference. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASTimeSpanDup"><strong><span style="color:grey;">ASTimeSpanDup</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1608</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a new time span object containing the same data as an existing time span object. It raises an exception if there is not enough memory. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanCopy" title=" Copies data from one time span object to another."><code>ASTimeSpanCopy</code></a>
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanDestroy" title=" Releases and destroys a time span object."><code>ASTimeSpanDestroy</code></a>
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanNew" title=" Creates a time span object."><code>ASTimeSpanNew</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>ASTimeSpanDup(</code><code>const</code> <a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>timeSpan</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>timeSpan</code></span>
+</td><td><span>The time span to duplicate. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The new time span object. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASTimeSpanGetASInt32"><strong><span style="color:grey;">ASTimeSpanGetASInt32</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:2225</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the number of seconds from a time span object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanSet" title=" The internal representation of a time span uses 64-bit signed integers (to avoid the year 2038 problem caused by 32-bit representation)."><code>ASTimeSpanSet</code></a>
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanSetFromASInt32" title=" Initializes a time span object to represent a time span of a specific number of seconds."><code>ASTimeSpanSetFromASInt32</code></a>
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanSetFromString" title=" Converts a string to a number of seconds, and initializes a time span object to represent a time span of that number of seconds."><code>ASTimeSpanSetFromString</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>ASTimeSpanGetASInt32(</code><a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>timeSpan</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>*</code><code>outOverflow</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>timeSpan</code></span>
+</td><td><span>The time span object. </span>
+</td></tr>
+<tr><td><span><code>outOverflow</code></span>
+</td><td><span>(Filled by the method) <a href="aslayer_General.htm#true"><code>true</code></a> if the number of seconds was too large to be represented by an <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value.">ASInt32</a> value, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of seconds. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASTimeSpanNegate"><strong><span style="color:grey;">ASTimeSpanNegate</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:2151</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Negates the time span value of a time span object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanSet" title=" The internal representation of a time span uses 64-bit signed integers (to avoid the year 2038 problem caused by 32-bit representation)."><code>ASTimeSpanSet</code></a>
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanSetFromASInt32" title=" Initializes a time span object to represent a time span of a specific number of seconds."><code>ASTimeSpanSetFromASInt32</code></a>
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanSetFromString" title=" Converts a string to a number of seconds, and initializes a time span object to represent a time span of that number of seconds."><code>ASTimeSpanSetFromString</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASTimeSpanNegate(</code><a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>timeSpan</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>timeSpan</code></span>
+</td><td><span>The time span. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASTimeSpanNew"><strong><span style="color:grey;">ASTimeSpanNew</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1596</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a time span object. It raises an exception if there is not enough memory for the operation. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanCopy" title=" Copies data from one time span object to another."><code>ASTimeSpanCopy</code></a>
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanDestroy" title=" Releases and destroys a time span object."><code>ASTimeSpanDestroy</code></a>
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanDup" title=" Creates a new time span object containing the same data as an existing time span object."><code>ASTimeSpanDup</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>ASTimeSpanNew(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created time span object. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASTimeSpanSet"><strong><span style="color:grey;">ASTimeSpanSet</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1982</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>The internal representation of a time span uses 64-bit signed integers (to avoid the year 2038 problem caused by 32-bit representation). This method initializes a time span object to represent a time span of <code>x</code> seconds, where <code>x</code> is the 64-bit signed integer obtained from concatenating <code>highBits</code> and <code>lowBits</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanSetFromASInt32" title=" Initializes a time span object to represent a time span of a specific number of seconds."><code>ASTimeSpanSetFromASInt32</code></a>
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanSetFromString" title=" Converts a string to a number of seconds, and initializes a time span object to represent a time span of that number of seconds."><code>ASTimeSpanSetFromString</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASTimeSpanSet(</code><a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>timeSpan</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>highBits</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>lowBits</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>timeSpan</code></span>
+</td><td><span>The time span object. </span>
+</td></tr>
+<tr><td><span><code>highBits</code></span>
+</td><td><span>The most significant word in the desired 64-bit signed integer value. </span>
+</td></tr>
+<tr><td><span><code>lowBits</code></span>
+</td><td><span>The least significant word in the desired 64-bit signed integer value. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASTimeSpanSetFromASInt32"><strong><span style="color:grey;">ASTimeSpanSetFromASInt32</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1950</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Initializes a time span object to represent a time span of a specific number of seconds. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanGetASInt32" title=" Gets the number of seconds from a time span object."><code>ASTimeSpanGetASInt32</code></a>
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanSet" title=" The internal representation of a time span uses 64-bit signed integers (to avoid the year 2038 problem caused by 32-bit representation)."><code>ASTimeSpanSet</code></a>
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanSetFromString" title=" Converts a string to a number of seconds, and initializes a time span object to represent a time span of that number of seconds."><code>ASTimeSpanSetFromString</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASTimeSpanSetFromASInt32(</code><a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>timeSpan</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>numSeconds</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>timeSpan</code></span>
+</td><td><span>The time span object. </span>
+</td></tr>
+<tr><td><span><code>numSeconds</code></span>
+</td><td><span>The number of seconds. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASTimeSpanSetFromString"><strong><span style="color:grey;">ASTimeSpanSetFromString</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1965</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Converts a string to a number of seconds, and initializes a time span object to represent a time span of that number of seconds. This is useful for time spans that are too long to represent with an <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value.">ASInt32</a> value. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanSet" title=" The internal representation of a time span uses 64-bit signed integers (to avoid the year 2038 problem caused by 32-bit representation)."><code>ASTimeSpanSet</code></a>
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanSetFromASInt32" title=" Initializes a time span object to represent a time span of a specific number of seconds."><code>ASTimeSpanSetFromASInt32</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASTimeSpanSetFromString(</code><a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>timeSpan</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>numSecondsString</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>timeSpan</code></span>
+</td><td><span>The time span object. </span>
+</td></tr>
+<tr><td><span><code>numSecondsString</code></span>
+</td><td><span>The string containing the number of seconds. The string must consist of an optional minus sign (for negative numbers) followed by decimal digits. No white spaces are allowed anywhere in the string. </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

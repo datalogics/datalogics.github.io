@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PD Layer: PDNameTree</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PD Layer: PDNameTree</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>PDNameTree Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDNameTree">PDNameTree</a></dt><dd> -  The dictionary used to store all of the Named Destinations in a PDF file.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDNameTree"><strong><span style="color:grey;">PDNameTree</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:5340</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The dictionary used to store all of the Named Destinations in a PDF file. A name tree is used to map Cos strings to Cos objects just as a Cos dictionary is used to map Cos names to Cos objects. However, a name tree can have many more entries than a Cos dictionary can. You create a <a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file.">PDNameTree</a> and locate it where you think is appropriate (perhaps under a page, but most often right under the catalog). Name trees use Cos-style strings (not <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated C strings), which may use Unicode encoding, and these may contain bytes with zeroes in them (high bytes of ASCII characters). </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#OPAQUE_64_BITS"><code>OPAQUE_64_BITS</code></a> <code>PDNameTree</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDDoc.htm#PDDocCreateNameTree" title=" Retrieves the name tree inside the Names dictionary with the specified key name, or creates it if it does not exist."><code>PDDocCreateNameTree</code></a></td><td><a href="pdlayer_PDDoc.htm#PDDocGetNameTree" title=" Retrieves a name tree, with the key name specified in theTree, from the Names dictionary of thePDDoc."><code>PDDocGetNameTree</code></a></td></tr>
+<tr><td><a href="pdlayer_PDNameTree.htm#PDNameTreeFromCosObj" title=" Creates a type cast of the CosObj to a name tree."><code>PDNameTreeFromCosObj</code></a></td><td><a href="pdlayer_PDNameTree.htm#PDNameTreeNew" title=" Creates a new name tree in the document."><code>PDNameTreeNew</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDNameTree.htm#PDNameTreeEnum" title=" Enumerates the entries in the tree."><code>PDNameTreeEnum</code></a></td><td><a href="pdlayer_PDNameTree.htm#PDNameTreeEqual" title=" Compares two name trees to determine if they are the same object."><code>PDNameTreeEqual</code></a></td></tr>
+<tr><td><a href="pdlayer_PDNameTree.htm#PDNameTreeGet" title=" Retrieves an object from the name tree."><code>PDNameTreeGet</code></a></td><td><a href="pdlayer_PDNameTree.htm#PDNameTreeGetCosObj" title=" Creates a type cast of the name tree to a CosObj."><code>PDNameTreeGetCosObj</code></a></td></tr>
+<tr><td><a href="pdlayer_PDNameTree.htm#PDNameTreeIsValid" title=" Validates whether a PDNameTree is a CosDict Cos object."><code>PDNameTreeIsValid</code></a></td><td><a href="pdlayer_PDNameTree.htm#PDNameTreeNotifyNameAdded" title=" Sends a PDNameTreeNameAdded() notification."><code>PDNameTreeNotifyNameAdded</code></a></td></tr>
+<tr><td><a href="pdlayer_PDNameTree.htm#PDNameTreeNotifyNameRemoved" title=" Sends a PDNameTreeNameRemoved() notification."><code>PDNameTreeNotifyNameRemoved</code></a></td><td><a href="pdlayer_PDNameTree.htm#PDNameTreePut" title=" Puts a new entry in the name tree."><code>PDNameTreePut</code></a></td></tr>
+<tr><td><a href="pdlayer_PDNameTree.htm#PDNameTreeRemove" title=" Removes the specified object from the tree."><code>PDNameTreeRemove</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDNameTree Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDNameTreeEnum">PDNameTreeEnum</a></dt><dd> -  Enumerates the entries in the tree.</dd>
+<dt><a href="#PDNameTreeEqual">PDNameTreeEqual</a></dt><dd> -  Compares two name trees to determine if they are the same object.</dd>
+<dt><a href="#PDNameTreeFromCosObj">PDNameTreeFromCosObj</a></dt><dd> -  Creates a type cast of the CosObj to a name tree.</dd>
+<dt><a href="#PDNameTreeGet">PDNameTreeGet</a></dt><dd> -  Retrieves an object from the name tree.</dd>
+<dt><a href="#PDNameTreeGetCosObj">PDNameTreeGetCosObj</a></dt><dd> -  Creates a type cast of the name tree to a CosObj.</dd>
+<dt><a href="#PDNameTreeIsValid">PDNameTreeIsValid</a></dt><dd> -  Validates whether a PDNameTree is a CosDict Cos object.</dd>
+<dt><a href="#PDNameTreeLookup">PDNameTreeLookup</a></dt><dd> -  Given a name tree (such as the Dests tree in the Names dictionary) and a string, find the CosObj in the tree that matches the string.</dd>
+<dt><a href="#PDNameTreeNew">PDNameTreeNew</a></dt><dd> -  Creates a new name tree in the document.</dd>
+<dt><a href="#PDNameTreeNotifyNameAdded">PDNameTreeNotifyNameAdded</a></dt><dd> -  Sends a PDNameTreeNameAdded() notification.</dd>
+<dt><a href="#PDNameTreeNotifyNameRemoved">PDNameTreeNotifyNameRemoved</a></dt><dd> -  Sends a PDNameTreeNameRemoved() notification.</dd>
+<dt><a href="#PDNameTreePut">PDNameTreePut</a></dt><dd> -  Puts a new entry in the name tree.</dd>
+<dt><a href="#PDNameTreeRemove">PDNameTreeRemove</a></dt><dd> -  Removes the specified object from the tree.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDNameTreeEnum"><strong><span style="color:grey;">PDNameTreeEnum</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:6748</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Enumerates the entries in the tree. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDNameTree.htm#PDNameTreeGet" title=" Retrieves an object from the name tree."><code>PDNameTreeGet</code></a>
+<a href="pdlayer_PDNameTree.htm#PDNameTreePut" title=" Puts a new entry in the name tree."><code>PDNameTreePut</code></a>
+<a href="pdlayer_PDNameTree.htm#PDNameTreeRemove" title=" Removes the specified object from the tree."><code>PDNameTreeRemove</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDNameTreeEnum(</code><a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file."><code>PDNameTree</code></a> <code>theTree</code><code>,</code> <a href="coslayer_CosObj.htm#CosObjEnumProc" title=" A callback for CosObjEnum(), CosDocEnumIndirect(), and PDDocEnumOCGs()."><code>CosObjEnumProc</code></a> <code>proc</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theTree</code></span>
+</td><td><span>IN/OUT A name tree. </span>
+</td></tr>
+<tr><td><span><code>proc</code></span>
+</td><td><span>IN/OUT A procedure to call once for each name/object pair in <code>theTree</code>. The obj/value pair in <code>proc</code> correspond to the Cos string and <a href="coslayer_CosObj.htm#CosObj">CosObj</a> values of each leaf in the tree. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>IN/OUT Data used by the enumeration procedure. <code>clientData</code> is passed to the enumeration procedure proc each time an entry is encountered. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDNameTreeEqual"><strong><span style="color:grey;">PDNameTreeEqual</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:6682</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Compares two name trees to determine if they are the same object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDNameTree.htm#PDNameTreeIsValid" title=" Validates whether a PDNameTree is a CosDict Cos object.">PDNameTreeIsValid</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDNameTreeEqual(</code><a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file."><code>PDNameTree</code></a> <code>tree1</code><code>,</code> <a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file."><code>PDNameTree</code></a> <code>tree2</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>tree1</code></span>
+</td><td><span>A name tree. </span>
+</td></tr>
+<tr><td><span><code>tree2</code></span>
+</td><td><span>Another name tree. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the two name trees are equivalent, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDNameTreeFromCosObj"><strong><span style="color:grey;">PDNameTreeFromCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:6647</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a type cast of the <a href="coslayer_CosObj.htm#CosObj">CosObj</a> to a name tree. This does not copy the object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDNameTree.htm#PDNameTreeGetCosObj" title=" Creates a type cast of the name tree to a CosObj."><code>PDNameTreeGetCosObj</code></a>
+<a href="pdlayer_PDNameTree.htm#PDNameTreeNew" title=" Creates a new name tree in the document."><code>PDNameTreeNew</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file."><code>PDNameTree</code></a> <code>PDNameTreeFromCosObj(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>obj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>obj</code></span>
+</td><td><span>IN/OUT The <a href="coslayer_CosObj.htm#CosObj">CosObj</a> for which a <a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file.">PDNameTree</a> representation is desired. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A <a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file.">PDNameTree</a> representation of <code>obj</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDNameTreeGet"><strong><span style="color:grey;">PDNameTreeGet</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:6715</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Retrieves an object from the name tree. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDNameTree.htm#PDNameTreePut" title=" Puts a new entry in the name tree."><code>PDNameTreePut</code></a>
+<a href="pdlayer_PDNameTree.htm#PDNameTreeRemove" title=" Removes the specified object from the tree."><code>PDNameTreeRemove</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDNameTreeGet(</code><a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file."><code>PDNameTree</code></a> <code>theTree</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>name</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>nameLen</code><code>,</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>value</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theTree</code></span>
+</td><td><span>The <a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file.">PDNameTree</a> from which an object is retrieved. </span>
+</td></tr>
+<tr><td><span><code>name</code></span>
+</td><td><span>The name of the object within <code>theTree</code> to get. This is a Cos-style string, not a C string. </span>
+</td></tr>
+<tr><td><span><code>nameLen</code></span>
+</td><td><span>The length of <code>name</code>. </span>
+</td></tr>
+<tr><td><span><code>value</code></span>
+</td><td><span>(Filled by the method) The Cos object corresponding to <code>name</code> within <code>theTree</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the object was retrieved, <a href="aslayer_General.htm#false"><code>false</code></a> if no object with this name exists. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDNameTreeGetCosObj"><strong><span style="color:grey;">PDNameTreeGetCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:6659</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a type cast of the name tree to a <a href="coslayer_CosObj.htm#CosObj">CosObj</a>. This does not copy the object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDNameTree.htm#PDNameTreeFromCosObj" title=" Creates a type cast of the CosObj to a name tree."><code>PDNameTreeFromCosObj</code></a>
+<a href="pdlayer_PDNameTree.htm#PDNameTreeNew" title=" Creates a new name tree in the document."><code>PDNameTreeNew</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>PDNameTreeGetCosObj(</code><a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file."><code>PDNameTree</code></a> <code>theTree</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theTree</code></span>
+</td><td><span>IN/OUT The <a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file.">PDNameTree</a> for which a <a href="coslayer_CosObj.htm#CosObj">CosObj</a> representation is desired. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A <a href="coslayer_CosObj.htm#CosObj">CosObj</a> representation of <code>theTree</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDNameTreeIsValid"><strong><span style="color:grey;">PDNameTreeIsValid</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:6671</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Validates whether a <a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file.">PDNameTree</a> is a <a href="coslayer_General.htm#CosDict" title=" A dictionary object.">CosDict</a> Cos object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDDoc.htm#PDDocCreateNameTree" title=" Retrieves the name tree inside the Names dictionary with the specified key name, or creates it if it does not exist."><code>PDDocCreateNameTree</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocGetNameTree" title=" Retrieves a name tree, with the key name specified in theTree, from the Names dictionary of thePDDoc."><code>PDDocGetNameTree</code></a>
+<a href="pdlayer_PDNameTree.htm#PDNameTreeEqual" title=" Compares two name trees to determine if they are the same object."><code>PDNameTreeEqual</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDNameTreeIsValid(</code><a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file."><code>PDNameTree</code></a> <code>theTree</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theTree</code></span>
+</td><td><span>The <a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file.">PDNameTree</a> whose validity is desired. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the name tree is a <a href="coslayer_General.htm#CosDict" title=" A dictionary object.">CosDict</a>, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDNameTreeLookup"><strong><span style="color:grey;">PDNameTreeLookup</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:5919</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Given a name tree (such as the Dests tree in the Names dictionary) and a string, find the <a href="coslayer_CosObj.htm#CosObj">CosObj</a> in the tree that matches the string.<br/>
+<p>See the description of Name Trees in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 7.9.6, page 88.<br/></p>
+
+<span>
+<p>You can find this document on the web store of the International Standards Organization (ISO).</span>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDNameTree.htm#PDNameTreeGet" title=" Retrieves an object from the name tree."><code>PDNameTreeGet</code></a>
+<a href="pdlayer_PDNameTree.htm#PDNameTreePut" title=" Puts a new entry in the name tree."><code>PDNameTreePut</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>PDNameTreeLookup(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>nameTree</code><code>,</code> <code>char</code> <code>*</code><code>string</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>stringLen</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>nameTree</code></span>
+</td><td><span>The name tree in which to search. </span>
+</td></tr>
+<tr><td><span><code>string</code></span>
+</td><td><span>The name to search for. The name tree uses Cos-style strings, which may use Unicode encoding, and these may contain bytes with zeroes in them (high bytes of ASCII characters). Note that <code>name</code> is not a C-style string. Cos string objects can contain <a href="aslayer_General.htm#NULL"><code>NULL</code></a> chars. Standard C string-handling functions may not work as expected. </span>
+</td></tr>
+<tr><td><span><code>stringLen</code></span>
+</td><td><span>The length of <code>name</code> in bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The Cos object associated with the specified name, which is the array element following the name. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDNameTreeNew"><strong><span style="color:grey;">PDNameTreeNew</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:6635</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a new name tree in the document. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDNameTree.htm#PDNameTreeFromCosObj" title=" Creates a type cast of the CosObj to a name tree."><code>PDNameTreeFromCosObj</code></a>
+<a href="pdlayer_PDNameTree.htm#PDNameTreeGetCosObj" title=" Creates a type cast of the name tree to a CosObj."><code>PDNameTreeGetCosObj</code></a>
+<a href="pdlayer_PDNameTree.htm#PDNameTreeIsValid" title=" Validates whether a PDNameTree is a CosDict Cos object."><code>PDNameTreeIsValid</code></a>
+<a href="pdlayer_PDNameTree.htm#PDNameTreeRemove" title=" Removes the specified object from the tree."><code>PDNameTreeRemove</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file."><code>PDNameTree</code></a> <code>PDNameTreeNew(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document for which a new name tree is desired. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div><p>The newly created name tree or a <a href="aslayer_General.htm#NULL"><code>NULL</code></a> <a href="coslayer_CosObj.htm#CosObj">CosObj</a> if Acrobat is unable to create a <a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file.">PDNameTree</a> for the document specified by <code>pdDoc</code>.<br/>
+<p><a href="pdlayer_PDNameTree.htm#PDNameTreeIsValid" title=" Validates whether a PDNameTree is a CosDict Cos object.">PDNameTreeIsValid</a>() should be called to determine if the name tree returned by <a href="pdlayer_PDNameTree.htm#PDNameTreeNew" title=" Creates a new name tree in the document.">PDNameTreeNew</a>() is usable.<br/></p>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDNameTreeNotifyNameAdded"><strong><span style="color:grey;">PDNameTreeNotifyNameAdded</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:7620</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sends a PDNameTreeNameAdded() notification. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDNameTree.htm#PDNameTreeNotifyNameRemoved" title=" Sends a PDNameTreeNameRemoved() notification.">PDNameTreeNotifyNameRemoved</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDNameTreeNotifyNameAdded(</code><a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file."><code>PDNameTree</code></a> <code>theTree</code><code>,</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>key</code><code>,</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>value</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theTree</code></span>
+</td><td><span>The <a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file.">PDNameTree</a> to which a name had been added. </span>
+</td></tr>
+<tr><td><span><code>key</code></span>
+</td><td><span>The name of the object within <code>theTree</code> that was added. This is a Cos string, not a C string. </span>
+</td></tr>
+<tr><td><span><code>value</code></span>
+</td><td><span>(Filled by the method) The Cos object corresponding to the object name that was added to <code>theTree</code>. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDNameTreeNotifyNameRemoved"><strong><span style="color:grey;">PDNameTreeNotifyNameRemoved</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:7630</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sends a PDNameTreeNameRemoved() notification. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDNameTree.htm#PDNameTreeNotifyNameAdded" title=" Sends a PDNameTreeNameAdded() notification.">PDNameTreeNotifyNameAdded</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDNameTreeNotifyNameRemoved(</code><a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file."><code>PDNameTree</code></a> <code>theTree</code><code>,</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>removedName</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theTree</code></span>
+</td><td><span>The <a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file.">PDNameTree</a> from which the name had been removed. </span>
+</td></tr>
+<tr><td><span><code>removedName</code></span>
+</td><td><span>The name within <code>theTree</code> that was removed. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDNameTreePut"><strong><span style="color:grey;">PDNameTreePut</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:6699</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Puts a new entry in the name tree. If an entry with this name is already in the tree, it is replaced. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDNameTree.htm#PDNameTreeGet" title=" Retrieves an object from the name tree.">PDNameTreeGet</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDNameTreePut(</code><a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file."><code>PDNameTree</code></a> <code>theTree</code><code>,</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>key</code><code>,</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>value</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theTree</code></span>
+</td><td><span>IN/OUT The name tree for which a new entry is added. </span>
+</td></tr>
+<tr><td><span><code>key</code></span>
+</td><td><span>IN/OUT The name of the object to put in the tree. This is a Cos-style string, not a C string. This allows the use of an existing indirect object for the key rather than forcing the creation of a new object. </span>
+</td></tr>
+<tr><td><span><code>value</code></span>
+</td><td><span>IN/OUT The Cos object to be associated with <code>key</code>. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDNameTreeRemove"><strong><span style="color:grey;">PDNameTreeRemove</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:6730</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Removes the specified object from the tree. It does nothing if no object with that name exists. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDNameTree.htm#PDNameTreeGet" title=" Retrieves an object from the name tree."><code>PDNameTreeGet</code></a>
+<a href="pdlayer_PDNameTree.htm#PDNameTreePut" title=" Puts a new entry in the name tree."><code>PDNameTreePut</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDNameTreeRemove(</code><a href="pdlayer_PDNameTree.htm#PDNameTree" title=" The dictionary used to store all of the Named Destinations in a PDF file."><code>PDNameTree</code></a> <code>theTree</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>key</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>keyLen</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theTree</code></span>
+</td><td><span>IN/OUT The name tree from which an entry is removed. </span>
+</td></tr>
+<tr><td><span><code>key</code></span>
+</td><td><span>IN/OUT The name of the entry to remove. This is a Cos- style string, not a C string. </span>
+</td></tr>
+<tr><td><span><code>keyLen</code></span>
+</td><td><span>IN/OUT The length of <code>key</code> in bytes. </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

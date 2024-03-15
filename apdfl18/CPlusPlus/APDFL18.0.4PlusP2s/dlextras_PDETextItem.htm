@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Additional functionality from Datalogics: PDETextItem</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Additional functionality from Datalogics: PDETextItem</h5>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Functions">
+<header><h2>PDETextItem Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDETextItemCopyASText">PDETextItemCopyASText</a></dt><dd> -  Copies the text from a text item element into an ASText.</dd>
+<dt><a href="#PDETextItemCreateASText">PDETextItemCreateASText</a></dt><dd> -  Creates a text element containing a character or text run which can be added to a PDEText object.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDETextItemCopyASText"><strong><span style="color:grey;">PDETextItemCopyASText</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:379</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Copies the text from a text item element into an <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a>. The <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> associated with the <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a> must contain a ToUnicode table. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDETextItem.htm#PDETextItemCreateASText" title=" Creates a text element containing a character or text run which can be added to a PDEText object.">PDETextItemCreateASText</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextItemCopyASText(</code><a href="pdelayer_PDETextItem.htm#PDETextItem" title=" A reference to a PDETextItem."><code>PDETextItem</code></a> <code>textItem</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>text</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>textItem</code></span>
+</td><td><span>The text item from which the text will be copied </span>
+</td></tr>
+<tr><td><span><code>text</code></span>
+</td><td><span>An <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object that is filled in with the text from the text item. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDETextItemCreateASText"><strong><span style="color:grey;">PDETextItemCreateASText</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:368</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a text element containing a character or text run which can be added to a <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a> object. This function will accept characters that are not representable in the given font; such characters will be replaced with the.notdef glyph.<br/>
+<p>An exception will be raised if the supplied font is incompatible with the API. Such may happen, for example, if font is a Type 1 font or if the font is retrieved from an existing PDF document.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDETextItem.htm#PDETextItemCopyASText" title=" Copies the text from a text item element into an ASText.">PDETextItemCopyASText</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDETextItem.htm#PDETextItem" title=" A reference to a PDETextItem."><code>PDETextItem</code></a> <code>PDETextItemCreateASText(</code><a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>text</code><code>,</code> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element."><code>PDEGraphicStateP</code></a> <code>gStateP</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>gStateLen</code><code>,</code> <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element."><code>PDETextStateP</code></a> <code>textStateP</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>textStateLen</code><code>,</code> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>textMatrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>text</code></span>
+</td><td><span>An <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> containing the text to add. Note that passing an <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> containing an empty string will throw a <a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter.">genErrBadParm</a>. </span>
+</td></tr>
+<tr><td><span><code>font</code></span>
+</td><td><span>The <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> for the element. Its type must be 'Type0' or 'TrueType'. </span>
+</td></tr>
+<tr><td><span><code>gStateP</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicStateP</a> structure with the graphics state for the element. </span>
+</td></tr>
+<tr><td><span><code>gStateLen</code></span>
+</td><td><span>The length of the graphics state for the element. </span>
+</td></tr>
+<tr><td><span><code>textStateP</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> structure with the text state for the element. Note that PDFEdit ignores the wasSetFlags flag of the <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> structure, so you must initialize the <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> fields. </span>
+</td></tr>
+<tr><td><span><code>textStateLen</code></span>
+</td><td><span>The length of the text state for the element. </span>
+</td></tr>
+<tr><td><span><code>textMatrixP</code></span>
+</td><td><span>A pointer to an <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> that holds the matrix for the element. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+</section>
+
+</div>
+</body></html>

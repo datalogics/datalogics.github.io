@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Acro Support Layer: ASFixed</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Acro Support Layer: ASFixed</h5>
+<li><a href="#Definitions">Definitions</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Definitions">
+<header><h2>ASFixed Definitions</h2></header>
+<nav><dl>
+<dt><a href="#ASFixedNegInf">ASFixedNegInf</a></dt><dd> - </dd>
+<dt><a href="#ASFixedPosInf">ASFixedPosInf</a></dt><dd> - </dd>
+<dt><a href="#ASFixedRectIsEmptyRect">ASFixedRectIsEmptyRect</a></dt><dd> - </dd>
+<dt><a href="#ASFixedRoundToInt16">ASFixedRoundToInt16</a></dt><dd> -  Converts a fixed point number to an ASInt16, rounding the result.</dd>
+<dt><a href="#ASFixedRoundToInt32">ASFixedRoundToInt32</a></dt><dd> -  Converts a fixed point number to an ASInt32, rounding the result.</dd>
+<dt><a href="#ASFixedTruncToInt16">ASFixedTruncToInt16</a></dt><dd> -  Converts a fixed point number to an ASInt16, truncating the result.</dd>
+<dt><a href="#ASFixedTruncToInt32">ASFixedTruncToInt32</a></dt><dd> -  Converts a fixed point number to an ASInt32, truncating the result.</dd>
+<dt><a href="#ASInt16ToFixed">ASInt16ToFixed</a></dt><dd> - </dd>
+<dt><a href="#ASInt32ToFixed">ASInt32ToFixed</a></dt><dd> -  Converts an ASInt32 to a fixed point number.</dd>
+<dt><a href="#ASUns16ToFixed">ASUns16ToFixed</a></dt><dd> - </dd>
+<dt><a href="#FixedMatrix">FixedMatrix</a></dt><dd> - </dd>
+<dt><a href="#FixedMatrixP">FixedMatrixP</a></dt><dd> - </dd>
+<dt><a href="#FixedPointP">FixedPointP</a></dt><dd> - </dd>
+<dt><a href="#FixedQuad">FixedQuad</a></dt><dd> - </dd>
+<dt><a href="#FixedQuadP">FixedQuadP</a></dt><dd> - </dd>
+<dt><a href="#FixedRectP">FixedRectP</a></dt><dd> - </dd>
+<dt><a href="#FixedRoundToInt16">FixedRoundToInt16</a></dt><dd> - </dd>
+<dt><a href="#FixedRoundToInt32">FixedRoundToInt32</a></dt><dd> - </dd>
+<dt><a href="#FixedTruncToInt16">FixedTruncToInt16</a></dt><dd> - </dd>
+<dt><a href="#FixedTruncToInt32">FixedTruncToInt32</a></dt><dd> - </dd>
+<dt><a href="#FloatIToFixed">FloatIToFixed</a></dt><dd> -  FloatI to ASFixed (for use when you know that float numbers are integer values).</dd>
+<dt><a href="#FloatNToFixed">FloatNToFixed</a></dt><dd> -  FloatN to ASFixed (for use when you know that float numbers are non-negative).</dd>
+<dt><a href="#Int16ToFixed">Int16ToFixed</a></dt><dd> - </dd>
+<dt><a href="#Int32ToFixed">Int32ToFixed</a></dt><dd> - </dd>
+<dt><a href="#fixedEight">fixedEight</a></dt><dd> - </dd>
+<dt><a href="#fixedEighth">fixedEighth</a></dt><dd> - </dd>
+<dt><a href="#fixedEleven">fixedEleven</a></dt><dd> - </dd>
+<dt><a href="#fixedFifty">fixedFifty</a></dt><dd> - </dd>
+<dt><a href="#fixedFive">fixedFive</a></dt><dd> - </dd>
+<dt><a href="#fixedFiveHundred">fixedFiveHundred</a></dt><dd> - </dd>
+<dt><a href="#fixedFour">fixedFour</a></dt><dd> - </dd>
+<dt><a href="#fixedFourThirds">fixedFourThirds</a></dt><dd> - </dd>
+<dt><a href="#fixedGolden">fixedGolden</a></dt><dd> - </dd>
+<dt><a href="#fixedHalf">fixedHalf</a></dt><dd> - </dd>
+<dt><a href="#fixedHundred">fixedHundred</a></dt><dd> - </dd>
+<dt><a href="#fixedHundredFifty">fixedHundredFifty</a></dt><dd> - </dd>
+<dt><a href="#fixedHundredth">fixedHundredth</a></dt><dd> - </dd>
+<dt><a href="#fixedNegativeInfinity">fixedNegativeInfinity</a></dt><dd> - </dd>
+<dt><a href="#fixedNine">fixedNine</a></dt><dd> - </dd>
+<dt><a href="#fixedNinety">fixedNinety</a></dt><dd> - </dd>
+<dt><a href="#fixedOne">fixedOne</a></dt><dd> - </dd>
+<dt><a href="#fixedOne1">fixedOne1</a></dt><dd> - </dd>
+<dt><a href="#fixedOneAnd3Qtr">fixedOneAnd3Qtr</a></dt><dd> - </dd>
+<dt><a href="#fixedOneAndQuarter">fixedOneAndQuarter</a></dt><dd> - </dd>
+<dt><a href="#fixedOneEighty">fixedOneEighty</a></dt><dd> - </dd>
+<dt><a href="#fixedPi2">fixedPi2</a></dt><dd> - </dd>
+<dt><a href="#fixedPi4">fixedPi4</a></dt><dd> - </dd>
+<dt><a href="#fixedPositiveInfinity">fixedPositiveInfinity</a></dt><dd> - </dd>
+<dt><a href="#fixedQuarter">fixedQuarter</a></dt><dd> - </dd>
+<dt><a href="#fixedSeven">fixedSeven</a></dt><dd> - </dd>
+<dt><a href="#fixedSevenEighths">fixedSevenEighths</a></dt><dd> - </dd>
+<dt><a href="#fixedSeventyTwo">fixedSeventyTwo</a></dt><dd> - </dd>
+<dt><a href="#fixedSix">fixedSix</a></dt><dd> - </dd>
+<dt><a href="#fixedSixteen">fixedSixteen</a></dt><dd> - </dd>
+<dt><a href="#fixedSixteenth">fixedSixteenth</a></dt><dd> - </dd>
+<dt><a href="#fixedSqrtTwo">fixedSqrtTwo</a></dt><dd> - </dd>
+<dt><a href="#fixedTen">fixedTen</a></dt><dd> - </dd>
+<dt><a href="#fixedTenThousand">fixedTenThousand</a></dt><dd> - </dd>
+<dt><a href="#fixedTenth">fixedTenth</a></dt><dd> - </dd>
+<dt><a href="#fixedThird">fixedThird</a></dt><dd> - </dd>
+<dt><a href="#fixedThirtyTwo">fixedThirtyTwo</a></dt><dd> - </dd>
+<dt><a href="#fixedThousand">fixedThousand</a></dt><dd> - </dd>
+<dt><a href="#fixedThree">fixedThree</a></dt><dd> - </dd>
+<dt><a href="#fixedThreeHalves">fixedThreeHalves</a></dt><dd> - </dd>
+<dt><a href="#fixedThreeQuarters">fixedThreeQuarters</a></dt><dd> - </dd>
+<dt><a href="#fixedTwelfth">fixedTwelfth</a></dt><dd> - </dd>
+<dt><a href="#fixedTwelve">fixedTwelve</a></dt><dd> - </dd>
+<dt><a href="#fixedTwo">fixedTwo</a></dt><dd> - </dd>
+<dt><a href="#fixedTwoSeventy">fixedTwoSeventy</a></dt><dd> - </dd>
+<dt><a href="#fixedTwoThirds">fixedTwoThirds</a></dt><dd> - </dd>
+<dt><a href="#fixedZero">fixedZero</a></dt><dd> - </dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASFixedNegInf"><strong><span style="color:grey;">ASFixedNegInf</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:643</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASFixedNegInf</code> <a href="aslayer_General.htm#ASMINInt32"><code>ASMINInt32</code></a> </code>
+</section>
+<section><div class="infoRow"><h3 id="ASFixedPosInf"><strong><span style="color:grey;">ASFixedPosInf</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:640</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASFixedPosInf</code> <a href="aslayer_General.htm#ASMAXInt32"><code>ASMAXInt32</code></a> </code>
+</section>
+<section><div class="infoRow"><h3 id="ASFixedRectIsEmptyRect"><strong><span style="color:grey;">ASFixedRectIsEmptyRect</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1058</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASFixedRectIsEmptyRect</code> <code>(</code> <code>r</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="ASFixedRoundToInt16"><strong><span style="color:grey;">ASFixedRoundToInt16</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:720</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Converts a fixed point number to an <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value.">ASInt16</a>, rounding the result. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt32" title=" Converts a fixed point number to an ASInt32, rounding the result."><code>ASFixedRoundToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToFloat" title=" Converts an ASFixed to a float."><code>ASFixedToFloat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt16" title=" Converts a fixed point number to an ASInt16, truncating the result."><code>ASFixedTruncToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt32" title=" Converts a fixed point number to an ASInt32, truncating the result."><code>ASFixedTruncToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASInt16ToFixed"><code>ASInt16ToFixed</code></a>
+<a href="aslayer_ASFixed.htm#ASInt32ToFixed" title=" Converts an ASInt32 to a fixed point number."><code>ASInt32ToFixed</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASFixedRoundToInt16</code> <code>(</code> <code>f</code> <code>)</code><code>(</code><code>(</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>)</code><code>(</code><code>(</code><code>(</code> <code>f</code> <code>)</code> <code>+</code> <a href="aslayer_ASFixed.htm#fixedHalf"><code>fixedHalf</code></a> <code>)</code> <code>>></code> <code>16</code> <code>)</code> <code>)</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>f</code></span>
+</td><td><span>The fixed point number to convert. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASFixedRoundToInt32"><strong><span style="color:grey;">ASFixedRoundToInt32</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:676</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Converts a fixed point number to an <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value.">ASInt32</a>, rounding the result. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt16" title=" Converts a fixed point number to an ASInt16, rounding the result."><code>ASFixedRoundToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToFloat" title=" Converts an ASFixed to a float."><code>ASFixedToFloat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt16" title=" Converts a fixed point number to an ASInt16, truncating the result."><code>ASFixedTruncToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt32" title=" Converts a fixed point number to an ASInt32, truncating the result."><code>ASFixedTruncToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASInt16ToFixed"><code>ASInt16ToFixed</code></a>
+<a href="aslayer_ASFixed.htm#ASInt32ToFixed" title=" Converts an ASInt32 to a fixed point number."><code>ASInt32ToFixed</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASFixedRoundToInt32</code> <code>(</code> <code>f</code> <code>)</code><code>(</code><code>(</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>)</code><code>(</code><code>(</code><code>(</code> <code>f</code> <code>)</code> <code>+</code> <a href="aslayer_ASFixed.htm#fixedHalf"><code>fixedHalf</code></a> <code>)</code> <code>>></code> <code>16</code> <code>)</code> <code>)</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>f</code></span>
+</td><td><span>The fixed point number to convert. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASFixedTruncToInt16"><strong><span style="color:grey;">ASFixedTruncToInt16</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:734</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Converts a fixed point number to an <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value.">ASInt16</a>, truncating the result. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt16" title=" Converts a fixed point number to an ASInt16, rounding the result."><code>ASFixedRoundToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt32" title=" Converts a fixed point number to an ASInt32, rounding the result."><code>ASFixedRoundToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToFloat" title=" Converts an ASFixed to a float."><code>ASFixedToFloat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt32" title=" Converts a fixed point number to an ASInt32, truncating the result."><code>ASFixedTruncToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASInt16ToFixed"><code>ASInt16ToFixed</code></a>
+<a href="aslayer_ASFixed.htm#ASInt32ToFixed" title=" Converts an ASInt32 to a fixed point number."><code>ASInt32ToFixed</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASFixedTruncToInt16</code> <code>(</code> <code>f</code> <code>)</code><code>(</code><code>(</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>)</code><code>(</code><code>(</code> <code>f</code> <code>)</code> <code>>></code> <code>16</code> <code>)</code> <code>)</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>f</code></span>
+</td><td><span>The fixed point number to convert. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASFixedTruncToInt32"><strong><span style="color:grey;">ASFixedTruncToInt32</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:690</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Converts a fixed point number to an <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value.">ASInt32</a>, truncating the result. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt16" title=" Converts a fixed point number to an ASInt16, rounding the result."><code>ASFixedRoundToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt32" title=" Converts a fixed point number to an ASInt32, rounding the result."><code>ASFixedRoundToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToFloat" title=" Converts an ASFixed to a float."><code>ASFixedToFloat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt16" title=" Converts a fixed point number to an ASInt16, truncating the result."><code>ASFixedTruncToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASInt16ToFixed"><code>ASInt16ToFixed</code></a>
+<a href="aslayer_ASFixed.htm#ASInt32ToFixed" title=" Converts an ASInt32 to a fixed point number."><code>ASInt32ToFixed</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASFixedTruncToInt32</code> <code>(</code> <code>f</code> <code>)</code><code>(</code><code>(</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>)</code><code>(</code><code>(</code> <code>f</code> <code>)</code> <code>>></code> <code>16</code> <code>)</code> <code>)</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>f</code></span>
+</td><td><span>The fixed point number to convert. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASInt16ToFixed"><strong><span style="color:grey;">ASInt16ToFixed</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:704</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASInt16ToFixed</code> <code>(</code> <code>i</code> <code>)</code><code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code><code>(</code> <code>i</code> <code>)</code> <code>*</code><code>(</code> <code>1</code> <code><<</code> <code>16</code> <code>)</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="ASInt32ToFixed"><strong><span style="color:grey;">ASInt32ToFixed</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:659</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Converts an <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value.">ASInt32</a> to a fixed point number. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt16" title=" Converts a fixed point number to an ASInt16, rounding the result."><code>ASFixedRoundToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt32" title=" Converts a fixed point number to an ASInt32, rounding the result."><code>ASFixedRoundToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToFloat" title=" Converts an ASFixed to a float."><code>ASFixedToFloat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToFloat" title=" Converts an ASFixed to a float."><code>ASFixedToFloat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt16" title=" Converts a fixed point number to an ASInt16, truncating the result."><code>ASFixedTruncToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt32" title=" Converts a fixed point number to an ASInt32, truncating the result."><code>ASFixedTruncToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASInt16ToFixed"><code>ASInt16ToFixed</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASInt32ToFixed</code> <code>(</code> <code>i</code> <code>)</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>i</code></span>
+</td><td><span>The <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value.">ASInt32</a> to convert. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASUns16ToFixed"><strong><span style="color:grey;">ASUns16ToFixed</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:706</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASUns16ToFixed</code> <code>(</code> <code>i</code> <code>)</code><code>(</code><code>(</code><code>(</code> <code>i</code> <code>)</code> <code>&gt;</code> <code>32767</code> <code>)</code> <code>?</code> <a href="aslayer_ASFixed.htm#ASFixedPosInf"><code>ASFixedPosInf</code></a> <code>:</code><code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code><code>(</code> <code>i</code> <code>)</code> <code><<</code> <code>16</code> <code>)</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="FixedMatrix"><strong><span style="color:grey;">FixedMatrix</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CoreExpT.h:245</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define FixedMatrix</code> <code>.</code> <code>.</code> <code>Use</code> <code>.</code> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrix</code></a> <code>.</code> <code>instead</code> <code>.</code> <code>.</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="FixedMatrixP"><strong><span style="color:grey;">FixedMatrixP</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CoreExpT.h:246</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define FixedMatrixP</code> <code>.</code> <code>.</code> <code>Use</code> <code>.</code> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>.</code> <code>instead</code> <code>.</code> <code>.</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="FixedPointP"><strong><span style="color:grey;">FixedPointP</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CoreExpT.h:241</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define FixedPointP</code> <code>.</code> <code>.</code> <code>Use</code> <code>.</code> <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers."><code>ASFixedPointP</code></a> <code>.</code> <code>instead</code> <code>.</code> <code>.</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="FixedQuad"><strong><span style="color:grey;">FixedQuad</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CoreExpT.h:243</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define FixedQuad</code> <code>.</code> <code>.</code> <code>Use</code> <code>.</code> <a href="aslayer_ASFixed.htm#_t_ASFixedQuad" title=" A quadrilateral represented by four fixed points (one at each corner)."><code>ASFixedQuad</code></a> <code>.</code> <code>instead</code> <code>.</code> <code>.</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="FixedQuadP"><strong><span style="color:grey;">FixedQuadP</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CoreExpT.h:244</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define FixedQuadP</code> <code>.</code> <code>.</code> <code>Use</code> <code>.</code> <a href="aslayer_ASFixed.htm#_t_ASFixedQuad" title=" A quadrilateral represented by four fixed points (one at each corner)."><code>ASFixedQuadP</code></a> <code>.</code> <code>instead</code> <code>.</code> <code>.</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="FixedRectP"><strong><span style="color:grey;">FixedRectP</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CoreExpT.h:242</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define FixedRectP</code> <code>.</code> <code>.</code> <code>Use</code> <code>.</code> <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRectP</code></a> <code>.</code> <code>instead</code> <code>.</code> <code>.</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="FixedRoundToInt16"><strong><span style="color:grey;">FixedRoundToInt16</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:804</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define FixedRoundToInt16</code> <a href="aslayer_ASFixed.htm#ASFixedRoundToInt16" title=" Converts a fixed point number to an ASInt16, rounding the result."><code>ASFixedRoundToInt16</code></a> </code>
+</section>
+<section><div class="infoRow"><h3 id="FixedRoundToInt32"><strong><span style="color:grey;">FixedRoundToInt32</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:801</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define FixedRoundToInt32</code> <a href="aslayer_ASFixed.htm#ASFixedRoundToInt32" title=" Converts a fixed point number to an ASInt32, rounding the result."><code>ASFixedRoundToInt32</code></a> </code>
+</section>
+<section><div class="infoRow"><h3 id="FixedTruncToInt16"><strong><span style="color:grey;">FixedTruncToInt16</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:805</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define FixedTruncToInt16</code> <a href="aslayer_ASFixed.htm#ASFixedTruncToInt16" title=" Converts a fixed point number to an ASInt16, truncating the result."><code>ASFixedTruncToInt16</code></a> </code>
+</section>
+<section><div class="infoRow"><h3 id="FixedTruncToInt32"><strong><span style="color:grey;">FixedTruncToInt32</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:802</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define FixedTruncToInt32</code> <a href="aslayer_ASFixed.htm#ASFixedTruncToInt32" title=" Converts a fixed point number to an ASInt32, truncating the result."><code>ASFixedTruncToInt32</code></a> </code>
+</section>
+<section><div class="infoRow"><h3 id="FloatIToFixed"><strong><span style="color:grey;">FloatIToFixed</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:795</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>FloatI to <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part.">ASFixed</a> (for use when you know that <code>float</code> numbers are integer values). </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define FloatIToFixed</code> <code>(</code> <code>x</code> <code>)</code><code>(</code><code>(</code> <code>x</code> <code>)</code> <code>&gt;</code> <code>32767</code> <code>)</code> <code>?</code> <a href="aslayer_ASFixed.htm#ASFixedPosInf"><code>ASFixedPosInf</code></a> <code>:</code><code>(</code><code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>x</code> <code>)</code> <code><<</code> <code>16</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="FloatNToFixed"><strong><span style="color:grey;">FloatNToFixed</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:792</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>FloatN to <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part.">ASFixed</a> (for use when you know that <code>float</code> numbers are non-negative). </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define FloatNToFixed</code> <code>(</code> <code>x</code> <code>)</code><code>(</code><code>(</code> <code>x</code> <code>)</code> <code>&lt;</code><code>(</code> <code>-</code> <code>32767</code> <code>)</code> <code>)</code> <code>?</code> <a href="aslayer_ASFixed.htm#ASFixedNegInf"><code>ASFixedNegInf</code></a> <code>:</code><code>(</code><code>(</code> <code>x</code> <code>)</code> <code>&gt;</code> <code>32767</code> <code>)</code> <code>?</code> <a href="aslayer_ASFixed.htm#ASFixedPosInf"><code>ASFixedPosInf</code></a> <code>:</code><code>(</code><code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code><code>(</code><code>(</code><code>(</code> <code>x</code> <code>)</code> <code>*</code><code>65536.0f</code> <code>+</code> <code>0.5f</code> <code>)</code> <code>)</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="Int16ToFixed"><strong><span style="color:grey;">Int16ToFixed</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:803</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define Int16ToFixed</code> <a href="aslayer_ASFixed.htm#ASInt16ToFixed"><code>ASInt16ToFixed</code></a> </code>
+</section>
+<section><div class="infoRow"><h3 id="Int32ToFixed"><strong><span style="color:grey;">Int32ToFixed</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:800</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define Int32ToFixed</code> <a href="aslayer_ASFixed.htm#ASInt32ToFixed" title=" Converts an ASInt32 to a fixed point number."><code>ASInt32ToFixed</code></a> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedEight"><strong><span style="color:grey;">fixedEight</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:921</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedEight</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00080000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedEighth"><strong><span style="color:grey;">fixedEighth</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:829</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedEighth</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00002000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedEleven"><strong><span style="color:grey;">fixedEleven</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:933</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedEleven</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x000B0000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedFifty"><strong><span style="color:grey;">fixedFifty</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:949</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedFifty</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00320000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedFive"><strong><span style="color:grey;">fixedFive</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:909</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedFive</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00050000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedFiveHundred"><strong><span style="color:grey;">fixedFiveHundred</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:977</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedFiveHundred</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x01F40000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedFour"><strong><span style="color:grey;">fixedFour</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:905</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedFour</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00040000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedFourThirds"><strong><span style="color:grey;">fixedFourThirds</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:873</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedFourThirds</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00015555L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedGolden"><strong><span style="color:grey;">fixedGolden</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:893</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedGolden</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00019e37L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedHalf"><strong><span style="color:grey;">fixedHalf</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:841</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedHalf</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00008000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedHundred"><strong><span style="color:grey;">fixedHundred</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:961</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedHundred</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00640000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedHundredFifty"><strong><span style="color:grey;">fixedHundredFifty</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:965</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedHundredFifty</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00960000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedHundredth"><strong><span style="color:grey;">fixedHundredth</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:813</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedHundredth</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x0000028FL</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedNegativeInfinity"><strong><span style="color:grey;">fixedNegativeInfinity</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:989</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedNegativeInfinity</code> <a href="aslayer_ASFixed.htm#ASFixedNegInf"><code>ASFixedNegInf</code></a> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedNine"><strong><span style="color:grey;">fixedNine</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:925</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedNine</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00090000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedNinety"><strong><span style="color:grey;">fixedNinety</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:957</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedNinety</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x005a0000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedOne"><strong><span style="color:grey;">fixedOne</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:865</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedOne</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00010000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedOne1"><strong><span style="color:grey;">fixedOne1</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:861</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedOne1</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x0000ffffL</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedOneAnd3Qtr"><strong><span style="color:grey;">fixedOneAnd3Qtr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:885</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedOneAnd3Qtr</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x0001C000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedOneAndQuarter"><strong><span style="color:grey;">fixedOneAndQuarter</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:869</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedOneAndQuarter</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00014000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedOneEighty"><strong><span style="color:grey;">fixedOneEighty</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:969</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedOneEighty</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00b40000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedPi2"><strong><span style="color:grey;">fixedPi2</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:889</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedPi2</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00019220L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedPi4"><strong><span style="color:grey;">fixedPi4</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:853</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedPi4</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x0000c910L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedPositiveInfinity"><strong><span style="color:grey;">fixedPositiveInfinity</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:993</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedPositiveInfinity</code> <a href="aslayer_ASFixed.htm#ASFixedPosInf"><code>ASFixedPosInf</code></a> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedQuarter"><strong><span style="color:grey;">fixedQuarter</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:833</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedQuarter</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00004000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedSeven"><strong><span style="color:grey;">fixedSeven</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:917</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedSeven</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00070000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedSevenEighths"><strong><span style="color:grey;">fixedSevenEighths</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:857</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedSevenEighths</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x0000E000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedSeventyTwo"><strong><span style="color:grey;">fixedSeventyTwo</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:953</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedSeventyTwo</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00480000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedSix"><strong><span style="color:grey;">fixedSix</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:913</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedSix</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00060000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedSixteen"><strong><span style="color:grey;">fixedSixteen</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:941</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedSixteen</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00100000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedSixteenth"><strong><span style="color:grey;">fixedSixteenth</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:817</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedSixteenth</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00001000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedSqrtTwo"><strong><span style="color:grey;">fixedSqrtTwo</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:877</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedSqrtTwo</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00016A0AL</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedTen"><strong><span style="color:grey;">fixedTen</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:929</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedTen</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x000A0000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedTenThousand"><strong><span style="color:grey;">fixedTenThousand</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:985</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedTenThousand</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x27100000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedTenth"><strong><span style="color:grey;">fixedTenth</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:825</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedTenth</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00001999L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedThird"><strong><span style="color:grey;">fixedThird</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:837</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedThird</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00005555L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedThirtyTwo"><strong><span style="color:grey;">fixedThirtyTwo</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:945</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedThirtyTwo</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00200000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedThousand"><strong><span style="color:grey;">fixedThousand</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:981</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedThousand</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x03E80000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedThree"><strong><span style="color:grey;">fixedThree</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:901</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedThree</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00030000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedThreeHalves"><strong><span style="color:grey;">fixedThreeHalves</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:881</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedThreeHalves</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00018000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedThreeQuarters"><strong><span style="color:grey;">fixedThreeQuarters</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:849</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedThreeQuarters</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x0000C000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedTwelfth"><strong><span style="color:grey;">fixedTwelfth</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:821</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedTwelfth</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00001555L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedTwelve"><strong><span style="color:grey;">fixedTwelve</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:937</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedTwelve</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x000C0000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedTwo"><strong><span style="color:grey;">fixedTwo</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:897</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedTwo</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00020000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedTwoSeventy"><strong><span style="color:grey;">fixedTwoSeventy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:973</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedTwoSeventy</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x010e0000L</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedTwoThirds"><strong><span style="color:grey;">fixedTwoThirds</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:845</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedTwoThirds</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x0000AAAAL</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="fixedZero"><strong><span style="color:grey;">fixedZero</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:809</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define fixedZero</code> <code>(</code><code>(</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>)</code> <code>0x00000000L</code> <code>)</code> </code>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>ASFixed Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#ASFixed">ASFixed</a></dt><dd> -  The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASFixed"><strong><span style="color:grey;">ASFixed</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:633</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>The <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part.">ASFixed</a> type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part. The definition is platform-dependent.<br/>
+<p><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part.">ASFixedP</a> is a pointer to an <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part.">ASFixed</a> object.<br/></p>
+
+<p>
+<p>Addition, subtraction, and negation with <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part.">ASFixed</a> types can be done with <code>+</code> and<code>-</code> operators, unless you are concerned with overflow. Overflow in ASFixed-value operations is indicated by the values <a href="aslayer_ASFixed.htm#fixedPositiveInfinity"><code>fixedPositiveInfinity</code></a> and <a href="aslayer_ASFixed.htm#fixedNegativeInfinity"><code>fixedNegativeInfinity</code></a>.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASFixedMatrixConcat" title=" Multiplies two matrices."><code>ASFixedMatrixConcat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedMatrixInvert" title=" Inverts a matrix."><code>ASFixedMatrixInvert</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedMatrixTransform" title=" Transforms the point p through the matrix m, puts result in result."><code>ASFixedMatrixTransform</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedMatrixTransformRect" title=" Transforms a rectangle through a matrix."><code>ASFixedMatrixTransformRect</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>ASFixed</code><code>,</code> <code>*</code><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixedP</code></a><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASFixed.htm#ASCStringToFixed" title=" Converts a CString to a fixed point number."><code>ASCStringToFixed</code></a></td><td><a href="aslayer_ASFixed.htm#ASFixedDiv" title=" Divides two fixed numbers."><code>ASFixedDiv</code></a></td></tr>
+<tr><td><a href="aslayer_ASFixed.htm#ASFixedMul" title=" Multiplies two fixed numbers."><code>ASFixedMul</code></a></td><td><a href="coslayer_CosNumber.htm#CosFixedValue" title=" Gets the value of obj as a fixed-point real number."><code>CosFixedValue</code></a></td></tr>
+<tr><td><a href="aslayer_ASFixed.htm#FloatToASFixed" title=" Converts a float to an ASFixed value."><code>FloatToASFixed</code></a></td><td><a href="pdelayer_PDEDeviceNColors.htm#PDEDeviceNColorsGetColorValue" title=" Gets the value of a color component of a PDEDeviceNColors color space."><code>PDEDeviceNColorsGetColorValue</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEExtGState.htm#PDEExtGStateGetOpacityFill" title=" Returns the opacity value for painting operations other than stroking."><code>PDEExtGStateGetOpacityFill</code></a></td><td><a href="pdelayer_PDEExtGState.htm#PDEExtGStateGetOpacityStroke" title=" Returns the opacity value for stroke painting operations for paths and glyph outlines."><code>PDEExtGStateGetOpacityStroke</code></a></td></tr>
+<tr><td><a href="pdlayer_PDPage.htm#PDPageGetDuration" title=" Gets the page's automatic-advance timing value, which is the maximum amount of time the page is displayed before the viewer automatically advances to the next page."><code>PDPageGetDuration</code></a></td><td><a href="pdlayer_PDStyle.htm#PDStyleGetFontSize" title=" Get a style's font size."><code>PDStyleGetFontSize</code></a></td></tr>
+<tr><td><a href="pdlayer_PDTrans.htm#PDTransGetDuration" title=" Gets the duration for the given transition."><code>PDTransGetDuration</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASFixed.htm#ASFixedDiv" title=" Divides two fixed numbers."><code>ASFixedDiv</code></a></td><td><a href="aslayer_ASFixed.htm#ASFixedMul" title=" Multiplies two fixed numbers."><code>ASFixedMul</code></a></td></tr>
+<tr><td><a href="aslayer_ASFixed.htm#ASFixedToCString" title=" Converts a fixed number to a CString."><code>ASFixedToCString</code></a></td><td><a href="aslayer_ASFixed.htm#ASFixedToFloat" title=" Converts an ASFixed to a float."><code>ASFixedToFloat</code></a></td></tr>
+<tr><td><a href="coslayer_CosNumber.htm#CosNewFixed" title=" Creates a new real-number object from a fixed-point number associated with the specified document."><code>CosNewFixed</code></a></td><td><a href="pdelayer_PDEDeviceNColors.htm#PDEDeviceNColorsCreate" title=" Creates an object that can be used to store n color components when in a DeviceN color space."><code>PDEDeviceNColorsCreate</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEExtGState.htm#PDEExtGStateSetOpacityFill" title=" Sets the opacity value for painting operations other than stroking."><code>PDEExtGStateSetOpacityFill</code></a></td><td><a href="pdelayer_PDEExtGState.htm#PDEExtGStateSetOpacityStroke" title=" Sets the opacity value for stroke operations."><code>PDEExtGStateSetOpacityStroke</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontEx" title=" Creates a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFontEx</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontExInCosDoc" title=" Creates a font object like PDEFontCreateFromSysFontEx(), except that the client can specify the CosDoc in which the font is created."><code>PDEFontCreateFromSysFontExInCosDoc</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageGetDecodeArray" title=" Gets the decode array from the attributes of the image."><code>PDEImageGetDecodeArray</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageGetMatteArray" title=" Gets the matte array for the image XObject."><code>PDEImageGetMatteArray</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageSetDecodeArray" title=" Sets the decode array of an image."><code>PDEImageSetDecodeArray</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageSetMatteArray" title=" Sets the matte array for the image XObject."><code>PDEImageSetMatteArray</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEPath.htm#PDEPathAddSegment" title=" Adds a segment to a path."><code>PDEPathAddSegment</code></a></td><td><a href="pdelayer_PDESoftMask.htm#PDESoftMaskGetBackdropColor" title=" Gets the array of color values of the backdrop color."><code>PDESoftMaskGetBackdropColor</code></a></td></tr>
+<tr><td><a href="pdelayer_PDESoftMask.htm#PDESoftMaskSetBackdropColor" title=" Sets the backdrop color values."><code>PDESoftMaskSetBackdropColor</code></a></td><td><a href="pdelayer_PDSysFont.htm#PDFindSysFontEx" title=" Finds a system font that matches the requested attributes."><code>PDFindSysFontEx</code></a></td></tr>
+<tr><td><a href="pdlayer_General.htm#PDGraphicEnumCacheDeviceProc" title=" A callback for PDGraphicEnumMonitor."><code>PDGraphicEnumCacheDeviceProc</code></a></td><td><a href="pdfllayer_PDPage.htm#PDPageGetSize" title=" Returns the width and height of the page, which could be rotated or defaulted."><code>PDPageGetSize</code></a></td></tr>
+<tr><td><a href="pdlayer_PDPage.htm#PDPageSetDuration" title=" Sets the page's automatic-advance timing value, which is the maximum amount of time the page is displayed before the viewer automatically advances to the next page."><code>PDPageSetDuration</code></a></td><td><a href="pdlayer_General.htm#PDStringEnumProc" title=" A callback for PDTextEnum()."><code>PDStringEnumProc</code></a></td></tr>
+<tr><td><a href="pdelayer_PDSysFont.htm#PDSysFontGetWidthsEx" title=" Gets the widths of a single byte encoded system font."><code>PDSysFontGetWidthsEx</code></a></td><td><a href="pdlayer_PDTextSelect.htm#PDTextSelectEnumRTFTextProc"><code>PDTextSelectEnumRTFTextProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDTextSelect.htm#PDTextSelectEnumTextProc" title=" A callback for PDTextSelectEnumText() and PDTextSelectEnumTextUCS()."><code>PDTextSelectEnumTextProc</code></a></td><td><a href="pdlayer_PDThumb.htm#PDThumbCreationGetThumbDataProc" title=" (Optional) A callback for PDThumbCreationServer."><code>PDThumbCreationGetThumbDataProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDTrans.htm#PDTransNew" title=" Creates a new transition of the specified type and duration associated with the CosDoc of the given PDDoc."><code>PDTransNew</code></a></td><td><a href="pdlayer_PDTrans.htm#PDTransNewFromCosDoc" title=" Creates a new transition of the specified type and duration associated with the given CosDoc."><code>PDTransNewFromCosDoc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDViewDest.htm#PDViewDestCreate" title=" Creates a new view destination object."><code>PDViewDestCreate</code></a></td><td><a href="pdlayer_PDViewDest.htm#PDViewDestGetAttr" title=" Gets a view destination's fit type, destination rectangle, and zoom factor."><code>PDViewDestGetAttr</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnot.htm#_PDAnnotInfoRec" title=" Information associated with an annotation."><code>_PDAnnotInfoRec</code></a></td><td><a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>_t_ASFixedMatrix</code></a></td></tr>
+<tr><td><a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers."><code>_t_ASFixedPoint</code></a></td><td><a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>_t_ASFixedRect</code></a></td></tr>
+<tr><td><a href="pdlayer_PDPref.htm#_t_PDChromaticity" title=" A data structure containing a monitor's chromaticity, for use in displaying device-independent color."><code>_t_PDChromaticity</code></a></td><td><a href="pdlayer_PDPref.htm#_t_PDColorCal" title=" A data structure used to represent the characteristics of an output device; it is needed for device-independent color."><code>_t_PDColorCal</code></a></td></tr>
+<tr><td><a href="pdlayer_General.htm#_t_PDColorValueRec" title=" A data structure representing a color."><code>_t_PDColorValueRec</code></a></td><td><a href="pdelayer_General.htm#_t_PDEColorValue" title=" A structure describing a color value."><code>_t_PDEColorValue</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEContent.htm#_t_PDEContentAttrs" title=" A structure describing attributes of a PDEContent object."><code>_t_PDEContentAttrs</code></a></td><td><a href="dlextras_PDEContent.htm#_t_PDEContentAttrsEx" title=" A structure describing attributes of a PDEContent object."><code>_t_PDEContentAttrsEx</code></a></td></tr>
+<tr><td><a href="pdelayer_General.htm#_t_PDEDash" title=" A structure describing a dash specification."><code>_t_PDEDash</code></a></td><td><a href="pdelayer_PDEFont.htm#_t_PDEFontCreateFromSysFontParams" title=" A data structure used with PDEFont creation."><code>_t_PDEFontCreateFromSysFontParams</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#_t_PDEFontCreateParams" title=" Parameters used for PDEFontCreateWithParams() to describe a font."><code>_t_PDEFontCreateParams</code></a></td><td><a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element."><code>_t_PDEGraphicState</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#_t_PDEImageAttrs" title=" Attributes of a PDEImage."><code>_t_PDEImageAttrs</code></a></td><td><a href="pdelayer_PDEImage.htm#_t_PDEImageJPXAttrs" title=" Attributes of a JPX image."><code>_t_PDEImageJPXAttrs</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element."><code>_t_PDETextState</code></a></td><td><a href="pdlayer_General.htm#_t_PDGraphicState" title=" A data structure containing information about the current graphics state."><code>_t_PDGraphicState</code></a></td></tr>
+<tr><td><a href="pdlayer_General.htm#_t_PDImageAttrs" title=" A data structure containing information about the attributes of an image."><code>_t_PDImageAttrs</code></a></td><td><a href="pdlayer_PDLinkAnnot.htm#_t_PDLinkAnnotBorder" title=" The border's dash pattern is specified by dashArray and dashArrayLen."><code>_t_PDLinkAnnotBorder</code></a></td></tr>
+<tr><td><a href="pdlayer_PDRedaction.htm#_t_PDRedactParams" title=" Parameters used to represent the properties for a redaction mark."><code>_t_PDRedactParams</code></a></td><td><a href="pdlayer_General.htm#_t_PDTextState" title=" A data structure containing information about the current text state."><code>_t_PDTextState</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>ASFixed Structures</h2></header>
+<nav><dl>
+<dt><a href="#_t_ASFixedMatrix">_t_ASFixedMatrix</a></dt><dd> -  Matrix containing fixed numbers.</dd>
+<dt><a href="#_t_ASFixedPoint">_t_ASFixedPoint</a></dt><dd> -  A point (in two-dimensional space) represented by two fixed numbers.</dd>
+<dt><a href="#_t_ASFixedQuad">_t_ASFixedQuad</a></dt><dd> -  A quadrilateral represented by four fixed points (one at each corner).</dd>
+<dt><a href="#_t_ASFixedRect">_t_ASFixedRect</a></dt><dd> -  A rectangle represented by the coordinates of its four sides.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="_t_ASFixedMatrix"><strong><span style="color:grey;">_t_ASFixedMatrix</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:998</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Matrix containing fixed numbers. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_ASFixedMatrix {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>a</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>b</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>c</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>d</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>h</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>v</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><code id="ASFixedMatrix"><code>}</code> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrix</code></a><code>,</code> <code>*</code><a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASFixed.htm#ASFixedMatrixConcat" title=" Multiplies two matrices."><code>ASFixedMatrixConcat</code></a></td><td><a href="aslayer_ASFixed.htm#ASFixedMatrixInvert" title=" Inverts a matrix."><code>ASFixedMatrixInvert</code></a></td></tr>
+<tr><td><a href="aslayer_ASFixed.htm#ASFixedMatrixTransform" title=" Transforms the point p through the matrix m, puts result in result."><code>ASFixedMatrixTransform</code></a></td><td><a href="aslayer_ASFixed.htm#ASFixedMatrixTransformRect" title=" Transforms a rectangle through a matrix."><code>ASFixedMatrixTransformRect</code></a></td></tr>
+<tr><td><a href="pdlayer_General.htm#PDDrawCosObjToWindow" title=" Draws the specified stream of PDF marking operators into the specified window."><code>PDDrawCosObjToWindow</code></a></td><td><a href="pdelayer_PDEContent.htm#PDEContentAddPage" title=" Superseded by PDEContentAddPageEx() in Acrobat 10.0."><code>PDEContentAddPage</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEElement.htm#PDEElementGetMatrix" title=" Superseded by PDEElementGetMatrixEx() in Acrobat 10.0."><code>PDEElementGetMatrix</code></a></td><td><a href="pdelayer_PDEElement.htm#PDEElementSetMatrix" title=" Superseded by PDEElementSetMatrixEx() in Acrobat 10.0."><code>PDEElementSetMatrix</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEForm.htm#PDEFormCreateFromCosObj" title=" Superseded by PDEFormCreateFromCosObjEx() in Acrobat 10.0."><code>PDEFormCreateFromCosObj</code></a></td><td><a href="pdelayer_PDEForm.htm#PDEFormGetMatrix" title=" Superseded by PDEFormGetMatrixEx() in Acrobat 10.0."><code>PDEFormGetMatrix</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageCreate" title=" Superseded by PDEImageCreateEx() in Acrobat 10.0."><code>PDEImageCreate</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageCreateFromCosObj" title=" Superseded by PDEImageCreateFromCosObjEx() in Acrobat 10.0."><code>PDEImageCreateFromCosObj</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDoc" title=" Superseded by PDEImageCreateInCosDocEx() in Acrobat 10.0."><code>PDEImageCreateInCosDoc</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDoc64" title=" Superseded by PDEImageCreateInCosDocEx() in Acrobat 10.0."><code>PDEImageCreateInCosDoc64</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEShading.htm#PDEShadingCreateFromCosObj" title=" Superseded by PDEShadingCreateFromCosObjEx() in Acrobat 10.0."><code>PDEShadingCreateFromCosObj</code></a></td><td><a href="pdelayer_PDESoftMask.htm#PDESoftMaskAcquireForm" title=" Superseded by PDESoftMaskAcquireFormEx() in Acrobat 10.0."><code>PDESoftMaskAcquireForm</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextAdd" title=" Superseded by PDETextAddEx() in Acrobat 10.0."><code>PDETextAdd</code></a></td><td><a href="dlextras_PDEText.htm#PDETextAddASText" title=" Adds a character or a text run to a PDEText object, taking them from the ASText; thus Unicode characters can be placed in the PDEText."><code>PDETextAddASText</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextAddGlyphs" title=" Superseded by PDETextAddGlyphsEx() in Acrobat 10.0."><code>PDETextAddGlyphs</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextGetMatrix" title=" Superseded by PDETextGetMatrixEx() in Acrobat 10.0."><code>PDETextGetMatrix</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextGetStrokeMatrix" title=" Superseded by PDETextGetStrokeMatrixEx() in Acrobat 10.0."><code>PDETextGetStrokeMatrix</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextGetTextMatrix" title=" Superseded by PDETextGetTextMatrixEx() in Acrobat 10.0."><code>PDETextGetTextMatrix</code></a></td></tr>
+<tr><td><a href="pdelayer_PDETextItem.htm#PDETextItemCreate" title=" Superseded by PDETextItemCreateEx() in Acrobat 10.0."><code>PDETextItemCreate</code></a></td><td><a href="dlextras_PDETextItem.htm#PDETextItemCreateASText" title=" Creates a text element containing a character or text run which can be added to a PDEText object."><code>PDETextItemCreateASText</code></a></td></tr>
+<tr><td><a href="pdelayer_PDETextItem.htm#PDETextItemGetTextMatrix" title=" Superseded by PDETextItemGetTextMatrixEx() in Acrobat 10.0."><code>PDETextItemGetTextMatrix</code></a></td><td><a href="pdelayer_PDETextItem.htm#PDETextItemSetTextMatrix" title=" Superseded by PDETextItemSetTextMatrixEx() in Acrobat 10.0."><code>PDETextItemSetTextMatrix</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextRunSetMatrix" title=" Superseded by PDETextRunSetMatrixEx() in Acrobat 10.0."><code>PDETextRunSetMatrix</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextRunSetStrokeMatrix" title=" Superseded by PDETextRunSetStrokeMatrixEx() in Acrobat 10.0."><code>PDETextRunSetStrokeMatrix</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextRunSetTextMatrix" title=" Superseded by PDETextRunSetTextMatrixEx() in Acrobat 10.0."><code>PDETextRunSetTextMatrix</code></a></td><td><a href="pdlayer_General.htm#PDGraphicEnumXObjectRefMatrixProc" title=" A callback for PDGraphicEnumMonitor."><code>PDGraphicEnumXObjectRefMatrixProc</code></a></td></tr>
+<tr><td><a href="pdlayer_General.htm#PDImageSelAdjustMatrix" title=" This method is obsolete and is provided only for backwards compatibility."><code>PDImageSelAdjustMatrix</code></a></td><td><a href="pdlayer_General.htm#PDImageSelGetGeoAttr" title=" This method is obsolete and provided only for backwards compatibility."><code>PDImageSelGetGeoAttr</code></a></td></tr>
+<tr><td><a href="pdfllayer_PDPage.htm#PDPageDrawContentsPlacedToWindow" title=" Draws the page to the window or display context."><code>PDPageDrawContentsPlacedToWindow</code></a></td><td><a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemory" title=" Superseded by PDPageDrawContentsToMemoryEx() in Acrobat 10.0."><code>PDPageDrawContentsToMemory</code></a></td></tr>
+<tr><td><a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindow" title=" Draws the contents of a page into the specified window."><code>PDPageDrawContentsToWindow</code></a></td><td><a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindowEx" title=" Provides control over the rendering of annotations on the page to be drawn into window."><code>PDPageDrawContentsToWindowEx</code></a></td></tr>
+<tr><td><a href="pdlayer_PDPage.htm#PDPageGetDefaultMatrix" title=" Gets the matrix that transforms user space coordinates to rotated and cropped coordinates."><code>PDPageGetDefaultMatrix</code></a></td><td><a href="pdlayer_PDPage.htm#PDPageGetFlippedMatrix" title=" Gets the matrix that transforms user space coordinates to rotated and cropped coordinates."><code>PDPageGetFlippedMatrix</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_General.htm#_t_PDDrawParams" title=" Parameters used for optional-content drawing control."><code>_t_PDDrawParams</code></a></td><td><a href="pdelayer_PDEContent.htm#_t_PDEContentAttrs" title=" A structure describing attributes of a PDEContent object."><code>_t_PDEContentAttrs</code></a></td></tr>
+<tr><td><a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element."><code>_t_PDEGraphicState</code></a></td><td><a href="pdlayer_General.htm#_t_PDGraphicState" title=" A data structure containing information about the current graphics state."><code>_t_PDGraphicState</code></a></td></tr>
+<tr><td><a href="dlextras_PDPage.htm#_t_PDPageDrawMParamsRec" title=" Parameters for PDPageDrawContentsToMemoryWith Params."><code>_t_PDPageDrawMParamsRec</code></a></td><td><a href="dlextras_PDPage.htm#_t_PDPageDrawWParamsRec"><code>_t_PDPageDrawWParamsRec</code></a></td></tr>
+<tr><td><a href="pdlayer_General.htm#_t_PDTextState" title=" A data structure containing information about the current text state."><code>_t_PDTextState</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_ASFixedPoint"><strong><span style="color:grey;">_t_ASFixedPoint</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1022</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A point (in two-dimensional space) represented by two fixed numbers. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_ASFixedPoint {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>h</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>v</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><code id="ASFixedPoint"><code>}</code> <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers."><code>ASFixedPoint</code></a><code>,</code> <code>*</code><a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers."><code>ASFixedPointP</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASFixed.htm#ASFixedMatrixTransform" title=" Transforms the point p through the matrix m, puts result in result."><code>ASFixedMatrixTransform</code></a></td><td><a href="pdlayer_PDAnnot.htm#PDAnnotCanPaste" title=" Tests whether data from an annotation that has been copied to a clipboard can be pasted to a location on a page."><code>PDAnnotCanPaste</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCanPasteProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCanPasteProc</code></a></td><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetHeelPointProc" title=" A callback for PDAnnotHandler."><code>PDAnnotHandlerGetHeelPointProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerPasteProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerPasteProc</code></a></td><td><a href="pdlayer_PDAnnot.htm#PDAnnotPaste" title=" Pastes copied annotation data from a clipboard structure to a new annotation object in a specified document."><code>PDAnnotPaste</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEElement.htm#PDEElementIsAtPoint" title=" Tests whether a point is on an element."><code>PDEElementIsAtPoint</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextGetAdvance" title=" Gets the advance width of a character or a text element."><code>PDETextGetAdvance</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextGetAdvanceWidth" title=" Gets the advance width of a character or a text element."><code>PDETextGetAdvanceWidth</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextIsAtPoint" title=" Tests whether a point is on specified text."><code>PDETextIsAtPoint</code></a></td></tr>
+<tr><td><a href="pdlayer_General.htm#PDGraphicEnumCharWidthProc" title=" A callback for PDGraphicEnumMonitor."><code>PDGraphicEnumCharWidthProc</code></a></td><td><a href="pdlayer_General.htm#PDPathCurveToProc" title=" A callback for PDPathEnumMonitor."><code>PDPathCurveToProc</code></a></td></tr>
+<tr><td><a href="pdlayer_General.htm#PDPathLineToProc" title=" A callback for PDPathEnumMonitor."><code>PDPathLineToProc</code></a></td><td><a href="pdlayer_General.htm#PDPathMoveToProc" title=" A callback for PDPathEnumMonitor."><code>PDPathMoveToProc</code></a></td></tr>
+<tr><td><a href="pdlayer_General.htm#PDPathRectProc" title=" A callback for PDPathEnumMonitor."><code>PDPathRectProc</code></a></td><td><a href="pdlayer_General.htm#PDPathVCurveToProc" title=" A callback for PDPathEnumMonitor."><code>PDPathVCurveToProc</code></a></td></tr>
+<tr><td><a href="pdlayer_General.htm#PDPathYCurveToProc" title=" A callback for PDPathEnumMonitor."><code>PDPathYCurveToProc</code></a></td><td><a href="dlextras_PDWord.htm#PDWordGetCharPoint" title=" Gets the placement point of the character at a given index position in the word."><code>PDWordGetCharPoint</code></a></td></tr>
+<tr><td><a href="dlextras_PDWord.htm#PDWordGetNthQuadPoint" title=" Gets the specified word's nth quad placement point, specified in user space coordinates."><code>PDWordGetNthQuadPoint</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASFixed.htm#_t_ASFixedQuad" title=" A quadrilateral represented by four fixed points (one at each corner)."><code>_t_ASFixedQuad</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_ASFixedQuad"><strong><span style="color:grey;">_t_ASFixedQuad</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1089</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A quadrilateral represented by four fixed points (one at each corner). In the Acrobat viewer, a quadrilateral differs from a rectangle in that a rectangle must always have horizontal and vertical sides, and opposite sides must be parallel. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_ASFixedQuad {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers."><code>ASFixedPoint</code></a> <code>tl</code><code>,</code> <code>tr</code><code>,</code> <code>bl</code><code>,</code> <code>br</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><code id="ASFixedQuad"><code>}</code> <a href="aslayer_ASFixed.htm#_t_ASFixedQuad" title=" A quadrilateral represented by four fixed points (one at each corner)."><code>ASFixedQuad</code></a><code>,</code> <code>*</code><a href="aslayer_ASFixed.htm#_t_ASFixedQuad" title=" A quadrilateral represented by four fixed points (one at each corner)."><code>ASFixedQuadP</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEText.htm#PDETextGetQuad" title=" Gets the quad bounding the specified text run or character."><code>PDETextGetQuad</code></a></td><td><a href="pdlayer_PDTextSelect.htm#PDTextSelectEnumQuadProc" title=" A callback for PDTextSelectEnumQuads()."><code>PDTextSelectEnumQuadProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWord.htm#PDWordGetCharQuad" title=" Gets the quadrilateral bounding of the character at a given index position in the word."><code>PDWordGetCharQuad</code></a></td><td><a href="pdlayer_PDWord.htm#PDWordGetNthQuad" title=" Gets the specified word's nth quad, specified in user space coordinates."><code>PDWordGetNthQuad</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDDoc.htm#PDDocTextFinderMatchQuadRec" title=" Structure representing a matched phrase bounding quad and the page it was located on."><code>PDDocTextFinderMatchQuadRec</code></a></td><td><a href="pdlayer_PDRedaction.htm#_t_PDRedactParams" title=" Parameters used to represent the properties for a redaction mark."><code>_t_PDRedactParams</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_ASFixedRect"><strong><span style="color:grey;">_t_ASFixedRect</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1036</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A rectangle represented by the coordinates of its four sides. In the Acrobat viewer, a rectangle differs from a quadrilateral in that a rectangle must always have horizontal and vertical sides, and opposite sides must be parallel. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_ASFixedRect {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>left</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>top</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>right</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>bottom</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><code id="ASFixedRect"><code>}</code> <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRect</code></a><code>,</code> <code>*</code><a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRectP</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASFixed.htm#ASFixedMatrixTransformRect" title=" Transforms a rectangle through a matrix."><code>ASFixedMatrixTransformRect</code></a></td><td><a href="pdlayer_PDAnnot.htm#PDAnnotGetRect" title=" Gets the size and location of an annotation on its page."><code>PDAnnotGetRect</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetPrintAppearanceProc" title=" A callback for PDAnnotHandler."><code>PDAnnotHandlerGetPrintAppearanceProc</code></a></td><td><a href="pdlayer_PDAnnot.htm#PDAnnotSetRect" title=" Sets the size and location of an annotation on its page."><code>PDAnnotSetRect</code></a></td></tr>
+<tr><td><a href="pdlayer_PDBead.htm#PDBeadGetRect" title=" Gets a bead's bounding rectangle."><code>PDBeadGetRect</code></a></td><td><a href="pdlayer_PDBead.htm#PDBeadNew" title=" Creates a new bead on the specified page."><code>PDBeadNew</code></a></td></tr>
+<tr><td><a href="pdlayer_PDBead.htm#PDBeadSetRect" title=" Sets a bead's bounding rectangle."><code>PDBeadSetRect</code></a></td><td><a href="pdlayer_PDDoc.htm#PDDocCreatePage" title=" Creates and acquires a new page."><code>PDDocCreatePage</code></a></td></tr>
+<tr><td><a href="pdlayer_PDDoc.htm#PDDocCreateTextSelect" title=" Creates a text selection that includes all words totally or partially enclosed by a rectangle."><code>PDDocCreateTextSelect</code></a></td><td><a href="pdlayer_PDDoc.htm#PDDocCreateTextSelectUCS" title=" Creates a text selection that includes all words totally or partially enclosed by a rectangle."><code>PDDocCreateTextSelectUCS</code></a></td></tr>
+<tr><td><a href="pdlayer_General.htm#PDDrawCosObjToWindow" title=" Draws the specified stream of PDF marking operators into the specified window."><code>PDDrawCosObjToWindow</code></a></td><td><a href="pdelayer_PDEContent.htm#PDEContentAddPage" title=" Superseded by PDEContentAddPageEx() in Acrobat 10.0."><code>PDEContentAddPage</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEElement.htm#PDEElementGetBBox" title=" Gets the bounding box for an element."><code>PDEElementGetBBox</code></a></td><td><a href="pdelayer_PDEElement.htm#PDEElementIsAtRect" title=" Tests whether any part of a rectangle is on an element."><code>PDEElementIsAtRect</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEForm.htm#PDEFormGetBBox" title=" Gets the bounding box for a PDEform."><code>PDEFormGetBBox</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextGetBBox" title=" Gets the bounding box of a character or a text run."><code>PDETextGetBBox</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextIsAtRect" title=" Tests whether any part of a rectangle is on the specified text."><code>PDETextIsAtRect</code></a></td><td><a href="pdlayer_PDFont.htm#PDFontGetBBox" title=" Gets a Type 3 font's bounding box, which is the smallest rectangle that would enclose every character in the font if they were overlaid and painted."><code>PDFontGetBBox</code></a></td></tr>
+<tr><td><a href="pdlayer_General.htm#PDGraphicEnumXObjectRefProc" title=" A callback for PDGraphicEnumMonitor."><code>PDGraphicEnumXObjectRefProc</code></a></td><td><a href="pdlayer_General.htm#PDImageSelGetGeoAttr" title=" This method is obsolete and provided only for backwards compatibility."><code>PDImageSelGetGeoAttr</code></a></td></tr>
+<tr><td><a href="pdlayer_PDPage.htm#PDPageAddNewAnnot" title=" Adds an annotation to the page."><code>PDPageAddNewAnnot</code></a></td><td><a href="pdlayer_PDPage.htm#PDPageCreateAnnot" title=" Creates a new annotation, associated with the specified page's CosDoc, but not added to the page."><code>PDPageCreateAnnot</code></a></td></tr>
+<tr><td><a href="pdfllayer_PDPage.htm#PDPageDrawContentsPlacedToWindow" title=" Draws the page to the window or display context."><code>PDPageDrawContentsPlacedToWindow</code></a></td><td><a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemory" title=" Superseded by PDPageDrawContentsToMemoryEx() in Acrobat 10.0."><code>PDPageDrawContentsToMemory</code></a></td></tr>
+<tr><td><a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindow" title=" Draws the contents of a page into the specified window."><code>PDPageDrawContentsToWindow</code></a></td><td><a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindowEx" title=" Provides control over the rendering of annotations on the page to be drawn into window."><code>PDPageDrawContentsToWindowEx</code></a></td></tr>
+<tr><td><a href="pdlayer_PDPage.htm#PDPageGetBBox" title=" Gets the bounding box for a page."><code>PDPageGetBBox</code></a></td><td><a href="pdlayer_PDPage.htm#PDPageGetBox" title=" Returns the box specified for the page object intersected with the media box."><code>PDPageGetBox</code></a></td></tr>
+<tr><td><a href="pdlayer_PDPage.htm#PDPageGetCropBox" title=" Gets the crop box for a page."><code>PDPageGetCropBox</code></a></td><td><a href="pdlayer_PDPage.htm#PDPageGetMediaBox" title=" Gets the media box for a page."><code>PDPageGetMediaBox</code></a></td></tr>
+<tr><td><a href="pdlayer_PDPage.htm#PDPageGetVisibleBBox" title=" Gets the bounding box for a given page for those contents that are visible in the given optional-content context."><code>PDPageGetVisibleBBox</code></a></td><td><a href="pdlayer_PDPage.htm#PDPageSetBox" title=" Sets the box specified by boxName for the page."><code>PDPageSetBox</code></a></td></tr>
+<tr><td><a href="pdlayer_PDPage.htm#PDPageSetCropBox" title=" Sets the crop box for a page."><code>PDPageSetCropBox</code></a></td><td><a href="pdlayer_PDPage.htm#PDPageSetMediaBox" title=" Sets the media box for a page."><code>PDPageSetMediaBox</code></a></td></tr>
+<tr><td><a href="pdlayer_PDTextSelect.htm#PDTextSelectGetBoundingRect" title=" Gets a text selection's bounding rectangle."><code>PDTextSelectGetBoundingRect</code></a></td><td><a href="pdlayer_PDViewDest.htm#PDViewDestCreate" title=" Creates a new view destination object."><code>PDViewDestCreate</code></a></td></tr>
+<tr><td><a href="pdlayer_PDViewDest.htm#PDViewDestGetAttr" title=" Gets a view destination's fit type, destination rectangle, and zoom factor."><code>PDViewDestGetAttr</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_PDFLPrint.htm#PDPrintParams" title=" A data structure indicating how a document should be printed."><code>PDPrintParams</code></a></td><td><a href="pdlayer_General.htm#_t_PDDrawParams" title=" Parameters used for optional-content drawing control."><code>_t_PDDrawParams</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEContent.htm#_t_PDEContentAttrs" title=" A structure describing attributes of a PDEContent object."><code>_t_PDEContentAttrs</code></a></td><td><a href="dlextras_PDEContent.htm#_t_PDEContentAttrsEx" title=" A structure describing attributes of a PDEContent object."><code>_t_PDEContentAttrsEx</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#_t_PDEFontAttrs" title=" Attributes of a PDEFont and of a PDSysFont."><code>_t_PDEFontAttrs</code></a></td><td><a href="pdlayer_PDFont.htm#_t_PDFontMetrics" title=" A data structure containing information about a font's metrics."><code>_t_PDFontMetrics</code></a></td></tr>
+<tr><td><a href="dlextras_PDPage.htm#_t_PDPageDrawMParamsRec" title=" Parameters for PDPageDrawContentsToMemoryWith Params."><code>_t_PDPageDrawMParamsRec</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>ASFixed Functions</h2></header>
+<nav><dl>
+<dt><a href="#ASCStringToFixed">ASCStringToFixed</a></dt><dd> -  Converts a CString to a fixed point number.</dd>
+<dt><a href="#ASCStringToFixed">ASCStringToFixed</a></dt><dd> -  Converts a CString to a fixed point number.</dd>
+<dt><a href="#ASFixedDiv">ASFixedDiv</a></dt><dd> -  Divides two fixed numbers.</dd>
+<dt><a href="#ASFixedDiv">ASFixedDiv</a></dt><dd> -  Divides two fixed numbers.</dd>
+<dt><a href="#ASFixedMatrixConcat">ASFixedMatrixConcat</a></dt><dd> -  Multiplies two matrices.</dd>
+<dt><a href="#ASFixedMatrixConcat">ASFixedMatrixConcat</a></dt><dd> -  Multiplies two matrices.</dd>
+<dt><a href="#ASFixedMatrixInvert">ASFixedMatrixInvert</a></dt><dd> -  Inverts a matrix.</dd>
+<dt><a href="#ASFixedMatrixInvert">ASFixedMatrixInvert</a></dt><dd> -  Inverts a matrix.</dd>
+<dt><a href="#ASFixedMatrixTransform">ASFixedMatrixTransform</a></dt><dd> -  Transforms the point p through the matrix m, and puts the result in result.</dd>
+<dt><a href="#ASFixedMatrixTransform">ASFixedMatrixTransform</a></dt><dd> -  Transforms the point p through the matrix m, puts result in result.</dd>
+<dt><a href="#ASFixedMatrixTransformRect">ASFixedMatrixTransformRect</a></dt><dd> -  Transforms a rectangle through a matrix.</dd>
+<dt><a href="#ASFixedMatrixTransformRect">ASFixedMatrixTransformRect</a></dt><dd> -  Transforms a rectangle through a matrix.</dd>
+<dt><a href="#ASFixedMul">ASFixedMul</a></dt><dd> -  Multiplies two fixed numbers.</dd>
+<dt><a href="#ASFixedMul">ASFixedMul</a></dt><dd> -  Multiplies two fixed numbers.</dd>
+<dt><a href="#ASFixedToCString">ASFixedToCString</a></dt><dd> -  Converts a fixed number to a CString.</dd>
+<dt><a href="#ASFixedToCString">ASFixedToCString</a></dt><dd> -  Converts a fixed number to a CString.</dd>
+<dt><a href="#ASFixedToFloat">ASFixedToFloat</a></dt><dd> -  Converts an ASFixed to a float.</dd>
+<dt><a href="#FloatToASFixed">FloatToASFixed</a></dt><dd> -  Converts a float to an ASFixed value.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASCStringToFixed"><strong><span style="color:grey;">ASCStringToFixed</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:367</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Converts a <code>CString</code> to a fixed point number. It processes the string from left to right only until the first invalid character is located (for example, <code>a-z,</code> <code>A-Z</code>). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt16" title=" Converts a fixed point number to an ASInt16, rounding the result."><code>ASFixedRoundToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt32" title=" Converts a fixed point number to an ASInt32, rounding the result."><code>ASFixedRoundToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToCString" title=" Converts a fixed number to a CString."><code>ASFixedToCString</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToFloat" title=" Converts an ASFixed to a float."><code>ASFixedToFloat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt16" title=" Converts a fixed point number to an ASInt16, truncating the result."><code>ASFixedTruncToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt32" title=" Converts a fixed point number to an ASInt32, truncating the result."><code>ASFixedTruncToInt32</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>ASCStringToFixed(</code><code>const</code> <code>char</code> <code>*</code><code>s</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>s</code></span>
+</td><td><span>A <code>CString</code> to convert. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>Fixed number corresponding to <code>s</code>. Returns <code>0</code> if the string does not contain any valid number. </span>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">ASCStringToFixed</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:534</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Converts a <code>CString</code> to a fixed point number. Processes the string from left to right only until the first invalid character is located (for example, <code>a-z,</code> <code>A-Z</code>). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt16" title=" Converts a fixed point number to an ASInt16, rounding the result."><code>ASFixedRoundToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt32" title=" Converts a fixed point number to an ASInt32, rounding the result."><code>ASFixedRoundToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToCString" title=" Converts a fixed number to a CString."><code>ASFixedToCString</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToFloat" title=" Converts an ASFixed to a float."><code>ASFixedToFloat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt16" title=" Converts a fixed point number to an ASInt16, truncating the result."><code>ASFixedTruncToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt32" title=" Converts a fixed point number to an ASInt32, truncating the result."><code>ASFixedTruncToInt32</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>ASCStringToFixed(</code><code>const</code> <code>char</code> <code>*</code><code>s</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>s</code></span>
+</td><td><span>A <code>CString</code> to convert. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A fixed number corresponding to <code>s</code>, <code>0</code> if the string does not contain any valid number. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASFixedDiv"><strong><span style="color:grey;">ASFixedDiv</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:332</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Divides two fixed numbers. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASFixedMul" title=" Multiplies two fixed numbers."><code>ASFixedMul</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt16" title=" Converts a fixed point number to an ASInt16, rounding the result."><code>ASFixedRoundToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt32" title=" Converts a fixed point number to an ASInt32, rounding the result."><code>ASFixedRoundToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToFloat" title=" Converts an ASFixed to a float."><code>ASFixedToFloat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt16" title=" Converts a fixed point number to an ASInt16, truncating the result."><code>ASFixedTruncToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt32" title=" Converts a fixed point number to an ASInt32, truncating the result."><code>ASFixedTruncToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASInt16ToFixed"><code>ASInt16ToFixed</code></a>
+<a href="aslayer_ASFixed.htm#ASInt32ToFixed" title=" Converts an ASInt32 to a fixed point number."><code>ASInt32ToFixed</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>ASFixedDiv(</code><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>a</code><code>,</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>b</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>a</code></span>
+</td><td><span>The dividend. </span>
+</td></tr>
+<tr><td><span><code>b</code></span>
+</td><td><span>The divisor. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The quotient <code>a</code> <code>/</code> <code>b</code>. </span>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">ASFixedDiv</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:499</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Divides two fixed numbers. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASFixedMul" title=" Multiplies two fixed numbers."><code>ASFixedMul</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt16" title=" Converts a fixed point number to an ASInt16, rounding the result."><code>ASFixedRoundToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt32" title=" Converts a fixed point number to an ASInt32, rounding the result."><code>ASFixedRoundToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToFloat" title=" Converts an ASFixed to a float."><code>ASFixedToFloat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt16" title=" Converts a fixed point number to an ASInt16, truncating the result."><code>ASFixedTruncToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt32" title=" Converts a fixed point number to an ASInt32, truncating the result."><code>ASFixedTruncToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASInt16ToFixed"><code>ASInt16ToFixed</code></a>
+<a href="aslayer_ASFixed.htm#ASInt32ToFixed" title=" Converts an ASInt32 to a fixed point number."><code>ASInt32ToFixed</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>ASFixedDiv(</code><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>a</code><code>,</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>b</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>a</code></span>
+</td><td><span>The dividend. </span>
+</td></tr>
+<tr><td><span><code>b</code></span>
+</td><td><span>The divisor. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The quotient <code>a</code> <code>/</code> <code>b</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASFixedMatrixConcat"><strong><span style="color:grey;">ASFixedMatrixConcat</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:391</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Multiplies two matrices. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASFixedMatrixInvert" title=" Inverts a matrix."><code>ASFixedMatrixInvert</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedMatrixTransform" title=" Transforms the point p through the matrix m, puts result in result."><code>ASFixedMatrixTransform</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedMatrixTransformRect" title=" Transforms a rectangle through a matrix."><code>ASFixedMatrixTransformRect</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt16" title=" Converts a fixed point number to an ASInt16, rounding the result."><code>ASFixedRoundToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt32" title=" Converts a fixed point number to an ASInt32, rounding the result."><code>ASFixedRoundToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToFloat" title=" Converts an ASFixed to a float."><code>ASFixedToFloat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt16" title=" Converts a fixed point number to an ASInt16, truncating the result."><code>ASFixedTruncToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt32" title=" Converts a fixed point number to an ASInt32, truncating the result."><code>ASFixedTruncToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASInt16ToFixed"><code>ASInt16ToFixed</code></a>
+<a href="aslayer_ASFixed.htm#ASInt32ToFixed" title=" Converts an ASInt32 to a fixed point number."><code>ASInt32ToFixed</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASFixedMatrixConcat(</code><a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>result</code><code>,</code> <code>const</code> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrix</code></a> <code>*</code><code>m1</code><code>,</code> <code>const</code> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrix</code></a> <code>*</code><code>m2</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>result</code></span>
+</td><td><span>(Filled by the method) A pointer to matrix <code>m2</code> <code>x</code> <code>m1</code>. It is allowed for the result to point to the same location as either <code>m1</code> or <code>m2</code>. </span>
+</td></tr>
+<tr><td><span><code>m1</code></span>
+</td><td><span>A pointer to the <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> value for the first matrix to multiply. </span>
+</td></tr>
+<tr><td><span><code>m2</code></span>
+</td><td><span>A pointer to the <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> value for the second matrix to multiply. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">ASFixedMatrixConcat</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:558</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Multiplies two matrices. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASFixedMatrixInvert" title=" Inverts a matrix."><code>ASFixedMatrixInvert</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedMatrixTransform" title=" Transforms the point p through the matrix m, puts result in result."><code>ASFixedMatrixTransform</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedMatrixTransformRect" title=" Transforms a rectangle through a matrix."><code>ASFixedMatrixTransformRect</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt16" title=" Converts a fixed point number to an ASInt16, rounding the result."><code>ASFixedRoundToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt32" title=" Converts a fixed point number to an ASInt32, rounding the result."><code>ASFixedRoundToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToFloat" title=" Converts an ASFixed to a float."><code>ASFixedToFloat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt16" title=" Converts a fixed point number to an ASInt16, truncating the result."><code>ASFixedTruncToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt32" title=" Converts a fixed point number to an ASInt32, truncating the result."><code>ASFixedTruncToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASInt16ToFixed"><code>ASInt16ToFixed</code></a>
+<a href="aslayer_ASFixed.htm#ASInt32ToFixed" title=" Converts an ASInt32 to a fixed point number."><code>ASInt32ToFixed</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASFixedMatrixConcat(</code><a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>result</code><code>,</code> <code>const</code> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrix</code></a> <code>*</code><code>m1</code><code>,</code> <code>const</code> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrix</code></a> <code>*</code><code>m2</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>result</code></span>
+</td><td><span>(Filled by the method) A pointer to matrix <code>m2</code> <code>x</code> <code>m1</code>. It is allowed for the result to point to the same location as either <code>m1</code> or <code>m2</code>. </span>
+</td></tr>
+<tr><td><span><code>m1</code></span>
+</td><td><span>A pointer to the <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> value for the first matrix to multiply. </span>
+</td></tr>
+<tr><td><span><code>m2</code></span>
+</td><td><span>A pointer to the <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> value for the second matrix to multiply. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASFixedMatrixInvert"><strong><span style="color:grey;">ASFixedMatrixInvert</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:411</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Inverts a matrix.<br/>
+<p>If a matrix is nearly singular (which means that it has a determinant that is nearly zero), inverting and re-inverting the matrix may not yield the original matrix.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASFixedMatrixConcat" title=" Multiplies two matrices."><code>ASFixedMatrixConcat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedMatrixTransform" title=" Transforms the point p through the matrix m, puts result in result."><code>ASFixedMatrixTransform</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedMatrixTransformRect" title=" Transforms a rectangle through a matrix."><code>ASFixedMatrixTransformRect</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt16" title=" Converts a fixed point number to an ASInt16, rounding the result."><code>ASFixedRoundToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt32" title=" Converts a fixed point number to an ASInt32, rounding the result."><code>ASFixedRoundToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToFloat" title=" Converts an ASFixed to a float."><code>ASFixedToFloat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt16" title=" Converts a fixed point number to an ASInt16, truncating the result."><code>ASFixedTruncToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt32" title=" Converts a fixed point number to an ASInt32, truncating the result."><code>ASFixedTruncToInt32</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASFixedMatrixInvert(</code><a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>result</code><code>,</code> <code>const</code> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>m</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>result</code></span>
+</td><td><span>(Filled by the method) A pointer to <code>m-1</code>. It is allowed for the result to point to the same location as <code>m</code>. </span>
+</td></tr>
+<tr><td><span><code>m</code></span>
+</td><td><span>A pointer to the <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> to invert. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">ASFixedMatrixInvert</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:579</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Inverts a matrix.<br/>
+<p>If a matrix is nearly singular (meaning that it has a determinant of nearly zero), inverting and re-inverting the matrix may not yield the original matrix.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASFixedMatrixConcat" title=" Multiplies two matrices."><code>ASFixedMatrixConcat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedMatrixTransform" title=" Transforms the point p through the matrix m, puts result in result."><code>ASFixedMatrixTransform</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedMatrixTransformRect" title=" Transforms a rectangle through a matrix."><code>ASFixedMatrixTransformRect</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt16" title=" Converts a fixed point number to an ASInt16, rounding the result."><code>ASFixedRoundToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt32" title=" Converts a fixed point number to an ASInt32, rounding the result."><code>ASFixedRoundToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToFloat" title=" Converts an ASFixed to a float."><code>ASFixedToFloat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt16" title=" Converts a fixed point number to an ASInt16, truncating the result."><code>ASFixedTruncToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt32" title=" Converts a fixed point number to an ASInt32, truncating the result."><code>ASFixedTruncToInt32</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASFixedMatrixInvert(</code><a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>result</code><code>,</code> <code>const</code> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>m</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>result</code></span>
+</td><td><span>(Filled by the method) A pointer to <code>m-1</code>. It is allowed for the result to point to the same location as <code>m</code>. </span>
+</td></tr>
+<tr><td><span><code>m</code></span>
+</td><td><span>A pointer to the <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> to invert. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASFixedMatrixTransform"><strong><span style="color:grey;">ASFixedMatrixTransform</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:436</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Transforms the point <code>p</code> through the matrix <code>m</code>, and puts the result in <code>result</code>. <code>p</code> and <code>result</code> can point to the same location. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASFixedMatrixConcat" title=" Multiplies two matrices."><code>ASFixedMatrixConcat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedMatrixInvert" title=" Inverts a matrix."><code>ASFixedMatrixInvert</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedMatrixTransformRect" title=" Transforms a rectangle through a matrix."><code>ASFixedMatrixTransformRect</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt16" title=" Converts a fixed point number to an ASInt16, rounding the result."><code>ASFixedRoundToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt32" title=" Converts a fixed point number to an ASInt32, rounding the result."><code>ASFixedRoundToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToFloat" title=" Converts an ASFixed to a float."><code>ASFixedToFloat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt16" title=" Converts a fixed point number to an ASInt16, truncating the result."><code>ASFixedTruncToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt32" title=" Converts a fixed point number to an ASInt32, truncating the result."><code>ASFixedTruncToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASInt16ToFixed"><code>ASInt16ToFixed</code></a>
+<a href="aslayer_ASFixed.htm#ASInt32ToFixed" title=" Converts an ASInt32 to a fixed point number."><code>ASInt32ToFixed</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASFixedMatrixTransform(</code><a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers."><code>ASFixedPointP</code></a> <code>result</code><code>,</code> <code>const</code> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>m</code><code>,</code> <code>const</code> <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers."><code>ASFixedPointP</code></a> <code>p</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>result</code></span>
+</td><td><span>(Filled by the method) A pointer to the <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers.">ASFixedPoint</a> containing the result of transforming <code>p</code> through <code>m</code>. It is allowed for the result to point to the same location as <code>m</code>. </span>
+</td></tr>
+<tr><td><span><code>m</code></span>
+</td><td><span>A pointer to the <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> through which <code>p</code> is transformed. </span>
+</td></tr>
+<tr><td><span><code>p</code></span>
+</td><td><span>A pointer to the <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers.">ASFixedPoint</a> representing the point to transform through <code>m</code>. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">ASFixedMatrixTransform</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:604</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Transforms the point <code>p</code> through the matrix <code>m</code>, puts result in result. <code>p</code> and result can point to the same place. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASFixedMatrixConcat" title=" Multiplies two matrices."><code>ASFixedMatrixConcat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedMatrixInvert" title=" Inverts a matrix."><code>ASFixedMatrixInvert</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedMatrixTransformRect" title=" Transforms a rectangle through a matrix."><code>ASFixedMatrixTransformRect</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt16" title=" Converts a fixed point number to an ASInt16, rounding the result."><code>ASFixedRoundToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt32" title=" Converts a fixed point number to an ASInt32, rounding the result."><code>ASFixedRoundToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToFloat" title=" Converts an ASFixed to a float."><code>ASFixedToFloat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt16" title=" Converts a fixed point number to an ASInt16, truncating the result."><code>ASFixedTruncToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt32" title=" Converts a fixed point number to an ASInt32, truncating the result."><code>ASFixedTruncToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASInt16ToFixed"><code>ASInt16ToFixed</code></a>
+<a href="aslayer_ASFixed.htm#ASInt32ToFixed" title=" Converts an ASInt32 to a fixed point number."><code>ASInt32ToFixed</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASFixedMatrixTransform(</code><a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers."><code>ASFixedPointP</code></a> <code>result</code><code>,</code> <code>const</code> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>m</code><code>,</code> <code>const</code> <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers."><code>ASFixedPointP</code></a> <code>p</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>result</code></span>
+</td><td><span>(Filled by the method) A pointer to the <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers.">ASFixedPoint</a> containing the result of transforming <code>p</code> through <code>m</code>. It is allowed for the result to point to the same location as <code>m</code>. </span>
+</td></tr>
+<tr><td><span><code>m</code></span>
+</td><td><span>A pointer to the <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> through which <code>p</code> is transformed. </span>
+</td></tr>
+<tr><td><span><code>p</code></span>
+</td><td><span>A pointer to the <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers.">ASFixedPoint</a> representing the point to transform through <code>m</code>. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASFixedMatrixTransformRect"><strong><span style="color:grey;">ASFixedMatrixTransformRect</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:462</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Transforms a rectangle through a matrix. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASFixedMatrixConcat" title=" Multiplies two matrices."><code>ASFixedMatrixConcat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedMatrixInvert" title=" Inverts a matrix."><code>ASFixedMatrixInvert</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedMatrixTransform" title=" Transforms the point p through the matrix m, puts result in result."><code>ASFixedMatrixTransform</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt16" title=" Converts a fixed point number to an ASInt16, rounding the result."><code>ASFixedRoundToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt32" title=" Converts a fixed point number to an ASInt32, rounding the result."><code>ASFixedRoundToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToFloat" title=" Converts an ASFixed to a float."><code>ASFixedToFloat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt16" title=" Converts a fixed point number to an ASInt16, truncating the result."><code>ASFixedTruncToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt32" title=" Converts a fixed point number to an ASInt32, truncating the result."><code>ASFixedTruncToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASInt16ToFixed"><code>ASInt16ToFixed</code></a>
+<a href="aslayer_ASFixed.htm#ASInt32ToFixed" title=" Converts an ASInt32 to a fixed point number."><code>ASInt32ToFixed</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASFixedMatrixTransformRect(</code><a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRectP</code></a> <code>result</code><code>,</code> <code>const</code> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>m</code><code>,</code> <code>const</code> <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRectP</code></a> <code>r</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>result</code></span>
+</td><td><span>(Filled by the method) A pointer to the <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides.">ASFixedRect</a> containing the smallest bounding box for the transformed rectangle. It is allowed for the result to point to the same location as <code>m</code>. result will always have <code>bottom</code> <code>&lt;</code> <code>top</code> and <code>left</code> <code>&lt;</code> <code>right</code>. </span>
+</td></tr>
+<tr><td><span><code>m</code></span>
+</td><td><span>A pointer to the <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> containing the matrix through which <code>r</code> is transformed. </span>
+</td></tr>
+<tr><td><span><code>r</code></span>
+</td><td><span>A pointer to the <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides.">ASFixedRect</a> containing the rectangle to transform through <code>m</code>. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">ASFixedMatrixTransformRect</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:630</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Transforms a rectangle through a matrix. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASFixedMatrixConcat" title=" Multiplies two matrices."><code>ASFixedMatrixConcat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedMatrixInvert" title=" Inverts a matrix."><code>ASFixedMatrixInvert</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedMatrixTransform" title=" Transforms the point p through the matrix m, puts result in result."><code>ASFixedMatrixTransform</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt16" title=" Converts a fixed point number to an ASInt16, rounding the result."><code>ASFixedRoundToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt32" title=" Converts a fixed point number to an ASInt32, rounding the result."><code>ASFixedRoundToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToFloat" title=" Converts an ASFixed to a float."><code>ASFixedToFloat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt16" title=" Converts a fixed point number to an ASInt16, truncating the result."><code>ASFixedTruncToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt32" title=" Converts a fixed point number to an ASInt32, truncating the result."><code>ASFixedTruncToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASInt16ToFixed"><code>ASInt16ToFixed</code></a>
+<a href="aslayer_ASFixed.htm#ASInt32ToFixed" title=" Converts an ASInt32 to a fixed point number."><code>ASInt32ToFixed</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASFixedMatrixTransformRect(</code><a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRectP</code></a> <code>result</code><code>,</code> <code>const</code> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>m</code><code>,</code> <code>const</code> <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRectP</code></a> <code>rectIn</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>result</code></span>
+</td><td><span>(Filled by the method) A pointer to the <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides.">ASFixedRect</a> containing the smallest bounding box for the transformed rectangle. It is allowed for the result to point to the same location as <code>m</code>. The result will always have <code>bottom</code> <code>&lt;</code> <code>top</code> and <code>left</code> <code>&lt;</code> <code>right</code>. </span>
+</td></tr>
+<tr><td><span><code>m</code></span>
+</td><td><span>A pointer to the <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> containing the matrix through which <code>r</code> is transformed. </span>
+</td></tr>
+<tr><td><span><code>rectIn</code></span>
+</td><td><span>A pointer to the <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides.">ASFixedRect</a> containing the rectangle to transform through <code>m</code>. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASFixedMul"><strong><span style="color:grey;">ASFixedMul</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:314</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Multiplies two fixed numbers. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASFixedDiv" title=" Divides two fixed numbers."><code>ASFixedDiv</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt16" title=" Converts a fixed point number to an ASInt16, rounding the result."><code>ASFixedRoundToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt32" title=" Converts a fixed point number to an ASInt32, rounding the result."><code>ASFixedRoundToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToFloat" title=" Converts an ASFixed to a float."><code>ASFixedToFloat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt16" title=" Converts a fixed point number to an ASInt16, truncating the result."><code>ASFixedTruncToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt32" title=" Converts a fixed point number to an ASInt32, truncating the result."><code>ASFixedTruncToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASInt16ToFixed"><code>ASInt16ToFixed</code></a>
+<a href="aslayer_ASFixed.htm#ASInt32ToFixed" title=" Converts an ASInt32 to a fixed point number."><code>ASInt32ToFixed</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>ASFixedMul(</code><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>a</code><code>,</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>b</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>a</code></span>
+</td><td><span>The first number to multiply. </span>
+</td></tr>
+<tr><td><span><code>b</code></span>
+</td><td><span>The second number to multiply. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The product of <code>a</code> and <code>b</code>. </span>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">ASFixedMul</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:481</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Multiplies two fixed numbers. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASFixedDiv" title=" Divides two fixed numbers."><code>ASFixedDiv</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt16" title=" Converts a fixed point number to an ASInt16, rounding the result."><code>ASFixedRoundToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedRoundToInt32" title=" Converts a fixed point number to an ASInt32, rounding the result."><code>ASFixedRoundToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedToFloat" title=" Converts an ASFixed to a float."><code>ASFixedToFloat</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt16" title=" Converts a fixed point number to an ASInt16, truncating the result."><code>ASFixedTruncToInt16</code></a>
+<a href="aslayer_ASFixed.htm#ASFixedTruncToInt32" title=" Converts a fixed point number to an ASInt32, truncating the result."><code>ASFixedTruncToInt32</code></a>
+<a href="aslayer_ASFixed.htm#ASInt16ToFixed"><code>ASInt16ToFixed</code></a>
+<a href="aslayer_ASFixed.htm#ASInt32ToFixed" title=" Converts an ASInt32 to a fixed point number."><code>ASInt32ToFixed</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>ASFixedMul(</code><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>a</code><code>,</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>b</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>a</code></span>
+</td><td><span>The first number to multiply. </span>
+</td></tr>
+<tr><td><span><code>b</code></span>
+</td><td><span>The second number to multiply. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The product of <code>a</code> and <code>b</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASFixedToCString"><strong><span style="color:grey;">ASFixedToCString</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:351</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Converts a fixed number to a <code>CString</code>. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The precision for Mac OS numbers is valid to 9 significant digits. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASCStringToFixed" title=" Converts a CString to a fixed point number."><code>ASCStringToFixed</code></a>
+<a href="aslayer_ASFixed.htm#ASInt16ToFixed"><code>ASInt16ToFixed</code></a>
+<a href="aslayer_ASFixed.htm#ASInt32ToFixed" title=" Converts an ASInt32 to a fixed point number."><code>ASInt32ToFixed</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASFixedToCString(</code><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>f</code><code>,</code> <code>char</code> <code>*</code><code>s</code><code>,</code> <a href="aslayer_General.htm#os_size_t"><code>os_size_t</code></a> <code>maxLength</code><code>,</code> <a href="aslayer_General.htm#ASSmallCount"><code>ASSmallCount</code></a> <code>precision</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>f</code></span>
+</td><td><span>The fixed number to convert. </span>
+</td></tr>
+<tr><td><span><code>s</code></span>
+</td><td><span>(Filled by the method) The string corresponding to <code>f</code>. </span>
+</td></tr>
+<tr><td><span><code>maxLength</code></span>
+</td><td><span>The maximum number of characters that <code>s</code> can contain. </span>
+</td></tr>
+<tr><td><span><code>precision</code></span>
+</td><td><span>The number of digits to retain in the converted number. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">ASFixedToCString</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:518</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Converts a fixed number to a <code>CString</code>. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The precision for Mac OS numbers is valid to 9 significant digits. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFixed.htm#ASCStringToFixed" title=" Converts a CString to a fixed point number."><code>ASCStringToFixed</code></a>
+<a href="aslayer_ASFixed.htm#ASInt16ToFixed"><code>ASInt16ToFixed</code></a>
+<a href="aslayer_ASFixed.htm#ASInt32ToFixed" title=" Converts an ASInt32 to a fixed point number."><code>ASInt32ToFixed</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASFixedToCString(</code><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>f</code><code>,</code> <code>char</code> <code>*</code><code>s</code><code>,</code> <a href="aslayer_General.htm#os_size_t"><code>os_size_t</code></a> <code>maxLength</code><code>,</code> <a href="aslayer_General.htm#ASSmallCount"><code>ASSmallCount</code></a> <code>precision</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>f</code></span>
+</td><td><span>The fixed number to convert. </span>
+</td></tr>
+<tr><td><span><code>s</code></span>
+</td><td><span>(Filled by the method) The string corresponding to <code>f</code>. </span>
+</td></tr>
+<tr><td><span><code>maxLength</code></span>
+</td><td><span>The maximum number of characters that <code>s</code> can contain. </span>
+</td></tr>
+<tr><td><span><code>precision</code></span>
+</td><td><span>The number of digits to retain in the converted number. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASFixedToFloat"><strong><span style="color:grey;">ASFixedToFloat</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:2504</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Converts an <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part.">ASFixed</a> to a <code>float</code>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>float</code> <code>ASFixedToFloat(</code><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>inASFixed</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>inASFixed</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part.">ASFixed</a> value to convert. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <code>float</code> representation of the <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part.">ASFixed</a> value. </span>
+</section>
+<section><div class="infoRow"><h3 id="FloatToASFixed"><strong><span style="color:grey;">FloatToASFixed</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:2512</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Converts a <code>float</code> to an <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part.">ASFixed</a> value. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>FloatToASFixed(</code><code>double</code> <code>inFloat</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>inFloat</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The <code>float</code> value to convert. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part.">ASFixed</a> representation of the <code>float</code> value. </span>
+</section>
+</section>
+
+</div>
+</body></html>

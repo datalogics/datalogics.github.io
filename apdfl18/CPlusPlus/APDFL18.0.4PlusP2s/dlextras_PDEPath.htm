@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Additional functionality from Datalogics: PDEPath</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Additional functionality from Datalogics: PDEPath</h5>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Functions">
+<header><h2>PDEPath Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDEPathGetDataDouble">PDEPathGetDataDouble</a></dt><dd> -  Gets the size of the path data.</dd>
+<dt><a href="#PDEPathGetDataFloat">PDEPathGetDataFloat</a></dt><dd> -  Superseded by PDEPathGetDataEx().</dd>
+<dt><a href="#PDEPathSetDataDouble">PDEPathSetDataDouble</a></dt><dd> -  Sets the size of the path data.</dd>
+<dt><a href="#PDEPathSetDataFloat">PDEPathSetDataFloat</a></dt><dd> -  Superseded by PDEPathSetDataEx().</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEPathGetDataDouble"><strong><span style="color:grey;">PDEPathGetDataDouble</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1029</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets the size of the path data. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>PDEPathGetDataDouble(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path."><code>PDEPath</code></a> <code>path</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASDouble.htm#ASDouble" title=" The ASDouble type is a 64-bit type representing a floating number"><code>ASDouble</code></a> <code>*</code><code>data</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>dataSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>path</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The path whose data is obtained. </span>
+</td></tr>
+<tr><td><span><code>data</code></span>
+</td><td><span><a href="pdslayer_General.htm#OUT">OUT</a> A pointer to the path data. If <code>data</code> is non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, it contains a variable-sized array of path operators and operands. The format is a 32-bit operator followed by 0 to 3 <a href="aslayer_ASDouble.htm#ASDouble" title=" The ASDouble type is a 64-bit type representing a floating number">ASDouble</a> values, depending on the operator. Opcodes are codes for <code>moveto</code>, <code>lineto</code>, <code>curveto</code>, <code>rect</code>, or <code>closepath</code> operators; operands are <a href="aslayer_ASDouble.htm#ASDouble" title=" The ASDouble type is a 64-bit type representing a floating number">ASDouble</a> values. If <code>data</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, the number of bytes required for <code>data</code> is returned by the method. Note that it returns <em>raw</em> path data. If you want the points in page coordinates, concatenate the path data points with the <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> matrix obtained from <a href="pdelayer_PDEElement.htm#PDEElementGetMatrix" title=" Superseded by PDEElementGetMatrixEx() in Acrobat 10.0.">PDEElementGetMatrix</a>(). </span>
+</td></tr>
+<tr><td><span><code>dataSize</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> Specifies the size of the buffer provided in data. If it is less than the length of the path data, the method copies <code>dataSize</code> bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The length of the data of <code>path</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDEPathGetDataFloat"><strong><span style="color:grey;">PDEPathGetDataFloat</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:3264</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Superseded by <a href="pdelayer_PDEPath.htm#PDEPathGetDataEx" title=" Gets the size of the path data and, optionally, the path data.">PDEPathGetDataEx</a>(). Get path using float-point values for coordinate values. This effectively removes the <a href="pdelayer_PDEPath.htm#PDEPathGetData" title=" Gets the size of the path data and, optionally, the path data.">PDEPathGetData</a> implementation limit that path coordinate values need to be no larger than +/-32767.0. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>PDEPathGetDataFloat(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path."><code>PDEPath</code></a> <code>path</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="pdelayer_General.htm#ASFloat"><code>ASFloat</code></a> <code>*</code><code>data</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>dataSize</code><code>);</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDEPathSetDataDouble"><strong><span style="color:grey;">PDEPathSetDataDouble</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1011</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Sets the size of the path data. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEPathSetDataDouble(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path."><code>PDEPath</code></a> <code>path</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASDouble.htm#ASDouble" title=" The ASDouble type is a 64-bit type representing a floating number"><code>ASDouble</code></a> <code>*</code><code>data</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>dataSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>path</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The path whose data is set. </span>
+</td></tr>
+<tr><td><span><code>data</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> A pointer to the path data. It is a variable-sized array of path operators and operands. The format is a 32-bit operator followed by zero to three <a href="aslayer_ASDouble.htm#ASDouble" title=" The ASDouble type is a 64-bit type representing a floating number">ASDouble</a> values, depending on the operator. Operators are codes for <code>moveto</code>, <code>lineto</code>, <code>curveto</code>, <code>rect</code>, or <code>closepath</code> operators, and must be one of <a href="pdelayer_PDEPath.htm#PDEPathElementType" title=" An enumerated data type for path segment operators in PDEPath elements.">PDEPathElementType</a>. Operands are <a href="aslayer_ASDouble.htm#ASDouble" title=" The ASDouble type is a 64-bit type representing a floating number">ASDouble</a> values. The data is copied into the <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path.">PDEPath</a> object. </span>
+</td></tr>
+<tr><td><span><code>dataSize</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The size of the new path data in bytes. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDEPathSetDataFloat"><strong><span style="color:grey;">PDEPathSetDataFloat</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:3668</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Superseded by <a href="pdelayer_PDEPath.htm#PDEPathSetDataEx" title=" Sets new path data for a path element.">PDEPathSetDataEx</a>(). Set path using floats for pdfs that use larger values than will fit in ASFixed/ASInt32. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEPathSetDataFloat(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path."><code>PDEPath</code></a> <code>path</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#ASFloat"><code>ASFloat</code></a> <code>*</code><code>data</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>dataSize</code><code>);</code> </code>
+</section>
+</section>
+
+</div>
+</body></html>

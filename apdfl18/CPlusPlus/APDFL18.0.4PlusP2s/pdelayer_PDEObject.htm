@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDF Edit Layer: PDEObject</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDF Edit Layer: PDEObject</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>PDEObject Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDEObject">PDEObject</a></dt><dd> -  The abstract super class of the PDFEdit classes.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEObject"><strong><span style="color:grey;">PDEObject</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:108</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The abstract super class of the PDFEdit classes. You can find the type of any object with the <a href="pdelayer_PDEObject.htm#PDEObjectGetType" title=" Gets the type of an element.">PDEObjectGetType</a>() method. You can then cast and apply that class' methods to the object. In addition, you can cast any of the PDFEdit objects to a <a href="pdelayer_PDEObject.htm#PDEObject" title=" The abstract super class of the PDFEdit classes.">PDEObject</a> and use it anywhere a <a href="pdelayer_PDEObject.htm#PDEObject" title=" The abstract super class of the PDFEdit classes.">PDEObject</a> is called for, such as in the <a href="pdelayer_PDEObject.htm#PDEObject" title=" The abstract super class of the PDFEdit classes.">PDEObject</a> methods. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDEObject</code> <code>*</code><code>PDEObject</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEObject.htm#PDEAcquire" title=" Increments the reference count for an object."><code>PDEAcquire</code></a></td><td><a href="pdelayer_PDEObject.htm#PDEAddTag" title=" Adds an identifier-value pair to an object."><code>PDEAddTag</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEContent.htm#PDEContentGetResources" title=" Gets the number of resources of the specified type and, optionally, gets the pointers to the resource objects."><code>PDEContentGetResources</code></a></td><td><a href="pdelayer_PDEObject.htm#PDEGetTag" title=" Gets an object's value for a given clientID-tag identifier that was added by PDEAddTag."><code>PDEGetTag</code></a></td></tr>
+<tr><td><a href="pdelayer_Dump.htm#PDEObjectDump" title=" The object, its children and attributes are dumped."><code>PDEObjectDump</code></a></td><td><a href="pdelayer_Dump.htm#PDEObjectDumpProc" title=" A callback for PDELogDump() or PDEObjectDump()."><code>PDEObjectDumpProc</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEObject.htm#PDEObjectGetType" title=" Gets the type of an element."><code>PDEObjectGetType</code></a></td><td><a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object."><code>PDERelease</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEObject.htm#PDERemoveTag" title=" Removes an object's value for a given clientID-tag identifier that was added by PDEAddTag."><code>PDERemoveTag</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_General.htm#_t_PDEColorValue" title=" A structure describing a color value."><code>_t_PDEColorValue</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDEObject Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDEAcquire">PDEAcquire</a></dt><dd> -  Increments the reference count for an object.</dd>
+<dt><a href="#PDEAddTag">PDEAddTag</a></dt><dd> -  Adds an identifier-value pair to an object.</dd>
+<dt><a href="#PDEGetTag">PDEGetTag</a></dt><dd> -  Gets an object's value for a given clientID-tag identifier that was added by PDEAddTag.</dd>
+<dt><a href="#PDEObjectGetType">PDEObjectGetType</a></dt><dd> -  Gets the type of an element.</dd>
+<dt><a href="#PDERelease">PDERelease</a></dt><dd> -  Decrements the reference count for the object.</dd>
+<dt><a href="#PDERemoveTag">PDERemoveTag</a></dt><dd> -  Removes an object's value for a given clientID-tag identifier that was added by PDEAddTag.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEAcquire"><strong><span style="color:grey;">PDEAcquire</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1184</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Increments the reference count for an object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEAcquire(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEObject.htm#PDEObject" title=" The abstract super class of the PDFEdit classes."><code>PDEObject</code></a> <code>obj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>obj</code></span>
+</td><td><span>IN/OUT The element whose count is incremented. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEAddTag"><strong><span style="color:grey;">PDEAddTag</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:971</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Adds an identifier-value pair to an object.<br/>
+<p>The clientID-tag combination is a unique identifier for the value. Each client has its own identifier space. It is often convenient to use ASAtoms as tags.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> Tags are a purely memory-resident feature. In addition, management of tags is the responsibility of the client. A client must manage any memory pointed to by a tag. This method only contains a pointer to the data passed in by the client. The data and the pointer will not be saved to a file. The generic pointer type is not in the PDF specification. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEObject.htm#PDEGetTag" title=" Gets an object's value for a given clientID-tag identifier that was added by PDEAddTag."><code>PDEGetTag</code></a>
+<a href="pdelayer_PDEObject.htm#PDERemoveTag" title=" Removes an object's value for a given clientID-tag identifier that was added by PDEAddTag."><code>PDERemoveTag</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEAddTag(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEObject.htm#PDEObject" title=" The abstract super class of the PDFEdit classes."><code>PDEObject</code></a> <code>object</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASExtension.htm#ExtensionID"><code>ExtensionID</code></a> <code>clientID</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>tag</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>void</code> <code>*</code><code>value</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>object</code></span>
+</td><td><span>The element to tag. The object may be a <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a>, <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage.">PDEContent</a>, <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a>, <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file.">PDEColorSpace</a>, and so on. </span>
+</td></tr>
+<tr><td><span><code>clientID</code></span>
+</td><td><span>Identifies the caller/client. For clients, this should be the gExtensionID extension. For the Adobe PDF Library, if there is only one client of the PDFEdit subsystem, <code>clientID</code> should be zero. If there are multiple clients, each should specify a nonzero, non-negative <code>clientID</code>. (A negative <code>clientID</code> is reserved for the implementation.) </span>
+</td></tr>
+<tr><td><span><code>tag</code></span>
+</td><td><span>The tag to add to <code>object</code>. If <code>tag</code> is <code>0</code>, this is the same as calling <a href="pdelayer_PDEObject.htm#PDERemoveTag" title=" Removes an object's value for a given clientID-tag identifier that was added by PDEAddTag.">PDERemoveTag</a>(). In other words, you cannot tell the difference between a tag whose value is zero and a tag that is nonexistent. </span>
+</td></tr>
+<tr><td><span><code>value</code></span>
+</td><td><span>A pointer to a value to associate with <code>object</code>. Only the pointer is stored. If the pointer points to data, it is the responsibility of the client to manage the data and its memory. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEGetTag"><strong><span style="color:grey;">PDEGetTag</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:991</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets an object's value for a given clientID-tag identifier that was added by <a href="pdelayer_PDEObject.htm#PDEAddTag" title=" Adds an identifier-value pair to an object.">PDEAddTag</a>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEObject.htm#PDEAddTag" title=" Adds an identifier-value pair to an object."><code>PDEAddTag</code></a>
+<a href="pdelayer_PDEObject.htm#PDERemoveTag" title=" Removes an object's value for a given clientID-tag identifier that was added by PDEAddTag."><code>PDERemoveTag</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>*</code><code>PDEGetTag(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEObject.htm#PDEObject" title=" The abstract super class of the PDFEdit classes."><code>PDEObject</code></a> <code>object</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASExtension.htm#ExtensionID"><code>ExtensionID</code></a> <code>clientID</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>tag</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>object</code></span>
+</td><td><span>The element whose value is obtained. </span>
+</td></tr>
+<tr><td><span><code>clientID</code></span>
+</td><td><span>Identifies the caller/client. For clients, this should be the gExtensionID extension. For the Adobe PDF Library, if there is only one client of the PDFEdit subsystem, <code>clientID</code> should be zero. If there are multiple clients, each should specify a nonzero, non-negative <code>clientID</code>. (A negative <code>clientID</code> is reserved for the implementation.) </span>
+</td></tr>
+<tr><td><span><code>tag</code></span>
+</td><td><span>The object's tag. If object has no tag, this is <code>0</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The value associated with the clientID-tag identifier. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEObjectGetType"><strong><span style="color:grey;">PDEObjectGetType</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1171</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets the type of an element. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDEObjectGetType(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEObject.htm#PDEObject" title=" The abstract super class of the PDFEdit classes."><code>PDEObject</code></a> <code>obj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>obj</code></span>
+</td><td><span>IN/OUT The element whose type is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The object type, which is one of <a href="pdelayer_General.htm#PDEType" title=" The types of PDEObject, which is the superclass for PDEContent, PDEElement, PDEClip, and so on.">PDEType</a>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDERelease"><strong><span style="color:grey;">PDERelease</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1204</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Decrements the reference count for the object. If the count becomes zero, the object is destroyed.<br/>
+<p>Do not call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() on <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage.">PDEContent</a> that you acquired with <a href="pdlayer_PDPage.htm#PDPageAcquirePDEContent" title=" Creates a PDEContent from the PDPage object's contents and resources.">PDPageAcquirePDEContent</a>(); call <a href="pdlayer_PDPage.htm#PDPageReleasePDEContent" title=" Decrements a PDPage object's PDEContent internal reference count.">PDPageReleasePDEContent</a>() instead.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> Objects should only be disposed of with <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() if the method by which they were obtained incremented the reference count for the object. In general, methods that <em>get</em> an object do not increment the reference count. Methods that increment the reference count typically contain the word <code>acquire</code> or <code>create</code> in the method name and specifically state that you must release the object. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEObject.htm#PDEAcquire" title=" Increments the reference count for an object.">PDEAcquire</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDERelease(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEObject.htm#PDEObject" title=" The abstract super class of the PDFEdit classes."><code>PDEObject</code></a> <code>obj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>obj</code></span>
+</td><td><span>IN/OUT The element released. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDERemoveTag"><strong><span style="color:grey;">PDERemoveTag</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1012</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Removes an object's value for a given clientID-tag identifier that was added by <a href="pdelayer_PDEObject.htm#PDEAddTag" title=" Adds an identifier-value pair to an object.">PDEAddTag</a>.<br/>
+<p>If <a href="pdelayer_PDEObject.htm#PDEAddTag" title=" Adds an identifier-value pair to an object.">PDEAddTag</a> is called with a <code>0</code> tag, this is the same as calling <a href="pdelayer_PDEObject.htm#PDERemoveTag" title=" Removes an object's value for a given clientID-tag identifier that was added by PDEAddTag.">PDERemoveTag</a>().<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEObject.htm#PDEAddTag" title=" Adds an identifier-value pair to an object."><code>PDEAddTag</code></a>
+<a href="pdelayer_PDEObject.htm#PDEGetTag" title=" Gets an object's value for a given clientID-tag identifier that was added by PDEAddTag."><code>PDEGetTag</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDERemoveTag(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEObject.htm#PDEObject" title=" The abstract super class of the PDFEdit classes."><code>PDEObject</code></a> <code>object</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASExtension.htm#ExtensionID"><code>ExtensionID</code></a> <code>clientID</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>tag</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>object</code></span>
+</td><td><span>The element whose tag is removed. </span>
+</td></tr>
+<tr><td><span><code>clientID</code></span>
+</td><td><span>Identifies the caller/client. For clients, this should be the gExtensionID extension. For the Adobe PDF Library, if there is only one client of the PDFEdit subsystem, <code>clientID</code> should be zero. If there are multiple clients, each should specify a nonzero, non-negative <code>clientID</code>. (A negative <code>clientID</code> is reserved for the implementation.) </span>
+</td></tr>
+<tr><td><span><code>tag</code></span>
+</td><td><span>The tag value. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+</section>
+
+</div>
+</body></html>

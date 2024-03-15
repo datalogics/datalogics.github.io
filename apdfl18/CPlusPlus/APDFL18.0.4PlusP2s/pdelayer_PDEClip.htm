@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDF Edit Layer: PDEClip</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDF Edit Layer: PDEClip</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#CallbackSignatures">Callback Signatures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>PDEClip Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDEClip">PDEClip</a></dt><dd> -  A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEClip"><strong><span style="color:grey;">PDEClip</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:338</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A list of <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> objects containing a list of <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path.">PDEPath</a> objects and <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a> objects that describe a clip state. <a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state.">PDEClip</a> objects can be created and built up with <a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state.">PDEClip</a> methods. Any <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> object can have <a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state.">PDEClip</a> associated with it. <a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state.">PDEClip</a> objects can contain <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file.">PDEContainer</a> objects and <a href="pdelayer_PDEGroup.htm#PDEGroup" title=" An in-memory representation of objects in a PDEContent object.">PDEGroup</a> objects to an arbitrary level of nesting. This allows <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file.">PDEContainer</a> objects to be used to mark clip objects. <a href="pdelayer_PDEGroup.htm#PDEGroup" title=" An in-memory representation of objects in a PDEContent object.">PDEGroup</a> objects inside <a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state.">PDEClip</a> objects that contain at least one <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a> and no <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path.">PDEPath</a> objects have a special meaning. All <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a> objects contained in such a <a href="pdelayer_PDEGroup.htm#PDEGroup" title=" An in-memory representation of objects in a PDEContent object.">PDEGroup</a> are considered to be part of the same BT/ET block. This means that the union of these <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a> objects makes up a single clipping path, as opposed to the intersection of the <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a> objects. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDEClip</code> <code>*</code><code>PDEClip</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEClip.htm#PDEClipCopy" title=" Makes a deep copy of a PDEClip object."><code>PDEClipCopy</code></a></td><td><a href="pdelayer_PDEClip.htm#PDEClipCreate" title=" Creates an empty clip object."><code>PDEClipCreate</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEElement.htm#PDEElementGetClip" title=" Gets the current clip for an element."><code>PDEElementGetClip</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEClip.htm#PDEClipAddElem" title=" Adds an element to a clip path."><code>PDEClipAddElem</code></a></td><td><a href="pdelayer_PDEClip.htm#PDEClipCopy" title=" Makes a deep copy of a PDEClip object."><code>PDEClipCopy</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEClip.htm#PDEClipFlattenedEnumElems" title=" For a given PDEClip, this enumerates all of the PDEElement objects in a flattened manner."><code>PDEClipFlattenedEnumElems</code></a></td><td><a href="pdelayer_PDEClip.htm#PDEClipGetElem" title=" Gets an element from a clip object."><code>PDEClipGetElem</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEClip.htm#PDEClipGetNumElems" title=" Gets the number of top-level elements in a clip object."><code>PDEClipGetNumElems</code></a></td><td><a href="pdelayer_PDEClip.htm#PDEClipRemoveElems" title=" Removes one or more elements from a clip object."><code>PDEClipRemoveElems</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEElement.htm#PDEElementSetClip" title=" Sets the current clip for an element."><code>PDEElementSetClip</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="CallbackSignatures">
+<header><h2>PDEClip Callback Signatures</h2></header>
+<nav><dl>
+<dt><a href="#PDEClipEnumProc">PDEClipEnumProc</a></dt><dd> -  A callback for PDEClipFlattenedEnumElems(), which enumerates all of a PDEClip object's PDEElement objects in a flattened manner.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEClipEnumProc"><strong><span style="color:grey;">PDEClipEnumProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:2062</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A callback for <a href="pdelayer_PDEClip.htm#PDEClipFlattenedEnumElems" title=" For a given PDEClip, this enumerates all of the PDEElement objects in a flattened manner.">PDEClipFlattenedEnumElems</a>(), which enumerates all of a <a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state.">PDEClip</a> object's <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> objects in a flattened manner. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDEClipEnumProc(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>elem</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>elem</code></span>
+</td><td><span>IN/OUT The <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> currently being enumerated. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>IN/OUT User-supplied data that was passed in the call to <a href="pdelayer_PDEClip.htm#PDEClipFlattenedEnumElems" title=" For a given PDEClip, this enumerates all of the PDEElement objects in a flattened manner.">PDEClipFlattenedEnumElems</a>(). </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>If <a href="aslayer_General.htm#false"><code>false</code></a>, enumeration halts. If <a href="aslayer_General.htm#true"><code>true</code></a>, enumeration continues. </span>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEClip.htm#PDEClipFlattenedEnumElems" title=" For a given PDEClip, this enumerates all of the PDEElement objects in a flattened manner."><code>PDEClipFlattenedEnumElems</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDEClip Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDEClipAddElem">PDEClipAddElem</a></dt><dd> -  Adds an element to a clip path.</dd>
+<dt><a href="#PDEClipCopy">PDEClipCopy</a></dt><dd> -  Makes a deep copy of a PDEClip object.</dd>
+<dt><a href="#PDEClipCreate">PDEClipCreate</a></dt><dd> -  Creates an empty clip object.</dd>
+<dt><a href="#PDEClipFlattenedEnumElems">PDEClipFlattenedEnumElems</a></dt><dd> -  For a given PDEClip, this enumerates all of the PDEElement objects in a flattened manner.</dd>
+<dt><a href="#PDEClipGetElem">PDEClipGetElem</a></dt><dd> -  Gets an element from a clip object.</dd>
+<dt><a href="#PDEClipGetNumElems">PDEClipGetNumElems</a></dt><dd> -  Gets the number of top-level elements in a clip object.</dd>
+<dt><a href="#PDEClipRemoveElems">PDEClipRemoveElems</a></dt><dd> -  Removes one or more elements from a clip object.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEClipAddElem"><strong><span style="color:grey;">PDEClipAddElem</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:640</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Adds an element to a clip path. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method increments the reference count of <code>pdeElement</code>. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEClip.htm#PDEClipRemoveElems" title=" Removes one or more elements from a clip object.">PDEClipRemoveElems</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEClipAddElem(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state."><code>PDEClip</code></a> <code>clip</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>addAfterIndex</code><code>,</code> <code>/* kPDEBeforeFirst */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>pdeElement</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>clip</code></span>
+</td><td><span>IN/OUT The clip path to which an element is added. </span>
+</td></tr>
+<tr><td><span><code>addAfterIndex</code></span>
+</td><td><span>IN/OUT The index after which to add <code>pdeElement</code>. Use <a href="pdelayer_General.htm#kPDEBeforeFirst">kPDEBeforeFirst</a> to insert an element at the beginning of the clip object. </span>
+</td></tr>
+<tr><td><span><code>pdeElement</code></span>
+</td><td><span>IN/OUT The element added, which may be a <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path.">PDEPath</a>, a <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a>, a <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file.">PDEContainer</a>, a <a href="pdelayer_PDEGroup.htm#PDEGroup" title=" An in-memory representation of objects in a PDEContent object.">PDEGroup</a>, or a <a href="pdelayer_PDEPlace.htm#PDEPlace" title=" A PDEElement that marks a place on a page in a PDF file.">PDEPlace</a> object. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEClipCopy"><strong><span style="color:grey;">PDEClipCopy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1508</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Makes a deep copy of a <a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state.">PDEClip</a> object.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned clip object when finished with it.<br/></p>
+
+<p>
+<p>It raises an exception if it is unable to allocate memory.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state."><code>PDEClip</code></a> <code>PDEClipCopy(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state."><code>PDEClip</code></a> <code>srcClip</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>srcClip</code></span>
+</td><td><span>IN/OUT The clipping path to copy. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The deep copy of <code>srcClip</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDEClipCreate"><strong><span style="color:grey;">PDEClipCreate</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:672</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Creates an empty clip object. This represents a clipping object that has no effect on elements that refer to it.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned clip object when finished with it.<br/></p>
+
+<p>
+<p>It raises an exception if it is unable to allocate memory.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state."><code>PDEClip</code></a> <code>PDEClipCreate(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created clip object. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDEClipFlattenedEnumElems"><strong><span style="color:grey;">PDEClipFlattenedEnumElems</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1598</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>For a given <a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state.">PDEClip</a>, this enumerates all of the <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> objects in a flattened manner. In other words, <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file.">PDEContainer</a> objects and <a href="pdelayer_PDEGroup.htm#PDEGroup" title=" An in-memory representation of objects in a PDEContent object.">PDEGroup</a> objects nested in the <a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state.">PDEClip</a> will not be handed back, but any <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path.">PDEPath</a> objects and <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a> objects nested in them will be. Additionally, <a href="pdelayer_PDEPlace.htm#PDEPlace" title=" A PDEElement that marks a place on a page in a PDF file.">PDEPlace</a> objects inside the <a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state.">PDEClip</a> are not returned. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEClip.htm#PDEClipCreate" title=" Creates an empty clip object."><code>PDEClipCreate</code></a>
+<a href="pdelayer_PDEClip.htm#PDEClipGetElem" title=" Gets an element from a clip object."><code>PDEClipGetElem</code></a>
+<a href="pdelayer_PDEClip.htm#PDEClipGetNumElems" title=" Gets the number of top-level elements in a clip object."><code>PDEClipGetNumElems</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDEClipFlattenedEnumElems(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state."><code>PDEClip</code></a> <code>clip</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEClip.htm#PDEClipEnumProc" title=" A callback for PDEClipFlattenedEnumElems(), which enumerates all of a PDEClip object's PDEElement objects in a flattened manner."><code>PDEClipEnumProc</code></a> <code>enumProc</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>void</code> <code>*</code><code>enumProcClientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>clip</code></span>
+</td><td><span>The <a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state.">PDEClip</a> to enumerate. </span>
+</td></tr>
+<tr><td><span><code>enumProc</code></span>
+</td><td><span>Called with each flattened element. Enumeration continues until all elements have been enumerated, or until <code>enumProc</code> returns <a href="aslayer_General.htm#false"><code>false</code></a>. </span>
+</td></tr>
+<tr><td><span><code>enumProcClientData</code></span>
+</td><td><span>A pointer to user-supplied data to pass to <code>enumProc</code> each time it is called. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>Returns the value of <code>enumProc</code>. It returns <a href="aslayer_General.htm#true"><code>true</code></a> if successful, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEClipGetElem"><strong><span style="color:grey;">PDEClipGetElem</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:935</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets an element from a clip object. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method does not change the reference count of the returned <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a>. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEClip.htm#PDEClipGetNumElems" title=" Gets the number of top-level elements in a clip object.">PDEClipGetNumElems</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>PDEClipGetElem(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state."><code>PDEClip</code></a> <code>clip</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>clip</code></span>
+</td><td><span>IN/OUT The clip object from which an element is obtained. </span>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>IN/OUT The index of the element to get from <code>clip</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The element from the clip object. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEClipGetNumElems"><strong><span style="color:grey;">PDEClipGetNumElems</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:919</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the number of top-level elements in a clip object. Top-level elements may be a path or charpath, a marked content container or place, or a group.<br/>
+<p>Paths are represented as <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path.">PDEPath</a> objects; charpaths are represented as <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a> objects.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> <a href="pdelayer_PDEGroup.htm#PDEGroup" title=" An in-memory representation of objects in a PDEContent object.">PDEGroup</a> is not a persistent object. You cannot save to PDF and re-get group objects. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEClip.htm#PDEClipFlattenedEnumElems" title=" For a given PDEClip, this enumerates all of the PDEElement objects in a flattened manner."><code>PDEClipFlattenedEnumElems</code></a>
+<a href="pdelayer_PDEClip.htm#PDEClipGetElem" title=" Gets an element from a clip object."><code>PDEClipGetElem</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDEClipGetNumElems(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state."><code>PDEClip</code></a> <code>clip</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>clip</code></span>
+</td><td><span>IN/OUT The clip object to examine. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of path and charpath elements in clip. If <code>clip</code> contains <a href="pdelayer_PDEGroup.htm#PDEGroup" title=" An in-memory representation of objects in a PDEContent object.">PDEGroup</a> objects, this method returns the top-level <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path.">PDEPath</a>, <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a>, <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file.">PDEContainer</a>, <a href="pdelayer_PDEGroup.htm#PDEGroup" title=" An in-memory representation of objects in a PDEContent object.">PDEGroup</a>, or <a href="pdelayer_PDEPlace.htm#PDEPlace" title=" A PDEElement that marks a place on a page in a PDF file.">PDEPlace</a> object. Use <a href="pdelayer_PDEClip.htm#PDEClipFlattenedEnumElems" title=" For a given PDEClip, this enumerates all of the PDEElement objects in a flattened manner.">PDEClipFlattenedEnumElems</a>() to see only the <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path.">PDEPath</a> and <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a> objects. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEClipRemoveElems"><strong><span style="color:grey;">PDEClipRemoveElems</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:658</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Removes one or more elements from a clip object. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method decrements the reference count of each of the elements. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEClip.htm#PDEClipAddElem" title=" Adds an element to a clip path.">PDEClipAddElem</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEClipRemoveElems(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state."><code>PDEClip</code></a> <code>clip</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>count</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>clip</code></span>
+</td><td><span>IN/OUT The clip object from which an element is removed. </span>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>IN/OUT The first element to remove. </span>
+</td></tr>
+<tr><td><span><code>count</code></span>
+</td><td><span>IN/OUT The number of elements to remove. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+
+</div>
+</body></html>

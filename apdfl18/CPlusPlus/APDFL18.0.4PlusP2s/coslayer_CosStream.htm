@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+COS Layer: CosStream</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>COS Layer: CosStream</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>CosStream Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#CosByteMax">CosByteMax</a></dt><dd> - -1 for none, error, or other special meaning</dd>
+<dt><a href="#CosStreamOpenMode">CosStreamOpenMode</a></dt><dd> -  Constants that specify whether filters and decryption should be applied to the stream's data.</dd>
+<dt><a href="#CosStreamStartAndCode">CosStreamStartAndCode</a></dt><dd> - </dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="CosByteMax"><strong><span style="color:grey;">CosByteMax</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosExpT.h:52</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span><code>-1</code> for none, error, or other special meaning </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>CosByteMax</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="coslayer_CosCrypt.htm#CosDecryptGetMaxKeyBytes" title=" Gets the maximum number of the decryption key length, in bytes, for the specified cryptVersion."><code>CosDecryptGetMaxKeyBytes</code></a></td><td><a href="coslayer_CosCrypt.htm#CosEncryptGetMaxKeyBytes" title=" Gets the maximum number of the encryption key length, in bytes, for the specified cryptVersion."><code>CosEncryptGetMaxKeyBytes</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="coslayer_CosStream.htm#CosNewStream" title=" Creates a new Cos stream, using data from an existing ASStm."><code>CosNewStream</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="CosStreamOpenMode"><strong><span style="color:grey;">CosStreamOpenMode</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosExpT.h:164</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Constants that specify whether filters and decryption should be applied to the stream's data. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASEnum8"><code>ASEnum8</code></a> <code>CosStreamOpenMode</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="coslayer_CosStream.htm#CosStreamOpenStm" title=" Creates a new, non-seekable ASStm for reading data from a Cos stream."><code>CosStreamOpenStm</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="CosStreamStartAndCode"><strong><span style="color:grey;">CosStreamStartAndCode</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosExpT.h:50</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>CosStreamStartAndCode</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="coslayer_CosStream.htm#CosNewStream" title=" Creates a new Cos stream, using data from an existing ASStm."><code>CosNewStream</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>CosStream Functions</h2></header>
+<nav><dl>
+<dt><a href="#CosNewStream">CosNewStream</a></dt><dd> -  Creates a new Cos stream, using data from an existing ASStm.</dd>
+<dt><a href="#CosNewStream64">CosNewStream64</a></dt><dd> -  Creates a new Cos stream, using data from an existing ASStm.</dd>
+<dt><a href="#CosStreamDict">CosStreamDict</a></dt><dd> -  Gets a stream's attributes dictionary.</dd>
+<dt><a href="#CosStreamLength">CosStreamLength</a></dt><dd> -  Gets the length of a Cos stream from the Length key in the stream's attributes dictionary.</dd>
+<dt><a href="#CosStreamLength64">CosStreamLength64</a></dt><dd> -  Gets the length of a Cos stream from the Length key in the stream's attributes dictionary.</dd>
+<dt><a href="#CosStreamOpenStm">CosStreamOpenStm</a></dt><dd> -  Creates a new, non-seekable ASStm for reading data from a Cos stream.</dd>
+<dt><a href="#CosStreamPos">CosStreamPos</a></dt><dd> -  Gets the byte offset of the start of a Cos stream's data in the PDF file (which is the byte offset of the beginning of the line following the stream token).</dd>
+<dt><a href="#CosStreamPos64">CosStreamPos64</a></dt><dd> -  Gets the byte offset of the start of a Cos stream's data in the PDF file.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="CosNewStream"><strong><span style="color:grey;">CosNewStream</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:451</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>
+<p>Creates a new Cos stream, using data from an existing <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a>. The data is copied, so the source stream may be closed after <a href="coslayer_CosStream.htm#CosNewStream" title=" Creates a new Cos stream, using data from an existing ASStm.">CosNewStream</a> returns.<br/></p>
+
+<p>
+<p>This method creates a Cos stream object by writing its PDF representation to an intermediate file in this format:<br/></p>
+
+<p>
+<p><code>&lt;</code> <code>&lt;</code> <code>/Length</code><code>...</code> <code>/Filter</code><code>...</code> <code>/DecodeParms</code><code>...</code> <code>&gt;</code> <code>&gt;</code><br/></p>
+
+<p>
+<p><code>stream</code><br/></p>
+
+<p>
+<p><code>...</code> <code>data,</code> <code>possibly</code> <code>encoded</code><code>...</code><br/></p>
+
+<p>
+<p><code>endstream</code><br/></p>
+
+<p>
+<p>See the description of the Stream Objects in "Objects," in ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 7.3.8, page 19. You can find this document on the web store of the International Standards Organization (ISO).<br/></p>
+
+<p>
+<p>This occurs in four steps:<br/></p>
+
+<p>
+<p><strong>Step</strong> <strong>1:</strong> <strong>Writing</strong> <strong>the</strong> <strong>attribute</strong> <strong>dictionary</strong><br/></p>
+
+<p>
+<p>If <code>attributesDict</code> is a valid Cos dictionary, the method writes that dictionary to the intermediate file. Otherwise, it creates a new direct dictionary, determining a <code>Length</code> key according to the <code>sourceLength</code> value:<br/></p>
+
+<UL><li> If <code>sourceLength</code> is negative, or if the source data is to be encoded (see below), the value of the <code>Length</code> key is a reference to a new indirect object, whose value will be set in <strong>Step</strong> <strong>4</strong>.<br/><li> Otherwise, <code>Length</code> is a direct scalar representing <code>sourceLength</code>.<br/></UL>
+
+<p>
+<p>The dictionary that is written becomes the new stream's attribute dictionary.<br/></p>
+
+<p>
+<p><strong>Step</strong> <strong>2:</strong> <strong>Reading</strong> <strong>the</strong> <strong>data</strong><br/></p>
+
+<p>
+<p><code>sourceStart</code> determines where in the source stream to begin reading, and whether the source is seekable.<br/></p>
+
+<UL><li> If <code>sourceStart</code> is a negative number, the source is assumed to be non-seekable but positioned at the point where reading should start.<br/><li> Otherwise, the source is assumed to be seekable, and reading starts at the position indicated by <code>sourceStart</code>. If <code>sourceStart</code> is zero, data is read from the beginning of the source stream. Positive values for <code>sourceStart</code> may be used, for instance, to skip over initial data in the stream.<br/></UL>
+
+<p>
+<p><strong>Step</strong> <strong>3:</strong> <strong>Encoding</strong> <strong>the</strong> <strong>data</strong><br/></p>
+
+<p>
+<p>If <code>attributesDict</code> is a valid Cos dictionary, it contains a <code>Filter</code> key, and <code>encodeTheSourceData</code> is <a href="aslayer_General.htm#true"><code>true</code></a>, the method encodes the data after reading it from the source stream and before writing it to the intermediate file.<br/></p>
+
+<p>
+<p>The <code>attributesDict</code> is used as the new stream's dictionary. The <code>Filter</code> entry in this dictionary indicates how the data in the resulting Cos stream object will be subsequently decoded; the value may be the name of a decoding filter or an array of such names. Specify multiple filters in the order they should be applied to decode the data (if parameters are needed to decode the data, they are specified as the value of the <code>DecodeParms</code> key in <code>attributesDict</code>. See the description of the DecodeParms attribute in Table 5 in ISO 32000-1:2008, Document Management-Portable Document Format- Part 1: PDF 1.7, section 7.3.8.2, page 20. You can find this document on the web store of the International Standards Organization (ISO).<br/></p>
+
+<p>
+<p>For each decoding filter, there is a corresponding encoding filter, which the method applies to the source data during this step.<br/></p>
+
+<p>
+<p>If parameters are needed to encode the data, they must be specified in the call by <code>encodeParms</code> (the encoding parameters are often different from the decoding parameters). The <code>encodeParms</code> parameter is optional for all encoding filters except <code>DCTDecode</code> and <code>JBIG2Decode</code>. See the <code>encodeParms</code> field of <a href="pdelayer_General.htm#_t_PDEFilterSpec" title=" The filter element in a filter array."><code>PDEFilterSpec</code></a>.<br/></p>
+
+<p>
+<p>If an array of filters is supplied, and at least one of them requires encoding parameters, then a corresponding array of encoding parameters is also required. Use the <a href="aslayer_General.htm#NULL"><code>NULL</code></a> object to represent default parameters for filters that have defaults.<br/></p>
+
+<p>
+<p>In any other case, the method copies the source data directly into the Cos stream with no encoding. If <code>sourceLength</code> is negative, it reads bytes until the source reaches its EOF. Otherwise, <code>sourceLength</code> indicates how many bytes to read from the source, and an exception is raised if the source reaches EOF before that.<br/></p>
+
+<p>
+<p><strong>Step</strong> <strong>4:</strong> <strong>Writing</strong> <strong>the</strong> <strong>data</strong><br/></p>
+
+<p>
+<p>After the data is written, if the value of the <code>Length</code> key in the attributes dictionary was an indirect reference (either because it was supplied that way in <code>attributesDict</code>, or because it was created that way in <strong>Step</strong> <strong>1</strong>, the value of that indirect object is set to the number of bytes actually written (that is, the encoded length if the data was encoded). An indirect <code>Length</code> key is useful for one-pass writing, when the size of the written data is not known in advance, either because the data was to be encoded, or because there was no way to know how much data there would be before the source reached its EOF.<br/></p>
+
+<p>
+<p>An exception is raised if <code>attributesDict</code> is neither the <a href="aslayer_General.htm#NULL"><code>NULL</code></a> object nor a direct Cos dictionary, <code>sourceStart</code> is nonnegative but the source is not seekable, or if <code>sourceLength</code> is nonnegative but the source stream reaches EOF before that many bytes have been read.<br/></p>
+
+<p>
+<p>For attributeDict, see the description of Stream Objects in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 9.9, page 288. You can find this document on the web store of the International Standards Organization (ISO).<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> <a href="coslayer_CosStream.htm#CosNewStream" title=" Creates a new Cos stream, using data from an existing ASStm.">CosNewStream</a>() sets the document <a href="pdlayer_PDDoc.htm#PDDocNeedsSave" title=" The document has been modified and needs to be saved."><code>PDDocNeedsSave</code></a> flag (see <a href="pdlayer_PDDoc.htm#PDDocFlags" title=" A signed int (which is never negative), for historical reasons.">PDDocFlags</a>). </p>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> You cannot call <a href="coslayer_CosStream.htm#CosStreamPos" title=" Gets the byte offset of the start of a Cos stream's data in the PDF file (which is the byte offset of the beginning of the line following the stream token)."><code>CosStreamPos</code></a><code>()</code> on a stream created with <a href="coslayer_CosStream.htm#CosNewStream" title=" Creates a new Cos stream, using data from an existing ASStm."><code>CosNewStream</code></a><code>()</code> until the file has been saved. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="coslayer_CosStream.htm#CosNewStream64" title=" Creates a new Cos stream, using data from an existing ASStm."><code>CosNewStream64</code></a>
+<a href="coslayer_CosObj.htm#CosObjDestroy" title=" Destroys a Cos object."><code>CosObjDestroy</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>CosNewStream(</code><a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>dP</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>indirect</code><code>,</code> <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>stm</code><code>,</code> <a href="coslayer_CosStream.htm#CosStreamStartAndCode"><code>CosStreamStartAndCode</code></a> <code>sourceStart</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>encodeTheSourceData</code><code>,</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>attributesDict</code><code>,</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>encodeParms</code><code>,</code> <a href="coslayer_CosStream.htm#CosByteMax" title="-1 for none, error, or other special meaning"><code>CosByteMax</code></a> <code>sourceLength</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>dP</code></span>
+</td><td><span>The Cos document in which the newly created stream will be used. </span>
+</td></tr>
+<tr><td><span><code>indirect</code></span>
+</td><td><span>Must always be <a href="aslayer_General.htm#true"><code>true</code></a>, specifying that the Cos stream is created as an indirect object (all streams are indirect). This also sets the document's <a href="pdlayer_PDDoc.htm#PDDocNeedsSave" title=" The document has been modified and needs to be saved."><code>PDDocNeedsSave</code></a> flag (see <a href="pdlayer_PDDoc.htm#PDDocFlags" title=" A signed int (which is never negative), for historical reasons."><code>PDDocFlags</code></a>). </span>
+</td></tr>
+<tr><td><span><code>stm</code></span>
+</td><td><div><UL>The source stream containing the data to copy into the new stream. The caller is responsible for closing <code>stm</code> after <a href="coslayer_CosStream.htm#CosNewStream" title=" Creates a new Cos stream, using data from an existing ASStm."><code>CosNewStream</code></a><code>()</code> returns. The source stream can be any readable <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a>. Typical sources are:<br/><li> Files ( <a href="aslayer_ASFile.htm#ASFileStmRdOpen" title=" Creates a read-only ASStm from a file."><code>ASFileStmRdOpen</code></a><code>()</code>) or memory ( <a href="aslayer_ASStm.htm#ASMemStmRdOpen" title=" Creates a read-only ASStm from a memory-resident buffer."><code>ASMemStmRdOpen</code></a><code>()</code>). These streams are always seekable.<br/><li> Arbitrary procedures ( <a href="aslayer_ASStm.htm#ASProcStmRdOpen" title=" Creates a read-only ASStm from an arbitrary data-producing procedure."><code>ASProcStmRdOpen</code></a><code>()</code> or <a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure."><code>ASProcStmRdOpenEx</code></a><code>()</code>), or other Cos streams ( <a href="coslayer_CosStream.htm#CosStreamOpenStm" title=" Creates a new, non-seekable ASStm for reading data from a Cos stream."><code>CosStreamOpenStm</code></a><code>()</code>). These streams are always non-seekable.<br/></UL>
+</div>
+</td></tr>
+<tr><td><span><code>sourceStart</code></span>
+</td><td><span>The byte offset into <code>stm</code> from which data reading starts for a seekable stream. If the value is negative, it specifies that the stream is not seekable. </span>
+</td></tr>
+<tr><td><span><code>encodeTheSourceData</code></span>
+</td><td><span>Determines whether the data in <code>stm</code> should be encoded using filters specified in <code>attributesDict</code> before it is written to the Cos stream. See the description of the encoding step above. If <code>attributesDict</code> is a <a href="aslayer_General.htm#NULL"><code>NULL</code></a> object or if the dictionary has no <code>Filter</code> key, this value is ignored. </span>
+</td></tr>
+<tr><td><span><code>attributesDict</code></span>
+</td><td><span>Either the <a href="aslayer_General.htm#NULL"><code>NULL</code></a> Cos object, or a direct Cos dictionary containing stream attributes, such as the length of the Cos stream data and a list of decoding filters and parameters to apply to the data. See the description of the Stream Objects in "Objects" in ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 7.3.8, page 19. See the encoding step in the description above. </span>
+</td></tr>
+<tr><td><span><code>encodeParms</code></span>
+</td><td><div><p>The parameters to be used by the filters if the source data is encoded before it is written to the file. The parameters follow the structure for the value of the <code>DecodeParms</code> stream attribute. See the description of the DecodeParms attribute in Table 5 in ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 7.3.8.2, page 20.<br/>
+<p>You can find this document on the web store of the International Standards Organization (ISO).<br/></p>
+
+<span>
+<p>See the encoding step in the description above. If no encoding parameters are needed, this value is ignored.</span>
+</div>
+</td></tr>
+<tr><td><span><code>sourceLength</code></span>
+</td><td><span>The amount of data to be read from the source. If negative (typically<code>-1</code>), data is read from the source until it reaches its EOF. See <strong>Step</strong> <strong>1</strong> in the description above. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created stream Cos object. </span>
+</section>
+<section><div class="infoRow"><h3 id="CosNewStream64"><strong><span style="color:grey;">CosNewStream64</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:2201</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>
+<p>Creates a new Cos stream, using data from an existing <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a>. For details, see <a href="coslayer_CosStream.htm#CosNewStream" title=" Creates a new Cos stream, using data from an existing ASStm."><code>CosNewStream</code></a><code>()</code>.<br/></p>
+
+<p>
+<p>This is the same as <a href="coslayer_CosStream.htm#CosNewStream" title=" Creates a new Cos stream, using data from an existing ASStm."><code>CosNewStream</code></a><code>()</code>, except that <code>decodeLength</code> is a 64-bit value instead of a 32-bit value, and <code>allowDelayedRead</code> enables the implementation to avoid making an intermediate copy of the stream data. This is useful when creating very large streams of data.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure."><code>ASProcStmRdOpenEx</code></a>
+<a href="coslayer_CosStream.htm#CosNewStream" title=" Creates a new Cos stream, using data from an existing ASStm."><code>CosNewStream</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>CosNewStream64(</code><a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>dP</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>indirect</code><code>,</code> <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>stm</code><code>,</code> <a href="aslayer_General.htm#ASInt64" title=" 8-byte signed long numeric value."><code>ASInt64</code></a> <code>stmStartPos</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>stmDataIsDecoded</code><code>,</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>attributesDict</code><code>,</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>encodeParms</code><code>,</code> <a href="aslayer_General.htm#ASInt64" title=" 8-byte signed long numeric value."><code>ASInt64</code></a> <code>sourceLength</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>allowDelayedRead</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>dP</code></span>
+</td><td><span>The Cos document in which the newly created stream will be used. </span>
+</td></tr>
+<tr><td><span><code>indirect</code></span>
+</td><td><span>Must always be <a href="aslayer_General.htm#true"><code>true</code></a>, specifying that the Cos stream is created as an indirect object. </span>
+</td></tr>
+<tr><td><span><code>stm</code></span>
+</td><td><span>The source stream containing the data to copy into the new stream. </span>
+</td></tr>
+<tr><td><span><code>stmStartPos</code></span>
+</td><td><span>Starting position for the stream. Its default is <code>0</code>. </span>
+</td></tr>
+<tr><td><span><code>stmDataIsDecoded</code></span>
+</td><td><span>A <a href="aslayer_General.htm#boolean">boolean</a> value indicating whether the data in <code>stm</code> should be encoded using filters specified in <code>attributesDict</code>. </span>
+</td></tr>
+<tr><td><span><code>attributesDict</code></span>
+</td><td><span>Either the <a href="aslayer_General.htm#NULL"><code>NULL</code></a> Cos object, or a direct Cos dictionary containing stream attributes. </span>
+</td></tr>
+<tr><td><span><code>encodeParms</code></span>
+</td><td><span>The parameters to be used by the filters if the source data is to be encoded. </span>
+</td></tr>
+<tr><td><span><code>sourceLength</code></span>
+</td><td><span>The amount of data to be read from the source. </span>
+</td></tr>
+<tr><td><span><code>allowDelayedRead</code></span>
+</td><td><div><p>If this is <a href="aslayer_General.htm#true"><code>true</code></a> and <code>stm</code> permits seek operations, then the data from <code>stm</code> will not be read during this call, but rather at a subsequent time, and it may be read more than once.<br/>
+<p><strong>Important:</strong> In this case, the caller must not close <code>stm</code> until it is established, through some independent mechanism, that the data will not be read again (see <a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure."><code>ASProcStmRdOpenEx</code></a><code>()</code> for further details on this feature).<br/></p>
+
+<p>
+<p>If <code>allowDelayedRead</code> is <a href="aslayer_General.htm#false"><code>false</code></a>, the source data is copied during this call, so the source stream may be closed after <a href="coslayer_CosStream.htm#CosNewStream64" title=" Creates a new Cos stream, using data from an existing ASStm."><code>CosNewStream64</code></a><code>()</code> returns.<br/></p>
+</div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created stream Cos object. </span>
+</section>
+<section><div class="infoRow"><h3 id="CosStreamDict"><strong><span style="color:grey;">CosStreamDict</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:879</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets a stream's attributes dictionary. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="coslayer_CosDict.htm#CosDictGet" title=" Gets the value of the specified key in the specified dictionary."><code>CosDictGet</code></a>
+<a href="coslayer_CosDict.htm#CosDictPut" title=" Sets the value of a dictionary key, adding the key to the dictionary if it is not already present."><code>CosDictPut</code></a>
+<a href="coslayer_CosStream.htm#CosStreamLength" title=" Gets the length of a Cos stream from the Length key in the stream's attributes dictionary."><code>CosStreamLength</code></a>
+<a href="coslayer_CosStream.htm#CosStreamPos" title=" Gets the byte offset of the start of a Cos stream's data in the PDF file (which is the byte offset of the beginning of the line following the stream token)."><code>CosStreamPos</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>CosStreamDict(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>stream</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>stream</code></span>
+</td><td><span>IN/OUT The stream whose attributes dictionary is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The stream's attributes dictionary Cos object. </span>
+</section>
+<section><div class="infoRow"><h3 id="CosStreamLength"><strong><span style="color:grey;">CosStreamLength</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:867</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>
+<p>Gets the length of a Cos stream from the <code>Length</code> key in the stream's attributes dictionary. This specifies the length of the undecoded data, which is the number of bytes in the stream before the <code>Filter</code> (if any) is applied.<br/></p>
+
+<p>
+<p>This has the same effect as calling <a href="coslayer_CosNumber.htm#CosIntegerValue" title=" Gets the 32-bit integer value of a specified number object."><code>CosIntegerValue</code></a><code>(CosDictGetKeyString(stream,</code> <code>"Length"))</code>.<br/></p>
+
+<p>
+<p>An exception is raised if the <code>Length</code> key is not found in the attributes dictionary, if its value is not an integer, or if its value is outside the range of 32-bit integers.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="coslayer_CosStream.htm#CosStreamDict" title=" Gets a stream's attributes dictionary."><code>CosStreamDict</code></a>
+<a href="coslayer_CosStream.htm#CosStreamLength64" title=" Gets the length of a Cos stream from the Length key in the stream's attributes dictionary."><code>CosStreamLength64</code></a>
+<a href="coslayer_CosStream.htm#CosStreamPos" title=" Gets the byte offset of the start of a Cos stream's data in the PDF file (which is the byte offset of the beginning of the line following the stream token)."><code>CosStreamPos</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>CosStreamLength(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>stream</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>stream</code></span>
+</td><td><span>The stream whose length is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The length of the stream. </span>
+</section>
+<section><div class="infoRow"><h3 id="CosStreamLength64"><strong><span style="color:grey;">CosStreamLength64</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:2221</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>
+<p>Gets the length of a Cos stream from the <code>Length</code> key in the stream's attributes dictionary. See <a href="coslayer_CosStream.htm#CosStreamLength" title=" Gets the length of a Cos stream from the Length key in the stream's attributes dictionary."><code>CosStreamLength</code></a><code>()</code> for details. This is the same as <a href="coslayer_CosStream.htm#CosStreamLength" title=" Gets the length of a Cos stream from the Length key in the stream's attributes dictionary."><code>CosStreamLength</code></a><code>()</code>, except that the return value is a 64-bit integer instead of a 32-bit integer.<br/></p>
+
+<p>
+<p>This has the same effect as calling <a href="coslayer_CosNumber.htm#CosInteger64Value" title=" Gets the 64-bit integer value of a specified number object."><code>CosInteger64Value</code></a><code>(CosDictGetKeyString(stream,</code> <code>"Length"))</code><br/></p>
+
+<p>
+<p>An exception is raised if the Length key is not found in the attributes dictionary, or if its value is not an integer.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="coslayer_CosStream.htm#CosStreamDict" title=" Gets a stream's attributes dictionary."><code>CosStreamDict</code></a>
+<a href="coslayer_CosStream.htm#CosStreamLength" title=" Gets the length of a Cos stream from the Length key in the stream's attributes dictionary."><code>CosStreamLength</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt64" title=" 8-byte signed long numeric value."><code>ASInt64</code></a> <code>CosStreamLength64(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>stream</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>stream</code></span>
+</td><td><span>The stream whose length is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The length of the stream. </span>
+</section>
+<section><div class="infoRow"><h3 id="CosStreamOpenStm"><strong><span style="color:grey;">CosStreamOpenStm</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:895</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a new, non-seekable <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> for reading data from a Cos stream. The data in the Cos stream may be filtered and encrypted. After opening the Cos stream, data can be read from it into memory using <a href="aslayer_ASStm.htm#ASStmRead" title=" Reads data from stm into memory."><code>ASStmRead</code></a><code>()</code>. When reading is completed, close the stream using <a href="aslayer_ASStm.htm#ASStmClose" title=" Closes the specified stream."><code>ASStmClose</code></a><code>()</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASStm.htm#ASStmRead" title=" Reads data from stm into memory."><code>ASStmRead</code></a>
+<a href="aslayer_ASStm.htm#ASStmWrite" title=" Writes data from a memory buffer into an ASStm."><code>ASStmWrite</code></a>
+<a href="coslayer_CosStream.htm#CosNewStream" title=" Creates a new Cos stream, using data from an existing ASStm."><code>CosNewStream</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>CosStreamOpenStm(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>stream</code><code>,</code> <a href="coslayer_CosStream.htm#CosStreamOpenMode" title=" Constants that specify whether filters and decryption should be applied to the stream's data."><code>CosStreamOpenMode</code></a> <code>mode</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>stream</code></span>
+</td><td><span>The Cos stream object for which an <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> is opened. </span>
+</td></tr>
+<tr><td><span><code>mode</code></span>
+</td><td><span>This must be one of the <a href="coslayer_CosStream.htm#CosStreamOpenMode" title=" Constants that specify whether filters and decryption should be applied to the stream's data."><code>CosStreamOpenMode</code></a> values. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly-opened <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a>. </span>
+</section>
+<section><div class="infoRow"><h3 id="CosStreamPos"><strong><span style="color:grey;">CosStreamPos</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:921</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>
+<p>Gets the byte offset of the start of a Cos stream's data in the PDF file (which is the byte offset of the beginning of the line following the <code>stream</code> token). Use this method to obtain the file location of any private data in a stream that you need to read directly rather than letting it pass through the normal Cos mechanisms. For example, this could apply to a QuickTime video embedded in a PDF file.<br/></p>
+
+<p>
+<p><a href="coslayer_CosStream.htm#CosStreamPos" title=" Gets the byte offset of the start of a Cos stream's data in the PDF file (which is the byte offset of the beginning of the line following the stream token)."><code>CosStreamPos</code></a><code>()</code> is only valid when called on a stream that is already stored in a PDF document. If the stream was created using <a href="coslayer_CosStream.htm#CosNewStream" title=" Creates a new Cos stream, using data from an existing ASStm."><code>CosNewStream</code></a><code>()</code>, the new stream is stored in the document's temp file, and you cannot invoke <a href="coslayer_CosStream.htm#CosStreamPos" title=" Gets the byte offset of the start of a Cos stream's data in the PDF file (which is the byte offset of the beginning of the line following the stream token)."><code>CosStreamPos</code></a><code>()</code> on it. After the file has been saved, you can use <a href="coslayer_CosStream.htm#CosStreamPos" title=" Gets the byte offset of the start of a Cos stream's data in the PDF file (which is the byte offset of the beginning of the line following the stream token)."><code>CosStreamPos</code></a><code>()</code> on the stream.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="coslayer_CosStream.htm#CosStreamDict" title=" Gets a stream's attributes dictionary."><code>CosStreamDict</code></a>
+<a href="coslayer_CosStream.htm#CosStreamLength" title=" Gets the length of a Cos stream from the Length key in the stream's attributes dictionary."><code>CosStreamLength</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASTCount"><code>ASTCount</code></a> <code>CosStreamPos(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>stream</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>stream</code></span>
+</td><td><span>The stream whose current position is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The byte offset of the start of the Cos stream's data in the PDF file. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#cosErrInvalidObj" title=" The desired operation cannot be performed on this object."><code>cosErrInvalidObj</code></a></span>
+</td><td><span>is raised if the stream object has not yet been saved to the PDF file. In other words, before you can call <a href="coslayer_CosStream.htm#CosStreamPos" title=" Gets the byte offset of the start of a Cos stream's data in the PDF file (which is the byte offset of the beginning of the line following the stream token)."><code>CosStreamPos</code></a><code>()</code> on a newly created stream, you must first save the PDF file. </span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="CosStreamPos64"><strong><span style="color:grey;">CosStreamPos64</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:2236</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the byte offset of the start of a Cos stream's data in the PDF file. For details, see <a href="coslayer_CosStream.htm#CosStreamPos" title=" Gets the byte offset of the start of a Cos stream's data in the PDF file (which is the byte offset of the beginning of the line following the stream token)."><code>CosStreamPos</code></a><code>()</code>. This is the same as <a href="coslayer_CosStream.htm#CosStreamPos" title=" Gets the byte offset of the start of a Cos stream's data in the PDF file (which is the byte offset of the beginning of the line following the stream token)."><code>CosStreamPos</code></a><code>()</code>, except that the return value is a 64-bit file position instead of a 32-bit file position. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="coslayer_CosStream.htm#CosStreamLength" title=" Gets the length of a Cos stream from the Length key in the stream's attributes dictionary."><code>CosStreamLength</code></a>
+<a href="coslayer_CosStream.htm#CosStreamPos" title=" Gets the byte offset of the start of a Cos stream's data in the PDF file (which is the byte offset of the beginning of the line following the stream token)."><code>CosStreamPos</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFile.htm#ASFilePos64" title=" The absolute position within a file."><code>ASFilePos64</code></a> <code>CosStreamPos64(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>stream</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>stream</code></span>
+</td><td><span>The stream whose current position is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The byte offset of the start of the Cos stream's data in the PDF file. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#cosErrInvalidObj" title=" The desired operation cannot be performed on this object."><code>cosErrInvalidObj</code></a></span>
+</td><td><span>is raised if the stream object has not yet been saved to the PDF file. </span>
+</td></tr></table>
+</div>
+</section>
+</section>
+
+</div>
+</body></html>

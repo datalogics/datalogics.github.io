@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PD Layer: PDFileSpec</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PD Layer: PDFileSpec</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#CallbackSignatures">Callback Signatures</a></li>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>PDFileSpec Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDFileSpec">PDFileSpec</a></dt><dd> -  The PDF file specification object.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDFileSpec"><strong><span style="color:grey;">PDFileSpec</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:1074</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><UL>The PDF file specification object. It is used to specify a file in an action (see <a href="pdlayer_PDAction.htm#PDAction" title=" Actions are what happens when a user clicks on a link or bookmark.">PDAction</a>). A file specification in a PDF file can take two forms:<br/><li> A single platform-independent path.<br/><li> A data structure containing one or more alternative ways to locate the file on different platforms.<br/></UL>
+
+<span>
+<p><a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object.">PDFileSpec</a> objects can be created from <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> objects or from Cos objects.</span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#OPAQUE_64_BITS"><code>OPAQUE_64_BITS</code></a> <code>PDFileSpec</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAction.htm#PDActionGetFileSpec" title=" Gets a file specification from an action."><code>PDActionGetFileSpec</code></a></td><td><a href="pdlayer_PDFileSpec.htm#PDFileSpecFromCosObj" title=" Converts an appropriate string or dictionary Cos object to a file specification."><code>PDFileSpecFromCosObj</code></a></td></tr>
+<tr><td><a href="pdlayer_PDFileSpec.htm#PDFileSpecNewFromASPath" title=" Creates a new file specification from the specified ASPathName, using the PDFileSpecNewFromASPathProc() of the specified file system's file specification handler."><code>PDFileSpecNewFromASPath</code></a></td><td><a href="pdlayer_PDFileSpec.htm#PDFileSpecNewFromASPathEx" title=" Creates a new file specification from the specified ASPathName, using the PDFileSpecNewFromASPathProc() of the specified file system's file specification handler."><code>PDFileSpecNewFromASPathEx</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAction.htm#PDActionNewFromFileSpec" title=" Creates an action of the specified type from a file specification."><code>PDActionNewFromFileSpec</code></a></td><td><a href="pdlayer_PDFileSpec.htm#PDFileSpecAcquireASPath" title=" Acquires an ASPathName for the specified file specification and relative path."><code>PDFileSpecAcquireASPath</code></a></td></tr>
+<tr><td><a href="pdlayer_PDFileSpec.htm#PDFileSpecAcquireASPathEx" title=" Acquires an ASPathName for the specified file specification and relative path."><code>PDFileSpecAcquireASPathEx</code></a></td><td><a href="pdlayer_PDFileSpec.htm#PDFileSpecAcquireASPathProc" title=" A callback for PDFileSpecHandler."><code>PDFileSpecAcquireASPathProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDFileSpec.htm#PDFileSpecGetCosObj" title=" Gets the Cos object associated with a file specification."><code>PDFileSpecGetCosObj</code></a></td><td><a href="pdlayer_PDFileSpec.htm#PDFileSpecGetDIPath" title=" Gets the device-independent path name from a file specification."><code>PDFileSpecGetDIPath</code></a></td></tr>
+<tr><td><a href="pdlayer_PDFileSpec.htm#PDFileSpecGetDIPathEx" title=" Gets the device-independent path name from a file specification."><code>PDFileSpecGetDIPathEx</code></a></td><td><a href="pdlayer_PDFileSpec.htm#PDFileSpecGetDoc" title=" Gets the PDDoc that contains fileSpec."><code>PDFileSpecGetDoc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDFileSpec.htm#PDFileSpecGetFileSys" title=" Gets the file system that services the specified file specification."><code>PDFileSpecGetFileSys</code></a></td><td><a href="pdlayer_PDFileSpec.htm#PDFileSpecGetFileSysName" title=" Gets the name of the file system that a PDFileSpec belongs to."><code>PDFileSpecGetFileSysName</code></a></td></tr>
+<tr><td><a href="pdlayer_PDFileSpec.htm#PDFileSpecIsValid" title=" Tests whether a file specification is valid."><code>PDFileSpecIsValid</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_PDFLPrint.htm#OPI13dict" title=" OPI 1.3 dictionary."><code>OPI13dict</code></a></td><td><a href="pdfllayer_PDFLPrint.htm#OPI20dict" title=" OPI 2.0 dictionary."><code>OPI20dict</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="CallbackSignatures">
+<header><h2>PDFileSpec Callback Signatures</h2></header>
+<nav><dl>
+<dt><a href="#PDFileSpecAcquireASPathProc">PDFileSpecAcquireASPathProc</a></dt><dd> -  A callback for PDFileSpecHandler.</dd>
+<dt><a href="#PDFileSpecNewFromASPathProc">PDFileSpecNewFromASPathProc</a></dt><dd> -  A callback for PDFileSpecHandler.</dd>
+<dt><a href="#PDLaunchActionProc">PDLaunchActionProc</a></dt><dd> -  (Optional) A callback for PDFileSpecHandler.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDFileSpecAcquireASPathProc"><strong><span style="color:grey;">PDFileSpecAcquireASPathProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:1113</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A callback for <a href="pdlayer_PDFileSpec.htm#_t_PDFileSpecHandler" title=" A data structure that implements a file specification handler.">PDFileSpecHandler</a>. It aquires the ASPath corresponding to a file specification. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDFileSpec.htm#PDFileSpecAcquireASPath" title=" Acquires an ASPathName for the specified file specification and relative path.">PDFileSpecAcquireASPath</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>PDFileSpecAcquireASPathProc(</code><code>void</code> <code>*</code><code>fileSpecHandlerObj</code><code>,</code> <a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object."><code>PDFileSpec</code></a> <code>fileSpec</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>relativeToThisPath</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fileSpecHandlerObj</code></span>
+</td><td><span>IN/OUT User-supplied data passed in the call to <a href="pdlayer_PDFileSpec.htm#PDRegisterFileSpecHandler" title=" Registers a new file specification handler with the Acrobat viewer.">PDRegisterFileSpecHandler</a>(). </span>
+</td></tr>
+<tr><td><span><code>fileSpec</code></span>
+</td><td><span>IN/OUT The <a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object.">PDFileSpec</a> for which an ASPath is acquired. </span>
+</td></tr>
+<tr><td><span><code>relativeToThisPath</code></span>
+</td><td><span>IN/OUT A path name relative to which the <a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object.">PDFileSpec</a> is interpreted. If <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, <code>fileSpec</code> is assumed to be an absolute path, not a relative path. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> corresponding to the specified path. </span>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDFileSpec.htm#_t_PDFileSpecHandler" title=" A data structure that implements a file specification handler."><code>_t_PDFileSpecHandler</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDFileSpecNewFromASPathProc"><strong><span style="color:grey;">PDFileSpecNewFromASPathProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:1097</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A callback for <a href="pdlayer_PDFileSpec.htm#_t_PDFileSpecHandler" title=" A data structure that implements a file specification handler.">PDFileSpecHandler</a>. It creates a file specification from an ASPath. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDFileSpec.htm#PDFileSpecNewFromASPath" title=" Creates a new file specification from the specified ASPathName, using the PDFileSpecNewFromASPathProc() of the specified file system's file specification handler.">PDFileSpecNewFromASPath</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object."><code>PDFileSpec</code></a> <code>PDFileSpecNewFromASPathProc(</code><code>void</code> <code>*</code><code>fileSpecHandlerObj</code><code>,</code> <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>path</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>relativeToThisPath</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fileSpecHandlerObj</code></span>
+</td><td><span>User-supplied data passed in the call to <a href="pdlayer_PDFileSpec.htm#PDRegisterFileSpecHandler" title=" Registers a new file specification handler with the Acrobat viewer.">PDRegisterFileSpecHandler</a>(). </span>
+</td></tr>
+<tr><td><span><code>pdDoc</code></span>
+</td><td><span>The <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document.">PDDoc</a> in which the file specification is created. </span>
+</td></tr>
+<tr><td><span><code>path</code></span>
+</td><td><span>The <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> for which a corresponding file specification is created. </span>
+</td></tr>
+<tr><td><span><code>relativeToThisPath</code></span>
+</td><td><span>A path name relative to which path is interpreted. If <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, <code>path</code> is assumed to be an absolute path, not a relative path. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The file specification corresponding to the specified <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a>. </span>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDFileSpec.htm#_t_PDFileSpecHandler" title=" A data structure that implements a file specification handler."><code>_t_PDFileSpecHandler</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDLaunchActionProc"><strong><span style="color:grey;">PDLaunchActionProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:1125</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>(Optional) A callback for <a href="pdlayer_PDFileSpec.htm#_t_PDFileSpecHandler" title=" A data structure that implements a file specification handler.">PDFileSpecHandler</a>. It launches a specified file. It is called when the Acrobat viewer encounters a Launch (GoTo File) action. If this callback is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, no launch action is performed. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDLaunchActionProc(</code><code>void</code> <code>*</code><code>fileSpecHandlerObj</code><code>,</code> <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>,</code> <a href="pdlayer_PDAction.htm#PDAction" title=" Actions are what happens when a user clicks on a link or bookmark."><code>PDAction</code></a> <code>pdAction</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fileSpecHandlerObj</code></span>
+</td><td><span>IN/OUT The registered <a href="pdlayer_PDFileSpec.htm#_t_PDFileSpecHandler" title=" A data structure that implements a file specification handler.">PDFileSpecHandler</a>. </span>
+</td></tr>
+<tr><td><span><code>pdDoc</code></span>
+</td><td><span>IN/OUT The document containing the Launch action. </span>
+</td></tr>
+<tr><td><span><code>pdAction</code></span>
+</td><td><span>IN/OUT The action dictionary. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the handler can perform the Launch, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDFileSpec.htm#_t_PDFileSpecHandler" title=" A data structure that implements a file specification handler."><code>_t_PDFileSpecHandler</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>PDFileSpec Structures</h2></header>
+<nav><dl>
+<dt><a href="#_t_PDFileSpecHandler">_t_PDFileSpecHandler</a></dt><dd> -  A data structure that implements a file specification handler.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="_t_PDFileSpecHandler"><strong><span style="color:grey;">_t_PDFileSpecHandler</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:1133</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A data structure that implements a file specification handler. It contains callbacks that implement the file specification handler's functions (converting from a file specification to an <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a>, creating a new file specification from an <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a>, and launching the specified file). </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDFileSpecHandler {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASSize_t"><code>ASSize_t</code></a> <code>size</code><code>;</code> </div>
+</td><td><span>Must be <code>sizeof(PDFileSpecHandlerRec)</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDFileSpec.htm#PDFileSpecNewFromASPathProc" title=" A callback for PDFileSpecHandler."><code>PDFileSpecNewFromASPathProc</code></a> <code>NewFromASPath</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDFileSpec.htm#PDFileSpecAcquireASPathProc" title=" A callback for PDFileSpecHandler."><code>PDFileSpecAcquireASPathProc</code></a> <code>AcquireASPath</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDFileSpec.htm#PDLaunchActionProc" title=" (Optional) A callback for PDFileSpecHandler."><code>PDLaunchActionProc</code></a> <code>LaunchAction</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>;</code> </div>
+</td><td><span>The file system that is to be used with this file specification handler. </span>
+</td></tr>
+<tr><td><code id="PDFileSpecHandlerRec"><code>}</code> <a href="pdlayer_PDFileSpec.htm#_t_PDFileSpecHandler" title=" A data structure that implements a file specification handler."><code>PDFileSpecHandlerRec</code></a><code>,</code> <code>*</code><a href="pdlayer_PDFileSpec.htm#_t_PDFileSpecHandler" title=" A data structure that implements a file specification handler."><code>PDFileSpecHandler</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDFileSpec.htm#PDRegisterFileSpecHandler" title=" Registers a new file specification handler with the Acrobat viewer."><code>PDRegisterFileSpecHandler</code></a></td><td><a href="pdlayer_PDFileSpec.htm#PDRegisterFileSpecHandlerByName" title=" Registers a new file specification handler with the Acrobat viewer."><code>PDRegisterFileSpecHandlerByName</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDFileSpec Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDFileSpecAcquireASPath">PDFileSpecAcquireASPath</a></dt><dd> -  Acquires an ASPathName for the specified file specification and relative path.</dd>
+<dt><a href="#PDFileSpecAcquireASPathEx">PDFileSpecAcquireASPathEx</a></dt><dd> -  Acquires an ASPathName for the specified file specification and relative path.</dd>
+<dt><a href="#PDFileSpecFromCosObj">PDFileSpecFromCosObj</a></dt><dd> -  Converts an appropriate string or dictionary Cos object to a file specification.</dd>
+<dt><a href="#PDFileSpecGetCosObj">PDFileSpecGetCosObj</a></dt><dd> -  Gets the Cos object associated with a file specification.</dd>
+<dt><a href="#PDFileSpecGetDIPath">PDFileSpecGetDIPath</a></dt><dd> -  Gets the device-independent path name from a file specification.</dd>
+<dt><a href="#PDFileSpecGetDIPathEx">PDFileSpecGetDIPathEx</a></dt><dd> -  Gets the device-independent path name from a file specification.</dd>
+<dt><a href="#PDFileSpecGetDoc">PDFileSpecGetDoc</a></dt><dd> -  Gets the PDDoc that contains fileSpec.</dd>
+<dt><a href="#PDFileSpecGetFileSys">PDFileSpecGetFileSys</a></dt><dd> -  Gets the file system that services the specified file specification.</dd>
+<dt><a href="#PDFileSpecGetFileSysName">PDFileSpecGetFileSysName</a></dt><dd> -  Gets the name of the file system that a PDFileSpec belongs to.</dd>
+<dt><a href="#PDFileSpecIsValid">PDFileSpecIsValid</a></dt><dd> -  Tests whether a file specification is valid.</dd>
+<dt><a href="#PDFileSpecNewFromASPath">PDFileSpecNewFromASPath</a></dt><dd> -  Creates a new file specification from the specified ASPathName, using the PDFileSpecNewFromASPathProc() of the specified file system's file specification handler.</dd>
+<dt><a href="#PDFileSpecNewFromASPathEx">PDFileSpecNewFromASPathEx</a></dt><dd> -  Creates a new file specification from the specified ASPathName, using the PDFileSpecNewFromASPathProc() of the specified file system's file specification handler.</dd>
+<dt><a href="#PDRegisterFileSpecHandler">PDRegisterFileSpecHandler</a></dt><dd> -  Registers a new file specification handler with the Acrobat viewer.</dd>
+<dt><a href="#PDRegisterFileSpecHandlerByName">PDRegisterFileSpecHandlerByName</a></dt><dd> -  Registers a new file specification handler with the Acrobat viewer.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDFileSpecAcquireASPath"><strong><span style="color:grey;">PDFileSpecAcquireASPath</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:5022</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Acquires an <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> for the specified file specification and relative path. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASFileSys.htm#ASFileSysReleasePath" title=" Decrements the internal reference count for the path name and disposes of the path name (but not the file itself) if the reference count is zero.">ASFileSysReleasePath</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>PDFileSpecAcquireASPath(</code><a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object."><code>PDFileSpec</code></a> <code>fileSpec</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>relativeToThisPath</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fileSpec</code></span>
+</td><td><span>IN/OUT The file specification for which an <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> is acquired. </span>
+</td></tr>
+<tr><td><span><code>relativeToThisPath</code></span>
+</td><td><span>IN/OUT A path name relative to which the <code>fileSpec</code> is interpreted. If it is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, <code>fileSpec</code> is assumed to be an absolute, not a relative, path. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div><p>The <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> corresponding to <code>fileSpec</code>.<br/>
+<p>After you are done using the <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a>, you must free it using <a href="aslayer_ASFileSys.htm#ASFileSysReleasePath" title=" Decrements the internal reference count for the path name and disposes of the path name (but not the file itself) if the reference count is zero.">ASFileSysReleasePath</a>().<br/></p>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDFileSpecAcquireASPathEx"><strong><span style="color:grey;">PDFileSpecAcquireASPathEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:10920</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Acquires an <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> for the specified file specification and relative path. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASFileSys.htm#ASFileSysReleasePath" title=" Decrements the internal reference count for the path name and disposes of the path name (but not the file itself) if the reference count is zero.">ASFileSysReleasePath</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>PDFileSpecAcquireASPathEx(</code><a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object."><code>PDFileSpec</code></a> <code>fileSpec</code><code>,</code> <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>relPathFileSys</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>relativeToThisPath</code><code>,</code> <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>*</code><code>retFileSys</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>pathMustExist</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fileSpec</code></span>
+</td><td><span>IN/OUT The file specification for which an <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> is acquired. </span>
+</td></tr>
+<tr><td><span><code>relPathFileSys</code></span>
+</td><td><span>The file system that owns <code>relativeToThisPath</code>. </span>
+</td></tr>
+<tr><td><span><code>relativeToThisPath</code></span>
+</td><td><span>IN/OUT A path name relative to which the <code>fileSpec</code> is interpreted. If it is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, <code>fileSpec</code> is assumed to be an absolute, not a relative, path. If it is not <a href="aslayer_General.htm#NULL"><code>NULL</code></a> and <code>fileSys</code> and <code>relPathFileSys</code> are not the same, then an attempt is made to fabricate a <code>relPathName</code> in terms of <code>fileSys</code>, and if that is not possible, <a href="aslayer_General.htm#NULL"><code>NULL</code></a> is used. </span>
+</td></tr>
+<tr><td><span><code>retFileSys</code></span>
+</td><td><span>IN/OUT The file system that owns the returned <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a>. </span>
+</td></tr>
+<tr><td><span><code>pathMustExist</code></span>
+</td><td><span>IN/OUT If it is <a href="aslayer_General.htm#true"><code>true</code></a> and the result <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> does not exist, then the return value is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div><p>The <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> corresponding to <code>fileSpec</code>.<br/>
+<p>After you are done using the <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a>, you must free it using <a href="aslayer_ASFileSys.htm#ASFileSysReleasePath" title=" Decrements the internal reference count for the path name and disposes of the path name (but not the file itself) if the reference count is zero.">ASFileSysReleasePath</a>().<br/></p>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDFileSpecFromCosObj"><strong><span style="color:grey;">PDFileSpecFromCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4993</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Converts an appropriate string or dictionary Cos object to a file specification. This method does not copy the object, but is instead the logical equivalent of a type cast. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDFileSpec.htm#PDFileSpecGetCosObj" title=" Gets the Cos object associated with a file specification."><code>PDFileSpecGetCosObj</code></a>
+<a href="pdlayer_PDFileSpec.htm#PDFileSpecIsValid" title=" Tests whether a file specification is valid."><code>PDFileSpecIsValid</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object."><code>PDFileSpec</code></a> <code>PDFileSpecFromCosObj(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>obj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>obj</code></span>
+</td><td><span>IN/OUT The Cos object to convert to a file specification. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The file specification corresponding to <code>obj</code>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdErrBadFileSpec" title=" Invalid file specification object."><code>pdErrBadFileSpec</code></a></span>
+</td><td><span>is raised if the file specification is not valid, as determined by <a href="pdlayer_PDFileSpec.htm#PDFileSpecIsValid" title=" Tests whether a file specification is valid.">PDFileSpecIsValid</a>(). </span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDFileSpecGetCosObj"><strong><span style="color:grey;">PDFileSpecGetCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:5035</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the Cos object associated with a file specification. This method does not copy the object, but is instead the logical equivalent of a type cast. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDFileSpec.htm#PDFileSpecFromCosObj" title=" Converts an appropriate string or dictionary Cos object to a file specification.">PDFileSpecFromCosObj</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>PDFileSpecGetCosObj(</code><a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object."><code>PDFileSpec</code></a> <code>fileSpec</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fileSpec</code></span>
+</td><td><span>IN/OUT The file specification whose Cos object is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The string or dictionary Cos object corresponding to the file specification. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDFileSpecGetDIPath"><strong><span style="color:grey;">PDFileSpecGetDIPath</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:5091</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets the device-independent path name from a file specification. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDFileSpecGetDIPath(</code><a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object."><code>PDFileSpec</code></a> <code>fileSpec</code><code>,</code> <code>char</code> <code>*</code><code>buffer</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>bufLen</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fileSpec</code></span>
+</td><td><span>IN/OUT The file specification whose device-independent path name is obtained. </span>
+</td></tr>
+<tr><td><span><code>buffer</code></span>
+</td><td><span>IN/OUT (Filled by the method) <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated device- independent path name. If <code>buffer</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, the method simply returns the length of the path name. </span>
+</td></tr>
+<tr><td><span><code>bufLen</code></span>
+</td><td><span>IN/OUT The length of <code>buffer</code> in bytes. If the device- independent path name is longer than this, only the first <code>bufLen</code><code>-</code> <code>1</code> bytes are copied into <code>buffer</code>, plus a <a href="aslayer_General.htm#NULL"><code>NULL</code></a> at the end of the buffer. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of characters (excluding the <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) copied into <code>buffer</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDFileSpecGetDIPathEx"><strong><span style="color:grey;">PDFileSpecGetDIPathEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:10934</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets the device-independent path name from a file specification. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDFileSpecGetDIPathEx(</code><a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object."><code>PDFileSpec</code></a> <code>fileSpec</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>diPath</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fileSpec</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The file specification whose device-independent path name is obtained. </span>
+</td></tr>
+<tr><td><span><code>diPath</code></span>
+</td><td><span>IN/OUT An existing <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object whose content is set to the path name obtained from from <code>fileSpec</code>. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDFileSpecGetDoc"><strong><span style="color:grey;">PDFileSpecGetDoc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:5307</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets the <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document.">PDDoc</a> that contains <code>fileSpec</code>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>PDFileSpecGetDoc(</code><a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object."><code>PDFileSpec</code></a> <code>fileSpec</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fileSpec</code></span>
+</td><td><span>IN/OUT A <a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object.">PDFileSpec</a> in a document. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document.">PDDoc</a> or <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if the file specification <a href="coslayer_CosObj.htm#CosObj">CosObj</a> is not in a document. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDFileSpecGetFileSys"><strong><span style="color:grey;">PDFileSpecGetFileSys</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:5004</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the file system that services the specified file specification. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDFileSpec.htm#PDFileSpecGetFileSysName" title=" Gets the name of the file system that a PDFileSpec belongs to.">PDFileSpecGetFileSysName</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>PDFileSpecGetFileSys(</code><a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object."><code>PDFileSpec</code></a> <code>fileSpec</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fileSpec</code></span>
+</td><td><span>IN/OUT The file specification whose file system is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The file system that services <code>fileSpec</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDFileSpecGetFileSysName"><strong><span style="color:grey;">PDFileSpecGetFileSysName</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:5326</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the name of the file system that a <a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object.">PDFileSpec</a> belongs to. For a simple <code>fileSpec</code> (string form), the name of the file system is the name of the document's file system if the <a href="coslayer_CosObj.htm#CosObj">CosObj</a> that is the <code>fileSpec</code> is contained in a document. For a complex <code>fileSpec</code> (dictionary form) with an FS key, the name of the file system is the atom associated with the FS key.<br/>
+<p>The file system returned by <a href="pdlayer_PDFileSpec.htm#PDFileSpecGetFileSys" title=" Gets the file system that services the specified file specification.">PDFileSpecGetFileSys</a>() is the file system that has registered a <a href="pdlayer_PDFileSpec.htm#_t_PDFileSpecHandler" title=" A data structure that implements a file specification handler.">PDFileSpecHandler</a>() for the file specification's file system name (if there is one), and is not necessarily the same as <a href="aslayer_ASFile.htm#ASFileGetFileSysByName" title=" Gets the file system that was registered with the specified name."><code>ASFileGetFileSysByName</code></a><code>(PDFileSpecGetFileSysName(fileSpec));</code>.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDFileSpec.htm#PDFileSpecGetFileSys" title=" Gets the file system that services the specified file specification.">PDFileSpecGetFileSys</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>PDFileSpecGetFileSysName(</code><a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object."><code>PDFileSpec</code></a> <code>fileSpec</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fileSpec</code></span>
+</td><td><span>A <a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object.">PDFileSpec</a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>An <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> representing the file system of <code>fileSpec</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDFileSpecIsValid"><strong><span style="color:grey;">PDFileSpecIsValid</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:5046</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Tests whether a file specification is valid. This is intended only to ensure that the file specification has not been deleted, not to ensure that all necessary information is present and valid. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDFileSpecIsValid(</code><a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object."><code>PDFileSpec</code></a> <code>fileSpec</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fileSpec</code></span>
+</td><td><span>The file specification whose validity is tested. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if <code>fileSpec</code> is valid, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDFileSpecNewFromASPath"><strong><span style="color:grey;">PDFileSpecNewFromASPath</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4977</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a new file specification from the specified <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a>, using the <a href="pdlayer_PDFileSpec.htm#PDFileSpecNewFromASPathProc" title=" A callback for PDFileSpecHandler.">PDFileSpecNewFromASPathProc</a>() of the specified file system's file specification handler. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDFileSpec.htm#PDFileSpecIsValid" title=" Tests whether a file specification is valid.">PDFileSpecIsValid</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object."><code>PDFileSpec</code></a> <code>PDFileSpecNewFromASPath(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>,</code> <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>path</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>relativeToThisPath</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document in which the new file specification will be used. </span>
+</td></tr>
+<tr><td><span><code>fileSys</code></span>
+</td><td><span>A pointer to an <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system.">ASFileSysRec</a> specifying the file system responsible for the newly created file specification. </span>
+</td></tr>
+<tr><td><span><code>path</code></span>
+</td><td><span>The path to convert into a file specification. </span>
+</td></tr>
+<tr><td><span><code>relativeToThisPath</code></span>
+</td><td><span>A path name relative to which <code>path</code> is interpreted. If it is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, <code>path</code> is interpreted as an absolute path name, not a relative path name. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created file spec, or an invalid file spec if the <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> cannot be converted to a <a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object.">PDFileSpec</a> (use <a href="pdlayer_PDFileSpec.htm#PDFileSpecIsValid" title=" Tests whether a file specification is valid.">PDFileSpecIsValid</a>() to test whether the conversion was successful). </span>
+</section>
+<section><div class="infoRow"><h3 id="PDFileSpecNewFromASPathEx"><strong><span style="color:grey;">PDFileSpecNewFromASPathEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:10894</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a new file specification from the specified <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a>, using the <a href="pdlayer_PDFileSpec.htm#PDFileSpecNewFromASPathProc" title=" A callback for PDFileSpecHandler.">PDFileSpecNewFromASPathProc</a>() of the specified file system's file specification handler. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDFileSpec.htm#PDFileSpecIsValid" title=" Tests whether a file specification is valid.">PDFileSpecIsValid</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object."><code>PDFileSpec</code></a> <code>PDFileSpecNewFromASPathEx(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>,</code> <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>path</code><code>,</code> <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>relPathFileSys</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>relativeToThisPath</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document in which the new file specification will be used. </span>
+</td></tr>
+<tr><td><span><code>fileSys</code></span>
+</td><td><span>A pointer to an <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system.">ASFileSysRec</a> specifying the file system responsible for the newly created file specification. </span>
+</td></tr>
+<tr><td><span><code>path</code></span>
+</td><td><span>The path to convert into a file specification. </span>
+</td></tr>
+<tr><td><span><code>relPathFileSys</code></span>
+</td><td><span>The file system that owns <code>relativeToThisPath</code>. </span>
+</td></tr>
+<tr><td><span><code>relativeToThisPath</code></span>
+</td><td><span>A path name relative to which the <code>fileSpec</code> is interpreted. If it is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, <code>fileSpec</code> is assumed to be an absolute, not a relative, path. If it is not <a href="aslayer_General.htm#NULL"><code>NULL</code></a> and <code>fileSys</code> and <code>relPathFileSys</code> are not the same, then an attempt is made to fabricate a <code>relPathName</code> in terms of <code>fileSys</code>, and if that is not possible, <a href="aslayer_General.htm#NULL"><code>NULL</code></a> is used. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created file specification, or an invalid file specification if the <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> cannot be converted to a <a href="pdlayer_PDFileSpec.htm#PDFileSpec" title=" The PDF file specification object.">PDFileSpec</a> (use <a href="pdlayer_PDFileSpec.htm#PDFileSpecIsValid" title=" Tests whether a file specification is valid.">PDFileSpecIsValid</a>() to test whether the conversion was successful). </span>
+</section>
+<section><div class="infoRow"><h3 id="PDRegisterFileSpecHandler"><strong><span style="color:grey;">PDRegisterFileSpecHandler</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:5072</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Registers a new file specification handler with the Acrobat viewer. In version 3.0 and later of the Acrobat viewer, use the <a href="pdlayer_PDFileSpec.htm#PDRegisterFileSpecHandlerByName" title=" Registers a new file specification handler with the Acrobat viewer.">PDRegisterFileSpecHandlerByName</a> method instead. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDFileSpec.htm#PDRegisterFileSpecHandlerByName" title=" Registers a new file specification handler with the Acrobat viewer.">PDRegisterFileSpecHandlerByName</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDRegisterFileSpecHandler(</code><a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>contextFileSys</code><code>,</code> <a href="pdlayer_PDFileSpec.htm#_t_PDFileSpecHandler" title=" A data structure that implements a file specification handler."><code>PDFileSpecHandler</code></a> <code>fileSpecHandler</code><code>,</code> <code>void</code> <code>*</code><code>fileSpecHandlerObj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>contextFileSys</code></span>
+</td><td><span>The file system that specifies the context in which the file specification handler is used. This is the file system on which the PDF document resides. It is sometimes necessary to use different file specification handlers depending on the file system in which the document is open. For example, when a document is opened in a web browser, the Acrobat viewer may use the browser's HTTP stack when it needs to use HTTP. When a document is opened outside of the browser, however, the Acrobat viewer must use a different HTTP stack. </span>
+</td></tr>
+<tr><td><span><code>fileSpecHandler</code></span>
+</td><td><span>A pointer to a structure that contains the handler's callbacks. This structure must not be freed after calling <a href="pdlayer_PDFileSpec.htm#PDRegisterFileSpecHandler" title=" Registers a new file specification handler with the Acrobat viewer.">PDRegisterFileSpecHandler</a>(). </span>
+</td></tr>
+<tr><td><span><code>fileSpecHandlerObj</code></span>
+</td><td><span>A pointer to user-supplied data to pass to the file specification handler's callbacks each time they are called. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrNoMemory" title=" Out of memory."><code>genErrNoMemory</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDRegisterFileSpecHandlerByName"><strong><span style="color:grey;">PDRegisterFileSpecHandlerByName</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:5363</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Registers a new file specification handler with the Acrobat viewer. The viewer calls the appropriate file specification handler when it encounters a file specification in a PDF file. The appropriate file specification handler is the one whose <code>specSysName</code> matches the value of the FS key in the file specification and whose <code>contextFileSys</code> matches the file system on which the PDF file resides.<br/>
+<p>The file specification handler's file system, (passed as the <code>fileSys</code> field of <code>fileSpecHandler</code>), is used to obtain data from, or write data to, the file referred to by the file specification.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDFileSpec.htm#PDRegisterFileSpecHandler" title=" Registers a new file specification handler with the Acrobat viewer.">PDRegisterFileSpecHandler</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDRegisterFileSpecHandlerByName(</code><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>specSysName</code><code>,</code> <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>contextFileSys</code><code>,</code> <a href="pdlayer_PDFileSpec.htm#_t_PDFileSpecHandler" title=" A data structure that implements a file specification handler."><code>PDFileSpecHandler</code></a> <code>fileSpecHandler</code><code>,</code> <code>void</code> <code>*</code><code>fileSpecHandlerObj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>specSysName</code></span>
+</td><td><span>The name (as an <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a>) of a file system with which this file specification works. </span>
+</td></tr>
+<tr><td><span><code>contextFileSys</code></span>
+</td><td><span>The file system that specifies the context in which the file specification handler is used. This is the file system on which the PDF document resides. It is sometimes necessary to use different file specification handlers depending on the file system in which the document is open. For example, when a document is opened in a web broswer, the Acrobat viewer may use the browser's HTTP stack when it needs to use HTTP. When a document is opened outside of the browser, however, the Acrobat viewer must use a different HTTP stack. </span>
+</td></tr>
+<tr><td><span><code>fileSpecHandler</code></span>
+</td><td><span>A pointer to a structure that contains the handler's callbacks. This structure must not be freed after calling <a href="pdlayer_PDFileSpec.htm#PDRegisterFileSpecHandlerByName" title=" Registers a new file specification handler with the Acrobat viewer.">PDRegisterFileSpecHandlerByName</a>(). </span>
+</td></tr>
+<tr><td><span><code>fileSpecHandlerObj</code></span>
+</td><td><span>A pointer to user-supplied data to pass to the file specification handler's callbacks each time they are called. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrNoMemory" title=" Out of memory."><code>genErrNoMemory</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+</section>
+
+</div>
+</body></html>

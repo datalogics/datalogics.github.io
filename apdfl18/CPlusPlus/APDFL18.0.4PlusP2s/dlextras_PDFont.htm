@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Additional functionality from Datalogics: PDFont</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Additional functionality from Datalogics: PDFont</h5>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Functions">
+<header><h2>PDFont Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDFontXlateToUCSCanRaise">PDFontXlateToUCSCanRaise</a></dt><dd> -  Translates a string from whatever encoding the PDFont uses to Unicode encoding.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDFontXlateToUCSCanRaise"><strong><span style="color:grey;">PDFontXlateToUCSCanRaise</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:738</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Translates a string from whatever encoding the <a href="pdlayer_PDFont.htm#PDFont" title=" A font that is used to draw text on a page.">PDFont</a> uses to Unicode encoding. This may raise an error. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDFont.htm#PDFontXlateToUCS" title=" Translates a string from whatever encoding the PDFont uses to Unicode encoding.">PDFontXlateToUCS</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDFontXlateToUCSCanRaise(</code><a href="pdlayer_PDFont.htm#PDFont" title=" A font that is used to draw text on a page."><code>PDFont</code></a> <code>fontP</code><code>,</code> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>*</code><code>inP</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>inLen</code><code>,</code> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>*</code><code>outP</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>outLen</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fontP</code></span>
+</td><td><span>The font of the input string <code>inP</code>. </span>
+</td></tr>
+<tr><td><span><code>inP</code></span>
+</td><td><span>A pointer to the string to translate. </span>
+</td></tr>
+<tr><td><span><code>inLen</code></span>
+</td><td><span>The length of the <code>inP</code> buffer in bytes. </span>
+</td></tr>
+<tr><td><span><code>outP</code></span>
+</td><td><span>(Filled by the method) A pointer to the translated string. If it is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, the method returns the size of the translated string. </span>
+</td></tr>
+<tr><td><span><code>outLen</code></span>
+</td><td><span>The length of the <code>outP</code> buffer in bytes. If it is <code>0</code>, the method returns the size of the translated string. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of bytes in the translated string in <code>outP</code>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span>An</span>
+</td><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter.">genErrBadParm</a> can be raised. </span>
+</td></tr></table>
+</div>
+</section>
+</section>
+
+</div>
+</body></html>

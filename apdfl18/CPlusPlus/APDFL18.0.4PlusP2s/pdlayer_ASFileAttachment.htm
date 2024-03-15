@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PD Layer: ASFileAttachment</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PD Layer: ASFileAttachment</h5>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Functions">
+<header><h2>ASFileAttachment Functions</h2></header>
+<nav><dl>
+<dt><a href="#ASFileAttachmentCreatePathName">ASFileAttachmentCreatePathName</a></dt><dd> -  Creates an ASPathName corresponding to the specified file or folder in the collection.</dd>
+<dt><a href="#ASFileAttachmentGetPDFileAttachment">ASFileAttachmentGetPDFileAttachment</a></dt><dd> -  Produces a PDFileAttachment corresponding to the ASFileSys and ASPathName.</dd>
+<dt><a href="#ASFileAttachmentGetPDFolder">ASFileAttachmentGetPDFolder</a></dt><dd> -  Produces a PDFolder corresponding to the ASFileSys and ASPathName.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASFileAttachmentCreatePathName"><strong><span style="color:grey;">ASFileAttachmentCreatePathName</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:12138</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Creates an <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> corresponding to the specified file or folder in the collection. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASFileAttachmentCreatePathName(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>pathText</code><code>,</code> <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>*</code><code>fileSys</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>*</code><code>pathName</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document containing the specified file or folder. </span>
+</td></tr>
+<tr><td><span><code>pathText</code></span>
+</td><td><span>The text-based representation of the path. The path consists of a file name or sequence of file names. A file name may not contain any of the characters <code>'\',</code> <code>'/',</code> <code>':',</code> <code>'</code> <code>*',</code> <code>'?',</code> <code>'</code> <code>&lt;</code> <code>',</code> <code>'</code> <code>&gt;</code> <code>',</code> <code>'|'</code>, and may not contain <code>'.'</code> as the final character. When <code>'/'</code> appears in a path, it signifies that the preceding file name is a folder, and that the subsequent file name is a child of that folder. The root of a collection may be identified by passing <code>"/"</code>, <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, or an empty string for <code>pathText</code>. </span>
+</td></tr>
+<tr><td><span><code>fileSys</code></span>
+</td><td><span>A pointer that will be filled by the function. This parameter provides the caller with the <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> to use in conjunction with the specified file or folder. </span>
+</td></tr>
+<tr><td><span><code>pathName</code></span>
+</td><td><span>A pointer that will be filled by the function. This parameter provides the caller with the <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> to use in conjunction with the specified file or folder. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASFileAttachmentGetPDFileAttachment"><strong><span style="color:grey;">ASFileAttachmentGetPDFileAttachment</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:12150</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Produces a <a href="pdlayer_PDFileAttachment.htm#PDFileAttachment" title=" A PDFileAttachment represents an embedded file stored in a PDF file, and may be stored at various locations in a PDF file, including the EmbeddedFiles name tree, FileAttachment annotation types, and Multimedia annotations."><code>PDFileAttachment</code></a> corresponding to the <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> and <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a>. It raises an exception if the <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> is is not the embedded files file system, or if the <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> or <a href="pdlayer_PDFileAttachment.htm#PDFileAttachment" title=" A PDFileAttachment represents an embedded file stored in a PDF file, and may be stored at various locations in a PDF file, including the EmbeddedFiles name tree, FileAttachment annotation types, and Multimedia annotations."><code>PDFileAttachment</code></a> parameters are <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ASFileAttachmentGetPDFileAttachment(</code><a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>pathName</code><code>,</code> <a href="pdlayer_PDFileAttachment.htm#PDFileAttachment" title=" A PDFileAttachment represents an embedded file stored in a PDF file, and may be stored at various locations in a PDF file, including the EmbeddedFiles name tree, FileAttachment annotation types, and Multimedia annotations."><code>PDFileAttachment</code></a> <code>*</code><code>attachment</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fileSys</code></span>
+</td><td><span>The <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> for file attachments. </span>
+</td></tr>
+<tr><td><span><code>pathName</code></span>
+</td><td><span>The <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> identifying the file attachment of interest. </span>
+</td></tr>
+<tr><td><span><code>attachment</code></span>
+</td><td><span>A pointer that will be receive the file attachment. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the file attachment was found, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASFileAttachmentGetPDFolder"><strong><span style="color:grey;">ASFileAttachmentGetPDFolder</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:12162</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Produces a <a href="pdlayer_PDFolder.htm#PDFolder" title=" An opaque object representing a collection folder dictionary."><code>PDFolder</code></a> corresponding to the <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> and <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a>. It raises an exception if the <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> is is not the embedded files file system, or if the <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> or <a href="pdlayer_PDFolder.htm#PDFolder" title=" An opaque object representing a collection folder dictionary."><code>PDFolder</code></a> parameters are <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ASFileAttachmentGetPDFolder(</code><a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>pathName</code><code>,</code> <a href="pdlayer_PDFolder.htm#PDFolder" title=" An opaque object representing a collection folder dictionary."><code>PDFolder</code></a> <code>*</code><code>folder</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fileSys</code></span>
+</td><td><span>The <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> for file attachments </span>
+</td></tr>
+<tr><td><span><code>pathName</code></span>
+</td><td><span>The <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> identifying the folder of interest. </span>
+</td></tr>
+<tr><td><span><code>attachment</code></span>
+</td><td><span>A pointer that will be receive the folder. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the folder was found, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+</section>
+
+</div>
+</body></html>

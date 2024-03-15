@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Additional functionality from Datalogics: PDPref</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Additional functionality from Datalogics: PDPref</h5>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Functions">
+<header><h2>PDPref Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDPrefGetAllowOpeningXFA">PDPrefGetAllowOpeningXFA</a></dt><dd> -  Routine to get the current allow-XFA setting.</dd>
+<dt><a href="#PDPrefGetAllowRelaxedSyntax">PDPrefGetAllowRelaxedSyntax</a></dt><dd> -  Returns the current value of the AllowRelaxedSyntax flag setting.</dd>
+<dt><a href="#PDPrefGetAllowStringRetrievalFailingDecryption">PDPrefGetAllowStringRetrievalFailingDecryption</a></dt><dd> -  Returns the current value of the AllowStringRetrievalFailingDecryption flag setting.</dd>
+<dt><a href="#PDPrefGetDefaultIntentToProfile">PDPrefGetDefaultIntentToProfile</a></dt><dd> -  This function returns the current status of the default source intent used in a color profile.</dd>
+<dt><a href="#PDPrefGetNeverUseOutputIntent">PDPrefGetNeverUseOutputIntent</a></dt><dd> -  This function returns whether that the output intent should be completely ignored when rendering a document.</dd>
+<dt><a href="#PDPrefGetPrintUsingWorkingSpaces">PDPrefGetPrintUsingWorkingSpaces</a></dt><dd> -  This function returns whether the device spaces are treated as calibrated when rendering.</dd>
+<dt><a href="#PDPrefGetStrictFormEmission">PDPrefGetStrictFormEmission</a></dt><dd> -  Returns the current value of the PDPrefGetStrictFormEmission flag setting.</dd>
+<dt><a href="#PDPrefSetAllowOpeningXFA">PDPrefSetAllowOpeningXFA</a></dt><dd> -  Routine to allow APDFL to open XFA PDF documents, which as of 9.1P2f is disallowed.</dd>
+<dt><a href="#PDPrefSetAllowRelaxedSyntax">PDPrefSetAllowRelaxedSyntax</a></dt><dd> -  This call, with a True flag value, allows callers to ask Adobe PDF Library to attempt to ignore minor PDF syntax errors.</dd>
+<dt><a href="#PDPrefSetAllowStringRetrievalFailingDecryption">PDPrefSetAllowStringRetrievalFailingDecryption</a></dt><dd> -  This call is used to retrive the value of String objects using an Encryption that's not supported by the Library in order to still retrieve the String's value.</dd>
+<dt><a href="#PDPrefSetDefaultIntentToProfile">PDPrefSetDefaultIntentToProfile</a></dt><dd> -  When this preference is set to true, the intent used (when no other intent is explicitly specified) will be the intent specified in the profile.</dd>
+<dt><a href="#PDPrefSetNeverUseOutputIntent">PDPrefSetNeverUseOutputIntent</a></dt><dd> -  This function sets a flag to specify that the output intent should not be considered when rendering a document.</dd>
+<dt><a href="#PDPrefSetPrintUsingWorkingSpaces">PDPrefSetPrintUsingWorkingSpaces</a></dt><dd> -  This function sets a flag to treat the device spaces as calibrated when rendering.</dd>
+<dt><a href="#PDPrefSetStrictFormEmission">PDPrefSetStrictFormEmission</a></dt><dd> -  This call is used to allow user to set strictFormEmission.</dd>
+<dt><a href="#PDPrefSuppressDefaultCMYKCalibration">PDPrefSuppressDefaultCMYKCalibration</a></dt><dd> -  Routine to suppress the Adobe-defined default color profile used for DeviceCMYK specified object.</dd>
+<dt><a href="#PDPrefSuppressDefaultGrayCalibration">PDPrefSuppressDefaultGrayCalibration</a></dt><dd> -  Routine to suppress the Adobe-defined default color profile used for DeviceGray specified object.</dd>
+<dt><a href="#PDPrefSuppressDefaultRGBCalibration">PDPrefSuppressDefaultRGBCalibration</a></dt><dd> -  Routine to suppress the Adobe-defined default color profile used for DeviceRGB specified object.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDPrefGetAllowOpeningXFA"><strong><span style="color:grey;">PDPrefGetAllowOpeningXFA</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:278</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Routine to get the current allow-XFA setting. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDPref.htm#PDPrefGetAllowOpeningXFA" title=" Routine to get the current allow-XFA setting.">PDPrefGetAllowOpeningXFA</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDPrefGetAllowOpeningXFA(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true">true</a> if opening XFA PDFs is allowed. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefGetAllowRelaxedSyntax"><strong><span style="color:grey;">PDPrefGetAllowRelaxedSyntax</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:468</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the current value of the AllowRelaxedSyntax flag setting. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDPref.htm#PDPrefSetAllowRelaxedSyntax" title=" This call, with a True flag value, allows callers to ask Adobe PDF Library to attempt to ignore minor PDF syntax errors.">PDPrefSetAllowRelaxedSyntax</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDPrefGetAllowRelaxedSyntax(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>if True, the Library will attempt to resolve or ignore certain minor PDF syntax errors. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefGetAllowStringRetrievalFailingDecryption"><strong><span style="color:grey;">PDPrefGetAllowStringRetrievalFailingDecryption</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:841</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the current value of the AllowStringRetrievalFailingDecryption flag setting. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDPref.htm#PDPrefSetAllowStringRetrievalFailingDecryption" title=" This call is used to retrive the value of String objects using an Encryption that's not supported by the Library in order to still retrieve the String's value.">PDPrefSetAllowStringRetrievalFailingDecryption</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDPrefGetAllowStringRetrievalFailingDecryption(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>if True, the Library will attempt to retrieve String object values, even if Decryption of those strings fails. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefGetDefaultIntentToProfile"><strong><span style="color:grey;">PDPrefGetDefaultIntentToProfile</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:453</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>This function returns the current status of the default source intent used in a color profile. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDPref.htm#PDPrefSetDefaultIntentToProfile" title=" When this preference is set to true, the intent used (when no other intent is explicitly specified) will be the intent specified in the profile.">PDPrefSetDefaultIntentToProfile</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDPrefGetDefaultIntentToProfile(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>If <a href="aslayer_General.htm#true">true</a>, the intent to be used shall be the intent specified in the profile; otherwise <a href="acrocolor_acrocolor.htm#AC_RelColorimetric" title=" The same as absolute colorimetric, except that it compares the white point of the source color space to that of the destination color space and shifts all other colors accordingly, rather than comparing individual colors.">AC_RelColorimetric</a> will be assumed. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefGetNeverUseOutputIntent"><strong><span style="color:grey;">PDPrefGetNeverUseOutputIntent</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:557</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>This function returns whether that the output intent should be completely ignored when rendering a document. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This setting defaults to <a href="aslayer_General.htm#false">false</a>. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDPref.htm#PDPrefSetPrintUsingWorkingSpaces" title=" This function sets a flag to treat the device spaces as calibrated when rendering.">PDPrefSetPrintUsingWorkingSpaces</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDPrefGetNeverUseOutputIntent(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>If <a href="aslayer_General.htm#true">true</a>, the OutputIntent will not be used when rendering even for PDF/A, PDF/E, or PDF/X documents. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefGetPrintUsingWorkingSpaces"><strong><span style="color:grey;">PDPrefGetPrintUsingWorkingSpaces</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:506</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>This function returns whether the device spaces are treated as calibrated when rendering. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This setting is only effective when the document is being rendered to memory, or a window, and <a href="pdfllayer_PDPage.htm#kPDPageIsPrinting" title=" The page is being printed.">kPDPageIsPrinting</a> is <a href="aslayer_General.htm#true">true</a>. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDPref.htm#PDPrefSetPrintUsingWorkingSpaces" title=" This function sets a flag to treat the device spaces as calibrated when rendering.">PDPrefSetPrintUsingWorkingSpaces</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDPrefGetPrintUsingWorkingSpaces(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>if <a href="aslayer_General.htm#true">true</a>, treats device spaces as calibrated to the associated working space profile. Otherwise, treats device spaces as uncalibrated </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefGetStrictFormEmission"><strong><span style="color:grey;">PDPrefGetStrictFormEmission</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:967</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the current value of the <a href="dlextras_PDPref.htm#PDPrefGetStrictFormEmission" title=" Returns the current value of the PDPrefGetStrictFormEmission flag setting.">PDPrefGetStrictFormEmission</a> flag setting. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDPref.htm#PDPrefGetStrictFormEmission" title=" Returns the current value of the PDPrefGetStrictFormEmission flag setting.">PDPrefGetStrictFormEmission</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDPrefGetStrictFormEmission(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>if True, the Library will bypass the strict enforcement to emit form content to container. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSetAllowOpeningXFA"><strong><span style="color:grey;">PDPrefSetAllowOpeningXFA</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:271</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Routine to allow APDFL to open XFA PDF documents, which as of 9.1P2f is disallowed. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDPref.htm#PDPrefGetAllowOpeningXFA" title=" Routine to get the current allow-XFA setting.">PDPrefGetAllowOpeningXFA</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetAllowOpeningXFA(</code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>flag</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>flag</code></span>
+</td><td><span>True will allow APDFL to open XFA PDF documents. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSetAllowRelaxedSyntax"><strong><span style="color:grey;">PDPrefSetAllowRelaxedSyntax</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:463</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>This call, with a True flag value, allows callers to ask Adobe PDF Library to attempt to ignore minor PDF syntax errors. For example, the Library may correct FontDescriptor entries with missing values by adding defaults, add a missing Supplement for Adobe Identity, or add a missing /FirstChar or /LastChar entry if the other of the pair is present, along with a valid Widths table). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDPref.htm#PDPrefGetAllowRelaxedSyntax" title=" Returns the current value of the AllowRelaxedSyntax flag setting.">PDPrefGetAllowRelaxedSyntax</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetAllowRelaxedSyntax(</code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>flag</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>flag</code></span>
+</td><td><span>When <a href="aslayer_General.htm#true">true</a>, this will tell the PDF Library to ignore certain minor PDF document errors. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSetAllowStringRetrievalFailingDecryption"><strong><span style="color:grey;">PDPrefSetAllowStringRetrievalFailingDecryption</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:833</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>This call is used to retrive the value of String objects using an Encryption that's not supported by the Library in order to still retrieve the String's value. This is useful to Advanced Users who know how to interpret the String data when advanced Encryption is in use. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDPref.htm#PDPrefGetAllowStringRetrievalFailingDecryption" title=" Returns the current value of the AllowStringRetrievalFailingDecryption flag setting.">PDPrefGetAllowStringRetrievalFailingDecryption</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetAllowStringRetrievalFailingDecryption(</code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>allowStringRetrievalFailingDecryption</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>flag</code></span>
+</td><td><span>When <a href="aslayer_General.htm#true">true</a>, this will tell the Library to retrieve String object values, even if Decryption of those strings fails. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSetDefaultIntentToProfile"><strong><span style="color:grey;">PDPrefSetDefaultIntentToProfile</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:446</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>When this preference is set to <a href="aslayer_General.htm#true">true</a>, the intent used (when no other intent is explicitly specified) will be the intent specified in the profile. Otherwise <a href="acrocolor_acrocolor.htm#AC_RelColorimetric" title=" The same as absolute colorimetric, except that it compares the white point of the source color space to that of the destination color space and shifts all other colors accordingly, rather than comparing individual colors.">AC_RelColorimetric</a> will be assumed by default. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDPref.htm#PDPrefGetDefaultIntentToProfile" title=" This function returns the current status of the default source intent used in a color profile.">PDPrefGetDefaultIntentToProfile</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetDefaultIntentToProfile(</code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>flag</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>flag</code></span>
+</td><td><span>If <a href="aslayer_General.htm#true">true</a>, use intent specified in the profile. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSetNeverUseOutputIntent"><strong><span style="color:grey;">PDPrefSetNeverUseOutputIntent</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:566</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>This function sets a flag to specify that the output intent should not be considered when rendering a document. This overrides the default behavior of the preference set with PDPrefSetUseProfileIntent. The PDPrefSetUseProfileIntent may still use the OutputIntent in spite of being set to <a href="aslayer_General.htm#false">false</a>, if the document purports to be PDF/A, PDF/E, or PDF/X. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This setting defaults to <a href="aslayer_General.htm#false">false</a>. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDPref.htm#PDPrefGetPrintUsingWorkingSpaces" title=" This function returns whether the device spaces are treated as calibrated when rendering.">PDPrefGetPrintUsingWorkingSpaces</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetNeverUseOutputIntent(</code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>value</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>flag</code></span>
+</td><td><span>if <a href="aslayer_General.htm#true">true</a>, the OutputIntent will not be used when rendering even for PDF/A, PDF/E, or PDF/X documents. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSetPrintUsingWorkingSpaces"><strong><span style="color:grey;">PDPrefSetPrintUsingWorkingSpaces</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:498</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>This function sets a flag to treat the device spaces as calibrated when rendering. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This setting is only effective when the document is being rendered to memory, or a window, and <a href="pdfllayer_PDPage.htm#kPDPageIsPrinting" title=" The page is being printed.">kPDPageIsPrinting</a> is <a href="aslayer_General.htm#true">true</a>. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDPref.htm#PDPrefGetPrintUsingWorkingSpaces" title=" This function returns whether the device spaces are treated as calibrated when rendering.">PDPrefGetPrintUsingWorkingSpaces</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetPrintUsingWorkingSpaces(</code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>flag</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>flag</code></span>
+</td><td><span>if <a href="aslayer_General.htm#true">true</a>, treats device spaces as calibrated to the associated working space profile. Otherwise, treats device spaces as uncalibrated </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSetStrictFormEmission"><strong><span style="color:grey;">PDPrefSetStrictFormEmission</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:959</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>This call is used to allow user to set strictFormEmission. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDPref.htm#PDPrefSetStrictFormEmission" title=" This call is used to allow user to set strictFormEmission.">PDPrefSetStrictFormEmission</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetStrictFormEmission(</code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>strictFormEmission</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>flag</code></span>
+</td><td><span>When <a href="aslayer_General.htm#true">true</a>, this will tell Libary to bypass the strict enforcement to emit form content to container. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSuppressDefaultCMYKCalibration"><strong><span style="color:grey;">PDPrefSuppressDefaultCMYKCalibration</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:252</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Routine to suppress the Adobe-defined default color profile used for DeviceCMYK specified object. If a default color space is defined in the document resources, or via PDEContentSetDefault, it will still be used. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="dlextras_PDPref.htm#PDPrefSuppressDefaultGrayCalibration" title=" Routine to suppress the Adobe-defined default color profile used for DeviceGray specified object."><code>PDPrefSuppressDefaultGrayCalibration</code></a>
+<a href="dlextras_PDPref.htm#PDPrefSuppressDefaultRGBCalibration" title=" Routine to suppress the Adobe-defined default color profile used for DeviceRGB specified object."><code>PDPrefSuppressDefaultRGBCalibration</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSuppressDefaultCMYKCalibration(</code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>flag</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>flag</code></span>
+</td><td><span>True will suppress the Adobe-defined default color profile. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSuppressDefaultGrayCalibration"><strong><span style="color:grey;">PDPrefSuppressDefaultGrayCalibration</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:263</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Routine to suppress the Adobe-defined default color profile used for DeviceGray specified object. If a default color space is defined in the document resources, or via PDEContentSetDefault, it will still be used. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="dlextras_PDPref.htm#PDPrefSuppressDefaultCMYKCalibration" title=" Routine to suppress the Adobe-defined default color profile used for DeviceCMYK specified object."><code>PDPrefSuppressDefaultCMYKCalibration</code></a>
+<a href="dlextras_PDPref.htm#PDPrefSuppressDefaultRGBCalibration" title=" Routine to suppress the Adobe-defined default color profile used for DeviceRGB specified object."><code>PDPrefSuppressDefaultRGBCalibration</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSuppressDefaultGrayCalibration(</code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>flag</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>flag</code></span>
+</td><td><span>True will suppress the Adobe-defined default color profile. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSuppressDefaultRGBCalibration"><strong><span style="color:grey;">PDPrefSuppressDefaultRGBCalibration</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:241</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Routine to suppress the Adobe-defined default color profile used for DeviceRGB specified object. If a default color space is defined in the document resources, or via PDEContentSetDefault, it will still be used. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDPref.htm#PDPrefSuppressDefaultGrayCalibration" title=" Routine to suppress the Adobe-defined default color profile used for DeviceGray specified object.">PDPrefSuppressDefaultGrayCalibration</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSuppressDefaultRGBCalibration(</code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>flag</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>flag</code></span>
+</td><td><span>True will suppress the Adobe Defined Default Color Profile. </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

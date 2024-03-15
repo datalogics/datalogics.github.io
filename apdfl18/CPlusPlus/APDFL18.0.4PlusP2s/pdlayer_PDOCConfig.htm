@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PD Layer: PDOCConfig</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PD Layer: PDOCConfig</h5>
+<li><a href="#Enumerations">Enumerations</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#CallbackSignatures">Callback Signatures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Enumerations">
+<header><h2>PDOCConfig Enumerations</h2></header>
+<nav><dl>
+<dt><a href="#PDOCConfigBaseStates">PDOCConfigBaseStates</a></dt><dd> -  PDOCBaseState enumerates the three legal values for the BaseState key in an optional content configuration dictionary (PDOCConfig).</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDOCConfigBaseStates"><strong><span style="color:grey;">PDOCConfigBaseStates</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:5517</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>PDOCBaseState enumerates the three legal values for the BaseState key in an optional content configuration dictionary (PDOCConfig). When initializing a <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a> using KOCCInit_FromConfig(), this enumeration represents the starting state of the Optional Content Groups (OCGs) before the contents of the config's ON and OFF OCG lists are processed. If the BaseState is Unchanged, and the <a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use.">PDOCConfig</a> is just being constructed, the current states of the OCGs from the PDDoc's own <a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use.">PDOCConfig</a> are used. 
+<p>Value options for <a href="pdlayer_PDOCConfig.htm#PDOCConfigBaseState" title=" PDOCBaseState enumerates the three legal values for the BaseState key in an optional content configuration dictionary (PDOCConfig)."><code>PDOCConfigBaseState.</code></a> </span>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kPDOCBaseState_OFF"><code>kPDOCBaseState_OFF</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDOCBaseState_ON"><code>kPDOCBaseState_ON</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDOCBaseState_Unchanged"><code>kPDOCBaseState_Unchanged</code></span>
+</td><td><span></span>
+</td></tr></table>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>PDOCConfig Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDOCConfig">PDOCConfig</a></dt><dd> -  A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use.</dd>
+<dt><a href="#PDOCConfigBaseState">PDOCConfigBaseState</a></dt><dd> -  PDOCBaseState enumerates the three legal values for the BaseState key in an optional content configuration dictionary (PDOCConfig).</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDOCConfig"><strong><span style="color:grey;">PDOCConfig</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:5477</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A <a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use.">PDOCConfig</a> represents a set of states and other information that is saved in a PDF file for future use. There is a document default configuration, saved in the /D entry in the OCProperties dictionary, and a list of other client configurations, saved as an array of configurations in the /Configs entry in the OCProperties dictionary. <a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use.">PDOCConfig</a> objects are typically used to initialize the OCG states for a client's <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDOCConfig</code> <code>*</code><code>PDOCConfig</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDDoc.htm#PDDocGetOCConfig" title=" Gets the built-in default optional-content configuration for the document from the OCProperties D entry."><code>PDDocGetOCConfig</code></a></td><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigCreate" title=" Creates a new optional-content configuration object."><code>PDOCConfigCreate</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigDestroy" title=" Removes an optional-content configuration object and destroys the Cos objects associated with it."><code>PDOCConfigDestroy</code></a></td><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigEnumProc" title=" A callback used for enumerating optional-content configurations."><code>PDOCConfigEnumProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigGetAllRadioButtonGroups" title=" Returns an array of pointers to sets of optional-content groups in the configuration that are configured to be mutually exclusive."><code>PDOCConfigGetAllRadioButtonGroups</code></a></td><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigGetCosObj" title=" Gets the Cos object associated with the optional-content configuration."><code>PDOCConfigGetCosObj</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigGetCreator" title=" Gets the creator property for an optional-content configuration."><code>PDOCConfigGetCreator</code></a></td><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigGetInitState" title=" Gets the initial ON-OFF states of optional-content groups in an optional-content configuration."><code>PDOCConfigGetInitState</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigGetIntent" title=" Gets the Intent entry for an optional-content configuration."><code>PDOCConfigGetIntent</code></a></td><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigGetLockedArray" title=" Returns a PDOCConfig object's list of locked OCGs."><code>PDOCConfigGetLockedArray</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigGetName" title=" Gets the name of an optional-content configuration."><code>PDOCConfigGetName</code></a></td><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigGetOCGOrder" title=" Gets the user interface display order of optional-content groups (OCGs) in an optional-content configuration."><code>PDOCConfigGetOCGOrder</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigGetPDDoc" title=" Gets the document to which the optional-content configuration belongs."><code>PDOCConfigGetPDDoc</code></a></td><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigGetRadioButtonGroupForOCG" title=" Returns an array of optional-content groups in the configuration that contains the specified group, and is configured to behave like a radio button group, where only one member of the set can be ON at one time."><code>PDOCConfigGetRadioButtonGroupForOCG</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigMakeRadioButtonGroup" title=" Configures a mutually exclusive set of optional-content groups in an optional-content configuration."><code>PDOCConfigMakeRadioButtonGroup</code></a></td><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigSetCreator" title=" Sets the creator property of an optional-content configuration."><code>PDOCConfigSetCreator</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigSetInitState" title=" Sets the initial ON-OFF states of optional-content groups to be saved in an optional-content configuration."><code>PDOCConfigSetInitState</code></a></td><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigSetIntent" title=" Sets the Intent entry in an optional-content configuration's Cos dictionary."><code>PDOCConfigSetIntent</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigSetLockedArray" title=" Sets a PDOCConfig's list of locked OCGs."><code>PDOCConfigSetLockedArray</code></a></td><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigSetName" title=" Sets the name of an optional-content configuration."><code>PDOCConfigSetName</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigSetOCGOrder" title=" Sets the user interface display order of optional-content groups (OCGs) in an optional-content configuration."><code>PDOCConfigSetOCGOrder</code></a></td><td><a href="pdlayer_PDOCContext.htm#PDOCContextApplyAutoStateChanges" title=" Calls PDOCContextFindAutoStateChanges() to find optional-content groups whose ON-OFF states should be toggled, based on usage application directives contained in the configuration's AS array, and applies the changes within the given context."><code>PDOCContextApplyAutoStateChanges</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCContext.htm#PDOCContextFindAutoStateChanges" title=" Finds optional-content groups whose ON-OFF states should be toggled in the context, based on usage application directives contained in the configuration's AS array."><code>PDOCContextFindAutoStateChanges</code></a></td><td><a href="pdlayer_PDOCContext.htm#PDOCContextInit" title=" Initializes the ON-OFF states of all optional-content groups (OCGs) within an existing context."><code>PDOCContextInit</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCContext.htm#PDOCContextMakeCopyWithAutoStateChanges" title=" Creates a new context object that represents an optional-content state of the document, using an existing context as a template, but applying an automatic state change for the specified event."><code>PDOCContextMakeCopyWithAutoStateChanges</code></a></td><td><a href="pdlayer_PDOCContext.htm#PDOCContextNew" title=" Creates a context object that represents an optional-content state of the document, initializing it in the same way as PDOCContextInit()."><code>PDOCContextNew</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCG.htm#PDOCGGetInitialState" title=" Gets a initial state ( ON or OFF ) of the optional-content group (OCG) object in a given configuration."><code>PDOCGGetInitialState</code></a></td><td><a href="pdlayer_PDOCG.htm#PDOCGGetLocked" title=" Returns the locked state of an OCG in a given configuration."><code>PDOCGGetLocked</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCG.htm#PDOCGRemoveInitialState" title=" Removes the initial ON-OFF state information for the optional-content group (OCG) object in a given configuration."><code>PDOCGRemoveInitialState</code></a></td><td><a href="pdlayer_PDOCG.htm#PDOCGSetInitialState" title=" Sets the initial state ( ON or OFF ) of the optional-content group (OCG) object in a given configuration."><code>PDOCGSetInitialState</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCG.htm#PDOCGSetLocked" title=" Sets the locked state of an OCG in a given configuration."><code>PDOCGSetLocked</code></a></td><td><a href="pdlayer_PDOCG.htm#PDOCGUsedInOCConfig" title=" Tests whether an optional-content group (OCG) object is used in a context initialized using the given configuration."><code>PDOCGUsedInOCConfig</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDOCConfigBaseState"><strong><span style="color:grey;">PDOCConfigBaseState</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:5525</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>PDOCBaseState enumerates the three legal values for the BaseState key in an optional content configuration dictionary (PDOCConfig). When initializing a <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a> using KOCCInit_FromConfig(), this enumeration represents the starting state of the Optional Content Groups (OCGs) before the contents of the config's ON and OFF OCG lists are processed. If the BaseState is Unchanged, and the <a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use.">PDOCConfig</a> is just being constructed, the current states of the OCGs from the PDDoc's own <a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use.">PDOCConfig</a> are used. 
+<p>For value options see <a href="pdlayer_PDOCConfig.htm#PDOCConfigBaseStates" title=" PDOCBaseState enumerates the three legal values for the BaseState key in an optional content configuration dictionary (PDOCConfig)."><code>PDOCConfigBaseStates.</code></a> </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>PDOCConfigBaseState</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigGetInitState" title=" Gets the initial ON-OFF states of optional-content groups in an optional-content configuration."><code>PDOCConfigGetInitState</code></a></td><td><a href="pdlayer_PDOCConfig.htm#PDOCConfigSetInitState" title=" Sets the initial ON-OFF states of optional-content groups to be saved in an optional-content configuration."><code>PDOCConfigSetInitState</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="CallbackSignatures">
+<header><h2>PDOCConfig Callback Signatures</h2></header>
+<nav><dl>
+<dt><a href="#PDOCConfigEnumProc">PDOCConfigEnumProc</a></dt><dd> -  A callback used for enumerating optional-content configurations.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDOCConfigEnumProc"><strong><span style="color:grey;">PDOCConfigEnumProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:5651</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A callback used for enumerating optional-content configurations. Enumeration stops when all configurations have been enumerated, or when the callback returns <a href="aslayer_General.htm#false"><code>false</code></a>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDOCConfigEnumProc(</code><a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>occonfig</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>occonfig</code></span>
+</td><td><span>The optional-content configuration object. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>A pointer to user-supplied data to pass to the proc each time it is called. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> to continue enumeration, <a href="aslayer_General.htm#false"><code>false</code></a> to halt enumeration. </span>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDDoc.htm#PDDocEnumOCConfigs" title=" Enumerates the optional-content configurations for the document, calling the supplied procedure for each one."><code>PDDocEnumOCConfigs</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDOCConfig Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDOCConfigCreate">PDOCConfigCreate</a></dt><dd> -  Creates a new optional-content configuration object.</dd>
+<dt><a href="#PDOCConfigDestroy">PDOCConfigDestroy</a></dt><dd> -  Removes an optional-content configuration object and destroys the Cos objects associated with it.</dd>
+<dt><a href="#PDOCConfigGetAllRadioButtonGroups">PDOCConfigGetAllRadioButtonGroups</a></dt><dd> -  Returns an array of pointers to sets of optional-content groups in the configuration that are configured to be mutually exclusive.</dd>
+<dt><a href="#PDOCConfigGetCosObj">PDOCConfigGetCosObj</a></dt><dd> -  Gets the Cos object associated with the optional-content configuration.</dd>
+<dt><a href="#PDOCConfigGetCreator">PDOCConfigGetCreator</a></dt><dd> -  Gets the creator property for an optional-content configuration.</dd>
+<dt><a href="#PDOCConfigGetInitState">PDOCConfigGetInitState</a></dt><dd> -  Gets the initial ON-OFF states of optional-content groups in an optional-content configuration.</dd>
+<dt><a href="#PDOCConfigGetIntent">PDOCConfigGetIntent</a></dt><dd> -  Gets the Intent entry for an optional-content configuration.</dd>
+<dt><a href="#PDOCConfigGetLockedArray">PDOCConfigGetLockedArray</a></dt><dd> -  Returns a PDOCConfig object's list of locked OCGs.</dd>
+<dt><a href="#PDOCConfigGetName">PDOCConfigGetName</a></dt><dd> -  Gets the name of an optional-content configuration.</dd>
+<dt><a href="#PDOCConfigGetOCGOrder">PDOCConfigGetOCGOrder</a></dt><dd> -  Gets the user interface display order of optional-content groups (OCGs) in an optional-content configuration.</dd>
+<dt><a href="#PDOCConfigGetPDDoc">PDOCConfigGetPDDoc</a></dt><dd> -  Gets the document to which the optional-content configuration belongs.</dd>
+<dt><a href="#PDOCConfigGetRadioButtonGroupForOCG">PDOCConfigGetRadioButtonGroupForOCG</a></dt><dd> -  Returns an array of optional-content groups in the configuration that contains the specified group, and is configured to behave like a radio button group, where only one member of the set can be ON at one time.</dd>
+<dt><a href="#PDOCConfigMakeRadioButtonGroup">PDOCConfigMakeRadioButtonGroup</a></dt><dd> -  Configures a mutually exclusive set of optional-content groups in an optional-content configuration.</dd>
+<dt><a href="#PDOCConfigSetCreator">PDOCConfigSetCreator</a></dt><dd> -  Sets the creator property of an optional-content configuration.</dd>
+<dt><a href="#PDOCConfigSetInitState">PDOCConfigSetInitState</a></dt><dd> -  Sets the initial ON-OFF states of optional-content groups to be saved in an optional-content configuration.</dd>
+<dt><a href="#PDOCConfigSetIntent">PDOCConfigSetIntent</a></dt><dd> -  Sets the Intent entry in an optional-content configuration's Cos dictionary.</dd>
+<dt><a href="#PDOCConfigSetLockedArray">PDOCConfigSetLockedArray</a></dt><dd> -  Sets a PDOCConfig's list of locked OCGs.</dd>
+<dt><a href="#PDOCConfigSetName">PDOCConfigSetName</a></dt><dd> -  Sets the name of an optional-content configuration.</dd>
+<dt><a href="#PDOCConfigSetOCGOrder">PDOCConfigSetOCGOrder</a></dt><dd> -  Sets the user interface display order of optional-content groups (OCGs) in an optional-content configuration.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDOCConfigCreate"><strong><span style="color:grey;">PDOCConfigCreate</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9573</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a new optional-content configuration object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDOCConfig.htm#PDOCConfigDestroy" title=" Removes an optional-content configuration object and destroys the Cos objects associated with it.">PDOCConfigDestroy</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>PDOCConfigCreate(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document in which the configuration is used. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created configuration object. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCConfigDestroy"><strong><span style="color:grey;">PDOCConfigDestroy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9583</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Removes an optional-content configuration object and destroys the Cos objects associated with it. If you pass this method the document's default configuration object (as returned by <a href="pdlayer_PDDoc.htm#PDDocGetOCConfig" title=" Gets the built-in default optional-content configuration for the document from the OCProperties D entry.">PDDocGetOCConfig</a>()), nothing happens. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDOCConfig.htm#PDOCConfigCreate" title=" Creates a new optional-content configuration object.">PDOCConfigCreate</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDOCConfigDestroy(</code><a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>pdOCCfg</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdOCCfg</code></span>
+</td><td><span>The configuration to destroy. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCConfigGetAllRadioButtonGroups"><strong><span style="color:grey;">PDOCConfigGetAllRadioButtonGroups</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9699</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns an array of pointers to sets of optional-content groups in the configuration that are configured to be mutually exclusive. A set behaves like a radio button group, where only one member can be <code>ON</code> at one time. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigGetRadioButtonGroupForOCG" title=" Returns an array of optional-content groups in the configuration that contains the specified group, and is configured to behave like a radio button group, where only one member of the set can be ON at one time."><code>PDOCConfigGetRadioButtonGroupForOCG</code></a>
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigMakeRadioButtonGroup" title=" Configures a mutually exclusive set of optional-content groups in an optional-content configuration."><code>PDOCConfigMakeRadioButtonGroup</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDOCG.htm#PDOCG" title=" A PDOCG represents a named object whose state can be toggled in a user interface to affect changes in visibility of content."><code>PDOCG</code></a> <code>*</code><code>*</code><code>PDOCConfigGetAllRadioButtonGroups(</code><a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>pdOCCfg</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdOCCfg</code></span>
+</td><td><span>The configuration. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated array of pointers to <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated arrays of optional-content groups (OCGs). The client is responsible for freeing all arrays using <a href="aslayer_ASMem.htm#ASfree" title=" Frees the specified memory block.">ASfree</a>(). </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCConfigGetCosObj"><strong><span style="color:grey;">PDOCConfigGetCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9615</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets the Cos object associated with the optional-content configuration. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>PDOCConfigGetCosObj(</code><a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>pdOCCfg</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdOCCfg</code></span>
+</td><td><span>The configuration for which a <a href="coslayer_CosObj.htm#CosObj">CosObj</a> representation is desired. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A <a href="coslayer_CosObj.htm#CosObj">CosObj</a> representation of pdOCCfg. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCConfigGetCreator"><strong><span style="color:grey;">PDOCConfigGetCreator</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9789</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the creator property for an optional-content configuration. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigGetName" title=" Gets the name of an optional-content configuration."><code>PDOCConfigGetName</code></a>
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigSetCreator" title=" Sets the creator property of an optional-content configuration."><code>PDOCConfigSetCreator</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>PDOCConfigGetCreator(</code><a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>pdOCCfg</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdOCCfg</code></span>
+</td><td><span>The configuration for which a creator is desired. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>An <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object containing the creator string from the Creator entry in the configuration's Cos dictionary, or <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if there is no such entry. The client is responsible for freeing the <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> using <a href="aslayer_ASText.htm#ASTextDestroy" title=" Frees all memory associated with the text object.">ASTextDestroy</a>(). </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCConfigGetInitState"><strong><span style="color:grey;">PDOCConfigGetInitState</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9739</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the initial <code>ON-OFF</code> states of optional-content groups in an optional-content configuration.<br/>
+<p>The client is responsible for freeing storage for the arrays using <a href="aslayer_ASMem.htm#ASfree" title=" Frees the specified memory block.">ASfree</a>().<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigSetInitState" title=" Sets the initial ON-OFF states of optional-content groups to be saved in an optional-content configuration."><code>PDOCConfigSetInitState</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGGetInitialState" title=" Gets a initial state ( ON or OFF ) of the optional-content group (OCG) object in a given configuration."><code>PDOCGGetInitialState</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDOCConfigGetInitState(</code><a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>pdOCCfg</code><code>,</code> <a href="pdlayer_PDOCConfig.htm#PDOCConfigBaseState" title=" PDOCBaseState enumerates the three legal values for the BaseState key in an optional content configuration dictionary (PDOCConfig)."><code>PDOCConfigBaseState</code></a> <code>*</code><code>bs</code><code>,</code> <a href="pdlayer_PDOCG.htm#PDOCG" title=" A PDOCG represents a named object whose state can be toggled in a user interface to affect changes in visibility of content."><code>PDOCG</code></a> <code>*</code><code>*</code><code>onOCGs</code><code>,</code> <a href="pdlayer_PDOCG.htm#PDOCG" title=" A PDOCG represents a named object whose state can be toggled in a user interface to affect changes in visibility of content."><code>PDOCG</code></a> <code>*</code><code>*</code><code>offOCGs</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdOCCfg</code></span>
+</td><td><span>The configuration for which the initial state is desired. </span>
+</td></tr>
+<tr><td><span><code>bs</code></span>
+</td><td><span>(Filled by the method) An existing <a href="pdlayer_PDOCConfig.htm#PDOCConfigBaseState" title=" PDOCBaseState enumerates the three legal values for the BaseState key in an optional content configuration dictionary (PDOCConfig).">PDOCConfigBaseState</a> structure in which to store the initialization information. </span>
+</td></tr>
+<tr><td><span><code>onOCGs</code></span>
+</td><td><span>(Filled by the method) A <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated array of OCGs that have an initial state of <code>ON</code>, or <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if there are no such groups. </span>
+</td></tr>
+<tr><td><span><code>offOCGs</code></span>
+</td><td><span>(Filled by the method) A <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated array of OCGs that have an initial state of <code>OFF</code>, or <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if there are no such groups. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCConfigGetIntent"><strong><span style="color:grey;">PDOCConfigGetIntent</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9845</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the Intent entry for an optional-content configuration. An intent is an <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> value broadly describing the intended use, either <code>View</code> or <code>Design</code>. A group's content is considered to be optional (that is, the group's state is considered in its visibility) if any intent in its list matches an intent of the context. The intent list of the context is usually set from the intent list of the document configuration.<br/>
+<p>The intent array contains entries (atoms) terminated by <a href="aslayer_ASAtom.htm#ASAtomNull">ASAtomNull</a>.<br/></p>
+
+<p>
+<p>If the configuration has no Intent entry, the default value of <code>View</code> is used. In this case, optional content is disabled for contexts initialized with this configuration.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigSetIntent" title=" Sets the Intent entry in an optional-content configuration's Cos dictionary."><code>PDOCConfigSetIntent</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextGetIntent" title=" Gets the intent list for an optional-content context."><code>PDOCContextGetIntent</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGGetIntent" title=" Gets the intent list for an optional-content group."><code>PDOCGGetIntent</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGUsedInOCConfig" title=" Tests whether an optional-content group (OCG) object is used in a context initialized using the given configuration."><code>PDOCGUsedInOCConfig</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGUsedInOCContext" title=" Tests whether an optional-content group (OCG) object is used in a given context."><code>PDOCGUsedInOCContext</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>*</code><code>PDOCConfigGetIntent(</code><a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>pdOCCfg</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdOCCfg</code></span>
+</td><td><span>The configuration for which an intent list is desired. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The ASAtomNull-terminated intent array. The client is responsible for freeing it using <a href="aslayer_ASMem.htm#ASfree" title=" Frees the specified memory block.">ASfree</a>(). </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCConfigGetLockedArray"><strong><span style="color:grey;">PDOCConfigGetLockedArray</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:10699</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns a <a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use.">PDOCConfig</a> object's list of locked OCGs. The on/off state of a locked OCG cannot be toggled by the user through the user interface. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigSetLockedArray" title=" Sets a PDOCConfig's list of locked OCGs."><code>PDOCConfigSetLockedArray</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGGetLocked" title=" Returns the locked state of an OCG in a given configuration."><code>PDOCGGetLocked</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGSetLocked" title=" Sets the locked state of an OCG in a given configuration."><code>PDOCGSetLocked</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDOCG.htm#PDOCG" title=" A PDOCG represents a named object whose state can be toggled in a user interface to affect changes in visibility of content."><code>PDOCG</code></a> <code>*</code><code>PDOCConfigGetLockedArray(</code><a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>pdOCCfg</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdOCCfg</code></span>
+</td><td><span>The optional-content configuration. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated array of <a href="pdlayer_PDOCG.htm#PDOCG" title=" A PDOCG represents a named object whose state can be toggled in a user interface to affect changes in visibility of content.">PDOCG</a> objects, or <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if the specified configuration does not contain a list of locked OCGs. The client is responsible for freeing the array using <a href="aslayer_ASMem.htm#ASfree" title=" Frees the specified memory block.">ASfree</a>(). </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCConfigGetName"><strong><span style="color:grey;">PDOCConfigGetName</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9763</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the name of an optional-content configuration. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigGetCreator" title=" Gets the creator property for an optional-content configuration."><code>PDOCConfigGetCreator</code></a>
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigSetName" title=" Sets the name of an optional-content configuration."><code>PDOCConfigSetName</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>PDOCConfigGetName(</code><a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>pdOCCfg</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdOCCfg</code></span>
+</td><td><span>The configuration for which a name is desired. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>An <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object containing the name string from Name entry of the configuration's Cos dictionary, or <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if there is no Name entry. The client is responsible for freeing the <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object using <a href="aslayer_ASText.htm#ASTextDestroy" title=" Frees all memory associated with the text object.">ASTextDestroy</a>(). </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCConfigGetOCGOrder"><strong><span style="color:grey;">PDOCConfigGetOCGOrder</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9654</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the user interface display order of optional-content groups (OCGs) in an optional-content configuration. This is the order in which the group names are displayed in the Layers panel of Acrobat 6.0 and later. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDOCConfig.htm#PDOCConfigSetOCGOrder" title=" Sets the user interface display order of optional-content groups (OCGs) in an optional-content configuration.">PDOCConfigSetOCGOrder</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDOCConfigGetOCGOrder(</code><a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>pdOCCfg</code><code>,</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>orderObj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdOCCfg</code></span>
+</td><td><span>The configuration for which an OCG display order is desired. </span>
+</td></tr>
+<tr><td><span><code>orderObj</code></span>
+</td><td><div><p>(Filled by the method) A pointer to the Cos object containing the OCG order array. See the description of the Optional Content Groups (OCG) in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 8.11.2, page 222.<br/>
+<p>You can find this document on the web store of the International Standards Organization (ISO).<br/></p>
+</div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the order belongs directly to this configuration, <a href="aslayer_General.htm#false"><code>false</code></a> if it is inherited from the document's default configuration. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCConfigGetPDDoc"><strong><span style="color:grey;">PDOCConfigGetPDDoc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9606</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the document to which the optional-content configuration belongs. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDDoc.htm#PDDocGetOCConfig" title=" Gets the built-in default optional-content configuration for the document from the OCProperties D entry.">PDDocGetOCConfig</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>PDOCConfigGetPDDoc(</code><a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>pdOCCfg</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdOCCfg</code></span>
+</td><td><span>The configuration for which a document is desired. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The document object. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCConfigGetRadioButtonGroupForOCG"><strong><span style="color:grey;">PDOCConfigGetRadioButtonGroupForOCG</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9685</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns an array of optional-content groups in the configuration that contains the specified group, and is configured to behave like a radio button group, where only one member of the set can be <code>ON</code> at one time. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigGetAllRadioButtonGroups" title=" Returns an array of pointers to sets of optional-content groups in the configuration that are configured to be mutually exclusive."><code>PDOCConfigGetAllRadioButtonGroups</code></a>
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigMakeRadioButtonGroup" title=" Configures a mutually exclusive set of optional-content groups in an optional-content configuration."><code>PDOCConfigMakeRadioButtonGroup</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDOCG.htm#PDOCG" title=" A PDOCG represents a named object whose state can be toggled in a user interface to affect changes in visibility of content."><code>PDOCG</code></a> <code>*</code><code>PDOCConfigGetRadioButtonGroupForOCG(</code><a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>pdOCCfg</code><code>,</code> <a href="pdlayer_PDOCG.htm#PDOCG" title=" A PDOCG represents a named object whose state can be toggled in a user interface to affect changes in visibility of content."><code>PDOCG</code></a> <code>ocg</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdOCCfg</code></span>
+</td><td><span>The optional-content configuration. </span>
+</td></tr>
+<tr><td><span><code>ocg</code></span>
+</td><td><span>The optional-content group for which to obtain the radio-button group. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated array of <a href="pdlayer_PDOCG.htm#PDOCG" title=" A PDOCG represents a named object whose state can be toggled in a user interface to affect changes in visibility of content.">PDOCG</a> objects, or <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if the specified group does not belong to any radio button group. The client is responsible for freeing the array using <a href="aslayer_ASMem.htm#ASfree" title=" Frees the specified memory block.">ASfree</a>(). </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCConfigMakeRadioButtonGroup"><strong><span style="color:grey;">PDOCConfigMakeRadioButtonGroup</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9668</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Configures a mutually exclusive set of optional-content groups in an optional-content configuration. The set behaves like a radio button group, where only one OCG from the set can be <code>ON</code> at a time. A client must enforce this in the user interface-level code, not the PD-level code. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigGetAllRadioButtonGroups" title=" Returns an array of pointers to sets of optional-content groups in the configuration that are configured to be mutually exclusive."><code>PDOCConfigGetAllRadioButtonGroups</code></a>
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigGetRadioButtonGroupForOCG" title=" Returns an array of optional-content groups in the configuration that contains the specified group, and is configured to behave like a radio button group, where only one member of the set can be ON at one time."><code>PDOCConfigGetRadioButtonGroupForOCG</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDOCConfigMakeRadioButtonGroup(</code><a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>pdOCCfg</code><code>,</code> <a href="pdlayer_PDOCG.htm#PDOCG" title=" A PDOCG represents a named object whose state can be toggled in a user interface to affect changes in visibility of content."><code>PDOCG</code></a> <code>*</code><code>ocgs</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdOCCfg</code></span>
+</td><td><span>The optional-content configuration. </span>
+</td></tr>
+<tr><td><span><code>ocgs</code></span>
+</td><td><span>A <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated array of optional-content groups to be included in the group. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCConfigSetCreator"><strong><span style="color:grey;">PDOCConfigSetCreator</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9775</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the creator property of an optional-content configuration. Stores the specified string as the Creator entry in the configuration's Cos dictionary. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigGetCreator" title=" Gets the creator property for an optional-content configuration."><code>PDOCConfigGetCreator</code></a>
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigSetName" title=" Sets the name of an optional-content configuration."><code>PDOCConfigSetName</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDOCConfigSetCreator(</code><a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>pdOCCfg</code><code>,</code> <a href="aslayer_ASText.htm#ASConstText" title=" An opaque object holding constant encoded text."><code>ASConstText</code></a> <code>creator</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdOCCfg</code></span>
+</td><td><span>The configuration for which to set a creator. </span>
+</td></tr>
+<tr><td><span><code>creator</code></span>
+</td><td><span>The new creator string. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCConfigSetInitState"><strong><span style="color:grey;">PDOCConfigSetInitState</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9717</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the initial <code>ON-OFF</code> states of optional-content groups to be saved in an optional-content configuration. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigGetInitState" title=" Gets the initial ON-OFF states of optional-content groups in an optional-content configuration."><code>PDOCConfigGetInitState</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGSetInitialState" title=" Sets the initial state ( ON or OFF ) of the optional-content group (OCG) object in a given configuration."><code>PDOCGSetInitialState</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDOCConfigSetInitState(</code><a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>pdOCCfg</code><code>,</code> <a href="pdlayer_PDOCConfig.htm#PDOCConfigBaseState" title=" PDOCBaseState enumerates the three legal values for the BaseState key in an optional content configuration dictionary (PDOCConfig)."><code>PDOCConfigBaseState</code></a> <code>bs</code><code>,</code> <a href="pdlayer_PDOCG.htm#PDOCG" title=" A PDOCG represents a named object whose state can be toggled in a user interface to affect changes in visibility of content."><code>PDOCG</code></a> <code>*</code><code>onOCGs</code><code>,</code> <a href="pdlayer_PDOCG.htm#PDOCG" title=" A PDOCG represents a named object whose state can be toggled in a user interface to affect changes in visibility of content."><code>PDOCG</code></a> <code>*</code><code>offOCGs</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdOCCfg</code></span>
+</td><td><span>The configuration for which to set the initial state. </span>
+</td></tr>
+<tr><td><span><code>bs</code></span>
+</td><td><span>An existing <a href="pdlayer_PDOCConfig.htm#PDOCConfigBaseState" title=" PDOCBaseState enumerates the three legal values for the BaseState key in an optional content configuration dictionary (PDOCConfig).">PDOCConfigBaseState</a> structure containing the initialization information. </span>
+</td></tr>
+<tr><td><span><code>onOCGs</code></span>
+</td><td><span>A <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated array of optional-content groups (OCGs) that have an initial state of <code>ON</code> when that is not the base state, or <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr>
+<tr><td><span><code>offOCGs</code></span>
+</td><td><span>A <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated array of OCGs that have an initial state of <code>OFF</code> when that is not the base state, or <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCConfigSetIntent"><strong><span style="color:grey;">PDOCConfigSetIntent</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9817</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Sets the Intent entry in an optional-content configuration's Cos dictionary. An intent is an <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> value broadly describing the intended use, either <code>View</code> or <code>Design</code>.<br/>
+<p>A group's content is considered to be optional (that is, the group's state is considered in its visibility) if any intent in its list matches an intent of the context. The intent list of the context is usually set from the intent list of the document configuration.<br/></p>
+
+<p>
+<p>If the configuration has no Intent entry, the default value of <code>View</code> is used. In this case, optional content is disabled for contexts initialized with this configuration.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigGetIntent" title=" Gets the Intent entry for an optional-content configuration."><code>PDOCConfigGetIntent</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextSetIntent" title=" Sets the Intent entry in an optional-content context's Cos dictionary."><code>PDOCContextSetIntent</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGSetIntent" title=" Sets the Intent entry in an optional-content group's Cos dictionary."><code>PDOCGSetIntent</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGUsedInOCConfig" title=" Tests whether an optional-content group (OCG) object is used in a context initialized using the given configuration."><code>PDOCGUsedInOCConfig</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGUsedInOCContext" title=" Tests whether an optional-content group (OCG) object is used in a given context."><code>PDOCGUsedInOCContext</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDOCConfigSetIntent(</code><a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>pdOCCfg</code><code>,</code> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>*</code><code>intent</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdOCCfg</code></span>
+</td><td><span>The configuration for which to set an intent. </span>
+</td></tr>
+<tr><td><span><code>intent</code></span>
+</td><td><span>The new Intent entry value, an array of atoms terminated with <a href="aslayer_ASAtom.htm#ASAtomNull">ASAtomNull</a>. To remove the Intent entry, pass an array with only one element, <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCConfigSetLockedArray"><strong><span style="color:grey;">PDOCConfigSetLockedArray</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:10713</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets a PDOCConfig's list of locked OCGs. The on/off state of a locked OCG cannot be toggled by the user through the user interface. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigGetLockedArray" title=" Returns a PDOCConfig object's list of locked OCGs."><code>PDOCConfigGetLockedArray</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGGetLocked" title=" Returns the locked state of an OCG in a given configuration."><code>PDOCGGetLocked</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGSetLocked" title=" Sets the locked state of an OCG in a given configuration."><code>PDOCGSetLocked</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDOCConfigSetLockedArray(</code><a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>pdOCCfg</code><code>,</code> <a href="pdlayer_PDOCG.htm#PDOCG" title=" A PDOCG represents a named object whose state can be toggled in a user interface to affect changes in visibility of content."><code>PDOCG</code></a> <code>*</code><code>lockedOCGs</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdOCCfg</code></span>
+</td><td><span>The optional-content configuration. </span>
+</td></tr>
+<tr><td><span><code>lockedOCGs</code></span>
+</td><td><span>A <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated array of <a href="pdlayer_PDOCG.htm#PDOCG" title=" A PDOCG represents a named object whose state can be toggled in a user interface to affect changes in visibility of content.">PDOCG</a> objects to be used as the locked OCGs for the specified configuration, or <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if the configuration should not contain a list of locked OCGs. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCConfigSetName"><strong><span style="color:grey;">PDOCConfigSetName</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9751</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the name of an optional-content configuration. It stores the specified string as the Name entry in the configuration's Cos dictionary. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigGetName" title=" Gets the name of an optional-content configuration."><code>PDOCConfigGetName</code></a>
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigSetCreator" title=" Sets the creator property of an optional-content configuration."><code>PDOCConfigSetCreator</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDOCConfigSetName(</code><a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>pdOCCfg</code><code>,</code> <a href="aslayer_ASText.htm#ASConstText" title=" An opaque object holding constant encoded text."><code>ASConstText</code></a> <code>name</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdOCCfg</code></span>
+</td><td><span>The configuration for which to set the name. </span>
+</td></tr>
+<tr><td><span><code>name</code></span>
+</td><td><span>The new name string. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCConfigSetOCGOrder"><strong><span style="color:grey;">PDOCConfigSetOCGOrder</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9633</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the user interface display order of optional-content groups (OCGs) in an optional-content configuration. This is the order in which the group names are displayed in the Layers panel of Acrobat 6.0 and later. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDOCConfig.htm#PDOCConfigGetOCGOrder" title=" Gets the user interface display order of optional-content groups (OCGs) in an optional-content configuration.">PDOCConfigGetOCGOrder</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDOCConfigSetOCGOrder(</code><a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>pdOCCfg</code><code>,</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>orderArray</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdOCCfg</code></span>
+</td><td><span>The configuration for which a OCG is desired. </span>
+</td></tr>
+<tr><td><span><code>orderArray</code></span>
+</td><td><div><p>The Cos object containing the OCG order array. See the description of the Optional Content Groups (OCG) in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 8.11.2, page 222.<br/>
+<p>You can find this document on the web store of the International Standards Organization (ISO).<br/></p>
+
+<span>
+<p>Pass <a href="aslayer_General.htm#NULL">NULL</a> to remove any existing order entry.</span>
+</div>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDF Edit Layer: PDEPath</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDF Edit Layer: PDEPath</h5>
+<li><a href="#Enumerations">Enumerations</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Enumerations">
+<header><h2>PDEPath Enumerations</h2></header>
+<nav><dl>
+<dt><a href="#PDEPathElementType">PDEPathElementType</a></dt><dd> -  An enumerated data type for path segment operators in PDEPath elements.</dd>
+<dt><a href="#PDEPathOpFlags">PDEPathOpFlags</a></dt><dd> -  Flags for paint operators in a PDEPath.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEPathElementType"><strong><span style="color:grey;">PDEPathElementType</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:1758</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>An enumerated data type for path segment operators in <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path.">PDEPath</a> elements. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEPath.htm#PDEPathAddSegment" title=" Adds a segment to a path."><code>PDEPathAddSegment</code></a>
+<a href="pdelayer_PDEPath.htm#PDEPathCreate" title=" Creates an empty path element."><code>PDEPathCreate</code></a>
+<a href="pdelayer_PDEPath.htm#PDEPathSetData" title=" Sets new path data for a path element."><code>PDEPathSetData</code></a></div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kPDEMoveTo"><code>kPDEMoveTo</code></span>
+</td><td><span>Designates the m ( <code>moveto</code>) operator, which moves the current point. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDELineTo"><code>kPDELineTo</code></span>
+</td><td><span>Designates the l ( <code>lineto</code>) operator, which appends a straight line segment from the current point. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDECurveTo"><code>kPDECurveTo</code></span>
+</td><td><span>Designates the c ( <code>curveto</code>) operator, which appends a bezier curve to the path. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDECurveToV"><code>kPDECurveToV</code></span>
+</td><td><span>Designates the v ( <code>curveto</code>) operator, which appends a bezier curve to the current path when the first control point coincides with initial point on the curve. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDECurveToY"><code>kPDECurveToY</code></span>
+</td><td><span>Designates the y ( <code>curveto</code>) operator, which appends a bezier curve to the current path when the second control point coincides with final point on the curve. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDERect"><code>kPDERect</code></span>
+</td><td><span>Designates the re operator, which adds a rectangle to the current path. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEClosePath"><code>kPDEClosePath</code></span>
+</td><td><span>Designates the h ( <code>closepath</code>) operator, which closes the current sub-path. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEPathLastType"><code>kPDEPathLastType</code></span>
+</td><td><span></span>
+</td></tr></table>
+</section>
+<section><div class="infoRow"><h3 id="PDEPathOpFlags"><strong><span style="color:grey;">PDEPathOpFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:1815</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Flags for paint operators in a <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path.">PDEPath</a>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEPath.htm#PDEPathGetPaintOp" title=" Gets the fill and stroke attributes of a path."><code>PDEPathGetPaintOp</code></a>
+<a href="pdelayer_PDEPath.htm#PDEPathSetPaintOp" title=" Sets the fill and stroke attributes of a path."><code>PDEPathSetPaintOp</code></a></div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kPDEInvisible"><code>kPDEInvisible</code><code>=</code><code>0x00</code></span>
+</td><td><span>The path is neither stroked nor filled, so it is invisible. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEStroke"><code>kPDEStroke</code><code>=</code><code>0x01</code></span>
+</td><td><span>Stroke the path, as with the S ( <code>stroke</code>) operator. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEFill"><code>kPDEFill</code><code>=</code><code>0x02</code></span>
+</td><td><span>Fills the path, using the nonzero winding number rule to determine the region to fill, as with the f ( <code>fill</code>) operator. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEEoFill"><code>kPDEEoFill</code><code>=</code><code>0x04</code></span>
+</td><td><span>Fills the path, using the even/odd rule to determine the region to fill, as with the f * ( <code>eofill</code>) operator. </span>
+</td></tr></table>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>PDEPath Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDEPath">PDEPath</a></dt><dd> -  A PDEElement that contains a path.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEPath"><strong><span style="color:grey;">PDEPath</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:174</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> that contains a path. Path objects can be stroked, filled, and/or serve as clipping paths. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDEPath</code> <code>*</code><code>PDEPath</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEPath.htm#PDEPathCreate" title=" Creates an empty path element."><code>PDEPathCreate</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEPath.htm#PDEPathAddSegment" title=" Adds a segment to a path."><code>PDEPathAddSegment</code></a></td><td><a href="pdelayer_PDEPath.htm#PDEPathGetData" title=" Gets the size of the path data and, optionally, the path data."><code>PDEPathGetData</code></a></td></tr>
+<tr><td><a href="dlextras_PDEPath.htm#PDEPathGetDataDouble" title=" Gets the size of the path data."><code>PDEPathGetDataDouble</code></a></td><td><a href="pdelayer_PDEPath.htm#PDEPathGetDataEx" title=" Gets the size of the path data and, optionally, the path data."><code>PDEPathGetDataEx</code></a></td></tr>
+<tr><td><a href="dlextras_PDEPath.htm#PDEPathGetDataFloat" title=" Superseded by PDEPathGetDataEx()."><code>PDEPathGetDataFloat</code></a></td><td><a href="pdelayer_PDEPath.htm#PDEPathGetPaintOp" title=" Gets the fill and stroke attributes of a path."><code>PDEPathGetPaintOp</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEPath.htm#PDEPathSetData" title=" Sets new path data for a path element."><code>PDEPathSetData</code></a></td><td><a href="dlextras_PDEPath.htm#PDEPathSetDataDouble" title=" Sets the size of the path data."><code>PDEPathSetDataDouble</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEPath.htm#PDEPathSetDataEx" title=" Sets new path data for a path element."><code>PDEPathSetDataEx</code></a></td><td><a href="dlextras_PDEPath.htm#PDEPathSetDataFloat" title=" Superseded by PDEPathSetDataEx()."><code>PDEPathSetDataFloat</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEPath.htm#PDEPathSetPaintOp" title=" Sets the fill and stroke attributes of a path."><code>PDEPathSetPaintOp</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>PDEPath Structures</h2></header>
+<nav><dl>
+<dt><a href="#_t_PDEPathData">_t_PDEPathData</a></dt><dd> - </dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="_t_PDEPathData"><strong><span style="color:grey;">_t_PDEPathData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:1801</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDEPathData {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>elemType</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_General.htm#ASFloat"><code>ASFloat</code></a> <code>OneH</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_General.htm#ASFloat"><code>ASFloat</code></a> <code>OneV</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_General.htm#ASFloat"><code>ASFloat</code></a> <code>TwoH</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_General.htm#ASFloat"><code>ASFloat</code></a> <code>TwoV</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_General.htm#ASFloat"><code>ASFloat</code></a> <code>ThreeH</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_General.htm#ASFloat"><code>ASFloat</code></a> <code>ThreeV</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><code id="PDEPathData"><code>}</code> <a href="pdelayer_PDEPath.htm#_t_PDEPathData"><code>PDEPathData</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDEPath Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDEPathAddSegment">PDEPathAddSegment</a></dt><dd> -  Adds a segment to a path.</dd>
+<dt><a href="#PDEPathCreate">PDEPathCreate</a></dt><dd> -  Creates an empty path element.</dd>
+<dt><a href="#PDEPathGetData">PDEPathGetData</a></dt><dd> -  Gets the size of the path data and, optionally, the path data.</dd>
+<dt><a href="#PDEPathGetDataEx">PDEPathGetDataEx</a></dt><dd> -  Gets the size of the path data and, optionally, the path data.</dd>
+<dt><a href="#PDEPathGetPaintOp">PDEPathGetPaintOp</a></dt><dd> -  Gets the fill and stroke attributes of a path.</dd>
+<dt><a href="#PDEPathSetData">PDEPathSetData</a></dt><dd> -  Sets new path data for a path element.</dd>
+<dt><a href="#PDEPathSetDataEx">PDEPathSetDataEx</a></dt><dd> -  Sets new path data for a path element.</dd>
+<dt><a href="#PDEPathSetPaintOp">PDEPathSetPaintOp</a></dt><dd> -  Sets the fill and stroke attributes of a path.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEPathAddSegment"><strong><span style="color:grey;">PDEPathAddSegment</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1326</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><span>Adds a segment to a path. The number of <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part.">ASFixed</a> values used depends upon <code>segType</code>: </span>
+
+<table class="ruled"><tr><th><span><code>segType</code></span>
+</th><th><span><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part.">ASFixed</a> values</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEPath.htm#kPDEMoveTo" title=" Designates the m ( moveto ) operator, which moves the current point.">kPDEMoveTo</a></span>
+</td><td><span><li> <code>x1</code><br/><li> <code>y1</code><br/></span>
+</td></tr>
+<tr><td><span>
+<p><a href="pdelayer_PDEPath.htm#kPDELineTo" title=" Designates the l ( lineto ) operator, which appends a straight line segment from the current point.">kPDELineTo</a></span>
+</td><td><span><li> <code>x1</code><br/><li> <code>y1</code><br/></span>
+</td></tr>
+<tr><td><span>
+<p><a href="pdelayer_PDEPath.htm#kPDECurveTo" title=" Designates the c ( curveto ) operator, which appends a bezier curve to the path.">kPDECurveTo</a></span>
+</td><td><span><li> <code>x1</code><br/><li> <code>y1</code><br/><li> <code>x2</code><br/><li> <code>y2</code><br/><li> <code>y3</code><br/></span>
+</td></tr>
+<tr><td><span>
+<p><a href="pdelayer_PDEPath.htm#kPDECurveToV" title=" Designates the v ( curveto ) operator, which appends a bezier curve to the current path when the first control point coincides with initial point on the curve.">kPDECurveToV</a></span>
+</td><td><span><li> <code>x1</code><br/><li> <code>y1</code><br/><li> <code>x2</code><br/><li> <code>y2</code><br/></span>
+</td></tr>
+<tr><td><span>
+<p><a href="pdelayer_PDEPath.htm#kPDECurveToY" title=" Designates the y ( curveto ) operator, which appends a bezier curve to the current path when the second control point coincides with final point on the curve.">kPDECurveToY</a></span>
+</td><td><span><li> <code>x1</code><br/><li> <code>y1</code><br/><li> <code>x2</code><br/><li> <code>y2</code><br/></span>
+</td></tr>
+<tr><td><span>
+<p><a href="pdelayer_PDEPath.htm#kPDERect" title=" Designates the re operator, which adds a rectangle to the current path.">kPDERect</a></span>
+</td><td><span><li> <code>x1</code><br/><li> <code>y1</code><br/><li> <code>x2</code> (width)<br/><li> <code>y2</code> (height)<br/></span>
+</td></tr>
+<tr><td><span>
+<p><a href="pdelayer_PDEPath.htm#kPDEClosePath" title=" Designates the h ( closepath ) operator, which closes the current sub-path.">kPDEClosePath</a></span>
+</td><td><span>None</span>
+</td></tr></table>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEPath.htm#PDEPathSetData" title=" Sets new path data for a path element.">PDEPathSetData</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEPathAddSegment(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path."><code>PDEPath</code></a> <code>path</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>segType</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>x1</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>y1</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>x2</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>y2</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>x3</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>y3</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>path</code></span>
+</td><td><span>IN/OUT The path to which a segment is added. </span>
+</td></tr>
+<tr><td><span><code>segType</code></span>
+</td><td><span>IN/OUT A <a href="pdelayer_PDEPath.htm#PDEPathElementType" title=" An enumerated data type for path segment operators in PDEPath elements.">PDEPathElementType</a> value indicating the type of path to add. </span>
+</td></tr>
+<tr><td><span><code>x1</code></span>
+</td><td><span>IN/OUT The x-coordinate of the first point. </span>
+</td></tr>
+<tr><td><span><code>y1</code></span>
+</td><td><span>IN/OUT The y-coordinate of the first point. </span>
+</td></tr>
+<tr><td><span><code>x2</code></span>
+</td><td><span>IN/OUT The x-coordinate of the second point. </span>
+</td></tr>
+<tr><td><span><code>y2</code></span>
+</td><td><span>IN/OUT The y-coordinate of the second point. </span>
+</td></tr>
+<tr><td><span><code>x3</code></span>
+</td><td><span>IN/OUT The x-coordinate of the third point. </span>
+</td></tr>
+<tr><td><span><code>y3</code></span>
+</td><td><span>IN/OUT The y-coordinate of the third point. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEPathCreate"><strong><span style="color:grey;">PDEPathCreate</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:466</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Creates an empty path element.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned path object when finished with it.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path."><code>PDEPath</code></a> <code>PDEPathCreate(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>An empty path element. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDEPathGetData"><strong><span style="color:grey;">PDEPathGetData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:700</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the size of the path data and, optionally, the path data. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEPath.htm#PDEPathGetDataEx" title=" Gets the size of the path data and, optionally, the path data."><code>PDEPathGetDataEx</code></a>
+<a href="pdelayer_PDEPath.htm#PDEPathSetData" title=" Sets new path data for a path element."><code>PDEPathSetData</code></a>
+<a href="pdelayer_PDEPath.htm#PDEPathSetDataEx" title=" Sets new path data for a path element."><code>PDEPathSetDataEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>PDEPathGetData(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path."><code>PDEPath</code></a> <code>path</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>*</code><code>data</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>dataSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>path</code></span>
+</td><td><span>IN/OUT The path whose data is obtained. </span>
+</td></tr>
+<tr><td><span><code>data</code></span>
+</td><td><span>IN/OUT (Filled by the method) A pointer to the path data. If <code>data</code> is non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, it contains a variable-sized array of path operators and operands. The format is a 32-bit operator followed by 0 to 3 <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers.">ASFixedPoint</a> values, depending on the operator. Opcodes are codes for <code>moveto</code>, <code>lineto</code>, <code>curveto</code>, <code>rect</code>, or <code>closepath</code> operators; operands are <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers.">ASFixedPoint</a> values. If <code>data</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, the number of bytes required for <code>data</code> is returned by the method. Note that it returns <em>raw</em> path data. If you want the points in page coordinates, concatenate the path data points with the <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> matrix obtained from <a href="pdelayer_PDEElement.htm#PDEElementGetMatrix" title=" Superseded by PDEElementGetMatrixEx() in Acrobat 10.0.">PDEElementGetMatrix</a>(). </span>
+</td></tr>
+<tr><td><span><code>dataSize</code></span>
+</td><td><span>IN/OUT Specifies the size of the buffer provided in data. If it is less than the length of the path data, the method copies <code>dataSize</code> bytes. If it is zero, the <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part.">ASFixed</a> value of path->size is returned. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The length of the data of <code>path</code>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEPathGetDataEx"><strong><span style="color:grey;">PDEPathGetDataEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:3054</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the size of the path data and, optionally, the path data. This API is an extension to the <a href="pdelayer_PDEPath.htm#PDEPathGetData" title=" Gets the size of the path data and, optionally, the path data."><code>PDEPathGetData</code></a> API. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEPath.htm#PDEPathGetData" title=" Gets the size of the path data and, optionally, the path data."><code>PDEPathGetData</code></a>
+<a href="pdelayer_PDEPath.htm#PDEPathSetData" title=" Sets new path data for a path element."><code>PDEPathSetData</code></a>
+<a href="pdelayer_PDEPath.htm#PDEPathSetDataEx" title=" Sets new path data for a path element."><code>PDEPathSetDataEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>PDEPathGetDataEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path."><code>PDEPath</code></a> <code>path</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASDouble.htm#ASReal" title=" Definition of ASReal."><code>ASReal</code></a> <code>*</code><code>data</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>dataSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>path</code></span>
+</td><td><span>IN/OUT The path whose data is obtained. </span>
+</td></tr>
+<tr><td><span><code>data</code></span>
+</td><td><span>IN/OUT (Filled by the method) A pointer to the path data. If <code>data</code> is non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, it contains a variable-sized array of path operators and operands. The format is a 32-bit operator followed by 0 to 3 <a href="aslayer_ASDouble.htm#ASReal" title=" Definition of ASReal.">ASReal</a> values, depending on the operator. Opcodes are codes for <code>moveto</code>, <code>lineto</code>, <code>curveto</code>, <code>rect</code>, or <code>closepath</code> operators; operands are <a href="aslayer_ASDouble.htm#ASReal" title=" Definition of ASReal.">ASReal</a> values. If <code>data</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, the number of bytes required for <code>data</code> is returned by the method. Note that it returns <em>raw</em> path data. If you want the points in page coordinates, concatenate the path data points with the <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> matrix obtained from <a href="pdelayer_PDEElement.htm#PDEElementGetMatrix" title=" Superseded by PDEElementGetMatrixEx() in Acrobat 10.0.">PDEElementGetMatrix</a>(). </span>
+</td></tr>
+<tr><td><span><code>dataSize</code></span>
+</td><td><span>IN/OUT Specifies the size of the buffer provided in data. If it is less than the length of the path data, the method copies <code>dataSize</code> bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The length of the data of <code>path</code>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEPathGetPaintOp"><strong><span style="color:grey;">PDEPathGetPaintOp</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:711</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the fill and stroke attributes of a path. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEPath.htm#PDEPathSetPaintOp" title=" Sets the fill and stroke attributes of a path.">PDEPathSetPaintOp</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>PDEPathGetPaintOp(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path."><code>PDEPath</code></a> <code>path</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>path</code></span>
+</td><td><span>The path whose fill and stroke attributes are obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A set of <a href="pdelayer_PDEPath.htm#PDEPathOpFlags" title=" Flags for paint operators in a PDEPath.">PDEPathOpFlags</a> flags describing fill and stroke attributes. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEPathSetData"><strong><span style="color:grey;">PDEPathSetData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:444</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets new path data for a path element. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEPath.htm#PDEPathGetData" title=" Gets the size of the path data and, optionally, the path data."><code>PDEPathGetData</code></a>
+<a href="pdelayer_PDEPath.htm#PDEPathGetDataEx" title=" Gets the size of the path data and, optionally, the path data."><code>PDEPathGetDataEx</code></a>
+<a href="pdelayer_PDEPath.htm#PDEPathSetDataEx" title=" Sets new path data for a path element."><code>PDEPathSetDataEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEPathSetData(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path."><code>PDEPath</code></a> <code>path</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>*</code><code>data</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>dataSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>path</code></span>
+</td><td><span>IN/OUT The path whose data is set. </span>
+</td></tr>
+<tr><td><span><code>data</code></span>
+</td><td><span>IN/OUT A pointer to the path data. It is a variable-sized array of path operators and operands. The format is a 32-bit operator followed by zero to three <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers.">ASFixedPoint</a> values, depending on the operator. Operators are codes for <code>moveto</code>, <code>lineto</code>, <code>curveto</code>, <code>rect</code>, or <code>closepath</code> operators, and must be one of <a href="pdelayer_PDEPath.htm#PDEPathElementType" title=" An enumerated data type for path segment operators in PDEPath elements.">PDEPathElementType</a>. Operands are <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers.">ASFixedPoint</a> values. The data is copied into the <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path.">PDEPath</a> object. </span>
+</td></tr>
+<tr><td><span><code>dataSize</code></span>
+</td><td><span>IN/OUT The size of the new path data in bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEPathSetDataEx"><strong><span style="color:grey;">PDEPathSetDataEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:3555</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets new path data for a path element. This API is an extension to the <a href="pdelayer_PDEPath.htm#PDEPathSetData" title=" Sets new path data for a path element."><code>PDEPathSetData</code></a> API. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEPath.htm#PDEPathGetData" title=" Gets the size of the path data and, optionally, the path data."><code>PDEPathGetData</code></a>
+<a href="pdelayer_PDEPath.htm#PDEPathGetDataEx" title=" Gets the size of the path data and, optionally, the path data."><code>PDEPathGetDataEx</code></a>
+<a href="pdelayer_PDEPath.htm#PDEPathSetData" title=" Sets new path data for a path element."><code>PDEPathSetData</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEPathSetDataEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path."><code>PDEPath</code></a> <code>path</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASDouble.htm#ASReal" title=" Definition of ASReal."><code>ASReal</code></a> <code>*</code><code>data</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>dataSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>path</code></span>
+</td><td><span>IN/OUT The path whose data is set. </span>
+</td></tr>
+<tr><td><span><code>data</code></span>
+</td><td><span>IN/OUT A pointer to the path data. It is a variable-sized array of path operators and operands. The format is a 32-bit operator followed by zero to three <a href="aslayer_ASDouble.htm#ASReal" title=" Definition of ASReal.">ASReal</a> values, depending on the operator. Operators are codes for <code>moveto</code>, <code>lineto</code>, <code>curveto</code>, <code>rect</code>, or <code>closepath</code> operators, and must be one of <a href="pdelayer_PDEPath.htm#PDEPathElementType" title=" An enumerated data type for path segment operators in PDEPath elements.">PDEPathElementType</a>. Operands are <a href="aslayer_ASDouble.htm#ASReal" title=" Definition of ASReal.">ASReal</a> values. The data is copied into the <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path.">PDEPath</a> object. </span>
+</td></tr>
+<tr><td><span><code>dataSize</code></span>
+</td><td><span>IN/OUT The size of the new path data in bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEPathSetPaintOp"><strong><span style="color:grey;">PDEPathSetPaintOp</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:456</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the fill and stroke attributes of a path. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEPath.htm#PDEPathGetPaintOp" title=" Gets the fill and stroke attributes of a path.">PDEPathGetPaintOp</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEPathSetPaintOp(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path."><code>PDEPath</code></a> <code>path</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>op</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>path</code></span>
+</td><td><span>IN/OUT The path whose fill and stroke attributes are set. </span>
+</td></tr>
+<tr><td><span><code>op</code></span>
+</td><td><span>IN/OUT The operation to set; it must be one of <a href="pdelayer_PDEPath.htm#PDEPathOpFlags" title=" Flags for paint operators in a PDEPath.">PDEPathOpFlags</a>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+</section>
+
+</div>
+</body></html>

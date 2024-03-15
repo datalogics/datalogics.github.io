@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Acro Support Layer: HFTServer</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Acro Support Layer: HFTServer</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#CallbackSignatures">Callback Signatures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>HFTServer Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#HFTServer">HFTServer</a></dt><dd> -  Each HFT is serviced by an HFT server.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="HFTServer"><strong><span style="color:grey;">HFTServer</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:586</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Each <a href="aslayer_HFT.htm#HFT">HFT</a> is serviced by an <a href="aslayer_HFT.htm#HFT">HFT</a> server. The <a href="aslayer_HFT.htm#HFT">HFT</a> server is responsible for handling requests to obtain or destroy its <a href="aslayer_HFT.htm#HFT">HFT</a>. An <a href="aslayer_HFTServer.htm#HFTServer" title=" Each HFT is serviced by an HFT server."><code>HFTServer</code></a> is an object that manages several versions of an <a href="aslayer_HFT.htm#HFT">HFT</a> for different clients which may have been compiled with different versions of the HFT's API. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_HFTServer</code> <code>*</code><code>HFTServer</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_HFTServer.htm#HFTServerNew" title=" Creates a new Host Function Table (HFT) server."><code>HFTServerNew</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_HFT.htm#HFTNew" title=" Obsolete."><code>HFTNew</code></a></td><td><a href="aslayer_HFT.htm#HFTNewEx" title=" Extends HFTNew() with version information in Acrobat 6."><code>HFTNewEx</code></a></td></tr>
+<tr><td><a href="aslayer_HFTServer.htm#HFTServerDestroy" title=" Destroys an HFT server."><code>HFTServerDestroy</code></a></td><td><a href="aslayer_HFTServer.htm#HFTServerDestroyProc" title=" A callback for an HFT server."><code>HFTServerDestroyProc</code></a></td></tr>
+<tr><td><a href="aslayer_HFT.htm#HFTServerProvideHFTProc" title=" A callback for an HFT server."><code>HFTServerProvideHFTProc</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="CallbackSignatures">
+<header><h2>HFTServer Callback Signatures</h2></header>
+<nav><dl>
+<dt><a href="#HFTServerDestroyProc">HFTServerDestroyProc</a></dt><dd> -  A callback for an HFT server.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="HFTServerDestroyProc"><strong><span style="color:grey;">HFTServerDestroyProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:610</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A callback for an <a href="aslayer_HFT.htm#HFT">HFT</a> server. This destroys the specified <a href="aslayer_HFT.htm#HFT">HFT</a> (for example, by calling <a href="aslayer_HFTServer.htm#HFTServerDestroy" title=" Destroys an HFT server.">HFTServerDestroy</a>()). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_HFT.htm#HFTDestroy" title=" Destroys an existing HFT by freeing all the HFT's memory.">HFTDestroy</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>HFTServerDestroyProc(</code><a href="aslayer_HFTServer.htm#HFTServer" title=" Each HFT is serviced by an HFT server."><code>HFTServer</code></a> <code>hftServer</code><code>,</code> <code>void</code> <code>*</code><code>rock</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>hftServer</code></span>
+</td><td><span>IN/OUT The <a href="aslayer_HFT.htm#HFT">HFT</a> server associated with this destroy proc. </span>
+</td></tr>
+<tr><td><span><code>rock</code></span>
+</td><td><span>IN/OUT User-supplied data that was passed in the call to <a href="aslayer_HFTServer.htm#HFTServerNew" title=" Creates a new Host Function Table (HFT) server.">HFTServerNew</a>(). </span>
+</td></tr></Table>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_HFTServer.htm#HFTServerNew" title=" Creates a new Host Function Table (HFT) server."><code>HFTServerNew</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>HFTServer Functions</h2></header>
+<nav><dl>
+<dt><a href="#HFTServerDestroy">HFTServerDestroy</a></dt><dd> -  Destroys an HFT server.</dd>
+<dt><a href="#HFTServerNew">HFTServerNew</a></dt><dd> -  Creates a new Host Function Table (HFT) server.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="HFTServerDestroy"><strong><span style="color:grey;">HFTServerDestroy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:193</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Destroys an <a href="aslayer_HFT.htm#HFT">HFT</a> server. Call this method only if the <a href="aslayer_HFT.htm#HFT">HFT</a> will not be used again. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_HFTServer.htm#HFTServerNew" title=" Creates a new Host Function Table (HFT) server.">HFTServerNew</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>HFTServerDestroy(</code><a href="aslayer_HFTServer.htm#HFTServer" title=" Each HFT is serviced by an HFT server."><code>HFTServer</code></a> <code>hftServer</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>hftServer</code></span>
+</td><td><span>IN/OUT The <a href="aslayer_HFT.htm#HFT">HFT</a> server to destroy. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="HFTServerNew"><strong><span style="color:grey;">HFTServerNew</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:183</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a new Host Function Table (HFT) server. An <a href="aslayer_HFT.htm#HFT">HFT</a> server is responsible for creating an instance of an <a href="aslayer_HFT.htm#HFT">HFT</a> with the specified version number, and destroying the <a href="aslayer_HFT.htm#HFT">HFT</a>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_HFT.htm#HFTNewEx" title=" Extends HFTNew() with version information in Acrobat 6."><code>HFTNewEx</code></a>
+<a href="aslayer_HFTServer.htm#HFTServerDestroy" title=" Destroys an HFT server."><code>HFTServerDestroy</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_HFTServer.htm#HFTServer" title=" Each HFT is serviced by an HFT server."><code>HFTServer</code></a> <code>HFTServerNew(</code><code>const</code> <code>char</code> <code>*</code><code>name</code><code>,</code> <a href="aslayer_HFT.htm#HFTServerProvideHFTProc" title=" A callback for an HFT server."><code>HFTServerProvideHFTProc</code></a> <code>serverProc</code><code>,</code> <a href="aslayer_HFTServer.htm#HFTServerDestroyProc" title=" A callback for an HFT server."><code>HFTServerDestroyProc</code></a> <code>destroyProc</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>name</code></span>
+</td><td><span>The new <a href="aslayer_HFT.htm#HFT">HFT</a> server's name. </span>
+</td></tr>
+<tr><td><span><code>serverProc</code></span>
+</td><td><span>(Required) A user-supplied callback that provides an <a href="aslayer_HFT.htm#HFT">HFT</a> when given a version number. This procedure is called by <a href="aslayer_ASExtension.htm#ASExtensionMgrGetHFT" title=" Gets the specified version of the Host Function Table (HFT) that has the specified name.">ASExtensionMgrGetHFT</a>() when another plug-in imports the <a href="aslayer_HFT.htm#HFT">HFT</a>. </span>
+</td></tr>
+<tr><td><span><code>destroyProc</code></span>
+</td><td><span>(Optional) A user-supplied callback that destroys the specified <a href="aslayer_HFT.htm#HFT">HFT</a> (this generally means deallocating the memory associated with the <a href="aslayer_HFT.htm#HFT">HFT</a>). This procedure is called by <a href="aslayer_HFT.htm#HFTDestroy" title=" Destroys an existing HFT by freeing all the HFT's memory.">HFTDestroy</a>(). </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>A pointer to user-supplied data to pass to the <a href="aslayer_HFT.htm#HFT">HFT</a> server. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created <a href="aslayer_HFT.htm#HFT">HFT</a> server. </span>
+</section>
+</section>
+
+</div>
+</body></html>

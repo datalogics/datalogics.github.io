@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Acro Support Layer: ASDate</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Acro Support Layer: ASDate</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>ASDate Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#ASDate">ASDate</a></dt><dd> -  An opaque object holding information for a particular date and time.</dd>
+<dt><a href="#ASDateTimeFormat">ASDateTimeFormat</a></dt><dd> -  A constant indicating a string format for representing a date and time.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASDate"><strong><span style="color:grey;">ASDate</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:3851</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>An opaque object holding information for a particular date and time. All <a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time.">ASDate</a> objects are guaranteed to give accurate representation of UTC time, unadjusted for leap seconds. This is due to the fact that the introduction of leap seconds to the international calendar does not happen according to a well-defined rule. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> <a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time.">ASDate</a> objects are not guaranteed to represent local time accurately. To be exact, in Mac OS and UNIX, <a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time.">ASDate</a> cannot always determine the prevailing daylight saving rule for the operating system's time zone. See ASDateGetCurrentLocalTime() for further explanation. </p>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_ASDateRec</code> <code>*</code><code>ASDate</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASDate.htm#ASDateDup" title=" Creates a new date object containing the same data as an existing date object."><code>ASDateDup</code></a></td><td><a href="aslayer_ASDate.htm#ASDateNew" title=" Creates a date object."><code>ASDateNew</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCalendarTimeSpan.htm#ASCalendarTimeSpanAddWithBase" title=" Adds two calendar time spans, storing the result in another calendar time span object."><code>ASCalendarTimeSpanAddWithBase</code></a></td><td><a href="aslayer_ASCalendarTimeSpan.htm#ASCalendarTimeSpanCompare" title=" Compares two calendar time spans with respect to a base date."><code>ASCalendarTimeSpanCompare</code></a></td></tr>
+<tr><td><a href="aslayer_ASCalendarTimeSpan.htm#ASCalendarTimeSpanDiff" title=" Calculates the difference between calendar time span objects and stores the result in the provided ASCalendarTimeSpan object."><code>ASCalendarTimeSpanDiff</code></a></td><td><a href="aslayer_ASDate.htm#ASDateAddCalendarTimeSpan" title=" Adds a calendar time span to a date."><code>ASDateAddCalendarTimeSpan</code></a></td></tr>
+<tr><td><a href="aslayer_ASDate.htm#ASDateAddTimeSpan" title=" Adds a time span (an exact number of seconds) to a date."><code>ASDateAddTimeSpan</code></a></td><td><a href="aslayer_ASDate.htm#ASDateCalendarDiff" title=" Calculates the difference between two ASDate objects and stores the result in the provided ASCalendarTimeSpan object."><code>ASDateCalendarDiff</code></a></td></tr>
+<tr><td><a href="aslayer_ASDate.htm#ASDateClear" title=" Reinitializes a date object to the newly-allocated state, as returned by ASDateNew()."><code>ASDateClear</code></a></td><td><a href="aslayer_ASDate.htm#ASDateCompare" title=" Tests whether one date is earlier or later than another."><code>ASDateCompare</code></a></td></tr>
+<tr><td><a href="aslayer_ASDate.htm#ASDateCopy" title=" Copies date and time data from one date object to another."><code>ASDateCopy</code></a></td><td><a href="aslayer_ASDate.htm#ASDateDestroy" title=" Releases and destroys a date object."><code>ASDateDestroy</code></a></td></tr>
+<tr><td><a href="aslayer_ASDate.htm#ASDateDup" title=" Creates a new date object containing the same data as an existing date object."><code>ASDateDup</code></a></td><td><a href="aslayer_ASDate.htm#ASDateExactDiff" title=" Calculates the exact difference in seconds between two date objects and stores the result in the provided ASTimeSpan object."><code>ASDateExactDiff</code></a></td></tr>
+<tr><td><a href="aslayer_ASDate.htm#ASDateGetLocalTime" title=" Creates a time record that represents the local time represented by the date object."><code>ASDateGetLocalTime</code></a></td><td><a href="aslayer_ASDate.htm#ASDateGetTimeString" title=" Creates a time string from a date object according to a specified format."><code>ASDateGetTimeString</code></a></td></tr>
+<tr><td><a href="aslayer_ASDate.htm#ASDateGetUTCTime" title=" Creates a time record that represents the UTC time represented by the date object."><code>ASDateGetUTCTime</code></a></td><td><a href="aslayer_ASDate.htm#ASDateSetLocalTimeOffset" title=" Sets a date object's local time offset according to the operating system's current time zone information."><code>ASDateSetLocalTimeOffset</code></a></td></tr>
+<tr><td><a href="aslayer_ASDate.htm#ASDateSetTimeFromRec" title=" Initializes a date object from a time record."><code>ASDateSetTimeFromRec</code></a></td><td><a href="aslayer_ASDate.htm#ASDateSetTimeFromString" title=" Initializes a date object from a time string."><code>ASDateSetTimeFromString</code></a></td></tr>
+<tr><td><a href="aslayer_ASDate.htm#ASDateSetToCurrentLocalTime" title=" Sets a date object to the current local time, using the time zone information from the operating system."><code>ASDateSetToCurrentLocalTime</code></a></td><td><a href="aslayer_ASDate.htm#ASDateSetToCurrentUTCTime" title=" Sets a date object to the current UTC time with no time zone information."><code>ASDateSetToCurrentUTCTime</code></a></td></tr>
+<tr><td><a href="aslayer_ASDate.htm#ASDateSubtractCalendarTimeSpan" title=" Subtracts a calendar time span from a date."><code>ASDateSubtractCalendarTimeSpan</code></a></td><td><a href="aslayer_ASDate.htm#ASDateSubtractTimeSpan" title=" Subtracts a time span (an exact number of seconds) from a date."><code>ASDateSubtractTimeSpan</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASDateTimeFormat"><strong><span style="color:grey;">ASDateTimeFormat</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:3839</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A constant indicating a string format for representing a date and time. See PDF date formats, page 87. You can find this document on the web store of the International Standards Organization (ISO). 
+<p>For value options see <a href="aslayer_General.htm#ASTimeOptions" title=" A constant indicating a string format for representing a date and time."><code>ASTimeOptions.</code></a> </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASEnum8"><code>ASEnum8</code></a> <code>ASDateTimeFormat</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASDate.htm#ASDateGetTimeString" title=" Creates a time string from a date object according to a specified format."><code>ASDateGetTimeString</code></a></td><td><a href="aslayer_ASDate.htm#ASDateSetTimeFromString" title=" Initializes a date object from a time string."><code>ASDateSetTimeFromString</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>ASDate Structures</h2></header>
+<nav><dl>
+<dt><a href="#_t_ASTimeRec">_t_ASTimeRec</a></dt><dd> -  A time/date structure.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="_t_ASTimeRec"><strong><span style="color:grey;">_t_ASTimeRec</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1195</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>A time/date structure.<br/>
+<p>The millisecond field is currently unused.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_ASTimeRec {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>year</code><code>;</code> </div>
+</td><td><span>Only common era years are displayed appropriately. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>month</code><code>;</code> </div>
+</td><td><span>Jan = <code>1</code>,..., Dec = <code>12</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>date</code><code>;</code> </div>
+</td><td><span><code>1..31</code> </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>hour</code><code>;</code> </div>
+</td><td><span><code>0..23</code> </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>minute</code><code>;</code> </div>
+</td><td><span><code>0..59</code> </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>second</code><code>;</code> </div>
+</td><td><span><code>0..59</code> </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>millisecond</code><code>;</code> </div>
+</td><td><span><code>0..999</code> </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>day</code><code>;</code> </div>
+</td><td><span>Sun = <code>0</code>,... Sat = <code>6</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>gmtOffset</code><code>;</code> </div>
+</td><td><span>GMT offset in half hours east of Greenwich.<code>-48</code> signifies an unknown value. </span>
+</td></tr>
+<tr><td><code id="ASTimeRec"><code>}</code> <a href="aslayer_ASDate.htm#_t_ASTimeRec" title=" A time/date structure."><code>ASTimeRec</code></a><code>,</code> <code>*</code><a href="aslayer_ASDate.htm#_t_ASTimeRec" title=" A time/date structure."><code>ASTimeRecP</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASDate.htm#ASDateGetLocalTime" title=" Creates a time record that represents the local time represented by the date object."><code>ASDateGetLocalTime</code></a></td><td><a href="aslayer_ASDate.htm#ASDateGetUTCTime" title=" Creates a time record that represents the UTC time represented by the date object."><code>ASDateGetUTCTime</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASDate.htm#ASDateSetTimeFromRec" title=" Initializes a date object from a time record."><code>ASDateSetTimeFromRec</code></a></td><td><a href="pdlayer_PDAnnot.htm#PDAnnotGetDate" title=" Gets an annotation's date."><code>PDAnnotGetDate</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnot.htm#PDAnnotSetDate" title=" Sets an annotation's date."><code>PDAnnotSetDate</code></a></td><td><a href="pdlayer_PDFileAttachment.htm#PDFileAttachmentGetCreationDate" title=" Gets the creation date of the file attachment."><code>PDFileAttachmentGetCreationDate</code></a></td></tr>
+<tr><td><a href="pdlayer_PDFileAttachment.htm#PDFileAttachmentGetFieldDate" title=" Gets the value of the specified date field in the file attachment."><code>PDFileAttachmentGetFieldDate</code></a></td><td><a href="pdlayer_PDFileAttachment.htm#PDFileAttachmentGetModDate" title=" Gets the modification date of the file attachment."><code>PDFileAttachmentGetModDate</code></a></td></tr>
+<tr><td><a href="pdlayer_PDFileAttachment.htm#PDFileAttachmentSetFieldDate" title=" Sets the specified date field in the file attachment."><code>PDFileAttachmentSetFieldDate</code></a></td><td><a href="pdlayer_PDFolder.htm#PDFolderGetCreationDate" title=" Gets the creation date of the folder."><code>PDFolderGetCreationDate</code></a></td></tr>
+<tr><td><a href="pdlayer_PDFolder.htm#PDFolderGetFieldDate" title=" Gets the value of the specified date field in the folder."><code>PDFolderGetFieldDate</code></a></td><td><a href="pdlayer_PDFolder.htm#PDFolderGetModDate" title=" Gets the modification date of the folder."><code>PDFolderGetModDate</code></a></td></tr>
+<tr><td><a href="pdlayer_PDFolder.htm#PDFolderSetCreationDate" title=" Sets the creation date of the folder."><code>PDFolderSetCreationDate</code></a></td><td><a href="pdlayer_PDFolder.htm#PDFolderSetFieldDate" title=" Sets the specified date field in the folder."><code>PDFolderSetFieldDate</code></a></td></tr>
+<tr><td><a href="pdlayer_PDFolder.htm#PDFolderSetModDate" title=" Sets the modification date of the folder."><code>PDFolderSetModDate</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASFileSys.htm#_t_ASFileSysItemProps" title=" A list of properties for the object referenced by an ASPathName."><code>_t_ASFileSysItemProps</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>ASDate Functions</h2></header>
+<nav><dl>
+<dt><a href="#ASDateAddCalendarTimeSpan">ASDateAddCalendarTimeSpan</a></dt><dd> -  Adds a calendar time span to a date.</dd>
+<dt><a href="#ASDateAddTimeSpan">ASDateAddTimeSpan</a></dt><dd> -  Adds a time span (an exact number of seconds) to a date.</dd>
+<dt><a href="#ASDateCalendarDiff">ASDateCalendarDiff</a></dt><dd> -  Calculates the difference between two ASDate objects and stores the result in the provided ASCalendarTimeSpan object.</dd>
+<dt><a href="#ASDateClear">ASDateClear</a></dt><dd> -  Reinitializes a date object to the newly-allocated state, as returned by ASDateNew().</dd>
+<dt><a href="#ASDateCompare">ASDateCompare</a></dt><dd> -  Tests whether one date is earlier or later than another.</dd>
+<dt><a href="#ASDateCopy">ASDateCopy</a></dt><dd> -  Copies date and time data from one date object to another.</dd>
+<dt><a href="#ASDateDestroy">ASDateDestroy</a></dt><dd> -  Releases and destroys a date object.</dd>
+<dt><a href="#ASDateDup">ASDateDup</a></dt><dd> -  Creates a new date object containing the same data as an existing date object.</dd>
+<dt><a href="#ASDateExactDiff">ASDateExactDiff</a></dt><dd> -  Calculates the exact difference in seconds between two date objects and stores the result in the provided ASTimeSpan object.</dd>
+<dt><a href="#ASDateGetLocalTime">ASDateGetLocalTime</a></dt><dd> -  Creates a time record that represents the local time represented by the date object.</dd>
+<dt><a href="#ASDateGetTimeString">ASDateGetTimeString</a></dt><dd> -  Creates a time string from a date object according to a specified format.</dd>
+<dt><a href="#ASDateGetUTCTime">ASDateGetUTCTime</a></dt><dd> -  Creates a time record that represents the UTC time represented by the date object.</dd>
+<dt><a href="#ASDateNew">ASDateNew</a></dt><dd> -  Creates a date object.</dd>
+<dt><a href="#ASDateSetLocalTimeOffset">ASDateSetLocalTimeOffset</a></dt><dd> -  Sets a date object's local time offset according to the operating system's current time zone information.</dd>
+<dt><a href="#ASDateSetTimeFromRec">ASDateSetTimeFromRec</a></dt><dd> -  Initializes a date object from a time record.</dd>
+<dt><a href="#ASDateSetTimeFromString">ASDateSetTimeFromString</a></dt><dd> -  Initializes a date object from a time string.</dd>
+<dt><a href="#ASDateSetToCurrentLocalTime">ASDateSetToCurrentLocalTime</a></dt><dd> -  Sets a date object to the current local time, using the time zone information from the operating system.</dd>
+<dt><a href="#ASDateSetToCurrentUTCTime">ASDateSetToCurrentUTCTime</a></dt><dd> -  Sets a date object to the current UTC time with no time zone information.</dd>
+<dt><a href="#ASDateSubtractCalendarTimeSpan">ASDateSubtractCalendarTimeSpan</a></dt><dd> -  Subtracts a calendar time span from a date.</dd>
+<dt><a href="#ASDateSubtractTimeSpan">ASDateSubtractTimeSpan</a></dt><dd> -  Subtracts a time span (an exact number of seconds) from a date.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASDateAddCalendarTimeSpan"><strong><span style="color:grey;">ASDateAddCalendarTimeSpan</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1724</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Adds a calendar time span to a date. It modifies the date by the length of time provided in the <a href="aslayer_ASCalendarTimeSpan.htm#_t_ASCalendarTimeSpan" title=" Represents a calendar time span used to calculate ambiguous time spans such as 1 year and 3 months.">ASCalendarTimeSpan</a> object. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> There is some ambiguity in a calendar time span; to add an exact time span (for example, 2592000 seconds rather than one month), use <a href="aslayer_ASDate.htm#ASDateAddTimeSpan" title=" Adds a time span (an exact number of seconds) to a date.">ASDateAddTimeSpan</a>(). </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASDate.htm#ASDateAddTimeSpan" title=" Adds a time span (an exact number of seconds) to a date."><code>ASDateAddTimeSpan</code></a>
+<a href="aslayer_ASDate.htm#ASDateSubtractCalendarTimeSpan" title=" Subtracts a calendar time span from a date."><code>ASDateSubtractCalendarTimeSpan</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASDateAddCalendarTimeSpan(</code><a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>date</code><code>,</code> <code>const</code> <a href="aslayer_ASCalendarTimeSpan.htm#_t_ASCalendarTimeSpan" title=" Represents a calendar time span used to calculate ambiguous time spans such as 1 year and 3 months."><code>ASCalendarTimeSpan</code></a> <code>timeSpan</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>date</code></span>
+</td><td><span>The date. </span>
+</td></tr>
+<tr><td><span><code>timeSpan</code></span>
+</td><td><span>The calendar time span to add. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASDateAddTimeSpan"><strong><span style="color:grey;">ASDateAddTimeSpan</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1747</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Adds a time span (an exact number of seconds) to a date. It modifies the date by the length of time provided in the <a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds.">ASTimeSpan</a> object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASDate.htm#ASDateAddCalendarTimeSpan" title=" Adds a calendar time span to a date."><code>ASDateAddCalendarTimeSpan</code></a>
+<a href="aslayer_ASDate.htm#ASDateSubtractTimeSpan" title=" Subtracts a time span (an exact number of seconds) from a date."><code>ASDateSubtractTimeSpan</code></a>
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanAdd" title=" Adds two time spans, storing the result (an exact number of seconds) in another time span object."><code>ASTimeSpanAdd</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASDateAddTimeSpan(</code><a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>date</code><code>,</code> <code>const</code> <a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>timeSpan</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>date</code></span>
+</td><td><span>The date. </span>
+</td></tr>
+<tr><td><span><code>timeSpan</code></span>
+</td><td><span>The time span to add. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASDateCalendarDiff"><strong><span style="color:grey;">ASDateCalendarDiff</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1762</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Calculates the difference between two <a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time.">ASDate</a> objects and stores the result in the provided <a href="aslayer_ASCalendarTimeSpan.htm#_t_ASCalendarTimeSpan" title=" Represents a calendar time span used to calculate ambiguous time spans such as 1 year and 3 months.">ASCalendarTimeSpan</a> object. The result is broken down into years, months, and so on, in the highest denomination possible. For example, a difference of 13 months is reported as 1 year and 1 month. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASDate.htm#ASDateCompare" title=" Tests whether one date is earlier or later than another."><code>ASDateCompare</code></a>
+<a href="aslayer_ASDate.htm#ASDateExactDiff" title=" Calculates the exact difference in seconds between two date objects and stores the result in the provided ASTimeSpan object."><code>ASDateExactDiff</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASDateCalendarDiff(</code><code>const</code> <a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>date1</code><code>,</code> <code>const</code> <a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>date2</code><code>,</code> <a href="aslayer_ASCalendarTimeSpan.htm#_t_ASCalendarTimeSpan" title=" Represents a calendar time span used to calculate ambiguous time spans such as 1 year and 3 months."><code>ASCalendarTimeSpan</code></a> <code>result</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>date1</code></span>
+</td><td><span>The first date. </span>
+</td></tr>
+<tr><td><span><code>date2</code></span>
+</td><td><span>The second date. </span>
+</td></tr>
+<tr><td><span><code>result</code></span>
+</td><td><span>The calendar time span structure in which to store the difference. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASDateClear"><strong><span style="color:grey;">ASDateClear</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1567</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Reinitializes a date object to the newly-allocated state, as returned by <a href="aslayer_ASDate.htm#ASDateNew" title=" Creates a date object.">ASDateNew</a>(). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASDate.htm#ASDateDestroy" title=" Releases and destroys a date object."><code>ASDateDestroy</code></a>
+<a href="aslayer_ASDate.htm#ASDateNew" title=" Creates a date object."><code>ASDateNew</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASDateClear(</code><a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>retVal</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>retVal</code></span>
+</td><td><span>The date object. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASDateCompare"><strong><span style="color:grey;">ASDateCompare</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1939</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Tests whether one date is earlier or later than another. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCalendarTimeSpan.htm#ASCalendarTimeSpanCompare" title=" Compares two calendar time spans with respect to a base date."><code>ASCalendarTimeSpanCompare</code></a>
+<a href="aslayer_ASDate.htm#ASDateExactDiff" title=" Calculates the exact difference in seconds between two date objects and stores the result in the provided ASTimeSpan object."><code>ASDateExactDiff</code></a>
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanCompare" title=" Compares two time spans to determine if they are equal or if one represents fewer seconds than the other."><code>ASTimeSpanCompare</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>ASDateCompare(</code><code>const</code> <a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>date1</code><code>,</code> <code>const</code> <a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>date2</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>date1</code></span>
+</td><td><span>The first date. </span>
+</td></tr>
+<tr><td><span><code>date2</code></span>
+</td><td><span>The second date. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><code>1</code> if <code>date1</code> <code>&gt;</code> <code>date2</code>, <code>0</code> if they are equal,<code>-1</code> if <code>date1</code> <code>&lt;</code> <code>date2</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASDateCopy"><strong><span style="color:grey;">ASDateCopy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1577</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Copies date and time data from one date object to another. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASDate.htm#ASDateClear" title=" Reinitializes a date object to the newly-allocated state, as returned by ASDateNew()."><code>ASDateClear</code></a>
+<a href="aslayer_ASDate.htm#ASDateDup" title=" Creates a new date object containing the same data as an existing date object."><code>ASDateDup</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASDateCopy(</code><code>const</code> <a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>original</code><code>,</code> <a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>copy</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>original</code></span>
+</td><td><span>The date to be copied. </span>
+</td></tr>
+<tr><td><span><code>copy</code></span>
+</td><td><span>The date into which the data is copied. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASDateDestroy"><strong><span style="color:grey;">ASDateDestroy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1586</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Releases and destroys a date object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASDate.htm#ASDateClear" title=" Reinitializes a date object to the newly-allocated state, as returned by ASDateNew()."><code>ASDateClear</code></a>
+<a href="aslayer_ASDate.htm#ASDateDup" title=" Creates a new date object containing the same data as an existing date object."><code>ASDateDup</code></a>
+<a href="aslayer_ASDate.htm#ASDateNew" title=" Creates a date object."><code>ASDateNew</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASDateDestroy(</code><a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>date</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>date</code></span>
+</td><td><span>The date. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASDateDup"><strong><span style="color:grey;">ASDateDup</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1558</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a new date object containing the same data as an existing date object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASDate.htm#ASDateCopy" title=" Copies date and time data from one date object to another."><code>ASDateCopy</code></a>
+<a href="aslayer_ASDate.htm#ASDateDestroy" title=" Releases and destroys a date object."><code>ASDateDestroy</code></a>
+<a href="aslayer_ASDate.htm#ASDateNew" title=" Creates a date object."><code>ASDateNew</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>ASDateDup(</code><code>const</code> <a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>date</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>date</code></span>
+</td><td><span>The date to duplicate. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The new date object. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASDateExactDiff"><strong><span style="color:grey;">ASDateExactDiff</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1777</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Calculates the exact difference in seconds between two date objects and stores the result in the provided <a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds.">ASTimeSpan</a> object. If <code>date1</code> is earlier than <code>date2</code>, the result is negative. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASDate.htm#ASDateCalendarDiff" title=" Calculates the difference between two ASDate objects and stores the result in the provided ASCalendarTimeSpan object."><code>ASDateCalendarDiff</code></a>
+<a href="aslayer_ASDate.htm#ASDateCompare" title=" Tests whether one date is earlier or later than another."><code>ASDateCompare</code></a>
+<a href="aslayer_ASTimeSpan.htm#ASTimeSpanDiff" title=" Calculates the exact difference in seconds between time span objects and stores the result in the provided ASTimeSpan object."><code>ASTimeSpanDiff</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASDateExactDiff(</code><code>const</code> <a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>date1</code><code>,</code> <code>const</code> <a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>date2</code><code>,</code> <a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>result</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>date1</code></span>
+</td><td><span>The first date. </span>
+</td></tr>
+<tr><td><span><code>date2</code></span>
+</td><td><span>The second date. </span>
+</td></tr>
+<tr><td><span><code>result</code></span>
+</td><td><span>The time span structure in which to store the difference. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASDateGetLocalTime"><strong><span style="color:grey;">ASDateGetLocalTime</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1822</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a time record that represents the local time represented by the date object. The resulting local time might not account for daylight savings time correctly if the date object has been modified by adding or substracting a time span or calendar time span. It raises an exception if there is not enough memory. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASDate.htm#ASDateGetTimeString" title=" Creates a time string from a date object according to a specified format."><code>ASDateGetTimeString</code></a>
+<a href="aslayer_ASDate.htm#ASDateGetUTCTime" title=" Creates a time record that represents the UTC time represented by the date object."><code>ASDateGetUTCTime</code></a>
+<a href="aslayer_ASDate.htm#ASDateSetTimeFromRec" title=" Initializes a date object from a time record."><code>ASDateSetTimeFromRec</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASDate.htm#_t_ASTimeRec" title=" A time/date structure."><code>ASTimeRec</code></a> <code>ASDateGetLocalTime(</code><code>const</code> <a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>date</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>date</code></span>
+</td><td><span>The date. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created time record. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASDateGetTimeString"><strong><span style="color:grey;">ASDateGetTimeString</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1795</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a time string from a date object according to a specified format. If time zone information is available in the date object, the string contains the local time along with the time zone adjustment, if that is supported by the requested format. It raises an exception if there is not enough memory.<br/>
+<p>It is the client's responsibility to release the memory associated with the returned string using <a href="aslayer_ASMem.htm#ASfree" title=" Frees the specified memory block.">ASfree</a>().<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASDate.htm#ASDateClear" title=" Reinitializes a date object to the newly-allocated state, as returned by ASDateNew()."><code>ASDateClear</code></a>
+<a href="aslayer_ASDate.htm#ASDateGetLocalTime" title=" Creates a time record that represents the local time represented by the date object."><code>ASDateGetLocalTime</code></a>
+<a href="aslayer_ASDate.htm#ASDateGetUTCTime" title=" Creates a time record that represents the UTC time represented by the date object."><code>ASDateGetUTCTime</code></a>
+<a href="aslayer_ASDate.htm#ASDateSetTimeFromString" title=" Initializes a date object from a time string."><code>ASDateSetTimeFromString</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>char</code> <code>*</code><code>ASDateGetTimeString(</code><code>const</code> <a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>date</code><code>,</code> <a href="aslayer_ASDate.htm#ASDateTimeFormat" title=" A constant indicating a string format for representing a date and time."><code>ASDateTimeFormat</code></a> <code>format</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>date</code></span>
+</td><td><span>The date object. </span>
+</td></tr>
+<tr><td><span><code>format</code></span>
+</td><td><span>The format of the time string. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The time string in the specified format. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASDateGetUTCTime"><strong><span style="color:grey;">ASDateGetUTCTime</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1808</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a time record that represents the UTC time represented by the date object. It raises an exception if there is not enough memory. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASDate.htm#ASDateClear" title=" Reinitializes a date object to the newly-allocated state, as returned by ASDateNew()."><code>ASDateClear</code></a>
+<a href="aslayer_ASDate.htm#ASDateGetLocalTime" title=" Creates a time record that represents the local time represented by the date object."><code>ASDateGetLocalTime</code></a>
+<a href="aslayer_ASDate.htm#ASDateGetUTCTime" title=" Creates a time record that represents the UTC time represented by the date object."><code>ASDateGetUTCTime</code></a>
+<a href="aslayer_ASDate.htm#ASDateSetTimeFromString" title=" Initializes a date object from a time string."><code>ASDateSetTimeFromString</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASDate.htm#_t_ASTimeRec" title=" A time/date structure."><code>ASTimeRec</code></a> <code>ASDateGetUTCTime(</code><code>const</code> <a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>date</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>date</code></span>
+</td><td><span>The date object. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created time record. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASDateNew"><strong><span style="color:grey;">ASDateNew</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1548</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a date object. The newly allocated object reflects the epoch time: Jan 1 1970 00:00:00 UTC.<br/>
+<p>Raises an exception if there is not enough memory for the operation.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASDate.htm#ASDateClear" title=" Reinitializes a date object to the newly-allocated state, as returned by ASDateNew()."><code>ASDateClear</code></a>
+<a href="aslayer_ASDate.htm#ASDateCopy" title=" Copies date and time data from one date object to another."><code>ASDateCopy</code></a>
+<a href="aslayer_ASDate.htm#ASDateDestroy" title=" Releases and destroys a date object."><code>ASDateDestroy</code></a>
+<a href="aslayer_ASDate.htm#ASDateDup" title=" Creates a new date object containing the same data as an existing date object."><code>ASDateDup</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>ASDateNew(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created date object. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASDateSetLocalTimeOffset"><strong><span style="color:grey;">ASDateSetLocalTimeOffset</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1659</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets a date object's local time offset according to the operating system's current time zone information. Different operating systems handle daylight savings differently. This method causes the date object to always use the same daylight savings time offset that the operating system is currently using, even if the date object is modified. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASDate.htm#ASDateSetToCurrentLocalTime" title=" Sets a date object to the current local time, using the time zone information from the operating system."><code>ASDateSetToCurrentLocalTime</code></a>
+<a href="aslayer_ASDate.htm#ASDateSetToCurrentUTCTime" title=" Sets a date object to the current UTC time with no time zone information."><code>ASDateSetToCurrentUTCTime</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASDateSetLocalTimeOffset(</code><a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>date</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>date</code></span>
+</td><td><span>The date. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASDateSetTimeFromRec"><strong><span style="color:grey;">ASDateSetTimeFromRec</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1690</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Initializes a date object from a time record. It raises an exception if the time structure represents an invalid time, such as January 32nd 1999 or Feb 29th 2001. It assumes that the parameters for the day and month in the time record are <code>1</code>-based. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASDate.htm#ASDateClear" title=" Reinitializes a date object to the newly-allocated state, as returned by ASDateNew()."><code>ASDateClear</code></a>
+<a href="aslayer_ASDate.htm#ASDateSetTimeFromString" title=" Initializes a date object from a time string."><code>ASDateSetTimeFromString</code></a>
+<a href="aslayer_ASDate.htm#ASDateSetToCurrentLocalTime" title=" Sets a date object to the current local time, using the time zone information from the operating system."><code>ASDateSetToCurrentLocalTime</code></a>
+<a href="aslayer_ASDate.htm#ASDateSetToCurrentUTCTime" title=" Sets a date object to the current UTC time with no time zone information."><code>ASDateSetToCurrentUTCTime</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASDateSetTimeFromRec(</code><a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>date</code><code>,</code> <code>const</code> <a href="aslayer_ASDate.htm#_t_ASTimeRec" title=" A time/date structure."><code>ASTimeRec</code></a> <code>*</code><code>timeRec</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>date</code></span>
+</td><td><span>The date object. </span>
+</td></tr>
+<tr><td><span><code>timeRec</code></span>
+</td><td><span>The time record. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASDateSetTimeFromString"><strong><span style="color:grey;">ASDateSetTimeFromString</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1675</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Initializes a date object from a time string. It raises an exception if there is not enough memory, if the format is unrecognized, or if the time string is not formatted according to the supplied format. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASDate.htm#ASDateClear" title=" Reinitializes a date object to the newly-allocated state, as returned by ASDateNew()."><code>ASDateClear</code></a>
+<a href="aslayer_ASDate.htm#ASDateSetTimeFromString" title=" Initializes a date object from a time string."><code>ASDateSetTimeFromString</code></a>
+<a href="aslayer_ASDate.htm#ASDateSetToCurrentLocalTime" title=" Sets a date object to the current local time, using the time zone information from the operating system."><code>ASDateSetToCurrentLocalTime</code></a>
+<a href="aslayer_ASDate.htm#ASDateSetToCurrentUTCTime" title=" Sets a date object to the current UTC time with no time zone information."><code>ASDateSetToCurrentUTCTime</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASDateSetTimeFromString(</code><a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>date</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>timeString</code><code>,</code> <a href="aslayer_ASDate.htm#ASDateTimeFormat" title=" A constant indicating a string format for representing a date and time."><code>ASDateTimeFormat</code></a> <code>format</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>date</code></span>
+</td><td><span>The date object. </span>
+</td></tr>
+<tr><td><span><code>timeString</code></span>
+</td><td><span>The time string, in the specified format. </span>
+</td></tr>
+<tr><td><span><code>format</code></span>
+</td><td><span>The format of the time string. <a href="aslayer_General.htm#kASTimeNone" title=" None.">kASTimeNone</a> and <a href="aslayer_General.htm#kASTimeUniversalH" title=" Slight variations of the time format expressed in ISO 8601.">kASTimeUniversalH</a> are not supported. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASDateSetToCurrentLocalTime"><strong><span style="color:grey;">ASDateSetToCurrentLocalTime</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1646</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets a date object to the current local time, using the time zone information from the operating system. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASDate.htm#ASDateClear" title=" Reinitializes a date object to the newly-allocated state, as returned by ASDateNew()."><code>ASDateClear</code></a>
+<a href="aslayer_ASDate.htm#ASDateGetLocalTime" title=" Creates a time record that represents the local time represented by the date object."><code>ASDateGetLocalTime</code></a>
+<a href="aslayer_ASDate.htm#ASDateSetLocalTimeOffset" title=" Sets a date object's local time offset according to the operating system's current time zone information."><code>ASDateSetLocalTimeOffset</code></a>
+<a href="aslayer_ASDate.htm#ASDateSetToCurrentUTCTime" title=" Sets a date object to the current UTC time with no time zone information."><code>ASDateSetToCurrentUTCTime</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASDateSetToCurrentLocalTime(</code><a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>date</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>date</code></span>
+</td><td><span>The date. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASDateSetToCurrentUTCTime"><strong><span style="color:grey;">ASDateSetToCurrentUTCTime</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1635</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets a date object to the current UTC time with no time zone information. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASDate.htm#ASDateClear" title=" Reinitializes a date object to the newly-allocated state, as returned by ASDateNew()."><code>ASDateClear</code></a>
+<a href="aslayer_ASDate.htm#ASDateGetUTCTime" title=" Creates a time record that represents the UTC time represented by the date object."><code>ASDateGetUTCTime</code></a>
+<a href="aslayer_ASDate.htm#ASDateSetLocalTimeOffset" title=" Sets a date object's local time offset according to the operating system's current time zone information."><code>ASDateSetLocalTimeOffset</code></a>
+<a href="aslayer_ASDate.htm#ASDateSetToCurrentLocalTime" title=" Sets a date object to the current local time, using the time zone information from the operating system."><code>ASDateSetToCurrentLocalTime</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASDateSetToCurrentUTCTime(</code><a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>retVal</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>retVal</code></span>
+</td><td><span>The date. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASDateSubtractCalendarTimeSpan"><strong><span style="color:grey;">ASDateSubtractCalendarTimeSpan</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1710</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Subtracts a calendar time span from a date. It modifies the date by the length of time provided in the <a href="aslayer_ASCalendarTimeSpan.htm#_t_ASCalendarTimeSpan" title=" Represents a calendar time span used to calculate ambiguous time spans such as 1 year and 3 months.">ASCalendarTimeSpan</a> object. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> There is some ambiguity in a calendar time span; to subtract an exact time span (for example, 2592000 seconds rather than one month), use <a href="aslayer_ASDate.htm#ASDateSubtractTimeSpan" title=" Subtracts a time span (an exact number of seconds) from a date.">ASDateSubtractTimeSpan</a>(). </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASDate.htm#ASDateAddCalendarTimeSpan" title=" Adds a calendar time span to a date."><code>ASDateAddCalendarTimeSpan</code></a>
+<a href="aslayer_ASDate.htm#ASDateSubtractTimeSpan" title=" Subtracts a time span (an exact number of seconds) from a date."><code>ASDateSubtractTimeSpan</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASDateSubtractCalendarTimeSpan(</code><a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>date</code><code>,</code> <code>const</code> <a href="aslayer_ASCalendarTimeSpan.htm#_t_ASCalendarTimeSpan" title=" Represents a calendar time span used to calculate ambiguous time spans such as 1 year and 3 months."><code>ASCalendarTimeSpan</code></a> <code>timeSpan</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>date</code></span>
+</td><td><span>The date. </span>
+</td></tr>
+<tr><td><span><code>timeSpan</code></span>
+</td><td><span>The calendar time span to subtract. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASDateSubtractTimeSpan"><strong><span style="color:grey;">ASDateSubtractTimeSpan</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1735</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Subtracts a time span (an exact number of seconds) from a date. It modifies the date by the length of time provided in the <a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds.">ASTimeSpan</a> object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASDate.htm#ASDateAddTimeSpan" title=" Adds a time span (an exact number of seconds) to a date."><code>ASDateAddTimeSpan</code></a>
+<a href="aslayer_ASDate.htm#ASDateSubtractCalendarTimeSpan" title=" Subtracts a calendar time span from a date."><code>ASDateSubtractCalendarTimeSpan</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASDateSubtractTimeSpan(</code><a href="aslayer_ASDate.htm#ASDate" title=" An opaque object holding information for a particular date and time."><code>ASDate</code></a> <code>date</code><code>,</code> <code>const</code> <a href="aslayer_ASTimeSpan.htm#ASTimeSpan" title=" An ASTimeSpan represents an exact time span, measured in seconds."><code>ASTimeSpan</code></a> <code>timeSpan</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>date</code></span>
+</td><td><span>The date. </span>
+</td></tr>
+<tr><td><span><code>timeSpan</code></span>
+</td><td><span>The time span to subtract. </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

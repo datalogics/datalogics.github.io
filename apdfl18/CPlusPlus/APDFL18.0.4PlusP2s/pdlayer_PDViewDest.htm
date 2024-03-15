@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PD Layer: PDViewDest</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PD Layer: PDViewDest</h5>
+<li><a href="#Definitions">Definitions</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Definitions">
+<header><h2>PDViewDest Definitions</h2></header>
+<nav><dl>
+<dt><a href="#PDViewDestNULL">PDViewDestNULL</a></dt><dd> - </dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDViewDestNULL"><strong><span style="color:grey;">PDViewDestNULL</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3227</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define PDViewDestNULL</code> <a href="aslayer_ASFixed.htm#fixedNegativeInfinity"><code>fixedNegativeInfinity</code></a> </code>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>PDViewDest Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDViewDestination">PDViewDestination</a></dt><dd> -  A particular view of a page in a document.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDViewDestination"><strong><span style="color:grey;">PDViewDestination</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3222</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A particular view of a page in a document. It contains a reference to a page, a rectangle on that page, and information specifying how to adjust the view to fit the window's size and shape. It corresponds to a PDF Dest array and can be considered a special form of a <a href="pdlayer_PDAction.htm#PDAction" title=" Actions are what happens when a user clicks on a link or bookmark.">PDAction</a>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#OPAQUE_64_BITS"><code>OPAQUE_64_BITS</code></a> <code>PDViewDestination</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAction.htm#PDActionGetDest" title=" Gets an action's destination view."><code>PDActionGetDest</code></a></td><td><a href="pdlayer_PDViewDest.htm#PDViewDestCreate" title=" Creates a new view destination object."><code>PDViewDestCreate</code></a></td></tr>
+<tr><td><a href="pdlayer_PDViewDest.htm#PDViewDestFromCosObj" title=" Converts the specified Cos object to a view destination and verifies that the view destination is valid."><code>PDViewDestFromCosObj</code></a></td><td><a href="pdlayer_PDViewDest.htm#PDViewDestResolve" title=" Resolves a destination."><code>PDViewDestResolve</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAction.htm#PDActionNewFromDest" title=" Creates a new action that takes the user to the specified destination view."><code>PDActionNewFromDest</code></a></td><td><a href="pdlayer_PDViewDest.htm#PDViewDestDestroy" title=" Deletes a view destination object."><code>PDViewDestDestroy</code></a></td></tr>
+<tr><td><a href="pdlayer_PDViewDest.htm#PDViewDestGetAttr" title=" Gets a view destination's fit type, destination rectangle, and zoom factor."><code>PDViewDestGetAttr</code></a></td><td><a href="pdlayer_PDViewDest.htm#PDViewDestGetCosObj" title=" Gets the Cos object corresponding to a view destination and verifies that the view destination is valid."><code>PDViewDestGetCosObj</code></a></td></tr>
+<tr><td><a href="pdlayer_PDViewDest.htm#PDViewDestIsValid" title=" Tests whether a view destination is valid."><code>PDViewDestIsValid</code></a></td><td><a href="pdlayer_PDViewDest.htm#PDViewDestResolve" title=" Resolves a destination."><code>PDViewDestResolve</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDViewDest Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDViewDestCreate">PDViewDestCreate</a></dt><dd> -  Creates a new view destination object.</dd>
+<dt><a href="#PDViewDestDestroy">PDViewDestDestroy</a></dt><dd> -  Deletes a view destination object.</dd>
+<dt><a href="#PDViewDestFromCosObj">PDViewDestFromCosObj</a></dt><dd> -  Converts the specified Cos object to a view destination and verifies that the view destination is valid.</dd>
+<dt><a href="#PDViewDestGetAttr">PDViewDestGetAttr</a></dt><dd> -  Gets a view destination's fit type, destination rectangle, and zoom factor.</dd>
+<dt><a href="#PDViewDestGetCosObj">PDViewDestGetCosObj</a></dt><dd> -  Gets the Cos object corresponding to a view destination and verifies that the view destination is valid.</dd>
+<dt><a href="#PDViewDestIsValid">PDViewDestIsValid</a></dt><dd> -  Tests whether a view destination is valid.</dd>
+<dt><a href="#PDViewDestResolve">PDViewDestResolve</a></dt><dd> -  Resolves a destination.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDViewDestCreate"><strong><span style="color:grey;">PDViewDestCreate</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4198</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a new view destination object. For information about the Zoom Factor see page 365 of the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7. You can find this document on the web store of the International Standards Organization (ISO). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDViewDest.htm#PDViewDestDestroy" title=" Deletes a view destination object."><code>PDViewDestDestroy</code></a>
+<a href="pdlayer_PDViewDest.htm#PDViewDestFromCosObj" title=" Converts the specified Cos object to a view destination and verifies that the view destination is valid."><code>PDViewDestFromCosObj</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDViewDest.htm#PDViewDestination" title=" A particular view of a page in a document."><code>PDViewDestination</code></a> <code>PDViewDestCreate(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document."><code>PDPage</code></a> <code>initialPage</code><code>,</code> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>initialFitType</code><code>,</code> <code>const</code> <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRectP</code></a> <code>initialRect</code><code>,</code> <code>const</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>initialZoom</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>pageNumber</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>doc</code></span>
+</td><td><span>The document in which the destination is used. </span>
+</td></tr>
+<tr><td><span><code>initialPage</code></span>
+</td><td><span>The destination page. </span>
+</td></tr>
+<tr><td><span><code>initialFitType</code></span>
+</td><td><span>The destination fit type. It must be one of the View Destination Fit Types, which must be converted into an <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> with <a href="aslayer_ASAtom.htm#ASAtomFromString" title=" Gets the ASAtom for the specified string.">ASAtomFromString</a>(). </span>
+</td></tr>
+<tr><td><span><code>initialRect</code></span>
+</td><td><span>A pointer to an <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides.">ASFixedRect</a> specifying the destination rectangle, specified in user space coordinates. The appropriate information will be extracted from <code>initialRect</code>, depending on <code>initialFitType</code>, to create the destination. All four of the <code>initialRect</code> parameter's components should be set; using <a href="pdlayer_PDViewDest.htm#PDViewDestNULL">PDViewDestNULL</a> for any components can result in incorrect results for rotated pages. </span>
+</td></tr>
+<tr><td><span><code>initialZoom</code></span>
+</td><td><span>The zoom factor to set for the destination. Used only if <code>initialFitType</code> is <code>XYZ</code>. Use the predefined value <a href="pdlayer_PDViewDest.htm#PDViewDestNULL">PDViewDestNULL</a> (see PDExpT.h) to indicate a <a href="aslayer_General.htm#NULL"><code>NULL</code></a> zoom factor, described in Destinations in "Document-Level Navigation," in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 12.4.4, page 365. </span>
+</td></tr>
+<tr><td><span><code>pageNumber</code></span>
+</td><td><span>Currently unused. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created view destination. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDViewDestDestroy"><strong><span style="color:grey;">PDViewDestDestroy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4211</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Deletes a view destination object. Before deleting a view destination, ensure that no link or bookmark refers to it. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDViewDest.htm#PDViewDestCreate" title=" Creates a new view destination object."><code>PDViewDestCreate</code></a>
+<a href="pdlayer_PDViewDest.htm#PDViewDestFromCosObj" title=" Converts the specified Cos object to a view destination and verifies that the view destination is valid."><code>PDViewDestFromCosObj</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDViewDestDestroy(</code><a href="pdlayer_PDViewDest.htm#PDViewDestination" title=" A particular view of a page in a document."><code>PDViewDestination</code></a> <code>dest</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>dest</code></span>
+</td><td><span>IN/OUT The view destination to destroy. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDViewDestFromCosObj"><strong><span style="color:grey;">PDViewDestFromCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4278</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Converts the specified Cos object to a view destination and verifies that the view destination is valid. This method does not copy the object, but is instead the logical equivalent of a type cast. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDViewDest.htm#PDViewDestGetCosObj" title=" Gets the Cos object corresponding to a view destination and verifies that the view destination is valid.">PDViewDestGetCosObj</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDViewDest.htm#PDViewDestination" title=" A particular view of a page in a document."><code>PDViewDestination</code></a> <code>PDViewDestFromCosObj(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>obj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>obj</code></span>
+</td><td><span>IN/OUT The dictionary Cos object to convert to a view destination. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>An array Cos object for the view destination. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdErrBadAction" title=" Invalid action object."><code>pdErrBadAction</code></a></span>
+</td><td><span>is raised if the destination is invalid, as determined by <a href="pdlayer_PDViewDest.htm#PDViewDestIsValid" title=" Tests whether a view destination is valid.">PDViewDestIsValid</a>(). </span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDViewDestGetAttr"><strong><span style="color:grey;">PDViewDestGetAttr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4245</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets a view destination's fit type, destination rectangle, and zoom factor. The destination must be represented by an array, which is the case for a GoToR action. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDViewDest.htm#PDViewDestCreate" title=" Creates a new view destination object.">PDViewDestCreate</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDViewDestGetAttr(</code><a href="pdlayer_PDViewDest.htm#PDViewDestination" title=" A particular view of a page in a document."><code>PDViewDestination</code></a> <code>dest</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>*</code><code>pageNum</code><code>,</code> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>*</code><code>fitType</code><code>,</code> <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRectP</code></a> <code>destRect</code><code>,</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>*</code><code>zoom</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>dest</code></span>
+</td><td><span>IN/OUT The view destination whose attributes are obtained. </span>
+</td></tr>
+<tr><td><span><code>pageNum</code></span>
+</td><td><span>IN/OUT (Filled by the method) The page number of the destination's page. </span>
+</td></tr>
+<tr><td><span><code>fitType</code></span>
+</td><td><span>IN/OUT (Filled by the method) The destination fit type. One of the values listed in View Destination Fit Types. </span>
+</td></tr>
+<tr><td><span><code>destRect</code></span>
+</td><td><span>IN/OUT (Filled by the method) A pointer to a <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides.">ASFixedRect</a> containing the destination's rectangle, specified in user space coordinates. </span>
+</td></tr>
+<tr><td><span><code>zoom</code></span>
+</td><td><span>IN/OUT (Filled by the method) The destination's zoom factor. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span>is raised if the destination is not represented by an array. </span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDViewDestGetCosObj"><strong><span style="color:grey;">PDViewDestGetCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4263</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the Cos object corresponding to a view destination and verifies that the view destination is valid. This method does not copy the object, but is instead the logical equivalent of a type cast. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDViewDest.htm#PDViewDestFromCosObj" title=" Converts the specified Cos object to a view destination and verifies that the view destination is valid."><code>PDViewDestFromCosObj</code></a>
+<a href="pdlayer_PDViewDest.htm#PDViewDestIsValid" title=" Tests whether a view destination is valid."><code>PDViewDestIsValid</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>PDViewDestGetCosObj(</code><a href="pdlayer_PDViewDest.htm#PDViewDestination" title=" A particular view of a page in a document."><code>PDViewDestination</code></a> <code>dest</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>dest</code></span>
+</td><td><span>IN/OUT The view destination whose Cos object is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>Array Cos object for the view destination. The contents of the array can be enumerated using <a href="coslayer_CosObj.htm#CosObjEnum" title=" Enumerates the elements of a Cos object by calling a user-supplied procedure for each component of the object.">CosObjEnum</a>(). It returns a <a href="aslayer_General.htm#NULL"><code>NULL</code></a> Cos object if the view destination is invalid, as determined by <a href="pdlayer_PDViewDest.htm#PDViewDestIsValid" title=" Tests whether a view destination is valid.">PDViewDestIsValid</a>(). </span>
+</section>
+<section><div class="infoRow"><h3 id="PDViewDestIsValid"><strong><span style="color:grey;">PDViewDestIsValid</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4222</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Tests whether a view destination is valid. This is intended only to ensure that the view destination has not been deleted, not to ensure that all necessary information is present and valid. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDViewDestIsValid(</code><a href="pdlayer_PDViewDest.htm#PDViewDestination" title=" A particular view of a page in a document."><code>PDViewDestination</code></a> <code>dest</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>dest</code></span>
+</td><td><span>The view destination whose validity is determined. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the view destination is valid, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDViewDestResolve"><strong><span style="color:grey;">PDViewDestResolve</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:5491</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Resolves a destination. <code>dest</code> is the value of the D key in an action. It can be a real destination (an array) or a name. If it is a name, look it up in the <code>doc</code> parameter's Dests dictionary. The value found there can be a real destination (an array) or a dictionary. If it is a dictionary, look up the D key in that dictionary.<br/>
+<p>This method is useful for getting a <a href="pdlayer_PDViewDest.htm#PDViewDestination" title=" A particular view of a page in a document.">PDViewDestination</a> from an action, as provided by <a href="pdlayer_PDAction.htm#PDActionGetDest" title=" Gets an action's destination view.">PDActionGetDest</a>(), since this method may not return a <a href="pdlayer_PDViewDest.htm#PDViewDestination" title=" A particular view of a page in a document.">PDViewDestination</a>.<br/></p>
+
+<p>
+<p>This method can raise memory, I/O, and parsing exceptions.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDAction.htm#PDActionGetDest" title=" Gets an action's destination view.">PDActionGetDest</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDViewDest.htm#PDViewDestination" title=" A particular view of a page in a document."><code>PDViewDestination</code></a> <code>PDViewDestResolve(</code><a href="pdlayer_PDViewDest.htm#PDViewDestination" title=" A particular view of a page in a document."><code>PDViewDestination</code></a> <code>dest</code><code>,</code> <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>dest</code></span>
+</td><td><span>IN/OUT The destination to resolve. </span>
+</td></tr>
+<tr><td><span><code>doc</code></span>
+</td><td><span>IN/OUT The <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document.">PDDoc</a> that contains the destination. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The resolved view destination. </span>
+</section>
+</section>
+
+</div>
+</body></html>

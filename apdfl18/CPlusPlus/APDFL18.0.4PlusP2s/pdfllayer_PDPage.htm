@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDFL Library Layer: PDPage</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDFL Library Layer: PDPage</h5>
+<li><a href="#Definitions">Definitions</a></li>
+<li><a href="#Enumerations">Enumerations</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Definitions">
+<header><h2>PDPage Definitions</h2></header>
+<nav><dl>
+<dt><a href="#kPDPageBlendingProfileValueStr">kPDPageBlendingProfileValueStr</a></dt><dd> -  Takes ASext as input.</dd>
+<dt><a href="#kPDPageDirectlyImposedStr">kPDPageDirectlyImposedStr</a></dt><dd> -  Directly imposed page.</dd>
+<dt><a href="#kPDPageDisplayOverPrintPreviewStr">kPDPageDisplayOverPrintPreviewStr</a></dt><dd> -  Display overprint preview.</dd>
+<dt><a href="#kPDPageDoLazyEraseStr">kPDPageDoLazyEraseStr</a></dt><dd> -  Erase the page while rendering only as needed.</dd>
+<dt><a href="#kPDPageDoNotDownloadFontsStr">kPDPageDoNotDownloadFontsStr</a></dt><dd> - </dd>
+<dt><a href="#kPDPageDoNotSubstituteWorkingSpacesStr">kPDPageDoNotSubstituteWorkingSpacesStr</a></dt><dd> -  Do not substitute working spaces.</dd>
+<dt><a href="#kPDPageDrawSmoothAATextDDRStr">kPDPageDrawSmoothAATextDDRStr</a></dt><dd> - </dd>
+<dt><a href="#kPDPageDrawSmoothAATextPreviewStr">kPDPageDrawSmoothAATextPreviewStr</a></dt><dd> - </dd>
+<dt><a href="#kPDPageDrawSmoothBicubicImageStr">kPDPageDrawSmoothBicubicImageStr</a></dt><dd> -  Draw smooth image using bicubic resampling.</dd>
+<dt><a href="#kPDPageDrawSmoothImageStr">kPDPageDrawSmoothImageStr</a></dt><dd> -  Draw smooth image.</dd>
+<dt><a href="#kPDPageDrawSmoothLineArtStr">kPDPageDrawSmoothLineArtStr</a></dt><dd> -  Draw smooth line art.</dd>
+<dt><a href="#kPDPageDrawSmoothTextStr">kPDPageDrawSmoothTextStr</a></dt><dd> -  Draw smooth text.</dd>
+<dt><a href="#kPDPageEmitPageGroupStr">kPDPageEmitPageGroupStr</a></dt><dd> -  Emit a page group.</dd>
+<dt><a href="#kPDPageForceGDIPortStr">kPDPageForceGDIPortStr</a></dt><dd> - </dd>
+<dt><a href="#kPDPageIgnoreIsolatedAndKnockoutTransparencyGroupStr">kPDPageIgnoreIsolatedAndKnockoutTransparencyGroupStr</a></dt><dd> -  Ignore Isolated and Knockout transparency at page boundary.</dd>
+<dt><a href="#kPDPageImageAntiAliasStr">kPDPageImageAntiAliasStr</a></dt><dd> - </dd>
+<dt><a href="#kPDPageImageResampleBicubicStr">kPDPageImageResampleBicubicStr</a></dt><dd> - </dd>
+<dt><a href="#kPDPageImageResampleLinearStr">kPDPageImageResampleLinearStr</a></dt><dd> - </dd>
+<dt><a href="#kPDPageIsPSPrintingStr">kPDPageIsPSPrintingStr</a></dt><dd> -  PostScript printing.</dd>
+<dt><a href="#kPDPageIsPrintPreviewingStr">kPDPageIsPrintPreviewingStr</a></dt><dd> - </dd>
+<dt><a href="#kPDPageIsPrintingStr">kPDPageIsPrintingStr</a></dt><dd> -  The page is being printed.</dd>
+<dt><a href="#kPDPageNoDitherStr">kPDPageNoDitherStr</a></dt><dd> - </dd>
+<dt><a href="#kPDPagePassMetadatatoAGMPortStr">kPDPagePassMetadatatoAGMPortStr</a></dt><dd> -  Pass metadata to AGM port.</dd>
+<dt><a href="#kPDPagePassOCtoAGMPortStr">kPDPagePassOCtoAGMPortStr</a></dt><dd> -  Pass optional content to AGM port.</dd>
+<dt><a href="#kPDPagePassOPItoAGMPortStr">kPDPagePassOPItoAGMPortStr</a></dt><dd> -  Pass open prepress interface (OPI) to AGM port.</dd>
+<dt><a href="#kPDPageSuppressRasterAlphaStr">kPDPageSuppressRasterAlphaStr</a></dt><dd> -  Suppress raster alpha.</dd>
+<dt><a href="#kPDPageSwapComponentsStr">kPDPageSwapComponentsStr</a></dt><dd> -  Render colors in BGR order rather than RGB.</dd>
+<dt><a href="#kPDPageThreadIPParseStr">kPDPageThreadIPParseStr</a></dt><dd> - </dd>
+<dt><a href="#kPDPageUseAnnotFacesStr">kPDPageUseAnnotFacesStr</a></dt><dd> -  Draw annotation appearances.</dd>
+<dt><a href="#kPDPageUsePreciseColorConvStr">kPDPageUsePreciseColorConvStr</a></dt><dd> - </dd>
+<dt><a href="#kPDPageUsePrinterMarkAnnotsStr">kPDPageUsePrinterMarkAnnotsStr</a></dt><dd> -  User printer's mark annotations.</dd>
+<dt><a href="#kPDPageUseSignatureAnnotsOnlyStr">kPDPageUseSignatureAnnotsOnlyStr</a></dt><dd> - </dd>
+<dt><a href="#kPDPageUseStampAnnotsOnlyStr">kPDPageUseStampAnnotsOnlyStr</a></dt><dd> -  If set, only consider Stamp annotations.</dd>
+<dt><a href="#kPDPageUseTrapAnnotsStr">kPDPageUseTrapAnnotsStr</a></dt><dd> -  Use trap network annotations.</dd>
+<dt><a href="#kPDPageWorkingSpacesOnlyForChangeStr">kPDPageWorkingSpacesOnlyForChangeStr</a></dt><dd> -  If this is set, only use a working space instead of a device space if the process color model of the target device is different than that of the source.</dd>
+<dt><a href="#kPDPageWritingToEMFStr">kPDPageWritingToEMFStr</a></dt><dd> - </dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="kPDPageBlendingProfileValueStr"><strong><span style="color:grey;">kPDPageBlendingProfileValueStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1296</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Takes ASext as input. If set we use this profile as blending profile. <a href="pdfllayer_PDPage.htm#kPDPageDisplayOverPrintPreviewStr" title=" Display overprint preview.">kPDPageDisplayOverPrintPreviewStr</a> must be set for this to get honored. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0."><code>PDPageDrawContentsToMemoryEx</code></a>
+<a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindowEx2" title=" Draws the contents of a page into the specified window."><code>PDPageDrawContentsToWindowEx2</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageBlendingProfileValueStr</code> <code>"BlendingProfileDesc"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageDirectlyImposedStr"><strong><span style="color:grey;">kPDPageDirectlyImposedStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1198</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Directly imposed page. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0."><code>PDPageDrawContentsToMemoryEx</code></a>
+<a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindowEx2" title=" Draws the contents of a page into the specified window."><code>PDPageDrawContentsToWindowEx2</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageDirectlyImposedStr</code> <code>"DirectlyImposed"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageDisplayOverPrintPreviewStr"><strong><span style="color:grey;">kPDPageDisplayOverPrintPreviewStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1182</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Display overprint preview. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0."><code>PDPageDrawContentsToMemoryEx</code></a>
+<a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindowEx2" title=" Draws the contents of a page into the specified window."><code>PDPageDrawContentsToWindowEx2</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageDisplayOverPrintPreviewStr</code> <code>"DisplayOverPrintPreview"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageDoLazyEraseStr"><strong><span style="color:grey;">kPDPageDoLazyEraseStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1149</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Erase the page while rendering only as needed. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0."><code>PDPageDrawContentsToMemoryEx</code></a>
+<a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindowEx2" title=" Draws the contents of a page into the specified window."><code>PDPageDrawContentsToWindowEx2</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageDoLazyEraseStr</code> <code>"DoLazyErase"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageDoNotDownloadFontsStr"><strong><span style="color:grey;">kPDPageDoNotDownloadFontsStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1301</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageDoNotDownloadFontsStr</code> <code>"DL_DoNotDownloadFonts"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageDoNotSubstituteWorkingSpacesStr"><strong><span style="color:grey;">kPDPageDoNotSubstituteWorkingSpacesStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1254</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Do not substitute working spaces. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0."><code>PDPageDrawContentsToMemoryEx</code></a>
+<a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindowEx2" title=" Draws the contents of a page into the specified window."><code>PDPageDrawContentsToWindowEx2</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageDoNotSubstituteWorkingSpacesStr</code> <code>"DoNotSubstituteWorkingSpaces"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageDrawSmoothAATextDDRStr"><strong><span style="color:grey;">kPDPageDrawSmoothAATextDDRStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1415</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageDrawSmoothAATextDDRStr</code> <code>"SmoothAATextDDR"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageDrawSmoothAATextPreviewStr"><strong><span style="color:grey;">kPDPageDrawSmoothAATextPreviewStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1416</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageDrawSmoothAATextPreviewStr</code> <code>"SmoothAATextPreview"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageDrawSmoothBicubicImageStr"><strong><span style="color:grey;">kPDPageDrawSmoothBicubicImageStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1430</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Draw smooth image using bicubic resampling. This option can have performance overhead. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0.">PDPageDrawContentsToMemoryEx</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageDrawSmoothBicubicImageStr</code> <code>"SmoothImageUsingBicubicResampling"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageDrawSmoothImageStr"><strong><span style="color:grey;">kPDPageDrawSmoothImageStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1423</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Draw smooth image. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0.">PDPageDrawContentsToMemoryEx</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageDrawSmoothImageStr</code> <code>"SmoothImage"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageDrawSmoothLineArtStr"><strong><span style="color:grey;">kPDPageDrawSmoothLineArtStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1412</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Draw smooth line art. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0.">PDPageDrawContentsToMemoryEx</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageDrawSmoothLineArtStr</code> <code>"SmoothLineArt"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageDrawSmoothTextStr"><strong><span style="color:grey;">kPDPageDrawSmoothTextStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1399</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Draw smooth text. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0.">PDPageDrawContentsToMemoryEx</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageDrawSmoothTextStr</code> <code>"SmoothText"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageEmitPageGroupStr"><strong><span style="color:grey;">kPDPageEmitPageGroupStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1214</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Emit a page group. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0."><code>PDPageDrawContentsToMemoryEx</code></a>
+<a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindowEx2" title=" Draws the contents of a page into the specified window."><code>PDPageDrawContentsToWindowEx2</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageEmitPageGroupStr</code> <code>"EmitPageGroup"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageForceGDIPortStr"><strong><span style="color:grey;">kPDPageForceGDIPortStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1298</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageForceGDIPortStr</code> <code>"DL_ForceGDIPort"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageIgnoreIsolatedAndKnockoutTransparencyGroupStr"><strong><span style="color:grey;">kPDPageIgnoreIsolatedAndKnockoutTransparencyGroupStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Ignore Isolated and Knockout transparency at page boundary. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0."><code>PDPageDrawContentsToMemoryEx</code></a>
+<a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindowEx2" title=" Draws the contents of a page into the specified window."><code>PDPageDrawContentsToWindowEx2</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageIgnoreIsolatedAndKnockoutTransparencyGroupStr</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageImageAntiAliasStr"><strong><span style="color:grey;">kPDPageImageAntiAliasStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1405</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageImageAntiAliasStr</code> <code>"ImageAntiAlias"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageImageResampleBicubicStr"><strong><span style="color:grey;">kPDPageImageResampleBicubicStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageImageResampleBicubicStr</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageImageResampleLinearStr"><strong><span style="color:grey;">kPDPageImageResampleLinearStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageImageResampleLinearStr</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageIsPSPrintingStr"><strong><span style="color:grey;">kPDPageIsPSPrintingStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1206</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>PostScript printing. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0."><code>PDPageDrawContentsToMemoryEx</code></a>
+<a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindowEx2" title=" Draws the contents of a page into the specified window."><code>PDPageDrawContentsToWindowEx2</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageIsPSPrintingStr</code> <code>"IsPSPrinting"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageIsPrintPreviewingStr"><strong><span style="color:grey;">kPDPageIsPrintPreviewingStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1303</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageIsPrintPreviewingStr</code> <code>"DL_IsPrintPreviewing"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageIsPrintingStr"><strong><span style="color:grey;">kPDPageIsPrintingStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1174</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>The page is being printed. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0."><code>PDPageDrawContentsToMemoryEx</code></a>
+<a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindowEx2" title=" Draws the contents of a page into the specified window."><code>PDPageDrawContentsToWindowEx2</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageIsPrintingStr</code> <code>"IsPrinting"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageNoDitherStr"><strong><span style="color:grey;">kPDPageNoDitherStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1307</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageNoDitherStr</code> <code>"NoDither"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPagePassMetadatatoAGMPortStr"><strong><span style="color:grey;">kPDPagePassMetadatatoAGMPortStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1238</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Pass metadata to AGM port. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0."><code>PDPageDrawContentsToMemoryEx</code></a>
+<a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindowEx2" title=" Draws the contents of a page into the specified window."><code>PDPageDrawContentsToWindowEx2</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPagePassMetadatatoAGMPortStr</code> <code>"PassMetadatatoAGMPort"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPagePassOCtoAGMPortStr"><strong><span style="color:grey;">kPDPagePassOCtoAGMPortStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1246</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Pass optional content to AGM port. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0."><code>PDPageDrawContentsToMemoryEx</code></a>
+<a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindowEx2" title=" Draws the contents of a page into the specified window."><code>PDPageDrawContentsToWindowEx2</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPagePassOCtoAGMPortStr</code> <code>"PassOCtoAGMPort"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPagePassOPItoAGMPortStr"><strong><span style="color:grey;">kPDPagePassOPItoAGMPortStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1230</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Pass open prepress interface (OPI) to AGM port. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0."><code>PDPageDrawContentsToMemoryEx</code></a>
+<a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindowEx2" title=" Draws the contents of a page into the specified window."><code>PDPageDrawContentsToWindowEx2</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPagePassOPItoAGMPortStr</code> <code>"PassOPItoAGMPort"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageSuppressRasterAlphaStr"><strong><span style="color:grey;">kPDPageSuppressRasterAlphaStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1270</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Suppress raster alpha. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0.">PDPageDrawContentsToMemoryEx</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageSuppressRasterAlphaStr</code> <code>"SuppressRasterAlpha"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageSwapComponentsStr"><strong><span style="color:grey;">kPDPageSwapComponentsStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1263</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Render colors in BGR order rather than RGB. It is only valid for calls to <a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0.">PDPageDrawContentsToMemoryEx</a>() and only when outputing to an RGB colorspace. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0."><code>PDPageDrawContentsToMemoryEx</code></a>
+<a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindowEx2" title=" Draws the contents of a page into the specified window."><code>PDPageDrawContentsToWindowEx2</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageSwapComponentsStr</code> <code>"SwapComponents"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageThreadIPParseStr"><strong><span style="color:grey;">kPDPageThreadIPParseStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1310</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageThreadIPParseStr</code> <code>"ThreadParse"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageUseAnnotFacesStr"><strong><span style="color:grey;">kPDPageUseAnnotFacesStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1166</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Draw annotation appearances. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0."><code>PDPageDrawContentsToMemoryEx</code></a>
+<a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindowEx2" title=" Draws the contents of a page into the specified window."><code>PDPageDrawContentsToWindowEx2</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageUseAnnotFacesStr</code> <code>"UseAnnotFaces"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageUsePreciseColorConvStr"><strong><span style="color:grey;">kPDPageUsePreciseColorConvStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1299</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageUsePreciseColorConvStr</code> <code>"DL_UsePreciseColorConv"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageUsePrinterMarkAnnotsStr"><strong><span style="color:grey;">kPDPageUsePrinterMarkAnnotsStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1222</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>User printer's mark annotations. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0."><code>PDPageDrawContentsToMemoryEx</code></a>
+<a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindowEx2" title=" Draws the contents of a page into the specified window."><code>PDPageDrawContentsToWindowEx2</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageUsePrinterMarkAnnotsStr</code> <code>"UsePrinterMarkAnnots"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageUseSignatureAnnotsOnlyStr"><strong><span style="color:grey;">kPDPageUseSignatureAnnotsOnlyStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1300</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageUseSignatureAnnotsOnlyStr</code> <code>"DL_UseSignatureAnnotsOnly"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageUseStampAnnotsOnlyStr"><strong><span style="color:grey;">kPDPageUseStampAnnotsOnlyStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1287</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>If set, only consider Stamp annotations. This overrides <a href="pdfllayer_PDPage.htm#kPDPageUseAnnotFaces" title=" Draw annotation appearances.">kPDPageUseAnnotFaces</a>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0."><code>PDPageDrawContentsToMemoryEx</code></a>
+<a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindowEx2" title=" Draws the contents of a page into the specified window."><code>PDPageDrawContentsToWindowEx2</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageUseStampAnnotsOnlyStr</code> <code>"UseStampAnnotsOnly"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageUseTrapAnnotsStr"><strong><span style="color:grey;">kPDPageUseTrapAnnotsStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1190</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Use trap network annotations. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0."><code>PDPageDrawContentsToMemoryEx</code></a>
+<a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindowEx2" title=" Draws the contents of a page into the specified window."><code>PDPageDrawContentsToWindowEx2</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageUseTrapAnnotsStr</code> <code>"UseTrapAnnots"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageWorkingSpacesOnlyForChangeStr"><strong><span style="color:grey;">kPDPageWorkingSpacesOnlyForChangeStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1279</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>If this is set, only use a working space instead of a device space if the process color model of the target device is different than that of the source. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0."><code>PDPageDrawContentsToMemoryEx</code></a>
+<a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindowEx2" title=" Draws the contents of a page into the specified window."><code>PDPageDrawContentsToWindowEx2</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageWorkingSpacesOnlyForChangeStr</code> <code>"WorkingSpacesOnlyForChange"</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDPageWritingToEMFStr"><strong><span style="color:grey;">kPDPageWritingToEMFStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1302</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDPageWritingToEMFStr</code> <code>"DL_WritingToEMF"</code> </code>
+</section>
+</section>
+<section id="Enumerations">
+<header><h2>PDPage Enumerations</h2></header>
+<nav><dl>
+<dt><a href="#PDPageEmitOptions">PDPageEmitOptions</a></dt><dd> -  Bit flags indicating which page marks are emitted for color separations.</dd>
+<dt><a href="#PDPageOptions">PDPageOptions</a></dt><dd> -  Bit flags indicating how a page is rendered.</dd>
+<dt><a href="#PDPageOptions">PDPageOptions</a></dt><dd> -  Bit flags indicating how a page is rendered.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDPageEmitOptions"><strong><span style="color:grey;">PDPageEmitOptions</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:450</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Bit flags indicating which page marks are emitted for color separations. 
+<p>Value options for <a href="pdfllayer_PDPage.htm#PDPageMarkFlags" title=" Bit flags indicating which page marks are emitted for color separations."><code>PDPageMarkFlags.</code></a> </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> One of the enum member "kPDPageEmitSlurMarks" is <span style="color:red;">deprecated</span> and it has no effect on printing. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDFLPrint.htm#PDFLPrintDoc" title=" Prints a PDF document or pages from a PDF document allowing the caller to specify options such as page size, rotation, and shrink-to-fit."><code>PDFLPrintDoc</code></a>
+<a href="pdfllayer_PDPage.htm#PDPageEmitPSOrient"><code>PDPageEmitPSOrient</code></a>
+<a href="pdlayer_PDPage.htm#PDPageMakeSeparations" title=" Generates print color separations for a page."><code>PDPageMakeSeparations</code></a></div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kPDPageEmitColorBars"><code>kPDPageEmitColorBars</code><code>=</code><code>0x0001</code></span>
+</td><td><span>enum <a href="pdfllayer_PDPage.htm#kPDPageEmitColorBars" title=" enum kPDPageEmitColorBars.">kPDPageEmitColorBars</a>. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageEmitRegMarks"><code>kPDPageEmitRegMarks</code><code>=</code><code>0x0002</code></span>
+</td><td><span>enum <a href="pdfllayer_PDPage.htm#kPDPageEmitRegMarks" title=" enum kPDPageEmitRegMarks.">kPDPageEmitRegMarks</a>. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageEmitCropMarks"><code>kPDPageEmitCropMarks</code><code>=</code><code>0x0004</code></span>
+</td><td><span>enum <a href="pdfllayer_PDPage.htm#kPDPageEmitCropMarks" title=" enum kPDPageEmitCropMarks.">kPDPageEmitCropMarks</a>. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageEmitBleedMarks"><code>kPDPageEmitBleedMarks</code><code>=</code><code>0x0008</code></span>
+</td><td><span>enum <a href="pdfllayer_PDPage.htm#kPDPageEmitBleedMarks" title=" enum kPDPageEmitBleedMarks.">kPDPageEmitBleedMarks</a>. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageEmitPageInfo"><code>kPDPageEmitPageInfo</code><code>=</code><code>0x0010</code></span>
+</td><td><span>enum <a href="pdfllayer_PDPage.htm#kPDPageEmitPageInfo" title=" enum kPDPageEmitPageInfo.">kPDPageEmitPageInfo</a>. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageEmitTrimMarks"><code>kPDPageEmitTrimMarks</code><code>=</code><code>0x0020</code></span>
+</td><td><span>enum <a href="pdfllayer_PDPage.htm#kPDPageEmitTrimMarks" title=" enum kPDPageEmitTrimMarks.">kPDPageEmitTrimMarks</a>. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageEmitSlurMarks"><code>kPDPageEmitSlurMarks</code><code>=</code><code>0x0040</code></span>
+</td><td><span><span style="color:red;">Deprecated</span> It has no effect on printing. </span>
+</td></tr></table>
+</section>
+<section><div class="infoRow"><h3 id="PDPageOptions"><strong><span style="color:grey;">PDPageOptions</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1031</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Bit flags indicating how a page is rendered. 
+<p>Value options for <a href="pdfllayer_PDPage.htm#PDPageDrawFlags" title=" Bit flags indicating how a page is rendered."><code>PDPageDrawFlags.</code></a> </span>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kPDPageDoLazyErase"><code>kPDPageDoLazyErase</code><code>=</code><code>0x00000001</code></span>
+</td><td><span>Erase the page while rendering only as needed. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageForceGDIPort"><code>kPDPageForceGDIPort</code><code>=</code><code>0x00000002</code></span>
+</td><td><span>if set, this forces the window draw code to attempt to use GDI instructions internally instead of assuming the incoming Platform device context contains enough information to allow APDFL to make a useful determination. Only honored on Windows. Useful when drawing to a window during print preview, when the supplied hDC is for the screen and does not allow APDFL to adequately instantiate drawing bounds. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageIsPrintPreviewing"><code>kPDPageIsPrintPreviewing</code><code>=</code><code>kPDPageForceGDIPort</code></span>
+</td><td><span>See <a href="pdfllayer_PDPage.htm#kPDPageForceGDIPort" title=" if set, this forces the window draw code to attempt to use GDI instructions internally instead of assuming the incoming Platform device context contains enough information to allow APDFL to make a useful determination.">kPDPageForceGDIPort</a>. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageIgnoreIsolatedAndKnockoutTransparencyGroup"><code>kPDPageIgnoreIsolatedAndKnockoutTransparencyGroup</code><code>=</code><code>0x00000010</code></span>
+</td><td><span>Ignore Isolated and Knockout transparency at page boundary. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageUseAnnotFaces"><code>kPDPageUseAnnotFaces</code><code>=</code><code>0x00000040</code></span>
+</td><td><span>Draw annotation appearances. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageIsPrinting"><code>kPDPageIsPrinting</code><code>=</code><code>0x00000080</code></span>
+</td><td><span>The page is being printed. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageDisplayOverPrintPreview"><code>kPDPageDisplayOverPrintPreview</code><code>=</code><code>0x00000100</code></span>
+</td><td><span>Display overprint preview. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageUsePreciseColorConv"><code>kPDPageUsePreciseColorConv</code><code>=</code><code>0x00000200</code></span>
+</td><td><span>If set, this forces Color Conversions to be as precise as possible (if unset, color conversions may pass through 8 bit intermediate values) </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageUseTrapAnnots"><code>kPDPageUseTrapAnnots</code><code>=</code><code>0x00002000</code></span>
+</td><td><span>Use trap network annotations. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageDirectlyImposed"><code>kPDPageDirectlyImposed</code><code>=</code><code>0x00004000</code></span>
+</td><td><span>Directly imposed page. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageIsPSPrinting"><code>kPDPageIsPSPrinting</code><code>=</code><code>0x00008000</code></span>
+</td><td><span>PostScript printing. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageEmitPageGroup"><code>kPDPageEmitPageGroup</code><code>=</code><code>0x00010000</code></span>
+</td><td><span>Emit a page group. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageUsePrinterMarkAnnots"><code>kPDPageUsePrinterMarkAnnots</code><code>=</code><code>0x00020000</code></span>
+</td><td><span>User printer's mark annotations. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPagePassOPItoAGMPort"><code>kPDPagePassOPItoAGMPort</code><code>=</code><code>0x00040000</code></span>
+</td><td><span>Pass open prepress interface (OPI) to AGM port. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPagePassMetadatatoAGMPort"><code>kPDPagePassMetadatatoAGMPort</code><code>=</code><code>0x00080000</code></span>
+</td><td><span>Pass metadata to AGM port. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPagePassOCtoAGMPort"><code>kPDPagePassOCtoAGMPort</code><code>=</code><code>0x00100000</code></span>
+</td><td><span>Pass optional content to AGM port. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageUseSignatureAnnotsOnly"><code>kPDPageUseSignatureAnnotsOnly</code><code>=</code><code>0x00200000</code></span>
+</td><td><span>If set, only consider Digital Signature annotations. This overrides the UseStampAnnotsOnly parameter below. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageDoNotDownloadFonts"><code>kPDPageDoNotDownloadFonts</code><code>=</code><code>0x00400000</code></span>
+</td><td><span>Do not download fonts during rendering. Use this flag to prevent fonts from being downloaded/named to the output. Currently active when writing GDI output, such as to a metafile or printer on Windows. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageWritingToEMF"><code>kPDPageWritingToEMF</code><code>=</code><code>0x00400000</code></span>
+</td><td><span>Indicate that the drawing is writing to an Enhanced MetaFile. This currently prevents fonts from being downloaded, but may advise other flags in the future. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageDoNotSubstituteWorkingSpaces"><code>kPDPageDoNotSubstituteWorkingSpaces</code><code>=</code><code>0x00800000</code></span>
+</td><td><span>Do not substitute working spaces. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageSwapComponents"><code>kPDPageSwapComponents</code><code>=</code><code>0x01000000</code></span>
+</td><td><span>Render colors in BGR order rather than RGB. It is only valid for calls to <a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemory" title=" Superseded by PDPageDrawContentsToMemoryEx() in Acrobat 10.0.">PDPageDrawContentsToMemory</a>() and only when outputing to an RGB colorspace. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageSuppressRasterAlpha"><code>kPDPageSuppressRasterAlpha</code><code>=</code><code>0x02000000</code></span>
+</td><td><span>Suppress raster alpha. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageWorkingSpacesOnlyForChange"><code>kPDPageWorkingSpacesOnlyForChange</code><code>=</code><code>0x04000000</code></span>
+</td><td><span>If this is set, only use a working space instead of a device space if the process color model of the target device is different than that of the source </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageUseStampAnnotsOnly"><code>kPDPageUseStampAnnotsOnly</code><code>=</code><code>0x08000000</code></span>
+</td><td><span>If set, only consider Stamp annotations. This overrides <a href="pdfllayer_PDPage.htm#kPDPageUseAnnotFaces" title=" Draw annotation appearances.">kPDPageUseAnnotFaces</a>. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageNoDither"><code>kPDPageNoDither</code><code>=</code><code>0x40000000</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageThreadIPParse"><code>kPDPageThreadIPParse</code><code>=</code><code>0x20000000</code></span>
+</td><td><span></span>
+</td></tr></table>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">PDPageOptions</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1347</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Bit flags indicating how a page is rendered. 
+<p>Value options for <a href="pdfllayer_PDPage.htm#PDPageDrawSmoothFlags" title=" Bit flags indicating how a page is rendered."><code>PDPageDrawSmoothFlags.</code></a> </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemory" title=" Superseded by PDPageDrawContentsToMemoryEx() in Acrobat 10.0.">PDPageDrawContentsToMemory</a> </span>
+</div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kPDPageDrawSmoothText"><code>kPDPageDrawSmoothText</code><code>=</code><code>0x00000001</code></span>
+</td><td><span>Draw smooth text. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageDrawSmoothLineArt"><code>kPDPageDrawSmoothLineArt</code><code>=</code><code>0x00000002</code></span>
+</td><td><span>Draw smooth line art. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageDrawSmoothImage"><code>kPDPageDrawSmoothImage</code><code>=</code><code>0x00000004</code></span>
+</td><td><span>Draw smooth image. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageDrawSmoothBicubicImage"><code>kPDPageDrawSmoothBicubicImage</code><code>=</code><code>0x00000008</code></span>
+</td><td><span>Draw smooth image using bicubic resampling. This option can have performance overhead </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageImageResampleBicubic"><code>kPDPageImageResampleBicubic</code><code>=</code><code>0x00000010</code></span>
+</td><td><span>Discrete control over image re-sampling. This option can have performance overhead </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageImageResampleLinear"><code>kPDPageImageResampleLinear</code><code>=</code><code>0x00000020</code></span>
+</td><td><span>Discrete control over image re-sampling. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageImageAntiAlias"><code>kPDPageImageAntiAlias</code><code>=</code><code>0x00000040</code></span>
+</td><td><span>Discrete control over image anti-aliasing. This option can have performance overhead </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageDrawSmoothAATextDDR"><code>kPDPageDrawSmoothAATextDDR</code><code>=</code><code>0x00000080</code></span>
+</td><td><span><a href="pdfllayer_PDPage.htm#kPDPageDrawSmoothAATextDDR" title=" kPDPageDrawSmoothAATextDDR will enable text smoothing (antialiasing) using the DDR sub-pixel antialiasing algorithm.">kPDPageDrawSmoothAATextDDR</a> will enable text smoothing (antialiasing) using the DDR sub-pixel antialiasing algorithm. Equivalent to the Smooth Text: for Laptop/LCD Screen option in Acrobat/Reader rendering preferences at higher resolutions. This will override the <a href="pdfllayer_PDPage.htm#kPDPageDrawSmoothText" title=" Draw smooth text.">kPDPageDrawSmoothText</a> switch, which is equivalent to the Smooth Text: for Monitor option in Acrobat/Reader rendering preferences. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPageDrawSmoothAATextPreview"><code>kPDPageDrawSmoothAATextPreview</code><code>=</code><code>0x00000100</code></span>
+</td><td><span><a href="pdfllayer_PDPage.htm#kPDPageDrawSmoothAATextPreview" title=" kPDPageDrawSmoothAATextPreview will enable special text rendering and anti-aliasing for better visual results when generating images at lower resolutions intended for on-screen viewing.">kPDPageDrawSmoothAATextPreview</a> will enable special text rendering and anti-aliasing for better visual results when generating images at lower resolutions intended for on-screen viewing. This prevents text from looking badly kerned or looking to have poor inter-character spacing. We recommend this for use for viewing applications at zoom levels of 150% or less, though you will want to experiment and decide for yourself. Do not use this for non-viewing applications. Do not scale up or down the rendered image that is generated from drawing a page using this flag- it will look very blurry and unfocused. </span>
+</td></tr></table>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>PDPage Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDPageDrawFlags">PDPageDrawFlags</a></dt><dd> -  Bit flags indicating how a page is rendered.</dd>
+<dt><a href="#PDPageDrawSmoothFlags">PDPageDrawSmoothFlags</a></dt><dd> -  Bit flags indicating how a page is rendered.</dd>
+<dt><a href="#PDPageMarkFlags">PDPageMarkFlags</a></dt><dd> -  Bit flags indicating which page marks are emitted for color separations.</dd>
+<dt><a href="#PDPageTilingMode">PDPageTilingMode</a></dt><dd> - </dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDPageDrawFlags"><strong><span style="color:grey;">PDPageDrawFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1134</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Bit flags indicating how a page is rendered. 
+<p>For value options see <a href="pdfllayer_PDPage.htm#PDPageOptions" title=" Bit flags indicating how a page is rendered."><code>PDPageOptions.</code></a> </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>PDPageDrawFlags</code><code>;</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDPageDrawSmoothFlags"><strong><span style="color:grey;">PDPageDrawSmoothFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1392</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Bit flags indicating how a page is rendered. 
+<p>For value options see <a href="pdfllayer_PDPage.htm#PDPageOptions" title=" Bit flags indicating how a page is rendered."><code>PDPageOptions.</code></a> </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemory" title=" Superseded by PDPageDrawContentsToMemoryEx() in Acrobat 10.0.">PDPageDrawContentsToMemory</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>PDPageDrawSmoothFlags</code><code>;</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDPageMarkFlags"><strong><span style="color:grey;">PDPageMarkFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:466</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Bit flags indicating which page marks are emitted for color separations. 
+<p>For value options see <a href="pdfllayer_PDPage.htm#PDPageEmitOptions" title=" Bit flags indicating which page marks are emitted for color separations."><code>PDPageEmitOptions.</code></a> </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> One of the enum member "kPDPageEmitSlurMarks" is <span style="color:red;">deprecated</span> and it has no effect on printing. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDFLPrint.htm#PDFLPrintDoc" title=" Prints a PDF document or pages from a PDF document allowing the caller to specify options such as page size, rotation, and shrink-to-fit."><code>PDFLPrintDoc</code></a>
+<a href="pdfllayer_PDPage.htm#PDPageEmitPSOrient"><code>PDPageEmitPSOrient</code></a>
+<a href="pdlayer_PDPage.htm#PDPageMakeSeparations" title=" Generates print color separations for a page."><code>PDPageMakeSeparations</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>PDPageMarkFlags</code><code>;</code> </code>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_PDFLPrint.htm#PDPrintParams" title=" A data structure indicating how a document should be printed."><code>PDPrintParams</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDPageTilingMode"><strong><span style="color:grey;">PDPageTilingMode</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:296</div>
+</div>
+
+<H4><strong>Description</strong></H4>
+
+<span>For value options see <a href="pdfllayer_General.htm#PDOptions"><code>PDOptions.</code></a> </span>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>PDPageTilingMode</code><code>;</code> </code>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_PDFLPrint.htm#PDPrintParams" title=" A data structure indicating how a document should be printed."><code>PDPrintParams</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDPage Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDPageDrawContentsPlacedToWindow">PDPageDrawContentsPlacedToWindow</a></dt><dd> -  Draws the page to the window or display context.</dd>
+<dt><a href="#PDPageDrawContentsPlacedWithParams">PDPageDrawContentsPlacedWithParams</a></dt><dd> -  Draws the page to the window or display context.</dd>
+<dt><a href="#PDPageDrawContentsToMemory">PDPageDrawContentsToMemory</a></dt><dd> -  Superseded by PDPageDrawContentsToMemoryEx() in Acrobat 10.0.</dd>
+<dt><a href="#PDPageDrawContentsToMemoryEx">PDPageDrawContentsToMemoryEx</a></dt><dd> -  Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0.</dd>
+<dt><a href="#PDPageEmitPSOrient">PDPageEmitPSOrient</a></dt><dd> - </dd>
+<dt><a href="#PDPageGetSize">PDPageGetSize</a></dt><dd> -  Returns the width and height of the page, which could be rotated or defaulted.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDPageDrawContentsPlacedToWindow"><strong><span style="color:grey;">PDPageDrawContentsPlacedToWindow</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:222</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Draws the page to the window or display context. The window and display context are implementation-dependent.<br/>
+<p>This method is the same as <a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindow" title=" Draws the contents of a page into the specified window.">PDPageDrawContentsToWindow</a>(), except that it raises an exception if the <a href="pdlayer_PDDoc.htm#pdPermCopy" title=" The user can copy information from the document to the clipboard."><code>pdPermCopy</code></a> (see <a href="pdlayer_PDDoc.htm#PDPerms" title=" Constant values that specify permissions which allow operations on a document file.">PDPerms</a>) permission is not set in the document.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindow" title=" Draws the contents of a page into the specified window.">PDPageDrawContentsToWindow</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPageDrawContentsPlacedToWindow(</code><a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document."><code>PDPage</code></a> <code>page</code><code>,</code> <code>void</code> <code>*</code><code>window</code><code>,</code> <code>void</code> <code>*</code><code>displayContext</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>isDPS</code><code>,</code> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrix</code></a> <code>*</code><code>matrix</code><code>,</code> <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRect</code></a> <code>*</code><code>updateRect</code><code>,</code> <a href="aslayer_General.htm#CancelProc"><code>CancelProc</code></a> <code>cancelProc</code><code>,</code> <code>void</code> <code>*</code><code>cancelProcClientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>page</code></span>
+</td><td><span>The page to draw into window. </span>
+</td></tr>
+<tr><td><span><code>window</code></span>
+</td><td><span>The platform window to which to render. On Windows, the window is an <code>HWND</code>. </span>
+</td></tr>
+<tr><td><span><code>displayContext</code></span>
+</td><td><span>The platform display context to which to render. On Windows, <code>displayContext</code> is an <code>HDC</code>. </span>
+</td></tr>
+<tr><td><span><code>isDPS</code></span>
+</td><td><span>Currently unused. Always set it to <a href="aslayer_General.htm#false"><code>false</code></a>. </span>
+</td></tr>
+<tr><td><span><code>matrix</code></span>
+</td><td><span>A pointer to the matrix to concatenate onto the default page matrix. It is useful for converting from page to window coordinates and for scaling. </span>
+</td></tr>
+<tr><td><span><code>updateRect</code></span>
+</td><td><span>A pointer to the rectangle to draw, defined in user space coordinates. Any objects outside of <code>updateRect</code> will not be drawn. All objects are drawn if <code>updateRect</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr>
+<tr><td><span><code>cancelProc</code></span>
+</td><td><span>A method called to check whether drawing should be cancelled. If the method returns <a href="aslayer_General.htm#true"><code>true</code></a>, drawing is stopped, nothing is erased, and the window contains whatever was drawn up to the current state. </span>
+</td></tr>
+<tr><td><span><code>cancelProcClientData</code></span>
+</td><td><span>A pointer to user-supplied data to pass to <code>cancelProc</code> each time it is called. It should be <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if <code>cancelProc</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdErrOpNotPermitted" title=" This operation is not permitted."><code>pdErrOpNotPermitted</code></a></span>
+</td><td><span>is raised if the <a href="pdlayer_PDDoc.htm#pdPermCopy" title=" The user can copy information from the document to the clipboard."><code>pdPermCopy</code></a> permission in <a href="pdlayer_PDDoc.htm#PDPermReqObj" title=" The document object type.">PDPermReqObj</a> for the document is not set. </span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDPageDrawContentsPlacedWithParams"><strong><span style="color:grey;">PDPageDrawContentsPlacedWithParams</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:499</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Draws the page to the window or display context. The window and display context are implementation-dependent.<br/>
+<p>This method is the same as <a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindow" title=" Draws the contents of a page into the specified window.">PDPageDrawContentsToWindow</a>(), except that it raises an exception if the <a href="pdlayer_PDDoc.htm#pdPermCopy" title=" The user can copy information from the document to the clipboard."><code>pdPermCopy</code></a> (see <a href="pdlayer_PDDoc.htm#PDPerms" title=" Constant values that specify permissions which allow operations on a document file.">PDPerms</a>) permission is not set in the document. This method is also like <a href="pdfllayer_PDPage.htm#PDPageDrawContentsPlacedToWindow" title=" Draws the page to the window or display context.">PDPageDrawContentsPlacedToWindow</a>(), only passing in a <a href="pdlayer_General.htm#_t_PDDrawParams" title=" Parameters used for optional-content drawing control.">PDDrawParams</a> structure which lets the clients specify their own <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a>.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindow" title=" Draws the contents of a page into the specified window.">PDPageDrawContentsToWindow</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPageDrawContentsPlacedWithParams(</code><a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document."><code>PDPage</code></a> <code>page</code><code>,</code> <a href="pdlayer_General.htm#_t_PDDrawParams" title=" Parameters used for optional-content drawing control."><code>PDDrawParams</code></a> <code>params</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>page</code></span>
+</td><td><span>The page to render. </span>
+</td></tr>
+<tr><td><span><code>params</code></span>
+</td><td><span>Allows clients to specify their own <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdErrOpNotPermitted" title=" This operation is not permitted."><code>pdErrOpNotPermitted</code></a></span>
+</td><td><span>is raised if the <a href="pdlayer_PDDoc.htm#pdPermCopy" title=" The user can copy information from the document to the clipboard."><code>pdPermCopy</code></a> permission in <a href="pdlayer_PDDoc.htm#PDPermReqObj" title=" The document object type.">PDPermReqObj</a> is not set. </span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDPageDrawContentsToMemory"><strong><span style="color:grey;">PDPageDrawContentsToMemory</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:476</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Superseded by <a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0.">PDPageDrawContentsToMemoryEx</a>() in Acrobat 10.0. Renders a page to memory. The width of the image is calculated as follows:<br/>
+<p><code>width</code> <code>=</code> <code>abs(ASFixedRoundToInt16(destRect.right)</code><code>-</code> <a href="aslayer_ASFixed.htm#ASFixedRoundToInt16" title=" Converts a fixed point number to an ASInt16, rounding the result."><code>ASFixedRoundToInt16</code></a><code>(destRect.left));</code><br/></p>
+
+<p>
+<p><code>width</code> <code>=</code> <code>((((width</code> <code>*</code> <code>bpc</code> <code>*</code> <code>nComps)+31)</code> <code>/</code> <code>32)</code> <code>*</code> <code>4)</code> <code>*</code> <code>8</code> <code>/</code> <code>(bpc</code> <code>*</code> <code>nComps);</code><br/></p>
+
+<p>
+<p><code>nComps</code> <code>=</code> <code>1</code> <code>for</code> <code>DeviceGray,</code> <code>3</code> <code>for</code> <code>DeviceRGB,</code> <code>4</code> <code>for</code> <code>DeviceCMYK</code><br/></p>
+
+<p>
+<p><code>bpc</code> <code>=</code> <code>bits</code> <code>per</code> <code>component</code><br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsPlacedWithParams" title=" Draws the page to the window or display context."><code>PDPageDrawContentsPlacedWithParams</code></a>
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0."><code>PDPageDrawContentsToMemoryEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDPageDrawContentsToMemory(</code><a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document."><code>PDPage</code></a> <code>page</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrix</code></a> <code>*</code><code>matrix</code><code>,</code> <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRect</code></a> <code>*</code><code>updateRect</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>smoothFlags</code><code>,</code> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>csAtom</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>bpc</code><code>,</code> <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRect</code></a> <code>*</code><code>destRect</code><code>,</code> <code>char</code> <code>*</code><code>buffer</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>bufferSize</code><code>,</code> <a href="aslayer_General.htm#CancelProc"><code>CancelProc</code></a> <code>cancelProc</code><code>,</code> <code>void</code> <code>*</code><code>cancelProcData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>page</code></span>
+</td><td><span>The page to render. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>A bit field of <a href="pdfllayer_PDPage.htm#PDPageDrawFlags" title=" Bit flags indicating how a page is rendered.">PDPageDrawFlags</a>. It must be an <code>OR</code> of the following flags: </span>
+
+<table class="ruled"><tr><th><span>Flag</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdfllayer_PDPage.htm#kPDPageDoLazyErase" title=" Erase the page while rendering only as needed.">kPDPageDoLazyErase</a></span>
+</td><td><span>If set, it erases the bitmap if the first object drawn does not cover the page's entire crop box.</span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_PDPage.htm#kPDPageUseAnnotFaces" title=" Draw annotation appearances.">kPDPageUseAnnotFaces</a></span>
+</td><td><span>If set, it draws annotations that have a default face, such as the visible fields in an Acrobat form. Text and link annotations are not drawn.</span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_PDPage.htm#kPDPageIsPrinting" title=" The page is being printed.">kPDPageIsPrinting</a></span>
+</td><td><span>If set, then form annotations are rendered as if they are being printed. This means that form fields marked as 'Hidden but printable' are rendered, but fields marked as 'Visible but doesn't print' will not be rendered. If it is not set, then form annotations are rendered as if they are being viewed. This means that form fields marked as 'Hidden but printable' are not rendered, but fields marked as 'Visible but doesn't print' will be.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>matrix</code></span>
+</td><td><span>A pointer to the matrix to be concatenated onto the default page matrix. It must not be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr>
+<tr><td><span><code>updateRect</code></span>
+</td><td><span>A pointer to the rectangle to draw, defined in user space coordinates. Any objects outside of <code>updateRect</code> will not be drawn. All objects are drawn if <code>updateRect</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr>
+<tr><td><span><code>smoothFlags</code></span>
+</td><td><div><UL>A bit field of <a href="pdfllayer_PDPage.htm#PDPageDrawSmoothFlags" title=" Bit flags indicating how a page is rendered.">PDPageDrawSmoothFlags</a>(). It must be an <code>OR</code> of the following flags:<br/><li> <a href="pdfllayer_PDPage.htm#kPDPageDrawSmoothText" title=" Draw smooth text.">kPDPageDrawSmoothText</a><br/><li> <a href="pdfllayer_PDPage.htm#kPDPageDrawSmoothLineArt" title=" Draw smooth line art.">kPDPageDrawSmoothLineArt</a><br/><li> <a href="pdfllayer_PDPage.htm#kPDPageDrawSmoothImage" title=" Draw smooth image.">kPDPageDrawSmoothImage</a><br/><li> <a href="pdfllayer_PDPage.htm#kPDPageDrawSmoothBicubicImage" title=" Draw smooth image using bicubic resampling.">kPDPageDrawSmoothBicubicImage</a><br/><li> <a href="pdfllayer_PDPage.htm#kPDPageImageResampleBicubic" title=" Discrete control over image re-sampling.">kPDPageImageResampleBicubic</a><br/><li> <a href="pdfllayer_PDPage.htm#kPDPageImageResampleLinear" title=" Discrete control over image re-sampling.">kPDPageImageResampleLinear</a><br/><li> <a href="pdfllayer_PDPage.htm#kPDPageImageAntiAlias" title=" Discrete control over image anti-aliasing.">kPDPageImageAntiAlias</a><br/><li> <a href="pdfllayer_PDPage.htm#kPDPageDrawSmoothAATextDDR" title=" kPDPageDrawSmoothAATextDDR will enable text smoothing (antialiasing) using the DDR sub-pixel antialiasing algorithm.">kPDPageDrawSmoothAATextDDR</a><br/><li> <a href="pdfllayer_PDPage.htm#kPDPageDrawSmoothAATextPreview" title=" kPDPageDrawSmoothAATextPreview will enable special text rendering and anti-aliasing for better visual results when generating images at lower resolutions intended for on-screen viewing.">kPDPageDrawSmoothAATextPreview</a><br/></UL>
+</div>
+</td></tr>
+<tr><td><span><code>csAtom</code></span>
+</td><td><span>The color space in which the bitmap data is represented. It must be one of DeviceGray, DeviceRGB, or DeviceCMYK. </span>
+</td></tr>
+<tr><td><span><code>bpc</code></span>
+</td><td><span>The number of bits per color component in the bitmap data. <code>8</code> is the only valid value for DeviceCMYK and DeviceRGB color spaces. <code>1</code> and <code>8</code> are valid for DeviceGray. </span>
+</td></tr>
+<tr><td><span><code>destRect</code></span>
+</td><td><span>A pointer to the rectangle of the bitmap. It is defined in device space coordinates. It must not be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr>
+<tr><td><span><code>buffer</code></span>
+</td><td><span>A pointer to the bitmap data. If it is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, this function returns the size of the buffer needed for the bitmap. </span>
+</td></tr>
+<tr><td><span><code>bufferSize</code></span>
+</td><td><span>The size of the buffer. </span>
+</td></tr>
+<tr><td><span><code>cancelProc</code></span>
+</td><td><span>A method to call to check whether drawing should be cancelled. If the method returns <a href="aslayer_General.htm#true"><code>true</code></a>, drawing is stopped, nothing is erased, and the buffer contains whatever was drawn up to the current state. </span>
+</td></tr>
+<tr><td><span><code>cancelProcData</code></span>
+</td><td><span>User-supplied data to pass to <code>cancelProc</code> each time it is called. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The size of the bitmap in bytes. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPageDrawContentsToMemoryEx"><strong><span style="color:grey;">PDPageDrawContentsToMemoryEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:881</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Supersedes <a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemory" title=" Superseded by PDPageDrawContentsToMemoryEx() in Acrobat 10.0.">PDPageDrawContentsToMemory</a>() in Acrobat 10.0. Renders a page to memory. It uses double precision input parameters. The width of the image is calculated as follows:<br/>
+<p><code>width</code> <code>=</code> <code>abs(ROUND(destRect.right)</code><code>-</code> <code>ROUND(destRect.left));</code><br/></p>
+
+<p>
+<p><code>width</code> <code>=</code> <code>((((width</code> <code>*</code> <code>bpc</code> <code>*</code> <code>nComps)+31)</code> <code>/</code> <code>32)</code> <code>*</code> <code>4)</code> <code>*</code> <code>8</code> <code>/</code> <code>(bpc</code> <code>*</code> <code>nComps);</code><br/></p>
+
+<p>
+<p><code>nComps</code> <code>=</code> <code>1</code> <code>for</code> <code>DeviceGray,</code> <code>3</code> <code>for</code> <code>DeviceRGB,</code> <code>4</code> <code>for</code> <code>DeviceCMYK</code><br/></p>
+
+<p>
+<p><code>bpc</code> <code>=</code> <code>bits</code> <code>per</code> <code>component</code><br/></p>
+
+<span>
+<p>where, ROUND() rounds off double precision values to nearest <a href="aslayer_General.htm#Int32">Int32</a> value.</span>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsPlacedWithParams" title=" Draws the page to the window or display context."><code>PDPageDrawContentsPlacedWithParams</code></a>
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemory" title=" Superseded by PDPageDrawContentsToMemoryEx() in Acrobat 10.0."><code>PDPageDrawContentsToMemory</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>PDPageDrawContentsToMemoryEx(</code><a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document."><code>PDPage</code></a> <code>page</code><code>,</code> <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>flags</code><code>,</code> <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers."><code>ASDoubleMatrix</code></a> <code>*</code><code>matrix</code><code>,</code> <a href="aslayer_ASDouble.htm#_t_ASDoubleRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASDoubleRect</code></a> <code>*</code><code>updateRect</code><code>,</code> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>csAtom</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>bpc</code><code>,</code> <a href="aslayer_ASDouble.htm#_t_ASDoubleRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASDoubleRect</code></a> <code>*</code><code>destRect</code><code>,</code> <code>char</code> <code>*</code><code>buffer</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>bufferSize</code><code>,</code> <a href="aslayer_General.htm#CancelProc"><code>CancelProc</code></a> <code>cancelProc</code><code>,</code> <code>void</code> <code>*</code><code>cancelProcData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>page</code></span>
+</td><td><span>The page to render. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> used for passing PDPageDrawFlagsStr and PDPageDrawSmoothFlagsStr. </span>
+</td></tr>
+<tr><td><span><code>matrix</code></span>
+</td><td><span>A pointer to double matrix to be concatenated onto the default page matrix. It must not be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr>
+<tr><td><span><code>updateRect</code></span>
+</td><td><span>A pointer to the double rectangle to draw, defined in user space coordinates. </span>
+</td></tr>
+<tr><td><span><code>csAtom</code></span>
+</td><td><span>The color space in which the bitmap data is represented. </span>
+</td></tr>
+<tr><td><span><code>bpc</code></span>
+</td><td><span>The number of bits per color component in the bitmap data. </span>
+</td></tr>
+<tr><td><span><code>destRect</code></span>
+</td><td><span>A pointer to double rectangle of the bitmap. It is defined in device space coordinates. It must not be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr>
+<tr><td><span><code>buffer</code></span>
+</td><td><span>A pointer to the bitmap data. If it is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, this function returns the size of the buffer needed for the bitmap. </span>
+</td></tr>
+<tr><td><span><code>bufferSize</code></span>
+</td><td><span>The size of the buffer. </span>
+</td></tr>
+<tr><td><span><code>cancelProc</code></span>
+</td><td><span>A method to call to check whether drawing should be cancelled. </span>
+</td></tr>
+<tr><td><span><code>cancelProcData</code></span>
+</td><td><span>User-supplied data to pass to <code>cancelProc</code> each time it is called. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The size of the bitmap in bytes. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPageEmitPSOrient"><strong><span style="color:grey;">PDPageEmitPSOrient</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:185</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPageEmitPSOrient(</code><a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document."><code>PDPage</code></a> <code>pdPage</code><code>,</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>paperHeight</code><code>,</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>paperWidth</code><code>,</code> <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>stm</code><code>,</code> <a href="pdfllayer_PDFLPrint.htm#PDPrintParams" title=" A data structure indicating how a document should be printed."><code>PDPrintParams</code></a> <code>params</code><code>);</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDPageGetSize"><strong><span style="color:grey;">PDPageGetSize</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:273</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Returns the width and height of the page, which could be rotated or defaulted. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPageGetSize(</code><a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document."><code>PDPage</code></a> <code>page</code><code>,</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>*</code><code>width</code><code>,</code> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>*</code><code>height</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>page</code></span>
+</td><td><span>The page whose size is being obtained. </span>
+</td></tr>
+<tr><td><span><code>width</code></span>
+</td><td><span>(Filled by the method) The width of the page. </span>
+</td></tr>
+<tr><td><span><code>height</code></span>
+</td><td><span>(Filled by the method) The height of the page. </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

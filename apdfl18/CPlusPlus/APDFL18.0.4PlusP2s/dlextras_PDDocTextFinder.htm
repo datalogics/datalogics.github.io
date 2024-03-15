@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Additional functionality from Datalogics: PDDocTextFinder</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Additional functionality from Datalogics: PDDocTextFinder</h5>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Functions">
+<header><h2>PDDocTextFinder Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDDocTextFinderAcquireMatchList">PDDocTextFinderAcquireMatchList</a></dt><dd> -  Finds all regular expression (regex) matches for the given page range.</dd>
+<dt><a href="#PDDocTextFinderCreate">PDDocTextFinderCreate</a></dt><dd> -  Creates a document text finder that is used to extract words or phrases that match regular expressions from a PDF file based on words extracted using a given word finder configuration.</dd>
+<dt><a href="#PDDocTextFinderDestroy">PDDocTextFinderDestroy</a></dt><dd> -  Destroys a document text finder.</dd>
+<dt><a href="#PDDocTextFinderReleaseMatchList">PDDocTextFinderReleaseMatchList</a></dt><dd> -  Releases the match list.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDDocTextFinderAcquireMatchList"><strong><span style="color:grey;">PDDocTextFinderAcquireMatchList</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:925</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Finds all regular expression (regex) matches for the given page range.<br/>
+<p>Only words within or partially within the page's crop box (see <a href="pdlayer_PDPage.htm#PDPageGetCropBox" title=" Gets the crop box for a page.">PDPageGetCropBox</a>()) are included. Words outside the crop box are skipped.<br/></p>
+
+<p>
+<p>There can be only one match list in existence at a time; clients must release the previous match list, using <a href="dlextras_PDDocTextFinder.htm#PDDocTextFinderReleaseMatchList" title=" Releases the match list.">PDDocTextFinderReleaseMatchList</a>(), before creating a new one.<br/></p>
+
+<span>
+<p>Available only on Windows, Mac, and Linux platforms</span>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="dlextras_PDDocTextFinder.htm#PDDocTextFinderCreate" title=" Creates a document text finder that is used to extract words or phrases that match regular expressions from a PDF file based on words extracted using a given word finder configuration."><code>PDDocTextFinderCreate</code></a>
+<a href="dlextras_PDDocTextFinder.htm#PDDocTextFinderReleaseMatchList" title=" Releases the match list."><code>PDDocTextFinderReleaseMatchList</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="dlextras_PDDoc.htm#PDDocTextFinderMatchList" title=" Structure containing the matches."><code>PDDocTextFinderMatchList</code></a> <code>PDDocTextFinderAcquireMatchList(</code><a href="dlextras_PDDoc.htm#PDDocTextFinder" title=" Extracts words or phrases that match a regular expression (regex) on a given page range or on all of the pages in a document."><code>PDDocTextFinder</code></a> <code>mObj</code><code>,</code> <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>beginPageNumber</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>endPageNumber</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>regexstr</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>mObj</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> (Required) The document text finder used to acquire the match list. </span>
+</td></tr>
+<tr><td><span><code>pdDoc</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> (Required) The document to search for matches. </span>
+</td></tr>
+<tr><td><span><code>beginPageNumber</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> (Required) The beginning page number from which to search. The first page is <code>0</code>, not <code>1</code> as designated in Acrobat. Pass <a href="pdlayer_PDPage.htm#PDAllPages">PDAllPages</a> (see PDExpT.h) to sequentially process all pages in the document. </span>
+</td></tr>
+<tr><td><span><code>endPageNumber</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> (Required) The end page number from which to search to. If beginPageNumber is set to <a href="pdlayer_PDPage.htm#PDAllPages">PDAllPages</a>, this parameter is ignored. </span>
+</td></tr>
+<tr><td><span><code>regexStr</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> (Required) Regular expression to use for search. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="dlextras_PDDoc.htm#PDDocTextFinderMatchList" title=" Structure containing the matches.">PDDocTextFinderMatchList</a> structure. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdErrBadRegex"><code>pdErrBadRegex</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDDocTextFinderCreate"><strong><span style="color:grey;">PDDocTextFinderCreate</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:877</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a document text finder that is used to extract words or phrases that match regular expressions from a PDF file based on words extracted using a given word finder configuration. Available only on Windows, Mac, and Linux platforms </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="dlextras_PDDocTextFinder.htm#PDDocTextFinderAcquireMatchList" title=" Finds all regular expression (regex) matches for the given page range."><code>PDDocTextFinderAcquireMatchList</code></a>
+<a href="dlextras_PDDocTextFinder.htm#PDDocTextFinderDestroy" title=" Destroys a document text finder."><code>PDDocTextFinderDestroy</code></a>
+<a href="dlextras_PDDocTextFinder.htm#PDDocTextFinderReleaseMatchList" title=" Releases the match list."><code>PDDocTextFinderReleaseMatchList</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="dlextras_PDDoc.htm#PDDocTextFinder" title=" Extracts words or phrases that match a regular expression (regex) on a given page range or on all of the pages in a document."><code>PDDocTextFinder</code></a> <code>PDDocTextFinderCreate(</code><a href="pdlayer_PDWord.htm#_t_PDWordFinderConfig" title=" A word finder configuration that customizes the way the extraction is performed."><code>PDWordFinderConfig</code></a> <code>wfConfig</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>wfConfig</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> (Required) The word finder configuration to be used to extract the words. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created document text finder object that will be used to find matches. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDDocTextFinderDestroy"><strong><span style="color:grey;">PDDocTextFinderDestroy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:890</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Destroys a document text finder. Use this when you are done extracting phrases in a file. Available only on Windows, Mac, and Linux platforms </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDDocTextFinder.htm#PDDocTextFinderCreate" title=" Creates a document text finder that is used to extract words or phrases that match regular expressions from a PDF file based on words extracted using a given word finder configuration.">PDDocTextFinderCreate</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDDocTextFinderDestroy(</code><a href="dlextras_PDDoc.htm#PDDocTextFinder" title=" Extracts words or phrases that match a regular expression (regex) on a given page range or on all of the pages in a document."><code>PDDocTextFinder</code></a> <code>mObj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>mObj</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> (Required) The document text finder to destroy. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDDocTextFinderReleaseMatchList"><strong><span style="color:grey;">PDDocTextFinderReleaseMatchList</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:940</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Releases the match list. Use this to release a list created by <a href="dlextras_PDDocTextFinder.htm#PDDocTextFinderAcquireMatchList" title=" Finds all regular expression (regex) matches for the given page range.">PDDocTextFinderAcquireMatchList</a>() when you are done using this list. Available only on Windows, Mac, and Linux platforms </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="dlextras_PDDocTextFinder.htm#PDDocTextFinderAcquireMatchList" title=" Finds all regular expression (regex) matches for the given page range."><code>PDDocTextFinderAcquireMatchList</code></a>
+<a href="dlextras_PDDocTextFinder.htm#PDDocTextFinderCreate" title=" Creates a document text finder that is used to extract words or phrases that match regular expressions from a PDF file based on words extracted using a given word finder configuration."><code>PDDocTextFinderCreate</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDDocTextFinderReleaseMatchList(</code><a href="dlextras_PDDoc.htm#PDDocTextFinder" title=" Extracts words or phrases that match a regular expression (regex) on a given page range or on all of the pages in a document."><code>PDDocTextFinder</code></a> <code>mObj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>mObj</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> (Required) A document text finder object. </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

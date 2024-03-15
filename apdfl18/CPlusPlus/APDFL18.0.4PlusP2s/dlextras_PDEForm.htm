@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Additional functionality from Datalogics: PDEForm</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Additional functionality from Datalogics: PDEForm</h5>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Functions">
+<header><h2>PDEForm Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDEFormCalcBBox">PDEFormCalcBBox</a></dt><dd> -  This function allows the BBox stored in a form's XObject to be recalculated after its contents have been modified.</dd>
+<dt><a href="#PDEFormGetFont">PDEFormGetFont</a></dt><dd> -  This retrieves the PDEFont referenced in a PDEForm.</dd>
+<dt><a href="#PDEFormGetName">PDEFormGetName</a></dt><dd> -  Reserved for Internal Use.</dd>
+<dt><a href="#PDEFormGetTextState">PDEFormGetTextState</a></dt><dd> -  Gets the PDETextState for a form.</dd>
+<dt><a href="#PDEFormSetContentEx">PDEFormSetContentEx</a></dt><dd> -  Reserved for Internal Use.</dd>
+<dt><a href="#PDEFormSetFont">PDEFormSetFont</a></dt><dd> -  This sets the PDEFont referenced in a PDEForm.</dd>
+<dt><a href="#PDEFormSetTextState">PDEFormSetTextState</a></dt><dd> -  Sets the PDETextState for a form.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEFormCalcBBox"><strong><span style="color:grey;">PDEFormCalcBBox</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:585</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>This function allows the BBox stored in a form's XObject to be recalculated after its contents have been modified.<br/>
+<p>The bounding box of a form is set in the COS form, and is usually not changed by any event in the conversions between PDE and COS content. This is done so that the user may set the bounding box of a form so as to specifically clip its contents to a given path (the bounding box).<br/></p>
+
+<p>
+<p>Sometimes the content of a form is changed, and then the user may want to reset the form's bounding box to the size of the current content.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFormCalcBBox(</code><a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>form</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>form</code></span>
+</td><td><span>the <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> whose BBox should be recalculated. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormGetFont"><strong><span style="color:grey;">PDEFormGetFont</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:530</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>This retrieves the <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> referenced in a <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDEForm.htm#PDEFormSetFont" title=" This sets the PDEFont referenced in a PDEForm.">PDEFormSetFont</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>PDEFormGetFont(</code><a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>form</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>form</code></span>
+</td><td><span>The <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> of interest </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormGetName"><strong><span style="color:grey;">PDEFormGetName</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:950</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Reserved for Internal Use. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>PDEFormGetName(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>form</code><code>);</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormGetTextState"><strong><span style="color:grey;">PDEFormGetTextState</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:3247</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets the <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> for a form. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFormGetTextState(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>form</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element."><code>PDETextState</code></a> <code>*</code><code>tState</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>form</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The form whose Cos object is obtained. </span>
+</td></tr>
+<tr><td><span><code>PDETExtState</code></span>
+</td><td><span>IN/OUT (Filled by the method) The text state associated with this form </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormSetContentEx"><strong><span style="color:grey;">PDEFormSetContentEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1034</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Reserved for Internal Use. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFormSetContentEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>form</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage."><code>PDEContent</code></a> <code>content</code><code>);</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormSetFont"><strong><span style="color:grey;">PDEFormSetFont</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:537</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>This sets the <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> referenced in a <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDEForm.htm#PDEFormGetFont" title=" This retrieves the PDEFont referenced in a PDEForm.">PDEFormGetFont</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFormSetFont(</code><a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>form</code><code>,</code> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>form</code></span>
+</td><td><span>The <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> of interest. </span>
+</td></tr>
+<tr><td><span><code>font</code></span>
+</td><td><span>The <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> to be set. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormSetTextState"><strong><span style="color:grey;">PDEFormSetTextState</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:3255</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Sets the <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> for a form. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFormSetTextState(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>form</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element."><code>PDETextState</code></a> <code>*</code><code>tState</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>form</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The form whose Cos object is obtained. </span>
+</td></tr>
+<tr><td><span><code>PDETExtState</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The text state associated with this form </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+</section>
+
+</div>
+</body></html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Additional functionality from Datalogics: PDEImage</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Additional functionality from Datalogics: PDEImage</h5>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Functions">
+<header><h2>PDEImage Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDEImageGetColorValue">PDEImageGetColorValue</a></dt><dd> -  Gets an image's Color Value.</dd>
+<dt><a href="#PDEImageRemoveIndexedColor">PDEImageRemoveIndexedColor</a></dt><dd> -  If the image input uses an indexed color space, a new image will be created from it.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEImageGetColorValue"><strong><span style="color:grey;">PDEImageGetColorValue</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:3224</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Gets an image's Color Value.<br/>
+<p>This call is valid only for a <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a> which is an Image Mask<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEImageGetColorValue(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEColorValue" title=" A structure describing a color value."><code>PDEColorValueP</code></a> <code>color</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT The image whose data is obtained. </span>
+</td></tr>
+<tr><td><span><code>colorValue</code></span>
+</td><td><span>IN/OUT The image data. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageRemoveIndexedColor"><strong><span style="color:grey;">PDEImageRemoveIndexedColor</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:750</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>If the image input uses an indexed color space, a new image will be created from it. The new image will use the base color space. If the image is not using an indexed color model, the original image will be incremented and returned. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The image returned must be released when no longer needed. </p>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>PDEImageRemoveIndexedColor(</code><a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>The Indexed image <code>inP</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The new image or the original image. </span>
+</section>
+</section>
+
+</div>
+</body></html>

@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDF Edit Layer: PDEImage</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDF Edit Layer: PDEImage</h5>
+<li><a href="#Enumerations">Enumerations</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Enumerations">
+<header><h2>PDEImage Enumerations</h2></header>
+<nav><dl>
+<dt><a href="#PDEImageAttrFlags">PDEImageAttrFlags</a></dt><dd> -  Flags for PDEImageAttrs.</dd>
+<dt><a href="#PDEImageColorSpaceFlags">PDEImageColorSpaceFlags</a></dt><dd> -  Flags to enable PDEImageGetColorSpaceEx() to return a color space with a particular bpc, depending on the image's bpc.</dd>
+<dt><a href="#PDEImageDataFlags">PDEImageDataFlags</a></dt><dd> -  Flags for PDEImageGetData(), PDEImageGetDataStm(), PDEImageSetData(), and PDEImageSetDataStm().</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEImageAttrFlags"><strong><span style="color:grey;">PDEImageAttrFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:1844</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Flags for <a href="pdelayer_PDEImage.htm#_t_PDEImageAttrs" title=" Attributes of a PDEImage.">PDEImageAttrs</a>. See the description of image attributes in "Image Dictionaries" in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 8.9.5, page 206.<br/>
+<p>You can find this document on the web store of the International Standards Organization (ISO).<br/></p>
+
+<span>
+<p>.</span>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEImage.htm#PDEImageCreate" title=" Superseded by PDEImageCreateEx() in Acrobat 10.0."><code>PDEImageCreate</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetAttrs" title=" Gets the attributes for an image."><code>PDEImageGetAttrs</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetData" title=" Gets an image's data."><code>PDEImageGetData</code></a></div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kPDEImageExternal"><code>kPDEImageExternal</code><code>=</code><code>0x0001</code></span>
+</td><td><span>The image is an XObject. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEImageIsMask"><code>kPDEImageIsMask</code><code>=</code><code>0x0002</code></span>
+</td><td><span>The image is an imagemask. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEImageInterpolate"><code>kPDEImageInterpolate</code><code>=</code><code>0x0004</code></span>
+</td><td><span><code>interpolate</code> is <a href="aslayer_General.htm#true"><code>true</code></a>. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEImageHaveDecode"><code>kPDEImageHaveDecode</code><code>=</code><code>0x0008</code></span>
+</td><td><span>The image has a decode array. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEImageIsIndexed"><code>kPDEImageIsIndexed</code><code>=</code><code>0x0010</code></span>
+</td><td><span>The image uses an indexed color space. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEImageMaskedByPosition"><code>kPDEImageMaskedByPosition</code><code>=</code><code>0x0020</code></span>
+</td><td><span>The image has a Mask key containing an ImageMask stream. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEImageMaskedByColor"><code>kPDEImageMaskedByColor</code><code>=</code><code>0x0040</code></span>
+</td><td><span>The image has a Mask key containing an array of color values. </span>
+</td></tr></table>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageColorSpaceFlags"><strong><span style="color:grey;">PDEImageColorSpaceFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:1893</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Flags to enable <a href="pdelayer_PDEImage.htm#PDEImageGetColorSpaceEx" title=" Retrieves a PDEImage object's color space, in the desired bits per component, based on the flags parameter."><code>PDEImageGetColorSpaceEx</code></a><code>()</code> to return a color space with a particular bpc, depending on the image's bpc. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEImage.htm#PDEImageGetColorSpace" title=" Gets the color space object for an image."><code>PDEImageGetColorSpace</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetColorSpaceEx" title=" Retrieves a PDEImage object's color space, in the desired bits per component, based on the flags parameter."><code>PDEImageGetColorSpaceEx</code></a></div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kPDEImageConvert16bpcColorSpace"><code>kPDEImageConvert16bpcColorSpace</code><code>=</code><code>0x0001</code></span>
+</td><td><span>Indicates conversion of the color space of 16 bpc image to 8 bpc. </span>
+</td></tr></table>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageDataFlags"><strong><span style="color:grey;">PDEImageDataFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:1876</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Flags for <a href="pdelayer_PDEImage.htm#PDEImageGetData" title=" Gets an image's data."><code>PDEImageGetData</code></a><code>()</code>, <a href="pdelayer_PDEImage.htm#PDEImageGetDataStm" title=" Gets a data stream for an image."><code>PDEImageGetDataStm</code></a><code>()</code>, <a href="pdelayer_PDEImage.htm#PDEImageSetData" title=" Sets data for an image."><code>PDEImageSetData</code></a><code>()</code>, and <a href="pdelayer_PDEImage.htm#PDEImageSetDataStm" title=" Sets a data stream for an image."><code>PDEImageSetDataStm</code></a><code>()</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEImage.htm#PDEImageCreate" title=" Superseded by PDEImageCreateEx() in Acrobat 10.0."><code>PDEImageCreate</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetData" title=" Gets an image's data."><code>PDEImageGetData</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetDataStm" title=" Gets a data stream for an image."><code>PDEImageGetDataStm</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageSetData" title=" Sets data for an image."><code>PDEImageSetData</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageSetDataStm" title=" Sets a data stream for an image."><code>PDEImageSetDataStm</code></a></div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kPDEImageEncodedData"><code>kPDEImageEncodedData</code><code>=</code><code>0x0001</code></span>
+</td><td><span>Indicates that the filter is active; data is encoded. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEImageAllowDelayedRead"><code>kPDEImageAllowDelayedRead</code><code>=</code><code>0x0002</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEImage16bpcData"><code>kPDEImage16bpcData</code><code>=</code><code>0x0004</code></span>
+</td><td><span>Indicates if the accompanying image data is 16-bit. Should be passed in for 16-bit images to PDEImageGetData/PDEImageGetDataStm to prevent the return of 8-bit converted data. </span>
+</td></tr></table>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>PDEImage Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDEImage">PDEImage</a></dt><dd> -  A PDEElement that contains an Image XObject or an inline image.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEImage"><strong><span style="color:grey;">PDEImage</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:183</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> that contains an Image XObject or an inline image. You can associate data or a stream with an image. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDEImage</code> <code>*</code><code>PDEImage</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEImage.htm#PDEImageCreate" title=" Superseded by PDEImageCreateEx() in Acrobat 10.0."><code>PDEImageCreate</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageCreateEx" title=" Creates an image object."><code>PDEImageCreateEx</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageCreateFromCosObj" title=" Superseded by PDEImageCreateFromCosObjEx() in Acrobat 10.0."><code>PDEImageCreateFromCosObj</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageCreateFromCosObjEx" title=" Creates an image object from a Cos object."><code>PDEImageCreateFromCosObjEx</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDoc" title=" Superseded by PDEImageCreateInCosDocEx() in Acrobat 10.0."><code>PDEImageCreateInCosDoc</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDoc64" title=" Superseded by PDEImageCreateInCosDocEx() in Acrobat 10.0."><code>PDEImageCreateInCosDoc64</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDocEx" title=" Creates an image object like PDEImageCreateInCosDoc(), except that the client can create an image with a large amount of data, and using a double precision transformation matrix."><code>PDEImageCreateInCosDocEx</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageGetSMask" title=" Gets the soft mask for an image."><code>PDEImageGetSMask</code></a></td></tr>
+<tr><td><a href="dlextras_PDEImage.htm#PDEImageRemoveIndexedColor" title=" If the image input uses an indexed color space, a new image will be created from it."><code>PDEImageRemoveIndexedColor</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEImage.htm#PDEImageAcquireImageFlate" title=" Acquires the PDEImageFlate resource of the PDEImage content element when the image filter type is "FlateDecode", or 0 if it is not."><code>PDEImageAcquireImageFlate</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageAcquireImageJPX" title=" Acquires the PDEImageJPX resource of the PDEImage content element when the image filter type is "JPXDecode", or 0 if it is not."><code>PDEImageAcquireImageJPX</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageDataIsEncoded" title=" Determines if image data is encoded or not."><code>PDEImageDataIsEncoded</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageGetAttrs" title=" Gets the attributes for an image."><code>PDEImageGetAttrs</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageGetColorSpace" title=" Gets the color space object for an image."><code>PDEImageGetColorSpace</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageGetColorSpaceEx" title=" Retrieves a PDEImage object's color space, in the desired bits per component, based on the flags parameter."><code>PDEImageGetColorSpaceEx</code></a></td></tr>
+<tr><td><a href="dlextras_PDEImage.htm#PDEImageGetColorValue" title=" Gets an image's Color Value."><code>PDEImageGetColorValue</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageGetCosObj" title=" Gets a Cos object for an image."><code>PDEImageGetCosObj</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageGetData" title=" Gets an image's data."><code>PDEImageGetData</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageGetDataLen" title=" Gets the length of data for an image."><code>PDEImageGetDataLen</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageGetDataLen64" title=" Gets the length of data for an image."><code>PDEImageGetDataLen64</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageGetDataStm" title=" Gets a data stream for an image."><code>PDEImageGetDataStm</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageGetDecodeArray" title=" Gets the decode array from the attributes of the image."><code>PDEImageGetDecodeArray</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageGetFilterArray" title=" Gets the filter array for an image."><code>PDEImageGetFilterArray</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageGetMatteArray" title=" Gets the matte array for the image XObject."><code>PDEImageGetMatteArray</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageGetSMask" title=" Gets the soft mask for an image."><code>PDEImageGetSMask</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageGetType" title=" Returns the type of image as "FlateDecode", "JPXDecode", or "Unknown" when the image filter is not one of these types."><code>PDEImageGetType</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageHasSMask" title=" Checks whether the image has a soft mask."><code>PDEImageHasSMask</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageIsCosObj" title=" Determines if an image is an XObject image."><code>PDEImageIsCosObj</code></a></td><td><a href="dlextras_PDEImage.htm#PDEImageRemoveIndexedColor" title=" If the image input uses an indexed color space, a new image will be created from it."><code>PDEImageRemoveIndexedColor</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageSetColorSpace" title=" Sets the color space of the image."><code>PDEImageSetColorSpace</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageSetColorValue" title=" Sets an image's Color Value."><code>PDEImageSetColorValue</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageSetData" title=" Sets data for an image."><code>PDEImageSetData</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageSetDataStm" title=" Sets a data stream for an image."><code>PDEImageSetDataStm</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageSetDecodeArray" title=" Sets the decode array of an image."><code>PDEImageSetDecodeArray</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageSetMatteArray" title=" Sets the matte array for the image XObject."><code>PDEImageSetMatteArray</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageSetSMask" title=" Sets the soft mask."><code>PDEImageSetSMask</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>PDEImage Structures</h2></header>
+<nav><dl>
+<dt><a href="#_t_PDEImageAttrs">_t_PDEImageAttrs</a></dt><dd> -  Attributes of a PDEImage.</dd>
+<dt><a href="#_t_PDEImageJPXAttrs">_t_PDEImageJPXAttrs</a></dt><dd> -  Attributes of a JPX image.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="_t_PDEImageAttrs"><strong><span style="color:grey;">_t_PDEImageAttrs</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:892</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Attributes of a <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEImage.htm#PDEImageGetData" title=" Gets an image's data.">PDEImageGetData</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDEImageAttrs {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>;</code> </div>
+</td><td><span><a href="pdelayer_PDEImage.htm#PDEImageAttrFlags" title=" Flags for PDEImageAttrs.">PDEImageAttrFlags</a> indicating image attributes. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>width</code><code>;</code> </div>
+</td><td><span>The width of the image corresponding to the Width key in the image dictionary. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>height</code><code>;</code> </div>
+</td><td><span>The height of the image corresponding to the Height key in the image dictionary. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>bitsPerComponent</code><code>;</code> </div>
+</td><td><span>The number of bits used to represent each color component in the image corresponding to the BitsPerComponent key in the image dictionary. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>decode</code> <code>[</code><code>8</code><code>]</code><code>;</code> </div>
+</td><td><span>An array of numbers specifying the mapping from sample values in the image to values appropriate for the current color space. These values correspond to the Decode key in the image dictionary. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>intent</code><code>;</code> </div>
+</td><td><span>The color rendering intent corresponding to the Intent key in the image dictionary. </span>
+</td></tr>
+<tr><td><code id="PDEImageAttrs"><code>}</code> <a href="pdelayer_PDEImage.htm#_t_PDEImageAttrs" title=" Attributes of a PDEImage."><code>PDEImageAttrs</code></a><code>,</code> <code>*</code><a href="pdelayer_PDEImage.htm#_t_PDEImageAttrs" title=" Attributes of a PDEImage."><code>PDEImageAttrsP</code></a><code>,</code> <a href="pdelayer_PDEImage.htm#_t_PDEImageAttrs" title=" Attributes of a PDEImage."><code>PDEImageFlateAttrs</code></a><code>,</code> <code>*</code><a href="pdelayer_PDEImage.htm#_t_PDEImageAttrs" title=" Attributes of a PDEImage."><code>PDEImageFlateAttrsP</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEImage.htm#PDEImageCreate" title=" Superseded by PDEImageCreateEx() in Acrobat 10.0."><code>PDEImageCreate</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageCreateEx" title=" Creates an image object."><code>PDEImageCreateEx</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDoc" title=" Superseded by PDEImageCreateInCosDocEx() in Acrobat 10.0."><code>PDEImageCreateInCosDoc</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDoc64" title=" Superseded by PDEImageCreateInCosDocEx() in Acrobat 10.0."><code>PDEImageCreateInCosDoc64</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDocEx" title=" Creates an image object like PDEImageCreateInCosDoc(), except that the client can create an image with a large amount of data, and using a double precision transformation matrix."><code>PDEImageCreateInCosDocEx</code></a></td><td><a href="pdelayer_PDEImageFlate.htm#PDEImageFlateGetAttrs" title=" Gets the attributes of a flate image."><code>PDEImageFlateGetAttrs</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageGetAttrs" title=" Gets the attributes for an image."><code>PDEImageGetAttrs</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_PDEImageJPXAttrs"><strong><span style="color:grey;">_t_PDEImageJPXAttrs</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:2356</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Attributes of a JPX image. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDEImageJPXAttrs {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>width</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>height</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>tileWidth</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>tileHeight</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>nResolutions</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>nComponents</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>bpc</code> <code>[</code><code>24</code><code>]</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>decode</code> <code>[</code><code>24</code><code>]</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><code id="PDEImageJPXAttrs"><code>}</code> <a href="pdelayer_PDEImage.htm#_t_PDEImageJPXAttrs" title=" Attributes of a JPX image."><code>PDEImageJPXAttrs</code></a><code>,</code> <code>*</code><a href="pdelayer_PDEImage.htm#_t_PDEImageJPXAttrs" title=" Attributes of a JPX image."><code>PDEImageJPXAttrsP</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEImageJPX.htm#PDEImageJPXGetAttrs" title=" Gets the attributes of a JPX encoded PDEImage."><code>PDEImageJPXGetAttrs</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDEImage Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDEImageAcquireImageFlate">PDEImageAcquireImageFlate</a></dt><dd> -  Acquires the PDEImageFlate resource of the PDEImage content element when the image filter type is "FlateDecode", or 0 if it is not.</dd>
+<dt><a href="#PDEImageAcquireImageJPX">PDEImageAcquireImageJPX</a></dt><dd> -  Acquires the PDEImageJPX resource of the PDEImage content element when the image filter type is "JPXDecode", or 0 if it is not.</dd>
+<dt><a href="#PDEImageCreate">PDEImageCreate</a></dt><dd> -  Superseded by PDEImageCreateEx() in Acrobat 10.0.</dd>
+<dt><a href="#PDEImageCreateEx">PDEImageCreateEx</a></dt><dd> -  Creates an image object.</dd>
+<dt><a href="#PDEImageCreateFromCosObj">PDEImageCreateFromCosObj</a></dt><dd> -  Superseded by PDEImageCreateFromCosObjEx() in Acrobat 10.0.</dd>
+<dt><a href="#PDEImageCreateFromCosObjEx">PDEImageCreateFromCosObjEx</a></dt><dd> -  Creates an image object from a Cos object.</dd>
+<dt><a href="#PDEImageCreateInCosDoc">PDEImageCreateInCosDoc</a></dt><dd> -  Superseded by PDEImageCreateInCosDocEx() in Acrobat 10.0.</dd>
+<dt><a href="#PDEImageCreateInCosDoc64">PDEImageCreateInCosDoc64</a></dt><dd> -  Superseded by PDEImageCreateInCosDocEx() in Acrobat 10.0.</dd>
+<dt><a href="#PDEImageCreateInCosDocEx">PDEImageCreateInCosDocEx</a></dt><dd> -  Creates an image object like PDEImageCreateInCosDoc(), except that the client can create an image with a large amount of data, and using a double precision transformation matrix.</dd>
+<dt><a href="#PDEImageDataIsEncoded">PDEImageDataIsEncoded</a></dt><dd> -  Determines if image data is encoded or not.</dd>
+<dt><a href="#PDEImageGetAttrs">PDEImageGetAttrs</a></dt><dd> -  Gets the attributes for an image.</dd>
+<dt><a href="#PDEImageGetColorSpace">PDEImageGetColorSpace</a></dt><dd> -  Gets the color space object for an image.</dd>
+<dt><a href="#PDEImageGetColorSpaceEx">PDEImageGetColorSpaceEx</a></dt><dd> -  Retrieves a PDEImage object's color space, in the desired bits per component, based on the flags parameter.</dd>
+<dt><a href="#PDEImageGetCosObj">PDEImageGetCosObj</a></dt><dd> -  Gets a Cos object for an image.</dd>
+<dt><a href="#PDEImageGetData">PDEImageGetData</a></dt><dd> -  Gets an image's data.</dd>
+<dt><a href="#PDEImageGetDataLen">PDEImageGetDataLen</a></dt><dd> -  Gets the length of data for an image.</dd>
+<dt><a href="#PDEImageGetDataLen64">PDEImageGetDataLen64</a></dt><dd> -  Gets the length of data for an image.</dd>
+<dt><a href="#PDEImageGetDataStm">PDEImageGetDataStm</a></dt><dd> -  Gets a data stream for an image.</dd>
+<dt><a href="#PDEImageGetDecodeArray">PDEImageGetDecodeArray</a></dt><dd> -  Gets the decode array from the attributes of the image.</dd>
+<dt><a href="#PDEImageGetFilterArray">PDEImageGetFilterArray</a></dt><dd> -  Gets the filter array for an image.</dd>
+<dt><a href="#PDEImageGetMatteArray">PDEImageGetMatteArray</a></dt><dd> -  Gets the matte array for the image XObject.</dd>
+<dt><a href="#PDEImageGetSMask">PDEImageGetSMask</a></dt><dd> -  Gets the soft mask for an image.</dd>
+<dt><a href="#PDEImageGetType">PDEImageGetType</a></dt><dd> -  Returns the type of image as "FlateDecode", "JPXDecode", or "Unknown" when the image filter is not one of these types.</dd>
+<dt><a href="#PDEImageHasSMask">PDEImageHasSMask</a></dt><dd> -  Checks whether the image has a soft mask.</dd>
+<dt><a href="#PDEImageIsCosObj">PDEImageIsCosObj</a></dt><dd> -  Determines if an image is an XObject image.</dd>
+<dt><a href="#PDEImageSetColorSpace">PDEImageSetColorSpace</a></dt><dd> -  Sets the color space of the image.</dd>
+<dt><a href="#PDEImageSetColorValue">PDEImageSetColorValue</a></dt><dd> -  Sets an image's Color Value.</dd>
+<dt><a href="#PDEImageSetData">PDEImageSetData</a></dt><dd> -  Sets data for an image.</dd>
+<dt><a href="#PDEImageSetDataStm">PDEImageSetDataStm</a></dt><dd> -  Sets a data stream for an image.</dd>
+<dt><a href="#PDEImageSetDecodeArray">PDEImageSetDecodeArray</a></dt><dd> -  Sets the decode array of an image.</dd>
+<dt><a href="#PDEImageSetMatteArray">PDEImageSetMatteArray</a></dt><dd> -  Sets the matte array for the image XObject.</dd>
+<dt><a href="#PDEImageSetSMask">PDEImageSetSMask</a></dt><dd> -  Sets the soft mask.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEImageAcquireImageFlate"><strong><span style="color:grey;">PDEImageAcquireImageFlate</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2554</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Acquires the <a href="pdelayer_PDEImageFlate.htm#PDEImageFlate" title=" A reference to a PDEImageFlate.">PDEImageFlate</a> resource of the <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a> content element when the image filter type is <code>"FlateDecode"</code>, or <code>0</code> if it is not.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the <a href="pdelayer_PDEImageFlate.htm#PDEImageFlate" title=" A reference to a PDEImageFlate.">PDEImageFlate</a> when finished with it.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEImageFlate.htm#PDEImageFlate" title=" A reference to a PDEImageFlate."><code>PDEImageFlate</code></a> <code>PDEImageAcquireImageFlate(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT The <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a> object. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>a <a href="pdelayer_PDEImageFlate.htm#PDEImageFlate" title=" A reference to a PDEImageFlate.">PDEImageFlate</a> resource object. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageAcquireImageJPX"><strong><span style="color:grey;">PDEImageAcquireImageJPX</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2565</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Acquires the <a href="pdelayer_PDEImageJPX.htm#PDEImageJPX" title=" A reference to a PDEImageJPX.">PDEImageJPX</a> resource of the <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a> content element when the image filter type is <code>"JPXDecode"</code>, or <code>0</code> if it is not.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the <a href="pdelayer_PDEImageJPX.htm#PDEImageJPX" title=" A reference to a PDEImageJPX.">PDEImageJPX</a> when finished with it.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEImageJPX.htm#PDEImageJPX" title=" A reference to a PDEImageJPX."><code>PDEImageJPX</code></a> <code>PDEImageAcquireImageJPX(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT The <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a> object. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>a <a href="pdelayer_PDEImageJPX.htm#PDEImageJPX" title=" A reference to a PDEImageJPX.">PDEImageJPX</a> resource object. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageCreate"><strong><span style="color:grey;">PDEImageCreate</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:575</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Superseded by <a href="pdelayer_PDEImage.htm#PDEImageCreateEx" title=" Creates an image object.">PDEImageCreateEx</a>() in Acrobat 10.0. Creates an image object.<br/>
+<p>The image data may be specified as a stream or as a buffer. If <code>data</code> is non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, <code>dataStm</code> is ignored.<br/></p>
+
+<p>
+<p>See <a href="pdelayer_PDEImage.htm#PDEImageSetDataStm" title=" Sets a data stream for an image.">PDEImageSetDataStm</a>() for information on handling the stream.<br/></p>
+
+<p>
+<p>The caller must dispose of <code>dataStm</code> after calling this method.<br/></p>
+
+<p>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned image object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEImage.htm#PDEImageCreateEx" title=" Creates an image object."><code>PDEImageCreateEx</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageCreateFromCosObj" title=" Superseded by PDEImageCreateFromCosObjEx() in Acrobat 10.0."><code>PDEImageCreateFromCosObj</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>PDEImageCreate(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#_t_PDEImageAttrs" title=" Attributes of a PDEImage."><code>PDEImageAttrsP</code></a> <code>attrsP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>attrsSize</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>matrixP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>colorSpace</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEColorValue" title=" A structure describing a color value."><code>PDEColorValueP</code></a> <code>colorValueP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEFilterArray" title=" Filter information for streams."><code>PDEFilterArrayP</code></a> <code>filtersP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>dataStm</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>*</code><code>data</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>encodedLen</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>attrsP</code></span>
+</td><td><span>IN/OUT A pointer to a <a href="pdelayer_PDEImage.htm#_t_PDEImageAttrs" title=" Attributes of a PDEImage.">PDEImageAttrs</a> object with attributes of the image. </span>
+</td></tr>
+<tr><td><span><code>attrsSize</code></span>
+</td><td><span>IN/OUT The size of the <code>attrsP</code> buffer in bytes. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>IN/OUT A pointer to an <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> that holds the transformation matrix to use for the image. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>IN/OUT <a href="pdelayer_PDEImage.htm#PDEImageDataFlags" title=" Flags for PDEImageGetData(), PDEImageGetDataStm(), PDEImageSetData(), and PDEImageSetDataStm().">PDEImageDataFlags</a> flags. If the <a href="pdelayer_PDEImage.htm#kPDEImageEncodedData" title=" Indicates that the filter is active; data is encoded.">kPDEImageEncodedData</a> flag is set, and the data is provided directly (not as a stream), then <code>encodedLen</code> must specify the length of data. </span>
+</td></tr>
+<tr><td><span><code>colorSpace</code></span>
+</td><td><span>IN/OUT The color space of the image. When the image is an image mask, <code>colorSpace</code> is the color space of the <code>colorValueP</code> argument. </span>
+</td></tr>
+<tr><td><span><code>colorValueP</code></span>
+</td><td><span>IN/OUT A pointer to a <a href="pdelayer_General.htm#_t_PDEColorValue" title=" A structure describing a color value.">PDEColorValue</a> structure. If the image is an image mask, <code>colorValueP</code> must be provided. </span>
+</td></tr>
+<tr><td><span><code>filtersP</code></span>
+</td><td><span>IN/OUT A pointer to a <a href="pdelayer_General.htm#_t_PDEFilterArray" title=" Filter information for streams.">PDEFilterArray</a> structure that specifies which filters to use in encoding the contents; it may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. Filters will be used to encode the data in the order in which they are specified in the array. </span>
+</td></tr>
+<tr><td><span><code>dataStm</code></span>
+</td><td><span>IN/OUT The stream holding the image data. </span>
+</td></tr>
+<tr><td><span><code>data</code></span>
+</td><td><span>IN/OUT The image data. If <code>data</code> is non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, <code>dataStm</code> is ignored. If there is a great deal of data, as for a large image, it is recommended you use the <code>dataStm</code> parameter for the image data or use the <a href="pdelayer_PDEImage.htm#PDEImageCreateFromCosObj" title=" Superseded by PDEImageCreateFromCosObjEx() in Acrobat 10.0.">PDEImageCreateFromCosObj</a>() method. </span>
+</td></tr>
+<tr><td><span><code>encodedLen</code></span>
+</td><td><span>IN/OUT The encoded length of <code>data</code> in bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The image. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pageErrReadLessImageData" title=" Less image data was read than expected."><code>pageErrReadLessImageData</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageCreateEx"><strong><span style="color:grey;">PDEImageCreateEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:3268</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates an image object. Supersedes <a href="pdelayer_PDEImage.htm#PDEImageCreate" title=" Superseded by PDEImageCreateEx() in Acrobat 10.0.">PDEImageCreate</a>() in Acrobat 10.0.<br/>
+<p>The image data may be specified as a stream or as a buffer. If <code>dataStm</code> is non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, <code>data</code> is ignored.<br/></p>
+
+<p>
+<p>See <a href="pdelayer_PDEImage.htm#PDEImageSetDataStm" title=" Sets a data stream for an image.">PDEImageSetDataStm</a>() for information on handling the stream.<br/></p>
+
+<p>
+<p>The caller must dispose of <code>dataStm</code> after calling this method.<br/></p>
+
+<p>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned image object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEImage.htm#PDEImageCreate" title=" Superseded by PDEImageCreateEx() in Acrobat 10.0."><code>PDEImageCreate</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageCreateFromCosObjEx" title=" Creates an image object from a Cos object."><code>PDEImageCreateFromCosObjEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>PDEImageCreateEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#_t_PDEImageAttrs" title=" Attributes of a PDEImage."><code>PDEImageAttrsP</code></a> <code>attrsP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>attrsSize</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers."><code>ASDoubleMatrixP</code></a> <code>matrixP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>colorSpace</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEColorValue" title=" A structure describing a color value."><code>PDEColorValueP</code></a> <code>colorValueP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEFilterArray" title=" Filter information for streams."><code>PDEFilterArrayP</code></a> <code>filtersP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>dataStm</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>*</code><code>data</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns64" title=" 8-byte unsigned long numeric value."><code>ASUns64</code></a> <code>encodedLen</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>attrsP</code></span>
+</td><td><span>IN/OUT A pointer to a <a href="pdelayer_PDEImage.htm#_t_PDEImageAttrs" title=" Attributes of a PDEImage.">PDEImageAttrs</a> object with attributes of the image. </span>
+</td></tr>
+<tr><td><span><code>attrsSize</code></span>
+</td><td><span>IN/OUT The size of the <code>attrsP</code> buffer in bytes. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>IN/OUT A pointer to an <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers.">ASDoubleMatrix</a> that holds the transformation matrix to use for the image. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>IN/OUT <a href="pdelayer_PDEImage.htm#PDEImageDataFlags" title=" Flags for PDEImageGetData(), PDEImageGetDataStm(), PDEImageSetData(), and PDEImageSetDataStm().">PDEImageDataFlags</a> flags. If the <a href="pdelayer_PDEImage.htm#kPDEImageEncodedData" title=" Indicates that the filter is active; data is encoded.">kPDEImageEncodedData</a> flag is set, and the data is provided directly (not as a stream), then <code>encodedLen</code> must specify the length of data. </span>
+</td></tr>
+<tr><td><span><code>colorSpace</code></span>
+</td><td><span>IN/OUT The color space of the image. When the image is an image mask, <code>colorSpace</code> is the color space of the <code>colorValueP</code> argument. </span>
+</td></tr>
+<tr><td><span><code>colorValueP</code></span>
+</td><td><span>IN/OUT A pointer to a <a href="pdelayer_General.htm#_t_PDEColorValue" title=" A structure describing a color value.">PDEColorValue</a> structure. If the image is an image mask, <code>colorValueP</code> must be provided. </span>
+</td></tr>
+<tr><td><span><code>filtersP</code></span>
+</td><td><span>IN/OUT A pointer to a <a href="pdelayer_General.htm#_t_PDEFilterArray" title=" Filter information for streams.">PDEFilterArray</a> structure that specifies which filters to use in encoding the contents; it may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. Filters will be used to encode the data in the order in which they are specified in the array. </span>
+</td></tr>
+<tr><td><span><code>dataStm</code></span>
+</td><td><span>IN/OUT The stream holding the image data. </span>
+</td></tr>
+<tr><td><span><code>data</code></span>
+</td><td><span>IN/OUT The image data. If <code>dataStm</code> is non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, <code>data</code> is ignored. If there is a great deal of data, as for a large image, it is recommended you use the <code>dataStm</code> parameter for the image data or use the <a href="pdelayer_PDEImage.htm#PDEImageCreateFromCosObjEx" title=" Creates an image object from a Cos object.">PDEImageCreateFromCosObjEx</a>() method. </span>
+</td></tr>
+<tr><td><span><code>encodedLen</code></span>
+</td><td><span>IN/OUT The encoded length of <code>data</code> in bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The image. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pageErrReadLessImageData" title=" Less image data was read than expected."><code>pageErrReadLessImageData</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageCreateFromCosObj"><strong><span style="color:grey;">PDEImageCreateFromCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:605</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Superseded by <a href="pdelayer_PDEImage.htm#PDEImageCreateFromCosObjEx" title=" Creates an image object from a Cos object.">PDEImageCreateFromCosObjEx</a>() in Acrobat 10.0. Creates an image object from a Cos object.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned image object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEImage.htm#PDEImageCreate" title=" Superseded by PDEImageCreateEx() in Acrobat 10.0."><code>PDEImageCreate</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageCreateFromCosObjEx" title=" Creates an image object from a Cos object."><code>PDEImageCreateFromCosObjEx</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetCosObj" title=" Gets a Cos object for an image."><code>PDEImageGetCosObj</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>PDEImageCreateFromCosObj(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>const</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>imageObjP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>matrixP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>colorSpace</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEColorValue" title=" A structure describing a color value."><code>PDEColorValueP</code></a> <code>colorValueP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>imageObjP</code></span>
+</td><td><span>IN/OUT The Cos object for the image. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>IN/OUT A pointer to an <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> that holds the transformation matrix to use for the image. </span>
+</td></tr>
+<tr><td><span><code>colorSpace</code></span>
+</td><td><span>IN/OUT The color space used for the image, if the image is an image mask; otherwise, set it to <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr>
+<tr><td><span><code>colorValueP</code></span>
+</td><td><span>IN/OUT A pointer to a <a href="pdelayer_General.htm#_t_PDEColorValue" title=" A structure describing a color value.">PDEColorValue</a> structure. If the image is an image mask, <code>colorValueP</code> must be provided. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>An image corresponding to the Cos object. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pageErrReadLessImageData" title=" Less image data was read than expected."><code>pageErrReadLessImageData</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageCreateFromCosObjEx"><strong><span style="color:grey;">PDEImageCreateFromCosObjEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:3328</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates an image object from a Cos object. Supersedes <a href="pdelayer_PDEImage.htm#PDEImageCreateFromCosObj" title=" Superseded by PDEImageCreateFromCosObjEx() in Acrobat 10.0.">PDEImageCreateFromCosObj</a>() in Acrobat 10.0.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned image object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEImage.htm#PDEImageCreateEx" title=" Creates an image object."><code>PDEImageCreateEx</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageCreateFromCosObj" title=" Superseded by PDEImageCreateFromCosObjEx() in Acrobat 10.0."><code>PDEImageCreateFromCosObj</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetCosObj" title=" Gets a Cos object for an image."><code>PDEImageGetCosObj</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>PDEImageCreateFromCosObjEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>const</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>imageObjP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers."><code>ASDoubleMatrixP</code></a> <code>matrixP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>colorSpace</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEColorValue" title=" A structure describing a color value."><code>PDEColorValueP</code></a> <code>colorValueP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>imageObjP</code></span>
+</td><td><span>IN/OUT The Cos object for the image. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>IN/OUT A pointer to an <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers.">ASDoubleMatrix</a> that holds the transformation matrix to use for the image. </span>
+</td></tr>
+<tr><td><span><code>colorSpace</code></span>
+</td><td><span>IN/OUT The color space used for the image, if the image is an image mask; otherwise, set it to <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr>
+<tr><td><span><code>colorValueP</code></span>
+</td><td><span>IN/OUT A pointer to a <a href="pdelayer_General.htm#_t_PDEColorValue" title=" A structure describing a color value.">PDEColorValue</a> structure. If the image is an image mask, <code>colorValueP</code> must be provided. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>An image corresponding to the Cos object. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pageErrReadLessImageData" title=" Less image data was read than expected."><code>pageErrReadLessImageData</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageCreateInCosDoc"><strong><span style="color:grey;">PDEImageCreateInCosDoc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2713</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Superseded by <a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDocEx" title=" Creates an image object like PDEImageCreateInCosDoc(), except that the client can create an image with a large amount of data, and using a double precision transformation matrix.">PDEImageCreateInCosDocEx</a>() in Acrobat 10.0. Creates an image object like <a href="pdelayer_PDEImage.htm#PDEImageCreate" title=" Superseded by PDEImageCreateEx() in Acrobat 10.0.">PDEImageCreate</a>(), except that the client can specify the <a href="coslayer_CosDoc.htm#CosDoc">CosDoc</a> in which the image is created.<br/>
+<p>The image data may be specified as a stream or as a buffer. If <code>data</code> is non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, <code>dataStm</code> is ignored.<br/></p>
+
+<p>
+<p>See <a href="pdelayer_PDEImage.htm#PDEImageSetDataStm" title=" Sets a data stream for an image.">PDEImageSetDataStm</a>() for information on handling the stream.<br/></p>
+
+<p>
+<p>The caller must dispose of <code>dataStm</code> after calling this method.<br/></p>
+
+<p>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned image object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEImage.htm#PDEImageCreateFromCosObj" title=" Superseded by PDEImageCreateFromCosObjEx() in Acrobat 10.0."><code>PDEImageCreateFromCosObj</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDocEx" title=" Creates an image object like PDEImageCreateInCosDoc(), except that the client can create an image with a large amount of data, and using a double precision transformation matrix."><code>PDEImageCreateInCosDocEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>PDEImageCreateInCosDoc(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#_t_PDEImageAttrs" title=" Attributes of a PDEImage."><code>PDEImageAttrsP</code></a> <code>attrsP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>attrsSize</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>matrixP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>colorSpace</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEColorValue" title=" A structure describing a color value."><code>PDEColorValueP</code></a> <code>colorValueP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEFilterArray" title=" Filter information for streams."><code>PDEFilterArrayP</code></a> <code>filtersP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>dataStm</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>*</code><code>data</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>encodedLen</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>cosDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>attrsP</code></span>
+</td><td><span>IN/OUT A pointer to a <a href="pdelayer_PDEImage.htm#_t_PDEImageAttrs" title=" Attributes of a PDEImage.">PDEImageAttrs</a> object with attributes of the image. </span>
+</td></tr>
+<tr><td><span><code>attrsSize</code></span>
+</td><td><span>IN/OUT The size of the <code>attrsP</code> buffer in bytes. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>IN/OUT A pointer to an <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> that holds the transformation matrix to use for the image. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>IN/OUT <a href="pdelayer_PDEImage.htm#PDEImageDataFlags" title=" Flags for PDEImageGetData(), PDEImageGetDataStm(), PDEImageSetData(), and PDEImageSetDataStm().">PDEImageDataFlags</a> flags. If the <a href="pdelayer_PDEImage.htm#kPDEImageEncodedData" title=" Indicates that the filter is active; data is encoded.">kPDEImageEncodedData</a> flag is set, and the data is provided directly (not as a stream), then <code>encodedLen</code> must specify the length of data. </span>
+</td></tr>
+<tr><td><span><code>colorSpace</code></span>
+</td><td><span>IN/OUT The color space of the image. When the image is an image mask, <code>colorSpace</code> is the color space of the <code>colorValueP</code> argument. </span>
+</td></tr>
+<tr><td><span><code>colorValueP</code></span>
+</td><td><span>IN/OUT A pointer to a <a href="pdelayer_General.htm#_t_PDEColorValue" title=" A structure describing a color value.">PDEColorValue</a> structure. If the image is an image mask, <code>colorValueP</code> must be provided. </span>
+</td></tr>
+<tr><td><span><code>filtersP</code></span>
+</td><td><span>IN/OUT A pointer to a <a href="pdelayer_General.htm#_t_PDEFilterArray" title=" Filter information for streams.">PDEFilterArray</a> structure that specifies which filters to use in encoding the contents; it may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. Filters will be used to encode the data in the order in which they are specified in the array. </span>
+</td></tr>
+<tr><td><span><code>dataStm</code></span>
+</td><td><span>IN/OUT The stream holding the image data. </span>
+</td></tr>
+<tr><td><span><code>data</code></span>
+</td><td><span>IN/OUT The image data. If <code>data</code> is non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, <code>dataStm</code> is ignored. If there is a great deal of data, as for a large image, it is recommended you use the <code>dataStm</code> parameter for the image data or use the <a href="pdelayer_PDEImage.htm#PDEImageCreateFromCosObj" title=" Superseded by PDEImageCreateFromCosObjEx() in Acrobat 10.0.">PDEImageCreateFromCosObj</a>() method. </span>
+</td></tr>
+<tr><td><span><code>encodedLen</code></span>
+</td><td><span>IN/OUT The encoded length of <code>data</code> in bytes. </span>
+</td></tr>
+<tr><td><span><code>cosDoc</code></span>
+</td><td><span>IN/OUT The document in which the image is created. </span>
+</td></tr>
+<tr><td><span><code>cosDoc</code></span>
+</td><td><span>IN/OUT Document in which to put Cos representation of resource. May be <a href="aslayer_General.htm#NULL">NULL</a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The image. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pageErrReadLessImageData" title=" Less image data was read than expected."><code>pageErrReadLessImageData</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageCreateInCosDoc64"><strong><span style="color:grey;">PDEImageCreateInCosDoc64</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:3074</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Superseded by <a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDocEx" title=" Creates an image object like PDEImageCreateInCosDoc(), except that the client can create an image with a large amount of data, and using a double precision transformation matrix.">PDEImageCreateInCosDocEx</a>() in Acrobat 10.0. Creates an image object like <a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDoc" title=" Superseded by PDEImageCreateInCosDocEx() in Acrobat 10.0.">PDEImageCreateInCosDoc</a>(), except that the client can create an image with a large amount of data.<br/>
+<p>The image data may be specified as a stream or as a buffer. If <code>data</code> is non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, <code>dataStm</code> is ignored.<br/></p>
+
+<p>
+<p>See <a href="pdelayer_PDEImage.htm#PDEImageSetDataStm" title=" Sets a data stream for an image.">PDEImageSetDataStm</a>() for information on handling the stream.<br/></p>
+
+<p>
+<p>The caller must dispose of <code>dataStm</code> after calling this method.<br/></p>
+
+<p>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned image object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEImage.htm#PDEImageCreateFromCosObj" title=" Superseded by PDEImageCreateFromCosObjEx() in Acrobat 10.0."><code>PDEImageCreateFromCosObj</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDocEx" title=" Creates an image object like PDEImageCreateInCosDoc(), except that the client can create an image with a large amount of data, and using a double precision transformation matrix."><code>PDEImageCreateInCosDocEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>PDEImageCreateInCosDoc64(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#_t_PDEImageAttrs" title=" Attributes of a PDEImage."><code>PDEImageAttrsP</code></a> <code>attrsP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>attrsSize</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>matrixP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>colorSpace</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEColorValue" title=" A structure describing a color value."><code>PDEColorValueP</code></a> <code>colorValueP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEFilterArray" title=" Filter information for streams."><code>PDEFilterArrayP</code></a> <code>filtersP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>dataStm</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>*</code><code>data</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns64" title=" 8-byte unsigned long numeric value."><code>ASUns64</code></a> <code>encodedLen</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>cosDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>attrsP</code></span>
+</td><td><span>IN/OUT A pointer to a <a href="pdelayer_PDEImage.htm#_t_PDEImageAttrs" title=" Attributes of a PDEImage.">PDEImageAttrs</a> object with attributes of the image. </span>
+</td></tr>
+<tr><td><span><code>attrsSize</code></span>
+</td><td><span>IN/OUT The size of the <code>attrsP</code> buffer in bytes. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>IN/OUT A pointer to an <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> that holds the transformation matrix to use for the image. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>IN/OUT <a href="pdelayer_PDEImage.htm#PDEImageDataFlags" title=" Flags for PDEImageGetData(), PDEImageGetDataStm(), PDEImageSetData(), and PDEImageSetDataStm().">PDEImageDataFlags</a> flags. If the <a href="pdelayer_PDEImage.htm#kPDEImageEncodedData" title=" Indicates that the filter is active; data is encoded.">kPDEImageEncodedData</a> flag is set, and the data is provided directly (not as a stream), then <code>encodedLen</code> must specify the length of data. </span>
+</td></tr>
+<tr><td><span><code>colorSpace</code></span>
+</td><td><span>IN/OUT The color space of the image. When the image is an image mask, <code>colorSpace</code> is the color space of the <code>colorValueP</code> argument. </span>
+</td></tr>
+<tr><td><span><code>colorValueP</code></span>
+</td><td><span>IN/OUT A pointer to a <a href="pdelayer_General.htm#_t_PDEColorValue" title=" A structure describing a color value.">PDEColorValue</a> structure. If the image is an image mask, <code>colorValueP</code> must be provided. </span>
+</td></tr>
+<tr><td><span><code>filtersP</code></span>
+</td><td><span>IN/OUT A pointer to a <a href="pdelayer_General.htm#_t_PDEFilterArray" title=" Filter information for streams.">PDEFilterArray</a> structure that specifies which filters to use in encoding the contents; it may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. Filters will be used to encode the data in the order in which they are specified in the array. </span>
+</td></tr>
+<tr><td><span><code>dataStm</code></span>
+</td><td><span>IN/OUT The stream holding the image data. </span>
+</td></tr>
+<tr><td><span><code>data</code></span>
+</td><td><span>IN/OUT The image data. If <code>data</code> is non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, <code>dataStm</code> is ignored. If there is a great deal of data, as for a large image, it is recommended you use the <code>dataStm</code> parameter for the image data or use the <a href="pdelayer_PDEImage.htm#PDEImageCreateFromCosObj" title=" Superseded by PDEImageCreateFromCosObjEx() in Acrobat 10.0.">PDEImageCreateFromCosObj</a>() method. </span>
+</td></tr>
+<tr><td><span><code>encodedLen</code></span>
+</td><td><span>IN/OUT The encoded length of <code>data</code> in bytes. </span>
+</td></tr>
+<tr><td><span><code>cosDoc</code></span>
+</td><td><span>IN/OUT The document in which the image is created. </span>
+</td></tr>
+<tr><td><span><code>cosDoc</code></span>
+</td><td><span>IN/OUT The document in which to put the Cos representation of the resource. It may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The image. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pageErrReadLessImageData" title=" Less image data was read than expected."><code>pageErrReadLessImageData</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageCreateInCosDocEx"><strong><span style="color:grey;">PDEImageCreateInCosDocEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:3215</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates an image object like <a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDoc" title=" Superseded by PDEImageCreateInCosDocEx() in Acrobat 10.0.">PDEImageCreateInCosDoc</a>(), except that the client can create an image with a large amount of data, and using a double precision transformation matrix. Supersedes <a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDoc" title=" Superseded by PDEImageCreateInCosDocEx() in Acrobat 10.0.">PDEImageCreateInCosDoc</a>() and <a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDoc64" title=" Superseded by PDEImageCreateInCosDocEx() in Acrobat 10.0.">PDEImageCreateInCosDoc64</a>() in Acrobat 10.0.<br/>
+<p>The image data may be specified as a stream or as a buffer. If <code>dataStm</code> is non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, <code>data</code> is ignored.<br/></p>
+
+<p>
+<p>See <a href="pdelayer_PDEImage.htm#PDEImageSetDataStm" title=" Sets a data stream for an image.">PDEImageSetDataStm</a>() for information on handling the stream.<br/></p>
+
+<p>
+<p>The caller must dispose of <code>dataStm</code> after calling this method.<br/></p>
+
+<p>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned image object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEImage.htm#PDEImageCreateFromCosObjEx" title=" Creates an image object from a Cos object."><code>PDEImageCreateFromCosObjEx</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDoc" title=" Superseded by PDEImageCreateInCosDocEx() in Acrobat 10.0."><code>PDEImageCreateInCosDoc</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDoc64" title=" Superseded by PDEImageCreateInCosDocEx() in Acrobat 10.0."><code>PDEImageCreateInCosDoc64</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>PDEImageCreateInCosDocEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#_t_PDEImageAttrs" title=" Attributes of a PDEImage."><code>PDEImageAttrsP</code></a> <code>attrsP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>attrsSize</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers."><code>ASDoubleMatrixP</code></a> <code>matrixP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>colorSpace</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEColorValue" title=" A structure describing a color value."><code>PDEColorValueP</code></a> <code>colorValueP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEFilterArray" title=" Filter information for streams."><code>PDEFilterArrayP</code></a> <code>filtersP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>dataStm</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>*</code><code>data</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns64" title=" 8-byte unsigned long numeric value."><code>ASUns64</code></a> <code>encodedLen</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>cosDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>attrsP</code></span>
+</td><td><span>IN/OUT A pointer to a <a href="pdelayer_PDEImage.htm#_t_PDEImageAttrs" title=" Attributes of a PDEImage.">PDEImageAttrs</a> object with attributes of the image. </span>
+</td></tr>
+<tr><td><span><code>attrsSize</code></span>
+</td><td><span>IN/OUT The size of the <code>attrsP</code> buffer in bytes. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>IN/OUT A pointer to an <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers.">ASDoubleMatrix</a> that holds the transformation matrix to use for the image. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>IN/OUT <a href="pdelayer_PDEImage.htm#PDEImageDataFlags" title=" Flags for PDEImageGetData(), PDEImageGetDataStm(), PDEImageSetData(), and PDEImageSetDataStm().">PDEImageDataFlags</a> flags. If the <a href="pdelayer_PDEImage.htm#kPDEImageEncodedData" title=" Indicates that the filter is active; data is encoded.">kPDEImageEncodedData</a> flag is set, and the data is provided directly (not as a stream), then <code>encodedLen</code> must specify the length of data. </span>
+</td></tr>
+<tr><td><span><code>colorSpace</code></span>
+</td><td><span>IN/OUT The color space of the image. When the image is an image mask, <code>colorSpace</code> is the color space of the <code>colorValueP</code> argument. </span>
+</td></tr>
+<tr><td><span><code>colorValueP</code></span>
+</td><td><span>IN/OUT A pointer to a <a href="pdelayer_General.htm#_t_PDEColorValue" title=" A structure describing a color value.">PDEColorValue</a> structure. If the image is an image mask, <code>colorValueP</code> must be provided. </span>
+</td></tr>
+<tr><td><span><code>filtersP</code></span>
+</td><td><span>IN/OUT A pointer to a <a href="pdelayer_General.htm#_t_PDEFilterArray" title=" Filter information for streams.">PDEFilterArray</a> structure that specifies which filters to use in encoding the contents; it may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. Filters will be used to encode the data in the order in which they are specified in the array. </span>
+</td></tr>
+<tr><td><span><code>dataStm</code></span>
+</td><td><span>IN/OUT The stream holding the image data. </span>
+</td></tr>
+<tr><td><span><code>data</code></span>
+</td><td><span>IN/OUT The image data. If <code>dataStm</code> is non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, <code>data</code> is ignored. If there is a great deal of data, as for a large image, it is recommended you use the <code>dataStm</code> parameter for the image data or use the <a href="pdelayer_PDEImage.htm#PDEImageCreateFromCosObjEx" title=" Creates an image object from a Cos object.">PDEImageCreateFromCosObjEx</a>() method. </span>
+</td></tr>
+<tr><td><span><code>encodedLen</code></span>
+</td><td><span>IN/OUT The encoded length of <code>data</code> in bytes. </span>
+</td></tr>
+<tr><td><span><code>cosDoc</code></span>
+</td><td><span>IN/OUT The document in which the image is created. </span>
+</td></tr>
+<tr><td><span><code>cosDoc</code></span>
+</td><td><span>IN/OUT The document in which to put the Cos representation of the resource. It may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The image. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pageErrReadLessImageData" title=" Less image data was read than expected."><code>pageErrReadLessImageData</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageDataIsEncoded"><strong><span style="color:grey;">PDEImageDataIsEncoded</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:798</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Determines if image data is encoded or not. It is used only for inline images; it is not relevant to XObject images.<br/>
+<p>It always returns <a href="aslayer_General.htm#false"><code>false</code></a> for XObject images; XObject image data can be obtained from <a href="pdelayer_PDEImage.htm#PDEImageGetData" title=" Gets an image's data.">PDEImageGetData</a>() or <a href="pdelayer_PDEImage.htm#PDEImageGetDataStm" title=" Gets a data stream for an image.">PDEImageGetDataStm</a>(), either encoded or decoded.<br/></p>
+
+<p>
+<p>If an inline image is obtained via <a href="pdelayer_PDEContent.htm#PDEContentCreateFromCosObj" title=" Creates a content object from a Cos object.">PDEContentCreateFromCosObj</a>() or related methods, the inline image data is always decoded. That is, if PDFEdit parses the stream, the data is always decoded. Only if <a href="pdelayer_PDEImage.htm#PDEImageCreate" title=" Superseded by PDEImageCreateEx() in Acrobat 10.0.">PDEImageCreate</a>() is used to explicitly create a new image using encoded data does <a href="pdelayer_PDEImage.htm#PDEImageDataIsEncoded" title=" Determines if image data is encoded or not.">PDEImageDataIsEncoded</a>() return <a href="aslayer_General.htm#true"><code>true</code></a>.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEImage.htm#PDEImageGetData" title=" Gets an image's data.">PDEImageGetData</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDEImageDataIsEncoded(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>*</code><code>encodedLenP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT The image to examine. </span>
+</td></tr>
+<tr><td><span><code>encodedLenP</code></span>
+</td><td><span>IN/OUT (Filled by the method) The length of the encoded data. If the data is encoded, the method returns <a href="aslayer_General.htm#true"><code>true</code></a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if <a href="pdelayer_PDEImage.htm#PDEImageGetData" title=" Gets an image's data.">PDEImageGetData</a> returns encoded data, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. It returns <a href="aslayer_General.htm#false"><code>false</code></a> for XObject images. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageGetAttrs"><strong><span style="color:grey;">PDEImageGetAttrs</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:741</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the attributes for an image. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEImage.htm#PDEImageGetColorSpace" title=" Gets the color space object for an image."><code>PDEImageGetColorSpace</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetData" title=" Gets an image's data."><code>PDEImageGetData</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetDataLen" title=" Gets the length of data for an image."><code>PDEImageGetDataLen</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetDataStm" title=" Gets a data stream for an image."><code>PDEImageGetDataStm</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetDecodeArray" title=" Gets the decode array from the attributes of the image."><code>PDEImageGetDecodeArray</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetFilterArray" title=" Gets the filter array for an image."><code>PDEImageGetFilterArray</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEImageGetAttrs(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#_t_PDEImageAttrs" title=" Attributes of a PDEImage."><code>PDEImageAttrsP</code></a> <code>attrsP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>attrsSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT The image whose attributes are obtained. </span>
+</td></tr>
+<tr><td><span><code>attrsP</code></span>
+</td><td><span>IN/OUT (Filled by the method) A pointer to a <a href="pdelayer_PDEImage.htm#_t_PDEImageAttrs" title=" Attributes of a PDEImage.">PDEImageAttrs</a> structure with attributes of image. </span>
+</td></tr>
+<tr><td><span><code>attrsSize</code></span>
+</td><td><span>IN/OUT The size of the <code>attrsP</code> buffer in bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageGetColorSpace"><strong><span style="color:grey;">PDEImageGetColorSpace</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:760</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the color space object for an image. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method does not change the reference count of the returned <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file.">PDEColorSpace</a>. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEImage.htm#PDEImageGetAttrs" title=" Gets the attributes for an image."><code>PDEImageGetAttrs</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetData" title=" Gets an image's data."><code>PDEImageGetData</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetDataLen" title=" Gets the length of data for an image."><code>PDEImageGetDataLen</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetDataStm" title=" Gets a data stream for an image."><code>PDEImageGetDataStm</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetDecodeArray" title=" Gets the decode array from the attributes of the image."><code>PDEImageGetDecodeArray</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetFilterArray" title=" Gets the filter array for an image."><code>PDEImageGetFilterArray</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>PDEImageGetColorSpace(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT The image whose color space is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>Color space for image. It returns <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if <code>image</code> is an image mask. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageGetColorSpaceEx"><strong><span style="color:grey;">PDEImageGetColorSpaceEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2862</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Retrieves a <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> object's color space, in the desired bits per component, based on the <code>flags</code> parameter. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEImage.htm#PDEImageGetColorSpace" title=" Gets the color space object for an image.">PDEImageGetColorSpace</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>PDEImageGetColorSpaceEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> instance whose color space is desired. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> A set of flags to specify the desired bits per component (bpc) of the returned color space. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageGetCosObj"><strong><span style="color:grey;">PDEImageGetCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:892</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets a Cos object for an image. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEImage.htm#PDEImageCreateFromCosObj" title=" Superseded by PDEImageCreateFromCosObjEx() in Acrobat 10.0."><code>PDEImageCreateFromCosObj</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageIsCosObj" title=" Determines if an image is an XObject image."><code>PDEImageIsCosObj</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEImageGetCosObj(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>cosObjP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT The image whose Cos object is obtained. </span>
+</td></tr>
+<tr><td><span><code>cosObjP</code></span>
+</td><td><span>IN/OUT (Filled by the method) The Cos object for the image. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageGetData"><strong><span style="color:grey;">PDEImageGetData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:829</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets an image's data.<br/>
+<p>If the image is an XObject image, data is always returned as decoded data.<br/></p>
+
+<p>
+<p>See the note about inline images under <a href="pdelayer_PDEImage.htm#PDEImageDataIsEncoded" title=" Determines if image data is encoded or not.">PDEImageDataIsEncoded</a>().<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEImage.htm#PDEImageDataIsEncoded" title=" Determines if image data is encoded or not."><code>PDEImageDataIsEncoded</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetAttrs" title=" Gets the attributes for an image."><code>PDEImageGetAttrs</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetColorSpace" title=" Gets the color space object for an image."><code>PDEImageGetColorSpace</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetDataLen" title=" Gets the length of data for an image."><code>PDEImageGetDataLen</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetDataStm" title=" Gets a data stream for an image."><code>PDEImageGetDataStm</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetDecodeArray" title=" Gets the decode array from the attributes of the image."><code>PDEImageGetDecodeArray</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetFilterArray" title=" Gets the filter array for an image."><code>PDEImageGetFilterArray</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageSetColorSpace" title=" Sets the color space of the image."><code>PDEImageSetColorSpace</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEImageGetData(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>*</code><code>buffer</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT The image whose data is obtained. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>IN/OUT Unused- must be zero. </span>
+</td></tr>
+<tr><td><span><code>buffer</code></span>
+</td><td><span>IN/OUT The image data. If the data is decoded, <code>buffer</code> must be large enough to contain the number of bytes specified in the <a href="pdelayer_PDEImage.htm#_t_PDEImageAttrs" title=" Attributes of a PDEImage.">PDEImageAttrs</a> structure obtained by <a href="pdelayer_PDEImage.htm#PDEImageGetAttrs" title=" Gets the attributes for an image.">PDEImageGetAttrs</a>(). If the data is encoded, <code>buffer</code> must be large enough to contain the number of bytes in the <code>encodedLenP</code> parameter obtained by <a href="pdelayer_PDEImage.htm#PDEImageDataIsEncoded" title=" Determines if image data is encoded or not.">PDEImageDataIsEncoded</a>(). </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageGetDataLen"><strong><span style="color:grey;">PDEImageGetDataLen</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:862</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the length of data for an image. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEImage.htm#PDEImageGetData" title=" Gets an image's data.">PDEImageGetData</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDEImageGetDataLen(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT The image whose data length is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of bytes of image data, specified by the width, height, bits per component, and color space of the image. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageGetDataLen64"><strong><span style="color:grey;">PDEImageGetDataLen64</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:3014</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the length of data for an image. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEImage.htm#PDEImageGetDataLen" title=" Gets the length of data for an image.">PDEImageGetDataLen</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt64" title=" 8-byte signed long numeric value."><code>ASInt64</code></a> <code>PDEImageGetDataLen64(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT The image whose data length is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of bytes of image data, specified by the width, height, bits per component, and color space of the image. Clients should switch to this routine. <a href="pdelayer_PDEImage.htm#PDEImageGetDataLen" title=" Gets the length of data for an image.">PDEImageGetDataLen</a>() will raise an error if it encounters an image with a length that is larger than <code>2^31</code><code>-</code> <code>1</code>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageGetDataStm"><strong><span style="color:grey;">PDEImageGetDataStm</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:849</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets a data stream for an image. It may only be called for XObject images.<br/>
+<p>The caller must dispose of the returned <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a> by calling <a href="aslayer_ASStm.htm#ASStmClose" title=" Closes the specified stream.">ASStmClose</a>.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEImage.htm#PDEImageGetDataLen" title=" Gets the length of data for an image."><code>PDEImageGetDataLen</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageSetDataStm" title=" Sets a data stream for an image."><code>PDEImageSetDataStm</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>PDEImageGetDataStm(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT The image whose data stream is obtained. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>IN/OUT <a href="pdelayer_PDEImage.htm#PDEImageDataFlags" title=" Flags for PDEImageGetData(), PDEImageGetDataStm(), PDEImageSetData(), and PDEImageSetDataStm().">PDEImageDataFlags</a> flags. If the <a href="pdelayer_PDEImage.htm#kPDEImageEncodedData" title=" Indicates that the filter is active; data is encoded.">kPDEImageEncodedData</a> flag is set, data is returned in encoded form. Otherwise, data is decoded. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The stream for the image. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageGetDecodeArray"><strong><span style="color:grey;">PDEImageGetDecodeArray</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1783</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the decode array from the attributes of the image. This array specifies the parameters used with the array of filters used to decode the image. This should be called first with a <a href="aslayer_General.htm#NULL"><code>NULL</code></a> <code>decode</code> to obtain the number of elements that may be returned so that a properly sized array can be allocated for a subsequent call. There are two decode entries per colorant in normal use. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEImage.htm#PDEImageSetDecodeArray" title=" Sets the decode array of an image.">PDEImageSetDecodeArray</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>PDEImageGetDecodeArray(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>*</code><code>decode</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>decodeSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>The image whose decode array is obtained. </span>
+</td></tr>
+<tr><td><span><code>decode</code></span>
+</td><td><span>(Filled by the method) A pointer to the <code>decode</code> array. If it is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, the number of <code>decode</code> elements required is returned. </span>
+</td></tr>
+<tr><td><span><code>decodeSize</code></span>
+</td><td><span>The number of elements in <code>decode</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of elements in the <code>decode</code> array. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageGetFilterArray"><strong><span style="color:grey;">PDEImageGetFilterArray</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:880</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the filter array for an image. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEImage.htm#PDEImageGetAttrs" title=" Gets the attributes for an image."><code>PDEImageGetAttrs</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetColorSpace" title=" Gets the color space object for an image."><code>PDEImageGetColorSpace</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetDataLen" title=" Gets the length of data for an image."><code>PDEImageGetDataLen</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetDecodeArray" title=" Gets the decode array from the attributes of the image."><code>PDEImageGetDecodeArray</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDEImageGetFilterArray(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="pdelayer_General.htm#_t_PDEFilterArray" title=" Filter information for streams."><code>PDEFilterArrayP</code></a> <code>filtersP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT The image whose filter array is obtained. </span>
+</td></tr>
+<tr><td><span><code>filtersP</code></span>
+</td><td><span>IN/OUT (Filled by the method) A pointer to <a href="pdelayer_General.htm#_t_PDEFilterArray" title=" Filter information for streams.">PDEFilterArray</a> structure to fill with the current filter array for the image. <code>filtersP</code> must be large enough to contain all of the elements. It may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a> to obtain the number of filter elements. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of filter elements. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageGetMatteArray"><strong><span style="color:grey;">PDEImageGetMatteArray</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2114</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets the matte array for the image XObject. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>PDEImageGetMatteArray(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>*</code><code>matte</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>numComp</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT The image XObject. </span>
+</td></tr>
+<tr><td><span><code>matte</code></span>
+</td><td><span>IN/OUT (Filled by the method) An array of values. </span>
+</td></tr>
+<tr><td><span><code>numComp</code></span>
+</td><td><span>IN/OUT The number of values in <code>matte</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of values copied. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageGetSMask"><strong><span style="color:grey;">PDEImageGetSMask</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2103</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets the soft mask for an image. Use <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the object when it is no longer referenced. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>PDEImageGetSMask(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>An object of type <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>An object of type <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageGetType"><strong><span style="color:grey;">PDEImageGetType</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2543</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Returns the type of image as <code>"FlateDecode"</code>, <code>"JPXDecode"</code>, or <code>"Unknown"</code> when the image filter is not one of these types. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>PDEImageGetType(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT The <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a> object. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>See above. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageHasSMask"><strong><span style="color:grey;">PDEImageHasSMask</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2094</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Checks whether the image has a soft mask. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDEImageHasSMask(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT An object of type <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the soft mask exists, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageIsCosObj"><strong><span style="color:grey;">PDEImageIsCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:771</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Determines if an image is an XObject image. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEImage.htm#PDEImageGetCosObj" title=" Gets a Cos object for an image.">PDEImageGetCosObj</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDEImageIsCosObj(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT The image to examine. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the image is an XObject image, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageSetColorSpace"><strong><span style="color:grey;">PDEImageSetColorSpace</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2124</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the color space of the image. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEImage.htm#PDEImageGetColorSpace" title=" Gets the color space object for an image."><code>PDEImageGetColorSpace</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageSetColorSpace" title=" Sets the color space of the image."><code>PDEImageSetColorSpace</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEImageSetColorSpace(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>space</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT The image whose color space is obtained. </span>
+</td></tr>
+<tr><td><span><code>space</code></span>
+</td><td><span>IN/OUT An object of type <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file.">PDEColorSpace</a>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageSetColorValue"><strong><span style="color:grey;">PDEImageSetColorValue</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:3238</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Sets an image's Color Value.<br/>
+<p>This call is valid only for a <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a> which is an Image Mask<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEImageSetColorValue(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEColorValue" title=" A structure describing a color value."><code>PDEColorValueP</code></a> <code>color</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT The image whose data is set. </span>
+</td></tr>
+<tr><td><span><code>colorValue</code></span>
+</td><td><span>IN/OUT The image data. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageSetData"><strong><span style="color:grey;">PDEImageSetData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:493</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets data for an image. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEImage.htm#PDEImageGetData" title=" Gets an image's data."><code>PDEImageGetData</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetDataLen" title=" Gets the length of data for an image."><code>PDEImageGetDataLen</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetDataStm" title=" Gets a data stream for an image."><code>PDEImageGetDataStm</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEImageSetData(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>*</code><code>buffer</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>encodedLen</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT The image whose data is set. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>IN/OUT A set of <a href="pdelayer_PDEImage.htm#PDEImageDataFlags" title=" Flags for PDEImageGetData(), PDEImageGetDataStm(), PDEImageSetData(), and PDEImageSetDataStm().">PDEImageDataFlags</a> flags. If <a href="pdelayer_PDEImage.htm#kPDEImageEncodedData" title=" Indicates that the filter is active; data is encoded.">kPDEImageEncodedData</a> is set, the data must be encoded for the current filters, and <code>encodedLen</code> is the length of the encoded data. If the <a href="pdelayer_PDEImage.htm#kPDEImageEncodedData" title=" Indicates that the filter is active; data is encoded.">kPDEImageEncodedData</a> flag is not set, data is not encoded and <code>encodedLen</code> is the size of the decoded data. </span>
+</td></tr>
+<tr><td><span><code>buffer</code></span>
+</td><td><span>IN/OUT The image data. </span>
+</td></tr>
+<tr><td><span><code>encodedLen</code></span>
+</td><td><span>IN/OUT The length of the encoded data. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageSetDataStm"><strong><span style="color:grey;">PDEImageSetDataStm</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:523</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Sets a data stream for an image. It can only be used for XObject images.<br/>
+<p>The caller must dispose of the stream by calling <a href="aslayer_ASStm.htm#ASStmClose" title=" Closes the specified stream.">ASStmClose</a>().<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEImage.htm#PDEImageGetData" title=" Gets an image's data."><code>PDEImageGetData</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetDataLen" title=" Gets the length of data for an image."><code>PDEImageGetDataLen</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetDataStm" title=" Gets a data stream for an image."><code>PDEImageGetDataStm</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEImageSetDataStm(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEFilterArray" title=" Filter information for streams."><code>PDEFilterArrayP</code></a> <code>filtersP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>stm</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT The image whose data stream is set. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>IN/OUT <a href="pdelayer_PDEImage.htm#PDEImageDataFlags" title=" Flags for PDEImageGetData(), PDEImageGetDataStm(), PDEImageSetData(), and PDEImageSetDataStm().">PDEImageDataFlags</a> flags. If the <a href="pdelayer_PDEImage.htm#kPDEImageEncodedData" title=" Indicates that the filter is active; data is encoded.">kPDEImageEncodedData</a> flag is set, the stream must be encoded. </span>
+</td></tr>
+<tr><td><span><code>filtersP</code></span>
+</td><td><span>IN/OUT A pointer to a <a href="pdelayer_General.htm#_t_PDEFilterArray" title=" Filter information for streams.">PDEFilterArray</a> structure. If it is not <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, it is used to build Cos objects for the Filter, DecodeParms, and EncodeParms objects. If <code>filtersP</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a> and <a href="pdelayer_PDEImage.htm#kPDEImageEncodedData" title=" Indicates that the filter is active; data is encoded."><code>kPDEImageEncodedData</code></a> is set in <code>flags</code>, the existing Filter and DecodeParms are used. If <a href="pdelayer_PDEImage.htm#kPDEImageEncodedData" title=" Indicates that the filter is active; data is encoded."><code>kPDEImageEncodedData</code></a> is not set and <code>filtersP</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, the existing Cos objects (if any) for Filter and DecodeParms are removed and the resulting image is no longer compressed. EncodeParms is set it to DecodeParms if it exists (unless the filter is DCTDecode, for which EncodeParms is mandatory). </span>
+</td></tr>
+<tr><td><span><code>stm</code></span>
+</td><td><span>IN/OUT The stream for the image data. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageSetDecodeArray"><strong><span style="color:grey;">PDEImageSetDecodeArray</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1524</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Sets the decode array of an image.<br/>
+<p>Normally, the decode array is accessed through the <code>decode</code> field in the <a href="pdelayer_PDEImage.htm#_t_PDEImageAttrs" title=" Attributes of a PDEImage.">PDEImageAttrs</a> structure. However, this method defines a decode array to handle images with a color space that has more than four components.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEImage.htm#PDEImageGetDecodeArray" title=" Gets the decode array from the attributes of the image."><code>PDEImageGetDecodeArray</code></a>
+<a href="pdelayer_PDEImage.htm#PDEImageGetFilterArray" title=" Gets the filter array for an image."><code>PDEImageGetFilterArray</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEImageSetDecodeArray(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>*</code><code>decode</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>decodeSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>The image whose decode array is set. </span>
+</td></tr>
+<tr><td><span><code>decode</code></span>
+</td><td><span>A pointer to the decode array. </span>
+</td></tr>
+<tr><td><span><code>decodeSize</code></span>
+</td><td><span>The number of elements in the decode array. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageSetMatteArray"><strong><span style="color:grey;">PDEImageSetMatteArray</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1905</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Sets the matte array for the image XObject. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEImageSetMatteArray(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>*</code><code>matte</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>numComp</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT The image XObject. </span>
+</td></tr>
+<tr><td><span><code>matte</code></span>
+</td><td><span>IN/OUT An array of values. </span>
+</td></tr>
+<tr><td><span><code>numComp</code></span>
+</td><td><span>IN/OUT The number of values in mArray. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageSetSMask"><strong><span style="color:grey;">PDEImageSetSMask</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1896</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Sets the soft mask. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEImageSetSMask(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>sMask</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>image</code></span>
+</td><td><span>IN/OUT The image XObject. </span>
+</td></tr>
+<tr><td><span><code>sMask</code></span>
+</td><td><span>IN/OUT The soft mask. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+</section>
+
+</div>
+</body></html>

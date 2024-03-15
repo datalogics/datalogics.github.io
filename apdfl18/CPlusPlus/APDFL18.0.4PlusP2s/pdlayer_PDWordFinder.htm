@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PD Layer: PDWordFinder</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PD Layer: PDWordFinder</h5>
+<li><a href="#Definitions">Definitions</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Definitions">
+<header><h2>PDWordFinder Definitions</h2></header>
+<nav><dl>
+<dt><a href="#WF_LATEST_VERSION">WF_LATEST_VERSION</a></dt><dd> -  Used to obtain the latest available version.</dd>
+<dt><a href="#WF_VERSION_2">WF_VERSION_2</a></dt><dd> -  The version used for Acrobat 3.x,</dd>
+<dt><a href="#WF_VERSION_3">WF_VERSION_3</a></dt><dd> -  For Acrobat 5.0 without accessibility enabled.</dd>
+<dt><a href="#WF_VERSION_4">WF_VERSION_4</a></dt><dd> -  For Acrobat 5.0 with accessibility enabled.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="WF_LATEST_VERSION"><strong><span style="color:grey;">WF_LATEST_VERSION</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3517</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Used to obtain the latest available version. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WF_LATEST_VERSION</code> <code>0</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WF_VERSION_2"><strong><span style="color:grey;">WF_VERSION_2</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3521</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The version used for Acrobat 3.x, 4.x. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WF_VERSION_2</code> <code>2</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WF_VERSION_3"><strong><span style="color:grey;">WF_VERSION_3</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3525</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>For Acrobat 5.0 without accessibility enabled. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WF_VERSION_3</code> <code>3</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WF_VERSION_4"><strong><span style="color:grey;">WF_VERSION_4</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3529</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>For Acrobat 5.0 with accessibility enabled. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WF_VERSION_4</code> <code>4</code> </code>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDWordFinder Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDWordFinderAcquireVisibleWordList">PDWordFinderAcquireVisibleWordList</a></dt><dd> -  Finds all words on the specified page that are visible in the given optional-content context and returns one or more tables containing the words.</dd>
+<dt><a href="#PDWordFinderAcquireWordList">PDWordFinderAcquireWordList</a></dt><dd> -  Finds all words on the specified page and returns one or more tables containing the words.</dd>
+<dt><a href="#PDWordFinderDestroy">PDWordFinderDestroy</a></dt><dd> -  Destroys a word finder.</dd>
+<dt><a href="#PDWordFinderEnumVisibleWords">PDWordFinderEnumVisibleWords</a></dt><dd> -  Extracts visible words, one at a time, from the specified page or the entire document.</dd>
+<dt><a href="#PDWordFinderEnumWords">PDWordFinderEnumWords</a></dt><dd> -  Extracts words, one at a time, from the specified page or the entire document.</dd>
+<dt><a href="#PDWordFinderEnumWordsStr">PDWordFinderEnumWordsStr</a></dt><dd> -  Constructs a PDWord list from a Unicode string, and calls a user-supplied procedure once for each word found.</dd>
+<dt><a href="#PDWordFinderGetLatestAlgVersion">PDWordFinderGetLatestAlgVersion</a></dt><dd> -  Gets the version number of the specified word finder, or the version number of the latest word finder algorithm.</dd>
+<dt><a href="#PDWordFinderReleaseWordList">PDWordFinderReleaseWordList</a></dt><dd> -  Releases the word list for a given page.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDWordFinderAcquireVisibleWordList"><strong><span style="color:grey;">PDWordFinderAcquireVisibleWordList</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:10193</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Finds all words on the specified page that are visible in the given optional-content context and returns one or more tables containing the words. One table contains the words sorted in the order in which they appear in the PDF file, while the other contains the words sorted by their x- and y-coordinates on the page.<br/>
+<p>The list contains only words that are visible in the given context. If the word states change in the given context, the word list will have to be released and re-acquired to reflect the changed set of visible words.<br/></p>
+
+<p>
+<p>There can be only one word list in existence at a time; clients must release the previous word list, using <a href="pdlayer_PDWordFinder.htm#PDWordFinderReleaseWordList" title=" Releases the word list for a given page.">PDWordFinderReleaseWordList</a>(), before creating a new one.<br/></p>
+
+<p>
+<p>Use <a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWords" title=" Extracts words, one at a time, from the specified page or the entire document.">PDWordFinderEnumWords</a>() instead of this method if you wish to find one word at a time instead of obtaining a table containing all visible words on a page.<br/></p>
+
+<p>
+<p>This procedure is intended to replace the call to <a href="pdlayer_PDWordFinder.htm#PDWordFinderAcquireWordList" title=" Finds all words on the specified page and returns one or more tables containing the words.">PDWordFinderAcquireWordList</a>() in most cases where you want to work only with the content that is visible on screen (such as a text selection). Change this call to update an application to work with the Optional Content feature.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDDoc.htm#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file."><code>PDDocCreateWordFinder</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file."><code>PDDocCreateWordFinderUCS</code></a>
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderAcquireWordList" title=" Finds all words on the specified page and returns one or more tables containing the words."><code>PDWordFinderAcquireWordList</code></a>
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWords" title=" Extracts words, one at a time, from the specified page or the entire document."><code>PDWordFinderEnumWords</code></a>
+<a href="pdlayer_PDWord.htm#PDWordFinderGetNthWord" title=" Gets the nth word in the word list obtained using PDWordFinderAcquireWordList()."><code>PDWordFinderGetNthWord</code></a>
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderReleaseWordList" title=" Releases the word list for a given page."><code>PDWordFinderReleaseWordList</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDWordFinderAcquireVisibleWordList(</code><a href="pdlayer_PDWord.htm#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>wObj</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>pgNum</code><code>,</code> <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ocContext</code><code>,</code> <a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>*</code><code>wInfoP</code><code>,</code> <a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>*</code><code>*</code><code>xySortTable</code><code>,</code> <a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>*</code><code>*</code><code>rdOrderTable</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>*</code><code>numWords</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>wObj</code></span>
+</td><td><span>The word finder (created using <a href="pdlayer_PDDoc.htm#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file.">PDDocCreateWordFinder</a>() or <a href="pdlayer_PDDoc.htm#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file.">PDDocCreateWordFinderUCS</a>()) used to acquire the word list. </span>
+</td></tr>
+<tr><td><span><code>pgNum</code></span>
+</td><td><span>The page number for which words are found. First page is <code>0</code>, not <code>1</code> as designated in Acrobat. </span>
+</td></tr>
+<tr><td><span><code>ocContext</code></span>
+</td><td><span>The context within which the words are in a visible state. <a href="aslayer_General.htm#NULL"><code>NULL</code></a> is equivalent to passing <a href="pdlayer_PDDoc.htm#PDDocGetOCContext" title=" Gets the built-in default optional-content context for the document."><code>PDDocGetOCContext</code></a><code>(pdDoc)</code>. </span>
+</td></tr>
+<tr><td><span><code>wInfoP</code></span>
+</td><td><div><p>(Filled by the method) A user-supplied <a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file.">PDWord</a> variable. Acrobat will fill this in to point to an Acrobat-allocated array of <a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file.">PDWord</a> objects, which should <em>never</em> be accessed directly.<br/>
+<p>Access the acquired list through <a href="pdlayer_PDWord.htm#PDWordFinderGetNthWord" title=" Gets the nth word in the word list obtained using PDWordFinderAcquireWordList().">PDWordFinderGetNthWord</a>(). The words are ordered in PDF order, which is the order in which they appear in the PDF file's data. This is often, but not always, the order in which a person would read the words. Use <a href="pdlayer_PDWord.htm#PDWordFinderGetNthWord" title=" Gets the nth word in the word list obtained using PDWordFinderAcquireWordList().">PDWordFinderGetNthWord</a> to traverse this array; you cannot access this array directly. This array is always filled, regardless of the flags used in the call to <a href="pdlayer_PDDoc.htm#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file.">PDDocCreateWordFinder</a>() or <a href="pdlayer_PDDoc.htm#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file.">PDDocCreateWordFinderUCS</a>().<br/></p>
+</div>
+</td></tr>
+<tr><td><span><code>xySortTable</code></span>
+</td><td><span>(Filled by the method) Acrobat fills in this user-supplied pointer to a pointer with the location of an Acrobat-allocated array of PDWords, sorted in x-y order, meaning that all words on the first <em>line</em>, from left to right, followed by all words on the next line. This array is only filled if the <a href="pdlayer_PDWord.htm#WXE_XY_SORT">WXE_XY_SORT</a> flag was set in the call to <a href="pdlayer_PDDoc.htm#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file.">PDDocCreateWordFinder</a>() or <a href="pdlayer_PDDoc.htm#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file.">PDDocCreateWordFinderUCS</a>(). <a href="pdlayer_PDWordFinder.htm#PDWordFinderReleaseWordList" title=" Releases the word list for a given page.">PDWordFinderReleaseWordList</a>() <em>must</em> be called to release allocated memory for this return or there will be a memory leak. As long as this parameter is non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, the array is always filled regardless of the value of the rdFlags parameter in <a href="pdlayer_PDDoc.htm#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file.">PDDocCreateWordFinder</a>(). </span>
+</td></tr>
+<tr><td><span><code>rdOrderTable</code></span>
+</td><td><span>Currently unused. Pass <a href="aslayer_General.htm#NULL"><code>NULL</code></a> for its value. </span>
+</td></tr>
+<tr><td><span><code>numWords</code></span>
+</td><td><span>(Filled by the method) The number of visible words found on the page. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdErrOpNotPermitted" title=" This operation is not permitted."><code>pdErrOpNotPermitted</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDWordFinderAcquireWordList"><strong><span style="color:grey;">PDWordFinderAcquireWordList</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4547</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Finds all words on the specified page and returns one or more tables containing the words. One table contains the words sorted in the order in which they appear in the PDF file, while the other contains the words sorted by their x- and y-coordinates on the page.<br/>
+<p>Only words within or partially within the page's crop box (see <a href="pdlayer_PDPage.htm#PDPageGetCropBox" title=" Gets the crop box for a page.">PDPageGetCropBox</a>()) are enumerated. Words outside the crop box are skipped.<br/></p>
+
+<p>
+<p>There can be only one word list in existence at a time; clients must release the previous word list, using <a href="pdlayer_PDWordFinder.htm#PDWordFinderReleaseWordList" title=" Releases the word list for a given page.">PDWordFinderReleaseWordList</a>(), before creating a new one.<br/></p>
+
+<p>
+<p>Use <a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWords" title=" Extracts words, one at a time, from the specified page or the entire document.">PDWordFinderEnumWords</a>() instead of this method, if you wish to find one word at a time instead of obtaining a table containing all words on a page.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDDoc.htm#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file."><code>PDDocCreateWordFinder</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file."><code>PDDocCreateWordFinderUCS</code></a>
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWords" title=" Extracts words, one at a time, from the specified page or the entire document."><code>PDWordFinderEnumWords</code></a>
+<a href="pdlayer_PDWord.htm#PDWordFinderGetNthWord" title=" Gets the nth word in the word list obtained using PDWordFinderAcquireWordList()."><code>PDWordFinderGetNthWord</code></a>
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderReleaseWordList" title=" Releases the word list for a given page."><code>PDWordFinderReleaseWordList</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDWordFinderAcquireWordList(</code><a href="pdlayer_PDWord.htm#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>wObj</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>pgNum</code><code>,</code> <a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>*</code><code>wInfoP</code><code>,</code> <a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>*</code><code>*</code><code>xySortTable</code><code>,</code> <a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>*</code><code>*</code><code>rdOrderTable</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>*</code><code>numWords</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>wObj</code></span>
+</td><td><span>The word finder (created using <a href="pdlayer_PDDoc.htm#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file.">PDDocCreateWordFinder</a>() or <a href="pdlayer_PDDoc.htm#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file.">PDDocCreateWordFinderUCS</a>()) used to acquire the word list. </span>
+</td></tr>
+<tr><td><span><code>pgNum</code></span>
+</td><td><span>The page number for which words are found. The first page is <code>0</code>, not <code>1</code> as designated in Acrobat. </span>
+</td></tr>
+<tr><td><span><code>wInfoP</code></span>
+</td><td><div><p>(Filled by the method) A user-supplied <a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file.">PDWord</a> variable. Acrobat will fill this in to point to an Acrobat-allocated array of <a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file.">PDWord</a> objects, which should <em>never</em> be accessed directly.<br/>
+<p>Access the acquired list through <a href="pdlayer_PDWord.htm#PDWordFinderGetNthWord" title=" Gets the nth word in the word list obtained using PDWordFinderAcquireWordList().">PDWordFinderGetNthWord</a>(). The words are ordered in PDF order, which is the order in which they appear in the PDF file's data. This is often, but not always, the order in which a person would read the words. Use <a href="pdlayer_PDWord.htm#PDWordFinderGetNthWord" title=" Gets the nth word in the word list obtained using PDWordFinderAcquireWordList().">PDWordFinderGetNthWord</a>() to traverse this array; you cannot access this array directly. This array is always filled, regardless of the flags used in the call to <a href="pdlayer_PDDoc.htm#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file.">PDDocCreateWordFinder</a>() or <a href="pdlayer_PDDoc.htm#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file.">PDDocCreateWordFinderUCS</a>().<br/></p>
+</div>
+</td></tr>
+<tr><td><span><code>xySortTable</code></span>
+</td><td><span>(Filled by the method) Acrobat fills in this user-supplied pointer to a pointer with the location of an Acrobat-allocated array of PDWords, sorted in x-y order, meaning that all words on the first <em>line</em>, from left to right, are followed by all words on the next line. This array is only filled if the <a href="pdlayer_PDWord.htm#WXE_XY_SORT"><code>WXE_XY_SORT</code></a> flag was set in the call to <a href="pdlayer_PDDoc.htm#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file.">PDDocCreateWordFinder</a>() or <a href="pdlayer_PDDoc.htm#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file.">PDDocCreateWordFinderUCS</a>(). <a href="pdlayer_PDWordFinder.htm#PDWordFinderReleaseWordList" title=" Releases the word list for a given page.">PDWordFinderReleaseWordList</a>() must be called to release allocated memory for this return or there will be a memory leak. As long as this parameter is non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, the array is always filled regardless of the value of the <code>rdFlags</code> parameter in <a href="pdlayer_PDDoc.htm#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file.">PDDocCreateWordFinder</a>(). </span>
+</td></tr>
+<tr><td><span><code>rdOrderTable</code></span>
+</td><td><span>Currently unused. Pass <a href="aslayer_General.htm#NULL"><code>NULL</code></a> for this value. </span>
+</td></tr>
+<tr><td><span><code>numWords</code></span>
+</td><td><span>(Filled by the method) The number of words found on the page. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdErrOpNotPermitted" title=" This operation is not permitted."><code>pdErrOpNotPermitted</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDWordFinderDestroy"><strong><span style="color:grey;">PDWordFinderDestroy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4592</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Destroys a word finder. Use this when you are done extracting text in a file. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDDoc.htm#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file."><code>PDDocCreateWordFinder</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file."><code>PDDocCreateWordFinderUCS</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocGetWordFinder" title=" Gets the word finder associated with a document."><code>PDDocGetWordFinder</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDWordFinderDestroy(</code><a href="pdlayer_PDWord.htm#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>wObj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>wObj</code></span>
+</td><td><span>IN/OUT The word finder to destroy. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDWordFinderEnumVisibleWords"><strong><span style="color:grey;">PDWordFinderEnumVisibleWords</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:10264</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Extracts visible words, one at a time, from the specified page or the entire document. It calls a user-supplied procedure once for each word found. If you wish to extract all text from a page at once, use <a href="pdlayer_PDWordFinder.htm#PDWordFinderAcquireWordList" title=" Finds all words on the specified page and returns one or more tables containing the words.">PDWordFinderAcquireWordList</a>() instead of this method.<br/>
+<p>Only words that are visible in the given optional-content context are enumerated.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDDoc.htm#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file."><code>PDDocCreateWordFinder</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file."><code>PDDocCreateWordFinderUCS</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocGetWordFinder" title=" Gets the word finder associated with a document."><code>PDDocGetWordFinder</code></a>
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderAcquireWordList" title=" Finds all words on the specified page and returns one or more tables containing the words."><code>PDWordFinderAcquireWordList</code></a>
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWords" title=" Extracts words, one at a time, from the specified page or the entire document."><code>PDWordFinderEnumWords</code></a>
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWordsStr" title=" Constructs a PDWord list from a Unicode string, and calls a user-supplied procedure once for each word found."><code>PDWordFinderEnumWordsStr</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDWordFinderEnumVisibleWords(</code><a href="pdlayer_PDWord.htm#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>wObj</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PageNum</code><code>,</code> <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ocContext</code><code>,</code> <a href="pdlayer_PDWord.htm#PDWordProc" title=" A callback for PDWordFinderEnumWords."><code>PDWordProc</code></a> <code>wordProc</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>wObj</code></span>
+</td><td><span>A word finder object. </span>
+</td></tr>
+<tr><td><span><code>PageNum</code></span>
+</td><td><span>The page number from which to extract words. Pass <a href="pdlayer_PDPage.htm#PDAllPages">PDAllPages</a> (see PDExpT.h) to sequentially process all pages in the document. </span>
+</td></tr>
+<tr><td><span><code>ocContext</code></span>
+</td><td><span>The context within which the words are in a visible state. <a href="aslayer_General.htm#NULL"><code>NULL</code></a> is equivalent to passing <a href="pdlayer_PDDoc.htm#PDDocGetOCContext" title=" Gets the built-in default optional-content context for the document."><code>PDDocGetOCContext</code></a><code>(pdDoc)</code>. </span>
+</td></tr>
+<tr><td><span><code>wordProc</code></span>
+</td><td><span>A user-supplied callback to call once for each word found. Enumeration halts if <code>wordProc</code> returns <a href="aslayer_General.htm#false"><code>false</code></a>. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>A pointer to user-supplied data to pass to <code>wordProc</code> each time it is called. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if enumeration was successfully completed, <a href="aslayer_General.htm#false"><code>false</code></a> if enumeration was terminated because <code>wordProc</code> returned <a href="aslayer_General.htm#false"><code>false</code></a>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span>is raised if <code>wordProc</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, or <code>pageNum</code> is less than zero or greater than the total number of pages in the document. </span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_General.htm#pdErrOpNotPermitted" title=" This operation is not permitted."><code>pdErrOpNotPermitted</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDWordFinderEnumWords"><strong><span style="color:grey;">PDWordFinderEnumWords</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4627</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Extracts words, one at a time, from the specified page or the entire document. It calls a user-supplied procedure once for each word found. If you wish to extract all text from a page at once, use <a href="pdlayer_PDWordFinder.htm#PDWordFinderAcquireWordList" title=" Finds all words on the specified page and returns one or more tables containing the words.">PDWordFinderAcquireWordList</a>() instead of this method.<br/>
+<p>Only words within or partially within the page's crop box (see <a href="pdlayer_PDPage.htm#PDPageGetCropBox" title=" Gets the crop box for a page.">PDPageGetCropBox</a>()) are enumerated. Words outside the crop box are skipped.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDDoc.htm#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file."><code>PDDocCreateWordFinder</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file."><code>PDDocCreateWordFinderUCS</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocGetWordFinder" title=" Gets the word finder associated with a document."><code>PDDocGetWordFinder</code></a>
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderAcquireWordList" title=" Finds all words on the specified page and returns one or more tables containing the words."><code>PDWordFinderAcquireWordList</code></a>
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumVisibleWords" title=" Extracts visible words, one at a time, from the specified page or the entire document."><code>PDWordFinderEnumVisibleWords</code></a>
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWordsStr" title=" Constructs a PDWord list from a Unicode string, and calls a user-supplied procedure once for each word found."><code>PDWordFinderEnumWordsStr</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDWordFinderEnumWords(</code><a href="pdlayer_PDWord.htm#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>wObj</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PageNum</code><code>,</code> <a href="pdlayer_PDWord.htm#PDWordProc" title=" A callback for PDWordFinderEnumWords."><code>PDWordProc</code></a> <code>wordProc</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>wObj</code></span>
+</td><td><span>A word finder object. </span>
+</td></tr>
+<tr><td><span><code>PageNum</code></span>
+</td><td><span>The page number from which to extract words. Pass <a href="pdlayer_PDPage.htm#PDAllPages">PDAllPages</a> (see PDExpT.h) to sequentially process all pages in the document. </span>
+</td></tr>
+<tr><td><span><code>wordProc</code></span>
+</td><td><span>A user-supplied callback to call once for each word found. Enumeration halts if <code>wordProc</code> returns <a href="aslayer_General.htm#false"><code>false</code></a>. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>A pointer to user-supplied data to pass to <code>wordProc</code> each time it is called. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if enumeration was successfully completed, <a href="aslayer_General.htm#false"><code>false</code></a> if enumeration was terminated because <code>wordProc</code> returned <a href="aslayer_General.htm#false"><code>false</code></a>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span>is raised if <code>wordProc</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, or <code>pageNum</code> is less than zero or greater than the total number of pages in the document. </span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_General.htm#pdErrOpNotPermitted" title=" This operation is not permitted."><code>pdErrOpNotPermitted</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDWordFinderEnumWordsStr"><strong><span style="color:grey;">PDWordFinderEnumWordsStr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:8329</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Constructs a <a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file.">PDWord</a> list from a Unicode string, and calls a user-supplied procedure once for each word found.<br/>
+<p>The words extracted by this method do not have quads, text style, or text selection information. The character offset is calculated from the beginning of the input string, and is increased by <code>2</code> on every 16 bits of data (the character offset of a character in a <a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file.">PDWord</a> is the byte offset of the character in the source Unicode string).<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDDoc.htm#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file."><code>PDDocCreateWordFinder</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file."><code>PDDocCreateWordFinderUCS</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocGetWordFinder" title=" Gets the word finder associated with a document."><code>PDDocGetWordFinder</code></a>
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderAcquireWordList" title=" Finds all words on the specified page and returns one or more tables containing the words."><code>PDWordFinderAcquireWordList</code></a>
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumVisibleWords" title=" Extracts visible words, one at a time, from the specified page or the entire document."><code>PDWordFinderEnumVisibleWords</code></a>
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWords" title=" Extracts words, one at a time, from the specified page or the entire document."><code>PDWordFinderEnumWords</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDWordFinderEnumWordsStr(</code><a href="pdlayer_PDWord.htm#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>wObj</code><code>,</code> <code>const</code> <a href="aslayer_ASText.htm#ASUTF16Val" title=" Holds a single 16-bit value from a UTF-16 encoded Unicode string."><code>ASUTF16Val</code></a> <code>*</code><code>ucsStr</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>strLen</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>charOffsetAdj</code><code>,</code> <a href="pdlayer_PDWord.htm#PDWordProc" title=" A callback for PDWordFinderEnumWords."><code>PDWordProc</code></a> <code>wordProc</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>wObj</code></span>
+</td><td><span>A word finder object. </span>
+</td></tr>
+<tr><td><span><code>ucsStr</code></span>
+</td><td><span>A pointer to the Unicode string. </span>
+</td></tr>
+<tr><td><span><code>strLen</code></span>
+</td><td><span>The length of the string in bytes. </span>
+</td></tr>
+<tr><td><span><code>charOffsetAdj</code></span>
+</td><td><div><p>The character offset value of the first character in the input Unicode string. This value is added to the word character offsets, and is used to maintain contiguous word character offsets when multiple strings (and multiple calls to this method) are combined into one word list.<br/>
+<p>For example:<br/></p>
+
+<p>
+<p><a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWordsStr" title=" Constructs a PDWord list from a Unicode string, and calls a user-supplied procedure once for each word found."><code>PDWordFinderEnumWordsStr</code></a><code>(wf,</code> <code>str1,</code> <code>stelen(str1),</code> <code>0</code><code>,</code> <code>wp,</code> <code>d);</code><br/></p>
+
+<p>
+<p><a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWordsStr" title=" Constructs a PDWord list from a Unicode string, and calls a user-supplied procedure once for each word found."><code>PDWordFinderEnumWordsStr</code></a><code>(wf,</code> <code>str2,</code> <code>stelen(str2),</code> <code>stelen(str1),</code> <code>wp,</code> <code>d);</code><br/></p>
+</div>
+</td></tr>
+<tr><td><span><code>wordProc</code></span>
+</td><td><span>A user-supplied callback to call once for each word found. Enumeration halts if <code>wordProc</code> returns <a href="aslayer_General.htm#false"><code>false</code></a>. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>A pointer to user-supplied data to pass to <code>wordProc</code> each time it is called. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the enumeration was successfully completed, <a href="aslayer_General.htm#false"><code>false</code></a> if the enumeration was terminated because <code>wordProc</code> returned <a href="aslayer_General.htm#false"><code>false</code></a>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span>is raised if <code>wordProc</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_General.htm#pdErrOpNotPermitted" title=" This operation is not permitted."><code>pdErrOpNotPermitted</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDWordFinderGetLatestAlgVersion"><strong><span style="color:grey;">PDWordFinderGetLatestAlgVersion</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4565</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the version number of the specified word finder, or the version number of the latest word finder algorithm. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDDoc.htm#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file."><code>PDDocCreateWordFinder</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file."><code>PDDocCreateWordFinderUCS</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocGetWordFinder" title=" Gets the word finder associated with a document."><code>PDDocGetWordFinder</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>PDWordFinderGetLatestAlgVersion(</code><a href="pdlayer_PDWord.htm#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>wObj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>wObj</code></span>
+</td><td><span>IN/OUT The word finder whose algorithm's version is obtained. Pass <a href="aslayer_General.htm#NULL"><code>NULL</code></a> to obtain the latest word finding algorithm version number. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The algorithm version associated with <code>wObj</code>, or the version of the latest word finder algorithm if <code>wObj</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordFinderReleaseWordList"><strong><span style="color:grey;">PDWordFinderReleaseWordList</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4581</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Releases the word list for a given page. Use this to release a list created by <a href="pdlayer_PDWordFinder.htm#PDWordFinderAcquireWordList" title=" Finds all words on the specified page and returns one or more tables containing the words.">PDWordFinderAcquireWordList</a>() when you are done using this list. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDDoc.htm#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file."><code>PDDocCreateWordFinder</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file."><code>PDDocCreateWordFinderUCS</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocGetWordFinder" title=" Gets the word finder associated with a document."><code>PDDocGetWordFinder</code></a>
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderAcquireWordList" title=" Finds all words on the specified page and returns one or more tables containing the words."><code>PDWordFinderAcquireWordList</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDWordFinderReleaseWordList(</code><a href="pdlayer_PDWord.htm#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>wObj</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>pgNum</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>wObj</code></span>
+</td><td><span>A word finder object. </span>
+</td></tr>
+<tr><td><span><code>pgNum</code></span>
+</td><td><span>The number of pages for which a word list is released. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadUnlock" title=" Attempt to release an unlocked object."><code>genErrBadUnlock</code></a></span>
+</td><td><span>is raised if the list has already been released. </span>
+</td></tr></table>
+</div>
+</section>
+</section>
+
+</div>
+</body></html>

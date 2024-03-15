@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Additional functionality from Datalogics: PDDoc</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Additional functionality from Datalogics: PDDoc</h5>
+<li><a href="#Enumerations">Enumerations</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Enumerations">
+<header><h2>PDDoc Enumerations</h2></header>
+<nav><dl>
+<dt><a href="#PDDocEmbedFontFlags">PDDocEmbedFontFlags</a></dt><dd> -  Flags for PDDocEmbedFonts.</dd>
+<dt><a href="#PDFOptimizationCompressQuality">PDFOptimizationCompressQuality</a></dt><dd> -  Compression quality options</dd>
+<dt><a href="#PDFOptimizerCompressImageType">PDFOptimizerCompressImageType</a></dt><dd> -  Image types for PDFOptimizer compression</dd>
+<dt><a href="#PDFOptimizerObjectCompressionType">PDFOptimizerObjectCompressionType</a></dt><dd> -  Object Compression types for PDFOptimizer</dd>
+<dt><a href="#PDFOptimizerOption">PDFOptimizerOption</a></dt><dd> -  PDFOptimizer Options</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDDocEmbedFontFlags"><strong><span style="color:grey;">PDDocEmbedFontFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:50</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Flags for <a href="dlextras_PDDoc.htm#PDDocEmbedFonts" title=" Routine to embed unembedded fonts in a document.">PDDocEmbedFonts</a>. </span>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kDocEmbedSubset"><code>kDocEmbedSubset</code><code>=</code><code>0x01</code></span>
+</td><td><span>Fonts will be subset when embedded. Otherwise the entire font will be embedded. Full fonts should only be embedded if the information in the fonts indicates it can be used for editible embedding. Fonts that have more than 2048 characters will be subset embedded regardless of the setting of this flag. This flag implies a scan of the document text to ensure that all required characters are in the subset. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kDocEmbedSubsetOfEmbeddedFont"><code>kDocEmbedSubsetOfEmbeddedFont</code><code>=</code><code>0x02</code></span>
+</td><td><span>If set, fonts that have already been embedded but are not subset fonts, will be reembedded as a subset font. If clear, already embedded fonts will not be re-scanned for embedding at all, subset or no. </span>
+</td></tr></table>
+</section>
+<section><div class="infoRow"><h3 id="PDFOptimizationCompressQuality"><strong><span style="color:grey;">PDFOptimizationCompressQuality</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:106</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Compression quality options </span>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="PDFOptimizerCompressQualityUnset"><code>PDFOptimizerCompressQualityUnset</code><code>=</code><code>0</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerCompressMinimum"><code>PDFOptimizerCompressMinimum</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerCompressLowQuality"><code>PDFOptimizerCompressLowQuality</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerCompressMediumQuality"><code>PDFOptimizerCompressMediumQuality</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerCompressHighQuality"><code>PDFOptimizerCompressHighQuality</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerCompressMaximumQuality"><code>PDFOptimizerCompressMaximumQuality</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerCompressLossless"><code>PDFOptimizerCompressLossless</code></span>
+</td><td><span></span>
+</td></tr></table>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDDoc.htm#PDDocOptimizeGetImageRecompress" title=" This will return the values set for one of the three cases of Image Recompression and Downsampling."><code>PDDocOptimizeGetImageRecompress</code></a></td><td><a href="dlextras_PDDoc.htm#PDDocOptimizeSetImageRecompress" title=" This will set the value for one of the cases of Image Recompression and Downsampling."><code>PDDocOptimizeSetImageRecompress</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDFOptimizerCompressImageType"><strong><span style="color:grey;">PDFOptimizerCompressImageType</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:117</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Image types for PDFOptimizer compression </span>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="PDFOptimizerColor"><code>PDFOptimizerColor</code><code>=</code><code>1</code></span>
+</td><td><span>Compress colored images </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerGray"><code>PDFOptimizerGray</code></span>
+</td><td><span>Compress Gray scale Images </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerMonochrome"><code>PDFOptimizerMonochrome</code></span>
+</td><td><span>Compress B/W images </span>
+</td></tr></table>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDDoc.htm#PDDocOptimizeGetImageRecompress" title=" This will return the values set for one of the three cases of Image Recompression and Downsampling."><code>PDDocOptimizeGetImageRecompress</code></a></td><td><a href="dlextras_PDDoc.htm#PDDocOptimizeSetImageRecompress" title=" This will set the value for one of the cases of Image Recompression and Downsampling."><code>PDDocOptimizeSetImageRecompress</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDFOptimizerObjectCompressionType"><strong><span style="color:grey;">PDFOptimizerObjectCompressionType</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:127</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Object Compression types for PDFOptimizer </span>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="PDFOptimizerObjectCompressionAll"><code>PDFOptimizerObjectCompressionAll</code><code>=</code><code>0</code></span>
+</td><td><span>Compress all </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerObjectCompressionNone"><code>PDFOptimizerObjectCompressionNone</code></span>
+</td><td><span>No object compression </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerObjectCompressionStructure"><code>PDFOptimizerObjectCompressionStructure</code></span>
+</td><td><span>Compress structure </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerObjectCompressionLeaveUnchanged"><code>PDFOptimizerObjectCompressionLeaveUnchanged</code></span>
+</td><td><span>Leave compression unchanged </span>
+</td></tr></table>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDDoc.htm#PDDocOptimizeGetObjectCompression" title=" This will get the type of compression used for objects."><code>PDDocOptimizeGetObjectCompression</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDDoc.htm#PDDocOptimizeSetObjectCompression" title=" This will set the type of compression used for objects."><code>PDDocOptimizeSetObjectCompression</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDFOptimizerOption"><strong><span style="color:grey;">PDFOptimizerOption</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:142</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>PDFOptimizer <a href="pdfllayer_General.htm#Options" title=" Flags for PDFLInit">Options</a> </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="dlextras_PDDoc.htm#PDDocOptimizeDefaultParams" title=" This will create a set of optimization parameters, set to the default values."><code>PDDocOptimizeDefaultParams</code></a>
+<a href="dlextras_PDDoc.htm#PDDocumentOptimize" title=" This function is used to create an optimized document."><code>PDDocumentOptimize</code></a></div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="PDFOptimizerDownsampleColor"><code>PDFOptimizerDownsampleColor</code><code>=</code><code>1</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerRecompressColor"><code>PDFOptimizerRecompressColor</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDownsampleGray"><code>PDFOptimizerDownsampleGray</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerRecompressGray"><code>PDFOptimizerRecompressGray</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDownsampleBW"><code>PDFOptimizerDownsampleBW</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerRecompressBW"><code>PDFOptimizerRecompressBW</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDownsampleRecompressOnlyIfSmaller"><code>PDFOptimizerDownsampleRecompressOnlyIfSmaller</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardAlternateImages"><code>PDFOptimizerDiscardAlternateImages</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerSubsetAllEmbeddedFonts"><code>PDFOptimizerSubsetAllEmbeddedFonts</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerRemoveAllEmbeddedFonts"><code>PDFOptimizerRemoveAllEmbeddedFonts</code></span>
+</td><td><span>Defaults to OFF </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerRemoveAllBase14Fonts"><code>PDFOptimizerRemoveAllBase14Fonts</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerMergeDuplicateFonts"><code>PDFOptimizerMergeDuplicateFonts</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardBookmarks"><code>PDFOptimizerDiscardBookmarks</code></span>
+</td><td><span>Defaults to OFF </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardAcroforms"><code>PDFOptimizerDiscardAcroforms</code></span>
+</td><td><span>Defaults to OFF </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardOutputIntent"><code>PDFOptimizerDiscardOutputIntent</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardThumbnails"><code>PDFOptimizerDiscardThumbnails</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardPageLabels"><code>PDFOptimizerDiscardPageLabels</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardNameTrees"><code>PDFOptimizerDiscardNameTrees</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardStructureTrees"><code>PDFOptimizerDiscardStructureTrees</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardFileAttachments"><code>PDFOptimizerDiscardFileAttachments</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardXMPPadding"><code>PDFOptimizerDiscardXMPPadding</code></span>
+</td><td><span>Defaults to ON Remove padding from XMP Metadata </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardUnusedForms"><code>PDFOptimizerDiscardUnusedForms</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardPieceData"><code>PDFOptimizerDiscardPieceData</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerCompressStreams"><code>PDFOptimizerCompressStreams</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerReplaceLZW"><code>PDFOptimizerReplaceLZW</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardMetadata"><code>PDFOptimizerDiscardMetadata</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardDocumentInfo"><code>PDFOptimizerDiscardDocumentInfo</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerOptimizeContentStreams"><code>PDFOptimizerOptimizeContentStreams</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerLinearize"><code>PDFOptimizerLinearize</code></span>
+</td><td><span>Defaults to OFF </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerCompressDocumentStructure"><code>PDFOptimizerCompressDocumentStructure</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardDuplicateForms"><code>PDFOptimizerDiscardDuplicateForms</code></span>
+</td><td><span>Defaults to OFF </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardDuplicateObjects"><code>PDFOptimizerDiscardDuplicateObjects</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardASCIIFilters"><code>PDFOptimizerDiscardASCIIFilters</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardComments"><code>PDFOptimizerDiscardComments</code></span>
+</td><td><span>Defaults to OFF </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardAnnotations"><code>PDFOptimizerDiscardAnnotations</code></span>
+</td><td><span>Defaults to OFF </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardJavaScriptActions"><code>PDFOptimizerDiscardJavaScriptActions</code></span>
+</td><td><span>Defaults to OFF </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerFlattenOptionalContent"><code>PDFOptimizerFlattenOptionalContent</code></span>
+</td><td><span>Defaults to OFF </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerResubsetSubsetFonts"><code>PDFOptimizerResubsetSubsetFonts</code></span>
+</td><td><span>Defaults to ON. The related option <a href="dlextras_PDDoc.htm#PDFOptimizerSubsetAllEmbeddedFonts" title=" Defaults to ON">PDFOptimizerSubsetAllEmbeddedFonts</a> must be Enabled for this option to have an effect. Fonts which are already Embedded Subset will be Re-subset. If the document being optimized represents an extraction of pages from a larger document, or if the document has been edited to remove Content, this can result in savings. NOTE: This can ONLY remove glyphs from an already subset font. It doesn't add missing glyphs. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDownConvert16To8BpcImages"><code>PDFOptimizerDownConvert16To8BpcImages</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardUnusedImages"><code>PDFOptimizerDiscardUnusedImages</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDiscardUnusedFonts"><code>PDFOptimizerDiscardUnusedFonts</code></span>
+</td><td><span>Defaults to ON </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerIncludeIndexedImages"><code>PDFOptimizerIncludeIndexedImages</code></span>
+</td><td><span>Defaults to ON. Controls if Indexed images are eligible for compression and downsampling or not. When <a href="aslayer_General.htm#true">true</a>, if possible, Indexed images are recompressed and/or downsampled. When <a href="aslayer_General.htm#false">false</a>, Indexed images aren't recompressed or downsampled. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerDoNotPersistFileAttributes"><code>PDFOptimizerDoNotPersistFileAttributes</code></span>
+</td><td><span>Defaults to OFF </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerLastOption"><code>PDFOptimizerLastOption</code></span>
+</td><td><span></span>
+</td></tr></table>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDDoc.htm#PDDocOptimizeGetOption" title=" This will return the setting of an optimization option."><code>PDDocOptimizeGetOption</code></a></td><td><a href="dlextras_PDDoc.htm#PDDocOptimizeSetOption" title=" This will set one the optimzation option either ON or OFF."><code>PDDocOptimizeSetOption</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>PDDoc Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDDocTextFinder">PDDocTextFinder</a></dt><dd> -  Extracts words or phrases that match a regular expression (regex) on a given page range or on all of the pages in a document.</dd>
+<dt><a href="#PDFOptimizationParams">PDFOptimizationParams</a></dt><dd> -  An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDDocTextFinder"><strong><span style="color:grey;">PDDocTextFinder</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:389</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Extracts words or phrases that match a regular expression (regex) on a given page range or on all of the pages in a document. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDDocTextFinder</code> <code>*</code><code>PDDocTextFinder</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDDocTextFinder.htm#PDDocTextFinderCreate" title=" Creates a document text finder that is used to extract words or phrases that match regular expressions from a PDF file based on words extracted using a given word finder configuration."><code>PDDocTextFinderCreate</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDDocTextFinder.htm#PDDocTextFinderAcquireMatchList" title=" Finds all regular expression (regex) matches for the given page range."><code>PDDocTextFinderAcquireMatchList</code></a></td><td><a href="dlextras_PDDocTextFinder.htm#PDDocTextFinderDestroy" title=" Destroys a document text finder."><code>PDDocTextFinderDestroy</code></a></td></tr>
+<tr><td><a href="dlextras_PDDocTextFinder.htm#PDDocTextFinderReleaseMatchList" title=" Releases the match list."><code>PDDocTextFinderReleaseMatchList</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDFOptimizationParams"><strong><span style="color:grey;">PDFOptimizationParams</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:247</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>An opaque type collecting together the <a href="dlextras_PDDoc.htm#PDFOptimizerOption" title=" PDFOptimizer Options">PDFOptimizerOption</a> parameters for <a href="dlextras_PDDoc.htm#PDDocumentOptimize" title=" This function is used to create an optimized document.">PDDocumentOptimize</a>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDFOptimizationParamsRec</code> <code>*</code><code>PDFOptimizationParams</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDDoc.htm#PDDocOptimizeDefaultParams" title=" This will create a set of optimization parameters, set to the default values."><code>PDDocOptimizeDefaultParams</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDDoc.htm#PDDocOptimizeGetImageRecompress" title=" This will return the values set for one of the three cases of Image Recompression and Downsampling."><code>PDDocOptimizeGetImageRecompress</code></a></td><td><a href="dlextras_PDDoc.htm#PDDocOptimizeGetObjectCompression" title=" This will get the type of compression used for objects."><code>PDDocOptimizeGetObjectCompression</code></a></td></tr>
+<tr><td><a href="dlextras_PDDoc.htm#PDDocOptimizeGetOption" title=" This will return the setting of an optimization option."><code>PDDocOptimizeGetOption</code></a></td><td><a href="dlextras_PDDoc.htm#PDDocOptimizeGetPDFOutputLevel" title=" Gets the output level for the optimized pdf."><code>PDDocOptimizeGetPDFOutputLevel</code></a></td></tr>
+<tr><td><a href="dlextras_PDDoc.htm#PDDocOptimizeReleaseParams" title=" This will completly free the resources used by a PDFOptimizationParams structure."><code>PDDocOptimizeReleaseParams</code></a></td><td><a href="dlextras_PDDoc.htm#PDDocOptimizeSetImageRecompress" title=" This will set the value for one of the cases of Image Recompression and Downsampling."><code>PDDocOptimizeSetImageRecompress</code></a></td></tr>
+<tr><td><a href="dlextras_PDDoc.htm#PDDocOptimizeSetObjectCompression" title=" This will set the type of compression used for objects."><code>PDDocOptimizeSetObjectCompression</code></a></td><td><a href="dlextras_PDDoc.htm#PDDocOptimizeSetOption" title=" This will set one the optimzation option either ON or OFF."><code>PDDocOptimizeSetOption</code></a></td></tr>
+<tr><td><a href="dlextras_PDDoc.htm#PDDocOptimizeSetPDFOutputLevel" title=" Sets the output level for the optimized pdf."><code>PDDocOptimizeSetPDFOutputLevel</code></a></td><td><a href="dlextras_PDDoc.htm#PDDocumentOptimize" title=" This function is used to create an optimized document."><code>PDDocumentOptimize</code></a></td></tr>
+<tr><td><a href="dlextras_PDDoc.htm#PDDocumentOptimizeWithReport" title=" This facility is used to create an optimized copy of the original document."><code>PDDocumentOptimizeWithReport</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>PDDoc Structures</h2></header>
+<nav><dl>
+<dt><a href="#PDDocTextFinderMatchList">PDDocTextFinderMatchList</a></dt><dd> -  Structure containing the matches.</dd>
+<dt><a href="#PDDocTextFinderMatchQuadRec">PDDocTextFinderMatchQuadRec</a></dt><dd> -  Structure representing a matched phrase bounding quad and the page it was located on.</dd>
+<dt><a href="#PDDocTextFinderMatchRec">PDDocTextFinderMatchRec</a></dt><dd> -  Structure representing the matched phrase and the array of quads that make up the phrase.</dd>
+<dt><a href="#PDFOptimizerReport">PDFOptimizerReport</a></dt><dd> -  Structure representing data reported from the optimization process.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDDocTextFinderMatchList"><strong><span style="color:grey;">PDDocTextFinderMatchList</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:412</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Structure containing the matches. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct PDDocTextFinderMatchList {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="dlextras_PDDoc.htm#PDDocTextFinderMatchRec" title=" Structure representing the matched phrase and the array of quads that make up the phrase."><code>PDDocTextFinderMatchRec</code></a> <code>*</code><code>matches</code><code>;</code> </div>
+</td><td><span>A pointer to an array that holds the matches. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>numMatches</code><code>;</code> </div>
+</td><td><span>The number of matches in the matches array. </span>
+</td></tr>
+<tr><td><code><code>}</code> <a href="dlextras_PDDoc.htm#PDDocTextFinderMatchList" title=" Structure containing the matches."><code>PDDocTextFinderMatchList</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDDocTextFinder.htm#PDDocTextFinderAcquireMatchList" title=" Finds all regular expression (regex) matches for the given page range."><code>PDDocTextFinderAcquireMatchList</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDDocTextFinderMatchQuadRec"><strong><span style="color:grey;">PDDocTextFinderMatchQuadRec</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:392</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Structure representing a matched phrase bounding quad and the page it was located on. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct PDDocTextFinderMatchQuadRec {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>pageNum</code><code>;</code> </div>
+</td><td><span>Page number where quad is located </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#_t_ASFixedQuad" title=" A quadrilateral represented by four fixed points (one at each corner)."><code>ASFixedQuad</code></a> <code>boundingQuad</code><code>;</code> </div>
+</td><td><span>Matched phrase bounding quad </span>
+</td></tr>
+<tr><td><code><code>}</code> <a href="dlextras_PDDoc.htm#PDDocTextFinderMatchQuadRec" title=" Structure representing a matched phrase bounding quad and the page it was located on."><code>PDDocTextFinderMatchQuadRec</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDDoc.htm#PDDocTextFinderMatchRec" title=" Structure representing the matched phrase and the array of quads that make up the phrase."><code>PDDocTextFinderMatchRec</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDDocTextFinderMatchRec"><strong><span style="color:grey;">PDDocTextFinderMatchRec</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:400</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Structure representing the matched phrase and the array of quads that make up the phrase. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct PDDocTextFinderMatchRec {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><code>char</code> <code>*</code><code>phrase</code><code>;</code> </div>
+</td><td><span>The matched phrase. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>phraseLength</code><code>;</code> </div>
+</td><td><span>The length of matched phrase. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="dlextras_PDDoc.htm#PDDocTextFinderMatchQuadRec" title=" Structure representing a matched phrase bounding quad and the page it was located on."><code>PDDocTextFinderMatchQuadRec</code></a> <code>*</code><code>quads</code><code>;</code> </div>
+</td><td><span>A pointer to an array that holds the match's quad information. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>numQuads</code><code>;</code> </div>
+</td><td><span>The number of quads in the quad array. </span>
+</td></tr>
+<tr><td><code><code>}</code> <a href="dlextras_PDDoc.htm#PDDocTextFinderMatchRec" title=" Structure representing the matched phrase and the array of quads that make up the phrase."><code>PDDocTextFinderMatchRec</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDDoc.htm#PDDocTextFinderMatchList" title=" Structure containing the matches."><code>PDDocTextFinderMatchList</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDFOptimizerReport"><strong><span style="color:grey;">PDFOptimizerReport</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:308</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Structure representing data reported from the optimization process. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct PDFOptimizerReport {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>size</code><code>;</code> </div>
+</td><td><span>Size of the structure. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="dlextras_General.htm#OptimizedImage" title=" Structure representing an Optimized Image."><code>OptimizedImage</code></a> <code>*</code><code>*</code><code>colorImages</code><code>;</code> </div>
+</td><td><span>The Color Images Optimized in the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>colorImagesCount</code><code>;</code> </div>
+</td><td><span>The number of Color Images Optimized in the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="dlextras_General.htm#OptimizedImage" title=" Structure representing an Optimized Image."><code>OptimizedImage</code></a> <code>*</code><code>*</code><code>grayImages</code><code>;</code> </div>
+</td><td><span>The Gray Images Optimized in the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>grayImagesCount</code><code>;</code> </div>
+</td><td><span>The number of Gray Images Optimized in the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="dlextras_General.htm#OptimizedImage" title=" Structure representing an Optimized Image."><code>OptimizedImage</code></a> <code>*</code><code>*</code><code>monochromeImages</code><code>;</code> </div>
+</td><td><span>The Monochrome Images Optimized in the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>monochromeImagesCount</code><code>;</code> </div>
+</td><td><span>The number of Monochrome Images Optimized in the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="dlextras_General.htm#OptimizedFont" title=" Structure representing an Optimized Font."><code>OptimizedFont</code></a> <code>*</code><code>*</code><code>fonts</code><code>;</code> </div>
+</td><td><span>The Fonts Optimized in the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>fontCount</code><code>;</code> </div>
+</td><td><span>The number of Fonts Optimized in the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>bookmarksRemoved</code><code>;</code> </div>
+</td><td><span>Bookmarks (outlines) were removed from the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>acroFormsRemoved</code><code>;</code> </div>
+</td><td><span>AcroForms were removed from the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>outputIntentsRemoved</code><code>;</code> </div>
+</td><td><span>Output Intents were removed from the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>pageLabelsRemoved</code><code>;</code> </div>
+</td><td><span>Page Labels were removed from the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>nameTreesRemoved</code><code>;</code> </div>
+</td><td><span>Name Trees were removed from the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>structureTreeItemsRemoved</code><code>;</code> </div>
+</td><td><span>The Structure Tree items were removed from the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>optionalContentFlattened</code><code>;</code> </div>
+</td><td><span>Optional Content in the document was Flattened. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>linearizationApplied</code><code>;</code> </div>
+</td><td><span>Linearization was applied to the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>pagesWithPieceDataRemoved</code><code>;</code> </div>
+</td><td><span>The number of Pages with PieceData removed from the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>pagesWithAttachmentsRemoved</code><code>;</code> </div>
+</td><td><span>The number of Pages with Attachments removed from the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>pagesWithCommentsRemoved</code><code>;</code> </div>
+</td><td><span>The number of Pages with Comments removed from the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>pagesWithAnnotationsRemoved</code><code>;</code> </div>
+</td><td><span>The number of Pages with Annotations removed from the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>pagesWithThumbnailsRemoved</code><code>;</code> </div>
+</td><td><span>The number of Pages with Thumbnails removed from the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>unusedFormsRemoved</code><code>;</code> </div>
+</td><td><span>The number of Unused Form XObjects removed from the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>unusedImagesRemoved</code><code>;</code> </div>
+</td><td><span>The number of Unused Image XObjects removed from the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>unusedFontsRemoved</code><code>;</code> </div>
+</td><td><span>The number of Unused Fonts removed from the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>itemsWithMetadataRemoved</code><code>;</code> </div>
+</td><td><span>The number of items with Metadata streams removed from the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>itemsWithDocInfoRemoved</code><code>;</code> </div>
+</td><td><span>The number of items of Document Info removed from the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>javaScriptActionsRemoved</code><code>;</code> </div>
+</td><td><span>The number of JavaScript Actions removed from the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>alternateImagesRemoved</code><code>;</code> </div>
+</td><td><span>The number of Alternate Images removed from the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>images16BPCConvertedTo8BPC</code><code>;</code> </div>
+</td><td><span>The number of 16 BPC images converted to 8 BPC in the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>resubsetOfSubsetFontsAttemped</code><code>;</code> </div>
+</td><td><span>Resubsetting of already subset Fonts was attemped. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>fullyEmbeddedFontsNowSubset</code><code>;</code> </div>
+</td><td><span>The number of fully Embedded Fonts subset in the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>subsetFontsNowReSubset</code><code>;</code> </div>
+</td><td><span>The number of subset Fonts re-subset in the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>fullyEmbeddedFontsRemoved</code><code>;</code> </div>
+</td><td><span>The number of fully Embedded Fonts removed from the document. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>base14FullyEmbeddedFontsRemoved</code><code>;</code> </div>
+</td><td><span>The number of Base 14 Fully Embedded fonts removed from the document. </span>
+</td></tr>
+<tr><td><code id="PDFOptimizerReportRec"><code>}</code> <a href="dlextras_PDDoc.htm#PDFOptimizerReport" title=" Structure representing data reported from the optimization process."><code>PDFOptimizerReportRec</code></a><code>,</code> <code>*</code><a href="dlextras_PDDoc.htm#PDFOptimizerReport" title=" Structure representing data reported from the optimization process."><code>PDFOptimizerReport</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDDoc.htm#PDDocumentOptimizeWithReport" title=" This facility is used to create an optimized copy of the original document."><code>PDDocumentOptimizeWithReport</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDDoc Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDDocDeletePagesEx">PDDocDeletePagesEx</a></dt><dd> -  Deletes the specified pages.</dd>
+<dt><a href="#PDDocEmbedFonts">PDDocEmbedFonts</a></dt><dd> -  Routine to embed unembedded fonts in a document.</dd>
+<dt><a href="#PDDocEmbedFontsFromFontArray">PDDocEmbedFontsFromFontArray</a></dt><dd> -  Routine to embed fonts in a document.</dd>
+<dt><a href="#PDDocHasSignature">PDDocHasSignature</a></dt><dd> -  Determines if the document contains a digital signature.</dd>
+<dt><a href="#PDDocOptimizeDefaultParams">PDDocOptimizeDefaultParams</a></dt><dd> -  This will create a set of optimization parameters, set to the default values.</dd>
+<dt><a href="#PDDocOptimizeGetImageRecompress">PDDocOptimizeGetImageRecompress</a></dt><dd> -  This will return the values set for one of the three cases of Image Recompression and Downsampling.</dd>
+<dt><a href="#PDDocOptimizeGetObjectCompression">PDDocOptimizeGetObjectCompression</a></dt><dd> -  This will get the type of compression used for objects.</dd>
+<dt><a href="#PDDocOptimizeGetOption">PDDocOptimizeGetOption</a></dt><dd> -  This will return the setting of an optimization option.</dd>
+<dt><a href="#PDDocOptimizeGetPDFOutputLevel">PDDocOptimizeGetPDFOutputLevel</a></dt><dd> -  Gets the output level for the optimized pdf.</dd>
+<dt><a href="#PDDocOptimizeReleaseParams">PDDocOptimizeReleaseParams</a></dt><dd> -  This will completly free the resources used by a PDFOptimizationParams structure.</dd>
+<dt><a href="#PDDocOptimizeSetImageRecompress">PDDocOptimizeSetImageRecompress</a></dt><dd> -  This will set the value for one of the cases of Image Recompression and Downsampling.</dd>
+<dt><a href="#PDDocOptimizeSetObjectCompression">PDDocOptimizeSetObjectCompression</a></dt><dd> -  This will set the type of compression used for objects.</dd>
+<dt><a href="#PDDocOptimizeSetOption">PDDocOptimizeSetOption</a></dt><dd> -  This will set one the optimzation option either ON or OFF.</dd>
+<dt><a href="#PDDocOptimizeSetPDFOutputLevel">PDDocOptimizeSetPDFOutputLevel</a></dt><dd> -  Sets the output level for the optimized pdf.</dd>
+<dt><a href="#PDDocReplaceUnembeddedSimpleFonts">PDDocReplaceUnembeddedSimpleFonts</a></dt><dd> -  NOTE: This method should only be used by advanced users.</dd>
+<dt><a href="#PDDocWillNeedIncrementalSave">PDDocWillNeedIncrementalSave</a></dt><dd> -  Determines if the document must be saved incrementally.</dd>
+<dt><a href="#PDDocumentOptimize">PDDocumentOptimize</a></dt><dd> -  This function is used to create an optimized document.</dd>
+<dt><a href="#PDDocumentOptimizeWithReport">PDDocumentOptimizeWithReport</a></dt><dd> -  This facility is used to create an optimized copy of the original document.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDDocDeletePagesEx"><strong><span style="color:grey;">PDDocDeletePagesEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:858</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Deletes the specified pages. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDDocDeletePagesEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>firstPage</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>lastPage</code><code>,</code> <a href="aslayer_General.htm#ProgressMonitor"><code>ProgressMonitor</code></a> <code>progMon</code><code>,</code> <code>void</code> <code>*</code><code>progMonClientData</code><code>,</code> <a href="dlextras_PDPage.htm#PDPageDeleteFlags" title=" Page Deletion Flags."><code>PDPageDeleteFlags</code></a> <code>flags</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>doc</code></span>
+</td><td><span>The document from which pages are deleted. </span>
+</td></tr>
+<tr><td><span><code>firstPage</code></span>
+</td><td><span>The page number of the first page to delete. The first page is <code>0</code>. </span>
+</td></tr>
+<tr><td><span><code>lastPage</code></span>
+</td><td><span>The page number of the last page to delete. </span>
+</td></tr>
+<tr><td><span><code>progMon</code></span>
+</td><td><span>A progress monitor. Use AVAppGetDocProgressMonitor() to obtain the default progress monitor. <a href="aslayer_General.htm#NULL"><code>NULL</code></a> may be passed, in which case no progress monitor is used. </span>
+</td></tr>
+<tr><td><span><code>progMonClientData</code></span>
+</td><td><span>A pointer to user-supplied datapassed to <code>progMon</code> each time it is called. It should be <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if progMon is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>Page Deletion flags that can be used to modify the how the deletion process works. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDDocEmbedFonts"><strong><span style="color:grey;">PDDocEmbedFonts</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:188</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Routine to embed unembedded fonts in a document. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> If the font has information indicating that it cannot be embedded for print and preview, the font will not be embedded in the document. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDDoc.htm#PDDocEmbedFontsFromFontArray" title=" Routine to embed fonts in a document.">PDDocEmbedFontsFromFontArray</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDDocEmbedFonts(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <a href="aslayer_General.htm#_t_ASStatusMonitorProcs"><code>ASStatusMonitorProcs</code></a> <code>statusMon</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>doc</code></span>
+</td><td><span><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document.">PDDoc</a> to operate on. The fonts will be embedded in this document. To keep the changes the document must be saved. Fonts on the user's system that match the original font definition will be embedded. For the Times Roman and Helvetica and corresponding styles, if displayed with a font alias, then the font alias will be embedded in the file. If the font has information that indicates the font cannot be embedded for print and preview, the font will not be embedded in the document. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>One of the following: </span>
+
+<table><tr><td><span><a href="dlextras_PDDoc.htm#kDocEmbedSubset" title=" Fonts will be subset when embedded.">kDocEmbedSubset</a></span>
+</td><td><span>If set fonts will be subset when embedded. Otherwise the entire font will be embedded. Full fonts should only be embedded if the information in the fonts indicates it can be used for editible embedding. Fonts that have more than 2048 characters will be subset embedded regardless of the setting of this flag.</span>
+</td></tr>
+<tr><td><span><a href="dlextras_PDDoc.htm#kDocEmbedSubsetOfEmbeddedFont" title=" If set, fonts that have already been embedded but are not subset fonts, will be reembedded as a subset font.">kDocEmbedSubsetOfEmbeddedFont</a></span>
+</td><td><span>If set, fonts that have already been embedded but are not subset fonts, will be reembedded as a subset font.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>statusMon</code></span>
+</td><td><span>Pointer to a record containing a Progress Monitor, Cancel procedure, and report procedure. The procedures in the progress monitor are called to indicate the progress of the routine. The cancel procedure is called periodically to allow the client to cancel the routine. If the cancel procedure returns <a href="aslayer_General.htm#false">false</a> then the routine is canceled. The report procedure will be called to report errors or warnings while embedding the fonts. For each font that cannot be embedded, the report procedure will be called. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDDocEmbedFontsFromFontArray"><strong><span style="color:grey;">PDDocEmbedFontsFromFontArray</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:229</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Routine to embed fonts in a document. This will embed only the fonts listed in an array. The parameters to this routine are them same as described for <a href="dlextras_PDDoc.htm#PDDocEmbedFonts" title=" Routine to embed unembedded fonts in a document.">PDDocEmbedFonts</a>. With the exception of the additional fonts and nFonts parameters described below. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> If the font has information indicating that it cannot be embedded for print and preview, then the font will not be embedded in the document. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDDoc.htm#PDDocEmbedFonts" title=" Routine to embed unembedded fonts in a document.">PDDocEmbedFonts</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDDocEmbedFontsFromFontArray(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <code>const</code> <a href="pdlayer_PDFont.htm#PDFont" title=" A font that is used to draw text on a page."><code>PDFont</code></a> <code>*</code><code>fonts</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>nFonts</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <a href="aslayer_General.htm#_t_ASStatusMonitorProcs"><code>ASStatusMonitorProcs</code></a> <code>statusMon</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>doc</code></span>
+</td><td><span><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document.">PDDoc</a> to operate on. The fonts will be embedded in this document. To keep the changes the document must be saved. Fonts on the user's system that match the original font definition will be embedded. For the Times Roman and Helvetica and corresponding styles, if displayed with a font alias, then the font alias will be embedded in the file. If the font has information that indicates the font cannot be embedded for print and preview, then the font will not be embedded in the document. </span>
+</td></tr>
+<tr><td><span><code>fonts</code></span>
+</td><td><span>An array of <a href="pdlayer_PDFont.htm#PDFont" title=" A font that is used to draw text on a page.">PDFont</a> containing fonts to be embedded. </span>
+</td></tr>
+<tr><td><span><code>nFonts</code></span>
+</td><td><span>The number of fonts in the fonts array. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>One of the following: </span>
+
+<table><tr><td><span><a href="dlextras_PDDoc.htm#kDocEmbedSubset" title=" Fonts will be subset when embedded.">kDocEmbedSubset</a></span>
+</td><td><span>If set fonts will be subset when embedded. Otherwise the entire font will be embedded. Full fonts should only be embedded if the information in the fonts indicates it can be used for editible embedding. Fonts that have more than 2048 characters will be subset embedded regardless of the setting of this flag.</span>
+</td></tr>
+<tr><td><span><a href="dlextras_PDDoc.htm#kDocEmbedSubsetOfEmbeddedFont" title=" If set, fonts that have already been embedded but are not subset fonts, will be reembedded as a subset font.">kDocEmbedSubsetOfEmbeddedFont</a></span>
+</td><td><span>If set, fonts that have already been embedded but are not subset fonts, will be reembedded as a subset font.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>statusMon</code></span>
+</td><td><span>Pointer to a record containing a Progress Monitor, Cancel procedure, and report procedure. The procedures in the progress monitor are called to indicate the progress of the routine. The cancel procedure is called periodically to allow the client to cancel the routine. If the cancel procedure returns <a href="aslayer_General.htm#false">false</a> then the routine is canceled. The report procedure will be called to report errors or warnings while embedding the fonts. For each font that cannot be embedded, the report procedure will be called. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDDocHasSignature"><strong><span style="color:grey;">PDDocHasSignature</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:758</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Determines if the document contains a digital signature. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDDocHasSignature(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>If the document has a digital signature. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDDocOptimizeDefaultParams"><strong><span style="color:grey;">PDDocOptimizeDefaultParams</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:615</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>This will create a set of optimization parameters, set to the default values. These can be examined using "get" methods, and changed with the "set" methods<br/>
+<p>When these parameters are no longer needed (after the call to <a href="dlextras_PDDoc.htm#PDDocumentOptimize" title=" This function is used to create an optimized document.">PDDocumentOptimize</a>, although they be re-used any number of times), they should be freed by the method <a href="dlextras_PDDoc.htm#PDDocOptimizeReleaseParams" title=" This will completly free the resources used by a PDFOptimizationParams structure.">PDDocOptimizeReleaseParams</a>.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDDoc.htm#PDDocOptimizeReleaseParams" title=" This will completly free the resources used by a PDFOptimizationParams structure.">PDDocOptimizeReleaseParams</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize."><code>PDFOptimizationParams</code></a> <code>PDDocOptimizeDefaultParams(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>initialized optimization parameters that can be further modified. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDDocOptimizeGetImageRecompress"><strong><span style="color:grey;">PDDocOptimizeGetImageRecompress</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:695</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>This will return the values set for one of the three cases of Image Recompression and Downsampling. These values are used in deciding which Images from the set of all Images in the document will be modified by the Optimizer. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDDoc.htm#PDDocOptimizeSetImageRecompress" title=" This will set the value for one of the cases of Image Recompression and Downsampling.">PDDocOptimizeSetImageRecompress</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDDocOptimizeGetImageRecompress(</code><a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize."><code>PDFOptimizationParams</code></a> <code>Params</code><code>,</code> <a href="dlextras_PDDoc.htm#PDFOptimizerCompressImageType" title=" Image types for PDFOptimizer compression"><code>PDFOptimizerCompressImageType</code></a> <code>imageType</code><code>,</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>*</code><code>recompressIfAbove</code><code>,</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>*</code><code>recompressTo</code><code>,</code> <a href="dlextras_General.htm#PDFOptimizerCompressionType" title=" types of compression for PDFOptimizer"><code>PDFOptimizerCompressionType</code></a> <code>*</code><code>compressType</code><code>,</code> <a href="dlextras_PDDoc.htm#PDFOptimizationCompressQuality" title=" Compression quality options"><code>PDFOptimizationCompressQuality</code></a> <code>*</code><code>compressQuality</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>Params</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> a <a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize.">PDFOptimizationParams</a> object to be checked </span>
+</td></tr>
+<tr><td><span><code>imageType</code></span>
+</td><td><span><a href="pdslayer_General.htm#OUT">OUT</a> The class of Images these parameters are to refer to. </span>
+</td></tr>
+<tr><td><span><code>recompressIfAbove</code></span>
+</td><td><span><a href="pdslayer_General.htm#OUT">OUT</a> The lower limit of resolution (In DPI) of an Image to be Resampled. </span>
+</td></tr>
+<tr><td><span><code>recompressTo</code></span>
+</td><td><span><a href="pdslayer_General.htm#OUT">OUT</a> The target DPI for Resampling. Images which are Resampled will be changed to this resolution. </span>
+</td></tr>
+<tr><td><span><code>compressType</code></span>
+</td><td><span><a href="pdslayer_General.htm#OUT">OUT</a> a member of the enumeration <a href="dlextras_General.htm#PDFOptimizerCompressionType" title=" types of compression for PDFOptimizer">PDFOptimizerCompressionType</a>. </span>
+</td></tr>
+<tr><td><span><code>compressQuality</code></span>
+</td><td><span><a href="pdslayer_General.htm#OUT">OUT</a> a member of the enumeration <a href="dlextras_PDDoc.htm#PDFOptimizationCompressQuality" title=" Compression quality options">PDFOptimizationCompressQuality</a> </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDDocOptimizeGetObjectCompression"><strong><span style="color:grey;">PDDocOptimizeGetObjectCompression</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:638</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>This will get the type of compression used for objects. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDDoc.htm#PDDocOptimizeSetObjectCompression" title=" This will set the type of compression used for objects.">PDDocOptimizeSetObjectCompression</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="dlextras_PDDoc.htm#PDFOptimizerObjectCompressionType" title=" Object Compression types for PDFOptimizer"><code>PDFOptimizerObjectCompressionType</code></a> <code>PDDocOptimizeGetObjectCompression(</code><a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize."><code>PDFOptimizationParams</code></a> <code>params</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>params</code></span>
+</td><td><span>the <a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize.">PDFOptimizationParams</a> object from which the compression type will be read from. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="dlextras_PDDoc.htm#PDFOptimizerObjectCompressionType" title=" Object Compression types for PDFOptimizer">PDFOptimizerObjectCompressionType</a> </span>
+</section>
+<section><div class="infoRow"><h3 id="PDDocOptimizeGetOption"><strong><span style="color:grey;">PDDocOptimizeGetOption</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:715</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>This will return the setting of an optimization option. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDDocOptimizeGetOption(</code><a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize."><code>PDFOptimizationParams</code></a> <code>Params</code><code>,</code> <a href="dlextras_PDDoc.htm#PDFOptimizerOption" title=" PDFOptimizer Options"><code>PDFOptimizerOption</code></a> <code>option</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>Params</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a>. A <a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize.">PDFOptimizationParams</a> object to be checked </span>
+</td></tr>
+<tr><td><span><code>option</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a>. A member of the enumeration <a href="dlextras_PDDoc.htm#PDFOptimizerOption" title=" PDFOptimizer Options">PDFOptimizerOption</a>, selecting which option to effect. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>If <a href="aslayer_General.htm#true">true</a>, the associated option is ON. If <a href="aslayer_General.htm#false">false</a>, the option is OFF. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDDocOptimizeGetPDFOutputLevel"><strong><span style="color:grey;">PDDocOptimizeGetPDFOutputLevel</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:658</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the output level for the optimized pdf. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDDoc.htm#PDDocOptimizeSetPDFOutputLevel" title=" Sets the output level for the optimized pdf.">PDDocOptimizeSetPDFOutputLevel</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDDocOptimizeGetPDFOutputLevel(</code><a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize."><code>PDFOptimizationParams</code></a> <code>params</code><code>,</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>*</code><code>majorP</code><code>,</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>*</code><code>minorP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>Params</code></span>
+</td><td><span>a <a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize.">PDFOptimizationParams</a> object </span>
+</td></tr>
+<tr><td><span><code>majorP</code></span>
+</td><td><span>(Filled by method) The major version number. </span>
+</td></tr>
+<tr><td><span><code>minorP</code></span>
+</td><td><span>(Filled by method) The minor version number. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDDocOptimizeReleaseParams"><strong><span style="color:grey;">PDDocOptimizeReleaseParams</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:621</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>This will completly free the resources used by a <a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize.">PDFOptimizationParams</a> structure. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDDocOptimizeReleaseParams(</code><a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize."><code>PDFOptimizationParams</code></a> <code>params</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>params</code></span>
+</td><td><span>the <a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize.">PDFOptimizationParams</a> to free. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDDocOptimizeSetImageRecompress"><strong><span style="color:grey;">PDDocOptimizeSetImageRecompress</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:678</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>This will set the value for one of the cases of Image Recompression and Downsampling. These values are used in deciding which Images from the set of all Images in the document will be modified by the Optimizer. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDDoc.htm#PDDocOptimizeGetImageRecompress" title=" This will return the values set for one of the three cases of Image Recompression and Downsampling.">PDDocOptimizeGetImageRecompress</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDDocOptimizeSetImageRecompress(</code><a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize."><code>PDFOptimizationParams</code></a> <code>Params</code><code>,</code> <a href="dlextras_PDDoc.htm#PDFOptimizerCompressImageType" title=" Image types for PDFOptimizer compression"><code>PDFOptimizerCompressImageType</code></a> <code>imageType</code><code>,</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>recompressIfAbove</code><code>,</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>recompressTo</code><code>,</code> <a href="dlextras_General.htm#PDFOptimizerCompressionType" title=" types of compression for PDFOptimizer"><code>PDFOptimizerCompressionType</code></a> <code>compressType</code><code>,</code> <a href="dlextras_PDDoc.htm#PDFOptimizationCompressQuality" title=" Compression quality options"><code>PDFOptimizationCompressQuality</code></a> <code>compressQuality</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>Params</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> a <a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize.">PDFOptimizationParams</a> object to be modified </span>
+</td></tr>
+<tr><td><span><code>imageType</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The class of Images these parameters are to refer to. This is a member of the Enumeration <a href="dlextras_PDDoc.htm#PDFOptimizerCompressImageType" title=" Image types for PDFOptimizer compression">PDFOptimizerCompressImageType</a> and is one of the set of values "Color", "Gray", or "Monochrome" (B/W). </span>
+</td></tr>
+<tr><td><span><code>recompressIfAbove</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The lower limit of resolution (In DPI) of an Image to be Resampled. Only Images above this limitation will be considered for Resampling. </span>
+</td></tr>
+<tr><td><span><code>recompressTo</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The target DPI for Resampling. Images which are Resampled will be changed to this resolution. </span>
+</td></tr>
+<tr><td><span><code>compressType</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> a member of the enumeration <a href="dlextras_General.htm#PDFOptimizerCompressionType" title=" types of compression for PDFOptimizer">PDFOptimizerCompressionType</a>. Images which are either Resampled or Recompressed will be written in this compression type. If the value of this enumeration is either the specifier for "Same", or for "None", then we will not Recompress images which do not require Downsampling. </span>
+</td></tr>
+<tr><td><span><code>compressQuality</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> a member of the enumeration <a href="dlextras_PDDoc.htm#PDFOptimizationCompressQuality" title=" Compression quality options">PDFOptimizationCompressQuality</a>. NOTE that this enumeration is only meaningful for lossy compression techniques. Note also that it is an error to specify "Lossless" for techniques that cannot support lossless compression. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDDocOptimizeSetObjectCompression"><strong><span style="color:grey;">PDDocOptimizeSetObjectCompression</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:629</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>This will set the type of compression used for objects. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDDoc.htm#PDDocOptimizeGetObjectCompression" title=" This will get the type of compression used for objects.">PDDocOptimizeGetObjectCompression</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDDocOptimizeSetObjectCompression(</code><a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize."><code>PDFOptimizationParams</code></a> <code>params</code><code>,</code> <a href="dlextras_PDDoc.htm#PDFOptimizerObjectCompressionType" title=" Object Compression types for PDFOptimizer"><code>PDFOptimizerObjectCompressionType</code></a> <code>compressionType</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>params</code></span>
+</td><td><span>a <a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize.">PDFOptimizationParams</a> object to be modified. </span>
+</td></tr>
+<tr><td><span><code>compressionType</code></span>
+</td><td><span>The type of compression to apply to the document. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDDocOptimizeSetOption"><strong><span style="color:grey;">PDDocOptimizeSetOption</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:707</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>This will set one the optimzation option either ON or OFF. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDDoc.htm#PDDocOptimizeGetOption" title=" This will return the setting of an optimization option.">PDDocOptimizeGetOption</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDDocOptimizeSetOption(</code><a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize."><code>PDFOptimizationParams</code></a> <code>Params</code><code>,</code> <a href="dlextras_PDDoc.htm#PDFOptimizerOption" title=" PDFOptimizer Options"><code>PDFOptimizerOption</code></a> <code>option</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>OnOff</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>Params</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a>. A <a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize.">PDFOptimizationParams</a> object to be modified </span>
+</td></tr>
+<tr><td><span><code>option</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a>. A member of the enumeration <a href="dlextras_PDDoc.htm#PDFOptimizerOption" title=" PDFOptimizer Options">PDFOptimizerOption</a>, selecting which option to effect. </span>
+</td></tr>
+<tr><td><span><code>OnOff</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a>. If <a href="aslayer_General.htm#true">true</a>, set the associated option as ON. If <a href="aslayer_General.htm#false">false</a>, set it as OFF. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDDocOptimizeSetPDFOutputLevel"><strong><span style="color:grey;">PDDocOptimizeSetPDFOutputLevel</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:648</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the output level for the optimized pdf. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDDoc.htm#PDDocOptimizeGetPDFOutputLevel" title=" Gets the output level for the optimized pdf.">PDDocOptimizeGetPDFOutputLevel</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDDocOptimizeSetPDFOutputLevel(</code><a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize."><code>PDFOptimizationParams</code></a> <code>params</code><code>,</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>majorP</code><code>,</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>minorP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>Params</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> a <a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize.">PDFOptimizationParams</a> object to be modified. </span>
+</td></tr>
+<tr><td><span><code>majorP</code></span>
+</td><td><span>The major version number. </span>
+</td></tr>
+<tr><td><span><code>minorP</code></span>
+</td><td><span>The minor version number. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDDocReplaceUnembeddedSimpleFonts"><strong><span style="color:grey;">PDDocReplaceUnembeddedSimpleFonts</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:815</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>NOTE: This method should only be used by advanced users. It is useful for applications that need to define precise font substitutions for unembedded fonts rather than relying on the PDF Viewer to find a suitable font on the local system. If you choose a new font replacement that is not similar to the font being replaced, in terms of encoding, metrics, and glyphs, your result may appear distorted or incorrect in a variety of ways. The user must take care when selecting a replacement font. This method replaces Simple (not Type 0 or Composite), Unembedded, non-subset Fonts with a different font. NOTE: Fonts that lack required dictionary entries (e.g. /FontDescriptor) will have default ones created. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDDocReplaceUnembeddedSimpleFonts(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>*</code><code>currentFontNames</code><code>,</code> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>*</code><code>newFontNames</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>fontNamesLength</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>doc</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> a <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document.">PDDoc</a> object (Required) </span>
+</td></tr>
+<tr><td><span><code>currentFontNames</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The names of the fonts to be replaced (Required) </span>
+</td></tr>
+<tr><td><span><code>newFontNames</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The names of the new fonts (Required) </span>
+</td></tr>
+<tr><td><span><code>fontNamesLength</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The number of current font names and the number of new font names (they have to be the same) (Required) </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDDocWillNeedIncrementalSave"><strong><span style="color:grey;">PDDocWillNeedIncrementalSave</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:766</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Determines if the document must be saved incrementally. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDDocWillNeedIncrementalSave(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>If the document requires an Incremental save. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDDocumentOptimize"><strong><span style="color:grey;">PDDocumentOptimize</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:601</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>This function is used to create an optimized document. The types of Optimization performed depend on the optimization parameters. The result of optimization is a new document, saved to a file. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDDocumentOptimize(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>InputDoc</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>OutputPath</code><code>,</code> <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>,</code> <a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize."><code>PDFOptimizationParams</code></a> <code>params</code><code>,</code> <a href="aslayer_General.htm#ProgressMonitor"><code>ProgressMonitor</code></a> <code>progMon</code><code>,</code> <code>void</code> <code>*</code><code>progMonClientData</code><code>,</code> <a href="aslayer_General.htm#ASCancelProc" title=" This callback replaces CancelProc()."><code>ASCancelProc</code></a> <code>cancelProc</code><code>,</code> <code>void</code> <code>*</code><code>cancelProcClientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>InputDoc</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> a <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document.">PDDoc</a> object (Required) </span>
+</td></tr>
+<tr><td><span><code>OutputPath</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> an ASFilePath where the optimized document is to be written (Required) </span>
+</td></tr>
+<tr><td><span><code>OutputFileSys</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> a FileSys to write the document to (May be <a href="aslayer_General.htm#NULL">NULL</a>, in which case default file sys will be used) </span>
+</td></tr>
+<tr><td><span><code>OptimizationParams</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> a reference to a OptimizationParamsRec structure, used to control optimization. (Required) </span>
+</td></tr>
+<tr><td><span><code>ProgMon</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> an optional progress monitor </span>
+</td></tr>
+<tr><td><span><code>progMonClientData</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> An optional pointer to client data used by the progress monitor. </span>
+</td></tr>
+<tr><td><span><code>cancelProc</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> an optional pointer to a cancel procedure </span>
+</td></tr>
+<tr><td><span><code>cancelProcClientData</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> an optional pointer to cancel proc client data </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true">true</a> if a optimized document is created, <a href="aslayer_General.htm#false">false</a> if a document is not created. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDDocumentOptimizeWithReport"><strong><span style="color:grey;">PDDocumentOptimizeWithReport</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:796</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>This facility is used to create an optimized copy of the original document. Optimization can be in many specific forms, controlled by control records input to the optimizer. The result of optimization is always a new document, saved to a file. This is because some of the optimizations are done at Document save time. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDDocumentOptimizeWithReport(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>InputDoc</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>OutputPath</code><code>,</code> <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>,</code> <a href="dlextras_PDDoc.htm#PDFOptimizationParams" title=" An opaque type collecting together the PDFOptimizerOption parameters for PDDocumentOptimize."><code>PDFOptimizationParams</code></a> <code>params</code><code>,</code> <a href="aslayer_General.htm#ProgressMonitor"><code>ProgressMonitor</code></a> <code>progMon</code><code>,</code> <code>void</code> <code>*</code><code>progMonClientData</code><code>,</code> <a href="aslayer_General.htm#ASCancelProc" title=" This callback replaces CancelProc()."><code>ASCancelProc</code></a> <code>cancelProc</code><code>,</code> <code>void</code> <code>*</code><code>cancelProcClientData</code><code>,</code> <a href="dlextras_PDDoc.htm#PDFOptimizerReport" title=" Structure representing data reported from the optimization process."><code>PDFOptimizerReport</code></a> <code>report</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>InputDoc</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> a <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document.">PDDoc</a> object (Required) </span>
+</td></tr>
+<tr><td><span><code>OutputPath</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> an ASFilePath where the optimized document is to be written (Required) </span>
+</td></tr>
+<tr><td><span><code>OutputFileSys</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> a FileSys to write the document to (May be <a href="aslayer_General.htm#NULL">NULL</a>, in which case default file sys will be used) </span>
+</td></tr>
+<tr><td><span><code>OptimizationParams</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> a reference to a OptimizationParamsRec structure, used to control optimization. (Required) </span>
+</td></tr>
+<tr><td><span><code>ProgMon</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> an optional progress monitor </span>
+</td></tr>
+<tr><td><span><code>progMonClientData</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> An optional pointer to client data used by the progress monitor </span>
+</td></tr>
+<tr><td><span><code>cancelProc</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> an optional pointer to a cancel procedure </span>
+</td></tr>
+<tr><td><span><code>cancelProcClientData</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> an optiona pointer to cancel proc client data </span>
+</td></tr>
+<tr><td><span><code>report</code></span>
+</td><td><span><a href="pdslayer_General.htm#OUT">OUT</a> an <a href="dlextras_PDDoc.htm#PDFOptimizerReport" title=" Structure representing data reported from the optimization process.">PDFOptimizerReport</a> that will be filled by the method </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true">true</a> if a optimized document is created, <a href="aslayer_General.htm#false">false</a> if a document is not created </span>
+</section>
+</section>
+
+</div>
+</body></html>

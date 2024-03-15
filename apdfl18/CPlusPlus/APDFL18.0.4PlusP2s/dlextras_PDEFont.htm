@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Additional functionality from Datalogics: PDEFont</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Additional functionality from Datalogics: PDEFont</h5>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Functions">
+<header><h2>PDEFont Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDEFontCheckASTextIsRepresentable">PDEFontCheckASTextIsRepresentable</a></dt><dd> -  Routine to check that the entire contents of an ASText are representable in the font.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEFontCheckASTextIsRepresentable"><strong><span style="color:grey;">PDEFontCheckASTextIsRepresentable</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:322</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Routine to check that the entire contents of an <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> are representable in the font. If the index parameter is not <a href="aslayer_General.htm#NULL">NULL</a> and this function returns <a href="aslayer_General.htm#FALSE">FALSE</a>, the index will indicate the first character not representable in the font.<br/>
+<p>An exception will be raised if the supplied font is incompatible with the API. Such may happen, for example, if font is a Type 1 font or if the font is retrieved from an existing PDF document.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDEFontCheckASTextIsRepresentable(</code><code>const</code> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <code>const</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>text</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>*</code><code>index</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>font</code></span>
+</td><td><span>The <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> to check against. Its type must be 'Type0' or 'TrueType'. </span>
+</td></tr>
+<tr><td><span><code>text</code></span>
+</td><td><span>An <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> containing the text to check </span>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The index of the first character in the Unicode representation of the string that could not be represented in the font. May be <a href="aslayer_General.htm#NULL">NULL</a> if the user wants to ignore this information. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>Whether the <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> is representable or not using the font. </span>
+</section>
+</section>
+
+</div>
+</body></html>

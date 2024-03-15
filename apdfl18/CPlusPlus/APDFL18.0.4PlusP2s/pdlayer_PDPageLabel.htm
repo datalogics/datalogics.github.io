@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PD Layer: PDPageLabel</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PD Layer: PDPageLabel</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>PDPageLabel Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDPageLabel">PDPageLabel</a></dt><dd> -  A label used to describe a page.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDPageLabel"><strong><span style="color:grey;">PDPageLabel</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:5373</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A label used to describe a page. This is used to allow for non-sequential page numbering or the addition of arbitrary labels for a page (such as the inclusion of Roman numerals at the beginning of a book). A <a href="pdlayer_PDPageLabel.htm#PDPageLabel" title=" A label used to describe a page.">PDPageLabel</a> specifies the numbering style to use (for example, upper-case or lower-case Roman, decimal, and so on), the starting number for the first page, and an arbitrary prefix to be preappended to each number (for example, <code>"A-"</code> is used to generate <code>"A-1"</code>, <code>"A-2"</code>, <code>"A-3"</code>, and so on). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDDoc.htm#PDDocGetLabelForPageNum" title=" Superseded by PDDocGetLabelForPageNumEx() in Acrobat 6.0."><code>PDDocGetLabelForPageNum</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocRemovePageLabel" title=" Removes the page label that is attached to the specified page, effectively merging the specified range with the previous page label sequence."><code>PDDocRemovePageLabel</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#OPAQUE_64_BITS"><code>OPAQUE_64_BITS</code></a> <code>PDPageLabel</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDDoc.htm#PDDocGetPageLabel" title=" Returns the label that is in effect for the given page."><code>PDDocGetPageLabel</code></a></td><td><a href="pdlayer_PDPageLabel.htm#PDPageLabelFromCosObj" title=" Creates a type cast of the CosObj to a PDPageLabel object."><code>PDPageLabelFromCosObj</code></a></td></tr>
+<tr><td><a href="pdlayer_PDPageLabel.htm#PDPageLabelNew" title=" Constructs a new label object in the document with the specified style, prefix, and starting page number."><code>PDPageLabelNew</code></a></td><td><a href="pdlayer_PDPageLabel.htm#PDPageLabelNewASText" title=" Constructs a new label object in the document with the specified style, prefix, and starting page number."><code>PDPageLabelNewASText</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDDoc.htm#PDDocSetPageLabel" title=" Attaches a label to a page."><code>PDDocSetPageLabel</code></a></td><td><a href="pdlayer_PDPageLabel.htm#PDPageLabelEqual" title=" Compares two page labels to see if they are equivalent."><code>PDPageLabelEqual</code></a></td></tr>
+<tr><td><a href="pdlayer_PDPageLabel.htm#PDPageLabelGetCosObj" title=" Creates a type cast of the page label object to a Cos object."><code>PDPageLabelGetCosObj</code></a></td><td><a href="pdlayer_PDPageLabel.htm#PDPageLabelGetPrefix" title=" Returns the prefix string for the label."><code>PDPageLabelGetPrefix</code></a></td></tr>
+<tr><td><a href="pdlayer_PDPageLabel.htm#PDPageLabelGetPrefixASText" title=" Returns the prefix string for the label as an ASText object."><code>PDPageLabelGetPrefixASText</code></a></td><td><a href="pdlayer_PDPageLabel.htm#PDPageLabelGetStart" title=" Gets the starting number of a given page label."><code>PDPageLabelGetStart</code></a></td></tr>
+<tr><td><a href="pdlayer_PDPageLabel.htm#PDPageLabelGetStyle" title=" Returns an ASAtom for the style of the label."><code>PDPageLabelGetStyle</code></a></td><td><a href="pdlayer_PDPageLabel.htm#PDPageLabelIsValid" title=" Determines whether a page label is valid."><code>PDPageLabelIsValid</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDPageLabel Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDPageLabelEqual">PDPageLabelEqual</a></dt><dd> -  Compares two page labels to see if they are equivalent.</dd>
+<dt><a href="#PDPageLabelFromCosObj">PDPageLabelFromCosObj</a></dt><dd> -  Creates a type cast of the CosObj to a PDPageLabel object.</dd>
+<dt><a href="#PDPageLabelGetCosObj">PDPageLabelGetCosObj</a></dt><dd> -  Creates a type cast of the page label object to a Cos object.</dd>
+<dt><a href="#PDPageLabelGetPrefix">PDPageLabelGetPrefix</a></dt><dd> -  Returns the prefix string for the label.</dd>
+<dt><a href="#PDPageLabelGetPrefixASText">PDPageLabelGetPrefixASText</a></dt><dd> -  Returns the prefix string for the label as an ASText object.</dd>
+<dt><a href="#PDPageLabelGetStart">PDPageLabelGetStart</a></dt><dd> -  Gets the starting number of a given page label.</dd>
+<dt><a href="#PDPageLabelGetStyle">PDPageLabelGetStyle</a></dt><dd> -  Returns an ASAtom for the style of the label.</dd>
+<dt><a href="#PDPageLabelIsValid">PDPageLabelIsValid</a></dt><dd> -  Determines whether a page label is valid.</dd>
+<dt><a href="#PDPageLabelNew">PDPageLabelNew</a></dt><dd> -  Constructs a new label object in the document with the specified style, prefix, and starting page number.</dd>
+<dt><a href="#PDPageLabelNewASText">PDPageLabelNewASText</a></dt><dd> -  Constructs a new label object in the document with the specified style, prefix, and starting page number.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDPageLabelEqual"><strong><span style="color:grey;">PDPageLabelEqual</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:6829</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Compares two page labels to see if they are equivalent. Two labels are equivalent if they have the same style, starting number (the numeric value of the first page associated with the label), and prefix strings which are the same byte-for-byte. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDPageLabel.htm#PDPageLabelIsValid" title=" Determines whether a page label is valid.">PDPageLabelIsValid</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDPageLabelEqual(</code><a href="pdlayer_PDPageLabel.htm#PDPageLabel" title=" A label used to describe a page."><code>PDPageLabel</code></a> <code>pdlOne</code><code>,</code> <a href="pdlayer_PDPageLabel.htm#PDPageLabel" title=" A label used to describe a page."><code>PDPageLabel</code></a> <code>pdlTwo</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdlOne</code></span>
+</td><td><span>A page label. </span>
+</td></tr>
+<tr><td><span><code>pdlTwo</code></span>
+</td><td><span>Another page label. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the two labels are valid and equivalent, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPageLabelFromCosObj"><strong><span style="color:grey;">PDPageLabelFromCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:6854</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a type cast of the <a href="coslayer_CosObj.htm#CosObj">CosObj</a> to a <a href="pdlayer_PDPageLabel.htm#PDPageLabel" title=" A label used to describe a page.">PDPageLabel</a> object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDPageLabel.htm#PDPageLabelGetCosObj" title=" Creates a type cast of the page label object to a Cos object.">PDPageLabelGetCosObj</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDPageLabel.htm#PDPageLabel" title=" A label used to describe a page."><code>PDPageLabel</code></a> <code>PDPageLabelFromCosObj(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>cosLabel</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>cosLabel</code></span>
+</td><td><span>IN/OUT The Cos object level representation of a page label. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The page label representation of <code>cosLabel</code>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdErrBadBaseObj" title=" The base pages object is missing or invalid."><code>pdErrBadBaseObj</code></a></span>
+</td><td><span>is raised if <code>cosLabel</code> is not a valid page label. </span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDPageLabelGetCosObj"><strong><span style="color:grey;">PDPageLabelGetCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:6841</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a type cast of the page label object to a Cos object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDPageLabel.htm#PDPageLabelFromCosObj" title=" Creates a type cast of the CosObj to a PDPageLabel object.">PDPageLabelFromCosObj</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>PDPageLabelGetCosObj(</code><a href="pdlayer_PDPageLabel.htm#PDPageLabel" title=" A label used to describe a page."><code>PDPageLabel</code></a> <code>pdl</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdl</code></span>
+</td><td><span>IN/OUT A <a href="pdlayer_PDPageLabel.htm#PDPageLabel" title=" A label used to describe a page.">PDPageLabel</a> representation of a page label. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A <a href="coslayer_CosObj.htm#CosObj">CosObj</a> representation of <code>pdl</code> if the page label is valid, <a href="aslayer_General.htm#NULL"><code>NULL</code></a> <a href="coslayer_CosObj.htm#CosObj">CosObj</a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPageLabelGetPrefix"><strong><span style="color:grey;">PDPageLabelGetPrefix</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:6882</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the prefix string for the label. The prefix string is transitory and should be copied immediately. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDPageLabel.htm#PDPageLabelGetStart" title=" Gets the starting number of a given page label."><code>PDPageLabelGetStart</code></a>
+<a href="pdlayer_PDPageLabel.htm#PDPageLabelGetStyle" title=" Returns an ASAtom for the style of the label."><code>PDPageLabelGetStyle</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>const</code> <code>char</code> <code>*</code><code>PDPageLabelGetPrefix(</code><a href="pdlayer_PDPageLabel.htm#PDPageLabel" title=" A label used to describe a page."><code>PDPageLabel</code></a> <code>pgLabel</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>*</code><code>prefixLen</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pgLabel</code></span>
+</td><td><span>The label for the page whose prefix is desired. </span>
+</td></tr>
+<tr><td><span><code>prefixLen</code></span>
+</td><td><span>(Filled by the method) The length, in bytes, of the prefix string. It is zero if the page label is not valid. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The prefix string for the label, or <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if none is specified. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPageLabelGetPrefixASText"><strong><span style="color:grey;">PDPageLabelGetPrefixASText</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:11288</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the prefix string for the label as an <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object. The prefix string is transitory and should be copied immediately. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDPageLabel.htm#PDPageLabelGetPrefix" title=" Returns the prefix string for the label."><code>PDPageLabelGetPrefix</code></a>
+<a href="pdlayer_PDPageLabel.htm#PDPageLabelGetStart" title=" Gets the starting number of a given page label."><code>PDPageLabelGetStart</code></a>
+<a href="pdlayer_PDPageLabel.htm#PDPageLabelGetStyle" title=" Returns an ASAtom for the style of the label."><code>PDPageLabelGetStyle</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPageLabelGetPrefixASText(</code><a href="pdlayer_PDPageLabel.htm#PDPageLabel" title=" A label used to describe a page."><code>PDPageLabel</code></a> <code>pgLabel</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>prefix</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pgLabel</code></span>
+</td><td><span>The label for the page whose prefix is desired. </span>
+</td></tr>
+<tr><td><span><code>prefix</code></span>
+</td><td><span>(Filled by the method) The text object containing the prefix string. The client must pass a valid <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object title. The routine does not allocate it. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPageLabelGetStart"><strong><span style="color:grey;">PDPageLabelGetStart</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:6894</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the starting number of a given page label. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDPageLabel.htm#PDPageLabelGetPrefix" title=" Returns the prefix string for the label."><code>PDPageLabelGetPrefix</code></a>
+<a href="pdlayer_PDPageLabel.htm#PDPageLabelGetStyle" title=" Returns an ASAtom for the style of the label."><code>PDPageLabelGetStyle</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDPageLabelGetStart(</code><a href="pdlayer_PDPageLabel.htm#PDPageLabel" title=" A label used to describe a page."><code>PDPageLabel</code></a> <code>pgLabel</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pgLabel</code></span>
+</td><td><span>The page label for the page whose starting number is desired. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The starting number of the page label; that is, the numeric value of the first page associated with the label. It returns <code>1</code> if the page label is not valid or unknown. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPageLabelGetStyle"><strong><span style="color:grey;">PDPageLabelGetStyle</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:6868</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Returns an <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> for the style of the label.<br/>
+<p>It raises an exception if storage is exhausted or file access fails.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDPageLabel.htm#PDPageLabelGetPrefix" title=" Returns the prefix string for the label."><code>PDPageLabelGetPrefix</code></a>
+<a href="pdlayer_PDPageLabel.htm#PDPageLabelGetStart" title=" Gets the starting number of a given page label."><code>PDPageLabelGetStart</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>PDPageLabelGetStyle(</code><a href="pdlayer_PDPageLabel.htm#PDPageLabel" title=" A label used to describe a page."><code>PDPageLabel</code></a> <code>pgLabel</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pgLabel</code></span>
+</td><td><span>IN/OUT The page label whose style is desired. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>An <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> for the label style. If no style is specified, it returns <a href="aslayer_ASAtom.htm#ASAtomFromString" title=" Gets the ASAtom for the specified string."><code>ASAtomFromString</code></a><code>("</code> <code>None")</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPageLabelIsValid"><strong><span style="color:grey;">PDPageLabelIsValid</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:6815</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Determines whether a page label is valid.<br/>
+<p>A page label is valid if its values correspond to the specification for page label dictionaries. See the description of Page labels in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 12.4.2, page 374.<br/></p>
+
+<p>
+<p>You can find this document on the web store of the International Standards Organization (ISO).<br/>
+<p>It raises an exception if storage is exhausted or file access fails.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDPageLabel.htm#PDPageLabelEqual" title=" Compares two page labels to see if they are equivalent.">PDPageLabelEqual</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDPageLabelIsValid(</code><a href="pdlayer_PDPageLabel.htm#PDPageLabel" title=" A label used to describe a page."><code>PDPageLabel</code></a> <code>pgLabel</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pgLabel</code></span>
+</td><td><span>The page label whose validity is determined. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the label is valid, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPageLabelNew"><strong><span style="color:grey;">PDPageLabelNew</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:6952</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Constructs a new label object in the document with the specified style, prefix, and starting page number. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDDoc.htm#PDDocFindPageNumForLabel" title=" Superseded by PDDocFindPageNumForLabelEx() in Acrobat 6.0."><code>PDDocFindPageNumForLabel</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocGetLabelForPageNum" title=" Superseded by PDDocGetLabelForPageNumEx() in Acrobat 6.0."><code>PDDocGetLabelForPageNum</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocGetPageLabel" title=" Returns the label that is in effect for the given page."><code>PDDocGetPageLabel</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocRemovePageLabel" title=" Removes the page label that is attached to the specified page, effectively merging the specified range with the previous page label sequence."><code>PDDocRemovePageLabel</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocSetPageLabel" title=" Attaches a label to a page."><code>PDDocSetPageLabel</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDPageLabel.htm#PDPageLabel" title=" A label used to describe a page."><code>PDPageLabel</code></a> <code>PDPageLabelNew(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>,</code> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>style</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>prefix</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>prefixLen</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>startAt</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document that contains the new page label. </span>
+</td></tr>
+<tr><td><span><code>style</code></span>
+</td><td><span>The numbering system to use for the numeric portion of each label in this range of pages. The possible values are <code>D</code> for decimal numbers, <code>R</code> for upper-case Roman numbers, <code>r</code> for lower-case Roman numbers, <code>A</code> for upper-case alphabetic numbers, or <code>a</code> for lower-case alphabetic numbers. If it is <code>None</code>, the labels for this range will not have a numeric portion. None is specified by providing <a href="aslayer_ASAtom.htm#ASAtomFromString" title=" Gets the ASAtom for the specified string.">ASAtomFromString</a>("None") as the style parameter. </span>
+</td></tr>
+<tr><td><span><code>prefix</code></span>
+</td><td><span>A string to prefix to the numeric portion of the page label. It may be a <a href="aslayer_General.htm#NULL"><code>NULL</code></a> string. </span>
+</td></tr>
+<tr><td><span><code>prefixLen</code></span>
+</td><td><span>The length in bytes of the prefix string. </span>
+</td></tr>
+<tr><td><span><code>startAt</code></span>
+</td><td><span>The value to use when generating the numeric portion of the first label in this range; it must be greater than or equal to <code>1</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created page label. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdErrBadBaseObj" title=" The base pages object is missing or invalid."><code>pdErrBadBaseObj</code></a></span>
+</td><td><span>is raised if the base pages object is missing or invalid. </span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDPageLabelNewASText"><strong><span style="color:grey;">PDPageLabelNewASText</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:11274</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Constructs a new label object in the document with the specified style, prefix, and starting page number. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDDoc.htm#PDDocFindPageNumForLabel" title=" Superseded by PDDocFindPageNumForLabelEx() in Acrobat 6.0."><code>PDDocFindPageNumForLabel</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocGetLabelForPageNum" title=" Superseded by PDDocGetLabelForPageNumEx() in Acrobat 6.0."><code>PDDocGetLabelForPageNum</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocGetPageLabel" title=" Returns the label that is in effect for the given page."><code>PDDocGetPageLabel</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocRemovePageLabel" title=" Removes the page label that is attached to the specified page, effectively merging the specified range with the previous page label sequence."><code>PDDocRemovePageLabel</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocSetPageLabel" title=" Attaches a label to a page."><code>PDDocSetPageLabel</code></a>
+<a href="pdlayer_PDPageLabel.htm#PDPageLabelNew" title=" Constructs a new label object in the document with the specified style, prefix, and starting page number."><code>PDPageLabelNew</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDPageLabel.htm#PDPageLabel" title=" A label used to describe a page."><code>PDPageLabel</code></a> <code>PDPageLabelNewASText(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>,</code> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>style</code><code>,</code> <code>const</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>prefix</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>startAt</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document that contains the new page label. </span>
+</td></tr>
+<tr><td><span><code>style</code></span>
+</td><td><div><span>The numbering system to use for the numeric portion of each label in this range of pages. The possible values are: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><code>D</code></span>
+</td><td><span>Decimal numbers.</span>
+</td></tr>
+<tr><td><span><code>R</code></span>
+</td><td><span>Upper-case Roman numbers.</span>
+</td></tr>
+<tr><td><span><code>r</code></span>
+</td><td><span>Lower-case Roman numbers.</span>
+</td></tr>
+<tr><td><span><code>A</code></span>
+</td><td><span>Upper-case alphabetic numbers.</span>
+</td></tr>
+<tr><td><span><code>a</code></span>
+</td><td><span>Lower-case alphabetic numbers.</span>
+</td></tr></table>
+
+<p>
+<p>If it is <code>None</code>, the labels for this range will not have a numeric portion. None is specified by providing <a href="aslayer_ASAtom.htm#ASAtomFromString" title=" Gets the ASAtom for the specified string.">ASAtomFromString</a>("None") as the style parameter.<br/></p>
+</div>
+</td></tr>
+<tr><td><span><code>prefix</code></span>
+</td><td><span>The text object containing the string to prefix to the numeric portion of the page label. </span>
+</td></tr>
+<tr><td><span><code>startAt</code></span>
+</td><td><span>The value to use when generating the numeric portion of the first label in this range; it must be greater than or equal to <code>1</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created page label. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdErrBadBaseObj" title=" The base pages object is missing or invalid."><code>pdErrBadBaseObj</code></a></span>
+</td><td><span>is raised if the base pages object is missing or invalid. </span>
+</td></tr></table>
+</div>
+</section>
+</section>
+
+</div>
+</body></html>

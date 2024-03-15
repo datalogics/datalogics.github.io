@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDF Edit Layer: JPXPalette</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDF Edit Layer: JPXPalette</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>JPXPalette Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#JPXPalette">JPXPalette</a></dt><dd> -  A reference to a JPXPalette.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="JPXPalette"><strong><span style="color:grey;">JPXPalette</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:427</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A reference to a <a href="pdelayer_JPXPalette.htm#JPXPalette" title=" A reference to a JPXPalette.">JPXPalette</a>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_JPXPalette</code> <code>*</code><code>JPXPalette</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEImageJPX.htm#PDEImageJPXAcquirePalette" title=" Acquires the JPXPalette from the JPX image object This object is acquired and must be released using PDERelease() when it is no longer in use."><code>PDEImageJPXAcquirePalette</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_JPXPalette.htm#JPXPaletteGetBitDepths" title=" Returns the bit depths of the color values represented in the palette."><code>JPXPaletteGetBitDepths</code></a></td><td><a href="pdelayer_JPXPalette.htm#JPXPaletteGetNumComponents" title=" Returns the number of color components represented by the palette."><code>JPXPaletteGetNumComponents</code></a></td></tr>
+<tr><td><a href="pdelayer_JPXPalette.htm#JPXPaletteGetNumEntries" title=" Returns the number of palette entries."><code>JPXPaletteGetNumEntries</code></a></td><td><a href="pdelayer_JPXPalette.htm#JPXPaletteGetTable" title=" Returns the palette data as a read only non-seekable ASStm."><code>JPXPaletteGetTable</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>JPXPalette Functions</h2></header>
+<nav><dl>
+<dt><a href="#JPXPaletteGetBitDepths">JPXPaletteGetBitDepths</a></dt><dd> -  Returns the bit depths of the color values represented in the palette.</dd>
+<dt><a href="#JPXPaletteGetNumComponents">JPXPaletteGetNumComponents</a></dt><dd> -  Returns the number of color components represented by the palette.</dd>
+<dt><a href="#JPXPaletteGetNumEntries">JPXPaletteGetNumEntries</a></dt><dd> -  Returns the number of palette entries.</dd>
+<dt><a href="#JPXPaletteGetTable">JPXPaletteGetTable</a></dt><dd> -  Returns the palette data as a read only non-seekable ASStm.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="JPXPaletteGetBitDepths"><strong><span style="color:grey;">JPXPaletteGetBitDepths</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2748</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the bit depths of the color values represented in the palette. The length of the array must be at least the number of components. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEImageJPX.htm#PDEImageJPXAcquirePalette" title=" Acquires the JPXPalette from the JPX image object This object is acquired and must be released using PDERelease() when it is no longer in use.">PDEImageJPXAcquirePalette</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>JPXPaletteGetBitDepths(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_JPXPalette.htm#JPXPalette" title=" A reference to a JPXPalette."><code>JPXPalette</code></a> <code>jpxPalette</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>*</code><code>bitDepths</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>jpxPalette</code></span>
+</td><td><span>IN/OUT A JPX-encoded image object. </span>
+</td></tr>
+<tr><td><span><code>bitDepths</code></span>
+</td><td><span>IN/OUT (Filled by the method) An array of bit depths for each component. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="JPXPaletteGetNumComponents"><strong><span style="color:grey;">JPXPaletteGetNumComponents</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2759</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the number of color components represented by the palette. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEImageJPX.htm#PDEImageJPXAcquirePalette" title=" Acquires the JPXPalette from the JPX image object This object is acquired and must be released using PDERelease() when it is no longer in use.">PDEImageJPXAcquirePalette</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>JPXPaletteGetNumComponents(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_JPXPalette.htm#JPXPalette" title=" A reference to a JPXPalette."><code>JPXPalette</code></a> <code>jpxPalette</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>jpxPalette</code></span>
+</td><td><span>IN/OUT A JPX encoded image object. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of components of the JPX image represented by the palette. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="JPXPaletteGetNumEntries"><strong><span style="color:grey;">JPXPaletteGetNumEntries</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2736</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the number of palette entries. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEImageJPX.htm#PDEImageJPXAcquirePalette" title=" Acquires the JPXPalette from the JPX image object This object is acquired and must be released using PDERelease() when it is no longer in use.">PDEImageJPXAcquirePalette</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>JPXPaletteGetNumEntries(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_JPXPalette.htm#JPXPalette" title=" A reference to a JPXPalette."><code>JPXPalette</code></a> <code>jpxPalette</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>jpxPalette</code></span>
+</td><td><span>IN/OUT A JPX encoded image object. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of palette entries. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="JPXPaletteGetTable"><strong><span style="color:grey;">JPXPaletteGetTable</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2775</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the palette data as a read only non-seekable <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a>. The returned <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a> should be read with <a href="aslayer_ASStm.htm#ASStmRead" title=" Reads data from stm into memory.">ASStmRead</a>(). Each component entry in the palette is represented by the number of bytes needed to contain the bit depth for that component. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEImageJPX.htm#PDEImageJPXAcquirePalette" title=" Acquires the JPXPalette from the JPX image object This object is acquired and must be released using PDERelease() when it is no longer in use."><code>PDEImageJPXAcquirePalette</code></a>
+<a href="pdelayer_PDEImageJPX.htm#PDEImageJPXHasPalette" title=" Returns true if the JPX encoded image has a JPX palette"><code>PDEImageJPXHasPalette</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>JPXPaletteGetTable(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_JPXPalette.htm#JPXPalette" title=" A reference to a JPXPalette."><code>JPXPalette</code></a> <code>jpxPalette</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>*</code><code>paletteLength</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>jpxPalette</code></span>
+</td><td><span>IN/OUT A JPX encoded image object. </span>
+</td></tr>
+<tr><td><span><code>paletteLength</code></span>
+</td><td><span>IN/OUT (Filled by the method) The length of the palette data. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A stream for the palette data. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+</section>
+
+</div>
+</body></html>

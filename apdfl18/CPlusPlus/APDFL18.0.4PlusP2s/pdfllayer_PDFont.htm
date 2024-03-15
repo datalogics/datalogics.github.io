@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDFL Library Layer: PDFont</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDFL Library Layer: PDFont</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>PDFont Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDFontStyle">PDFontStyle</a></dt><dd> -  Specifies a synthetic font style.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDFontStyle"><strong><span style="color:grey;">PDFontStyle</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:210</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Specifies a synthetic font style. 
+<p>For value options see <a href="pdfllayer_General.htm#PDOptions"><code>PDOptions.</code></a> </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>PDFontStyle</code><code>;</code> </code>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_PDFont.htm#PDPrintFont"><code>PDPrintFont</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>PDFont Structures</h2></header>
+<nav><dl>
+<dt><a href="#PDPrintFont">PDPrintFont</a></dt><dd> - </dd>
+<dt><a href="#PDPrintFontArray">PDPrintFontArray</a></dt><dd> -  An array of font pointers for use in PDFontPSGetComponentFontList.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDPrintFont"><strong><span style="color:grey;">PDPrintFont</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:221</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct PDPrintFont {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><code>const</code> <code>char</code> <code>*</code><code>name</code><code>;</code> </div>
+</td><td><span>The font name. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>const</code> <code>char</code> <code>*</code><code>encoding</code><code>;</code> </div>
+</td><td><span>The font encoding. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>const</code> <code>char</code> <code>*</code><code>cidFontName</code><code>;</code> </div>
+</td><td><span>CID font name. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>style</code><code>;</code> </div>
+</td><td><span>Gothic or Mincho. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdfllayer_PDFont.htm#PDFontStyle" title=" Specifies a synthetic font style."><code>PDFontStyle</code></a> <code>syntheticStyle</code><code>;</code> </div>
+</td><td><span>Roman, Italic, Bold, or BoldItalic. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>used</code><code>;</code> </div>
+</td><td><span>Set to <a href="aslayer_General.htm#true"><code>true</code></a> if glyphs from this component are used. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>emitted</code><code>;</code> </div>
+</td><td><span>Set to <a href="aslayer_General.htm#true"><code>true</code></a> if this component is emmitted. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>baseLineAdj</code><code>;</code> </div>
+</td><td><span>Baseline adjustment. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>;</code> </div>
+</td><td><span>Flags bits. </span>
+</td></tr>
+<tr><td><code id="PDPrintFontRec"><code>}</code> <a href="pdfllayer_PDFont.htm#PDPrintFont"><code>PDPrintFontRec</code></a><code>,</code> <code>*</code><a href="pdfllayer_PDFont.htm#PDPrintFont"><code>PDPrintFontP</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_PDFont.htm#PDPrintFontArray" title=" An array of font pointers for use in PDFontPSGetComponentFontList."><code>PDPrintFontArray</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDPrintFontArray"><strong><span style="color:grey;">PDPrintFontArray</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:257</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>An array of font pointers for use in <a href="pdfllayer_PDFont.htm#PDFontPSGetComponentFontList" title=" Get the component font list.">PDFontPSGetComponentFontList</a>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct PDPrintFontArray {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>count</code><code>;</code> </div>
+</td><td><span>The number of fonts in <code>arr</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>usesDisplayCTFont</code><code>;</code> </div>
+</td><td><span>Whether to use the Display CT Font. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdfllayer_PDFont.htm#PDPrintFont"><code>PDPrintFontP</code></a> <code>arr</code><code>;</code> </div>
+</td><td><span>The font array. </span>
+</td></tr>
+<tr><td><code><code>}</code> <a href="pdfllayer_PDFont.htm#PDPrintFontArray" title=" An array of font pointers for use in PDFontPSGetComponentFontList."><code>PDPrintFontArray</code></a><code>,</code> <code>*</code><a href="pdfllayer_PDFont.htm#PDPrintFontArray" title=" An array of font pointers for use in PDFontPSGetComponentFontList."><code>PDPrintFontArrayP</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_PDFont.htm#PDFontPSGetComponentFontList" title=" Get the component font list."><code>PDFontPSGetComponentFontList</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDFont Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDFontPSEmitGlyphsIncr">PDFontPSEmitGlyphsIncr</a></dt><dd> -  Emit glyphs incrementally.</dd>
+<dt><a href="#PDFontPSFlushIncrGlyphList">PDFontPSFlushIncrGlyphList</a></dt><dd> -  Flush the incremental glyphs list from a stream.</dd>
+<dt><a href="#PDFontPSGetComponentFontList">PDFontPSGetComponentFontList</a></dt><dd> -  Get the component font list.</dd>
+<dt><a href="#PDFontStreamPS">PDFontStreamPS</a></dt><dd> -  Emits a font into a specified stream.</dd>
+<dt><a href="#PDFontWasExtracted">PDFontWasExtracted</a></dt><dd> -  Tests whether the specified font is embedded in the PDF file and has already been extracted to display or print the file.</dd>
+<dt><a href="#PDFontWasFauxed">PDFontWasFauxed</a></dt><dd> -  Tests whether the specified font is embedded in the PDF file or is installed in the user's system.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDFontPSEmitGlyphsIncr"><strong><span style="color:grey;">PDFontPSEmitGlyphsIncr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:386</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Emit glyphs incrementally. This is the default <code>EmitGlyphsIncr</code> callback procedure for the <a href="pdfllayer_PDFLPrint.htm#_t_PDPrintClient" title=" A data structure used by PDDocPrintPages().">PDPrintClient</a> structure. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDDoc.htm#PDDocPrintPages" title=" Prints a range of pages from a document, controlled by a structure of data and callbacks."><code>PDDocPrintPages</code></a>
+<a href="pdfllayer_PDFont.htm#PDFontPSFlushIncrGlyphList" title=" Flush the incremental glyphs list from a stream."><code>PDFontPSFlushIncrGlyphList</code></a>
+<a href="pdfllayer_PDFont.htm#PDFontPSGetComponentFontList" title=" Get the component font list."><code>PDFontPSGetComponentFontList</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDFontPSEmitGlyphsIncr(</code><a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>stm</code><code>,</code> <a href="pdlayer_PDFont.htm#PDFont" title=" A font that is used to draw text on a page."><code>PDFont</code></a> <code>fontP</code><code>,</code> <a href="pdfllayer_PDFLPrint.htm#PDPrintStr" title=" A structure for controlling the printing of glyphs."><code>PDPrintStrP</code></a> <code>srcStr</code><code>,</code> <a href="pdfllayer_PDFLPrint.htm#PDPrintStr" title=" A structure for controlling the printing of glyphs."><code>PDPrintStrP</code></a> <code>dstStr</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>*</code><code>srcBytesUsedP</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>*</code><code>dstBytesUsedP</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>*</code><code>glyphCount</code><code>,</code> <a href="aslayer_General.htm#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>*</code><code>fontIndexP</code><code>,</code> <a href="pdfllayer_PDFLPrint.htm#_t_PDPrintClient" title=" A data structure used by PDDocPrintPages()."><code>PDPrintClient</code></a> <code>printClient</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>stm</code></span>
+</td><td><span>The stream. </span>
+</td></tr>
+<tr><td><span><code>fontP</code></span>
+</td><td><span>The font. </span>
+</td></tr>
+<tr><td><span><code>srcStr</code></span>
+</td><td><span>The source string. </span>
+</td></tr>
+<tr><td><span><code>dstStr</code></span>
+</td><td><span>The destination string. </span>
+</td></tr>
+<tr><td><span><code>srcBytesUsedP</code></span>
+</td><td><span>The source bytes used. </span>
+</td></tr>
+<tr><td><span><code>dstBytesUsedP</code></span>
+</td><td><span>The destination bytes used. </span>
+</td></tr>
+<tr><td><span><code>glyphCount</code></span>
+</td><td><span>The number of glyphs. </span>
+</td></tr>
+<tr><td><span><code>fontIndexP</code></span>
+</td><td><span>The font index. </span>
+</td></tr>
+<tr><td><span><code>printClient</code></span>
+</td><td><span>The control structure. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if successful, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDFontPSFlushIncrGlyphList"><strong><span style="color:grey;">PDFontPSFlushIncrGlyphList</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:408</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Flush the incremental glyphs list from a stream. This is the default <code>FlushIncrGlyphList</code> callback procedure for the <a href="pdfllayer_PDFLPrint.htm#_t_PDPrintClient" title=" A data structure used by PDDocPrintPages().">PDPrintClient</a> structure. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDFont.htm#PDFontPSEmitGlyphsIncr" title=" Emit glyphs incrementally."><code>PDFontPSEmitGlyphsIncr</code></a>
+<a href="pdfllayer_PDFont.htm#PDFontPSGetComponentFontList" title=" Get the component font list."><code>PDFontPSGetComponentFontList</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDFontPSFlushIncrGlyphList(</code><a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>stm</code><code>,</code> <a href="pdfllayer_PDFLPrint.htm#_t_PDPrintClient" title=" A data structure used by PDDocPrintPages()."><code>PDPrintClient</code></a> <code>printClient</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>stm</code></span>
+</td><td><span>The stream. </span>
+</td></tr>
+<tr><td><span><code>printClient</code></span>
+</td><td><span>The control structure. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDFontPSGetComponentFontList"><strong><span style="color:grey;">PDFontPSGetComponentFontList</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:398</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Get the component font list. This is the default <code>GetComponentFontList</code> callback procedure for the <a href="pdfllayer_PDFLPrint.htm#_t_PDPrintClient" title=" A data structure used by PDDocPrintPages().">PDPrintClient</a> structure. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDFont.htm#PDFontPSEmitGlyphsIncr" title=" Emit glyphs incrementally."><code>PDFontPSEmitGlyphsIncr</code></a>
+<a href="pdfllayer_PDFont.htm#PDFontPSFlushIncrGlyphList" title=" Flush the incremental glyphs list from a stream."><code>PDFontPSFlushIncrGlyphList</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDFontPSGetComponentFontList(</code><a href="pdlayer_PDFont.htm#PDFont" title=" A font that is used to draw text on a page."><code>PDFont</code></a> <code>fontP</code><code>,</code> <a href="pdfllayer_PDFont.htm#PDPrintFontArray" title=" An array of font pointers for use in PDFontPSGetComponentFontList."><code>PDPrintFontArrayP</code></a> <code>pdFontArr</code><code>,</code> <a href="pdfllayer_PDFLPrint.htm#_t_PDPrintClient" title=" A data structure used by PDDocPrintPages()."><code>PDPrintClient</code></a> <code>printClient</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fontP</code></span>
+</td><td><span>The font. </span>
+</td></tr>
+<tr><td><span><code>pdFontArr</code></span>
+</td><td><span>The font array. </span>
+</td></tr>
+<tr><td><span><code>printClient</code></span>
+</td><td><span>The control structure. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDFontStreamPS"><strong><span style="color:grey;">PDFontStreamPS</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:242</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Emits a font into a specified stream. The font is in a format suitable for downloading to a PostScript VM. For example, a TrueType font is converted into a Type 1 or Type 42 font.<br/>
+<p>It is meant for use in the <code>EmitFont</code> callback for <a href="pdfllayer_PDDoc.htm#PDDocPrintPages" title=" Prints a range of pages from a document, controlled by a structure of data and callbacks.">PDDocPrintPages</a>().<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDDoc.htm#PDDocPrintPages" title=" Prints a range of pages from a document, controlled by a structure of data and callbacks."><code>PDDocPrintPages</code></a>
+<a href="pdfllayer_PDFontDownloadContext.htm#PDFontDownloadContextCreate" title=" Creates a font download context object."><code>PDFontDownloadContextCreate</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDFontStreamPS(</code><a href="pdlayer_PDFont.htm#PDFont" title=" A font that is used to draw text on a page."><code>PDFont</code></a> <code>fontP</code><code>,</code> <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>stm</code><code>,</code> <a href="pdfllayer_PDFontDownloadContext.htm#PDFontDownloadContext" title=" Maintains information about the current print job and what fonts have been downloaded."><code>PDFontDownloadContext</code></a> <code>context</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fontP</code></span>
+</td><td><span>The font to emit. </span>
+</td></tr>
+<tr><td><span><code>stm</code></span>
+</td><td><span>The <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a> into which the font is emitted. </span>
+</td></tr>
+<tr><td><span><code>context</code></span>
+</td><td><span>A context created by <a href="pdfllayer_PDFontDownloadContext.htm#PDFontDownloadContextCreate" title=" Creates a font download context object.">PDFontDownloadContextCreate</a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if successful, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDFontWasExtracted"><strong><span style="color:grey;">PDFontWasExtracted</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:284</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Tests whether the specified font is embedded in the PDF file and has already been extracted to display or print the file. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDFontDownloadContext.htm#PDFontDownloadContextCreate" title=" Creates a font download context object."><code>PDFontDownloadContextCreate</code></a>
+<a href="pdfllayer_PDFont.htm#PDFontWasFauxed" title=" Tests whether the specified font is embedded in the PDF file or is installed in the user's system."><code>PDFontWasFauxed</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDFontWasExtracted(</code><a href="pdlayer_PDFont.htm#PDFont" title=" A font that is used to draw text on a page."><code>PDFont</code></a> <code>fontP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fontP</code></span>
+</td><td><span>The font to test. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the font is embedded in the PDF file and has been extracted, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDFontWasFauxed"><strong><span style="color:grey;">PDFontWasFauxed</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:299</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Tests whether the specified font is embedded in the PDF file or is installed in the user's system. If this is the case, the correct font can be used for display and printing.<br/>
+<p>If the font is not embedded or installed, the Acrobat viewer has used a Multiple Master font to create a substitute font, called a <em>faux</em> font.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDFont.htm#PDFontWasExtracted" title=" Tests whether the specified font is embedded in the PDF file and has already been extracted to display or print the file.">PDFontWasExtracted</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDFontWasFauxed(</code><a href="pdlayer_PDFont.htm#PDFont" title=" A font that is used to draw text on a page."><code>PDFont</code></a> <code>font</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>font</code></span>
+</td><td><span>The font to test. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the font has been substituted, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+</section>
+
+</div>
+</body></html>

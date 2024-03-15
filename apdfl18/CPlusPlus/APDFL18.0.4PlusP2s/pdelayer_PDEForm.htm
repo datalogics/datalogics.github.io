@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDF Edit Layer: PDEForm</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDF Edit Layer: PDEForm</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>PDEForm Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDEForm">PDEForm</a></dt><dd> -  A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEForm"><strong><span style="color:grey;">PDEForm</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:202</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form). The context associated with this instance includes the actual <a href="coslayer_CosObj.htm#CosObj">CosObj</a> stream that represents the XObject Form and the initial conditions of the graphics state. The latter consists of the transformation matrix, initial color values, and so forth. It is possible to have two <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> objects that refer to the same XObject Form. The forms will exist at different places on the same page, depending on the transformation matrix. They may also have different colors or line stroking parameters. In the case of a transparency group, the opacity is specified in the <code>gstate</code>. Within a <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a>, each <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> has its own <code>gstate</code> (or is a container, place, or group object). These <code>gstates</code> are independent of the parent <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> <code>gstate</code>. <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> elements within the <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> may have their own opacity. A <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage.">PDEContent</a> may be obtained from a <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> to edit the form's display list. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDEForm</code> <code>*</code><code>PDEForm</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEForm.htm#PDEFormCreateClone" title=" Creates a new form from an existing form object."><code>PDEFormCreateClone</code></a></td><td><a href="pdelayer_PDEForm.htm#PDEFormCreateFromCosObj" title=" Superseded by PDEFormCreateFromCosObjEx() in Acrobat 10.0."><code>PDEFormCreateFromCosObj</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEForm.htm#PDEFormCreateFromCosObjEx" title=" Creates a new form from an existing Cos object."><code>PDEFormCreateFromCosObjEx</code></a></td><td><a href="pdelayer_PDESoftMask.htm#PDESoftMaskAcquireForm" title=" Superseded by PDESoftMaskAcquireFormEx() in Acrobat 10.0."><code>PDESoftMaskAcquireForm</code></a></td></tr>
+<tr><td><a href="pdelayer_PDESoftMask.htm#PDESoftMaskAcquireFormEx" title=" Supersedes PDESoftMaskAcquireForm() in Acrobat 10.0."><code>PDESoftMaskAcquireFormEx</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEForm.htm#PDEFormAcquireXGroup" title=" Acquires the transparency group dictionary of the XObject form."><code>PDEFormAcquireXGroup</code></a></td><td><a href="dlextras_PDEForm.htm#PDEFormCalcBBox" title=" This function allows the BBox stored in a form's XObject to be recalculated after its contents have been modified."><code>PDEFormCalcBBox</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEForm.htm#PDEFormCreateClone" title=" Creates a new form from an existing form object."><code>PDEFormCreateClone</code></a></td><td><a href="pdelayer_PDEForm.htm#PDEFormGetBBox" title=" Gets the bounding box for a PDEform."><code>PDEFormGetBBox</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEForm.htm#PDEFormGetContent" title=" Gets a PDEContent object for a form."><code>PDEFormGetContent</code></a></td><td><a href="pdelayer_PDEForm.htm#PDEFormGetContentToCosObjFlags" title=" Retrieves the PDEContentToCosObjFlags for this form."><code>PDEFormGetContentToCosObjFlags</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEForm.htm#PDEFormGetCosObj" title=" Gets a Cos object for a form."><code>PDEFormGetCosObj</code></a></td><td><a href="dlextras_PDEForm.htm#PDEFormGetFont" title=" This retrieves the PDEFont referenced in a PDEForm."><code>PDEFormGetFont</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEForm.htm#PDEFormGetLeading" title=" Gets the Leading set in parent of PDEForm element."><code>PDEFormGetLeading</code></a></td><td><a href="pdelayer_PDEForm.htm#PDEFormGetMatrix" title=" Superseded by PDEFormGetMatrixEx() in Acrobat 10.0."><code>PDEFormGetMatrix</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEForm.htm#PDEFormGetMatrixEx" title=" Gets the matrix for a PDEform."><code>PDEFormGetMatrixEx</code></a></td><td><a href="dlextras_PDEForm.htm#PDEFormGetName" title=" Reserved for Internal Use."><code>PDEFormGetName</code></a></td></tr>
+<tr><td><a href="dlextras_PDEForm.htm#PDEFormGetTextState" title=" Gets the PDETextState for a form."><code>PDEFormGetTextState</code></a></td><td><a href="pdelayer_PDEForm.htm#PDEFormHasXGroup" title=" Determines whether the XObject form has a Transparency XGroup"><code>PDEFormHasXGroup</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEForm.htm#PDEFormIsLeadingSet" title=" Returns whether text leading is set in parent of PDEForm element or not."><code>PDEFormIsLeadingSet</code></a></td><td><a href="pdelayer_PDEForm.htm#PDEFormSetContent" title=" Sets the underlying CosStream of the form using the specified content object."><code>PDEFormSetContent</code></a></td></tr>
+<tr><td><a href="dlextras_PDEForm.htm#PDEFormSetContentEx" title=" Reserved for Internal Use."><code>PDEFormSetContentEx</code></a></td><td><a href="pdelayer_PDEForm.htm#PDEFormSetContentToCosObjFlags" title=" Sets the PDEContentToCosObjFlags for this form."><code>PDEFormSetContentToCosObjFlags</code></a></td></tr>
+<tr><td><a href="dlextras_PDEForm.htm#PDEFormSetFont" title=" This sets the PDEFont referenced in a PDEForm."><code>PDEFormSetFont</code></a></td><td><a href="pdelayer_PDEForm.htm#PDEFormSetLeading" title=" Sets the Leading in parent of PDEForm element before form emit."><code>PDEFormSetLeading</code></a></td></tr>
+<tr><td><a href="dlextras_PDEForm.htm#PDEFormSetTextState" title=" Sets the PDETextState for a form."><code>PDEFormSetTextState</code></a></td><td><a href="pdelayer_PDEForm.htm#PDEFormSetXGroup" title=" Sets the transparency group dictionary of the form XObject."><code>PDEFormSetXGroup</code></a></td></tr>
+<tr><td><a href="pdelayer_PDESoftMask.htm#PDESoftMaskCreate" title=" Creates a new soft mask object."><code>PDESoftMaskCreate</code></a></td><td><a href="pdelayer_PDESoftMask.htm#PDESoftMaskSetXGroup" title=" Sets the PDEForm that defines the soft mask."><code>PDESoftMaskSetXGroup</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDEForm Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDEFormAcquireXGroup">PDEFormAcquireXGroup</a></dt><dd> -  Acquires the transparency group dictionary of the XObject form.</dd>
+<dt><a href="#PDEFormCreateClone">PDEFormCreateClone</a></dt><dd> -  Creates a new form from an existing form object.</dd>
+<dt><a href="#PDEFormCreateFromCosObj">PDEFormCreateFromCosObj</a></dt><dd> -  Superseded by PDEFormCreateFromCosObjEx() in Acrobat 10.0.</dd>
+<dt><a href="#PDEFormCreateFromCosObjEx">PDEFormCreateFromCosObjEx</a></dt><dd> -  Creates a new form from an existing Cos object.</dd>
+<dt><a href="#PDEFormGetBBox">PDEFormGetBBox</a></dt><dd> -  Gets the bounding box for a PDEform.</dd>
+<dt><a href="#PDEFormGetContent">PDEFormGetContent</a></dt><dd> -  Gets a PDEContent object for a form.</dd>
+<dt><a href="#PDEFormGetContentToCosObjFlags">PDEFormGetContentToCosObjFlags</a></dt><dd> -  Retrieves the PDEContentToCosObjFlags for this form.</dd>
+<dt><a href="#PDEFormGetCosObj">PDEFormGetCosObj</a></dt><dd> -  Gets a Cos object for a form.</dd>
+<dt><a href="#PDEFormGetLeading">PDEFormGetLeading</a></dt><dd> -  Gets the Leading set in parent of PDEForm element.</dd>
+<dt><a href="#PDEFormGetMatrix">PDEFormGetMatrix</a></dt><dd> -  Superseded by PDEFormGetMatrixEx() in Acrobat 10.0.</dd>
+<dt><a href="#PDEFormGetMatrixEx">PDEFormGetMatrixEx</a></dt><dd> -  Gets the matrix for a PDEform.</dd>
+<dt><a href="#PDEFormHasXGroup">PDEFormHasXGroup</a></dt><dd> -  Determines whether the XObject form has a Transparency XGroup</dd>
+<dt><a href="#PDEFormIsLeadingSet">PDEFormIsLeadingSet</a></dt><dd> -  Returns whether text leading is set in parent of PDEForm element or not.</dd>
+<dt><a href="#PDEFormSetContent">PDEFormSetContent</a></dt><dd> -  Sets the underlying CosStream of the form using the specified content object.</dd>
+<dt><a href="#PDEFormSetContentToCosObjFlags">PDEFormSetContentToCosObjFlags</a></dt><dd> -  Sets the PDEContentToCosObjFlags for this form.</dd>
+<dt><a href="#PDEFormSetLeading">PDEFormSetLeading</a></dt><dd> -  Sets the Leading in parent of PDEForm element before form emit.</dd>
+<dt><a href="#PDEFormSetXGroup">PDEFormSetXGroup</a></dt><dd> -  Sets the transparency group dictionary of the form XObject.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEFormAcquireXGroup"><strong><span style="color:grey;">PDEFormAcquireXGroup</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1923</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Acquires the transparency group dictionary of the XObject form.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the <a href="pdelayer_PDEXGroup.htm#PDEXGroup" title=" A transparency (XGroup) resource.">PDEXGroup</a> when finished with it.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEXGroup.htm#PDEXGroup" title=" A transparency (XGroup) resource."><code>PDEXGroup</code></a> <code>PDEFormAcquireXGroup(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>pdeForm</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeForm</code></span>
+</td><td><span>IN/OUT The from. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The transparency group object. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormCreateClone"><strong><span style="color:grey;">PDEFormCreateClone</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2465</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a new form from an existing form object. Creates a copy of the <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a>, including the underlying <a href="coslayer_General.htm#CosStream" title=" A stream object.">CosStream</a>.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEForm.htm#PDEFormCreateFromCosObj" title=" Superseded by PDEFormCreateFromCosObjEx() in Acrobat 10.0.">PDEFormCreateFromCosObj</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>PDEFormCreateClone(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>form</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>form</code></span>
+</td><td><span>The form object from which a new <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> is created. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created form object. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormCreateFromCosObj"><strong><span style="color:grey;">PDEFormCreateFromCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:716</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Superseded by <a href="pdelayer_PDEForm.htm#PDEFormCreateFromCosObjEx" title=" Creates a new form from an existing Cos object.">PDEFormCreateFromCosObjEx</a>() in Acrobat 10.0. Creates a new form from an existing Cos object.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned form object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEForm.htm#PDEFormCreateClone" title=" Creates a new form from an existing form object."><code>PDEFormCreateClone</code></a>
+<a href="pdelayer_PDEForm.htm#PDEFormCreateFromCosObjEx" title=" Creates a new form from an existing Cos object."><code>PDEFormCreateFromCosObjEx</code></a>
+<a href="pdelayer_PDEForm.htm#PDEFormGetCosObj" title=" Gets a Cos object for a form."><code>PDEFormGetCosObj</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>PDEFormCreateFromCosObj(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>const</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>xObjectP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>const</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>resourcesP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>xObjectP</code></span>
+</td><td><span>The Cos object from which a <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> is created. </span>
+</td></tr>
+<tr><td><span><code>resourcesP</code></span>
+</td><td><span>The <code>xObjectP</code> parameter's Resources dictionary. If you do not pass in a Resource object, subsequent calls to <a href="pdlayer_PDPage.htm#PDPageAcquirePDEContent" title=" Creates a PDEContent from the PDPage object's contents and resources.">PDPageAcquirePDEContent</a>() will fail (after the file is saved). </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>A pointer to an <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> that holds the transformation matrix to use for the form. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created form object. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormCreateFromCosObjEx"><strong><span style="color:grey;">PDEFormCreateFromCosObjEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:3518</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a new form from an existing Cos object. Supersedes <a href="pdelayer_PDEForm.htm#PDEFormCreateFromCosObj" title=" Superseded by PDEFormCreateFromCosObjEx() in Acrobat 10.0.">PDEFormCreateFromCosObj</a>() in Acrobat 10.0.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned form object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEForm.htm#PDEFormCreateClone" title=" Creates a new form from an existing form object."><code>PDEFormCreateClone</code></a>
+<a href="pdelayer_PDEForm.htm#PDEFormCreateFromCosObj" title=" Superseded by PDEFormCreateFromCosObjEx() in Acrobat 10.0."><code>PDEFormCreateFromCosObj</code></a>
+<a href="pdelayer_PDEForm.htm#PDEFormGetCosObj" title=" Gets a Cos object for a form."><code>PDEFormGetCosObj</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>PDEFormCreateFromCosObjEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>const</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>xObjectP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>const</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>resourcesP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers."><code>ASDoubleMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>xObjectP</code></span>
+</td><td><span>The Cos object from which a <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> is created. </span>
+</td></tr>
+<tr><td><span><code>resourcesP</code></span>
+</td><td><span>The <code>xObjectP</code> parameter's Resources dictionary. If you do not pass in a Resource object, subsequent calls to <a href="pdlayer_PDPage.htm#PDPageAcquirePDEContent" title=" Creates a PDEContent from the PDPage object's contents and resources.">PDPageAcquirePDEContent</a>() will fail (after the file is saved). </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>A pointer to an <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers.">ASDoubleMatrix</a> that holds the transformation matrix to use for the form. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created form object. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormGetBBox"><strong><span style="color:grey;">PDEFormGetBBox</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2656</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the bounding box for a PDEform. The result is the concatenation of the CTM and the Cos level form matrix applied on cos level bounding box. The returned bounding box is guaranteed to encompass the <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a>, but is not guaranteed to be the smallest box that could contain the form object. Note: For other elements, <a href="pdelayer_PDEElement.htm#PDEElementGetBBox" title=" Gets the bounding box for an element.">PDEElementGetBBox</a>() would return the correct bounding box values. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEElement.htm#PDEElementGetBBox" title=" Gets the bounding box for an element."><code>PDEElementGetBBox</code></a>
+<a href="pdelayer_PDEForm.htm#PDEFormGetMatrix" title=" Superseded by PDEFormGetMatrixEx() in Acrobat 10.0."><code>PDEFormGetMatrix</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFormGetBBox(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>form</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRectP</code></a> <code>bboxP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>form</code></span>
+</td><td><span>The <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> for which the bounding box is required. </span>
+</td></tr>
+<tr><td><span><code>bboxP</code></span>
+</td><td><span>The resulting bounding box. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormGetContent"><strong><span style="color:grey;">PDEFormGetContent</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:730</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets a <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage.">PDEContent</a> object for a form. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> Unlike other <code>GetContent</code> methods, this method does increment the reference count of the returned <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage.">PDEContent</a>. Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage.">PDEContent</a> object when finished with it. </p>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage."><code>PDEContent</code></a> <code>PDEFormGetContent(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>form</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>form</code></span>
+</td><td><span>The form whose content is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The content for <code>form</code>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#peErrPStackUnderflow" title=" PDFEdit parse stack underflow while reading object."><code>peErrPStackUnderflow</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormGetContentToCosObjFlags"><strong><span style="color:grey;">PDEFormGetContentToCosObjFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2867</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Retrieves the <a href="pdelayer_PDEContent.htm#PDEContentToCosObjFlags" title=" A bit field for the PDEContentToCosObj() method, indicating the type of object to create and how it is created."><code>PDEContentToCosObjFlags</code></a> for this form. The flags were previously set by <a href="pdelayer_PDEForm.htm#PDEFormSetContentToCosObjFlags" title=" Sets the PDEContentToCosObjFlags for this form."><code>PDEFormSetContentToCosObjFlags</code></a><code>()</code>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>PDEFormGetContentToCosObjFlags(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>form</code><code>);</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormGetCosObj"><strong><span style="color:grey;">PDEFormGetCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:970</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets a Cos object for a form. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEForm.htm#PDEFormCreateFromCosObj" title=" Superseded by PDEFormCreateFromCosObjEx() in Acrobat 10.0.">PDEFormCreateFromCosObj</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFormGetCosObj(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>form</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>cosObjP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>form</code></span>
+</td><td><span>IN/OUT The form whose Cos object is obtained. </span>
+</td></tr>
+<tr><td><span><code>cosObjP</code></span>
+</td><td><span>IN/OUT (Filled by the method) The Cos object for the form. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormGetLeading"><strong><span style="color:grey;">PDEFormGetLeading</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:3292</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the Leading set in parent of <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> element. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEForm.htm#PDEFormSetLeading" title=" Sets the Leading in parent of PDEForm element before form emit.">PDEFormSetLeading</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASDouble.htm#ASDouble" title=" The ASDouble type is a 64-bit type representing a floating number"><code>ASDouble</code></a> <code>PDEFormGetLeading(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>form</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>form</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> A form XObject object. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormGetMatrix"><strong><span style="color:grey;">PDEFormGetMatrix</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2642</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Superseded by <a href="pdelayer_PDEForm.htm#PDEFormGetMatrixEx" title=" Gets the matrix for a PDEform.">PDEFormGetMatrixEx</a>() in Acrobat 10.0. Gets the matrix for a PDEform.<br/>
+<p>The result is a concatenation of the CTM and the Cos level form matrix, resulting in the transformation from the form space to the device space.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> For the other elements, <a href="pdelayer_PDEElement.htm#PDEElementGetMatrix" title=" Superseded by PDEElementGetMatrixEx() in Acrobat 10.0.">PDEElementGetMatrix</a>() would give correct results. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEForm.htm#PDEFormGetBBox" title=" Gets the bounding box for a PDEform."><code>PDEFormGetBBox</code></a>
+<a href="pdelayer_PDEForm.htm#PDEFormGetMatrixEx" title=" Gets the matrix for a PDEform."><code>PDEFormGetMatrixEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFormGetMatrix(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>form</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>form</code></span>
+</td><td><span>The form for which the matrix is required. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>The resultant matrix. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormGetMatrixEx"><strong><span style="color:grey;">PDEFormGetMatrixEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:3109</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the matrix for a PDEform. Supersedes <a href="pdelayer_PDEForm.htm#PDEFormGetMatrix" title=" Superseded by PDEFormGetMatrixEx() in Acrobat 10.0.">PDEFormGetMatrix</a>() in Acrobat 10.0.<br/>
+<p>The result is a concatenation of the CTM and the Cos level form matrix, resulting in the transformation from the form space to the device space.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> For the other elements, <a href="pdelayer_PDEElement.htm#PDEElementGetMatrixEx" title=" Supersedes PDEElementGetMatrix() in Acrobat 10.0.">PDEElementGetMatrixEx</a>() would give correct results. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEForm.htm#PDEFormGetBBox" title=" Gets the bounding box for a PDEform."><code>PDEFormGetBBox</code></a>
+<a href="pdelayer_PDEForm.htm#PDEFormGetMatrix" title=" Superseded by PDEFormGetMatrixEx() in Acrobat 10.0."><code>PDEFormGetMatrix</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFormGetMatrixEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>form</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers."><code>ASDoubleMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>form</code></span>
+</td><td><span>The form for which the matrix is required. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>The resultant matrix. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormHasXGroup"><strong><span style="color:grey;">PDEFormHasXGroup</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1933</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Determines whether the XObject form has a Transparency XGroup </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDEFormHasXGroup(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>pdeForm</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeForm</code></span>
+</td><td><span>IN/OUT The form. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the XObject form has a Transparency XGroup. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormIsLeadingSet"><strong><span style="color:grey;">PDEFormIsLeadingSet</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:3323</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns whether text leading is set in parent of <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> element or not. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEForm.htm#PDEFormGetLeading" title=" Gets the Leading set in parent of PDEForm element."><code>PDEFormGetLeading</code></a>
+<a href="pdelayer_PDEForm.htm#PDEFormSetLeading" title=" Sets the Leading in parent of PDEForm element before form emit."><code>PDEFormSetLeading</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDEFormIsLeadingSet(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>form</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>form</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> A form XObject object. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormSetContent"><strong><span style="color:grey;">PDEFormSetContent</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2454</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the underlying <a href="coslayer_General.htm#CosStream" title=" A stream object.">CosStream</a> of the form using the specified content object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEForm.htm#PDEFormGetContent" title=" Gets a PDEContent object for a form.">PDEFormGetContent</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFormSetContent(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>form</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage."><code>PDEContent</code></a> <code>content</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>form</code></span>
+</td><td><span>The form whose content is set. </span>
+</td></tr>
+<tr><td><span><code>content</code></span>
+</td><td><span>The new content for <code>form</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#peErrPStackUnderflow" title=" PDFEdit parse stack underflow while reading object."><code>peErrPStackUnderflow</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormSetContentToCosObjFlags"><strong><span style="color:grey;">PDEFormSetContentToCosObjFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:3093</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Sets the <a href="pdelayer_PDEContent.htm#PDEContentToCosObjFlags" title=" A bit field for the PDEContentToCosObj() method, indicating the type of object to create and how it is created."><code>PDEContentToCosObjFlags</code></a> for this form. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFormSetContentToCosObjFlags(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>form</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>);</code> </code>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormSetLeading"><strong><span style="color:grey;">PDEFormSetLeading</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:3678</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the Leading in parent of <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> element before form emit. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEForm.htm#PDEFormGetLeading" title=" Gets the Leading set in parent of PDEForm element.">PDEFormGetLeading</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFormSetLeading(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>form</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASDouble.htm#ASDouble" title=" The ASDouble type is a 64-bit type representing a floating number"><code>ASDouble</code></a> <code>Leading</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>form</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> A form XObject object. </span>
+</td></tr>
+<tr><td><span><code>ASDouble</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> Leading in gstate of parent of form XObject. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDEFormSetXGroup"><strong><span style="color:grey;">PDEFormSetXGroup</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1752</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Sets the transparency group dictionary of the form XObject. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFormSetXGroup(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form)."><code>PDEForm</code></a> <code>pdeForm</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEXGroup.htm#PDEXGroup" title=" A transparency (XGroup) resource."><code>PDEXGroup</code></a> <code>pdeXGroup</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeForm</code></span>
+</td><td><span>IN/OUT The font XObject. </span>
+</td></tr>
+<tr><td><span><code>pdeXGroup</code></span>
+</td><td><span>IN/OUT The transparency dictionary. </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

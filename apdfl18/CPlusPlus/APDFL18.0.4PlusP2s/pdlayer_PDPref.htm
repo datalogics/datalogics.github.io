@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PD Layer: PDPref</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PD Layer: PDPref</h5>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Structures">
+<header><h2>PDPref Structures</h2></header>
+<nav><dl>
+<dt><a href="#_t_PDChromaticity">_t_PDChromaticity</a></dt><dd> -  A data structure containing a monitor's chromaticity, for use in displaying device-independent color.</dd>
+<dt><a href="#_t_PDColorCal">_t_PDColorCal</a></dt><dd> -  A data structure used to represent the characteristics of an output device; it is needed for device-independent color.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="_t_PDChromaticity"><strong><span style="color:grey;">_t_PDChromaticity</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3797</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>A data structure containing a monitor's chromaticity, for use in displaying device-independent color.<br/>
+<p><code>x</code> and <code>y</code> are the two values needed to specify the chromaticity.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDPref.htm#PDPrefGetColorCal" title=" Gets the values to use for displaying the calibrated color and grayscale."><code>PDPrefGetColorCal</code></a>
+<a href="pdlayer_PDPref.htm#PDPrefSetColorCal" title=" Sets the values to use for displaying the calibrated color and grayscale."><code>PDPrefSetColorCal</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDChromaticity {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>x</code><code>;</code> </div>
+</td><td><span>The x-axis component of the monitor's chromaticity. It must be in [0,1). <code>x</code> <code>+</code> <code>y</code> must be less than or equal to 1. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>y</code><code>;</code> </div>
+</td><td><span>The y-axis component of the monitor's chromaticity. It must be in (0,1]. <code>x</code> <code>+</code> <code>y</code> must be less than or equal 1. </span>
+</td></tr>
+<tr><td><code id="PDChromaticity"><code>}</code> <a href="pdlayer_PDPref.htm#_t_PDChromaticity" title=" A data structure containing a monitor's chromaticity, for use in displaying device-independent color."><code>PDChromaticity</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDPref.htm#_t_PDColorCal" title=" A data structure used to represent the characteristics of an output device; it is needed for device-independent color."><code>_t_PDColorCal</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_PDColorCal"><strong><span style="color:grey;">_t_PDColorCal</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3811</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A data structure used to represent the characteristics of an output device; it is needed for device-independent color. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDColorCal {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDPref.htm#_t_PDChromaticity" title=" A data structure containing a monitor's chromaticity, for use in displaying device-independent color."><code>PDChromaticity</code></a> <code>whiteChrom</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDPref.htm#_t_PDChromaticity" title=" A data structure containing a monitor's chromaticity, for use in displaying device-independent color."><code>PDChromaticity</code></a> <code>redChrom</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDPref.htm#_t_PDChromaticity" title=" A data structure containing a monitor's chromaticity, for use in displaying device-independent color."><code>PDChromaticity</code></a> <code>greenChrom</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDPref.htm#_t_PDChromaticity" title=" A data structure containing a monitor's chromaticity, for use in displaying device-independent color."><code>PDChromaticity</code></a> <code>blueChrom</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>redGamma</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>greenGamma</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>blueGamma</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><code id="PDColorCal"><code>}</code> <a href="pdlayer_PDPref.htm#_t_PDColorCal" title=" A data structure used to represent the characteristics of an output device; it is needed for device-independent color."><code>PDColorCal</code></a><code>,</code> <code>*</code><a href="pdlayer_PDPref.htm#_t_PDColorCal" title=" A data structure used to represent the characteristics of an output device; it is needed for device-independent color."><code>PDColorCalP</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDPref.htm#PDPrefGetColorCal" title=" Gets the values to use for displaying the calibrated color and grayscale."><code>PDPrefGetColorCal</code></a></td><td><a href="pdlayer_PDPref.htm#PDPrefSetColorCal" title=" Sets the values to use for displaying the calibrated color and grayscale."><code>PDPrefSetColorCal</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDPref Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDPrefGetBlackPointCompensation">PDPrefGetBlackPointCompensation</a></dt><dd> -  Returns the black-point compensation flag.</dd>
+<dt><a href="#PDPrefGetColorCal">PDPrefGetColorCal</a></dt><dd> -  Gets the values to use for displaying the calibrated color and grayscale.</dd>
+<dt><a href="#PDPrefGetDefaultBlendingColorSpace">PDPrefGetDefaultBlendingColorSpace</a></dt><dd> -  Get the default blending color space Index</dd>
+<dt><a href="#PDPrefGetInstallPatternParentGState">PDPrefGetInstallPatternParentGState</a></dt><dd> -  Get the preference whether to install the graphics state that was in effect at the beginning of the pattern's parent content stream</dd>
+<dt><a href="#PDPrefGetUseOutputIntents">PDPrefGetUseOutputIntents</a></dt><dd> -  Returns the value of the Output Intent flag.</dd>
+<dt><a href="#PDPrefSetBlackPointCompensation">PDPrefSetBlackPointCompensation</a></dt><dd> -  Sets the black-point compensation flag, which controls whether to adjust for differences in black points when converting colors between color spaces.</dd>
+<dt><a href="#PDPrefSetColorCal">PDPrefSetColorCal</a></dt><dd> -  Sets the values to use for displaying the calibrated color and grayscale.</dd>
+<dt><a href="#PDPrefSetDefaultBlendingColorSpace">PDPrefSetDefaultBlendingColorSpace</a></dt><dd> -  Sets the default blending color space to working CMYK or working RGB</dd>
+<dt><a href="#PDPrefSetInstallPatternParentGState">PDPrefSetInstallPatternParentGState</a></dt><dd> -  Sets the preference to install the graphics state that was in effect at the beginning of the pattern's parent content stream</dd>
+<dt><a href="#PDPrefSetUseOutputIntents">PDPrefSetUseOutputIntents</a></dt><dd> -  Sets the Output Intent flag.</dd>
+<dt><a href="#PDPrefSetWorkingCMYK">PDPrefSetWorkingCMYK</a></dt><dd> -  Sets the current CMYK working space to a given ICC profile.</dd>
+<dt><a href="#PDPrefSetWorkingGray">PDPrefSetWorkingGray</a></dt><dd> -  Sets the current gray working space to a given ICC profile.</dd>
+<dt><a href="#PDPrefSetWorkingRGB">PDPrefSetWorkingRGB</a></dt><dd> -  Set the current RGB working space to a given ICC profile.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDPrefGetBlackPointCompensation"><strong><span style="color:grey;">PDPrefGetBlackPointCompensation</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:11367</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the black-point compensation flag. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPref.htm#PDPrefSetBlackPointCompensation" title=" Sets the black-point compensation flag, which controls whether to adjust for differences in black points when converting colors between color spaces.">PDPrefSetBlackPointCompensation</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDPrefGetBlackPointCompensation(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if black-point compensation is done. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefGetColorCal"><strong><span style="color:grey;">PDPrefGetColorCal</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:5138</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the values to use for displaying the calibrated color and grayscale. These values are the chromaticity and gammas of the phosphors in the monitor.<br/>
+<p>These values are used for rendering if calibrated color is enabled by the preferences file item avpDoCalibratedColor (see AVAppGetPreference()).<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDPref.htm#PDPrefSetColorCal" title=" Sets the values to use for displaying the calibrated color and grayscale.">PDPrefSetColorCal</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDPrefGetColorCal(</code><a href="pdlayer_PDPref.htm#_t_PDColorCal" title=" A data structure used to represent the characteristics of an output device; it is needed for device-independent color."><code>PDColorCalP</code></a> <code>colorCal</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>colorCal</code></span>
+</td><td><span>IN/OUT (Filled by the method) A pointer to a structure that contains the color calibration information. For RGB devices, the red, green, and blue chromaticity and gammas are used; for grayscale, <code>whiteChrom</code> and <code>greenGamma</code> are used. You must allocate storage for the <code>colorCal</code> data structure and pass a pointer to the memory you allocated. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>Always returns <a href="aslayer_General.htm#true"><code>true</code></a>. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefGetDefaultBlendingColorSpace"><strong><span style="color:grey;">PDPrefGetDefaultBlendingColorSpace</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:12266</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Get the default blending color space Index </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDPrefGetDefaultBlendingColorSpace(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>value equal to 0 means default blending colorspace is Working CMYK, value equal to 1 means default blending colorspace is Working RGB. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefGetInstallPatternParentGState"><strong><span style="color:grey;">PDPrefGetInstallPatternParentGState</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:12295</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Get the preference whether to install the graphics state that was in effect at the beginning of the pattern's parent content stream </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDPrefGetInstallPatternParentGState(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>value equal to 0 means apply current GState, value equal to 1 means install GState was in effect at the beginning of the pattern's parent content stream. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefGetUseOutputIntents"><strong><span style="color:grey;">PDPrefGetUseOutputIntents</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:11348</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the value of the Output Intent flag. When this flag is <a href="aslayer_General.htm#true"><code>true</code></a>, the system overrides the working space with the Output Intent, if it is present. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPref.htm#PDPrefSetUseOutputIntents" title=" Sets the Output Intent flag.">PDPrefSetUseOutputIntents</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDPrefGetUseOutputIntents(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The Output Intent flag value. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSetBlackPointCompensation"><strong><span style="color:grey;">PDPrefSetBlackPointCompensation</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:11361</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the black-point compensation flag, which controls whether to adjust for differences in black points when converting colors between color spaces. When enabled, the full dynamic range of the source space is mapped into the full dynamic range of the destination space. When disabled, the dynamic range of the source space is simulated in the destination space (which can result in blocked or gray shadows). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPref.htm#PDPrefGetBlackPointCompensation" title=" Returns the black-point compensation flag.">PDPrefGetBlackPointCompensation</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetBlackPointCompensation(</code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>kbpc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>kbpc</code></span>
+</td><td><span><a href="aslayer_General.htm#true"><code>true</code></a> to enable black-point compensation, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSetColorCal"><strong><span style="color:grey;">PDPrefSetColorCal</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:5116</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Sets the values to use for displaying the calibrated color and grayscale. These values are the chromaticities and gammas of the phosphors in the monitor.<br/>
+<p>These values do not necessarily correspond to the monitor being used; it is the responsibility of the client that sets these values to provide the correct values.<br/></p>
+
+<p>
+<p>These values are used for rendering if calibrated color is enabled by the preferences file item avpDoCalibratedColor (see AVAppSetPreference()).<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDPref.htm#PDPrefGetColorCal" title=" Gets the values to use for displaying the calibrated color and grayscale.">PDPrefGetColorCal</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDPrefSetColorCal(</code><a href="pdlayer_PDPref.htm#_t_PDColorCal" title=" A data structure used to represent the characteristics of an output device; it is needed for device-independent color."><code>PDColorCalP</code></a> <code>colorCal</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>colorCal</code></span>
+</td><td><span>A pointer to a structure that contains the color calibration information. For RGB devices, the red, green, and blue chromaticities and gammas are used; for grayscale, <code>whiteChrom</code> and <code>greenGamma</code> are used. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the values were successfully set and installed for the currently active display device, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSetDefaultBlendingColorSpace"><strong><span style="color:grey;">PDPrefSetDefaultBlendingColorSpace</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:12260</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Sets the default blending color space to working CMYK or working RGB </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetDefaultBlendingColorSpace(</code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>dBCSIndex</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>dBCSIndex</code></span>
+</td><td><span>An index to set blending color space. Pass 1 to set bcs as working RGB. Pass 0 or other value to set bcs as working CMYK. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSetInstallPatternParentGState"><strong><span style="color:grey;">PDPrefSetInstallPatternParentGState</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:12289</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Sets the preference to install the graphics state that was in effect at the beginning of the pattern's parent content stream </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetInstallPatternParentGState(</code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>bInstallPatternParentGStateFlag</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>bInstallPatternParentGStateFlag</code></span>
+</td><td><span>Pass 1 to install GState was in effect at the beginning of the pattern's parent content stream </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSetUseOutputIntents"><strong><span style="color:grey;">PDPrefSetUseOutputIntents</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:11340</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the Output Intent flag. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPref.htm#PDPrefGetUseOutputIntents" title=" Returns the value of the Output Intent flag.">PDPrefGetUseOutputIntents</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetUseOutputIntents(</code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>flag</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>flag</code></span>
+</td><td><span>When <a href="aslayer_General.htm#true"><code>true</code></a>, use Output Intent to override a working space if it is present. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSetWorkingCMYK"><strong><span style="color:grey;">PDPrefSetWorkingCMYK</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:11389</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the current CMYK working space to a given ICC profile. A CMYK working space in PDF is defined as a profile to substitute for a corresponding <code>/DeviceCMYK</code> space. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPref.htm#PDPrefSetWorkingGray" title=" Sets the current gray working space to a given ICC profile."><code>PDPrefSetWorkingGray</code></a>
+<a href="pdfllayer_PDPref.htm#PDPrefSetWorkingRGB" title=" Set the current RGB working space to a given ICC profile."><code>PDPrefSetWorkingRGB</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetWorkingCMYK(</code><code>void</code> <code>*</code><code>profile</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>profileLength</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>profile</code></span>
+</td><td><span>A pointer to a buffer containing the ICC color profile. </span>
+</td></tr>
+<tr><td><span><code>profileLength</code></span>
+</td><td><span>The length in bytes of the profile. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSetWorkingGray"><strong><span style="color:grey;">PDPrefSetWorkingGray</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:11402</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the current gray working space to a given ICC profile. A Gray working space in PDF is defined as a profile to substitute for a corresponding <code>/DeviceGray</code> space. When rendering with overprint preview, the gray substitution is suppressed, to avoid converting grayscale to <em>rich</em> <em>black</em>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPref.htm#PDPrefSetWorkingCMYK" title=" Sets the current CMYK working space to a given ICC profile."><code>PDPrefSetWorkingCMYK</code></a>
+<a href="pdfllayer_PDPref.htm#PDPrefSetWorkingRGB" title=" Set the current RGB working space to a given ICC profile."><code>PDPrefSetWorkingRGB</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetWorkingGray(</code><code>void</code> <code>*</code><code>profile</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>profileLength</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>profile</code></span>
+</td><td><span>A pointer to a buffer containing the ICC color profile. </span>
+</td></tr>
+<tr><td><span><code>profileLength</code></span>
+</td><td><span>The length in bytes of the profile. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSetWorkingRGB"><strong><span style="color:grey;">PDPrefSetWorkingRGB</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:11378</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Set the current RGB working space to a given ICC profile. An RGB working space in PDF is defined as a profile to substitute for a corresponding <code>/DeviceRGB</code> space. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPref.htm#PDPrefSetWorkingCMYK" title=" Sets the current CMYK working space to a given ICC profile."><code>PDPrefSetWorkingCMYK</code></a>
+<a href="pdfllayer_PDPref.htm#PDPrefSetWorkingGray" title=" Sets the current gray working space to a given ICC profile."><code>PDPrefSetWorkingGray</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetWorkingRGB(</code><code>void</code> <code>*</code><code>profile</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>profileLength</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>profile</code></span>
+</td><td><span>A pointer to a buffer containing the ICC color profile. </span>
+</td></tr>
+<tr><td><span><code>profileLength</code></span>
+</td><td><span>The length in bytes of the profile. </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

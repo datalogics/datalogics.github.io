@@ -1,0 +1,1863 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PD Layer: PDWord</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PD Layer: PDWord</h5>
+<li><a href="#Definitions">Definitions</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#CallbackSignatures">Callback Signatures</a></li>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Definitions">
+<header><h2>PDWord Definitions</h2></header>
+<nav><dl>
+<dt><a href="#WXE_ADJACENT_TO_SPACE">WXE_ADJACENT_TO_SPACE</a></dt><dd> -  The character following the end of the word is a space (either an explicit space character encoded in a string, or one that appears implicitly because the drawing point was moved).</dd>
+<dt><a href="#WXE_ENCODING_WARNING">WXE_ENCODING_WARNING</a></dt><dd> - </dd>
+<dt><a href="#WXE_ENC_MISSING">WXE_ENC_MISSING</a></dt><dd> - </dd>
+<dt><a href="#WXE_ENC_NO_UCS">WXE_ENC_NO_UCS</a></dt><dd> - </dd>
+<dt><a href="#WXE_ENC_UNMAPPED">WXE_ENC_UNMAPPED</a></dt><dd> - </dd>
+<dt><a href="#WXE_EXT_CHAR_OFFSETS">WXE_EXT_CHAR_OFFSETS</a></dt><dd> - </dd>
+<dt><a href="#WXE_FROM_ACTUALT">WXE_FROM_ACTUALT</a></dt><dd> - </dd>
+<dt><a href="#WXE_FRONT_TAB">WXE_FRONT_TAB</a></dt><dd> - </dd>
+<dt><a href="#WXE_HAS_DIGIT">WXE_HAS_DIGIT</a></dt><dd> -  One or more characters in the word are digits.</dd>
+<dt><a href="#WXE_HAS_HYPHEN">WXE_HAS_HYPHEN</a></dt><dd> -  There is a hyphen in the word.</dd>
+<dt><a href="#WXE_HAS_LEADING_PUNC">WXE_HAS_LEADING_PUNC</a></dt><dd> -  The first character in the word is a punctuation mark.</dd>
+<dt><a href="#WXE_HAS_LETTER">WXE_HAS_LETTER</a></dt><dd> -  The word contains a character between A-Z or a-z.</dd>
+<dt><a href="#WXE_HAS_LIGATURE">WXE_HAS_LIGATURE</a></dt><dd> -  The word contains a ligature.</dd>
+<dt><a href="#WXE_HAS_NONALPHANUM">WXE_HAS_NONALPHANUM</a></dt><dd> -  The word contains a character outside the range of A-Z, a-Z, 0-9.</dd>
+<dt><a href="#WXE_HAS_PUNCTUATION">WXE_HAS_PUNCTUATION</a></dt><dd> -  One or more characters in the word are punctuation marks.</dd>
+<dt><a href="#WXE_HAS_SOFT_HYPHEN">WXE_HAS_SOFT_HYPHEN</a></dt><dd> -  There is a soft hyphen in the word.</dd>
+<dt><a href="#WXE_HAS_TRAILING_PUNC">WXE_HAS_TRAILING_PUNC</a></dt><dd> -  The last character in the word is a punctuation mark.</dd>
+<dt><a href="#WXE_HAS_UNMAPPED_CHAR">WXE_HAS_UNMAPPED_CHAR</a></dt><dd> -  One or more characters in the word cannot be represented in the output font encoding.</dd>
+<dt><a href="#WXE_HAS_UPPERCASE">WXE_HAS_UPPERCASE</a></dt><dd> -  The word contains a character between A-Z.</dd>
+<dt><a href="#WXE_LAST_WORD_ON_LINE">WXE_LAST_WORD_ON_LINE</a></dt><dd> -  The word is at the end of the current text line (for example, the word is followed by a line break).</dd>
+<dt><a href="#WXE_PDF_ORDER">WXE_PDF_ORDER</a></dt><dd> - </dd>
+<dt><a href="#WXE_RD_ORDER_SORT">WXE_RD_ORDER_SORT</a></dt><dd> - </dd>
+<dt><a href="#WXE_REVERSE_DIRECTION">WXE_REVERSE_DIRECTION</a></dt><dd> - </dd>
+<dt><a href="#WXE_ROTATED">WXE_ROTATED</a></dt><dd> -  The writing direction of the word is not in a multiple of 90 degrees, or the bounding box of the text is skewed.</dd>
+<dt><a href="#WXE_STREAM">WXE_STREAM</a></dt><dd> - </dd>
+<dt><a href="#WXE_VERTICAL_FLOW">WXE_VERTICAL_FLOW</a></dt><dd> -  The writing direction of the word is either 90 or 180 degrees.</dd>
+<dt><a href="#WXE_WBREAK_WORD">WXE_WBREAK_WORD</a></dt><dd> - </dd>
+<dt><a href="#WXE_WORD_IS_UNICODE">WXE_WORD_IS_UNICODE</a></dt><dd> - </dd>
+<dt><a href="#WXE_XY_SORT">WXE_XY_SORT</a></dt><dd> - </dd>
+<dt><a href="#W_ACCENT">W_ACCENT</a></dt><dd> -  An accent mark.</dd>
+<dt><a href="#W_CNTL">W_CNTL</a></dt><dd> -  A control code.</dd>
+<dt><a href="#W_COMMA">W_COMMA</a></dt><dd> -  A comma.</dd>
+<dt><a href="#W_DIGIT">W_DIGIT</a></dt><dd> -  A digit.</dd>
+<dt><a href="#W_END_PHRASE">W_END_PHRASE</a></dt><dd> -  An end-of-phrase glyph (for example, "."</dd>
+<dt><a href="#W_HYPHEN">W_HYPHEN</a></dt><dd> -  A hyphen.</dd>
+<dt><a href="#W_LETTER">W_LETTER</a></dt><dd> -  A lowercase letter.</dd>
+<dt><a href="#W_LIGATURE">W_LIGATURE</a></dt><dd> -  A ligature.</dd>
+<dt><a href="#W_PERIOD">W_PERIOD</a></dt><dd> -  A period.</dd>
+<dt><a href="#W_PUNCTUATION">W_PUNCTUATION</a></dt><dd> -  A punctuation mark.</dd>
+<dt><a href="#W_SOFT_HYPHEN">W_SOFT_HYPHEN</a></dt><dd> -  A hyphen that is only present because a word is broken across two lines of text.</dd>
+<dt><a href="#W_UNMAPPED">W_UNMAPPED</a></dt><dd> -  A glyph that cannot be represented in the destination font encoding.</dd>
+<dt><a href="#W_UPPERCASE">W_UPPERCASE</a></dt><dd> -  An uppercase letter.</dd>
+<dt><a href="#W_WHITE">W_WHITE</a></dt><dd> -  A white space glyph.</dd>
+<dt><a href="#W_WILD_CARD">W_WILD_CARD</a></dt><dd> -  A wildcard glyph (for example, " *" and "?" ) that should not be treated as a normal punctuation mark.</dd>
+<dt><a href="#W_WORD_BREAK">W_WORD_BREAK</a></dt><dd> -  A glyph that acts as a delimiter between words.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="WXE_ADJACENT_TO_SPACE"><strong><span style="color:grey;">WXE_ADJACENT_TO_SPACE</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3457</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The character following the end of the word is a space (either an explicit space character encoded in a string, or one that appears implicitly because the drawing point was moved). </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_ADJACENT_TO_SPACE</code> <code>0x800</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_ENCODING_WARNING"><strong><span style="color:grey;">WXE_ENCODING_WARNING</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_ENCODING_WARNING</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_ENC_MISSING"><strong><span style="color:grey;">WXE_ENC_MISSING</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_ENC_MISSING</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_ENC_NO_UCS"><strong><span style="color:grey;">WXE_ENC_NO_UCS</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_ENC_NO_UCS</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_ENC_UNMAPPED"><strong><span style="color:grey;">WXE_ENC_UNMAPPED</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_ENC_UNMAPPED</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_EXT_CHAR_OFFSETS"><strong><span style="color:grey;">WXE_EXT_CHAR_OFFSETS</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_EXT_CHAR_OFFSETS</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_FROM_ACTUALT"><strong><span style="color:grey;">WXE_FROM_ACTUALT</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_FROM_ACTUALT</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_FRONT_TAB"><strong><span style="color:grey;">WXE_FRONT_TAB</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3489</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_FRONT_TAB</code> <code>0x01</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_HAS_DIGIT"><strong><span style="color:grey;">WXE_HAS_DIGIT</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3403</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>One or more characters in the word are digits. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_HAS_DIGIT</code> <code>0x8</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_HAS_HYPHEN"><strong><span style="color:grey;">WXE_HAS_HYPHEN</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3419</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>There is a hyphen in the word. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_HAS_HYPHEN</code> <code>0x20</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_HAS_LEADING_PUNC"><strong><span style="color:grey;">WXE_HAS_LEADING_PUNC</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3436</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The first character in the word is a punctuation mark. If this bit is set, <a href="pdlayer_PDWord.htm#WXE_HAS_PUNCTUATION" title=" One or more characters in the word are punctuation marks."><code>WXE_HAS_PUNCTUATION</code></a> will also be set. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_HAS_LEADING_PUNC</code> <code>0x100</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_HAS_LETTER"><strong><span style="color:grey;">WXE_HAS_LETTER</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3393</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The word contains a character between A-Z or a-z. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_HAS_LETTER</code> <code>0x2</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_HAS_LIGATURE"><strong><span style="color:grey;">WXE_HAS_LIGATURE</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3429</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The word contains a ligature. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_HAS_LIGATURE</code> <code>0x80</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_HAS_NONALPHANUM"><strong><span style="color:grey;">WXE_HAS_NONALPHANUM</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3388</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The word contains a character outside the range of A-Z, a-Z, 0-9. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_HAS_NONALPHANUM</code> <code>0</code> <code>X1</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_HAS_PUNCTUATION"><strong><span style="color:grey;">WXE_HAS_PUNCTUATION</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3414</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>One or more characters in the word are punctuation marks. Other flag bits can be checked to test whether the punctuation was at the beginning of the word ( <a href="pdlayer_PDWord.htm#WXE_HAS_LEADING_PUNC" title=" The first character in the word is a punctuation mark."><code>WXE_HAS_LEADING_PUNC</code></a>), the end of the word ( <a href="pdlayer_PDWord.htm#WXE_HAS_TRAILING_PUNC" title=" The last character in the word is a punctuation mark."><code>WXE_HAS_TRAILING_PUNC</code></a>), or elsewhere in the word. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_HAS_PUNCTUATION</code> <code>0x10</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_HAS_SOFT_HYPHEN"><strong><span style="color:grey;">WXE_HAS_SOFT_HYPHEN</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3424</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>There is a soft hyphen in the word. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_HAS_SOFT_HYPHEN</code> <code>0x40</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_HAS_TRAILING_PUNC"><strong><span style="color:grey;">WXE_HAS_TRAILING_PUNC</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3443</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The last character in the word is a punctuation mark. If this bit is set, <a href="pdlayer_PDWord.htm#WXE_HAS_PUNCTUATION" title=" One or more characters in the word are punctuation marks."><code>WXE_HAS_PUNCTUATION</code></a> will also be set. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_HAS_TRAILING_PUNC</code> <code>0x200</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_HAS_UNMAPPED_CHAR"><strong><span style="color:grey;">WXE_HAS_UNMAPPED_CHAR</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3449</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>One or more characters in the word cannot be represented in the output font encoding. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_HAS_UNMAPPED_CHAR</code> <code>0x400</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_HAS_UPPERCASE"><strong><span style="color:grey;">WXE_HAS_UPPERCASE</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3398</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The word contains a character between A-Z. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_HAS_UPPERCASE</code> <code>0x4</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_LAST_WORD_ON_LINE"><strong><span style="color:grey;">WXE_LAST_WORD_ON_LINE</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3486</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The word is at the end of the current text line (for example, the word is followed by a line break). </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_LAST_WORD_ON_LINE</code> <code>0x8000</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_PDF_ORDER"><strong><span style="color:grey;">WXE_PDF_ORDER</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3507</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_PDF_ORDER</code> <code>0x2</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_RD_ORDER_SORT"><strong><span style="color:grey;">WXE_RD_ORDER_SORT</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3513</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_RD_ORDER_SORT</code> <code>0x8</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_REVERSE_DIRECTION"><strong><span style="color:grey;">WXE_REVERSE_DIRECTION</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3493</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_REVERSE_DIRECTION</code> <code>0x04</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_ROTATED"><strong><span style="color:grey;">WXE_ROTATED</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3467</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The writing direction of the word is not in a multiple of 90 degrees, or the bounding box of the text is skewed. This flag indicates that the quads of the word should be used to specify the highlight area correctly. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_ROTATED</code> <code>0x1000</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_STREAM"><strong><span style="color:grey;">WXE_STREAM</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3504</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_STREAM</code> <code>0x1</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_VERTICAL_FLOW"><strong><span style="color:grey;">WXE_VERTICAL_FLOW</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3476</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The writing direction of the word is either 90 or 180 degrees. This flag ignores the page rotation parameter of the page dictionary. Therefore, if the page is rotated 90 degrees, this flag will be set on each word that appears horizonally on the screen. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_VERTICAL_FLOW</code> <code>0x2000</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_WBREAK_WORD"><strong><span style="color:grey;">WXE_WBREAK_WORD</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3480</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_WBREAK_WORD</code> <code>0x4000</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_WORD_IS_UNICODE"><strong><span style="color:grey;">WXE_WORD_IS_UNICODE</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3494</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_WORD_IS_UNICODE</code> <code>0x08</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="WXE_XY_SORT"><strong><span style="color:grey;">WXE_XY_SORT</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3510</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define WXE_XY_SORT</code> <code>0x4</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="W_ACCENT"><strong><span style="color:grey;">W_ACCENT</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3341</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>An accent mark. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define W_ACCENT</code> <code>0x800</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="W_CNTL"><strong><span style="color:grey;">W_CNTL</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3282</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A control code. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define W_CNTL</code> <code>0x1</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="W_COMMA"><strong><span style="color:grey;">W_COMMA</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3331</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A comma. Commas and periods are treated separately from other punctuation marks because they are used both as word punctuation marks and as delimiters in numbers, and need to be treated differently in the two cases. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define W_COMMA</code> <code>0x200</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="W_DIGIT"><strong><span style="color:grey;">W_DIGIT</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3297</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A digit. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define W_DIGIT</code> <code>0x8</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="W_END_PHRASE"><strong><span style="color:grey;">W_END_PHRASE</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3351</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>An end-of-phrase glyph (for example, <code>"."</code>, <code>"?"</code>, <code>"!"</code>, <code>":"</code>, and <code>";"</code>). </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define W_END_PHRASE</code> <code>0x2000</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="W_HYPHEN"><strong><span style="color:grey;">W_HYPHEN</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3307</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A hyphen. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define W_HYPHEN</code> <code>0x20</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="W_LETTER"><strong><span style="color:grey;">W_LETTER</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3287</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A lowercase letter. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define W_LETTER</code> <code>0x2</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="W_LIGATURE"><strong><span style="color:grey;">W_LIGATURE</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3317</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A ligature. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define W_LIGATURE</code> <code>0x80</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="W_PERIOD"><strong><span style="color:grey;">W_PERIOD</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3336</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A period. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define W_PERIOD</code> <code>0x400</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="W_PUNCTUATION"><strong><span style="color:grey;">W_PUNCTUATION</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3302</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A punctuation mark. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define W_PUNCTUATION</code> <code>0x10</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="W_SOFT_HYPHEN"><strong><span style="color:grey;">W_SOFT_HYPHEN</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3312</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A hyphen that is only present because a word is broken across two lines of text. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define W_SOFT_HYPHEN</code> <code>0x40</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="W_UNMAPPED"><strong><span style="color:grey;">W_UNMAPPED</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3346</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A glyph that cannot be represented in the destination font encoding. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define W_UNMAPPED</code> <code>0x1000</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="W_UPPERCASE"><strong><span style="color:grey;">W_UPPERCASE</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3292</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>An uppercase letter. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define W_UPPERCASE</code> <code>0x4</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="W_WHITE"><strong><span style="color:grey;">W_WHITE</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3322</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A white space glyph. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define W_WHITE</code> <code>0x100</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="W_WILD_CARD"><strong><span style="color:grey;">W_WILD_CARD</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3356</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A wildcard glyph (for example, <code>"</code> <code>*"</code> and <code>"?"</code>) that should not be treated as a normal punctuation mark. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define W_WILD_CARD</code> <code>0x4000</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="W_WORD_BREAK"><strong><span style="color:grey;">W_WORD_BREAK</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3362</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A glyph that acts as a delimiter between words. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define W_WORD_BREAK</code> <code>0x8000</code> </code>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>PDWord Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDWord">PDWord</a></dt><dd> -  A word in a PDF file.</dd>
+<dt><a href="#PDWordFinder">PDWordFinder</a></dt><dd> -  Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDWord"><strong><span style="color:grey;">PDWord</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3251</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A word in a PDF file. Each word contains a sequence of characters in one or more styles (see <a href="pdlayer_PDStyle.htm#PDStyle" title=" Provides access to information about the fonts, font sizes, and colors used in a PDWord.">PDStyle</a>). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWords" title=" Extracts words, one at a time, from the specified page or the entire document."><code>PDWordFinderEnumWords</code></a>
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWords" title=" Extracts words, one at a time, from the specified page or the entire document."><code>PDWordFinderEnumWords</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDWord</code> <code>*</code><code>PDWord</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDWord.htm#PDWordFinderGetNthWord" title=" Gets the nth word in the word list obtained using PDWordFinderAcquireWordList()."><code>PDWordFinderGetNthWord</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_General.htm#PDFindTranslateStringProc" title=" PDFindTranslateStringProc() is passed to PDFindText()."><code>PDFindTranslateStringProc</code></a></td><td><a href="pdlayer_PDWord.htm#PDWordCreateTextSelect" title=" Creates a text selection object for a given page that includes all words in a word list, as returned from a PDWordFinder method."><code>PDWordCreateTextSelect</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWord.htm#PDWordFilterWord" title=" Removes leading and trailing spaces and leading and trailing punctuation (including soft hyphens) from the specified word."><code>PDWordFilterWord</code></a></td><td><a href="pdlayer_PDWordFinder.htm#PDWordFinderAcquireVisibleWordList" title=" Finds all words on the specified page that are visible in the given optional-content context and returns one or more tables containing the words."><code>PDWordFinderAcquireVisibleWordList</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWordFinder.htm#PDWordFinderAcquireWordList" title=" Finds all words on the specified page and returns one or more tables containing the words."><code>PDWordFinderAcquireWordList</code></a></td><td><a href="pdlayer_PDWord.htm#PDWordGetASText" title=" Copies the text from a word into an ASText object."><code>PDWordGetASText</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWord.htm#PDWordGetAttr" title=" Gets a bit field containing information on the types of characters in a word."><code>PDWordGetAttr</code></a></td><td><a href="pdlayer_PDWord.htm#PDWordGetAttrEx" title=" This is a version 6.0 extension of PDWordGetAttr() that can be used only with a word finder created with algorithm version WF_VERSION_3 or higher."><code>PDWordGetAttrEx</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWord.htm#PDWordGetByteIdxFromHiliteChar" title=" Returns the byte offset within the specified word of the highlightable character at the specified character offset."><code>PDWordGetByteIdxFromHiliteChar</code></a></td><td><a href="pdlayer_PDWord.htm#PDWordGetCharDelta" title=" Gets the difference between the word length (the number of printed characters in the word) and the PDF word length (the number of character codes in the word)."><code>PDWordGetCharDelta</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWord.htm#PDWordGetCharEncFlags" title=" Gets the WordFinder Character Encoding Flags for each character in a word, which specify how reliably the word finder identified the character encoding."><code>PDWordGetCharEncFlags</code></a></td><td><a href="pdlayer_PDWord.htm#PDWordGetCharOffset" title=" Returns a word's character offset from the beginning of its page."><code>PDWordGetCharOffset</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWord.htm#PDWordGetCharOffsetEx" title=" This is a version 6.0 extension of PDWordGetCharOffset() that can be used only with a word finder created with algorithm version WF_VERSION_3 or higher."><code>PDWordGetCharOffsetEx</code></a></td><td><a href="dlextras_PDWord.htm#PDWordGetCharPoint" title=" Gets the placement point of the character at a given index position in the word."><code>PDWordGetCharPoint</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWord.htm#PDWordGetCharQuad" title=" Gets the quadrilateral bounding of the character at a given index position in the word."><code>PDWordGetCharQuad</code></a></td><td><a href="pdlayer_PDWord.htm#PDWordGetCharacterTypes" title=" Gets the character type for each character in a word."><code>PDWordGetCharacterTypes</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWord.htm#PDWordGetLength" title=" Gets the number of bytes in a word."><code>PDWordGetLength</code></a></td><td><a href="pdlayer_PDWord.htm#PDWordGetNthCharStyle" title=" Returns a PDStyle object for the nth style in a word."><code>PDWordGetNthCharStyle</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWord.htm#PDWordGetNthQuad" title=" Gets the specified word's nth quad, specified in user space coordinates."><code>PDWordGetNthQuad</code></a></td><td><a href="dlextras_PDWord.htm#PDWordGetNthQuadPoint" title=" Gets the specified word's nth quad placement point, specified in user space coordinates."><code>PDWordGetNthQuadPoint</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWord.htm#PDWordGetNumHiliteChar" title=" Gets the number of highlightable characters in a word."><code>PDWordGetNumHiliteChar</code></a></td><td><a href="pdlayer_PDWord.htm#PDWordGetNumQuads" title=" Gets the number of quads in a word."><code>PDWordGetNumQuads</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWord.htm#PDWordGetString" title=" This method gets a word's text."><code>PDWordGetString</code></a></td><td><a href="pdlayer_PDWord.htm#PDWordGetStyleTransition" title=" Gets the locations of style transitions in a word."><code>PDWordGetStyleTransition</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWord.htm#PDWordIsCurrentlyVisible" title=" Tests whether a word is visible in a given optional-content context on a given page."><code>PDWordIsCurrentlyVisible</code></a></td><td><a href="dlextras_PDWord.htm#PDWordIsLastWordInRegion" title=" Routine to check if a word is the last word in a region as determined by the WordFinder."><code>PDWordIsLastWordInRegion</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWord.htm#PDWordIsRotated" title=" Tests whether a word is rotated."><code>PDWordIsRotated</code></a></td><td><a href="pdlayer_PDWord.htm#PDWordMakeVisible" title=" Makes a word visible in a given optional-content context on a given page."><code>PDWordMakeVisible</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWord.htm#PDWordProc" title=" A callback for PDWordFinderEnumWords."><code>PDWordProc</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDWordFinder"><strong><span style="color:grey;">PDWordFinder</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3243</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDWordFinder</code> <code>*</code><code>PDWordFinder</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDDoc.htm#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file."><code>PDDocCreateWordFinder</code></a></td><td><a href="pdlayer_PDDoc.htm#PDDocCreateWordFinderEx" title=" This is a version 6.0 replacement for PDDocCreateWordFinder() and PDDocCreateWordFinderUCS() that adds configurable word-breaking behavior."><code>PDDocCreateWordFinderEx</code></a></td></tr>
+<tr><td><a href="pdlayer_PDDoc.htm#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file."><code>PDDocCreateWordFinderUCS</code></a></td><td><a href="pdlayer_PDDoc.htm#PDDocGetWordFinder" title=" Gets the word finder associated with a document."><code>PDDocGetWordFinder</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDWordFinder.htm#PDWordFinderAcquireVisibleWordList" title=" Finds all words on the specified page that are visible in the given optional-content context and returns one or more tables containing the words."><code>PDWordFinderAcquireVisibleWordList</code></a></td><td><a href="pdlayer_PDWordFinder.htm#PDWordFinderAcquireWordList" title=" Finds all words on the specified page and returns one or more tables containing the words."><code>PDWordFinderAcquireWordList</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWordFinder.htm#PDWordFinderDestroy" title=" Destroys a word finder."><code>PDWordFinderDestroy</code></a></td><td><a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumVisibleWords" title=" Extracts visible words, one at a time, from the specified page or the entire document."><code>PDWordFinderEnumVisibleWords</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWords" title=" Extracts words, one at a time, from the specified page or the entire document."><code>PDWordFinderEnumWords</code></a></td><td><a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWordsStr" title=" Constructs a PDWord list from a Unicode string, and calls a user-supplied procedure once for each word found."><code>PDWordFinderEnumWordsStr</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWordFinder.htm#PDWordFinderGetLatestAlgVersion" title=" Gets the version number of the specified word finder, or the version number of the latest word finder algorithm."><code>PDWordFinderGetLatestAlgVersion</code></a></td><td><a href="pdlayer_PDWord.htm#PDWordFinderGetNthWord" title=" Gets the nth word in the word list obtained using PDWordFinderAcquireWordList()."><code>PDWordFinderGetNthWord</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWordFinder.htm#PDWordFinderReleaseWordList" title=" Releases the word list for a given page."><code>PDWordFinderReleaseWordList</code></a></td><td><a href="pdlayer_PDWord.htm#PDWordGetNthCharStyle" title=" Returns a PDStyle object for the nth style in a word."><code>PDWordGetNthCharStyle</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWord.htm#PDWordProc" title=" A callback for PDWordFinderEnumWords."><code>PDWordProc</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="CallbackSignatures">
+<header><h2>PDWord Callback Signatures</h2></header>
+<nav><dl>
+<dt><a href="#PDWordFinderCtrlProc">PDWordFinderCtrlProc</a></dt><dd> -  This is passed to PDWordFinderSetCtrlProc().</dd>
+<dt><a href="#PDWordProc">PDWordProc</a></dt><dd> -  A callback for PDWordFinderEnumWords.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDWordFinderCtrlProc"><strong><span style="color:grey;">PDWordFinderCtrlProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3784</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>This is passed to PDWordFinderSetCtrlProc().<br/>
+<p>This is the callback function called by Word Finder when its page enumeration process takes longer than the specified time (in seconds). Return <a href="aslayer_General.htm#true"><code>true</code></a> to continue the enumeration process, or <a href="aslayer_General.htm#false"><code>false</code></a> to stop. <code>startTime</code> is the value that was set by <a href="aslayer_ASTimeSpan.htm#ASGetSecs" title=" Returns the number of seconds elapsed since midnight, January 1, 1970, coordinated universal time, up to the current time.">ASGetSecs</a>() when the Word Finder started processing the current page.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDWordFinderCtrlProc(</code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>startTime</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDWordProc"><strong><span style="color:grey;">PDWordProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3270</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A callback for <a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWords" title=" Extracts words, one at a time, from the specified page or the entire document.">PDWordFinderEnumWords</a>. It is called once for each word. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDWordProc(</code><a href="pdlayer_PDWord.htm#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>wObj</code><code>,</code> <a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>wInfo</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>pgNum</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>wObj</code></span>
+</td><td><span>IN/OUT The word finder. </span>
+</td></tr>
+<tr><td><span><code>wInfo</code></span>
+</td><td><span>IN/OUT The current word in the enumeration. </span>
+</td></tr>
+<tr><td><span><code>pgNum</code></span>
+</td><td><span>IN/OUT The page number on which <code>wInfo</code> is located. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>IN/OUT User-supplied data that was passed in the call to <a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWords" title=" Extracts words, one at a time, from the specified page or the entire document.">PDWordFinderEnumWords</a>(). </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> to continue enumeration, <a href="aslayer_General.htm#false"><code>false</code></a> to halt enumeration. </span>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumVisibleWords" title=" Extracts visible words, one at a time, from the specified page or the entire document."><code>PDWordFinderEnumVisibleWords</code></a></td><td><a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWords" title=" Extracts words, one at a time, from the specified page or the entire document."><code>PDWordFinderEnumWords</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWordsStr" title=" Constructs a PDWord list from a Unicode string, and calls a user-supplied procedure once for each word found."><code>PDWordFinderEnumWordsStr</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>PDWord Structures</h2></header>
+<nav><dl>
+<dt><a href="#_t_PDWordFinderConfig">_t_PDWordFinderConfig</a></dt><dd> -  A word finder configuration that customizes the way the extraction is performed.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="_t_PDWordFinderConfig"><strong><span style="color:grey;">_t_PDWordFinderConfig</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:3547</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A word finder configuration that customizes the way the extraction is performed. In the default configuration, all options are <a href="aslayer_General.htm#false"><code>false</code></a>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDWordFinderConfig {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASSize_t"><code>ASSize_t</code></a> <code>recSize</code><code>;</code> </div>
+</td><td><span>This is always <code>sizeof(PDWordFinderConfigRec)</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>disableTaggedPDF</code><code>;</code> </div>
+</td><td><span>When <a href="aslayer_General.htm#true"><code>true</code></a>, it disables tagged PDF support and treats the document as non-tagged PDF. Use this to keep the word finder in legacy mode when it is created with the latest algorithm version (WF_LATEST_VERSION). </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>noXYSort</code><code>;</code> </div>
+</td><td><span>When <a href="aslayer_General.htm#true"><code>true</code></a>, it disables generating an XY-ordered word list. This option replaces the sort order flags in the older version of the word finder creation command (PDDocCreateWordFinder()). Setting this option is equivalent to omitting the <a href="pdlayer_PDWord.htm#WXE_XY_SORT"><code>WXE_XY_SORT</code></a> flag. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>preserveSpaces</code><code>;</code> </div>
+</td><td><span>When <a href="aslayer_General.htm#true"><code>true</code></a>, the word finder preserves space characters during word breaking. Otherwise, spaces are removed from output text. When <a href="aslayer_General.htm#false"><code>false</code></a> (the default), you can add spaces later by considering the word attribute flag <a href="pdlayer_PDWord.htm#WXE_ADJACENT_TO_SPACE" title=" The character following the end of the word is a space (either an explicit space character encoded in a string, or one that appears implicitly because the drawing point was moved)."><code>WXE_ADJACENT_TO_SPACE</code></a>, but there is no way to restore the exact number of consecutive space characters. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>noLigatureExp</code><code>;</code> </div>
+</td><td><div><p>
+<p>When <a href="aslayer_General.htm#true"><code>true</code></a>, and the font has a ToUnicode table, it disables the expansion of ligatures using the default ligatures. The default ligatures are:<br/></p>
+
+<UL><li> fi<br/><li> ff<br/><li> fl<br/><li> ffi<br/><li> ffl<br/><li> st<br/><li> oe<br/><li> OE<br/></UL>
+
+<p>
+<p>When <code>noLigatureExp</code> is <a href="aslayer_General.htm#true"><code>true</code></a> and the font does not have a ToUnicode table, the ligature is expanded based on whether there is a representation of the ligature in the defined <code>codePage</code>. If there is no representation, the ligature is expanded; otherwise, the ligature is not expanded.<br/></p>
+</div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>noEncodingGuess</code><code>;</code> </div>
+</td><td><span>When <a href="aslayer_General.htm#true"><code>true</code></a>, it disables guessing encoding of fonts that have unknown or custom encoding when there is no ToUnicode table. Inappropriate encoding conversions can cause the word finder to mistakenly recognize non-Roman single-byte fonts as Standard Roman encoding fonts and extract the text in an unusable format. When this option is selected, the word finder avoids such unreliable encoding conversions and tries to provide the original characters without any encoding conversion for a client with its own encoding handling. Use the <a href="pdlayer_PDWord.htm#PDWordGetCharEncFlags" title=" Gets the WordFinder Character Encoding Flags for each character in a word, which specify how reliably the word finder identified the character encoding.">PDWordGetCharEncFlags</a>() method to detect such characters. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>unknownToStdEnc</code><code>;</code> </div>
+</td><td><span>When <a href="aslayer_General.htm#true"><code>true</code></a>, it assumes any font with unknown or custom encoding to be Standard Roman. This option overrides the <code>noEncodingGuess</code> option. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ignoreCharGaps</code><code>;</code> </div>
+</td><td><span>When <a href="aslayer_General.htm#true"><code>true</code></a>, it disables converting large character gaps to space characters, so that the word finder reports a character space only when a space character appears in the original PDF content. This option has no effect on tagged PDF. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ignoreLineGaps</code><code>;</code> </div>
+</td><td><span>When <a href="aslayer_General.htm#true"><code>true</code></a>, it disables treating vertical movements as line breaks, so that the word finder determines a line break only when a line break character or special tag information appears in the original PDF content. This option has no effect on tagged PDF. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>noAnnots</code><code>;</code> </div>
+</td><td><span>When <a href="aslayer_General.htm#true"><code>true</code></a>, it disables extracting text from text annotations. Normally, the word finder extracts text from the normal appearances of text annotations that are inside the page crop box. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>noHyphenDetection</code><code>;</code> </div>
+</td><td><span>When <a href="aslayer_General.htm#true"><code>true</code></a>, it disables finding and removing soft hyphens in non-tagged PDF, so that the word finder trusts hard hyphens as non-soft hyphens. This option has no effect on tagged PDF files. Normally, the word finder does not differentiate between soft and hard hyphen characters in non-tagged PDF files, because these are often misused. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>trustNBSpace</code><code>;</code> </div>
+</td><td><span>When <a href="aslayer_General.htm#true"><code>true</code></a>, it disables treating non-breaking space characters as regular space characters in non-tagged PDF files, so that the word finder preserves the space without breaking the word. This option has no effect on tagged PDF files. Normally, the word finder does not differentiate between breaking and non-breaking space characters in non-tagged PDF files, because these are often misused. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>noExtCharOffset</code><code>;</code> </div>
+</td><td><span>When <a href="aslayer_General.htm#true"><code>true</code></a>, it disables generating extended character offset information to improve text extraction performance. The extended character offset information is necessary to determine exact character offset for character-by-character text selection. The beginning character offset of each word is always available regardless of this option, and can be used for word-by-word text selection with reasonable accuracy. When a client has no need for the detailed character offset information, it can use this option to improve the text extraction efficiency. There is a minor difference in the text extraction performance, and less memory is needed for the extracted word list. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>noStyleInfo</code><code>;</code> </div>
+</td><td><span>When <a href="aslayer_General.htm#true"><code>true</code></a>, it disables generating character style information to improve text extraction performance and memory efficiency. When you select this option, you cannot use <a href="pdlayer_PDWord.htm#PDWordGetNthCharStyle" title=" Returns a PDStyle object for the nth style in a word.">PDWordGetNthCharStyle</a>() and <a href="pdlayer_PDWord.htm#PDWordGetStyleTransition" title=" Gets the locations of style transitions in a word.">PDWordGetStyleTransition</a>() with the output of the word finder. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>const</code> <a href="aslayer_General.htm#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>*</code><code>decomposeTbl</code><code>;</code> </div>
+</td><td><span>A custom UTF-16 decomposition table. This table can be used to expand Unicode ligatures not included in the default ligature list. Each decomposition record contains a UTF-16 character code (either a 16-bit or 32-bit surrogate), a replacement UTF16 string, and the delimiter <code>0x0000</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASSize_t"><code>ASSize_t</code></a> <code>decomposeTblSize</code><code>;</code> </div>
+</td><td><span>The size of the <code>decomposeTbl</code> in bytes. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>const</code> <a href="aslayer_General.htm#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>*</code><code>charTypeTbl</code><code>;</code> </div>
+</td><td><span>A custom character type table to enhance word breaking quality. Each character type record contains a region start value, a region end value, and a character type flag as defined in PDExpT.h. A character code is in UTF-16, and is either a 16-bit or a 32-bit surrogate. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASSize_t"><code>ASSize_t</code></a> <code>charTypeTblSize</code><code>;</code> </div>
+</td><td><span>The size of the <code>charTypeTbl</code> in bytes. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>preserveRedundantChars</code><code>;</code> </div>
+</td><td><div><p>When <a href="aslayer_General.htm#true"><code>true</code></a>, it disables detecting and removing redundant characters. Some PDF pages have the same text drawn multiple times on the same spot to get a special visual effect. Normally, those redundant characters are removed from the word finder output.<br/>
+<p>Since this option may leave extra characters with overlapping bounding boxes, using it together with the <code>disableCharReordering</code> option is recommended for more consistent text extraction results.<br/></p>
+</div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>disableCharReordering</code><code>;</code> </div>
+</td><td><span>When <a href="aslayer_General.htm#true"><code>true</code></a>, it disables reconstructing the character orders, and the word finding algorithm is applied to the characters in the drawing order. By default, word finder reorders characters on a single line by the relative horizontal character locations. Most of the time, the character reordering feature improves the text extraction quality. However, on a PDF page with heavily overlapped character bounding boxes, the outcome becomes somewhat unpredictable. In such case, disabling the character reordering ( <code>disableCharReordering</code> <code>=</code> <a href="aslayer_General.htm#true"><code>true</code></a>) may produce a more static result. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>noSkewedQuads</code><code>;</code> </div>
+</td><td><span>When <a href="aslayer_General.htm#true"><code>true</code></a>, it disables the creation of a quad per character for skewed words, words with a horizontally-aligned, but non-rectangular, bounding region. Each skewed word will, instead, be associated with a single rectangular, bounding region. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>noTextRenderMode3</code><code>;</code> </div>
+</td><td><span>When <a href="aslayer_General.htm#true"><code>true</code></a>, it disables extracting text with Text Rendering mode Tr = 3 ("Neither fill nor stroke text (invisible).") Normally, the word finder extracts such text as any other. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>preciseQuad</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><code id="PDWordFinderConfigRec"><code>}</code> <a href="pdlayer_PDWord.htm#_t_PDWordFinderConfig" title=" A word finder configuration that customizes the way the extraction is performed."><code>PDWordFinderConfigRec</code></a><code>,</code> <code>*</code><a href="pdlayer_PDWord.htm#_t_PDWordFinderConfig" title=" A word finder configuration that customizes the way the extraction is performed."><code>PDWordFinderConfig</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDDoc.htm#PDDocCreateWordFinderEx" title=" This is a version 6.0 replacement for PDDocCreateWordFinder() and PDDocCreateWordFinderUCS() that adds configurable word-breaking behavior."><code>PDDocCreateWordFinderEx</code></a></td><td><a href="dlextras_PDDocTextFinder.htm#PDDocTextFinderCreate" title=" Creates a document text finder that is used to extract words or phrases that match regular expressions from a PDF file based on words extracted using a given word finder configuration."><code>PDDocTextFinderCreate</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDWord Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDWordCreateTextSelect">PDWordCreateTextSelect</a></dt><dd> -  Creates a text selection object for a given page that includes all words in a word list, as returned from a PDWordFinder method.</dd>
+<dt><a href="#PDWordFilterString">PDWordFilterString</a></dt><dd> -  Removes leading and trailing spaces and leading and trailing punctuation (including soft hyphens) from the specified word.</dd>
+<dt><a href="#PDWordFilterWord">PDWordFilterWord</a></dt><dd> -  Removes leading and trailing spaces and leading and trailing punctuation (including soft hyphens) from the specified word.</dd>
+<dt><a href="#PDWordFinderGetNthWord">PDWordFinderGetNthWord</a></dt><dd> -  Gets the nth word in the word list obtained using PDWordFinderAcquireWordList().</dd>
+<dt><a href="#PDWordGetASText">PDWordGetASText</a></dt><dd> -  Copies the text from a word into an ASText object.</dd>
+<dt><a href="#PDWordGetAttr">PDWordGetAttr</a></dt><dd> -  Gets a bit field containing information on the types of characters in a word.</dd>
+<dt><a href="#PDWordGetAttrEx">PDWordGetAttrEx</a></dt><dd> -  This is a version 6.0 extension of PDWordGetAttr() that can be used only with a word finder created with algorithm version WF_VERSION_3 or higher.</dd>
+<dt><a href="#PDWordGetByteIdxFromHiliteChar">PDWordGetByteIdxFromHiliteChar</a></dt><dd> -  Returns the byte offset within the specified word of the highlightable character at the specified character offset.</dd>
+<dt><a href="#PDWordGetCharDelta">PDWordGetCharDelta</a></dt><dd> -  Gets the difference between the word length (the number of printed characters in the word) and the PDF word length (the number of character codes in the word).</dd>
+<dt><a href="#PDWordGetCharEncFlags">PDWordGetCharEncFlags</a></dt><dd> -  Gets the WordFinder Character Encoding Flags for each character in a word, which specify how reliably the word finder identified the character encoding.</dd>
+<dt><a href="#PDWordGetCharOffset">PDWordGetCharOffset</a></dt><dd> -  Returns a word's character offset from the beginning of its page.</dd>
+<dt><a href="#PDWordGetCharOffsetEx">PDWordGetCharOffsetEx</a></dt><dd> -  This is a version 6.0 extension of PDWordGetCharOffset() that can be used only with a word finder created with algorithm version WF_VERSION_3 or higher.</dd>
+<dt><a href="#PDWordGetCharQuad">PDWordGetCharQuad</a></dt><dd> -  Gets the quadrilateral bounding of the character at a given index position in the word.</dd>
+<dt><a href="#PDWordGetCharacterTypes">PDWordGetCharacterTypes</a></dt><dd> -  Gets the character type for each character in a word.</dd>
+<dt><a href="#PDWordGetLength">PDWordGetLength</a></dt><dd> -  Gets the number of bytes in a word.</dd>
+<dt><a href="#PDWordGetNthCharStyle">PDWordGetNthCharStyle</a></dt><dd> -  Returns a PDStyle object for the nth style in a word.</dd>
+<dt><a href="#PDWordGetNthQuad">PDWordGetNthQuad</a></dt><dd> -  Gets the specified word's nth quad, specified in user space coordinates.</dd>
+<dt><a href="#PDWordGetNumHiliteChar">PDWordGetNumHiliteChar</a></dt><dd> -  Gets the number of highlightable characters in a word.</dd>
+<dt><a href="#PDWordGetNumQuads">PDWordGetNumQuads</a></dt><dd> -  Gets the number of quads in a word.</dd>
+<dt><a href="#PDWordGetString">PDWordGetString</a></dt><dd> -  This method gets a word's text.</dd>
+<dt><a href="#PDWordGetStyleTransition">PDWordGetStyleTransition</a></dt><dd> -  Gets the locations of style transitions in a word.</dd>
+<dt><a href="#PDWordIsCurrentlyVisible">PDWordIsCurrentlyVisible</a></dt><dd> -  Tests whether a word is visible in a given optional-content context on a given page.</dd>
+<dt><a href="#PDWordIsRotated">PDWordIsRotated</a></dt><dd> -  Tests whether a word is rotated.</dd>
+<dt><a href="#PDWordMakeVisible">PDWordMakeVisible</a></dt><dd> -  Makes a word visible in a given optional-content context on a given page.</dd>
+<dt><a href="#PDWordSplitString">PDWordSplitString</a></dt><dd> -  Splits the specified string into words by substituting spaces for word separator characters.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDWordCreateTextSelect"><strong><span style="color:grey;">PDWordCreateTextSelect</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:8283</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a text selection object for a given page that includes all words in a word list, as returned from a <a href="pdlayer_PDWord.htm#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> method. The text selection can then be set as the current selection using AVDocSetSelection(). </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> For consistent text selection behavior, avoid using other <a href="pdlayer_PDTextSelect.htm#PDTextSelect" title=" A pointer to a PDTextSelect struct.">PDTextSelect</a> creation methods which depend on the word finder versions and word offsets. These include <a href="pdlayer_PDTextSelect.htm#PDTextSelectCreatePageHiliteEx" title=" Adds the WFVersion parameter to PDTextSelectCreatePageHilite().">PDTextSelectCreatePageHiliteEx</a>(), <a href="pdlayer_PDTextSelect.htm#PDTextSelectCreateRanges" title=" Creates a text selection from one or more ranges.">PDTextSelectCreateRanges</a>(), <a href="pdlayer_PDTextSelect.htm#PDTextSelectCreateRangesEx" title=" Adds the WFVersion parameter to PDTextSelectCreateRanges().">PDTextSelectCreateRangesEx</a>(), <a href="pdlayer_PDTextSelect.htm#PDTextSelectCreateWordHilite" title=" Creates a text selection from a list of highlights specified as word offsets from the start of the page.">PDTextSelectCreateWordHilite</a>(), and <a href="pdlayer_PDTextSelect.htm#PDTextSelectCreateWordHiliteEx" title=" Adds the WFVersion parameter to PDTextSelectCreateWordHilite().">PDTextSelectCreateWordHiliteEx</a>(). </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDDoc.htm#PDDocCreateTextSelect" title=" Creates a text selection that includes all words totally or partially enclosed by a rectangle."><code>PDDocCreateTextSelect</code></a>
+<a href="pdlayer_PDTextSelect.htm#PDTextSelectDestroy" title=" Deletes a text selection object (the text on the page remains unchanged)."><code>PDTextSelectDestroy</code></a>
+<a href="pdlayer_PDTextSelect.htm#PDTextSelectEnumQuads" title=" Enumerates the bounding quads in a text selection."><code>PDTextSelectEnumQuads</code></a>
+<a href="pdlayer_PDTextSelect.htm#PDTextSelectEnumText" title=" Enumerates the strings of the specified text select object, calling a procedure for each string."><code>PDTextSelectEnumText</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDTextSelect.htm#PDTextSelect" title=" A pointer to a PDTextSelect struct."><code>PDTextSelect</code></a> <code>PDWordCreateTextSelect(</code><a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document."><code>PDPage</code></a> <code>page</code><code>,</code> <a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>*</code><code>wList</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>wListLen</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>page</code></span>
+</td><td><span>The page on which to select the words. </span>
+</td></tr>
+<tr><td><span><code>wList</code></span>
+</td><td><span>The word list to be selected. </span>
+</td></tr>
+<tr><td><span><code>wListLen</code></span>
+</td><td><span>The number of words in the word list. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created text selection. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordFilterString"><strong><span style="color:grey;">PDWordFilterString</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4890</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Removes leading and trailing spaces and leading and trailing punctuation (including soft hyphens) from the specified word. It does not remove wildcard characters ( <code>'</code> <code>*'</code> and <code>'?'</code>) or any punctuation surrounded by alphanumeric characters within the word.<br/>
+<p>The determination of which characters are alphanumeric, wildcard, punctuation, and so forth, is made by the values in <code>infoArray</code>.<br/></p>
+
+<p>
+<p>Although this method seems very similar to <a href="pdlayer_PDWord.htm#PDWordFilterWord" title=" Removes leading and trailing spaces and leading and trailing punctuation (including soft hyphens) from the specified word.">PDWordFilterWord</a>(), the two methods treat letters and digits slightly differently. <a href="pdlayer_PDWord.htm#PDWordFilterWord" title=" Removes leading and trailing spaces and leading and trailing punctuation (including soft hyphens) from the specified word.">PDWordFilterWord</a>() uses the encoding info array but also does a straight character code test for any characters that have not been mapped to anything. It does this to catch letters and digits from non-standard character sets, and is necessary to avoid removing words with non-standard character sets.<br/></p>
+
+<p>
+<p><a href="pdlayer_PDWord.htm#PDWordFilterString" title=" Removes leading and trailing spaces and leading and trailing punctuation (including soft hyphens) from the specified word.">PDWordFilterString</a>(), on the other hand, was designed for known character sets such as WinAnsi and Mac Roman.<br/></p>
+
+<p>
+<p>For non-Roman character set viewers, this method currently supports only SHIFT-JIS encoding on a Japanese system.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> In Acrobat 6.0, the method <a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWordsStr" title=" Constructs a PDWord list from a Unicode string, and calls a user-supplied procedure once for each word found.">PDWordFinderEnumWordsStr</a>() is preferred to this method, which remains for backward compatability. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDWord.htm#PDWordFilterWord" title=" Removes leading and trailing spaces and leading and trailing punctuation (including soft hyphens) from the specified word.">PDWordFilterWord</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDWordFilterString(</code><a href="aslayer_General.htm#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>*</code><code>infoArray</code><code>,</code> <code>char</code> <code>*</code><code>cNewWord</code><code>,</code> <code>char</code> <code>*</code><code>cOldWord</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>infoArray</code></span>
+</td><td><div><p>An array specifying the type of each character in the font. Each entry in this table must be one of the Character Type Codes. If <code>infoArray</code> is set to <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, a default table is used. For non-UNIX Roman systems, it is <code>WinAnsiEncoding</code> on Windows <code>and</code> <code>MacRomanEncoding</code> on Mac OS. On UNIX (except HP-UX) Roman systems, it is <code>ISO8859-1</code> (ISO Latin-1); for HP-UX, it is <code>HP-ROMAN8</code>.<br/>
+<p>For descriptions of <code>WinAnsiEncoding</code> and <code>MacRomanEncoding</code>, see Annex D, "Character Sets and Encodings, in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, page 651.<br/></p>
+
+<span>
+<p>You can find this document on the web store of the International Standards Organization (ISO).</span>
+</div>
+</td></tr>
+<tr><td><span><code>cNewWord</code></span>
+</td><td><span>(Filled by the method) The filtered word. </span>
+</td></tr>
+<tr><td><span><code>cOldWord</code></span>
+</td><td><span>The unfiltered word. This value must be passed to the method. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the string required filtering, <a href="aslayer_General.htm#false"><code>false</code></a> if the filtered string is the same as the unfiltered string. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordFilterWord"><strong><span style="color:grey;">PDWordFilterWord</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4925</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Removes leading and trailing spaces and leading and trailing punctuation (including soft hyphens) from the specified word. It does not remove wildcard characters ( <code>'</code> <code>*'</code> and <code>'?'</code>) or any punctuation surrounded by alphanumeric characters within the word. It also converts ligatures to their constituent characters. The determination of which characters to remove is made by examining the flags in the <code>outEncInfo</code> array passed to <a href="pdlayer_PDDoc.htm#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file.">PDDocCreateWordFinder</a>(). As a result, this method is most useful after you have been called with words obtained by calling <a href="pdlayer_PDWord.htm#PDWordFinderGetNthWord" title=" Gets the nth word in the word list obtained using PDWordFinderAcquireWordList().">PDWordFinderGetNthWord</a>(), in the callback for <a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWords" title=" Extracts words, one at a time, from the specified page or the entire document.">PDWordFinderEnumWords</a>(), and words in the pXYSortTable returned by <a href="pdlayer_PDWordFinder.htm#PDWordFinderAcquireWordList" title=" Finds all words on the specified page and returns one or more tables containing the words.">PDWordFinderAcquireWordList</a>(). See the description of <a href="pdlayer_PDWord.htm#PDWordFilterString" title=" Removes leading and trailing spaces and leading and trailing punctuation (including soft hyphens) from the specified word.">PDWordFilterString</a>() for further information, and for a description of how the two methods differ.<br/>
+<p>The Acrobat Catalog program uses this method to filter words before indexing them.<br/></p>
+
+<p>
+<p>This method works with non-Roman systems.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> In Acrobat 6.0 and later, the method <a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWords" title=" Extracts words, one at a time, from the specified page or the entire document.">PDWordFinderEnumWords</a>() is preferred to this method, which remains for backward compatability. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDWord.htm#PDWordFilterString" title=" Removes leading and trailing spaces and leading and trailing punctuation (including soft hyphens) from the specified word.">PDWordFilterString</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDWordFilterWord(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>,</code> <code>char</code> <code>*</code><code>buffer</code><code>,</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>bufferLen</code><code>,</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>*</code><code>newLen</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>The <a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file.">PDWord</a> to filter. </span>
+</td></tr>
+<tr><td><span><code>buffer</code></span>
+</td><td><span>(Filled by the method) The filtered string. </span>
+</td></tr>
+<tr><td><span><code>bufferLen</code></span>
+</td><td><span>The maximum number of characters that <code>buffer</code> can hold. </span>
+</td></tr>
+<tr><td><span><code>newLen</code></span>
+</td><td><span>(Filled by the method) The number of characters actually written into <code>buffer</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the word required filtering, <a href="aslayer_General.htm#false"><code>false</code></a> if the filtered string is the same as the unfiltered string. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordFinderGetNthWord"><strong><span style="color:grey;">PDWordFinderGetNthWord</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:2121</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the nth word in the word list obtained using <a href="pdlayer_PDWordFinder.htm#PDWordFinderAcquireWordList" title=" Finds all words on the specified page and returns one or more tables containing the words.">PDWordFinderAcquireWordList</a>(). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderAcquireWordList" title=" Finds all words on the specified page and returns one or more tables containing the words."><code>PDWordFinderAcquireWordList</code></a>
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumWords" title=" Extracts words, one at a time, from the specified page or the entire document."><code>PDWordFinderEnumWords</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>PDWordFinderGetNthWord(</code><a href="pdlayer_PDWord.htm#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>wObj</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>nTh</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>wObj</code></span>
+</td><td><span>IN/OUT The word finder whose nth word is obtained. </span>
+</td></tr>
+<tr><td><span><code>nTh</code></span>
+</td><td><span>IN/OUT The index of the word to obtain. The first word on a page has an index of zero. Words are counted in PDF order. See the description of the <code>wInfoP</code> parameter in <a href="pdlayer_PDWordFinder.htm#PDWordFinderAcquireWordList" title=" Finds all words on the specified page and returns one or more tables containing the words.">PDWordFinderAcquireWordList</a>(). </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The nth word. It returns <a href="aslayer_General.htm#NULL"><code>NULL</code></a> when the end of the list is reached. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordGetASText"><strong><span style="color:grey;">PDWordGetASText</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:8203</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Copies the text from a word into an <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object. It automatically performs the necessary encoding conversions from the specified word (either in Unicode or Host Encoding) to the <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDWordGetASText(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>filter</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>str</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>The word whose text becomes the new <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a>. </span>
+</td></tr>
+<tr><td><span><code>filter</code></span>
+</td><td><div><p>Character types to be dropped from the output string. For example, the following returns text without soft hyphens and accent marks:<br/>
+<p><a href="pdlayer_PDWord.htm#PDWordGetASText" title=" Copies the text from a word into an ASText object."><code>PDWordGetASText</code></a><code>(word,</code> <a href="pdlayer_PDWord.htm#W_SOFT_HYPHEN" title=" A hyphen that is only present because a word is broken across two lines of text."><code>W_SOFT_HYPHEN</code></a> <code>+</code> <a href="pdlayer_PDWord.htm#W_ACCENT" title=" An accent mark."><code>W_ACCENT</code></a><code>,</code> <code>mystr);</code><br/></p>
+</div>
+</td></tr>
+<tr><td><span><code>str</code></span>
+</td><td><span>An existing <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object whose content will be replaced by the new text. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDWordGetAttr"><strong><span style="color:grey;">PDWordGetAttr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4687</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets a bit field containing information on the types of characters in a word. Use <a href="pdlayer_PDWord.htm#PDWordGetCharacterTypes" title=" Gets the character type for each character in a word.">PDWordGetCharacterTypes</a>() if you wish to check each character's type individually. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> <a href="pdlayer_PDWord.htm#PDWordGetAttr" title=" Gets a bit field containing information on the types of characters in a word.">PDWordGetAttr</a>() may return an attribute value greater than the maximum of all of the public attributes since there can be private attributes added on. It is recommended to <code>AND</code> the result with the attribute you are interested in. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDWord.htm#PDWordGetCharacterTypes" title=" Gets the character type for each character in a word."><code>PDWordGetCharacterTypes</code></a>
+<a href="pdlayer_PDWord.htm#PDWordGetNthCharStyle" title=" Returns a PDStyle object for the nth style in a word."><code>PDWordGetNthCharStyle</code></a>
+<a href="pdlayer_PDWord.htm#PDWordGetStyleTransition" title=" Gets the locations of style transitions in a word."><code>PDWordGetStyleTransition</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>PDWordGetAttr(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>IN/OUT The word whose character types are obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A bit field containing information on the types of characters in word. The value is a logical <code>OR</code> of the Word Attributes. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordGetAttrEx"><strong><span style="color:grey;">PDWordGetAttrEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:8259</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>This is a version 6.0 extension of <a href="pdlayer_PDWord.htm#PDWordGetAttr" title=" Gets a bit field containing information on the types of characters in a word.">PDWordGetAttr</a>() that can be used only with a word finder created with algorithm version <a href="pdlayer_PDWordFinder.htm#WF_VERSION_3" title=" For Acrobat 5.0 without accessibility enabled.">WF_VERSION_3</a> or higher. It can get an additional 16-bit flag group defined in Acrobat 6.<br/>
+<p>It gets a bit field containing information on the types of characters in a word. Use <a href="pdlayer_PDWord.htm#PDWordGetCharacterTypes" title=" Gets the character type for each character in a word.">PDWordGetCharacterTypes</a>() if you wish to check each character's type individually.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> <a href="pdlayer_PDWord.htm#PDWordGetAttr" title=" Gets a bit field containing information on the types of characters in a word.">PDWordGetAttr</a>() may return an attribute value greater than the maximum of all of the public attributes, since there can be private attributes added on. It is recommended that you <code>AND</code> the result with the attribute you are interested in. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDWord.htm#PDWordGetCharacterTypes" title=" Gets the character type for each character in a word."><code>PDWordGetCharacterTypes</code></a>
+<a href="pdlayer_PDWord.htm#PDWordGetNthCharStyle" title=" Returns a PDStyle object for the nth style in a word."><code>PDWordGetNthCharStyle</code></a>
+<a href="pdlayer_PDWord.htm#PDWordGetStyleTransition" title=" Gets the locations of style transitions in a word."><code>PDWordGetStyleTransition</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>PDWordGetAttrEx(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>groupID</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>The word whose character types are obtained. </span>
+</td></tr>
+<tr><td><span><code>groupID</code></span>
+</td><td><div><UL>The group number of the Word Attributes flags:<br/><li> <code>0</code>, the default, is the first 16-bit group, and is the same as <a href="pdlayer_PDWord.htm#PDWordGetAttr" title=" Gets a bit field containing information on the types of characters in a word.">PDWordGetAttr</a>().<br/><li> <code>1</code> gets the second group defined in Acrobat 6.<br/></UL>
+</div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A bit field containing information on the types of characters in <code>word</code>. The value is a logical <code>OR</code> of the Word Attributes. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordGetByteIdxFromHiliteChar"><strong><span style="color:grey;">PDWordGetByteIdxFromHiliteChar</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:8187</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>
+<p>Returns the byte offset within the specified word of the highlightable character at the specified character offset. The first character of a word is at byte offset <code>0</code>. This method can be used only with a word finder created with algorithm version <a href="pdlayer_PDWordFinder.htm#WF_VERSION_3" title=" For Acrobat 5.0 without accessibility enabled.">WF_VERSION_3</a> or higher.<br/></p>
+
+<p>
+<p>The returned byte offset can be passed to <a href="pdlayer_PDWord.htm#PDWordGetCharOffsetEx" title=" This is a version 6.0 extension of PDWordGetCharOffset() that can be used only with a word finder created with algorithm version WF_VERSION_3 or higher.">PDWordGetCharOffsetEx</a>() and <a href="pdlayer_PDWord.htm#PDWordGetCharQuad" title=" Gets the quadrilateral bounding of the character at a given index position in the word.">PDWordGetCharQuad</a>() to get additional information. Use <a href="pdlayer_PDWord.htm#PDWordGetNumHiliteChar" title=" Gets the number of highlightable characters in a word.">PDWordGetNumHiliteChar</a>() to get the number of highlightable characters in a word.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDWord.htm#PDWordGetCharOffsetEx" title=" This is a version 6.0 extension of PDWordGetCharOffset() that can be used only with a word finder created with algorithm version WF_VERSION_3 or higher."><code>PDWordGetCharOffsetEx</code></a>
+<a href="pdlayer_PDWord.htm#PDWordGetCharQuad" title=" Gets the quadrilateral bounding of the character at a given index position in the word."><code>PDWordGetCharQuad</code></a>
+<a href="pdlayer_PDWord.htm#PDWordGetNumHiliteChar" title=" Gets the number of highlightable characters in a word."><code>PDWordGetNumHiliteChar</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>PDWordGetByteIdxFromHiliteChar(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>charIdx</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>The word containing the character. </span>
+</td></tr>
+<tr><td><span><code>charIdx</code></span>
+</td><td><span>The character index within the word. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The byte offset of the specified character within the word, or <code>0</code> if the character index is out of range. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordGetCharDelta"><strong><span style="color:grey;">PDWordGetCharDelta</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4745</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the difference between the word length (the number of printed characters in the word) and the PDF word length (the number of character codes in the word). For instance, if the PDF word is <code>fi</code> <code>(ligature)</code> <code>sh</code> the mapped word will be <code>"fish"</code>. The ligature occupies only one character code, so in this case the character delta will be <code>3-4</code> <code>=</code><code>-1</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDWord.htm#PDWordGetCharOffset" title=" Returns a word's character offset from the beginning of its page."><code>PDWordGetCharOffset</code></a>
+<a href="pdlayer_PDWord.htm#PDWordGetLength" title=" Gets the number of bytes in a word."><code>PDWordGetLength</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt8" title=" 1-byte signed char value."><code>ASInt8</code></a> <code>PDWordGetCharDelta(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>IN/OUT The word whose character delta is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The character delta for word. Cast the return value to an <a href="aslayer_General.htm#ASInt8" title=" 1-byte signed char value.">ASInt8</a> before using. If the PDWord's character set has no ligatures, such as on a non-Roman viewer supporting Japanese, returns <code>0</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordGetCharEncFlags"><strong><span style="color:grey;">PDWordGetCharEncFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:8227</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the WordFinder Character Encoding Flags for each character in a word, which specify how reliably the word finder identified the character encoding.<br/>
+<p>This method can be used only with a word finder created with algorithm version <a href="pdlayer_PDWordFinder.htm#WF_VERSION_3" title=" For Acrobat 5.0 without accessibility enabled.">WF_VERSION_3</a> or higher.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDWord.htm#PDWordGetAttrEx" title=" This is a version 6.0 extension of PDWordGetAttr() that can be used only with a word finder created with algorithm version WF_VERSION_3 or higher."><code>PDWordGetAttrEx</code></a>
+<a href="pdlayer_PDWord.htm#PDWordGetLength" title=" Gets the number of bytes in a word."><code>PDWordGetLength</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDWordGetCharEncFlags(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>*</code><code>fList</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>size</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>The word whose character encoding flags are obtained. </span>
+</td></tr>
+<tr><td><span><code>fList</code></span>
+</td><td><span>(Filled by the method) An array of character encoding flags types. This array contains one element for each byte of text in the word. The byte length of the text can be determined with <a href="pdlayer_PDWord.htm#PDWordGetLength" title=" Gets the number of bytes in a word.">PDWordGetLength</a>(). Each element is the logical <code>OR</code> of one or more of the character encoding flags. </span>
+</td></tr>
+<tr><td><span><code>size</code></span>
+</td><td><span>The maximum number of elements in the array <code>fList</code>. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDWordGetCharOffset"><strong><span style="color:grey;">PDWordGetCharOffset</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4725</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns a word's character offset from the beginning of its page. This information, together with the character delta obtained from <a href="pdlayer_PDWord.htm#PDWordGetCharDelta" title=" Gets the difference between the word length (the number of printed characters in the word) and the PDF word length (the number of character codes in the word).">PDWordGetCharDelta</a>(), can be used to highlight a range of words on a page, using <a href="pdlayer_PDTextSelect.htm#PDTextSelectCreatePageHilite" title=" Creates a text selection from a page and a list of highlights specified as character offsets from the start of the page.">PDTextSelectCreatePageHilite</a>(). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDTextSelect.htm#PDTextSelectCreatePageHilite" title=" Creates a text selection from a page and a list of highlights specified as character offsets from the start of the page."><code>PDTextSelectCreatePageHilite</code></a>
+<a href="pdlayer_PDWord.htm#PDWordGetCharDelta" title=" Gets the difference between the word length (the number of printed characters in the word) and the PDF word length (the number of character codes in the word)."><code>PDWordGetCharDelta</code></a>
+<a href="pdlayer_PDWord.htm#PDWordGetLength" title=" Gets the number of bytes in a word."><code>PDWordGetLength</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>PDWordGetCharOffset(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>IN/OUT The word whose character offset is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The word's character offset. On multi-byte systems, it points to the first byte. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordGetCharOffsetEx"><strong><span style="color:grey;">PDWordGetCharOffsetEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:8118</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>This is a version 6.0 extension of <a href="pdlayer_PDWord.htm#PDWordGetCharOffset" title=" Returns a word's character offset from the beginning of its page.">PDWordGetCharOffset</a>() that can be used only with a word finder created with algorithm version <a href="pdlayer_PDWordFinder.htm#WF_VERSION_3" title=" For Acrobat 5.0 without accessibility enabled.">WF_VERSION_3</a> or higher.<br/>
+<p>It returns the character offset for a character identified by its index number, and the number of bytes (length) used for that character. The length is usually <code>1</code> for single-byte characters and <code>2</code> for double-byte characters. If multiple bytes are used to construct one character, only the first byte has valid character offset information and the other bytes have zero offset length with the same character offset of the first byte. If the returned offset length is zero, it means the specified byte in the word is a part (other than the first byte) of a multi-byte character.<br/></p>
+
+<p>
+<p>The character offset is the character position calculated in bytes from the beginning of a page. Because of the encoding conversions and character replacements applied by the word finder, some characters may have different byte lengths from the original PDF content. The character offset itself can locate a character in the PDF content. However, without the offset length (that is the number of bytes in the PDF content), clients cannot tell whether two characters are next to each other in the PDF content. For example, suppose you want to create a Text Select object of two characters at character offset <code>1</code> and <code>3</code>. You can create an object with two disconnected ranges of <code>[Offset</code> <code>1,</code> <code>The</code> <code>length</code> <code>1]</code> and <code>[Offset</code> <code>3,</code> <code>The</code> <code>length</code> <code>1]</code>. However, if you know that the offset length of both characters is <code>2</code>, you can create a simpler object with a single range of <code>[Offset</code> <code>1,</code> <code>The</code> <code>length</code> <code>4]</code>.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDTextSelect.htm#PDTextSelectCreatePageHilite" title=" Creates a text selection from a page and a list of highlights specified as character offsets from the start of the page."><code>PDTextSelectCreatePageHilite</code></a>
+<a href="pdlayer_PDWord.htm#PDWordGetCharDelta" title=" Gets the difference between the word length (the number of printed characters in the word) and the PDF word length (the number of character codes in the word)."><code>PDWordGetCharDelta</code></a>
+<a href="pdlayer_PDWord.htm#PDWordGetCharOffset" title=" Returns a word's character offset from the beginning of its page."><code>PDWordGetCharOffset</code></a>
+<a href="pdlayer_PDWord.htm#PDWordGetLength" title=" Gets the number of bytes in a word."><code>PDWordGetLength</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>PDWordGetCharOffsetEx(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>byteIdx</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>*</code><code>bytesConsumed</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>*</code><code>offsetLen</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>The word whose character offset is obtained. </span>
+</td></tr>
+<tr><td><span><code>byteIdx</code></span>
+</td><td><span>The byte index within the word of the character whose offset is obtained. Valid values are <code>0</code> to <a href="pdlayer_PDWord.htm#PDWordGetLength" title=" Gets the number of bytes in a word."><code>PDWordGetLength</code></a><code>(word)-1</code>. </span>
+</td></tr>
+<tr><td><span><code>bytesConsumed</code></span>
+</td><td><span>(Filled by method) Returns the number of bytes in the word that are occupied by the specified character. It can be <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if it is not needed. Use <code>(byteIdx</code> <code>+</code> <code>*bytesConsumed)</code> to get the byte index of the next character in the word. </span>
+</td></tr>
+<tr><td><span><code>offsetLen</code></span>
+</td><td><span>(Filled by the method) Returns the number of bytes occupied by the specified character in the original PDF content. This is <code>0</code> if the specified byte is not the starting byte of a character in the PDF content. It can be <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if it is not needed. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The word's character offset and the number of bytes occupied by the character. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordGetCharQuad"><strong><span style="color:grey;">PDWordGetCharQuad</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:8143</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the quadrilateral bounding of the character at a given index position in the word. If the specified character is constructed with multiple bytes, only the first byte returns a valid quad. Otherwise, this method returns <a href="aslayer_General.htm#false"><code>false</code></a>.<br/>
+<p>This method can be used only with a word finder created with algorithm version <a href="pdlayer_PDWordFinder.htm#WF_VERSION_3" title=" For Acrobat 5.0 without accessibility enabled.">WF_VERSION_3</a> or higher.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDWord.htm#PDWordGetCharOffsetEx" title=" This is a version 6.0 extension of PDWordGetCharOffset() that can be used only with a word finder created with algorithm version WF_VERSION_3 or higher."><code>PDWordGetCharOffsetEx</code></a>
+<a href="pdlayer_PDWord.htm#PDWordGetNthQuad" title=" Gets the specified word's nth quad, specified in user space coordinates."><code>PDWordGetNthQuad</code></a>
+<a href="pdlayer_PDWord.htm#PDWordGetNumQuads" title=" Gets the number of quads in a word."><code>PDWordGetNumQuads</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDWordGetCharQuad(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>byteIdx</code><code>,</code> <a href="aslayer_ASFixed.htm#_t_ASFixedQuad" title=" A quadrilateral represented by four fixed points (one at each corner)."><code>ASFixedQuad</code></a> <code>*</code><code>quad</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>The word whose character offset is obtained. </span>
+</td></tr>
+<tr><td><span><code>byteIdx</code></span>
+</td><td><span>The byte index within the word of the character whose quad is obtained. Valid values are <code>0</code> to <a href="pdlayer_PDWord.htm#PDWordGetLength" title=" Gets the number of bytes in a word."><code>PDWordGetLength</code></a><code>(word)-1</code>. </span>
+</td></tr>
+<tr><td><span><code>quad</code></span>
+</td><td><span>(Filled by method) A pointer to an existing quad structure in which to return the character's quad specified in user-space coordinates. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the provided byte index is the beginning byte of a character and a valid quad is returned, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordGetCharacterTypes"><strong><span style="color:grey;">PDWordGetCharacterTypes</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4708</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the character type for each character in a word. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDWord.htm#PDWordGetAttr" title=" Gets a bit field containing information on the types of characters in a word."><code>PDWordGetAttr</code></a>
+<a href="pdlayer_PDWord.htm#PDWordGetLength" title=" Gets the number of bytes in a word."><code>PDWordGetLength</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDWordGetCharacterTypes(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>,</code> <a href="aslayer_General.htm#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>*</code><code>cArr</code><code>,</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>size</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>The word whose character types are obtained. </span>
+</td></tr>
+<tr><td><span><code>cArr</code></span>
+</td><td><span>(Filled by the method) An array of character types. This array contains one element for each character in the word. Use <a href="pdlayer_PDWord.htm#PDWordGetLength" title=" Gets the number of bytes in a word.">PDWordGetLength</a>() to determine the number of elements that must be in the array. Each element is the logical <code>OR</code> of one or more of the Character Type Codes. For non-Roman character set viewers, meaningful values are returned only for Roman characters. For non-Roman characters, it returns <code>0</code>, which is the same as <a href="pdlayer_PDWord.htm#W_CNTL" title=" A control code."><code>W_CNTL</code></a>. If the character is 2 bytes, both bytes indicate the same character type. </span>
+</td></tr>
+<tr><td><span><code>size</code></span>
+</td><td><span>The number of elements in <code>cArr</code>. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDWordGetLength"><strong><span style="color:grey;">PDWordGetLength</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4639</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the number of bytes in a word. This method also works on non-Roman systems. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDWord.htm#PDWordGetCharDelta" title=" Gets the difference between the word length (the number of printed characters in the word) and the PDF word length (the number of character codes in the word)."><code>PDWordGetCharDelta</code></a>
+<a href="pdlayer_PDWord.htm#PDWordGetCharOffset" title=" Returns a word's character offset from the beginning of its page."><code>PDWordGetCharOffset</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>PDWordGetLength(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>IN/OUT The word object whose character count is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of characters in word. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordGetNthCharStyle"><strong><span style="color:grey;">PDWordGetNthCharStyle</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4779</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns a <a href="pdlayer_PDStyle.htm#PDStyle" title=" Provides access to information about the fonts, font sizes, and colors used in a PDWord.">PDStyle</a> object for the nth style in a word. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDWord.htm#PDWordGetStyleTransition" title=" Gets the locations of style transitions in a word.">PDWordGetStyleTransition</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDStyle.htm#PDStyle" title=" Provides access to information about the fonts, font sizes, and colors used in a PDWord."><code>PDStyle</code></a> <code>PDWordGetNthCharStyle(</code><a href="pdlayer_PDWord.htm#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>wObj</code><code>,</code> <a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>dex</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>wObj</code></span>
+</td><td><span>IN/OUT A word finder object. </span>
+</td></tr>
+<tr><td><span><code>word</code></span>
+</td><td><span>IN/OUT The word whose nth style is obtained. </span>
+</td></tr>
+<tr><td><span><code>dex</code></span>
+</td><td><span>IN/OUT The index of the style to obtain. The first style in a word has an index of zero. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The nth style in the word. It returns <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if <code>dex</code> is greater than the number of styles in the word. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span>is raised if <code>dex</code> <code>&lt;</code> <code>0</code>. </span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDWordGetNthQuad"><strong><span style="color:grey;">PDWordGetNthQuad</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4827</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the specified word's nth quad, specified in user space coordinates. See <a href="pdlayer_PDWord.htm#PDWordGetNumQuads" title=" Gets the number of quads in a word.">PDWordGetNumQuads</a>() for a description of a quad.<br/>
+<p>The quad's height is the height of the font's bounding box, not the height of the tallest character used in the word. The font's bounding box is determined by the glyphs in the font that extend farthest above and below the baseline; it often extends somewhat above the top of <code>'A'</code> and below the bottom of <code>'y'</code>.<br/></p>
+
+<p>
+<p>The quad's width is determined from the characters actually present in the word.<br/></p>
+
+<p>
+<p>For example, the quads for the words <code>"AWAY"</code> and <code>"away"</code> have the same height, but generally do not have the same width unless the font is a mono-spaced font (a font in which all characters have the same width).<br/></p>
+
+<span>
+<p>Despite the names of the fields in an <a href="aslayer_ASFixed.htm#_t_ASFixedQuad" title=" A quadrilateral represented by four fixed points (one at each corner).">ASFixedQuad</a> ( <code>tl</code> for top left, <code>bl</code> for bottom left, and so forth) the corners of <code>quad</code> do not necessarily have these positions.</span>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDWord.htm#PDWordGetNumQuads" title=" Gets the number of quads in a word.">PDWordGetNumQuads</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDWordGetNthQuad(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>,</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>nTh</code><code>,</code> <a href="aslayer_ASFixed.htm#_t_ASFixedQuad" title=" A quadrilateral represented by four fixed points (one at each corner)."><code>ASFixedQuad</code></a> <code>*</code><code>quad</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>The word whose nth quad is obtained. </span>
+</td></tr>
+<tr><td><span><code>nTh</code></span>
+</td><td><span>The quad to obtain. A word's first quad has an index of zero. </span>
+</td></tr>
+<tr><td><span><code>quad</code></span>
+</td><td><span>(Filled by the method) A pointer to the word's nth quad, specified in user-space coordinates. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the word has an nth quad, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordGetNumHiliteChar"><strong><span style="color:grey;">PDWordGetNumHiliteChar</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:8165</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>
+<p>Gets the number of <em>highlightable</em> characters in a word. A highlightable character is the minimum text unit that Acrobat can select and highlight. This method can be used only with a word finder created with algorithm version <a href="pdlayer_PDWordFinder.htm#WF_VERSION_3" title=" For Acrobat 5.0 without accessibility enabled.">WF_VERSION_3</a> or higher.<br/></p>
+
+<p>
+<p>Because of the encoding conversion, the characters in a word finder word list do not have a 1-to-1 correspondence to the characters displayed by Acrobat. For example, if the word is <code>"fish"</code> and the text operation in PDF content is <code>"fi"</code> (ligature) <code>+</code> <code>'s'</code> <code>+</code> <code>'h'</code>, this method returns the number of highlightable characters as <code>3</code>, counting <code>"fi"</code> as one character. For the same word, the <a href="pdlayer_PDWord.htm#PDWordGetLength" title=" Gets the number of bytes in a word.">PDWordGetLength</a>() method returns the byte-length as <code>4</code>.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDWord.htm#PDWordGetLength" title=" Gets the number of bytes in a word.">PDWordGetLength</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>PDWordGetNumHiliteChar(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>The word whose highlightable character count is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of highlightable characters in <code>word</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordGetNumQuads"><strong><span style="color:grey;">PDWordGetNumQuads</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4793</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the number of quads in a word. A quad is a quadrilateral bounding a contiguous piece of a word. Every word has at least one quad. A word has more than one quad, for example, if it is hyphenated and split across multiple lines or if the word is set on a curve rather than on a straight line. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDWord.htm#PDWordGetNthQuad" title=" Gets the specified word's nth quad, specified in user space coordinates.">PDWordGetNthQuad</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>PDWordGetNumQuads(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>IN/OUT The word whose quad count is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of quads in word. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordGetString"><strong><span style="color:grey;">PDWordGetString</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4667</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>This method gets a word's text. The string to return includes any word break characters (such as space characters) that follow the word, but not any that precede the word. The characters that are treated as word breaks are defined in the <code>outEncInfo</code> parameter of <a href="pdlayer_PDDoc.htm#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file.">PDDocCreateWordFinder</a>() method. Use <a href="pdlayer_PDWord.htm#PDWordFilterString" title=" Removes leading and trailing spaces and leading and trailing punctuation (including soft hyphens) from the specified word.">PDWordFilterString</a>() to subsequently remove the word break characters.<br/>
+<p>This method produces a string in whatever encoding the <a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file.">PDWord</a> uses, for both Roman and non-Roman systems.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDWord.htm#PDWordGetCharDelta" title=" Gets the difference between the word length (the number of printed characters in the word) and the PDF word length (the number of character codes in the word)."><code>PDWordGetCharDelta</code></a>
+<a href="pdlayer_PDWord.htm#PDWordGetLength" title=" Gets the number of bytes in a word."><code>PDWordGetLength</code></a>
+<a href="pdlayer_PDWord.htm#PDWordSplitString" title=" Splits the specified string into words by substituting spaces for word separator characters."><code>PDWordSplitString</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDWordGetString(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>,</code> <code>char</code> <code>*</code><code>str</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>len</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>The word whose string is obtained. </span>
+</td></tr>
+<tr><td><span><code>str</code></span>
+</td><td><span>(Filled by the method) The string. The encoding of the string is the encoding used by the <a href="pdlayer_PDWord.htm#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> that supplied the <a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file.">PDWord</a>. For instance, if <a href="pdlayer_PDDoc.htm#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file.">PDDocCreateWordFinderUCS</a>() is used to create the word finder, <a href="pdlayer_PDWord.htm#PDWordGetString" title=" This method gets a word's text.">PDWordGetString</a>() returns only Unicode. There is no way to detect Unicode strings returned by <a href="pdlayer_PDWord.htm#PDWordGetString" title=" This method gets a word's text.">PDWordGetString</a>(), since there is no UCS header ( <code>FEFF</code>) added to each string returned. </span>
+</td></tr>
+<tr><td><span><code>len</code></span>
+</td><td><span>The length of <code>str</code> in bytes. Up to <code>len</code> characters of word will be copied into <code>str</code>. If <code>str</code> is long enough, it will be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span>is raised if either <code>word</code> or <code>str</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDWordGetStyleTransition"><strong><span style="color:grey;">PDWordGetStyleTransition</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4765</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the locations of style transitions in a word. Every word has at least one style transition, at character position zero in the word. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDWord.htm#PDWordGetNthCharStyle" title=" Returns a PDStyle object for the nth style in a word.">PDWordGetNthCharStyle</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>PDWordGetStyleTransition(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>,</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>*</code><code>transTbl</code><code>,</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>size</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>IN/OUT The word whose style transition list is obtained. </span>
+</td></tr>
+<tr><td><span><code>transTbl</code></span>
+</td><td><span>IN/OUT (Filled by the method) An array of style transitions. Each element is the character offset in word where the style changes. The offset specifies the first character in the word that has the new style. The first character in a word has an offset of zero. </span>
+</td></tr>
+<tr><td><span><code>size</code></span>
+</td><td><span>IN/OUT The number of entries that <code>transTbl</code> can hold. The word is searched only until this number of style transitions have been found. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of style transition offsets copied to <code>transTbl</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordIsCurrentlyVisible"><strong><span style="color:grey;">PDWordIsCurrentlyVisible</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:10211</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Tests whether a word is visible in a given optional-content context on a given page. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderAcquireVisibleWordList" title=" Finds all words on the specified page that are visible in the given optional-content context and returns one or more tables containing the words."><code>PDWordFinderAcquireVisibleWordList</code></a>
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumVisibleWords" title=" Extracts visible words, one at a time, from the specified page or the entire document."><code>PDWordFinderEnumVisibleWords</code></a>
+<a href="pdlayer_PDWord.htm#PDWordMakeVisible" title=" Makes a word visible in a given optional-content context on a given page."><code>PDWordMakeVisible</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDWordIsCurrentlyVisible(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>pageNum</code><code>,</code> <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ctx</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>The word to test. </span>
+</td></tr>
+<tr><td><span><code>pageNum</code></span>
+</td><td><span>The page number for which the word is tested. </span>
+</td></tr>
+<tr><td><span><code>ctx</code></span>
+</td><td><span>The context in which the word is tested, as returned by <a href="pdlayer_PDDoc.htm#PDDocGetOCContext" title=" Gets the built-in default optional-content context for the document."><code>PDDocGetOCContext</code></a><code>(pdDoc)</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the word is visible in the given context, <a href="aslayer_General.htm#false"><code>false</code></a> if it is hidden. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordIsRotated"><strong><span style="color:grey;">PDWordIsRotated</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:4835</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Tests whether a word is rotated. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDWord.htm#PDWordGetNthQuad" title=" Gets the specified word's nth quad, specified in user space coordinates.">PDWordGetNthQuad</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDWordIsRotated(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>The word to test. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the word is rotated, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordMakeVisible"><strong><span style="color:grey;">PDWordMakeVisible</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:10227</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Makes a word visible in a given optional-content context on a given page. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderAcquireVisibleWordList" title=" Finds all words on the specified page that are visible in the given optional-content context and returns one or more tables containing the words."><code>PDWordFinderAcquireVisibleWordList</code></a>
+<a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumVisibleWords" title=" Extracts visible words, one at a time, from the specified page or the entire document."><code>PDWordFinderEnumVisibleWords</code></a>
+<a href="pdlayer_PDWord.htm#PDWordIsCurrentlyVisible" title=" Tests whether a word is visible in a given optional-content context on a given page."><code>PDWordIsCurrentlyVisible</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDWordMakeVisible(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>pageNum</code><code>,</code> <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ctx</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>The word to test. </span>
+</td></tr>
+<tr><td><span><code>pageNum</code></span>
+</td><td><span>The page number for which the word is to be made visible. </span>
+</td></tr>
+<tr><td><span><code>ctx</code></span>
+</td><td><span>The context in which the word is to be made visible, as returned by <a href="pdlayer_PDDoc.htm#PDDocGetOCContext" title=" Gets the built-in default optional-content context for the document."><code>PDDocGetOCContext</code></a><code>(pdDoc)</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the word can be made visible in the given context, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordSplitString"><strong><span style="color:grey;">PDWordSplitString</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:2155</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Splits the specified string into words by substituting spaces for word separator characters. The list of characters considered to be word separators can be specified, or a default list can be used.<br/>
+<p>The characters <code>','</code> and <code>'.'</code> are context-sensitive word separators. If surrounded by digits (for example, <code>654,096.345</code>), they are not considered word separators.<br/></p>
+
+<p>
+<p>For non-Roman character set viewers, this method currently supports only SHIFT-JIS encoding on a Japanese system.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDWord.htm#PDWordGetString" title=" This method gets a word's text.">PDWordGetString</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>PDWordSplitString(</code><a href="aslayer_General.htm#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>*</code><code>infoArray</code><code>,</code> <code>char</code> <code>*</code><code>cNewWord</code><code>,</code> <code>char</code> <code>*</code><code>cOldWord</code><code>,</code> <a href="aslayer_General.htm#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>nMaxLen</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>infoArray</code></span>
+</td><td><span>A character information table. It specifies each character's type; word separator characters must be marked as <a href="pdlayer_PDWord.htm#W_WORD_BREAK" title=" A glyph that acts as a delimiter between words."><code>W_WORD_BREAK</code></a> (see Character Type Codes). This table can be identical to the table to pass to <a href="pdlayer_PDDoc.htm#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file.">PDDocCreateWordFinder</a>(). If <code>infoArray</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, a default table is used (see Glyph Names of Word Separators). </span>
+</td></tr>
+<tr><td><span><code>cNewWord</code></span>
+</td><td><span>(Filled by the method) The word that has been split. Word separator characters have been replaced with spaces. </span>
+</td></tr>
+<tr><td><span><code>cOldWord</code></span>
+</td><td><span>The word to split. </span>
+</td></tr>
+<tr><td><span><code>nMaxLen</code></span>
+</td><td><span>The number of characters that <code>cNewWord</code> can hold. Word splitting stops when <code>cOldWord</code> is completely processed or <code>nMaxLen</code> characters have been placed in <code>cNewWord</code>, whichever occurs first. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of splits that occurred. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrGeneral" title=" An internal error occurred."><code>genErrGeneral</code></a></span>
+</td><td><span>is raised if <code>infoArray</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, but host encoding cannot be obtained. </span>
+</td></tr></table>
+</div>
+</section>
+</section>
+
+</div>
+</body></html>

@@ -1,0 +1,2126 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDF Edit Layer: PDEFont</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDF Edit Layer: PDEFont</h5>
+<li><a href="#Definitions">Definitions</a></li>
+<li><a href="#Enumerations">Enumerations</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Definitions">
+<header><h2>PDEFont Definitions</h2></header>
+<nav><dl>
+<dt><a href="#kPDEFontNoEditableEmbedding">kPDEFontNoEditableEmbedding</a></dt><dd> -  Flags for protection of PDEFontAttrs: editable embedding is not allowed.</dd>
+<dt><a href="#kPDEFontNoEmbedding">kPDEFontNoEmbedding</a></dt><dd> -  Flags for protection of PDEFontAttrs: embedding is not allowed.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="kPDEFontNoEditableEmbedding"><strong><span style="color:grey;">kPDEFontNoEditableEmbedding</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:2004</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Flags for protection of <a href="pdelayer_PDEFont.htm#_t_PDEFontAttrs" title=" Attributes of a PDEFont and of a PDSysFont.">PDEFontAttrs</a>: editable embedding is not allowed. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDEFontNoEditableEmbedding</code> <code>0x00000002</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kPDEFontNoEmbedding"><strong><span style="color:grey;">kPDEFontNoEmbedding</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:2001</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Flags for protection of <a href="pdelayer_PDEFont.htm#_t_PDEFontAttrs" title=" Attributes of a PDEFont and of a PDSysFont.">PDEFontAttrs</a>: embedding is not allowed. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kPDEFontNoEmbedding</code> <code>0x00000001</code> </code>
+</section>
+</section>
+<section id="Enumerations">
+<header><h2>PDEFont Enumerations</h2></header>
+<nav><dl>
+<dt><a href="#PDEFontCreateFlags">PDEFontCreateFlags</a></dt><dd> -  Flags for PDEFontCreateFromSysFont().</dd>
+<dt><a href="#PDEFontCreateNeedFlags">PDEFontCreateNeedFlags</a></dt><dd> -  Flags for PDEFontGetCreateNeedFlags().</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEFontCreateFlags"><strong><span style="color:grey;">PDEFontCreateFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:1926</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Flags for <a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFont" title=" Gets a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFont</code></a><code>()</code>. If you want to subset a font, set both the <a href="pdelayer_PDEFont.htm#kPDEFontCreateEmbedded" title=" Embed the font."><code>kPDEFontCreateEmbedded</code></a> and <a href="pdelayer_PDEFont.htm#kPDEFontWillSubset" title=" Subset the font."><code>kPDEFontWillSubset</code></a> flags. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFont" title=" Gets a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFont</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontAndEncoding" title=" Create a PDEFont from sysFont and sysEnc."><code>PDEFontCreateFromSysFontAndEncoding</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontWithParams" title=" Used to obtain a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFontWithParams</code></a></div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kPDEFontCreateEmbedded"><code>kPDEFontCreateEmbedded</code><code>=</code><code>0x0001</code></span>
+</td><td><span>Embed the font. Create an embedded font. By itself, this will not subset the font. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEFontWillSubset"><code>kPDEFontWillSubset</code><code>=</code><code>0x0002</code></span>
+</td><td><span>Subset the font. If you want to subset a font, set both the <a href="pdelayer_PDEFont.htm#kPDEFontCreateEmbedded" title=" Embed the font."><code>kPDEFontCreateEmbedded</code></a> and <a href="pdelayer_PDEFont.htm#kPDEFontWillSubset" title=" Subset the font.">kPDEFontWillSubset</a> flags. You must call <a href="pdelayer_PDEFont.htm#PDEFontSubsetNow" title=" Subsets a given PDEFont in a CosDoc."><code>PDEFontSubsetNow</code></a><code>()</code> to actually subset the font. Both embedding and subsetting a font creates a CFF font. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEFontDoNotEmbed"><code>kPDEFontDoNotEmbed</code><code>=</code><code>0x0004</code></span>
+</td><td><span>Do not embed the font. You cannot set both this and the <a href="pdelayer_PDEFont.htm#kPDEFontWillSubset" title=" Subset the font."><code>kPDEFontWillSubset</code></a> flags. Nor can you set <a href="pdelayer_PDEFont.htm#kPDEFontCreateEmbedded" title=" Embed the font."><code>kPDEFontCreateEmbedded</code></a>. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEFontEncodeByGID"><code>kPDEFontEncodeByGID</code><code>=</code><code>0x0008</code></span>
+</td><td><span>Create a CIDFont with identity (GID) encoding. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEFontDeferWidths"><code>kPDEFontDeferWidths</code><code>=</code><code>0x0010</code></span>
+</td><td><span>Wait to get the widths until later (this affects Type0 fonts only). </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEFontCreateSubset"><code>kPDEFontCreateSubset</code><code>=</code><code>kPDEFontWillSubset</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEFontCreateGIDOverride"><code>kPDEFontCreateGIDOverride</code><code>=</code><code>0x0020</code></span>
+</td><td><span>PDFLib will convert <code>cp</code> to <code>gid</code> with identity embedded. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEFontCreateToUnicode"><code>kPDEFontCreateToUnicode</code><code>=</code><code>0x0040</code></span>
+</td><td><span>Create a ToUnicode CMap. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEFontCreateAllWidths"><code>kPDEFontCreateAllWidths</code><code>=</code><code>0x0080</code></span>
+</td><td><span>Supply the entire widths table (this affects Type0 fonts only). </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEFontCreateEmbedOpenType"><code>kPDEFontCreateEmbedOpenType</code><code>=</code><code>0x0100</code></span>
+</td><td><span>Embed an OpenType style font subset, if appropriate. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEFontCreateReserved1"><code>kPDEFontCreateReserved1</code><code>=</code><code>0x0200</code></span>
+</td><td><span>Reserved for internal usage </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEFontCreateFullCIDSet"><code>kPDEFontCreateFullCIDSet</code><code>=</code><code>0x0400</code></span>
+</td><td><span>Create CIDSet entry from all CIDs present in subsetted Type0 CID Fonts containing glyph descriptions based on identity encoded TrueType fonts (subtype CIDFontType2). Subsetted identity encoded Type0 fonts can have more glyphs than asked for to avoid glyph renumbering. Default behavior is to only include CIDs used in PDF page content stream in CIDset </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEFontThrowIfToUnicodeUsesPUA"><code>kPDEFontThrowIfToUnicodeUsesPUA</code><code>=</code><code>0x0800</code></span>
+</td><td><span>If <a href="pdelayer_PDEFont.htm#kPDEFontThrowIfToUnicodeUsesPUA" title=" If kPDEFontThrowIfToUnicodeUsesPUA flag is passed along with kPDEFontCreateToUnicode and kPDEFontCreateSubset, throw error in PDEFont embedding APIs if the created ToUnicode table contains Private Use Area (Range: E000-F8FF in plane 0 and Supplemental Private Use Area A B) Unicode values">kPDEFontThrowIfToUnicodeUsesPUA</a> flag is passed along with <a href="pdelayer_PDEFont.htm#kPDEFontCreateToUnicode" title=" Create a ToUnicode CMap.">kPDEFontCreateToUnicode</a> and <a href="pdelayer_PDEFont.htm#kPDEFontCreateSubset">kPDEFontCreateSubset</a>, throw error in <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> embedding APIs if the created ToUnicode table contains Private Use Area (Range: E000-F8FF in plane 0 and Supplemental Private Use Area A &amp; B) Unicode values </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEFontInvisibleRenderingMode"><code>kPDEFontInvisibleRenderingMode</code><code>=</code><code>0x1000</code></span>
+</td><td><span>Reserved for internal usage- This flag is passed if <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> is used with Text rendering mode 3(Invisible)- While converting to PDFXxx and PDFAxx if fetched fontfile stream data from Cooltype is empty (NULL), then with this flag enabled entire fontfile stream data from input file is copied to embedded font in output file </span>
+</td></tr></table>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontCreateNeedFlags"><strong><span style="color:grey;">PDEFontCreateNeedFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:1988</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Flags for <a href="pdelayer_PDEFont.htm#PDEFontGetCreateNeedFlags" title=" This function returns flags indicating what needs to be done to make PDEFont complete.">PDEFontGetCreateNeedFlags</a>(). </span>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kPDEFontCreateNeedWidths"><code>kPDEFontCreateNeedWidths</code><code>=</code><code>0x00010000</code></span>
+</td><td><span>It is necessary to to create the width. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEFontCreateNeedToUnicode"><code>kPDEFontCreateNeedToUnicode</code><code>=</code><code>0x00020000</code></span>
+</td><td><span>It is necessary to to create the ToUnicode stream. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEFontCreateNeedEmbed"><code>kPDEFontCreateNeedEmbed</code><code>=</code><code>0x00040000</code></span>
+</td><td><span>It is necessary to to embed it. </span>
+</td></tr></table>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>PDEFont Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDEFont">PDEFont</a></dt><dd> -  A reference to a font used on a page in a PDF file.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">PDEFont</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:312</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A reference to a font used on a page in a PDF file. It may be equated with a font in the system. A <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> is not the same as a <a href="pdlayer_PDFont.htm#PDFont" title=" A font that is used to draw text on a page.">PDFont</a>; a <a href="pdlayer_PDFont.htm#PDFont" title=" A font that is used to draw text on a page.">PDFont</a> is associated with a particular document. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDEFont</code> <code>*</code><code>PDEFont</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEFont.htm#PDEFontCreate" title=" Creates a new PDEFont from the specified parameters."><code>PDEFontCreate</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontCreateFromCosObj" title=" Creates a PDEFont corresponding to a Cos object of type Font."><code>PDEFontCreateFromCosObj</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFont" title=" Gets a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFont</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontAndEncoding" title=" Create a PDEFont from sysFont and sysEnc."><code>PDEFontCreateFromSysFontAndEncoding</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontAndEncodingInCosDoc" title=" Creates a font object like PDEFontCreateFromSysFontAndEncoding(), except that the client can specify the CosDoc in which the font is created."><code>PDEFontCreateFromSysFontAndEncodingInCosDoc</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontEx" title=" Creates a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFontEx</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontExInCosDoc" title=" Creates a font object like PDEFontCreateFromSysFontEx(), except that the client can specify the CosDoc in which the font is created."><code>PDEFontCreateFromSysFontExInCosDoc</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontInCosDoc" title=" Creates a font object like PDEFontCreateFromSysFont(), except that the client can specify the CosDoc in which the font is created."><code>PDEFontCreateFromSysFontInCosDoc</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontWithParams" title=" Used to obtain a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFontWithParams</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontCreateInCosDoc" title=" Creates a font object like PDEFontCreate(), except that the client can specify the CosDoc in which the font is created."><code>PDEFontCreateInCosDoc</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#PDEFontCreateWithParams" title=" Creates a new PDEFont from params."><code>PDEFontCreateWithParams</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontCreateWithParamsInCosDoc" title=" Creates a font object like PDEFontCreateWithParams(), except that the client can specify the CosDoc in which the font is created."><code>PDEFontCreateWithParamsInCosDoc</code></a></td></tr>
+<tr><td><a href="dlextras_PDEForm.htm#PDEFormGetFont" title=" This retrieves the PDEFont referenced in a PDEForm."><code>PDEFormGetFont</code></a></td><td><a href="dlextras_PDEGraphicFont.htm#PDEGraphicFontGetPDEFont" title=" Reserved for Internal Use."><code>PDEGraphicFontGetPDEFont</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextGetFont" title=" Gets the font for a text character or element."><code>PDETextGetFont</code></a></td><td><a href="pdelayer_PDETextItem.htm#PDETextItemGetFont" title=" Gets the font for a text item."><code>PDETextItemGetFont</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEFont.htm#PDEFontAddGlyphs" title=" Adds glyphs to a PDEFont object for embedding a PDEFont."><code>PDEFontAddGlyphs</code></a></td><td><a href="dlextras_PDEFont.htm#PDEFontCheckASTextIsRepresentable" title=" Routine to check that the entire contents of an ASText are representable in the font."><code>PDEFontCheckASTextIsRepresentable</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#PDEFontCreateToUnicodeNow" title=" This function creates the / ToUnicode table."><code>PDEFontCreateToUnicodeNow</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontCreateWidthsNow" title=" This function creates width entries for font."><code>PDEFontCreateWidthsNow</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#PDEFontEmbedNow" title=" This function embeds a font stream."><code>PDEFontEmbedNow</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontEmbedNowDontSubset" title=" Embeds the given PDEFont inside doc without creating a subset."><code>PDEFontEmbedNowDontSubset</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#PDEFontGetAttrs" title=" Gets the attributes for a font object."><code>PDEFontGetAttrs</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontGetCosObj" title=" Gets a Cos object for a PDEFont."><code>PDEFontGetCosObj</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#PDEFontGetCreateNeedFlags" title=" This function returns flags indicating what needs to be done to make PDEFont complete."><code>PDEFontGetCreateNeedFlags</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontGetNumCodeBytes" title=" Gets the number of bytes comprising the next code in a string of single or multi-byte character codes."><code>PDEFontGetNumCodeBytes</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#PDEFontGetOneByteEncoding" title=" Gets an array of delta encodings for the given one byte PDEFont."><code>PDEFontGetOneByteEncoding</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontGetSysEncoding" title=" Gets the system encoding object associated with a font object."><code>PDEFontGetSysEncoding</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#PDEFontGetSysFont" title=" Gets the system font object associated with a font object."><code>PDEFontGetSysFont</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontGetWidths" title=" Gets the widths for a font object."><code>PDEFontGetWidths</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#PDEFontGetWidthsNow" title=" Gets a Type0 font's width information for only those characters used in the file."><code>PDEFontGetWidthsNow</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontIsEmbedded" title=" Tests whether a font is an embedded font in the document in which it was created."><code>PDEFontIsEmbedded</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#PDEFontIsMultiByte" title=" Tests whether a font contains any multi-byte characters."><code>PDEFontIsMultiByte</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontSetSysEncoding" title=" Sets the system encoding object associated with a font object."><code>PDEFontSetSysEncoding</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#PDEFontSetSysFont" title=" Sets the system font object to be used with a font object that does not currently have a system font associated with it."><code>PDEFontSetSysFont</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontSubsetNow" title=" Subsets a given PDEFont in a CosDoc."><code>PDEFontSubsetNow</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#PDEFontSumWidths" title=" Gets the sum of the widths of len characters from a string of single or multi-byte characters."><code>PDEFontSumWidths</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontTranslateGlyphIdsToUnicode" title=" Translates a string to Unicode values."><code>PDEFontTranslateGlyphIdsToUnicode</code></a></td></tr>
+<tr><td><a href="dlextras_PDEForm.htm#PDEFormSetFont" title=" This sets the PDEFont referenced in a PDEForm."><code>PDEFormSetFont</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextAdd" title=" Superseded by PDETextAddEx() in Acrobat 10.0."><code>PDETextAdd</code></a></td></tr>
+<tr><td><a href="dlextras_PDEText.htm#PDETextAddASText" title=" Adds a character or a text run to a PDEText object, taking them from the ASText; thus Unicode characters can be placed in the PDEText."><code>PDETextAddASText</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextAddEx" title=" Adds a character or a text run to a PDEThe text object."><code>PDETextAddEx</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextAddGlyphs" title=" Superseded by PDETextAddGlyphsEx() in Acrobat 10.0."><code>PDETextAddGlyphs</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextAddGlyphsEx" title=" Adds Unicode text to a PDEText object."><code>PDETextAddGlyphsEx</code></a></td></tr>
+<tr><td><a href="pdelayer_PDETextItem.htm#PDETextItemCreate" title=" Superseded by PDETextItemCreateEx() in Acrobat 10.0."><code>PDETextItemCreate</code></a></td><td><a href="dlextras_PDETextItem.htm#PDETextItemCreateASText" title=" Creates a text element containing a character or text run which can be added to a PDEText object."><code>PDETextItemCreateASText</code></a></td></tr>
+<tr><td><a href="pdelayer_PDETextItem.htm#PDETextItemCreateEx" title=" Creates a text item element containing a character or text run, which can be added to a PDEText text object."><code>PDETextItemCreateEx</code></a></td><td><a href="pdelayer_PDETextItem.htm#PDETextItemSetFont" title=" Sets the font for a text item."><code>PDETextItemSetFont</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextRunSetFont" title=" Sets the font of a text run."><code>PDETextRunSetFont</code></a></td><td><a href="pdelayer_PDSysFont.htm#PDEmbedSysFontForPDEFont" title=" If there is a font on the system that matches this PDEFont, embed the full font regardless of whether it was subsetted or not embedded at all in the first place."><code>PDEmbedSysFontForPDEFont</code></a></td></tr>
+<tr><td><a href="pdelayer_PDSysFont.htm#PDFindSysFontForPDEFont" title=" Finds a system font that matches the requested PDEFont."><code>PDFindSysFontForPDEFont</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDDoc.htm#_t_PDDocWatermarkTextParams" title=" Parameters used for describing text-based watermarks."><code>_t_PDDocWatermarkTextParams</code></a></td><td><a href="pdlayer_PDRedaction.htm#_t_PDRedactParams" title=" Parameters used to represent the properties for a redaction mark."><code>_t_PDRedactParams</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>PDEFont Structures</h2></header>
+<nav><dl>
+<dt><a href="#_t_PDEFontAttrs">_t_PDEFontAttrs</a></dt><dd> -  Attributes of a PDEFont and of a PDSysFont.</dd>
+<dt><a href="#_t_PDEFontCreateFromSysFontParams">_t_PDEFontCreateFromSysFontParams</a></dt><dd> -  A data structure used with PDEFont creation.</dd>
+<dt><a href="#_t_PDEFontCreateParams">_t_PDEFontCreateParams</a></dt><dd> -  Parameters used for PDEFontCreateWithParams() to describe a font.</dd>
+<dt><a href="#_t_PDEFontInfo">_t_PDEFontInfo</a></dt><dd> -  PDEFont information.</dd>
+<dt><a href="#_t_PDESpanItem">_t_PDESpanItem</a></dt><dd> - </dd>
+<dt><a href="#_t_PDESpanSet">_t_PDESpanSet</a></dt><dd> - </dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="_t_PDEFontAttrs"><strong><span style="color:grey;">_t_PDEFontAttrs</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:1014</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Attributes of a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> and of a <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a>. This structure is also referenced in <a href="pdelayer_PDEFont.htm#_t_PDEFontCreateParams" title=" Parameters used for PDEFontCreateWithParams() to describe a font.">PDEFontCreateParams</a>().<br/>
+<p>To learn more about the BaseFont key, see the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, page 269. You can find this document on the web store of the International Standards Organization (ISO).<br/></p>
+
+<p>
+<p>To learn more about Base Encoding, see the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, page 262. You can find this document on the web store of the International Standards Organization (ISO).<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEFont.htm#PDEFontCreateWithParams" title=" Creates a new PDEFont from params."><code>PDEFontCreateWithParams</code></a>
+<a href="pdelayer_PDSysFont.htm#PDSysFontAcquirePlatformData" title=" Acquires platform-specific data for use by user interface code."><code>PDSysFontAcquirePlatformData</code></a>
+<a href="pdelayer_PDSysFont.htm#PDSysFontGetEncoding" title=" Gets the encoding of a single byte encoded system font."><code>PDSysFontGetEncoding</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDEFontAttrs {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>name</code><code>;</code> </div>
+</td><td><span>An <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> for font name (for example, <code>"Times-Roman"</code>). It corresponds to the BaseFont key in the font dictionary of a PDF file. See the description of the BaseFont key in the CIDFont dictionary in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 9.7.4, page 269. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>type</code><code>;</code> </div>
+</td><td><div><UL>An <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> for the font type corresponding to the Subtype key in a a font dictionary. It may be:<br/><li> <code>"Type1"</code><br/><li> <code>"TrueType"</code><br/><li> <code>"MMType1"</code><br/><li> <code>"Type0"</code><br/></UL>
+</div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>charSet</code><code>;</code> </div>
+</td><td><span>An <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> for <code>"Roman"</code>, or <a href="aslayer_ASAtom.htm#ASAtomNull">ASAtomNull</a>. If it is <code>"Roman"</code>, the characters must be a subset of the Adobe Standard Roman Character Set. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>encoding</code><code>;</code> </div>
+</td><td><span>An <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> for font encoding. It may be <code>MacRomanEncoding</code>, <code>WinAnsiEncoding</code>, or <a href="aslayer_ASAtom.htm#ASAtomNull">ASAtomNull</a>. In the case of <a href="aslayer_ASAtom.htm#ASAtomNull">ASAtomNull</a>, call <a href="pdelayer_PDSysFont.htm#PDSysFontGetEncoding" title=" Gets the encoding of a single byte encoded system font.">PDSysFontGetEncoding</a>() to get more information about the encoding. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>;</code> </div>
+</td><td><span>The desired font flags; one or more of the Font Flags. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRect</code></a> <code>fontBBox</code><code>;</code> </div>
+</td><td><span>The font bounding box in 1000 EM units. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>missingWidth</code><code>;</code> </div>
+</td><td><span>The width of the missing character (<code>.notdef</code>). </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>stemV</code><code>;</code> </div>
+</td><td><span>The vertical stem width. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>stemH</code><code>;</code> </div>
+</td><td><span>The horizontal stem width. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>capHeight</code><code>;</code> </div>
+</td><td><span>The capital height. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>xHeight</code><code>;</code> </div>
+</td><td><span>The x height. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>ascent</code><code>;</code> </div>
+</td><td><span>The maximum ascender height. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>descent</code><code>;</code> </div>
+</td><td><span>The maximum descender depth. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>leading</code><code>;</code> </div>
+</td><td><span>The additional leading between lines. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>maxWidth</code><code>;</code> </div>
+</td><td><span>The maximum character width. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>avgWidth</code><code>;</code> </div>
+</td><td><span>The average character width. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>italicAngle</code><code>;</code> </div>
+</td><td><span>The italic angle in degrees, if any. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>cidFontType</code><code>;</code> </div>
+</td><td><span>CIDFontType0 or CIDFontType2. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>wMode</code><code>;</code> </div>
+</td><td><div><span>The writing mode. It must be one of: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><code>0</code></span>
+</td><td><span>For horizontal writing.</span>
+</td></tr>
+<tr><td><span><code>1</code></span>
+</td><td><span>For vertical writing.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>psName</code><code>;</code> </div>
+</td><td><span>An <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> representing the PostScript name of a TrueType font. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>platformName</code><code>;</code> </div>
+</td><td><span>The platform name. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>lang</code><code>;</code> </div>
+</td><td><span>An <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> representing the ISO 639 language code. These are available from http://www.iso.ch. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>registry</code><code>;</code> </div>
+</td><td><span>An <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> representing the CIDFont's Registry information (for example, <code>"gAdobe-Japan"</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>ordering</code><code>;</code> </div>
+</td><td><span>An <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> representing the CIDFont's Ordering information (for example, <code>"g1"</code>). </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>supplement</code><code>;</code> </div>
+</td><td><span>The SystemSupplement field from the CIDFont. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>cantEmbed</code><code>;</code> </div>
+</td><td><span>A non-zero value means the font can't be embedded. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>deltaEncoding</code><code>;</code> </div>
+</td><td><span>The name of the base encoding; that is, the BaseEncoding entry in an encoding dictionary. See the description of Base Encoding in the Character Encoding section of the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 9.6.6, page 262. The Differences entry of the encoding dictionary describes differences (deltas) from the base encoding. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>protection</code><code>;</code> </div>
+</td><td><div><span>Allows one of the following bits to be set in order to disable font embedding: </span>
+
+<table class="ruled"><tr><th><span>Bit</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEFont.htm#kPDEFontNoEmbedding" title=" Flags for protection of PDEFontAttrs: embedding is not allowed."><code>kPDEFontNoEmbedding</code></a> <code>=</code> <code>1</code></span>
+</td><td><span>The font should not be embedded.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEFont.htm#kPDEFontNoEditableEmbedding" title=" Flags for protection of PDEFontAttrs: editable embedding is not allowed."><code>kPDEFontNoEditableEmbedding</code></a> <code>=</code> <code>2</code></span>
+</td><td><span>The font should not be embedded for editing purposes.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>packageType</code><code>;</code> </div>
+</td><td><span><a href="pdelayer_PDSysFont.htm#PDSysFontPackageType">PDSysFontPackageType</a> </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>weight</code><code>;</code> </div>
+</td><td><span>Font weight, An unsigned integer representing the thinness or thickness of * a font </span>
+</td></tr>
+<tr><td><code id="PDEFontAttrs"><code>}</code> <a href="pdelayer_PDEFont.htm#_t_PDEFontAttrs" title=" Attributes of a PDEFont and of a PDSysFont."><code>PDEFontAttrs</code></a><code>,</code> <code>*</code><a href="pdelayer_PDEFont.htm#_t_PDEFontAttrs" title=" Attributes of a PDEFont and of a PDSysFont."><code>PDEFontAttrsP</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEFont.htm#PDEFontCreate" title=" Creates a new PDEFont from the specified parameters."><code>PDEFontCreate</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontCreateInCosDoc" title=" Creates a font object like PDEFontCreate(), except that the client can specify the CosDoc in which the font is created."><code>PDEFontCreateInCosDoc</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#PDEFontGetAttrs" title=" Gets the attributes for a font object."><code>PDEFontGetAttrs</code></a></td><td><a href="pdelayer_PDSysFont.htm#PDFindSysFont" title=" Finds a system font that matches the requested attributes."><code>PDFindSysFont</code></a></td></tr>
+<tr><td><a href="pdelayer_PDSysFont.htm#PDFindSysFontEx" title=" Finds a system font that matches the requested attributes."><code>PDFindSysFontEx</code></a></td><td><a href="pdelayer_PDSysFont.htm#PDSysFontGetAttrs" title=" Gets the attributes of a system font."><code>PDSysFontGetAttrs</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEFont.htm#_t_PDEFontCreateParams" title=" Parameters used for PDEFontCreateWithParams() to describe a font."><code>_t_PDEFontCreateParams</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_PDEFontCreateFromSysFontParams"><strong><span style="color:grey;">_t_PDEFontCreateFromSysFontParams</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:1344</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A data structure used with <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> creation. To learn more about Multiple Master Fonts, see the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, page 256. You can find this document on the web store of the International Standards Organization (ISO). </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDEFontCreateFromSysFontParams {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>structSize</code><code>;</code> </div>
+</td><td><span>The size of the data structure. It must be set to <code>sizeof(PDEFontCreateFromSysFontParamsRec)</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>;</code> </div>
+</td><td><span>A bit mask of the <a href="pdelayer_PDEFont.htm#PDEFontCreateFlags" title=" Flags for PDEFontCreateFromSysFont().">PDEFontCreateFlags</a>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>snapshotName</code><code>;</code> </div>
+</td><td><span>The name of a Multiple Master snapshot. See "Multiple Master Fonts" in section 9.6.2.3, under Type 1 Fonts, in ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, page 256. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>*</code><code>mmDesignVec</code><code>;</code> </div>
+</td><td><span>A pointer to the Multiple Master font design vector. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>long</code> <code>ctCodePage</code><code>;</code> </div>
+</td><td><span>Used to select a specific code page supported by the font. When a non-zero code page is supplied, embedding must be turned on and the <a href="pdelayer_PDEFont.htm#kPDEFontEncodeByGID" title=" Create a CIDFont with identity (GID) encoding.">kPDEFontEncodeByGID</a> flag must be set. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>encoding</code><code>;</code> </div>
+</td><td><span>Used to specify which encoding to use with a CID font. Pass <a href="aslayer_ASAtom.htm#ASAtomNull">ASAtomNull</a> to use the platform default. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>cosDoc</code><code>;</code> </div>
+</td><td><span>Used to specify the <a href="coslayer_CosDoc.htm#CosDoc">CosDoc</a> in which to create the font. Pass <a href="aslayer_General.htm#NULL"><code>NULL</code></a> to use the scratch doc. </span>
+</td></tr>
+<tr><td><code id="PDEFontCreateFromSysFontParamsRec"><code>}</code> <a href="pdelayer_PDEFont.htm#_t_PDEFontCreateFromSysFontParams" title=" A data structure used with PDEFont creation."><code>PDEFontCreateFromSysFontParamsRec</code></a><code>,</code> <code>*</code><a href="pdelayer_PDEFont.htm#_t_PDEFontCreateFromSysFontParams" title=" A data structure used with PDEFont creation."><code>PDEFontCreateFromSysFontParams</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontWithParams" title=" Used to obtain a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFontWithParams</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_PDEFontCreateParams"><strong><span style="color:grey;">_t_PDEFontCreateParams</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:1163</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Parameters used for <a href="pdelayer_PDEFont.htm#PDEFontCreateWithParams" title=" Creates a new PDEFont from params.">PDEFontCreateWithParams</a>() to describe a font.<br/>
+<p>To learn more about CIDFonts, see the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, page 269. You can find this document on the web store of the International Standards Organization (ISO).<br/></p>
+
+<p>
+<p>To learn more about Composite Fonts, see the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, page 267. You can find this document on the web store of the International Standards Organization (ISO).<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDEFontCreateParams {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEFont.htm#_t_PDEFontAttrs" title=" Attributes of a PDEFont and of a PDSysFont."><code>PDEFontAttrsP</code></a> <code>attrsP</code><code>;</code> </div>
+</td><td><span>A pointer to a <a href="pdelayer_PDEFont.htm#_t_PDEFontAttrs" title=" Attributes of a PDEFont and of a PDSysFont.">PDEFontAttrs</a> for the font attributes. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>attrsSize</code><code>;</code> </div>
+</td><td><span>The size of the data structure. It must be set to <code>sizeof(PDEFontAttrs)</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>firstChar</code><code>;</code> </div>
+</td><td><span>The first character index for the widths array, <code>widthsP</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>lastChar</code><code>;</code> </div>
+</td><td><span>The last character index for the widths array, <code>widthsP</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>*</code><code>widthsP</code><code>;</code> </div>
+</td><td><span>A pointer to the widths array. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>char</code> <code>*</code><code>*</code><code>encoding</code><code>;</code> </div>
+</td><td><span>An array of 256 pointers to glyph names specifying the custom encoding. If any pointer is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, no encoding information is written for that entry. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>encodingBaseName</code><code>;</code> </div>
+</td><td><span>An <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> representing the encoding base name if the encoding is a custom encoding. If the encoding is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, <code>encodingBaseName</code> is used as the value of the encoding and must be one of <code>"WinAnsiEncoding"</code>, <code>"MacRomanEncoding"</code>, or <code>"MacExpertEncoding"</code>. If no encoding value is desired, use <a href="aslayer_ASAtom.htm#ASAtomNull">ASAtomNull</a>. However, for Type 0 fonts, this field must be a valid CMap name, or <a href="pdelayer_PDEFont.htm#PDEFontCreateWithParams" title=" Creates a new PDEFont from params.">PDEFontCreateWithParams</a>() will fail. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>fontStm</code><code>;</code> </div>
+</td><td><span>A stream with font information. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>len1</code><code>;</code> </div>
+</td><td><span>The length in bytes of the ASCII portion of the Type 1 font file after it has been decoded. For other font formats, such as TrueType or CFF, only <code>len1</code> is used, and it is the size of the font. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>len2</code><code>;</code> </div>
+</td><td><span>The length in bytes of the encrypted portion of the Type 1 font file after it has been decoded. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>len3</code><code>;</code> </div>
+</td><td><span>The length in bytes of the portion of the Type 1 font file that contains the 512 zeros, plus the <code>cleartomark</code> operator, plus any following data. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>hasDW</code><code>;</code> </div>
+</td><td><span>If <a href="aslayer_General.htm#true"><code>true</code></a>, the <code>dw</code> and <code>w</code> fields are used; if <a href="aslayer_General.htm#false"><code>false</code></a>, they are not used. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>dw</code><code>;</code> </div>
+</td><td><span>(Optional) The default width for glyphs in a CIDFont. See the description of the BaseFont key in the CIDFont dictionary in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 9.7.4, page 269. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>w</code><code>;</code> </div>
+</td><td><span>A Cos array of a set of lists that define the widths for the glyphs in the CIDFont. Each list can specify individual widths for consecutive CIDs, or one width for a range of CIDs. See the description of character widths in CIDFonts in the CIDFont dictionary in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 9.7.4, page 269. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>hasDW2</code><code>;</code> </div>
+</td><td><span>If <a href="aslayer_General.htm#true"><code>true</code></a>, the <code>dw2</code> and <code>w2</code> fields are used; if <a href="aslayer_General.htm#false"><code>false</code></a>, they are not used. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>dw2</code> <code>[</code><code>2</code><code>]</code><code>;</code> </div>
+</td><td><div><p>(Optional: this applies only to CIDFonts that are used for vertical writing).<br/>
+<p>The default metric for writing mode 1. This entry is an array of two numbers: the y-component of the position vector and the y component of the displacement vector for writing mode 1. The x-component of the position vector is always half the width of the character. The x-component of the displacement vector is always <code>0</code>. The default value is <code>[880-1000]</code>. For information on writing mode 1, see the description of vertical writing in "CIDFonts" in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 9.7.4, page 269.<br/></p>
+</div>
+</td></tr>
+<tr><td><div class="structMember"><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>w2</code><code>;</code> </div>
+</td><td><div><p>(Optional: this applies only to CIDFonts that are used for vertical writing)<br/>
+<p>A Cos array defining the metrics for vertical writing. Its format is similar to the format of the array in <code>w</code>. It defines the x and y components of the position vector, and the y-component of the displacement vector. The x-component of the displacement vector is always <code>0</code>. See the description of character widths in CIDFonts in the CIDFont dictionary in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 9.7.4, page 269.<br/></p>
+</div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>toUnicodeLen</code><code>;</code> </div>
+</td><td><span>(Optional) The length of <code>toUnicodeStm</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>toUnicodeStm</code><code>;</code> </div>
+</td><td><span>(Optional) A stream containing a CMap that defines the mapping from character codes to Unicode values. This entry is recommended for fonts that do not use one of the predefined CMaps. If present, this allows strings in the encoding to convert to Unicode values for export to other applications or plug-ins. For more information on type 0 fonts, see the description of Composite Fonts in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 9.7, page 267. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>cidToGidMapStm</code><code>;</code> </div>
+</td><td><span>A stream contain the mapping from a CID to <code>glyphindex</code> ( <code>"GID"</code>). The <code>glyphindex</code> for a particular CID value <code>c</code> is a 2-byte value stored in bytes <code>2</code> <code>*c</code> and <code>2</code> <code>*c+1</code>; the first byte is the high-order byte. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>char</code> <code>*</code><code>panoseNo</code><code>;</code> </div>
+</td><td><span>A 12-byte string containing the Family Class ID, Family SubClass ID, and 10 bytes for the PANOSE classification number for the font. For additional details on the PANOSE number, see the <em>Japanese</em> <em>TrueType</em> <em>Font</em> <em>Property</em> <em>Selection</em> <em>Guidelines</em> by the TrueType Conference Technical Committee. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>fd</code><code>;</code> </div>
+</td><td><span>A Cos dictionary identifying a subset of characters in a CIDFont. The values are dictionaries with entries that override the values in the FontDescriptor dictionary for the subset of characters. See the description of Composite Fonts in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 9.7, page 267. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>cidSetStm</code><code>;</code> </div>
+</td><td><span>A stream identifying which CIDs are present in the CIDFont file. It is required if the CIDFont file is embedded and only contains a subset of the glyphs in the character collection defined by the CIDSystemInfo. If this entry is missing, then it is assumed that the CIDFont file contains all the glyphs for the character collection. The stream's length should be rounded up to the nearest multiple of <code>8</code>. The bits should be stored in bytes with the high-order bit first. Each bit corresponds to a CID. The first bit of the first byte corresponds to CID 0, the next bit corresponds to CID 1, and so on. If the subset contains a CID, the bit for that CID should be set. For compactness, the stream may use one of the compression filters to encode the data. See the description of Composite Fonts in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 9.7, page 267. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>;</code> </div>
+</td><td><div><UL>One of the <a href="pdelayer_PDEFont.htm#PDEFontCreateFlags" title=" Flags for PDEFontCreateFromSysFont().">PDEFontCreateFlags</a> describing how to embed and subset the font:<br/><li> <a href="pdelayer_PDEFont.htm#kPDEFontCreateEmbedded" title=" Embed the font.">kPDEFontCreateEmbedded</a><br/><li> <a href="pdelayer_PDEFont.htm#kPDEFontWillSubset" title=" Subset the font.">kPDEFontWillSubset</a><br/><li> <a href="pdelayer_PDEFont.htm#kPDEFontDoNotEmbed" title=" Do not embed the font.">kPDEFontDoNotEmbed</a><br/></UL>
+</div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>*</code><code>mmDesignVec</code><code>;</code> </div>
+</td><td><span>A pointer to the Multiple Master font design vector. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>sourceFontType</code><code>;</code> </div>
+</td><td><div><UL>An <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> that indicates the font type of the provided font program when creating a font. Required in Type0 fonts.<br/><li> <code>"Type1"</code><br/><li> <code>"TrueType"</code><br/><li> <code>"MMType1"</code><br/><li> <code>"Type0"</code><br/></UL>
+</div>
+</td></tr>
+<tr><td><code id="PDEFontCreateParamsRec"><code>}</code> <a href="pdelayer_PDEFont.htm#_t_PDEFontCreateParams" title=" Parameters used for PDEFontCreateWithParams() to describe a font."><code>PDEFontCreateParamsRec</code></a><code>,</code> <code>*</code><a href="pdelayer_PDEFont.htm#_t_PDEFontCreateParams" title=" Parameters used for PDEFontCreateWithParams() to describe a font."><code>PDEFontCreateParams</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEFont.htm#PDEFontCreateWithParams" title=" Creates a new PDEFont from params."><code>PDEFontCreateWithParams</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontCreateWithParamsInCosDoc" title=" Creates a font object like PDEFontCreateWithParams(), except that the client can specify the CosDoc in which the font is created."><code>PDEFontCreateWithParamsInCosDoc</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_PDEFontInfo"><strong><span style="color:grey;">_t_PDEFontInfo</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFontExpT.h:91</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span><a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> information. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDEFontInfo {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>name</code><code>;</code> </div>
+</td><td><span>An <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> for the font name (for example, <code>"Times-Roman"</code>). </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>type</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>charSet</code><code>;</code> </div>
+</td><td><span>An <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> for <code>"Roman"</code>, or <a href="aslayer_ASAtom.htm#ASAtomNull">ASAtomNull</a>. If it is <code>"Roman"</code>, the characters must be a subset of the Adobe Standard Roman Character Set. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>encoding</code><code>;</code> </div>
+</td><td><span>An <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> for font encoding, such as WinAnsiEncoding. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDSysFont.htm#PDSysFontMode"><code>PDSysFontMode</code></a> <code>wMode</code><code>;</code> </div>
+</td><td><span>The writing mode: <code>0</code> means horizontal and <code>1</code> means vertical. </span>
+</td></tr>
+<tr><td><code id="PDEFontInfoRec"><code>}</code> <a href="pdelayer_PDEFont.htm#_t_PDEFontInfo" title=" PDEFont information."><code>PDEFontInfoRec</code></a><code>,</code> <code>*</code><a href="pdelayer_PDEFont.htm#_t_PDEFontInfo" title=" PDEFont information."><code>PDEFontInfoP</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDSysFont.htm#PDSysFontGetInfo" title=" Gets high-level information about a system font."><code>PDSysFontGetInfo</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_PDESpanItem"><strong><span style="color:grey;">_t_PDESpanItem</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:1423</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDESpanItem {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>firstGlyph</code><code>;</code> </div>
+</td><td><span>The index into the glyphs array in a <a href="pdelayer_General.htm#_t_PDEGlyphRun" title=" A data structure used for adding Unicode text.">PDEGlyphRun</a> object. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>nGlyphs</code><code>;</code> </div>
+</td><td><span>The number of glyphs in the span starting from firstGlyph. This can be zero, indicating there are no glyphs for this Unicode string. The firstGlyph indicates the glyph that precedes the Unicode string. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>firstUniChar</code><code>;</code> </div>
+</td><td><span>The index into the <code>uniText</code> array in a <a href="pdelayer_General.htm#_t_PDEGlyphRun" title=" A data structure used for adding Unicode text.">PDEGlyphRun</a> object. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>nUniChars</code><code>;</code> </div>
+</td><td><span>The number of Unicode characters in the span starting from <code>firstUniChar</code>. This count can be zero, indicating there are no Unicode values for the range of glyphs. </span>
+</td></tr>
+<tr><td><code id="PDESpanItem"><code>}</code> <a href="pdelayer_PDEFont.htm#_t_PDESpanItem"><code>PDESpanItem</code></a><code>,</code> <code>*</code><a href="pdelayer_PDEFont.htm#_t_PDESpanItem"><code>PDESpanItemP</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEFont.htm#_t_PDESpanSet"><code>_t_PDESpanSet</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_PDESpanSet"><strong><span style="color:grey;">_t_PDESpanSet</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:1445</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDESpanSet {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEFont.htm#_t_PDESpanItem"><code>PDESpanItemP</code></a> <code>spans</code><code>;</code> </div>
+</td><td><span>A pointer to array of spans corresponding to the <a href="pdelayer_General.htm#_t_PDEGlyphRun" title=" A data structure used for adding Unicode text.">PDEGlyphRun</a> object. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>spanCount</code><code>;</code> </div>
+</td><td><span>The count of spans in the <code>spans</code> array. </span>
+</td></tr>
+<tr><td><code id="PDESpanSet"><code>}</code> <a href="pdelayer_PDEFont.htm#_t_PDESpanSet"><code>PDESpanSet</code></a><code>,</code> <code>*</code><a href="pdelayer_PDEFont.htm#_t_PDESpanSet"><code>PDESpanSetP</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEFont.htm#PDEFontAddGlyphs" title=" Adds glyphs to a PDEFont object for embedding a PDEFont."><code>PDEFontAddGlyphs</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEFont.htm#PDEReleaseSpan" title=" Releases a PDESpan object that is returned by PDEFontAddGlyphs()."><code>PDEReleaseSpan</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDEFont Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDEFontAddGlyphs">PDEFontAddGlyphs</a></dt><dd> -  Adds glyphs to a PDEFont object for embedding a PDEFont.</dd>
+<dt><a href="#PDEFontCreate">PDEFontCreate</a></dt><dd> -  Creates a new PDEFont from the specified parameters.</dd>
+<dt><a href="#PDEFontCreateFromCosObj">PDEFontCreateFromCosObj</a></dt><dd> -  Creates a PDEFont corresponding to a Cos object of type Font.</dd>
+<dt><a href="#PDEFontCreateFromSysFont">PDEFontCreateFromSysFont</a></dt><dd> -  Gets a PDEFont corresponding to a font in the system.</dd>
+<dt><a href="#PDEFontCreateFromSysFontAndEncoding">PDEFontCreateFromSysFontAndEncoding</a></dt><dd> -  Create a PDEFont from sysFont and sysEnc.</dd>
+<dt><a href="#PDEFontCreateFromSysFontAndEncodingInCosDoc">PDEFontCreateFromSysFontAndEncodingInCosDoc</a></dt><dd> -  Creates a font object like PDEFontCreateFromSysFontAndEncoding(), except that the client can specify the CosDoc in which the font is created.</dd>
+<dt><a href="#PDEFontCreateFromSysFontEx">PDEFontCreateFromSysFontEx</a></dt><dd> -  Creates a PDEFont corresponding to a font in the system.</dd>
+<dt><a href="#PDEFontCreateFromSysFontExInCosDoc">PDEFontCreateFromSysFontExInCosDoc</a></dt><dd> -  Creates a font object like PDEFontCreateFromSysFontEx(), except that the client can specify the CosDoc in which the font is created.</dd>
+<dt><a href="#PDEFontCreateFromSysFontInCosDoc">PDEFontCreateFromSysFontInCosDoc</a></dt><dd> -  Creates a font object like PDEFontCreateFromSysFont(), except that the client can specify the CosDoc in which the font is created.</dd>
+<dt><a href="#PDEFontCreateFromSysFontWithParams">PDEFontCreateFromSysFontWithParams</a></dt><dd> -  Used to obtain a PDEFont corresponding to a font in the system.</dd>
+<dt><a href="#PDEFontCreateInCosDoc">PDEFontCreateInCosDoc</a></dt><dd> -  Creates a font object like PDEFontCreate(), except that the client can specify the CosDoc in which the font is created.</dd>
+<dt><a href="#PDEFontCreateToUnicodeNow">PDEFontCreateToUnicodeNow</a></dt><dd> -  This function creates the / ToUnicode table.</dd>
+<dt><a href="#PDEFontCreateWidthsNow">PDEFontCreateWidthsNow</a></dt><dd> -  This function creates width entries for font.</dd>
+<dt><a href="#PDEFontCreateWithParams">PDEFontCreateWithParams</a></dt><dd> -  Creates a new PDEFont from params.</dd>
+<dt><a href="#PDEFontCreateWithParamsInCosDoc">PDEFontCreateWithParamsInCosDoc</a></dt><dd> -  Creates a font object like PDEFontCreateWithParams(), except that the client can specify the CosDoc in which the font is created.</dd>
+<dt><a href="#PDEFontEmbedNow">PDEFontEmbedNow</a></dt><dd> -  This function embeds a font stream.</dd>
+<dt><a href="#PDEFontEmbedNowDontSubset">PDEFontEmbedNowDontSubset</a></dt><dd> -  Embeds the given PDEFont inside doc without creating a subset.</dd>
+<dt><a href="#PDEFontGetAttrs">PDEFontGetAttrs</a></dt><dd> -  Gets the attributes for a font object.</dd>
+<dt><a href="#PDEFontGetCosObj">PDEFontGetCosObj</a></dt><dd> -  Gets a Cos object for a PDEFont.</dd>
+<dt><a href="#PDEFontGetCreateNeedFlags">PDEFontGetCreateNeedFlags</a></dt><dd> -  This function returns flags indicating what needs to be done to make PDEFont complete.</dd>
+<dt><a href="#PDEFontGetNumCodeBytes">PDEFontGetNumCodeBytes</a></dt><dd> -  Gets the number of bytes comprising the next code in a string of single or multi-byte character codes.</dd>
+<dt><a href="#PDEFontGetOneByteEncoding">PDEFontGetOneByteEncoding</a></dt><dd> -  Gets an array of delta encodings for the given one byte PDEFont.</dd>
+<dt><a href="#PDEFontGetSysEncoding">PDEFontGetSysEncoding</a></dt><dd> -  Gets the system encoding object associated with a font object.</dd>
+<dt><a href="#PDEFontGetSysFont">PDEFontGetSysFont</a></dt><dd> -  Gets the system font object associated with a font object.</dd>
+<dt><a href="#PDEFontGetWidths">PDEFontGetWidths</a></dt><dd> -  Gets the widths for a font object.</dd>
+<dt><a href="#PDEFontGetWidthsNow">PDEFontGetWidthsNow</a></dt><dd> -  Gets a Type0 font's width information for only those characters used in the file.</dd>
+<dt><a href="#PDEFontIsEmbedded">PDEFontIsEmbedded</a></dt><dd> -  Tests whether a font is an embedded font in the document in which it was created.</dd>
+<dt><a href="#PDEFontIsMultiByte">PDEFontIsMultiByte</a></dt><dd> -  Tests whether a font contains any multi-byte characters.</dd>
+<dt><a href="#PDEFontSetSysEncoding">PDEFontSetSysEncoding</a></dt><dd> -  Sets the system encoding object associated with a font object.</dd>
+<dt><a href="#PDEFontSetSysFont">PDEFontSetSysFont</a></dt><dd> -  Sets the system font object to be used with a font object that does not currently have a system font associated with it.</dd>
+<dt><a href="#PDEFontSubsetNow">PDEFontSubsetNow</a></dt><dd> -  Subsets a given PDEFont in a CosDoc.</dd>
+<dt><a href="#PDEFontSumWidths">PDEFontSumWidths</a></dt><dd> -  Gets the sum of the widths of len characters from a string of single or multi-byte characters.</dd>
+<dt><a href="#PDEFontTranslateGlyphIdsToUnicode">PDEFontTranslateGlyphIdsToUnicode</a></dt><dd> -  Translates a string to Unicode values.</dd>
+<dt><a href="#PDEReleaseSpan">PDEReleaseSpan</a></dt><dd> -  Releases a PDESpan object that is returned by PDEFontAddGlyphs().</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEFontAddGlyphs"><strong><span style="color:grey;">PDEFontAddGlyphs</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2562</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Adds glyphs to a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> object for embedding a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a>.<br/>
+<p>This is used by clients that use PDEFEdit calls to embed the font but create their own content stream. The glyphs added by this routine will be included in the font when <a href="pdelayer_PDEFont.htm#PDEFontSubsetNow" title=" Subsets a given PDEFont in a CosDoc.">PDEFontSubsetNow</a>() is called. It is up to the client to ensure that the encoding used by the <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> matches the character codes used in the string arguments to the text operators in the content stream.<br/></p>
+
+<p>
+<p>This routine is used to specify which glyphs should be included in the font when embedded. Additionally, it specifies the mapping from the GlyphIDs to Unicode values. This mapping will be used to create the ToUnicode entry in the embedded font object. In the cases where the ToUnicode table cannot accurately reproduce the Unicode string in the <a href="pdelayer_General.htm#_t_PDEGlyphRun" title=" A data structure used for adding Unicode text.">PDEGlyphRun</a> structure, this routine will return an array of spans that describe the contents of the ActualText spans that must be included in the content stream. Each span indicates a contiguous range of glyphs and a corresponding contiguous range of Unicode values that correspond to the glyphs. For example, the following ActualText span replace two glyphs with three Unicode values.<br/></p>
+
+<p>
+<p><code>/Span</code> <code>&lt;</code> <code>/ActualText(U+vvvvU+xxxU+yyyy)>></code><br/></p>
+
+<p>
+<p><code>BDC</code> <code>[Giii</code> <code>Gjjj]</code> <code>TJ</code> <code>EMC</code><br/></p>
+
+<p>
+<p>Note that the routine must be called with the PDEGlyphRuns in display order.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFont" title=" Gets a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFont</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontSubsetNow" title=" Subsets a given PDEFont in a CosDoc."><code>PDEFontSubsetNow</code></a>
+<a href="pdelayer_PDEFont.htm#PDEReleaseSpan" title=" Releases a PDESpan object that is returned by PDEFontAddGlyphs()."><code>PDEReleaseSpan</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEFont.htm#_t_PDESpanSet"><code>PDESpanSetP</code></a> <code>PDEFontAddGlyphs(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>pdeFont</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEGlyphRun" title=" A data structure used for adding Unicode text."><code>PDEGlyphRunP</code></a> <code>glyphRun</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeFont</code></span>
+</td><td><span>The font for the element. </span>
+</td></tr>
+<tr><td><span><code>glyphRun</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_General.htm#_t_PDEGlyphRun" title=" A data structure used for adding Unicode text.">PDEGlyphRun</a> structure with Unicode data, GlyphIDs and their correspondence. Note that the <code>xPosition</code> and <code>yPosition</code> fields in the <a href="pdelayer_General.htm#_t_PDEGlyphDescription" title=" A data structure used for adding Unicode text.">PDEGlyphDescription</a> structure are ignored. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>Unused, reserved for later use. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A pointer to a <a href="pdelayer_PDEFont.htm#_t_PDESpanSet">PDESpanSet</a>. The span can be released with <a href="pdelayer_PDEFont.htm#PDEReleaseSpan" title=" Releases a PDESpan object that is returned by PDEFontAddGlyphs().">PDEReleaseSpan</a>(). </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontCreate"><strong><span style="color:grey;">PDEFontCreate</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:818</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a new <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> from the specified parameters.<br/>
+<p>The <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> may be represented as an embedded font (a FontFile entry in the font descriptor of the PDF file). To create a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> that is stored as an embedded font, the FontFile stream may be passed in <code>fontStm</code>, and the <code>len1</code>, <code>len2</code>, and <code>len3</code> parameters contain the Length1, Length2, and Length3 values of the FontFile stream attributes dictionary. See the description of Embedded Font Programs in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 9.9, page 288. You can find this document on the web store of the International Standards Organization (ISO).<br/></p>
+
+<p>
+<p>The caller must close <code>fontStm</code> with <a href="aslayer_ASStm.htm#ASStmClose" title=" Closes the specified stream.">ASStmClose</a>() after invoking <a href="pdelayer_PDEFont.htm#PDEFontCreate" title=" Creates a new PDEFont from the specified parameters.">PDEFontCreate</a>().<br/></p>
+
+<p>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned font object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromCosObj" title=" Creates a PDEFont corresponding to a Cos object of type Font."><code>PDEFontCreateFromCosObj</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFont" title=" Gets a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFont</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontEx" title=" Creates a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFontEx</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontWithParams" title=" Used to obtain a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFontWithParams</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateWithParams" title=" Creates a new PDEFont from params."><code>PDEFontCreateWithParams</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>PDEFontCreate(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#_t_PDEFontAttrs" title=" Attributes of a PDEFont and of a PDSysFont."><code>PDEFontAttrsP</code></a> <code>attrsP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>attrsSize</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>firstChar</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>lastChar</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>*</code><code>widthsP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>char</code> <code>*</code><code>*</code><code>encoding</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>encodingBaseName</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>fontStm</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>len1</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>len2</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>len3</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>attrsP</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_PDEFont.htm#_t_PDEFontAttrs" title=" Attributes of a PDEFont and of a PDSysFont.">PDEFontAttrs</a> structure for the font attributes. </span>
+</td></tr>
+<tr><td><span><code>attrsSize</code></span>
+</td><td><span>The size of the <code>attrsP</code> buffer in bytes. </span>
+</td></tr>
+<tr><td><span><code>firstChar</code></span>
+</td><td><span>The first character index for the widths array, <code>widthsP</code>. </span>
+</td></tr>
+<tr><td><span><code>lastChar</code></span>
+</td><td><span>The last character index for the widths array, <code>widthsP</code>. </span>
+</td></tr>
+<tr><td><span><code>widthsP</code></span>
+</td><td><span>A pointer to the widths array. </span>
+</td></tr>
+<tr><td><span><code>encoding</code></span>
+</td><td><span>An array of 256 pointers to glyph names specifying the custom encoding. If any pointer is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, no encoding information is written for that entry. </span>
+</td></tr>
+<tr><td><span><code>encodingBaseName</code></span>
+</td><td><span>The encoding base name if the encoding is a custom encoding. If the encoding is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, <code>encodingBaseName</code> is used as the value of the encoding, and must be one of <code>WinAnsiEncoding</code>, <code>MacRomanEncoding</code>, or <code>MacExpertEncoding</code>. If no encoding value is desired, use <a href="aslayer_ASAtom.htm#ASAtomNull">ASAtomNull</a>. </span>
+</td></tr>
+<tr><td><span><code>fontStm</code></span>
+</td><td><span>The stream with font information. </span>
+</td></tr>
+<tr><td><span><code>len1</code></span>
+</td><td><span>The length in bytes of the ASCII portion of the Type 1 font file after it has been decoded. For other font formats, such as TrueType or CFF, only <code>len1</code> is used, and it is the size of the font. </span>
+</td></tr>
+<tr><td><span><code>len2</code></span>
+</td><td><span>The length in bytes of the encrypted portion of the Type 1 font file after it has been decoded. </span>
+</td></tr>
+<tr><td><span><code>len3</code></span>
+</td><td><span>The length in bytes of the portion of the Type 1 font file that contains the 512 zeros, plus the <code>cleartomark</code> operator, plus any following data. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The specified <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrResourceLoadFailed" title=" Failed to load an application resource (internal error)."><code>genErrResourceLoadFailed</code></a></td><td><a href="pdfllayer_General.htm#peErrCantCreateFontSubset" title=" Unable to create embedded font subset."><code>peErrCantCreateFontSubset</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantEmbedFont" title=" This font is licensed and cannot be embedded."><code>peErrCantEmbedFont</code></a></td><td><a href="pdfllayer_General.htm#peErrCantGetAttrs" title=" Unable to get attributes for the font."><code>peErrCantGetAttrs</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantGetWidths" title=" Unable to get widths for the font."><code>peErrCantGetWidths</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontCreateFromCosObj"><strong><span style="color:grey;">PDEFontCreateFromCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:846</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> corresponding to a Cos object of type Font.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned font object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEFont.htm#PDEFontCreate" title=" Creates a new PDEFont from the specified parameters."><code>PDEFontCreate</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFont" title=" Gets a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFont</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontWithParams" title=" Used to obtain a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFontWithParams</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateWithParams" title=" Creates a new PDEFont from params."><code>PDEFontCreateWithParams</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontGetCosObj" title=" Gets a Cos object for a PDEFont."><code>PDEFontGetCosObj</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>PDEFontCreateFromCosObj(</code><code>const</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>cosObjP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>cosObjP</code></span>
+</td><td><span>IN/OUT The Cos object for which a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> is created. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> created from cosObjP. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#genErrResourceLoadFailed" title=" Failed to load an application resource (internal error)."><code>genErrResourceLoadFailed</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantCreateFontSubset" title=" Unable to create embedded font subset."><code>peErrCantCreateFontSubset</code></a></td><td><a href="pdfllayer_General.htm#peErrCantEmbedFont" title=" This font is licensed and cannot be embedded."><code>peErrCantEmbedFont</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantGetAttrs" title=" Unable to get attributes for the font."><code>peErrCantGetAttrs</code></a></td><td><a href="pdfllayer_General.htm#peErrCantGetWidths" title=" Unable to get widths for the font."><code>peErrCantGetWidths</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontCreateFromSysFont"><strong><span style="color:grey;">PDEFontCreateFromSysFont</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:883</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> corresponding to a font in the system.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned font object when finished with it.<br/></p>
+
+<p>
+<p>The <a href="pdelayer_PDEFont.htm#PDEFontCreateFlags" title=" Flags for PDEFontCreateFromSysFont().">PDEFontCreateFlags</a> flags <a href="pdelayer_PDEFont.htm#kPDEFontCreateEmbedded" title=" Embed the font.">kPDEFontCreateEmbedded</a> and <a href="pdelayer_PDEFont.htm#kPDEFontWillSubset" title=" Subset the font.">kPDEFontWillSubset</a> must both be set in order to subset a font.<br/></p>
+
+<p>
+<p>If you create a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> that is a subset, call <a href="pdelayer_PDEFont.htm#PDEFontSubsetNow" title=" Subsets a given PDEFont in a CosDoc.">PDEFontSubsetNow</a>() on this font afterwards.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> If you want to use <code>WinAnsiEncoding</code> on UNIX, do not use this method. Use <a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontWithParams" title=" Used to obtain a PDEFont corresponding to a font in the system.">PDEFontCreateFromSysFontWithParams</a>() or <a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontAndEncoding" title=" Create a PDEFont from sysFont and sysEnc.">PDEFontCreateFromSysFontAndEncoding</a>() instead. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEFont.htm#PDEFontCreate" title=" Creates a new PDEFont from the specified parameters."><code>PDEFontCreate</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromCosObj" title=" Creates a PDEFont corresponding to a Cos object of type Font."><code>PDEFontCreateFromCosObj</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontAndEncoding" title=" Create a PDEFont from sysFont and sysEnc."><code>PDEFontCreateFromSysFontAndEncoding</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontWithParams" title=" Used to obtain a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFontWithParams</code></a>
+<a href="pdelayer_PDSysFont.htm#PDEnumSysFonts" title=" Enumerates all of the system fonts with a user-supplied procedure."><code>PDEnumSysFonts</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>PDEFontCreateFromSysFont(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>sysFont</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sysFont</code></span>
+</td><td><span>A <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> object referencing a system font. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>Indicates whether to embed the font and whether to subset the font. It must be one of <a href="pdelayer_PDEFont.htm#PDEFontCreateFlags" title=" Flags for PDEFontCreateFromSysFont().">PDEFontCreateFlags</a>. If you want to subset a font, set both the <a href="pdelayer_PDEFont.htm#kPDEFontCreateEmbedded" title=" Embed the font.">kPDEFontCreateEmbedded</a> and <a href="pdelayer_PDEFont.htm#kPDEFontWillSubset" title=" Subset the font.">kPDEFontWillSubset</a> flags. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> corresponding to sysFont. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#genErrResourceLoadFailed" title=" Failed to load an application resource (internal error)."><code>genErrResourceLoadFailed</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantCreateFontSubset" title=" Unable to create embedded font subset."><code>peErrCantCreateFontSubset</code></a></td><td><a href="pdfllayer_General.htm#peErrCantEmbedFont" title=" This font is licensed and cannot be embedded."><code>peErrCantEmbedFont</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantGetAttrs" title=" Unable to get attributes for the font."><code>peErrCantGetAttrs</code></a></td><td><a href="pdfllayer_General.htm#peErrCantGetWidths" title=" Unable to get widths for the font."><code>peErrCantGetWidths</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontCreateFromSysFontAndEncoding"><strong><span style="color:grey;">PDEFontCreateFromSysFontAndEncoding</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2062</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Create a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> from <code>sysFont</code> and <code>sysEnc</code>. If it fails, it raises an exception. User can call <a href="pdelayer_PDSysFont.htm#PDSysFontGetCreateFlags" title=" This function returns a createFlags that can be passed to PDEFontCreateFromSysFontAndEncoding().">PDSysFontGetCreateFlags</a>() to see if the combination of sysFont and sysEnc makes sense.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> object when finished with it.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> If you want to use <code>WinAnsiEncoding</code> on UNIX, use this method or <a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontWithParams" title=" Used to obtain a PDEFont corresponding to a font in the system.">PDEFontCreateFromSysFontWithParams</a>(). </p>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>PDEFontCreateFromSysFontAndEncoding(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>sysFont</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysEncoding.htm#PDSysEncoding" title=" A PDEElement that provides system encoding for a PDF file."><code>PDSysEncoding</code></a> <code>sysEnc</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>useThisBaseFont</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>createFlags</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sysFont</code></span>
+</td><td><span>A <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> object referencing a system font. </span>
+</td></tr>
+<tr><td><span><code>sysEnc</code></span>
+</td><td><span>A <a href="pdelayer_PDSysEncoding.htm#PDSysEncoding" title=" A PDEElement that provides system encoding for a PDF file.">PDSysEncoding</a> object. </span>
+</td></tr>
+<tr><td><span><code>useThisBaseFont</code></span>
+</td><td><span>The base font. An exception will be raised if the base font name passed is a subset name <code>(XXXXXX+FontName)</code> or an empty string. </span>
+</td></tr>
+<tr><td><span><code>createFlags</code></span>
+</td><td><span>One of the <a href="pdelayer_PDEFont.htm#PDEFontCreateFlags" title=" Flags for PDEFontCreateFromSysFont().">PDEFontCreateFlags</a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> object. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontCreateFromSysFontAndEncodingInCosDoc"><strong><span style="color:grey;">PDEFontCreateFromSysFontAndEncodingInCosDoc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2930</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a font object like <a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontAndEncoding" title=" Create a PDEFont from sysFont and sysEnc.">PDEFontCreateFromSysFontAndEncoding</a>(), except that the client can specify the <a href="coslayer_CosDoc.htm#CosDoc">CosDoc</a> in which the font is created. Create a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> from <code>sysFont</code> and <code>sysEnc</code>. If it fails, it raises an exception. User can call <a href="pdelayer_PDSysFont.htm#PDSysFontGetCreateFlags" title=" This function returns a createFlags that can be passed to PDEFontCreateFromSysFontAndEncoding().">PDSysFontGetCreateFlags</a>() to see if the combination of sysFont and sysEnc makes sense.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> object when finished with it.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> If you want to use <code>WinAnsiEncoding</code> on UNIX, use this method or <a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontWithParams" title=" Used to obtain a PDEFont corresponding to a font in the system.">PDEFontCreateFromSysFontWithParams</a>(). </p>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>PDEFontCreateFromSysFontAndEncodingInCosDoc(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>sysFont</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysEncoding.htm#PDSysEncoding" title=" A PDEElement that provides system encoding for a PDF file."><code>PDSysEncoding</code></a> <code>sysEnc</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>useThisBaseFont</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>createFlags</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>cosDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sysFont</code></span>
+</td><td><span>A <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> object referencing a system font. </span>
+</td></tr>
+<tr><td><span><code>sysEnc</code></span>
+</td><td><span>A <a href="pdelayer_PDSysEncoding.htm#PDSysEncoding" title=" A PDEElement that provides system encoding for a PDF file.">PDSysEncoding</a> object. </span>
+</td></tr>
+<tr><td><span><code>useThisBaseFont</code></span>
+</td><td><span>The base font. An exception will be raised if the base font name passed is a subset name <code>(XXXXXX+FontName)</code> or an empty string. </span>
+</td></tr>
+<tr><td><span><code>createFlags</code></span>
+</td><td><span>One of the <a href="pdelayer_PDEFont.htm#PDEFontCreateFlags" title=" Flags for PDEFontCreateFromSysFont().">PDEFontCreateFlags</a>. </span>
+</td></tr>
+<tr><td><span><code>cosDoc</code></span>
+</td><td><span>IN/OUT The document in which to put the Cos representation of resource. It may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> object. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrBadFont" title=" Font embedding failed because of invalid or corrupt font."><code>peErrBadFont</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontCreateFromSysFontEx"><strong><span style="color:grey;">PDEFontCreateFromSysFontEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1494</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> corresponding to a font in the system.<br/>
+<p>If the font is a Multiple Master font, <code>mmDesignVector</code> points to the design vector, whose length must equal the number of design axes of the font.<br/></p>
+
+<p>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned font object when finished with it.<br/></p>
+
+<p>
+<p>The <a href="pdelayer_PDEFont.htm#PDEFontCreateFlags" title=" Flags for PDEFontCreateFromSysFont().">PDEFontCreateFlags</a> flags <a href="pdelayer_PDEFont.htm#kPDEFontCreateEmbedded" title=" Embed the font.">kPDEFontCreateEmbedded</a> and <a href="pdelayer_PDEFont.htm#kPDEFontWillSubset" title=" Subset the font.">kPDEFontWillSubset</a> must both be set in order to subset a font.<br/></p>
+
+<p>
+<p>If you create a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> that is subsetted, call <a href="pdelayer_PDEFont.htm#PDEFontSubsetNow" title=" Subsets a given PDEFont in a CosDoc.">PDEFontSubsetNow</a>() on this font afterwards.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromCosObj" title=" Creates a PDEFont corresponding to a Cos object of type Font."><code>PDEFontCreateFromCosObj</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFont" title=" Gets a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFont</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontWithParams" title=" Used to obtain a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFontWithParams</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateWithParams" title=" Creates a new PDEFont from params."><code>PDEFontCreateWithParams</code></a>
+<a href="pdelayer_PDSysFont.htm#PDEnumSysFonts" title=" Enumerates all of the system fonts with a user-supplied procedure."><code>PDEnumSysFonts</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>PDEFontCreateFromSysFontEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>sysFont</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>snapshotName</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>*</code><code>mmDesignVec</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sysFont</code></span>
+</td><td><span>IN/OUT A <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> object referencing a system font. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>IN/OUT Indicates whether to embed the font and whether to subset the font. It must be one of <a href="pdelayer_PDEFont.htm#PDEFontCreateFlags" title=" Flags for PDEFontCreateFromSysFont().">PDEFontCreateFlags</a>. If you want to subset a font, set both the <a href="pdelayer_PDEFont.htm#kPDEFontCreateEmbedded" title=" Embed the font.">kPDEFontCreateEmbedded</a> and <a href="pdelayer_PDEFont.htm#kPDEFontWillSubset" title=" Subset the font.">kPDEFontWillSubset</a> flags. </span>
+</td></tr>
+<tr><td><span><code>snapshotName</code></span>
+</td><td><span>IN/OUT The name to be associated with this particular instantiation of the <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a>. </span>
+</td></tr>
+<tr><td><span><code>mmDesignVec</code></span>
+</td><td><span>IN/OUT A pointer to the Multiple Master font design vector. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> corresponding to <code>sysFont</code>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#genErrResourceLoadFailed" title=" Failed to load an application resource (internal error)."><code>genErrResourceLoadFailed</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantCreateFontSubset" title=" Unable to create embedded font subset."><code>peErrCantCreateFontSubset</code></a></td><td><a href="pdfllayer_General.htm#peErrCantEmbedFont" title=" This font is licensed and cannot be embedded."><code>peErrCantEmbedFont</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantGetAttrs" title=" Unable to get attributes for the font."><code>peErrCantGetAttrs</code></a></td><td><a href="pdfllayer_General.htm#peErrCantGetWidths" title=" Unable to get widths for the font."><code>peErrCantGetWidths</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontCreateFromSysFontExInCosDoc"><strong><span style="color:grey;">PDEFontCreateFromSysFontExInCosDoc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2867</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a font object like <a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontEx" title=" Creates a PDEFont corresponding to a font in the system.">PDEFontCreateFromSysFontEx</a>(), except that the client can specify the <a href="coslayer_CosDoc.htm#CosDoc">CosDoc</a> in which the font is created.<br/>
+<p>If the font is a Multiple Master font, <code>mmDesignVector</code> points to the design vector, whose length must equal the number of design axes of the font.<br/></p>
+
+<p>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned font object when finished with it.<br/></p>
+
+<p>
+<p>The <a href="pdelayer_PDEFont.htm#PDEFontCreateFlags" title=" Flags for PDEFontCreateFromSysFont().">PDEFontCreateFlags</a> flags <a href="pdelayer_PDEFont.htm#kPDEFontCreateEmbedded" title=" Embed the font.">kPDEFontCreateEmbedded</a> and <a href="pdelayer_PDEFont.htm#kPDEFontWillSubset" title=" Subset the font.">kPDEFontWillSubset</a> must both be set in order to subset a font.<br/></p>
+
+<p>
+<p>If you create a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> that is subsetted, call <a href="pdelayer_PDEFont.htm#PDEFontSubsetNow" title=" Subsets a given PDEFont in a CosDoc.">PDEFontSubsetNow</a>() on this font afterwards.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromCosObj" title=" Creates a PDEFont corresponding to a Cos object of type Font."><code>PDEFontCreateFromCosObj</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFont" title=" Gets a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFont</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontWithParams" title=" Used to obtain a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFontWithParams</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateWithParams" title=" Creates a new PDEFont from params."><code>PDEFontCreateWithParams</code></a>
+<a href="pdelayer_PDSysFont.htm#PDEnumSysFonts" title=" Enumerates all of the system fonts with a user-supplied procedure."><code>PDEnumSysFonts</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>PDEFontCreateFromSysFontExInCosDoc(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>sysFont</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>snapshotName</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>*</code><code>mmDesignVec</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>cosDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sysFont</code></span>
+</td><td><span>IN/OUT A <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> object referencing a system font. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>IN/OUT Indicates whether to embed the font and whether to subset the font. It must be one of <a href="pdelayer_PDEFont.htm#PDEFontCreateFlags" title=" Flags for PDEFontCreateFromSysFont().">PDEFontCreateFlags</a>. If you want to subset a font, set both the <a href="pdelayer_PDEFont.htm#kPDEFontCreateEmbedded" title=" Embed the font.">kPDEFontCreateEmbedded</a> and <a href="pdelayer_PDEFont.htm#kPDEFontWillSubset" title=" Subset the font.">kPDEFontWillSubset</a> flags. </span>
+</td></tr>
+<tr><td><span><code>snapshotName</code></span>
+</td><td><span>IN/OUT The name to be associated with this particular instantiation of the <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a>. </span>
+</td></tr>
+<tr><td><span><code>mmDesignVec</code></span>
+</td><td><span>IN/OUT A pointer to the Multiple Master font design vector. </span>
+</td></tr>
+<tr><td><span><code>cosDoc</code></span>
+</td><td><span>IN/OUT The document in which to put the Cos representation of resource. It may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> corresponding to <code>sysFont</code>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#genErrResourceLoadFailed" title=" Failed to load an application resource (internal error)."><code>genErrResourceLoadFailed</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantCreateFontSubset" title=" Unable to create embedded font subset."><code>peErrCantCreateFontSubset</code></a></td><td><a href="pdfllayer_General.htm#peErrCantEmbedFont" title=" This font is licensed and cannot be embedded."><code>peErrCantEmbedFont</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantGetAttrs" title=" Unable to get attributes for the font."><code>peErrCantGetAttrs</code></a></td><td><a href="pdfllayer_General.htm#peErrCantGetWidths" title=" Unable to get widths for the font."><code>peErrCantGetWidths</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontCreateFromSysFontInCosDoc"><strong><span style="color:grey;">PDEFontCreateFromSysFontInCosDoc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2821</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a font object like <a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFont" title=" Gets a PDEFont corresponding to a font in the system.">PDEFontCreateFromSysFont</a>(), except that the client can specify the <a href="coslayer_CosDoc.htm#CosDoc">CosDoc</a> in which the font is created.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned font object when finished with it.<br/></p>
+
+<p>
+<p>The <a href="pdelayer_PDEFont.htm#PDEFontCreateFlags" title=" Flags for PDEFontCreateFromSysFont().">PDEFontCreateFlags</a> flags <a href="pdelayer_PDEFont.htm#kPDEFontCreateEmbedded" title=" Embed the font.">kPDEFontCreateEmbedded</a> and <a href="pdelayer_PDEFont.htm#kPDEFontWillSubset" title=" Subset the font.">kPDEFontWillSubset</a> must both be set in order to subset a font.<br/></p>
+
+<p>
+<p>If you create a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> that is a subset, call <a href="pdelayer_PDEFont.htm#PDEFontSubsetNow" title=" Subsets a given PDEFont in a CosDoc.">PDEFontSubsetNow</a>() on this font afterwards.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> If you want to use <code>WinAnsiEncoding</code> on UNIX, do not use this method. Use <a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontWithParams" title=" Used to obtain a PDEFont corresponding to a font in the system.">PDEFontCreateFromSysFontWithParams</a>() or <a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontAndEncoding" title=" Create a PDEFont from sysFont and sysEnc.">PDEFontCreateFromSysFontAndEncoding</a>() instead. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEFont.htm#PDEFontCreate" title=" Creates a new PDEFont from the specified parameters."><code>PDEFontCreate</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromCosObj" title=" Creates a PDEFont corresponding to a Cos object of type Font."><code>PDEFontCreateFromCosObj</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontAndEncoding" title=" Create a PDEFont from sysFont and sysEnc."><code>PDEFontCreateFromSysFontAndEncoding</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontWithParams" title=" Used to obtain a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFontWithParams</code></a>
+<a href="pdelayer_PDSysFont.htm#PDEnumSysFonts" title=" Enumerates all of the system fonts with a user-supplied procedure."><code>PDEnumSysFonts</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>PDEFontCreateFromSysFontInCosDoc(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>sysFont</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>cosDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sysFont</code></span>
+</td><td><span>A <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> object referencing a system font. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>Indicates whether to embed the font and whether to subset the font. It must be one of <a href="pdelayer_PDEFont.htm#PDEFontCreateFlags" title=" Flags for PDEFontCreateFromSysFont().">PDEFontCreateFlags</a>. If you want to subset a font, set both the <a href="pdelayer_PDEFont.htm#kPDEFontCreateEmbedded" title=" Embed the font.">kPDEFontCreateEmbedded</a> and <a href="pdelayer_PDEFont.htm#kPDEFontWillSubset" title=" Subset the font.">kPDEFontWillSubset</a> flags. </span>
+</td></tr>
+<tr><td><span><code>cosDoc</code></span>
+</td><td><span>IN/OUT The document in which to put the Cos representation of resource. It may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> corresponding to <code>sysFont</code>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#genErrResourceLoadFailed" title=" Failed to load an application resource (internal error)."><code>genErrResourceLoadFailed</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantCreateFontSubset" title=" Unable to create embedded font subset."><code>peErrCantCreateFontSubset</code></a></td><td><a href="pdfllayer_General.htm#peErrCantEmbedFont" title=" This font is licensed and cannot be embedded."><code>peErrCantEmbedFont</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantGetAttrs" title=" Unable to get attributes for the font."><code>peErrCantGetAttrs</code></a></td><td><a href="pdfllayer_General.htm#peErrCantGetWidths" title=" Unable to get widths for the font."><code>peErrCantGetWidths</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontCreateFromSysFontWithParams"><strong><span style="color:grey;">PDEFontCreateFromSysFontWithParams</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1945</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Used to obtain a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> corresponding to a font in the system.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> object when finished with it.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> If you want to use <code>WinAnsiEncoding</code> on UNIX, use this method or <a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontAndEncoding" title=" Create a PDEFont from sysFont and sysEnc.">PDEFontCreateFromSysFontAndEncoding</a>() instead. </p>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>PDEFontCreateFromSysFontWithParams(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>sysFont</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#_t_PDEFontCreateFromSysFontParams" title=" A data structure used with PDEFont creation."><code>PDEFontCreateFromSysFontParams</code></a> <code>params</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sysFont</code></span>
+</td><td><span>The system font. </span>
+</td></tr>
+<tr><td><span><code>params</code></span>
+</td><td><span>The parameters structure. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> object. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrCantCreateFontSubset" title=" Unable to create embedded font subset."><code>peErrCantCreateFontSubset</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontCreateInCosDoc"><strong><span style="color:grey;">PDEFontCreateInCosDoc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2779</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a font object like <a href="pdelayer_PDEFont.htm#PDEFontCreate" title=" Creates a new PDEFont from the specified parameters.">PDEFontCreate</a>(), except that the client can specify the <a href="coslayer_CosDoc.htm#CosDoc">CosDoc</a> in which the font is created.<br/>
+<p>The <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> may be represented as an embedded font (a FontFile entry in the font descriptor of the PDF file). To create a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> that is stored as an embedded font, the FontFile stream may be passed in <code>fontStm</code>, and the <code>len1</code>, <code>len2</code>, and <code>len3</code> parameters contain the <code>Length1</code>, <code>Length2</code>, and <code>Length3</code> values of the FontFile stream attributes dictionary.<br/></p>
+
+<p>
+<p>See the description of Embedded Font Programs in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 9.9, page 288. You can find this document on the web store of the International Standards Organization (ISO).<br/></p>
+
+<p>
+<p>The caller must close <code>fontStm</code> with <a href="aslayer_ASStm.htm#ASStmClose" title=" Closes the specified stream.">ASStmClose</a>() after invoking <a href="pdelayer_PDEFont.htm#PDEFontCreate" title=" Creates a new PDEFont from the specified parameters.">PDEFontCreate</a>().<br/></p>
+
+<p>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned font object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromCosObj" title=" Creates a PDEFont corresponding to a Cos object of type Font."><code>PDEFontCreateFromCosObj</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFont" title=" Gets a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFont</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontEx" title=" Creates a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFontEx</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontWithParams" title=" Used to obtain a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFontWithParams</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateWithParams" title=" Creates a new PDEFont from params."><code>PDEFontCreateWithParams</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>PDEFontCreateInCosDoc(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#_t_PDEFontAttrs" title=" Attributes of a PDEFont and of a PDSysFont."><code>PDEFontAttrsP</code></a> <code>attrsP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>attrsSize</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>firstChar</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>lastChar</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>*</code><code>widthsP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>char</code> <code>*</code><code>*</code><code>encoding</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>encodingBaseName</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>fontStm</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>len1</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>len2</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>len3</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>cosDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>attrsP</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_PDEFont.htm#_t_PDEFontAttrs" title=" Attributes of a PDEFont and of a PDSysFont.">PDEFontAttrs</a> structure for the font attributes. </span>
+</td></tr>
+<tr><td><span><code>attrsSize</code></span>
+</td><td><span>The size of the <code>attrsP</code> buffer in bytes. </span>
+</td></tr>
+<tr><td><span><code>firstChar</code></span>
+</td><td><span>The first character index for the widths array, <code>widthsP</code>. </span>
+</td></tr>
+<tr><td><span><code>lastChar</code></span>
+</td><td><span>The last character index for the widths array, <code>widthsP</code>. </span>
+</td></tr>
+<tr><td><span><code>widthsP</code></span>
+</td><td><span>A pointer to the widths array. </span>
+</td></tr>
+<tr><td><span><code>encoding</code></span>
+</td><td><span>An array of 256 pointers to glyph names specifying the custom encoding. If any pointer is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, no encoding information is written for that entry. </span>
+</td></tr>
+<tr><td><span><code>encodingBaseName</code></span>
+</td><td><span>The encoding base name if the encoding is a custom encoding. If the encoding is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, <code>encodingBaseName</code> is used as the value of the encoding, and must be one of <code>WinAnsiEncoding</code>, <code>MacRomanEncoding</code>, or <code>MacExpertEncoding</code>. If no encoding value is desired, use <a href="aslayer_ASAtom.htm#ASAtomNull">ASAtomNull</a>. </span>
+</td></tr>
+<tr><td><span><code>fontStm</code></span>
+</td><td><span>The stream with font information. </span>
+</td></tr>
+<tr><td><span><code>len1</code></span>
+</td><td><span>The length in bytes of the ASCII portion of the Type 1 font file after it has been decoded. For other font formats, such as TrueType or CFF, only <code>len1</code> is used, and it is the size of the font. </span>
+</td></tr>
+<tr><td><span><code>len2</code></span>
+</td><td><span>The length in bytes of the encrypted portion of the Type 1 font file after it has been decoded. </span>
+</td></tr>
+<tr><td><span><code>len3</code></span>
+</td><td><span>The length in bytes of the portion of the Type 1 font file that contains the 512 zeros, plus the <code>cleartomark</code> operator, plus any following data. </span>
+</td></tr>
+<tr><td><span><code>cosDoc</code></span>
+</td><td><span>IN/OUT The document in which to put the Cos representation of resource. It may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The specified <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrResourceLoadFailed" title=" Failed to load an application resource (internal error)."><code>genErrResourceLoadFailed</code></a></td><td><a href="pdfllayer_General.htm#peErrCantCreateFontSubset" title=" Unable to create embedded font subset."><code>peErrCantCreateFontSubset</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantEmbedFont" title=" This font is licensed and cannot be embedded."><code>peErrCantEmbedFont</code></a></td><td><a href="pdfllayer_General.htm#peErrCantGetAttrs" title=" Unable to get attributes for the font."><code>peErrCantGetAttrs</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantGetWidths" title=" Unable to get widths for the font."><code>peErrCantGetWidths</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontCreateToUnicodeNow"><strong><span style="color:grey;">PDEFontCreateToUnicodeNow</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2113</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>This function creates the / ToUnicode table. The user can check the return value of <a href="pdelayer_PDEFont.htm#PDEFontGetCreateNeedFlags" title=" This function returns flags indicating what needs to be done to make PDEFont complete.">PDEFontGetCreateNeedFlags</a>() to see if calling <a href="pdelayer_PDEFont.htm#PDEFontCreateToUnicodeNow" title=" This function creates the / ToUnicode table.">PDEFontCreateToUnicodeNow</a>() is needed. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFontCreateToUnicodeNow(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>cosDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>font</code></span>
+</td><td><span>IN/OUT An object of type <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a>. </span>
+</td></tr>
+<tr><td><span><code>cosDoc</code></span>
+</td><td><span>IN/OUT The container document. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontCreateWidthsNow"><strong><span style="color:grey;">PDEFontCreateWidthsNow</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2101</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>This function creates width entries for <code>font</code>. User can check the return value of <a href="pdelayer_PDEFont.htm#PDEFontGetCreateNeedFlags" title=" This function returns flags indicating what needs to be done to make PDEFont complete.">PDEFontGetCreateNeedFlags</a>() to see if calling <a href="pdelayer_PDEFont.htm#PDEFontCreateWidthsNow" title=" This function creates width entries for font.">PDEFontCreateWidthsNow</a>() is needed. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFontCreateWidthsNow(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>cosDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>font</code></span>
+</td><td><span>IN/OUT The font for which to create width entries. </span>
+</td></tr>
+<tr><td><span><code>cosDoc</code></span>
+</td><td><span>IN/OUT The container document. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontCreateWithParams"><strong><span style="color:grey;">PDEFontCreateWithParams</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1366</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a new <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> from <code>params</code>.<br/>
+<p>The <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> may be represented as an embedded font (a FontFile value in PDF). To create a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> that will be stored as an embedded font, the FontFile stream may be passed as <code>fontStm</code>, and the <code>len1</code>, <code>len2</code>, and <code>len3</code> parameters contain the Length1, Length2, and Length3 values of the FontFile. The caller must close the <code>fontStm</code> after calling this method. This method supports multi-byte fonts.<br/></p>
+
+<p>
+<p>This method extends <a href="pdelayer_PDEFont.htm#PDEFontCreate" title=" Creates a new PDEFont from the specified parameters.">PDEFontCreate</a>() to support multi-byte fonts.<br/></p>
+
+<p>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned font object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEFont.htm#PDEFontCreate" title=" Creates a new PDEFont from the specified parameters."><code>PDEFontCreate</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromCosObj" title=" Creates a PDEFont corresponding to a Cos object of type Font."><code>PDEFontCreateFromCosObj</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFont" title=" Gets a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFont</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontEx" title=" Creates a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFontEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>PDEFontCreateWithParams(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#_t_PDEFontCreateParams" title=" Parameters used for PDEFontCreateWithParams() to describe a font."><code>PDEFontCreateParams</code></a> <code>params</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>params</code></span>
+</td><td><span>IN/OUT A pointer to a structure containing all font parameters necessary to fully define a font. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> object of the font described by the parameters. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#genErrResourceLoadFailed" title=" Failed to load an application resource (internal error)."><code>genErrResourceLoadFailed</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantCreateFontSubset" title=" Unable to create embedded font subset."><code>peErrCantCreateFontSubset</code></a></td><td><a href="pdfllayer_General.htm#peErrCantEmbedFont" title=" This font is licensed and cannot be embedded."><code>peErrCantEmbedFont</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantGetAttrs" title=" Unable to get attributes for the font."><code>peErrCantGetAttrs</code></a></td><td><a href="pdfllayer_General.htm#peErrCantGetWidths" title=" Unable to get widths for the font."><code>peErrCantGetWidths</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontCreateWithParamsInCosDoc"><strong><span style="color:grey;">PDEFontCreateWithParamsInCosDoc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2906</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a font object like <a href="pdelayer_PDEFont.htm#PDEFontCreateWithParams" title=" Creates a new PDEFont from params.">PDEFontCreateWithParams</a>(), except that the client can specify the <a href="coslayer_CosDoc.htm#CosDoc">CosDoc</a> in which the font is created. Creates a new <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> from <code>params</code>.<br/>
+<p>The <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> may be represented as an embedded font (a FontFile value in PDF). To create a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> that will be stored as an embedded font, the FontFile stream may be passed as <code>fontStm</code>, and the <code>len1</code>, <code>len2</code>, and <code>len3</code> parameters contain the <code>Length1</code>, <code>Length2</code>, and <code>Length3</code> values of the FontFile. The caller must close the <code>fontStm</code> after calling this method. This method supports multi-byte fonts.<br/></p>
+
+<p>
+<p>This method extends <a href="pdelayer_PDEFont.htm#PDEFontCreate" title=" Creates a new PDEFont from the specified parameters.">PDEFontCreate</a>() to support multi-byte fonts.<br/></p>
+
+<p>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned font object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEFont.htm#PDEFontCreate" title=" Creates a new PDEFont from the specified parameters."><code>PDEFontCreate</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromCosObj" title=" Creates a PDEFont corresponding to a Cos object of type Font."><code>PDEFontCreateFromCosObj</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFont" title=" Gets a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFont</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontEx" title=" Creates a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFontEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>PDEFontCreateWithParamsInCosDoc(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#_t_PDEFontCreateParams" title=" Parameters used for PDEFontCreateWithParams() to describe a font."><code>PDEFontCreateParams</code></a> <code>params</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>cosDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>params</code></span>
+</td><td><span>IN/OUT A pointer to a structure containing all font parameters necessary to fully define a font. </span>
+</td></tr>
+<tr><td><span><code>cosDoc</code></span>
+</td><td><span>IN/OUT The document in which to put the Cos representation of resource. It may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> object of the font described by the parameters. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#genErrResourceLoadFailed" title=" Failed to load an application resource (internal error)."><code>genErrResourceLoadFailed</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantCreateFontSubset" title=" Unable to create embedded font subset."><code>peErrCantCreateFontSubset</code></a></td><td><a href="pdfllayer_General.htm#peErrCantEmbedFont" title=" This font is licensed and cannot be embedded."><code>peErrCantEmbedFont</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantGetAttrs" title=" Unable to get attributes for the font."><code>peErrCantGetAttrs</code></a></td><td><a href="pdfllayer_General.htm#peErrCantGetWidths" title=" Unable to get widths for the font."><code>peErrCantGetWidths</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontEmbedNow"><strong><span style="color:grey;">PDEFontEmbedNow</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2089</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>This function embeds a font stream. User can check the return value of <a href="pdelayer_PDEFont.htm#PDEFontGetCreateNeedFlags" title=" This function returns flags indicating what needs to be done to make PDEFont complete.">PDEFontGetCreateNeedFlags</a>() to see if calling <a href="pdelayer_PDEFont.htm#PDEFontEmbedNow" title=" This function embeds a font stream.">PDEFontEmbedNow</a>() is needed. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEFont.htm#PDEFontEmbedNowDontSubset" title=" Embeds the given PDEFont inside doc without creating a subset."><code>PDEFontEmbedNowDontSubset</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontIsEmbedded" title=" Tests whether a font is an embedded font in the document in which it was created."><code>PDEFontIsEmbedded</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFontEmbedNow(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>cosDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>font</code></span>
+</td><td><span>The font to embed. </span>
+</td></tr>
+<tr><td><span><code>cosDoc</code></span>
+</td><td><span>The container document. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrBadFont" title=" Font embedding failed because of invalid or corrupt font."><code>peErrBadFont</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrToUnicodeUsesPUA" title=" Private User Area of Unicode used"><code>peErrToUnicodeUsesPUA</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontEmbedNowDontSubset"><strong><span style="color:grey;">PDEFontEmbedNowDontSubset</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1570</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Embeds the given <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> inside doc without creating a subset. Use this method instead of <a href="pdelayer_PDEFont.htm#PDEFontSubsetNow" title=" Subsets a given PDEFont in a CosDoc.">PDEFontSubsetNow</a>() if you created the font with the <code>willSubset</code> flag but changed your mind. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEFont.htm#PDEFontEmbedNow" title=" This function embeds a font stream."><code>PDEFontEmbedNow</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontIsEmbedded" title=" Tests whether a font is an embedded font in the document in which it was created."><code>PDEFontIsEmbedded</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFontEmbedNowDontSubset(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>cosDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>font</code></span>
+</td><td><span>The font to embed. </span>
+</td></tr>
+<tr><td><span><code>cosDoc</code></span>
+</td><td><span>The container document. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontGetAttrs"><strong><span style="color:grey;">PDEFontGetAttrs</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1008</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the attributes for a font object. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> <a href="pdelayer_PDEFont.htm#PDEFontGetAttrs" title=" Gets the attributes for a font object.">PDEFontGetAttrs</a>() cannot fill in the <code>cantEmbed</code> and <code>protection</code> fields. PDSysFontAttrs() can return this information to you for system fonts. </p>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> <a href="pdelayer_PDEFont.htm#PDEFontGetAttrs" title=" Gets the attributes for a font object.">PDEFontGetAttrs</a>() fills in the <code>fontBBox</code> portion of the <a href="pdelayer_PDEFont.htm#_t_PDEFontAttrs" title=" Attributes of a PDEFont and of a PDSysFont.">PDEFontAttrs</a> as <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value.">ASInt16</a> objects, even though the member says it is an <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides.">ASFixedRect</a>. Make sure to properly convert those values using <a href="aslayer_ASFixed.htm#ASInt16ToFixed">ASInt16ToFixed</a>() so that you get the proper <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides.">ASFixedRect</a> associated with that font. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEFont.htm#PDEFontGetNumCodeBytes" title=" Gets the number of bytes comprising the next code in a string of single or multi-byte character codes.">PDEFontGetNumCodeBytes</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFontGetAttrs(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="pdelayer_PDEFont.htm#_t_PDEFontAttrs" title=" Attributes of a PDEFont and of a PDSysFont."><code>PDEFontAttrsP</code></a> <code>attrsP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>attrsSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>font</code></span>
+</td><td><span>IN/OUT A <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> whose attributes are found. </span>
+</td></tr>
+<tr><td><span><code>attrsP</code></span>
+</td><td><span>IN/OUT (Filled by the method) A pointer to a <a href="pdelayer_PDEFont.htm#_t_PDEFontAttrs" title=" Attributes of a PDEFont and of a PDSysFont.">PDEFontAttrs</a> structure for the font attributes. </span>
+</td></tr>
+<tr><td><span><code>attrsSize</code></span>
+</td><td><span>IN/OUT The size of the <code>attrsP</code> buffer in bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#genErrResourceLoadFailed" title=" Failed to load an application resource (internal error)."><code>genErrResourceLoadFailed</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantGetAttrs" title=" Unable to get attributes for the font."><code>peErrCantGetAttrs</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontGetCosObj"><strong><span style="color:grey;">PDEFontGetCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1038</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets a Cos object for a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEFont.htm#PDEFontCreateFromCosObj" title=" Creates a PDEFont corresponding to a Cos object of type Font.">PDEFontCreateFromCosObj</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFontGetCosObj(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>cosObjP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>font</code></span>
+</td><td><span>IN/OUT A <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> whose Cos object is obtained. </span>
+</td></tr>
+<tr><td><span><code>cosObjP</code></span>
+</td><td><span>IN/OUT (Filled by the method) The Cos object corresponding to <code>font</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrResourceLoadFailed" title=" Failed to load an application resource (internal error)."><code>genErrResourceLoadFailed</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontGetCreateNeedFlags"><strong><span style="color:grey;">PDEFontGetCreateNeedFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2074</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>This function returns flags indicating what needs to be done to make <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> complete. <a href="pdelayer_PDEFont.htm#kPDEFontCreateNeedWidths" title=" It is necessary to to create the width.">kPDEFontCreateNeedWidths</a> can be cleared by <a href="pdelayer_PDEFont.htm#PDEFontCreateWidthsNow" title=" This function creates width entries for font.">PDEFontCreateWidthsNow</a>(). <a href="pdelayer_PDEFont.htm#kPDEFontCreateNeedToUnicode" title=" It is necessary to to create the ToUnicode stream.">kPDEFontCreateNeedToUnicode</a> can be cleared by <a href="pdelayer_PDEFont.htm#PDEFontCreateToUnicodeNow" title=" This function creates the / ToUnicode table.">PDEFontCreateToUnicodeNow</a>(). <a href="pdelayer_PDEFont.htm#kPDEFontCreateNeedEmbed" title=" It is necessary to to embed it.">kPDEFontCreateNeedEmbed</a> can be cleared by <a href="pdelayer_PDEFont.htm#PDEFontEmbedNow" title=" This function embeds a font stream.">PDEFontEmbedNow</a>(). </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>PDEFontGetCreateNeedFlags(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>font</code></span>
+</td><td><span>The font object. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A value corresponding to <a href="pdelayer_PDEFont.htm#PDEFontCreateNeedFlags" title=" Flags for PDEFontGetCreateNeedFlags().">PDEFontCreateNeedFlags</a>(). </span>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontGetNumCodeBytes"><strong><span style="color:grey;">PDEFontGetNumCodeBytes</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1507</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the number of bytes comprising the next code in a string of single or multi-byte character codes. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEFont.htm#PDEFontGetOneByteEncoding" title=" Gets an array of delta encodings for the given one byte PDEFont."><code>PDEFontGetOneByteEncoding</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontIsMultiByte" title=" Tests whether a font contains any multi-byte characters."><code>PDEFontIsMultiByte</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontSumWidths" title=" Gets the sum of the widths of len characters from a string of single or multi-byte characters."><code>PDEFontSumWidths</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>PDEFontGetNumCodeBytes(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>*</code><code>text</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>len</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>font</code></span>
+</td><td><span>IN/OUT A <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> object returned from one of the <a href="pdelayer_PDEFont.htm#PDEFontCreate" title=" Creates a new PDEFont from the specified parameters."><code>PDEFontCreate</code></a> methods. </span>
+</td></tr>
+<tr><td><span><code>text</code></span>
+</td><td><span>IN/OUT A pointer to a string of characters. </span>
+</td></tr>
+<tr><td><span><code>len</code></span>
+</td><td><span>IN/OUT The length, in bytes, of the string of characters, starting with the character pointed to by text. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of bytes in the next character code pointed to by text. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrNoMemory" title=" Out of memory."><code>genErrNoMemory</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontGetOneByteEncoding"><strong><span style="color:grey;">PDEFontGetOneByteEncoding</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1725</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets an array of delta encodings for the given one byte <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a>. For encodingDelta, see the description of encoding in the ISO 32000 document, 1.7 or 2.0. You can find this document on the web store of the International Standards Organization. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEFont.htm#PDEFontGetNumCodeBytes" title=" Gets the number of bytes comprising the next code in a string of single or multi-byte character codes."><code>PDEFontGetNumCodeBytes</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontIsMultiByte" title=" Tests whether a font contains any multi-byte characters."><code>PDEFontIsMultiByte</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontSumWidths" title=" Gets the sum of the widths of len characters from a string of single or multi-byte characters."><code>PDEFontSumWidths</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDEFontGetOneByteEncoding(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>*</code><code>encodingDelta</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>font</code></span>
+</td><td><span>IN/OUT A <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> object returned from one of the <a href="pdelayer_PDEFont.htm#PDEFontCreate" title=" Creates a new PDEFont from the specified parameters."><code>PDEFontCreate</code></a> methods. </span>
+</td></tr>
+<tr><td><span><code>encodingDelta</code></span>
+</td><td><span>IN/OUT (Filled by the method) A pointer to an <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> array that is filled with the delta encodings for font. Each entry is the <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> for a glyph name that differs from the base encoding. For more information about font encodings see the description of Base Encoding in the Character Encoding section of the ISO 32000-1:2008, Document Management- Portable Document Format-Part 1: PDF 1.7, section 9.6.6, page 262. The array must be allocated to hold 256 entries. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if <code>encodingDelta</code> is filled, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrNoMemory" title=" Out of memory."><code>genErrNoMemory</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontGetSysEncoding"><strong><span style="color:grey;">PDEFontGetSysEncoding</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2380</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the system encoding object associated with a font object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEFont.htm#PDEFontSetSysEncoding" title=" Sets the system encoding object associated with a font object.">PDEFontSetSysEncoding</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDSysEncoding.htm#PDSysEncoding" title=" A PDEElement that provides system encoding for a PDF file."><code>PDSysEncoding</code></a> <code>PDEFontGetSysEncoding(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>pdeFont</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeFont</code></span>
+</td><td><span>A <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> whose system encoding is found. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The system encoding object. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#genErrResourceLoadFailed" title=" Failed to load an application resource (internal error)."><code>genErrResourceLoadFailed</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontGetSysFont"><strong><span style="color:grey;">PDEFontGetSysFont</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2369</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the system font object associated with a font object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEFont.htm#PDEFontSetSysFont" title=" Sets the system font object to be used with a font object that does not currently have a system font associated with it."><code>PDEFontSetSysFont</code></a>
+<a href="pdelayer_PDSysFont.htm#PDFindSysFontForPDEFont" title=" Finds a system font that matches the requested PDEFont."><code>PDFindSysFontForPDEFont</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>PDEFontGetSysFont(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>pdeFont</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeFont</code></span>
+</td><td><span>A <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> whose system font is found. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The system font object. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#genErrResourceLoadFailed" title=" Failed to load an application resource (internal error)."><code>genErrResourceLoadFailed</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontGetWidths"><strong><span style="color:grey;">PDEFontGetWidths</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1026</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the widths for a font object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEFont.htm#PDEFontCreateWithParams" title=" Creates a new PDEFont from params.">PDEFontCreateWithParams</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFontGetWidths(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>*</code><code>widthsP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>font</code></span>
+</td><td><span>IN/OUT A <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> whose widths are found. </span>
+</td></tr>
+<tr><td><span><code>widthsP</code></span>
+</td><td><span>IN/OUT (Filled by the method) A pointer to the widths array. <code>widthsP</code> must have room for 256 values. The widths are returned in character space (1000 EM units). An EM is a typographic unit of measurement equal to the size of a font. To convert to text space, divide the value returned by <code>1000</code>. To convert to user space, multiply the text space value by the font size. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#genErrResourceLoadFailed" title=" Failed to load an application resource (internal error)."><code>genErrResourceLoadFailed</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantGetWidths" title=" Unable to get widths for the font."><code>peErrCantGetWidths</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontGetWidthsNow"><strong><span style="color:grey;">PDEFontGetWidthsNow</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1581</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets a Type0 font's width information for only those characters used in the file. Call this routine when the font was created with the <a href="pdelayer_PDEFont.htm#kPDEFontDeferWidths" title=" Wait to get the widths until later (this affects Type0 fonts only).">kPDEFontDeferWidths</a> flag but without the <a href="pdelayer_PDEFont.htm#kPDEFontCreateEmbedded" title=" Embed the font.">kPDEFontCreateEmbedded</a> flag (if the font is to be embedded, call <a href="pdelayer_PDEFont.htm#PDEFontSubsetNow" title=" Subsets a given PDEFont in a CosDoc.">PDEFontSubsetNow</a>(), which also gets the width info). </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFontGetWidthsNow(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>cosDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>font</code></span>
+</td><td><span>The font whose widths are found. </span>
+</td></tr>
+<tr><td><span><code>cosDoc</code></span>
+</td><td><span>The container document. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontIsEmbedded"><strong><span style="color:grey;">PDEFontIsEmbedded</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2357</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Tests whether a font is an embedded font in the document in which it was created. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEFont.htm#PDEFontEmbedNow" title=" This function embeds a font stream."><code>PDEFontEmbedNow</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontEmbedNowDontSubset" title=" Embeds the given PDEFont inside doc without creating a subset."><code>PDEFontEmbedNowDontSubset</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDEFontIsEmbedded(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>pdeFont</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeFont</code></span>
+</td><td><span>A <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> object to test. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the font is embedded, <a href="aslayer_General.htm#false"><code>false</code></a> if it is not, or if it was created in one document and embedded in a different document. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontIsMultiByte"><strong><span style="color:grey;">PDEFontIsMultiByte</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1534</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Tests whether a font contains any multi-byte characters. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEFont.htm#PDEFontGetNumCodeBytes" title=" Gets the number of bytes comprising the next code in a string of single or multi-byte character codes."><code>PDEFontGetNumCodeBytes</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontGetOneByteEncoding" title=" Gets an array of delta encodings for the given one byte PDEFont."><code>PDEFontGetOneByteEncoding</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontSumWidths" title=" Gets the sum of the widths of len characters from a string of single or multi-byte characters."><code>PDEFontSumWidths</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDEFontIsMultiByte(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>font</code></span>
+</td><td><span>IN/OUT A <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> object returned from one of the <a href="pdelayer_PDEFont.htm#PDEFontCreate" title=" Creates a new PDEFont from the specified parameters."><code>PDEFontCreate</code></a> methods to test. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the font contains any multi-byte characters, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontSetSysEncoding"><strong><span style="color:grey;">PDEFontSetSysEncoding</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2266</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the system encoding object associated with a font object. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> Changing the system encoding may produce unexpected results. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEFont.htm#PDEFontGetSysEncoding" title=" Gets the system encoding object associated with a font object.">PDEFontGetSysEncoding</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFontSetSysEncoding(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>pdeFont</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysEncoding.htm#PDSysEncoding" title=" A PDEElement that provides system encoding for a PDF file."><code>PDSysEncoding</code></a> <code>sysEnc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeFont</code></span>
+</td><td><span>A <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> whose system encoding is set. </span>
+</td></tr>
+<tr><td><span><code>sysEnc</code></span>
+</td><td><span>The new system encoding object. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#genErrResourceLoadFailed" title=" Failed to load an application resource (internal error)."><code>genErrResourceLoadFailed</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontSetSysFont"><strong><span style="color:grey;">PDEFontSetSysFont</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2252</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the system font object to be used with a font object that does not currently have a system font associated with it. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEFont.htm#PDEFontGetSysFont" title=" Gets the system font object associated with a font object.">PDEFontGetSysFont</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFontSetSysFont(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>pdeFont</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>sysFont</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeFont</code></span>
+</td><td><span>A <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> whose system font is set. </span>
+</td></tr>
+<tr><td><span><code>sysFont</code></span>
+</td><td><span>The new system font object. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#genErrResourceLoadFailed" title=" Failed to load an application resource (internal error)."><code>genErrResourceLoadFailed</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontSubsetNow"><strong><span style="color:grey;">PDEFontSubsetNow</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1296</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Subsets a given <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> in a <a href="coslayer_CosDoc.htm#CosDoc">CosDoc</a>.<br/>
+<p>If you created font with <a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFont" title=" Gets a PDEFont corresponding to a font in the system.">PDEFontCreateFromSysFont</a>(), you must have set both the <a href="pdelayer_PDEFont.htm#kPDEFontCreateEmbedded" title=" Embed the font.">kPDEFontCreateEmbedded</a> and <a href="pdelayer_PDEFont.htm#kPDEFontWillSubset" title=" Subset the font.">kPDEFontWillSubset</a> set in the <code>flags</code> parameter, to be able to subset the font.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method does not change the reference count. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFont" title=" Gets a PDEFont corresponding to a font in the system.">PDEFontCreateFromSysFont</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEFontSubsetNow(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>cosDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>font</code></span>
+</td><td><span>IN/OUT The <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> to subset. </span>
+</td></tr>
+<tr><td><span><code>cosDoc</code></span>
+</td><td><span>IN/OUT The <a href="coslayer_CosDoc.htm#CosDoc">CosDoc</a> whose font is subsetted. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#genErrResourceLoadFailed" title=" Failed to load an application resource (internal error)."><code>genErrResourceLoadFailed</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrBadFont" title=" Font embedding failed because of invalid or corrupt font."><code>peErrBadFont</code></a></td><td><a href="pdfllayer_General.htm#peErrCantCreateFontSubset" title=" Unable to create embedded font subset."><code>peErrCantCreateFontSubset</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantEmbedFont" title=" This font is licensed and cannot be embedded."><code>peErrCantEmbedFont</code></a></td><td><a href="pdfllayer_General.htm#peErrCantGetAttrs" title=" Unable to get attributes for the font."><code>peErrCantGetAttrs</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantGetWidths" title=" Unable to get widths for the font."><code>peErrCantGetWidths</code></a></td><td><a href="pdfllayer_General.htm#peErrToUnicodeUsesPUA" title=" Private User Area of Unicode used"><code>peErrToUnicodeUsesPUA</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontSumWidths"><strong><span style="color:grey;">PDEFontSumWidths</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1489</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the sum of the widths of <code>len</code> characters from a string of single or multi-byte characters. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEFont.htm#PDEFontGetNumCodeBytes" title=" Gets the number of bytes comprising the next code in a string of single or multi-byte character codes."><code>PDEFontGetNumCodeBytes</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontGetOneByteEncoding" title=" Gets an array of delta encodings for the given one byte PDEFont."><code>PDEFontGetOneByteEncoding</code></a>
+<a href="pdelayer_PDEFont.htm#PDEFontIsMultiByte" title=" Tests whether a font contains any multi-byte characters."><code>PDEFontIsMultiByte</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDEFontSumWidths(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>*</code><code>text</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>len</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>font</code></span>
+</td><td><span>A <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> object returned from one of the <a href="pdelayer_PDEFont.htm#PDEFontCreate" title=" Creates a new PDEFont from the specified parameters.">PDEFontCreate</a> methods. </span>
+</td></tr>
+<tr><td><span><code>text</code></span>
+</td><td><span>A pointer to a string of characters. </span>
+</td></tr>
+<tr><td><span><code>len</code></span>
+</td><td><span>The length of string in bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The width of the text string in EM space. (In EM space, the width of 'M' is about 1000 EM units). </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrNoMemory" title=" Out of memory."><code>genErrNoMemory</code></a></td><td><a href="pdfllayer_General.htm#genErrResourceLoadFailed" title=" Failed to load an application resource (internal error)."><code>genErrResourceLoadFailed</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#pdErrBadResMetrics" title=" There are invalid or corrupt font metrics in the resource file."><code>pdErrBadResMetrics</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEFontTranslateGlyphIdsToUnicode"><strong><span style="color:grey;">PDEFontTranslateGlyphIdsToUnicode</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1962</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Translates a string to Unicode values. The <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> must have a / ToUnicode table. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>PDEFontTranslateGlyphIdsToUnicode(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>*</code><code>text</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>textLen</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>*</code><code>unicodeStr</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>size</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>font</code></span>
+</td><td><span>IN/OUT The font. </span>
+</td></tr>
+<tr><td><span><code>text</code></span>
+</td><td><span>IN/OUT The string to convert. </span>
+</td></tr>
+<tr><td><span><code>textLen</code></span>
+</td><td><span>IN/OUT The length of <code>text</code> in bytes. </span>
+</td></tr>
+<tr><td><span><code>unicodeStr</code></span>
+</td><td><span>IN/OUT (Filled by the method) A buffer to hold the translated string. </span>
+</td></tr>
+<tr><td><span><code>size</code></span>
+</td><td><span>IN/OUT The size of the <code>unicodeStr</code> buffer. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><code>0</code> if the string was successfully translated. If <code>unicodeStr</code> is too small for the translated string, it returns the number of bytes required. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEReleaseSpan"><strong><span style="color:grey;">PDEReleaseSpan</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2570</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Releases a PDESpan object that is returned by <a href="pdelayer_PDEFont.htm#PDEFontAddGlyphs" title=" Adds glyphs to a PDEFont object for embedding a PDEFont.">PDEFontAddGlyphs</a>(). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEFont.htm#PDEFontAddGlyphs" title=" Adds glyphs to a PDEFont object for embedding a PDEFont.">PDEFontAddGlyphs</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEReleaseSpan(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#_t_PDESpanSet"><code>PDESpanSetP</code></a> <code>pdeSpan</code><code>);</code> </code>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+</section>
+
+</div>
+</body></html>

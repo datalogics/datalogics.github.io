@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDF Edit Layer: PDSysFont</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDF Edit Layer: PDSysFont</h5>
+<li><a href="#Enumerations">Enumerations</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#CallbackSignatures">Callback Signatures</a></li>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Enumerations">
+<header><h2>PDSysFont Enumerations</h2></header>
+<nav><dl>
+<dt><a href="#PDSysFontMatchFlags">PDSysFontMatchFlags</a></dt><dd> -  Font matching flags for PDFindSysFontForPDEFont() and PDFindSysFont().</dd>
+<dt><a href="#PDSysFontPackageType">PDSysFontPackageType</a></dt><dd> - </dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDSysFontMatchFlags"><strong><span style="color:grey;">PDSysFontMatchFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFontExpT.h:76</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Font matching flags for <a href="pdelayer_PDSysFont.htm#PDFindSysFontForPDEFont" title=" Finds a system font that matches the requested PDEFont.">PDFindSysFontForPDEFont</a>() and <a href="pdelayer_PDSysFont.htm#PDFindSysFont" title=" Finds a system font that matches the requested attributes.">PDFindSysFont</a>(). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDSysFont.htm#PDFindSysFont" title=" Finds a system font that matches the requested attributes."><code>PDFindSysFont</code></a>
+<a href="pdelayer_PDSysFont.htm#PDFindSysFontForPDEFont" title=" Finds a system font that matches the requested PDEFont."><code>PDFindSysFontForPDEFont</code></a></div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kPDSysFontMatchNameAndCharSet"><code>kPDSysFontMatchNameAndCharSet</code><code>=</code><code>0x0001</code></span>
+</td><td><span>Match the font name and character set. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDSysFontMatchFontType"><code>kPDSysFontMatchFontType</code><code>=</code><code>0x0002</code></span>
+</td><td><span>Match the font type. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDSysFontMatchWritingMode"><code>kPDSysFontMatchWritingMode</code><code>=</code><code>0x0004</code></span>
+</td><td><span>Match the writing mode (horizontal or vertical). </span>
+</td></tr></table>
+</section>
+<section><div class="infoRow"><h3 id="PDSysFontPackageType"><strong><span style="color:grey;">PDSysFontPackageType</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:2007</div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kPDSysFontUnknown"><code>kPDSysFontUnknown</code><code>=</code><code>0</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDSysFontType1"><code>kPDSysFontType1</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDSysFontTrueType"><code>kPDSysFontTrueType</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDSysFontCID"><code>kPDSysFontCID</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDSysFontATC"><code>kPDSysFontATC</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDSysFontOCF"><code>kPDSysFontOCF</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDSysFontOpenTypeCFF"><code>kPDSysFontOpenTypeCFF</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDSysFontOpenTypeCID"><code>kPDSysFontOpenTypeCID</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDSysFontOpenTypeTT"><code>kPDSysFontOpenTypeTT</code></span>
+</td><td><span></span>
+</td></tr></table>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>PDSysFont Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#ATSFontFamilyRef">ATSFontFamilyRef</a></dt><dd> - </dd>
+<dt><a href="#ATSFontRef">ATSFontRef</a></dt><dd> - </dd>
+<dt><a href="#PDSysFont">PDSysFont</a></dt><dd> -  A reference to a font installed in the host system.</dd>
+<dt><a href="#PDSysFontFID">PDSysFontFID</a></dt><dd> - </dd>
+<dt><a href="#PDSysFontFRef">PDSysFontFRef</a></dt><dd> - </dd>
+<dt><a href="#PDSysFontFStyle">PDSysFontFStyle</a></dt><dd> - </dd>
+<dt><a href="#PDSysFontFontFamilyRef">PDSysFontFontFamilyRef</a></dt><dd> - </dd>
+<dt><a href="#PDSysFontMode">PDSysFontMode</a></dt><dd> - </dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ATSFontFamilyRef"><strong><span style="color:grey;">ATSFontFamilyRef</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFontExpT.h:39</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>UInt32</code> <code>ATSFontFamilyRef</code><code>;</code> </code>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDSysFont.htm#PDSysFontFontFamilyRef"><code>PDSysFontFontFamilyRef</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ATSFontRef"><strong><span style="color:grey;">ATSFontRef</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFontExpT.h:38</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>UInt32</code> <code>ATSFontRef</code><code>;</code> </code>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDSysFont.htm#PDSysFontFRef"><code>PDSysFontFRef</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDSysFont"><strong><span style="color:grey;">PDSysFont</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFontExpT.h:70</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A reference to a font installed in the host system. <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> methods allow you to list the fonts available in the host system and to find a font in the system that matches a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a>, if it is present. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDSysFont.htm#PDEnumSysFonts" title=" Enumerates all of the system fonts with a user-supplied procedure."><code>PDEnumSysFonts</code></a>
+<a href="pdelayer_PDSysFont.htm#PDEnumSysFonts" title=" Enumerates all of the system fonts with a user-supplied procedure."><code>PDEnumSysFonts</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDSysFont</code> <code>*</code><code>PDSysFont</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEFont.htm#PDEFontGetSysFont" title=" Gets the system font object associated with a font object."><code>PDEFontGetSysFont</code></a></td><td><a href="pdelayer_PDSysFont.htm#PDFindSysFont" title=" Finds a system font that matches the requested attributes."><code>PDFindSysFont</code></a></td></tr>
+<tr><td><a href="pdelayer_PDSysFont.htm#PDFindSysFontEx" title=" Finds a system font that matches the requested attributes."><code>PDFindSysFontEx</code></a></td><td><a href="pdelayer_PDSysFont.htm#PDFindSysFontForPDEFont" title=" Finds a system font that matches the requested PDEFont."><code>PDFindSysFontForPDEFont</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFont" title=" Gets a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFont</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontAndEncoding" title=" Create a PDEFont from sysFont and sysEnc."><code>PDEFontCreateFromSysFontAndEncoding</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontAndEncodingInCosDoc" title=" Creates a font object like PDEFontCreateFromSysFontAndEncoding(), except that the client can specify the CosDoc in which the font is created."><code>PDEFontCreateFromSysFontAndEncodingInCosDoc</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontEx" title=" Creates a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFontEx</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontExInCosDoc" title=" Creates a font object like PDEFontCreateFromSysFontEx(), except that the client can specify the CosDoc in which the font is created."><code>PDEFontCreateFromSysFontExInCosDoc</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontInCosDoc" title=" Creates a font object like PDEFontCreateFromSysFont(), except that the client can specify the CosDoc in which the font is created."><code>PDEFontCreateFromSysFontInCosDoc</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontWithParams" title=" Used to obtain a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFontWithParams</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontSetSysFont" title=" Sets the system font object to be used with a font object that does not currently have a system font associated with it."><code>PDEFontSetSysFont</code></a></td></tr>
+<tr><td><a href="pdelayer_PDSysFont.htm#PDSysFontAcquirePlatformData" title=" Acquires platform-specific data for use by user interface code."><code>PDSysFontAcquirePlatformData</code></a></td><td><a href="pdelayer_PDSysFont.htm#PDSysFontEnumProc" title=" A callback for PDEnumSysFonts()."><code>PDSysFontEnumProc</code></a></td></tr>
+<tr><td><a href="pdelayer_PDSysFont.htm#PDSysFontGetAttrs" title=" Gets the attributes of a system font."><code>PDSysFontGetAttrs</code></a></td><td><a href="pdelayer_PDSysFont.htm#PDSysFontGetCIDSystemInfo" title=" Derives the registry, ordering, and supplement information of a multi-byte system font."><code>PDSysFontGetCIDSystemInfo</code></a></td></tr>
+<tr><td><a href="pdelayer_PDSysFont.htm#PDSysFontGetCreateFlags" title=" This function returns a createFlags that can be passed to PDEFontCreateFromSysFontAndEncoding()."><code>PDSysFontGetCreateFlags</code></a></td><td><a href="pdelayer_PDSysFont.htm#PDSysFontGetEncoding" title=" Gets the encoding of a single byte encoded system font."><code>PDSysFontGetEncoding</code></a></td></tr>
+<tr><td><a href="dlextras_PDSysFont.htm#PDSysFontGetFullName" title=" This method retrieves the full font name of a system font."><code>PDSysFontGetFullName</code></a></td><td><a href="pdelayer_PDSysFont.htm#PDSysFontGetInfo" title=" Gets high-level information about a system font."><code>PDSysFontGetInfo</code></a></td></tr>
+<tr><td><a href="pdelayer_PDSysFont.htm#PDSysFontGetName" title=" Gets the PostScript or TrueType styled name for a system font."><code>PDSysFontGetName</code></a></td><td><a href="pdelayer_PDSysFont.htm#PDSysFontGetScript" title=" Returns a PDScript value for the specified PDSysFont."><code>PDSysFontGetScript</code></a></td></tr>
+<tr><td><a href="pdelayer_PDSysFont.htm#PDSysFontGetType0Widths" title=" Gets width information from a Type 0 system font."><code>PDSysFontGetType0Widths</code></a></td><td><a href="pdelayer_PDSysFont.htm#PDSysFontGetWidths" title=" Gets the widths of a single byte encoded system font."><code>PDSysFontGetWidths</code></a></td></tr>
+<tr><td><a href="pdelayer_PDSysFont.htm#PDSysFontGetWidthsEx" title=" Gets the widths of a single byte encoded system font."><code>PDSysFontGetWidthsEx</code></a></td><td><a href="pdelayer_PDSysFont.htm#PDSysFontVerifyEncoding" title=" Similar to PDSysFontGetCreateFlags but avoids compatibility issues with changing PDSysFontGetCreateFlags."><code>PDSysFontVerifyEncoding</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDSysFontFID"><strong><span style="color:grey;">PDSysFontFID</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFontExpT.h:56</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>FMFontFamily</code> <code>PDSysFontFID</code><code>;</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDSysFontFRef"><strong><span style="color:grey;">PDSysFontFRef</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFontExpT.h:52</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="pdelayer_PDSysFont.htm#ATSFontRef"><code>ATSFontRef</code></a> <code>PDSysFontFRef</code><code>;</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDSysFontFStyle"><strong><span style="color:grey;">PDSysFontFStyle</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFontExpT.h:58</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>PDSysFontFStyle</code><code>;</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDSysFontFontFamilyRef"><strong><span style="color:grey;">PDSysFontFontFamilyRef</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFontExpT.h:54</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="pdelayer_PDSysFont.htm#ATSFontFamilyRef"><code>ATSFontFamilyRef</code></a> <code>PDSysFontFontFamilyRef</code><code>;</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDSysFontMode"><strong><span style="color:grey;">PDSysFontMode</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFontExpT.h:49</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>PDSysFontMode</code><code>;</code> </code>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEFont.htm#_t_PDEFontInfo" title=" PDEFont information."><code>_t_PDEFontInfo</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="CallbackSignatures">
+<header><h2>PDSysFont Callback Signatures</h2></header>
+<nav><dl>
+<dt><a href="#PDSysFontEnumProc">PDSysFontEnumProc</a></dt><dd> -  A callback for PDEnumSysFonts().</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDSysFontEnumProc"><strong><span style="color:grey;">PDSysFontEnumProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFontExpT.h:183</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A callback for <a href="pdelayer_PDSysFont.htm#PDEnumSysFonts" title=" Enumerates all of the system fonts with a user-supplied procedure.">PDEnumSysFonts</a>(). It is called once for each system font. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDSysFontEnumProc(</code><a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>sysFont</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sysFont</code></span>
+</td><td><span>IN/OUT The system font. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>IN/OUT User-supplied data that was specified in the call to <a href="pdelayer_PDSysFont.htm#PDEnumSysFonts" title=" Enumerates all of the system fonts with a user-supplied procedure.">PDEnumSysFonts</a>(). </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> to continue enumeration, <a href="aslayer_General.htm#false"><code>false</code></a> to halt enumeration. </span>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDSysFont.htm#PDEnumSysFonts" title=" Enumerates all of the system fonts with a user-supplied procedure."><code>PDEnumSysFonts</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>PDSysFont Structures</h2></header>
+<nav><dl>
+<dt><a href="#_t_PDSysFontPlatData">_t_PDSysFontPlatData</a></dt><dd> -  PDSysFontPlatData for Windows.</dd>
+<dt><a href="#_t_PDSysFontPlatData">_t_PDSysFontPlatData</a></dt><dd> -  PDSysFontPlatData for Mac.</dd>
+<dt><a href="#_t_PDSysFontPlatData">_t_PDSysFontPlatData</a></dt><dd> -  PDSysFontPlatData for Unix.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="_t_PDSysFontPlatData"><strong><span style="color:grey;">_t_PDSysFontPlatData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFontExpT.h:113</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span><a href="pdelayer_PDSysFont.htm#_t_PDSysFontPlatData" title=" PDSysFontPlatData for Unix.">PDSysFontPlatData</a> for Windows. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDSysFontPlatData {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASSize_t"><code>ASSize_t</code></a> <code>size</code><code>;</code> </div>
+</td><td><span>This must be <code>sizeof(PDSysFontPlatData)</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>LOGFONTA</code> <code>*</code><code>lf</code><code>;</code> </div>
+</td><td><span>(Windows only) The Windows <code>LOGFONTA</code> structure defining font attributes. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>fontPath</code><code>;</code> </div>
+</td><td><span>(Optional) Sets the pathname with fontfile name </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>afmPath</code><code>;</code> </div>
+</td><td><span>(Optional) This is only set if <code>LOGFONTA</code> is not present. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>LOGFONTW</code> <code>*</code><code>lfw</code><code>;</code> </div>
+</td><td><span>(Windows only) The Windows <code>LOGFONTW</code> structure defining font attributes. Whenever * * we return a valid <code>LOGFONTA</code>, we return a valid <code>LOGFONTW</code>. </span>
+</td></tr>
+<tr><td><code id="PDSysFontPlatData"><code>}</code> <a href="pdelayer_PDSysFont.htm#_t_PDSysFontPlatData" title=" PDSysFontPlatData for Unix."><code>PDSysFontPlatData</code></a><code>,</code> <code>*</code><a href="pdelayer_PDSysFont.htm#_t_PDSysFontPlatData" title=" PDSysFontPlatData for Unix."><code>PDSysFontPlatDataP</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">_t_PDSysFontPlatData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFontExpT.h:133</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span><a href="pdelayer_PDSysFont.htm#_t_PDSysFontPlatData" title=" PDSysFontPlatData for Unix.">PDSysFontPlatData</a> for Mac. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDSysFontPlatData {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASSize_t"><code>ASSize_t</code></a> <code>size</code><code>;</code> </div>
+</td><td><span>This must be <code>sizeof(PDSysFontPlatData)</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDSysFont.htm#PDSysFontFID"><code>PDSysFontFID</code></a> <code>fontID</code><code>;</code> </div>
+</td><td><span>The font ID. <span style="color:red;">deprecated:</span> Clients should not use this field, Instead use the <a href="pdelayer_PDSysFont.htm#ATSFontRef">ATSFontRef</a> returned back in fontRef. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDSysFont.htm#PDSysFontFStyle"><code>PDSysFontFStyle</code></a> <code>fontStyle</code><code>;</code> </div>
+</td><td><span>The style value within that font. <span style="color:red;">deprecated:</span> Clients should not use this field, Instead use the <a href="pdelayer_PDSysFont.htm#ATSFontRef">ATSFontRef</a> returned back in fontRef. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDSysFont.htm#PDSysFontFRef"><code>PDSysFontFRef</code></a> <code>fontRef</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><code><code>}</code> <a href="pdelayer_PDSysFont.htm#_t_PDSysFontPlatData" title=" PDSysFontPlatData for Unix."><code>PDSysFontPlatData</code></a><code>,</code> <code>*</code><a href="pdelayer_PDSysFont.htm#_t_PDSysFontPlatData" title=" PDSysFontPlatData for Unix."><code>PDSysFontPlatDataP</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">_t_PDSysFontPlatData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFontExpT.h:159</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span><a href="pdelayer_PDSysFont.htm#_t_PDSysFontPlatData" title=" PDSysFontPlatData for Unix.">PDSysFontPlatData</a> for Unix. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDSysFontPlatData {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASSize_t"><code>ASSize_t</code></a> <code>size</code><code>;</code> </div>
+</td><td><span>This must be <code>sizeof(PDSysFontPlatData)</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>fontPath</code><code>;</code> </div>
+</td><td><span>A path to the font file. It is set only if <code>lf</code> is not present. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>afmPath</code><code>;</code> </div>
+</td><td><span>A path to the font AFM file. It is set only if <code>lf</code> is not present. </span>
+</td></tr>
+<tr><td><code><code>}</code> <a href="pdelayer_PDSysFont.htm#_t_PDSysFontPlatData" title=" PDSysFontPlatData for Unix."><code>PDSysFontPlatData</code></a><code>,</code> <code>*</code><a href="pdelayer_PDSysFont.htm#_t_PDSysFontPlatData" title=" PDSysFontPlatData for Unix."><code>PDSysFontPlatDataP</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDSysFont.htm#PDSysFontAcquirePlatformData" title=" Acquires platform-specific data for use by user interface code."><code>PDSysFontAcquirePlatformData</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDSysFont.htm#PDSysFontReleasePlatformData" title=" Releases platform-specific data for the specified PDSysFont."><code>PDSysFontReleasePlatformData</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDSysFont Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDEmbedSysFontForPDEFont">PDEmbedSysFontForPDEFont</a></dt><dd> -  If there is a font on the system that matches this PDEFont, embed the full font regardless of whether it was subsetted or not embedded at all in the first place.</dd>
+<dt><a href="#PDEnumSysFonts">PDEnumSysFonts</a></dt><dd> -  Enumerates all of the system fonts with a user-supplied procedure.</dd>
+<dt><a href="#PDFindSysFont">PDFindSysFont</a></dt><dd> -  Finds a system font that matches the requested attributes.</dd>
+<dt><a href="#PDFindSysFontEx">PDFindSysFontEx</a></dt><dd> -  Finds a system font that matches the requested attributes.</dd>
+<dt><a href="#PDFindSysFontForPDEFont">PDFindSysFontForPDEFont</a></dt><dd> -  Finds a system font that matches the requested PDEFont.</dd>
+<dt><a href="#PDSysFontAcquirePlatformData">PDSysFontAcquirePlatformData</a></dt><dd> -  Acquires platform-specific data for use by user interface code.</dd>
+<dt><a href="#PDSysFontGetAttrs">PDSysFontGetAttrs</a></dt><dd> -  Gets the attributes of a system font.</dd>
+<dt><a href="#PDSysFontGetCIDSystemInfo">PDSysFontGetCIDSystemInfo</a></dt><dd> -  Derives the registry, ordering, and supplement information of a multi-byte system font.</dd>
+<dt><a href="#PDSysFontGetCreateFlags">PDSysFontGetCreateFlags</a></dt><dd> -  This function returns a createFlags that can be passed to PDEFontCreateFromSysFontAndEncoding().</dd>
+<dt><a href="#PDSysFontGetEncoding">PDSysFontGetEncoding</a></dt><dd> -  Gets the encoding of a single byte encoded system font.</dd>
+<dt><a href="#PDSysFontGetInfo">PDSysFontGetInfo</a></dt><dd> -  Gets high-level information about a system font.</dd>
+<dt><a href="#PDSysFontGetName">PDSysFontGetName</a></dt><dd> -  Gets the PostScript or TrueType styled name for a system font.</dd>
+<dt><a href="#PDSysFontGetScript">PDSysFontGetScript</a></dt><dd> -  Returns a PDScript value for the specified PDSysFont.</dd>
+<dt><a href="#PDSysFontGetType0Widths">PDSysFontGetType0Widths</a></dt><dd> -  Gets width information from a Type 0 system font.</dd>
+<dt><a href="#PDSysFontGetWidths">PDSysFontGetWidths</a></dt><dd> -  Gets the widths of a single byte encoded system font.</dd>
+<dt><a href="#PDSysFontGetWidthsEx">PDSysFontGetWidthsEx</a></dt><dd> -  Gets the widths of a single byte encoded system font.</dd>
+<dt><a href="#PDSysFontReleasePlatformData">PDSysFontReleasePlatformData</a></dt><dd> -  Releases platform-specific data for the specified PDSysFont.</dd>
+<dt><a href="#PDSysFontVerifyEncoding">PDSysFontVerifyEncoding</a></dt><dd> -  Similar to PDSysFontGetCreateFlags but avoids compatibility issues with changing PDSysFontGetCreateFlags.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEmbedSysFontForPDEFont"><strong><span style="color:grey;">PDEmbedSysFontForPDEFont</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFont.h:317</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>If there is a font on the system that matches this <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a>, embed the full font regardless of whether it was subsetted or not embedded at all in the first place. This will not work for CID fonts, because they must be subsetted.<br/>
+<p>The matching is based on the <a href="pdelayer_PDSysFont.htm#PDSysFontMatchFlags" title=" Font matching flags for PDFindSysFontForPDEFont() and PDFindSysFont().">PDSysFontMatchFlags</a>.<br/></p>
+
+<p>
+<p>Only the font object itself is modified; no content streams are changed.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method does not change the reference count of the font. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFont" title=" Gets a PDEFont corresponding to a font in the system."><code>PDEFontCreateFromSysFont</code></a>
+<a href="pdelayer_PDSysFont.htm#PDFindSysFontForPDEFont" title=" Finds a system font that matches the requested PDEFont."><code>PDFindSysFontForPDEFont</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEmbedSysFontForPDEFont(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>cosDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>font</code></span>
+</td><td><span>IN/OUT A <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> object returned from one of the <a href="pdelayer_PDEFont.htm#PDEFontCreate" title=" Creates a new PDEFont from the specified parameters."><code>PDEFontCreate</code></a> methods. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>IN/OUT Flags from <a href="pdelayer_PDSysFont.htm#PDSysFontMatchFlags" title=" Font matching flags for PDFindSysFontForPDEFont() and PDFindSysFont().">PDSysFontMatchFlags</a> that determine matches. </span>
+</td></tr>
+<tr><td><span><code>cosDoc</code></span>
+</td><td><span>IN/OUT Currently unused. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrFontToEmbedNotOnSys" title=" Unable to find the font to embed on this system."><code>peErrFontToEmbedNotOnSys</code></a></span>
+</td><td><span>is raised if there is no system font that matches this <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a>. </span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span>is raised if the <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> is a CID font. </span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_General.htm#peErrCantCreateFontSubset" title=" Unable to create embedded font subset."><code>peErrCantCreateFontSubset</code></a></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_General.htm#peErrCantGetAttrs" title=" Unable to get attributes for the font."><code>peErrCantGetAttrs</code></a></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_General.htm#peErrCantGetWidths" title=" Unable to get widths for the font."><code>peErrCantGetWidths</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEnumSysFonts"><strong><span style="color:grey;">PDEnumSysFonts</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFont.h:61</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Enumerates all of the system fonts with a user-supplied procedure.<br/>
+<p>The <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> must be acquired during the enumeration if the font is needed beyond the <code>enumProc</code>.<br/></p>
+
+<p>
+<p>Developers should not assume that the <code>enumProc</code> will be called. If no system fonts are found (for example, if the <code>PSRESOURCEPATH</code> environment variable is not set on UNIX platforms), <code>enumProc</code> is never called, and <a href="pdelayer_PDSysFont.htm#PDEnumSysFonts" title=" Enumerates all of the system fonts with a user-supplied procedure.">PDEnumSysFonts</a>() does not raise an exception.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDSysFont.htm#PDFindSysFont" title=" Finds a system font that matches the requested attributes."><code>PDFindSysFont</code></a>
+<a href="pdelayer_PDSysFont.htm#PDFindSysFontForPDEFont" title=" Finds a system font that matches the requested PDEFont."><code>PDFindSysFontForPDEFont</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEnumSysFonts(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#PDSysFontEnumProc" title=" A callback for PDEnumSysFonts()."><code>PDSysFontEnumProc</code></a> <code>enumProc</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>enumProc</code></span>
+</td><td><span>IN/OUT A user-supplied callback to call once for each system font. Enumeration continues until all fonts have been enumerated, or until <code>enumProc</code> returns <a href="aslayer_General.htm#false"><code>false</code></a>. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>IN/OUT A pointer to user-supplied data to pass to <code>enumProc</code> each time it is called. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDFindSysFont"><strong><span style="color:grey;">PDFindSysFont</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFont.h:78</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Finds a system font that matches the requested attributes.<br/>
+<p>The method gets the <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> rather than acquires it, so do not call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() on the returned <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> when done with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDSysFont.htm#PDEnumSysFonts" title=" Enumerates all of the system fonts with a user-supplied procedure."><code>PDEnumSysFonts</code></a>
+<a href="pdelayer_PDSysFont.htm#PDFindSysFontEx" title=" Finds a system font that matches the requested attributes."><code>PDFindSysFontEx</code></a>
+<a href="pdelayer_PDSysFont.htm#PDFindSysFontForPDEFont" title=" Finds a system font that matches the requested PDEFont."><code>PDFindSysFontForPDEFont</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>PDFindSysFont(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#_t_PDEFontAttrs" title=" Attributes of a PDEFont and of a PDSysFont."><code>PDEFontAttrsP</code></a> <code>attrs</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>attrsSize</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>attrs</code></span>
+</td><td><span>IN/OUT A pointer to a <a href="pdelayer_PDEFont.htm#_t_PDEFontAttrs" title=" Attributes of a PDEFont and of a PDSysFont.">PDEFontAttrs</a> structure with the attributes of the font you are searching for. </span>
+</td></tr>
+<tr><td><span><code>attrsSize</code></span>
+</td><td><span>IN/OUT The size of the <code>attrs</code> buffer in bytes. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>IN/OUT Flags from <a href="pdelayer_PDSysFont.htm#PDSysFontMatchFlags" title=" Font matching flags for PDFindSysFontForPDEFont() and PDFindSysFont().">PDSysFontMatchFlags</a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The desired system font. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDFindSysFontEx"><strong><span style="color:grey;">PDFindSysFontEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFont.h:106</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Finds a system font that matches the requested attributes.<br/>
+<p>If the requested font is a multiple master font instance, the base font is returned, and the specified design vector is decoded and returned in mmDesignVector.<br/></p>
+
+<p>
+<p>The method gets the <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> rather than acquires it, so do not call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() on the returned <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> when done with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDSysFont.htm#PDEnumSysFonts" title=" Enumerates all of the system fonts with a user-supplied procedure."><code>PDEnumSysFonts</code></a>
+<a href="pdelayer_PDSysFont.htm#PDFindSysFont" title=" Finds a system font that matches the requested attributes."><code>PDFindSysFont</code></a>
+<a href="pdelayer_PDSysFont.htm#PDFindSysFontForPDEFont" title=" Finds a system font that matches the requested PDEFont."><code>PDFindSysFontForPDEFont</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>PDFindSysFontEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#_t_PDEFontAttrs" title=" Attributes of a PDEFont and of a PDSysFont."><code>PDEFontAttrsP</code></a> <code>attrs</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>attrsSize</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>*</code><code>mmDesignVector</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>*</code><code>designVecLength</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>attrs</code></span>
+</td><td><span>IN/OUT A pointer to a <a href="pdelayer_PDEFont.htm#_t_PDEFontAttrs" title=" Attributes of a PDEFont and of a PDSysFont.">PDEFontAttrs</a> structure with the attributes of the font you are searching for. </span>
+</td></tr>
+<tr><td><span><code>attrsSize</code></span>
+</td><td><span>IN/OUT The size of the <code>attrs</code> buffer in bytes. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>IN/OUT Flags from <a href="pdelayer_PDSysFont.htm#PDSysFontMatchFlags" title=" Font matching flags for PDFindSysFontForPDEFont() and PDFindSysFont().">PDSysFontMatchFlags</a>. </span>
+</td></tr>
+<tr><td><span><code>mmDesignVector</code></span>
+</td><td><span>IN/OUT (Filled by the method) If the requested font is a Multiple Master font instance, the specified design vector is decoded and returned in <code>mmDesignVector</code>. </span>
+</td></tr>
+<tr><td><span><code>designVecLength</code></span>
+</td><td><span>IN/OUT (Filled by the method) Pass the length of <code>mmDesignVector</code>. This parameter also returns the number of elements filled in <code>mmDesignVector</code> (the maximum is <code>4</code>). </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The desired system font. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDFindSysFontForPDEFont"><strong><span style="color:grey;">PDFindSysFontForPDEFont</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFont.h:132</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Finds a system font that matches the requested <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a>.<br/>
+<p>The method gets the <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> rather than acquires it, so do not call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() on the returned <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> when done with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDSysFont.htm#PDFindSysFont" title=" Finds a system font that matches the requested attributes.">PDFindSysFont</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>PDFindSysFontForPDEFont(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>font</code></span>
+</td><td><span>IN/OUT A <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> whose matching system font is found. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><UL>IN/OUT A bit field comprised of <a href="pdelayer_PDSysFont.htm#PDSysFontMatchFlags" title=" Font matching flags for PDFindSysFontForPDEFont() and PDFindSysFont().">PDSysFontMatchFlags</a> values.<br/><li> <a href="pdelayer_PDSysFont.htm#kPDSysFontMatchNameAndCharSet" title=" Match the font name and character set.">kPDSysFontMatchNameAndCharSet</a><br/><li> <a href="pdelayer_PDSysFont.htm#kPDSysFontMatchFontType" title=" Match the font type.">kPDSysFontMatchFontType</a><br/><li> <a href="pdelayer_PDSysFont.htm#PDSysFontMatchFlags" title=" Font matching flags for PDFindSysFontForPDEFont() and PDFindSysFont().">PDSysFontMatchFlags</a> Passing zero matches <code>font</code> by name only.<br/></UL>
+</div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The system font corresponding to <code>font</code>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#genErrResourceLoadFailed" title=" Failed to load an application resource (internal error)."><code>genErrResourceLoadFailed</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrCantGetAttrs" title=" Unable to get attributes for the font."><code>peErrCantGetAttrs</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDSysFontAcquirePlatformData"><strong><span style="color:grey;">PDSysFontAcquirePlatformData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFont.h:270</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Acquires platform-specific data for use by user interface code. It must be released when finished by <a href="pdelayer_PDSysFont.htm#PDSysFontReleasePlatformData" title=" Releases platform-specific data for the specified PDSysFont.">PDSysFontReleasePlatformData</a>(). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDSysFont.htm#PDSysFontReleasePlatformData" title=" Releases platform-specific data for the specified PDSysFont.">PDSysFontReleasePlatformData</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDSysFont.htm#_t_PDSysFontPlatData" title=" PDSysFontPlatData for Unix."><code>PDSysFontPlatDataP</code></a> <code>PDSysFontAcquirePlatformData(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>sysFont</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sysFont</code></span>
+</td><td><span>IN/OUT A <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> object referencing a system font returned by either <a href="pdelayer_PDSysFont.htm#PDFindSysFont" title=" Finds a system font that matches the requested attributes.">PDFindSysFont</a>() or <a href="pdelayer_PDSysFont.htm#PDFindSysFontForPDEFont" title=" Finds a system font that matches the requested PDEFont.">PDFindSysFontForPDEFont</a>(). </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A pointer to a platform-dependent structure, <a href="pdelayer_PDSysFont.htm#_t_PDSysFontPlatData" title=" PDSysFontPlatData for Unix.">PDSysFontPlatData</a>, containing information relating to a system font. It returns <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if it is out of memory. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDSysFontGetAttrs"><strong><span style="color:grey;">PDSysFontGetAttrs</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFont.h:169</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the attributes of a system font.<br/>
+<p>The attributes will be returned in the buffer pointed to by <code>attrsP</code>.<br/></p>
+
+<p>
+<p>No more than <code>attrsSize</code> bytes will be written to the buffer.<br/></p>
+
+<p>
+<p>This call can be expensive to execute, as it may involve parsing the font in order to determine attributes.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDSysFont.htm#PDSysFontGetEncoding" title=" Gets the encoding of a single byte encoded system font."><code>PDSysFontGetEncoding</code></a>
+<a href="pdelayer_PDSysFont.htm#PDSysFontGetInfo" title=" Gets high-level information about a system font."><code>PDSysFontGetInfo</code></a>
+<a href="pdelayer_PDSysFont.htm#PDSysFontGetName" title=" Gets the PostScript or TrueType styled name for a system font."><code>PDSysFontGetName</code></a>
+<a href="pdelayer_PDSysFont.htm#PDSysFontGetType0Widths" title=" Gets width information from a Type 0 system font."><code>PDSysFontGetType0Widths</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDSysFontGetAttrs(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>sysFont</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="pdelayer_PDEFont.htm#_t_PDEFontAttrs" title=" Attributes of a PDEFont and of a PDSysFont."><code>PDEFontAttrsP</code></a> <code>attrsP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>attrsSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sysFont</code></span>
+</td><td><span>IN/OUT A <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> object referencing a system font whose attributes are obtained. </span>
+</td></tr>
+<tr><td><span><code>attrsP</code></span>
+</td><td><span>IN/OUT (Filled by the method) A pointer to a <a href="pdelayer_PDEFont.htm#_t_PDEFontAttrs" title=" Attributes of a PDEFont and of a PDSysFont.">PDEFontAttrs</a> structure with the attributes of a system font. </span>
+</td></tr>
+<tr><td><span><code>attrsSize</code></span>
+</td><td><span>IN/OUT The size of the <code>attrsP</code> buffer in bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrCantGetAttrs" title=" Unable to get attributes for the font."><code>peErrCantGetAttrs</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDSysFontGetCIDSystemInfo"><strong><span style="color:grey;">PDSysFontGetCIDSystemInfo</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFont.h:336</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Derives the registry, ordering, and supplement information of a multi-byte system font. This information can be used to create a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> from a system font. For more information on CID fonts, see <a href="pdlayer_PDFont.htm#PDFontGetCIDSystemInfo" title=" Gets an ASAtom representing Registry and Ordering for a CIDFont.">PDFontGetCIDSystemInfo</a>(). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDFont.htm#PDFontGetCIDSystemInfo" title=" Gets an ASAtom representing Registry and Ordering for a CIDFont."><code>PDFontGetCIDSystemInfo</code></a>
+<a href="pdlayer_PDFont.htm#PDFontGetCIDSystemSupplement" title=" Gets the SystemSupplement number of a CIDFont."><code>PDFontGetCIDSystemSupplement</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDSysFontGetCIDSystemInfo(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>sysFont</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>*</code><code>registry</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>*</code><code>ordering</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>*</code><code>supplement</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sysFont</code></span>
+</td><td><span>IN/OUT A <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> object referencing a multi-byte system font. </span>
+</td></tr>
+<tr><td><span><code>registry</code></span>
+</td><td><span>IN/OUT (Filled by the method) The <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> representing the CIDFont's Registry information (for example, <code>"Adobe"</code>). </span>
+</td></tr>
+<tr><td><span><code>ordering</code></span>
+</td><td><span>IN/OUT (Filled by the method) The <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> representing the CIDFont's Ordering information (for example, <code>"Japan1"</code>). </span>
+</td></tr>
+<tr><td><span><code>supplement</code></span>
+</td><td><span>IN/OUT (Filled by the method) The <code>SystemSupplement</code> field from the CIDFont. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDSysFontGetCreateFlags"><strong><span style="color:grey;">PDSysFontGetCreateFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2029</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>This function returns a <code>createFlags</code> that can be passed to <a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontAndEncoding" title=" Create a PDEFont from sysFont and sysEnc.">PDEFontCreateFromSysFontAndEncoding</a>(). If the combination of sysFont and sysEnc is not allowed,<code>-1</code> is returned. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDSysFontGetCreateFlags(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>sysFont</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysEncoding.htm#PDSysEncoding" title=" A PDEElement that provides system encoding for a PDF file."><code>PDSysEncoding</code></a> <code>sysEnc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sysFont</code></span>
+</td><td><span>IN/OUT An object of type <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a>. </span>
+</td></tr>
+<tr><td><span><code>sysEnc</code></span>
+</td><td><span>IN/OUT An object of type <a href="pdelayer_PDSysEncoding.htm#PDSysEncoding" title=" A PDEElement that provides system encoding for a PDF file.">PDSysEncoding</a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>See above. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDSysFontGetEncoding"><strong><span style="color:grey;">PDSysFontGetEncoding</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFont.h:228</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the encoding of a single byte encoded system font.<br/>
+<p>The returned encoding must be freed via a call to <a href="aslayer_ASMem.htm#ASfree" title=" Frees the specified memory block.">ASfree</a>().<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDSysFont.htm#PDSysFontAcquirePlatformData" title=" Acquires platform-specific data for use by user interface code."><code>PDSysFontAcquirePlatformData</code></a>
+<a href="pdelayer_PDSysFont.htm#PDSysFontGetInfo" title=" Gets high-level information about a system font."><code>PDSysFontGetInfo</code></a>
+<a href="pdelayer_PDSysFont.htm#PDSysFontGetName" title=" Gets the PostScript or TrueType styled name for a system font."><code>PDSysFontGetName</code></a>
+<a href="pdelayer_PDSysFont.htm#PDSysFontGetType0Widths" title=" Gets width information from a Type 0 system font."><code>PDSysFontGetType0Widths</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#Uns8"><code>Uns8</code></a> <code>*</code><code>*</code><code>PDSysFontGetEncoding(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>sysFont</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>*</code><code>encodingNameP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sysFont</code></span>
+</td><td><span>IN/OUT A <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> object referencing a system font whose encoding is obtained. </span>
+</td></tr>
+<tr><td><span><code>encodingNameP</code></span>
+</td><td><span>IN/OUT (Filled by the method) An encoding name if the return value of <a href="pdelayer_PDSysFont.htm#PDSysFontGetEncoding" title=" Gets the encoding of a single byte encoded system font.">PDSysFontGetEncoding</a>() is zero. If <code>encodingNameP</code> is the <a href="aslayer_General.htm#NULL"><code>NULL</code></a> <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a>, the font uses its default encoding. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div><p>An encoding array of 256 C strings. Each entry in the array either contains a glyph name or <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. If it is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, the corresponding entry uses the font's built in encoding value.<br/>
+<p>If the return value is zero, encodingNameP contains the name of the encoding:<br/></p>
+
+<UL><li> For a Type 1 font, the default encoding is that specified by the Encoding value in the font dictionary.<br/><li> For a TrueType font, the default encoding is that specified in the single byte CMAP table.<br/></UL>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDSysFontGetInfo"><strong><span style="color:grey;">PDSysFontGetInfo</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFont.h:243</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets high-level information about a system font. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDSysFont.htm#PDSysFontAcquirePlatformData" title=" Acquires platform-specific data for use by user interface code."><code>PDSysFontAcquirePlatformData</code></a>
+<a href="pdelayer_PDSysFont.htm#PDSysFontGetEncoding" title=" Gets the encoding of a single byte encoded system font."><code>PDSysFontGetEncoding</code></a>
+<a href="pdelayer_PDSysFont.htm#PDSysFontGetName" title=" Gets the PostScript or TrueType styled name for a system font."><code>PDSysFontGetName</code></a>
+<a href="pdelayer_PDSysFont.htm#PDSysFontGetType0Widths" title=" Gets width information from a Type 0 system font."><code>PDSysFontGetType0Widths</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDSysFontGetInfo(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>sysFont</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="pdelayer_PDEFont.htm#_t_PDEFontInfo" title=" PDEFont information."><code>PDEFontInfoP</code></a> <code>infoP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>infoSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sysFont</code></span>
+</td><td><span>IN/OUT A <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> object referencing a system font whose information is obtained. </span>
+</td></tr>
+<tr><td><span><code>infoP</code></span>
+</td><td><span>IN/OUT (Filled by the method) A pointer to <a href="pdelayer_PDEFont.htm#_t_PDEFontInfo" title=" PDEFont information.">PDEFontInfoRec</a> structure to fill with font information for <code>sysFont</code>. No more than <code>infoSize</code> bytes are written to this buffer. </span>
+</td></tr>
+<tr><td><span><code>infoSize</code></span>
+</td><td><span>IN/OUT The size of the <code>infoP</code> buffer in bytes. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDSysFontGetName"><strong><span style="color:grey;">PDSysFontGetName</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFont.h:256</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the PostScript or TrueType styled name for a system font. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDSysFont.htm#PDSysFontAcquirePlatformData" title=" Acquires platform-specific data for use by user interface code."><code>PDSysFontAcquirePlatformData</code></a>
+<a href="pdelayer_PDSysFont.htm#PDSysFontGetEncoding" title=" Gets the encoding of a single byte encoded system font."><code>PDSysFontGetEncoding</code></a>
+<a href="pdelayer_PDSysFont.htm#PDSysFontGetInfo" title=" Gets high-level information about a system font."><code>PDSysFontGetInfo</code></a>
+<a href="pdelayer_PDSysFont.htm#PDSysFontGetType0Widths" title=" Gets width information from a Type 0 system font."><code>PDSysFontGetType0Widths</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>PDSysFontGetName(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>sysFont</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sysFont</code></span>
+</td><td><span>IN/OUT A <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> object referencing a system font whose name is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> for the system font's name. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDSysFontGetScript"><strong><span style="color:grey;">PDSysFontGetScript</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFont.h:287</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Returns a PDScript value for the specified <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>PDScript</code> <code>PDSysFontGetScript(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>sysFont</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sysFont</code></span>
+</td><td><span>The font from which to acquire the script. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDSysFontGetType0Widths"><strong><span style="color:grey;">PDSysFontGetType0Widths</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFont.h:395</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets width information from a Type 0 system font. This information can be used to create a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> from a system font. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> In general, you are discouraged from using this method. Instead use <a href="pdelayer_PDEFont.htm#PDEFontCreateFromSysFontAndEncoding" title=" Create a PDEFont from sysFont and sysEnc.">PDEFontCreateFromSysFontAndEncoding</a>() followed by <a href="pdelayer_PDEFont.htm#PDEFontCreateWidthsNow" title=" This function creates width entries for font.">PDEFontCreateWidthsNow</a>() to create the W entry in a font. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDFont.htm#PDFontGetWidths" title=" Gets the advance width of every glyph in a font."><code>PDFontGetWidths</code></a>
+<a href="pdelayer_PDSysFont.htm#PDSysFontGetWidths" title=" Gets the widths of a single byte encoded system font."><code>PDSysFontGetWidths</code></a>
+<a href="pdelayer_PDSysFont.htm#PDSysFontGetWidthsEx" title=" Gets the widths of a single byte encoded system font."><code>PDSysFontGetWidthsEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDSysFontGetType0Widths(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>sysFont</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>ordering</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>*</code><code>hasDW</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>*</code><code>dw</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>w</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>*</code><code>hasDW2</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>*</code><code>dw2</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>w2</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sysFont</code></span>
+</td><td><span>IN/OUT A <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> object referencing a multibyte system font. </span>
+</td></tr>
+<tr><td><span><code>ordering</code></span>
+</td><td><span>IN/OUT An <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> representing the CIDFont's Ordering information. It is used to get a CMap object for <code>sysFont</code>. </span>
+</td></tr>
+<tr><td><span><code>hasDW</code></span>
+</td><td><span>IN/OUT (Filled by the method) <a href="aslayer_General.htm#true"><code>true</code></a> if <code>sysFont</code> has a valid <code>dw</code> value; <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</td></tr>
+<tr><td><span><code>dw</code></span>
+</td><td><div><p>IN/OUT (Filled by the method) The default width for glyphs in a CIDFont. Currently, it is always <code>1000</code>. See the description of CIDFontType 0 in "Composite Fonts" in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 9.7, page 267.<br/>
+<p>You can find this document on the web store of the International Standards Organization (ISO).<br/></p>
+</div>
+</td></tr>
+<tr><td><span><code>w</code></span>
+</td><td><div><p>IN/OUT (Filled by the method) A Cos array of a set of lists that define the widths for the glyphs in the CIDFont. Each list can specify individual widths for consecutive CIDs, or one width for a range of CIDs. For information on the format of this array, see the description of CID Fonts in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 9.7.4, page 269.<br/>
+<p>You can find this document on the web store of the International Standards Organization (ISO).<br/></p>
+</div>
+</td></tr>
+<tr><td><span><code>hasDW2</code></span>
+</td><td><span>IN/OUT (Filled by the method) <a href="aslayer_General.htm#true"><code>true</code></a> if <code>sysFont</code> has a valid <code>dw2</code> value. The default is <a href="aslayer_General.htm#false"><code>false</code></a>. </span>
+</td></tr>
+<tr><td><span><code>dw2</code></span>
+</td><td><div><p>IN/OUT (Filled by the method) The default metrics for writing mode 1. This entry is an array of two <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value.">ASInt32</a> numbers: the y component of the position vector and the y component of the displacement vector for writing mode 1. The x component of the position vector is always half the width of the character. The x component of the displacement vector is always <code>0</code>. The default value is <code>[880-1000]</code>. For information on writing mode 1, see the description of CID Fonts in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 9.7.4, page 269.<br/>
+<p>You can find this document on the web store of the International Standards Organization (ISO).<br/></p>
+</div>
+</td></tr>
+<tr><td><span><code>w2</code></span>
+</td><td><div><p>IN/OUT (Filled by the method) A Cos array defining the metrics for vertical writing. Its format is similar to the format of the array in <code>w</code>. It defines the x and y components of the position vector, and the y component of the displacement vector. The x component of the displacement vector is always <code>0</code>. For information on the format of this array, see the description of CID Fonts in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 9.7.4, page 269.<br/>
+<p>You can find this document on the web store of the International Standards Organization (ISO).<br/></p>
+</div>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDSysFontGetWidths"><strong><span style="color:grey;">PDSysFontGetWidths</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFont.h:182</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the widths of a single byte encoded system font. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDFont.htm#PDFontGetWidths" title=" Gets the advance width of every glyph in a font."><code>PDFontGetWidths</code></a>
+<a href="pdelayer_PDSysFont.htm#PDSysFontGetType0Widths" title=" Gets width information from a Type 0 system font."><code>PDSysFontGetType0Widths</code></a>
+<a href="pdelayer_PDSysFont.htm#PDSysFontGetWidthsEx" title=" Gets the widths of a single byte encoded system font."><code>PDSysFontGetWidthsEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDSysFontGetWidths(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>sysFont</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>*</code><code>widthsP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sysFont</code></span>
+</td><td><span>IN/OUT A <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> object referencing a system font whose widths are obtained. </span>
+</td></tr>
+<tr><td><span><code>widthsP</code></span>
+</td><td><span>IN/OUT (Filled by the method) A pointer to the widths array. <code>widthsP</code> must have room for 256 entries. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrCantGetWidths" title=" Unable to get widths for the font."><code>peErrCantGetWidths</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDSysFontGetWidthsEx"><strong><span style="color:grey;">PDSysFontGetWidthsEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFont.h:198</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the widths of a single byte encoded system font. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDFont.htm#PDFontGetWidths" title=" Gets the advance width of every glyph in a font."><code>PDFontGetWidths</code></a>
+<a href="pdelayer_PDSysFont.htm#PDSysFontGetType0Widths" title=" Gets width information from a Type 0 system font."><code>PDSysFontGetType0Widths</code></a>
+<a href="pdelayer_PDSysFont.htm#PDSysFontGetWidths" title=" Gets the widths of a single byte encoded system font."><code>PDSysFontGetWidths</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDSysFontGetWidthsEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>sysFont</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>*</code><code>widthsP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>*</code><code>mmDesignVector</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sysFont</code></span>
+</td><td><span>IN/OUT A <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a> object referencing a system font whose widths are obtained. </span>
+</td></tr>
+<tr><td><span><code>widthsP</code></span>
+</td><td><span>IN/OUT (Filled by the method) A pointer to the widths array. <code>widthsP</code> must have room for 256 entries. </span>
+</td></tr>
+<tr><td><span><code>mmDesignVector</code></span>
+</td><td><span>IN/OUT If <code>sysFont</code> is a multiple master font, it points to the design vector, whose length must equal the number of design axes of <code>sysFont</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrCantGetWidths" title=" Unable to get widths for the font."><code>peErrCantGetWidths</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDSysFontReleasePlatformData"><strong><span style="color:grey;">PDSysFontReleasePlatformData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSysFont.h:280</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Releases platform-specific data for the specified <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDSysFont.htm#PDSysFontAcquirePlatformData" title=" Acquires platform-specific data for use by user interface code.">PDSysFontAcquirePlatformData</a> Creates a new attribute object with the specified owner. </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDSysFontReleasePlatformData(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#_t_PDSysFontPlatData" title=" PDSysFontPlatData for Unix."><code>PDSysFontPlatDataP</code></a> <code>platDataP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>platDataP</code></span>
+</td><td><span>IN/OUT A pointer to a <a href="pdelayer_PDSysFont.htm#_t_PDSysFontPlatData" title=" PDSysFontPlatData for Unix.">PDSysFontPlatDataP</a> structure containing platform-specific data. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDSysFontVerifyEncoding"><strong><span style="color:grey;">PDSysFontVerifyEncoding</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2043</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Similar to <a href="pdelayer_PDSysFont.htm#PDSysFontGetCreateFlags" title=" This function returns a createFlags that can be passed to PDEFontCreateFromSysFontAndEncoding().">PDSysFontGetCreateFlags</a> but avoids compatibility issues with changing <a href="pdelayer_PDSysFont.htm#PDSysFontGetCreateFlags" title=" This function returns a createFlags that can be passed to PDEFontCreateFromSysFontAndEncoding().">PDSysFontGetCreateFlags</a>. If the combination of sysFont and sysEnc is not allowed,<code>-1</code> is returned. If the combination is ok, then <code>0</code> is returned. If the combination only works if the font is embedded, <a href="pdelayer_PDEFont.htm#kPDEFontCreateEmbedded" title=" Embed the font.">kPDEFontCreateEmbedded</a> is returned. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDSysFontVerifyEncoding(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system."><code>PDSysFont</code></a> <code>sysFont</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDSysEncoding.htm#PDSysEncoding" title=" A PDEElement that provides system encoding for a PDF file."><code>PDSysEncoding</code></a> <code>sysEnc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sysFont</code></span>
+</td><td><span>IN/OUT An object of type <a href="pdelayer_PDSysFont.htm#PDSysFont" title=" A reference to a font installed in the host system.">PDSysFont</a>. </span>
+</td></tr>
+<tr><td><span><code>sysEnc</code></span>
+</td><td><span>IN/OUT An object of type <a href="pdelayer_PDSysEncoding.htm#PDSysEncoding" title=" A PDEElement that provides system encoding for a PDF file.">PDSysEncoding</a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>See above. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+</section>
+
+</div>
+</body></html>

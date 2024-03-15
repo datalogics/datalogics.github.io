@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDF Edit Layer: PDEShading</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDF Edit Layer: PDEShading</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>PDEShading Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDEShading">PDEShading</a></dt><dd> -  A PDEElement that represents smooth shading.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEShading"><strong><span style="color:grey;">PDEShading</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:265</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> that represents smooth shading. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDEShading</code> <code>*</code><code>PDEShading</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEShading.htm#PDEShadingCreateFromCosObj" title=" Superseded by PDEShadingCreateFromCosObjEx() in Acrobat 10.0."><code>PDEShadingCreateFromCosObj</code></a></td><td><a href="pdelayer_PDEShading.htm#PDEShadingCreateFromCosObjEx" title=" Creates a smooth shading object."><code>PDEShadingCreateFromCosObjEx</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEShading.htm#PDEShadingGetCosObj" title=" Gets the CosObj for a PDEShading."><code>PDEShadingGetCosObj</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDEShading Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDEShadingCreateFromCosObj">PDEShadingCreateFromCosObj</a></dt><dd> -  Superseded by PDEShadingCreateFromCosObjEx() in Acrobat 10.0.</dd>
+<dt><a href="#PDEShadingCreateFromCosObjEx">PDEShadingCreateFromCosObjEx</a></dt><dd> -  Creates a smooth shading object.</dd>
+<dt><a href="#PDEShadingGetCosObj">PDEShadingGetCosObj</a></dt><dd> -  Gets the CosObj for a PDEShading.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEShadingCreateFromCosObj"><strong><span style="color:grey;">PDEShadingCreateFromCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1427</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Superseded by <a href="pdelayer_PDEShading.htm#PDEShadingCreateFromCosObjEx" title=" Creates a smooth shading object.">PDEShadingCreateFromCosObjEx</a>() in Acrobat 10.0. Creates a smooth shading object.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned <a href="pdelayer_PDEShading.htm#PDEShading" title=" A PDEElement that represents smooth shading.">PDEShading</a> object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEShading.htm#PDEShadingCreateFromCosObjEx" title=" Creates a smooth shading object.">PDEShadingCreateFromCosObjEx</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEShading.htm#PDEShading" title=" A PDEElement that represents smooth shading."><code>PDEShading</code></a> <code>PDEShadingCreateFromCosObj(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>const</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>shadingP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>shadingP</code></span>
+</td><td><span>IN/OUT The shading dictionary. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>IN/OUT The location and transformation matrix of the shading object. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A smooth shading object. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#cosErrExpectedName" title=" A name object was expected."><code>cosErrExpectedName</code></a></td><td><a href="pdfllayer_General.htm#cosErrInvalidObj" title=" The desired operation cannot be performed on this object."><code>cosErrInvalidObj</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEShadingCreateFromCosObjEx"><strong><span style="color:grey;">PDEShadingCreateFromCosObjEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:3155</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a smooth shading object. Supersedes <a href="pdelayer_PDEShading.htm#PDEShadingCreateFromCosObj" title=" Superseded by PDEShadingCreateFromCosObjEx() in Acrobat 10.0.">PDEShadingCreateFromCosObj</a>() in Acrobat 10.0.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned <a href="pdelayer_PDEShading.htm#PDEShading" title=" A PDEElement that represents smooth shading.">PDEShading</a> object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEShading.htm#PDEShadingCreateFromCosObj" title=" Superseded by PDEShadingCreateFromCosObjEx() in Acrobat 10.0.">PDEShadingCreateFromCosObj</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEShading.htm#PDEShading" title=" A PDEElement that represents smooth shading."><code>PDEShading</code></a> <code>PDEShadingCreateFromCosObjEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>const</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>shadingP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers."><code>ASDoubleMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>shadingP</code></span>
+</td><td><span>IN/OUT The shading dictionary. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>IN/OUT The location and transformation matrix of the shading object. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A smooth shading object. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#cosErrExpectedName" title=" A name object was expected."><code>cosErrExpectedName</code></a></td><td><a href="pdfllayer_General.htm#cosErrInvalidObj" title=" The desired operation cannot be performed on this object."><code>cosErrInvalidObj</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEShadingGetCosObj"><strong><span style="color:grey;">PDEShadingGetCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1734</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets the <a href="coslayer_CosObj.htm#CosObj">CosObj</a> for a <a href="pdelayer_PDEShading.htm#PDEShading" title=" A PDEElement that represents smooth shading.">PDEShading</a>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEShadingGetCosObj(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEShading.htm#PDEShading" title=" A PDEElement that represents smooth shading."><code>PDEShading</code></a> <code>shading</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>cosObjP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>shading</code></span>
+</td><td><span>IN/OUT A smooth shading object. </span>
+</td></tr>
+<tr><td><span><code>cosObjP</code></span>
+</td><td><span>IN/OUT The Cos dictionary corresponding to shading. </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

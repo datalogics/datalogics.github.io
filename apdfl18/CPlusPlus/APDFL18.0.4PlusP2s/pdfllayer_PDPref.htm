@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDFL Library Layer: PDPref</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDFL Library Layer: PDPref</h5>
+<li><a href="#Enumerations">Enumerations</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Enumerations">
+<header><h2>PDPref Enumerations</h2></header>
+<nav><dl>
+<dt><a href="#PDPrefAASmoothOptions">PDPrefAASmoothOptions</a></dt><dd> -  Bit flags that set the default smooth text and smooth images global flags for subsequent rendering methods.</dd>
+<dt><a href="#PDPrefAASmoothOptions">PDPrefAASmoothOptions</a></dt><dd> - </dd>
+<dt><a href="#RefXObjOptions">RefXObjOptions</a></dt><dd> -  Modes used to control the display of reference XObjects.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDPrefAASmoothOptions"><strong><span style="color:grey;">PDPrefAASmoothOptions</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1437</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Bit flags that set the default smooth text and smooth images global flags for subsequent rendering methods. These flags are passed to the <a href="pdfllayer_PDPref.htm#PDPrefSetAntialiasLevel" title=" Sets the default smooth text and smooth images global flags for subsequent rendering methods."><code>PDPrefSetAntialiasLevel</code></a>, and are similar to <a href="pdfllayer_PDPage.htm#PDPageDrawSmoothFlags" title=" Bit flags indicating how a page is rendered."><code>PDPageDrawSmoothFlags</code></a>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPref.htm#PDPrefSetAntialiasLevel" title=" Sets the default smooth text and smooth images global flags for subsequent rendering methods.">PDPrefSetAntialiasLevel</a> </span>
+</div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kPDPrefAASmoothText"><code>kPDPrefAASmoothText</code><code>=</code><code>0x00000001</code></span>
+</td><td><span>Draw smooth text. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPrefAASmoothLineArt"><code>kPDPrefAASmoothLineArt</code><code>=</code><code>0x00000002</code></span>
+</td><td><span>Draw smooth line art. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDPrefAASmoothImage"><code>kPDPrefAASmoothImage</code><code>=</code><code>0x00000010</code></span>
+</td><td><span>Draw smooth image. </span>
+</td></tr></table>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">PDPrefAASmoothOptions</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1451</div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="PDPrefAASmoothText"><code>PDPrefAASmoothText</code><code>=</code><code>1</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDPrefAASmoothLineArt"><code>PDPrefAASmoothLineArt</code><code>=</code><code>2</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDPrefAASmoothImage"><code>PDPrefAASmoothImage</code><code>=</code><code>0x00000010</code></span>
+</td><td><span></span>
+</td></tr></table>
+</section>
+<section><div class="infoRow"><h3 id="RefXObjOptions"><strong><span style="color:grey;">RefXObjOptions</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1314</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Modes used to control the display of reference XObjects. 
+<p>Value options for <a href="pdfllayer_PDPref.htm#PDRefXObjMode" title=" Modes used to control the display of reference XObjects."><code>PDRefXObjMode.</code></a> </span>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kRefXObjNever"><code>kRefXObjNever</code><code>=</code><code>0</code></span>
+</td><td><span>Never display reference XObjects. If a file contains reference XObjects, their content will not be displayed, and only the proxy will be displayed if this mode is selected. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kRefXObjAlways"><code>kRefXObjAlways</code><code>=</code><code>1</code></span>
+</td><td><span>Always display reference XObjects. All files containing reference XObjects will display content from the XObjects. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kRefXObjPDFX5"><code>kRefXObjPDFX5</code><code>=</code><code>2</code></span>
+</td><td><span>All files that are PDFX5 compliant and that contain reference XObjects will display their content. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kRefXObjAlwaysAssured"><code>kRefXObjAlwaysAssured</code><code>=</code><code>3</code></span>
+</td><td><span>Always display reference XObjects, but do not display the proxy. The PDF parsing fails if the target is not found. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kRefXObjPDFX5Assured"><code>kRefXObjPDFX5Assured</code><code>=</code><code>4</code></span>
+</td><td><span>Always display reference XObjects, but do not display the proxy. The PDF parsing fails if the target PDF/X-5 document is not found. </span>
+</td></tr></table>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>PDPref Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDRefXObjMode">PDRefXObjMode</a></dt><dd> -  Modes used to control the display of reference XObjects.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDRefXObjMode"><strong><span style="color:grey;">PDRefXObjMode</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1341</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Modes used to control the display of reference XObjects. 
+<p>For value options see <a href="pdfllayer_PDPref.htm#RefXObjOptions" title=" Modes used to control the display of reference XObjects."><code>RefXObjOptions.</code></a> </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDRefXObjMode</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_PDPref.htm#PDPrefGetRefXObj" title=" Gets reference XObject parameters."><code>PDPrefGetRefXObj</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_PDPref.htm#PDPrefSetRefXObj" title=" Sets reference XObject parameters."><code>PDPrefSetRefXObj</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDPref Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDPrefGetAntialiasLevel">PDPrefGetAntialiasLevel</a></dt><dd> -  Returns the antialias level, in pixels.</dd>
+<dt><a href="#PDPrefGetBlackPointCompensation">PDPrefGetBlackPointCompensation</a></dt><dd> -  Returns the black-point compensation flag.</dd>
+<dt><a href="#PDPrefGetEnableThinLineHeuristics">PDPrefGetEnableThinLineHeuristics</a></dt><dd> -  Determines whether thin lines will be fattened non-linearly or the stroke adjust will be applied to thin rectangles.</dd>
+<dt><a href="#PDPrefGetGreekLevel">PDPrefGetGreekLevel</a></dt><dd> -  Returns the greek level.</dd>
+<dt><a href="#PDPrefGetRefXObj">PDPrefGetRefXObj</a></dt><dd> -  Gets reference XObject parameters.</dd>
+<dt><a href="#PDPrefGetSuppressICCSpaces">PDPrefGetSuppressICCSpaces</a></dt><dd> -  Returns the value of the suppress flag for ICC-based spaces with the specified number of components.</dd>
+<dt><a href="#PDPrefGetUseOutputIntents">PDPrefGetUseOutputIntents</a></dt><dd> -  Returns the value of the Output Intent flag.</dd>
+<dt><a href="#PDPrefSetAntialiasLevel">PDPrefSetAntialiasLevel</a></dt><dd> -  Sets the default smooth text and smooth images global flags for subsequent rendering methods.</dd>
+<dt><a href="#PDPrefSetBlackPointCompensation">PDPrefSetBlackPointCompensation</a></dt><dd> -  Sets the black-point compensation flag, which controls whether to adjust for differences in black points when converting colors between color spaces.</dd>
+<dt><a href="#PDPrefSetEnableThinLineHeuristics">PDPrefSetEnableThinLineHeuristics</a></dt><dd> -  Sets whether thin lines will be fattened non-linearly or the stroke adjust will be applied to thin rectangles.</dd>
+<dt><a href="#PDPrefSetGreekLevel">PDPrefSetGreekLevel</a></dt><dd> -  Sets the greek level.</dd>
+<dt><a href="#PDPrefSetRefXObj">PDPrefSetRefXObj</a></dt><dd> -  Sets reference XObject parameters.</dd>
+<dt><a href="#PDPrefSetSuppressICCSpaces">PDPrefSetSuppressICCSpaces</a></dt><dd> -  Specifies use of a default color space rather than an ICC-based color space.</dd>
+<dt><a href="#PDPrefSetUseLocalFonts">PDPrefSetUseLocalFonts</a></dt><dd> -  Enables or disables use of local fonts.</dd>
+<dt><a href="#PDPrefSetUseOutputIntents">PDPrefSetUseOutputIntents</a></dt><dd> -  Sets the Output Intent flag.</dd>
+<dt><a href="#PDPrefSetWorkingCMYK">PDPrefSetWorkingCMYK</a></dt><dd> -  Sets the current CMYK working space to a given ICC profile.</dd>
+<dt><a href="#PDPrefSetWorkingGray">PDPrefSetWorkingGray</a></dt><dd> -  Sets the current gray working space to a given ICC profile.</dd>
+<dt><a href="#PDPrefSetWorkingRGB">PDPrefSetWorkingRGB</a></dt><dd> -  Set the current RGB working space to a given ICC profile.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDPrefGetAntialiasLevel"><strong><span style="color:grey;">PDPrefGetAntialiasLevel</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:340</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the antialias level, in pixels. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPref.htm#PDPrefSetAntialiasLevel" title=" Sets the default smooth text and smooth images global flags for subsequent rendering methods.">PDPrefSetAntialiasLevel</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>PDPrefGetAntialiasLevel(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The antialias level set by <a href="pdfllayer_PDPref.htm#PDPrefSetAntialiasLevel" title=" Sets the default smooth text and smooth images global flags for subsequent rendering methods.">PDPrefSetAntialiasLevel</a>(). </span>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">PDPrefGetBlackPointCompensation</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:360</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the black-point compensation flag. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPref.htm#PDPrefSetBlackPointCompensation" title=" Sets the black-point compensation flag, which controls whether to adjust for differences in black points when converting colors between color spaces.">PDPrefSetBlackPointCompensation</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDPrefGetBlackPointCompensation(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if black-point compensation is done. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefGetEnableThinLineHeuristics"><strong><span style="color:grey;">PDPrefGetEnableThinLineHeuristics</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:842</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Determines whether thin lines will be fattened non-linearly or the stroke adjust will be applied to thin rectangles. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDPrefGetEnableThinLineHeuristics(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if thin line heuristics are applied, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefGetGreekLevel"><strong><span style="color:grey;">PDPrefGetGreekLevel</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:333</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the greek level. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPref.htm#PDPrefSetGreekLevel" title=" Sets the greek level.">PDPrefSetGreekLevel</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>PDPrefGetGreekLevel(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The greek level set by <a href="pdfllayer_PDPref.htm#PDPrefSetGreekLevel" title=" Sets the greek level.">PDPrefSetGreekLevel</a>(). </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefGetRefXObj"><strong><span style="color:grey;">PDPrefGetRefXObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:832</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets reference XObject parameters. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdfllayer_PDPref.htm#PDRefXObjMode" title=" Modes used to control the display of reference XObjects."><code>PDRefXObjMode</code></a> <code>PDPrefGetRefXObj(</code><a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>*</code><code>fileSys</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>*</code><code>pathName</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fileSys</code></span>
+</td><td><span>Used with <code>pathname</code> to specify where the target files should be found. </span>
+</td></tr>
+<tr><td><span><code>pathname</code></span>
+</td><td><span>Used with <code>fileSys</code> to specify the location of the target files. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefGetSuppressICCSpaces"><strong><span style="color:grey;">PDPrefGetSuppressICCSpaces</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:539</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the value of the <code>suppress</code> flag for ICC-based spaces with the specified number of components. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPref.htm#PDPrefSetSuppressICCSpaces" title=" Specifies use of a default color space rather than an ICC-based color space.">PDPrefSetSuppressICCSpaces</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDPrefGetSuppressICCSpaces(</code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>nComponents</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>nComponents</code></span>
+</td><td><span>The number of ICC-based space components that are suppressed or not, according to the flag value. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <code>suppress</code> flag value. </span>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">PDPrefGetUseOutputIntents</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:519</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the value of the Output Intent flag. When this flag is <a href="aslayer_General.htm#true"><code>true</code></a>, the system overrides the working space with the Output Intent, if it is present. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPref.htm#PDPrefSetUseOutputIntents" title=" Sets the Output Intent flag.">PDPrefSetUseOutputIntents</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDPrefGetUseOutputIntents(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The Output Intent flag value. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSetAntialiasLevel"><strong><span style="color:grey;">PDPrefSetAntialiasLevel</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:327</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Sets the default smooth text and smooth images global flags for subsequent rendering methods.<br/>
+<p>If the function <a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemory" title=" Superseded by PDPageDrawContentsToMemoryEx() in Acrobat 10.0.">PDPageDrawContentsToMemory</a>() is used for drawing, the <code>smoothFlags</code> value passed to that function supersedes the preference value for the duration of the call.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPref.htm#PDPrefGetAntialiasLevel" title=" Returns the antialias level, in pixels.">PDPrefGetAntialiasLevel</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetAntialiasLevel(</code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>antialiasPixelLevel</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>antialiasPixelLevel</code></span>
+</td><td><div><UL>The antialias level, in pixels. It is an <code>OR</code> of the following flags:<br/><li> <a href="pdfllayer_PDPref.htm#kPDPrefAASmoothText" title=" Draw smooth text.">kPDPrefAASmoothText</a><br/><li> <a href="pdfllayer_PDPref.htm#kPDPrefAASmoothLineArt" title=" Draw smooth line art.">kPDPrefAASmoothLineArt</a><br/><li> <a href="pdfllayer_PDPref.htm#kPDPrefAASmoothImage" title=" Draw smooth image.">kPDPrefAASmoothImage</a><br/></UL>
+</div>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">PDPrefSetBlackPointCompensation</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:354</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the black-point compensation flag, which controls whether to adjust for differences in black points when converting colors between color spaces. When enabled, the full dynamic range of the source space is mapped into the full dynamic range of the destination space. When disabled, the dynamic range of the source space is simulated in the destination space (which can result in blocked or gray shadows). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPref.htm#PDPrefGetBlackPointCompensation" title=" Returns the black-point compensation flag.">PDPrefGetBlackPointCompensation</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetBlackPointCompensation(</code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>kbpc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>kbpc</code></span>
+</td><td><span><a href="aslayer_General.htm#true"><code>true</code></a> to enable black-point compensation, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>None. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSetEnableThinLineHeuristics"><strong><span style="color:grey;">PDPrefSetEnableThinLineHeuristics</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:837</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Sets whether thin lines will be fattened non-linearly or the stroke adjust will be applied to thin rectangles. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetEnableThinLineHeuristics(</code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>doThinLineTricks</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>doThinLineTricks</code></span>
+</td><td><span><a href="aslayer_General.htm#true"><code>true</code></a> if thin line heuristics are applied, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSetGreekLevel"><strong><span style="color:grey;">PDPrefSetGreekLevel</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:308</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the <em>greek</em> <em>level</em>. The greek level is a text height below which text characters are not rendered. Instead, text-like glyphs that have no meaning but look good at very small size are used. This is known as <em>greeking</em>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPref.htm#PDPrefGetGreekLevel" title=" Returns the greek level.">PDPrefGetGreekLevel</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetGreekLevel(</code><a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>greekPixelLevel</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>greekPixelLevel</code></span>
+</td><td><span>The greek level, in pixels. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSetRefXObj"><strong><span style="color:grey;">PDPrefSetRefXObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:826</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Sets reference XObject parameters. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetRefXObj(</code><a href="pdfllayer_PDPref.htm#PDRefXObjMode" title=" Modes used to control the display of reference XObjects."><code>PDRefXObjMode</code></a> <code>refXObjMode</code><code>,</code> <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>pathName</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>refXObjMode</code></span>
+</td><td><div><span>The mode to view or print reference XObjects. Its value can be one of the following: </span>
+
+<table class="ruled"><tr><th><span>Reference XObject mode</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdfllayer_PDPref.htm#kRefXObjNever" title=" Never display reference XObjects."><code>kRefXObjNever</code></a></span>
+</td><td><span>Does nothing. The function returns <a href="aslayer_General.htm#false"><code>false</code></a>.</span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_PDPref.htm#kRefXObjAlways" title=" Always display reference XObjects."><code>kRefXObjAlways</code></a></span>
+</td><td><span>Find a substitution with minimal checking.</span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_PDPref.htm#kRefXObjPDFX5" title=" All files that are PDFX5 compliant and that contain reference XObjects will display their content."><code>kRefXObjPDFX5</code></a></span>
+</td><td><span>Restrict substitutions to PDF/X-5 conforming ones.</span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_PDPref.htm#kRefXObjAlwaysAssured" title=" Always display reference XObjects, but do not display the proxy."><code>kRefXObjAlwaysAssured</code></a></span>
+</td><td><span>Fail the parser if the target is not found. Do not display the proxy.</span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_PDPref.htm#kRefXObjPDFX5Assured" title=" Always display reference XObjects, but do not display the proxy."><code>kRefXObjPDFX5Assured</code></a></span>
+</td><td><span>Fail the parser if the target PDF/X-5 document not found. Do not display the proxy.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>fileSys</code></span>
+</td><td><span>Used with <code>pathname</code> to specify where the target files should be found. </span>
+</td></tr>
+<tr><td><span><code>pathname</code></span>
+</td><td><span>Used with <code>fileSys</code> to specify the location of the target files. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSetSuppressICCSpaces"><strong><span style="color:grey;">PDPrefSetSuppressICCSpaces</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:530</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Specifies use of a default color space rather than an ICC-based color space. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPref.htm#PDPrefGetSuppressICCSpaces" title=" Returns the value of the suppress flag for ICC-based spaces with the specified number of components.">PDPrefGetSuppressICCSpaces</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetSuppressICCSpaces(</code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>nComponents</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>value</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>nComponents</code></span>
+</td><td><span>The number of ICC color space components. </span>
+</td></tr>
+<tr><td><span><code>value</code></span>
+</td><td><span>When <a href="aslayer_General.htm#true"><code>true</code></a>, use a DefaultCMYK, DefaultRGB, or DefaultGray color space instead of an ICC-based color space with the same number of components. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPrefSetUseLocalFonts"><strong><span style="color:grey;">PDPrefSetUseLocalFonts</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:366</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Enables or disables use of local fonts. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetUseLocalFonts(</code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>useLocalFonts</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>useLocalFonts</code></span>
+</td><td><span>When <a href="aslayer_General.htm#true"><code>true</code></a>, use local fonts. When <a href="aslayer_General.htm#false"><code>false</code></a>, use global fonts. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">PDPrefSetUseOutputIntents</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:511</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the Output Intent flag. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_PDPref.htm#PDPrefGetUseOutputIntents" title=" Returns the value of the Output Intent flag.">PDPrefGetUseOutputIntents</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetUseOutputIntents(</code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>flag</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>flag</code></span>
+</td><td><span>When <a href="aslayer_General.htm#true"><code>true</code></a>, use Output Intent to override a working space if it is present. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">PDPrefSetWorkingCMYK</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:606</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the current CMYK working space to a given ICC profile. A CMYK working space in PDF is defined as a profile to substitute for a corresponding /DeviceCMYK space. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPref.htm#PDPrefSetWorkingGray" title=" Sets the current gray working space to a given ICC profile."><code>PDPrefSetWorkingGray</code></a>
+<a href="pdfllayer_PDPref.htm#PDPrefSetWorkingRGB" title=" Set the current RGB working space to a given ICC profile."><code>PDPrefSetWorkingRGB</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetWorkingCMYK(</code><code>void</code> <code>*</code><code>profile</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>profileLength</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>profile</code></span>
+</td><td><span>A pointer to a buffer containing the ICC color profile. </span>
+</td></tr>
+<tr><td><span><code>profileLength</code></span>
+</td><td><span>The length in bytes of the profile. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">PDPrefSetWorkingGray</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:619</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the current gray working space to a given ICC profile. A gray working space in PDF is defined as a profile to substitute for a corresponding /DeviceGray space. When rendering with overprint preview, the gray substitution is suppressed, to avoid converting grayscale to "rich black." </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPref.htm#PDPrefSetWorkingCMYK" title=" Sets the current CMYK working space to a given ICC profile."><code>PDPrefSetWorkingCMYK</code></a>
+<a href="pdfllayer_PDPref.htm#PDPrefSetWorkingRGB" title=" Set the current RGB working space to a given ICC profile."><code>PDPrefSetWorkingRGB</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetWorkingGray(</code><code>void</code> <code>*</code><code>profile</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>profileLength</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>profile</code></span>
+</td><td><span>A pointer to a buffer containing the ICC color profile. </span>
+</td></tr>
+<tr><td><span><code>profileLength</code></span>
+</td><td><span>The length in bytes of the profile. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">PDPrefSetWorkingRGB</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:595</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Set the current RGB working space to a given ICC profile. An RGB working space in PDF is defined as a profile to substitute for a corresponding /DeviceRGB space. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPref.htm#PDPrefSetWorkingCMYK" title=" Sets the current CMYK working space to a given ICC profile."><code>PDPrefSetWorkingCMYK</code></a>
+<a href="pdfllayer_PDPref.htm#PDPrefSetWorkingGray" title=" Sets the current gray working space to a given ICC profile."><code>PDPrefSetWorkingGray</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPrefSetWorkingRGB(</code><code>void</code> <code>*</code><code>profile</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>profileLength</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>profile</code></span>
+</td><td><span>A pointer to a buffer containing the ICC color profile. </span>
+</td></tr>
+<tr><td><span><code>profileLength</code></span>
+</td><td><span>The length in bytes of the profile. </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDFL Library Layer: pdflattener</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDFL Library Layer: pdflattener</h5>
+<li><a href="#Structures">Structures</a></li>
+</ul></nav>
+<section id="Structures">
+<header><h2>pdflattener Structures</h2></header>
+<nav><dl>
+<dt><a href="#PDFlatten">PDFlatten</a></dt><dd> -  Controls tile flattening.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDFlatten"><strong><span style="color:grey;">PDFlatten</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:302</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Controls tile flattening. It is primarily of interest to resource limited (embedded) systems developers. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct PDFlatten {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASSize_t"><code>ASSize_t</code></a> <code>size</code><code>;</code> </div>
+</td><td><span>The size of the structure. Set it to <code>sizeof(PDFlattenRec)</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdfllayer_General.htm#PDFlattenTilingMode" title=" Support for tiled flattening"><code>PDFlattenTilingMode</code></a> <code>tilingMode</code><code>;</code> </div>
+</td><td><span><code>0</code> = no tiling; <code>1</code> = constant tiling; <code>2</code> = adaptive tiling </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>useTextOutlines</code><code>;</code> </div>
+</td><td><span>Output text outlines instead of native text. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>allowShadingOutput</code><code>;</code> </div>
+</td><td><span>Allow shading ouput. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>allowLevel3ShadingOutput</code><code>;</code> </div>
+</td><td><span>Allow level 3 shading output. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>strokeToFill</code><code>;</code> </div>
+</td><td><span>For converting stroke to outline. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>clipComplexRegions</code><code>;</code> </div>
+</td><td><span>Clip complex checkbox. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>float</code> <code>internalDPI</code><code>;</code> </div>
+</td><td><span>Resolution for flattening the interior of an atomic region. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>float</code> <code>externalDPI</code><code>;</code> </div>
+</td><td><span>Resolution for flattening edges of atomic regions. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>float</code> <code>pathDPI</code><code>;</code> </div>
+</td><td><span>Flattener path resolution; the default is <code>800</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>tileSizePts</code><code>;</code> </div>
+</td><td><span>Target tile size in points. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>maxFltnrImageSize</code><code>;</code> </div>
+</td><td><span>Maximum image size when flattening. The default is <code>0</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>adaptiveThreshold</code><code>;</code> </div>
+</td><td><span>Adaptive flattening threshold. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>preserveOverprint</code><code>;</code> </div>
+</td><td><span>Attempt to preserve overprint. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>disableCurveToLineOptmization</code><code>;</code> </div>
+</td><td><span>Disable Curve to Line Optimization. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>maxPageFlatteningTime</code><code>;</code> </div>
+</td><td><span>New parameter to set the maximum allowed time for flattening a page before rasterizing the content. Default value 0: Enables the two minute limit default value &lt; 0: Disables the time limit &gt; 0: Sets the time limit (in seconds) </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>permitType3Fonts</code><code>;</code> </div>
+</td><td><span>If <a href="aslayer_General.htm#false">false</a>, such fonts are rasterized, this is the legacy behavior because many PDF processors don't handle Type 3 fonts correctly. If <a href="aslayer_General.htm#true">true</a>, such fonts are preserved instead. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ignoreOverprint</code><code>;</code> </div>
+</td><td><span>DLADD 19Oct2023- Normally every Page is checked if it has Transparency or Overprint features * and when found the Page is Flattened. * If <a href="aslayer_General.htm#false">false</a>, Pages that have Overprinting are considered for Flattening. * If <a href="aslayer_General.htm#true">true</a>, Pages that have Overprinting aren't considered for Flattening. </span>
+</td></tr>
+<tr><td><code id="PDFlattenRec"><code>}</code> <a href="pdfllayer_pdflattener.htm#PDFlatten" title=" Controls tile flattening."><code>PDFlattenRec</code></a><code>,</code> <code>*</code><a href="pdfllayer_pdflattener.htm#PDFlatten" title=" Controls tile flattening."><code>PDFlatten</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="plugins_pdflattener.htm#PDFlattenerConvert" title=" Flatten a PDF file."><code>PDFlattenerConvert</code></a></td><td><a href="plugins_pdflattener.htm#PDFlattenerConvertEx" title=" Flatten a PDF file."><code>PDFlattenerConvertEx</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="plugins_pdflattener.htm#PDFlattenerUserParams"><code>PDFlattenerUserParams</code></a></td><td><a href="pdfllayer_PDFLPrint.htm#PDPrintParams" title=" A data structure indicating how a document should be printed."><code>PDPrintParams</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+
+</div>
+</body></html>

@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDF Edit Layer: PDEColorSpace</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDF Edit Layer: PDEColorSpace</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>PDEColorSpace Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDEBlackPointFlt">PDEBlackPointFlt</a></dt><dd> -  A structure describing a black point in a calibrated color space.</dd>
+<dt><a href="#PDEColorSpace">PDEColorSpace</a></dt><dd> -  A reference to a color space used on a page in a PDF file.</dd>
+<dt><a href="#PDEPatternColorSpace">PDEPatternColorSpace</a></dt><dd> -  A PDEColorSpace that describes a Pattern color space.</dd>
+<dt><a href="#PDEWhitePointFlt">PDEWhitePointFlt</a></dt><dd> -  A structure describing a white point in a calibrated color space.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEBlackPointFlt"><strong><span style="color:grey;">PDEBlackPointFlt</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:2123</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A structure describing a black point in a calibrated color space. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreate" title=" Creates a new color space object of the specified type.">PDEColorSpaceCreate</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="pdelayer_PDEColorSpace.htm#PDEXYZColorFlt"><code>PDEXYZColorFlt</code></a> <code>PDEBlackPointFlt</code><code>;</code> </code>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEColorSpace.htm#_t_PDEGrayCalFlt" title=" A structure describing a CalGray color space."><code>_t_PDEGrayCalFlt</code></a></td><td><a href="pdelayer_PDEColorSpace.htm#_t_PDELabCalFlt" title=" A structure describing a Lab color space."><code>_t_PDELabCalFlt</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEColorSpace.htm#_t_PDERGBCalFlt" title=" A structure describing a CalRGB color space."><code>_t_PDERGBCalFlt</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEColorSpace"><strong><span style="color:grey;">PDEColorSpace</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:322</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A reference to a color space used on a page in a PDF file. The color space is part of the graphics state attributes of a <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDEColorSpace</code> <code>*</code><code>PDEColorSpace</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreate" title=" Creates a new color space object of the specified type."><code>PDEColorSpaceCreate</code></a></td><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreateFromCosObj" title=" Creates a new color space object from a Cos object."><code>PDEColorSpaceCreateFromCosObj</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreateFromName" title=" Creates a new color space object."><code>PDEColorSpaceCreateFromName</code></a></td><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreateInCosDoc" title=" Creates a color space object like PDEColorSpaceCreate(), except that the client can specify the CosDoc in which the color space object is created."><code>PDEColorSpaceCreateInCosDoc</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEContent.htm#PDEContentGetDefaultColorSpace" title=" Gets a default color space from a PDEContent object."><code>PDEContentGetDefaultColorSpace</code></a></td><td><a href="pdelayer_PDEImageFlate.htm#PDEImageFlateAcquireColorSpace" title=" Acquires the color space of the flate image."><code>PDEImageFlateAcquireColorSpace</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageGetColorSpace" title=" Gets the color space object for an image."><code>PDEImageGetColorSpace</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageGetColorSpaceEx" title=" Retrieves a PDEImage object's color space, in the desired bits per component, based on the flags parameter."><code>PDEImageGetColorSpaceEx</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImageJPX.htm#PDEImageJPXAcquireColorSpace" title=" Acquires the PDEColorSpace associated with the JPX encoded image, if one exists."><code>PDEImageJPXAcquireColorSpace</code></a></td><td><a href="pdelayer_PDEXGroup.htm#PDEXGroupAcquireColorSpace" title=" Acquires the color space of the transparency group."><code>PDEXGroupAcquireColorSpace</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceGetBase" title=" Gets the name of the base color space."><code>PDEColorSpaceGetBase</code></a></td><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceGetBaseNumComps" title=" Gets the number of components in the base color space of an indexed color space."><code>PDEColorSpaceGetBaseNumComps</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceGetCTable" title=" Gets the component information for an indexed color space."><code>PDEColorSpaceGetCTable</code></a></td><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceGetCosObj" title=" Gets the CosObj representation of the color space object."><code>PDEColorSpaceGetCosObj</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceGetHiVal" title=" Gets the highest index for the color lookup table for an indexed color space."><code>PDEColorSpaceGetHiVal</code></a></td><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceGetName" title=" Gets the name of a color space object."><code>PDEColorSpaceGetName</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceGetNumComps" title=" Calculates the number of components in a color space."><code>PDEColorSpaceGetNumComps</code></a></td><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceGetStruct" title=" Retrieves a PDEColorSpaceStruct from a PDEColorSpace."><code>PDEColorSpaceGetStruct</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEContent.htm#PDEContentSetDefaultColorSpace_PEWCalls_" title=" Sets the default color space in a PDEContent object."><code>PDEContentSetDefaultColorSpace_PEWCalls_</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageCreate" title=" Superseded by PDEImageCreateEx() in Acrobat 10.0."><code>PDEImageCreate</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageCreateEx" title=" Creates an image object."><code>PDEImageCreateEx</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageCreateFromCosObj" title=" Superseded by PDEImageCreateFromCosObjEx() in Acrobat 10.0."><code>PDEImageCreateFromCosObj</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageCreateFromCosObjEx" title=" Creates an image object from a Cos object."><code>PDEImageCreateFromCosObjEx</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDoc" title=" Superseded by PDEImageCreateInCosDocEx() in Acrobat 10.0."><code>PDEImageCreateInCosDoc</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDoc64" title=" Superseded by PDEImageCreateInCosDocEx() in Acrobat 10.0."><code>PDEImageCreateInCosDoc64</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDocEx" title=" Creates an image object like PDEImageCreateInCosDoc(), except that the client can create an image with a large amount of data, and using a double precision transformation matrix."><code>PDEImageCreateInCosDocEx</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageSetColorSpace" title=" Sets the color space of the image."><code>PDEImageSetColorSpace</code></a></td><td><a href="pdelayer_PDEXGroup.htm#PDEXGroupSetColorSpace" title=" Sets the PDEXObject that defines the color space into which colors are converted when painted into this group."><code>PDEXGroupSetColorSpace</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEColorSpace.htm#PDEPatternColorSpace" title=" A PDEColorSpace that describes a Pattern color space."><code>PDEPatternColorSpace</code></a></td><td><a href="pdelayer_General.htm#_t_PDEColorSpec" title=" A structure describing a color specification."><code>_t_PDEColorSpec</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEColorSpace.htm#_t_PDEDeviceNColorData" title=" A structure describing a DeviceRGB or DeviceCMYK color space."><code>_t_PDEDeviceNColorData</code></a></td><td><a href="pdelayer_PDEColorSpace.htm#_t_PDEICCBasedColorData" title=" An ICC-based color space."><code>_t_PDEICCBasedColorData</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEColorSpace.htm#_t_PDEIndexedColorData" title=" A structure describing an indexed color space."><code>_t_PDEIndexedColorData</code></a></td><td><a href="pdelayer_PDEColorSpace.htm#_t_PDESeparationColorData" title=" A structure describing a separation color space."><code>_t_PDESeparationColorData</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEPatternColorSpace"><strong><span style="color:grey;">PDEPatternColorSpace</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:2194</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file.">PDEColorSpace</a> that describes a Pattern color space. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreate" title=" Creates a new color space object of the specified type.">PDEColorSpaceCreate</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>PDEPatternColorSpace</code><code>;</code> </code>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceStruct" title=" A color space structure for PDEColorSpaceCreate()."><code>PDEColorSpaceStruct</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEWhitePointFlt"><strong><span style="color:grey;">PDEWhitePointFlt</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:2118</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A structure describing a white point in a calibrated color space. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreate" title=" Creates a new color space object of the specified type.">PDEColorSpaceCreate</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="pdelayer_PDEColorSpace.htm#PDEXYZColorFlt"><code>PDEXYZColorFlt</code></a> <code>PDEWhitePointFlt</code><code>;</code> </code>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEColorSpace.htm#_t_PDEGrayCalFlt" title=" A structure describing a CalGray color space."><code>_t_PDEGrayCalFlt</code></a></td><td><a href="pdelayer_PDEColorSpace.htm#_t_PDELabCalFlt" title=" A structure describing a Lab color space."><code>_t_PDELabCalFlt</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEColorSpace.htm#_t_PDERGBCalFlt" title=" A structure describing a CalRGB color space."><code>_t_PDERGBCalFlt</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>PDEColorSpace Structures</h2></header>
+<nav><dl>
+<dt><a href="#PDEColorRangeFlt">PDEColorRangeFlt</a></dt><dd> - </dd>
+<dt><a href="#PDEColorSpaceStruct">PDEColorSpaceStruct</a></dt><dd> -  A color space structure for PDEColorSpaceCreate().</dd>
+<dt><a href="#PDEXYZColorFlt">PDEXYZColorFlt</a></dt><dd> - </dd>
+<dt><a href="#_t_PDEDeviceNColorData">_t_PDEDeviceNColorData</a></dt><dd> -  A structure describing a DeviceRGB or DeviceCMYK color space.</dd>
+<dt><a href="#_t_PDEGrayCalFlt">_t_PDEGrayCalFlt</a></dt><dd> -  A structure describing a CalGray color space.</dd>
+<dt><a href="#_t_PDEICCBasedColorData">_t_PDEICCBasedColorData</a></dt><dd> -  An ICC-based color space.</dd>
+<dt><a href="#_t_PDEIndexedColorData">_t_PDEIndexedColorData</a></dt><dd> -  A structure describing an indexed color space.</dd>
+<dt><a href="#_t_PDELabCalFlt">_t_PDELabCalFlt</a></dt><dd> -  A structure describing a Lab color space.</dd>
+<dt><a href="#_t_PDERGBCalFlt">_t_PDERGBCalFlt</a></dt><dd> -  A structure describing a CalRGB color space.</dd>
+<dt><a href="#_t_PDESeparationColorData">_t_PDESeparationColorData</a></dt><dd> -  A structure describing a separation color space.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEColorRangeFlt"><strong><span style="color:grey;">PDEColorRangeFlt</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:2104</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct PDEColorRangeFlt {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><code>float</code> <code>min</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><code>float</code> <code>max</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><code><code>}</code> <a href="pdelayer_PDEColorSpace.htm#PDEColorRangeFlt"><code>PDEColorRangeFlt</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEColorSpace.htm#_t_PDELabCalFlt" title=" A structure describing a Lab color space."><code>_t_PDELabCalFlt</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEColorSpaceStruct"><strong><span style="color:grey;">PDEColorSpaceStruct</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:2300</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>
+<p>A color space structure for <a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreate" title=" Creates a new color space object of the specified type.">PDEColorSpaceCreate</a>(). See "Color Spaces" in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 8.6 page 138.<br/></p>
+
+<span>
+<p>You can find this document on the web store of the International Standards Organization (ISO).</span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>union PDEColorSpaceStruct {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEColorSpace.htm#_t_PDEGrayCalFlt" title=" A structure describing a CalGray color space."><code>PDEGrayCalFlt</code></a> <code>*</code><code>calGray</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEColorSpace.htm#_t_PDERGBCalFlt" title=" A structure describing a CalRGB color space."><code>PDERGBCalFlt</code></a> <code>*</code><code>calRGB</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEColorSpace.htm#_t_PDELabCalFlt" title=" A structure describing a Lab color space."><code>PDELabCalFlt</code></a> <code>*</code><code>lab</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEColorSpace.htm#_t_PDEICCBasedColorData" title=" An ICC-based color space."><code>PDEICCBasedColorData</code></a> <code>*</code><code>icc</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEColorSpace.htm#_t_PDEIndexedColorData" title=" A structure describing an indexed color space."><code>PDEIndexedColorData</code></a> <code>*</code><code>indexed</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEColorSpace.htm#PDEPatternColorSpace" title=" A PDEColorSpace that describes a Pattern color space."><code>PDEPatternColorSpace</code></a> <code>patternbase</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEColorSpace.htm#_t_PDESeparationColorData" title=" A structure describing a separation color space."><code>PDESeparationColorData</code></a> <code>*</code><code>sep</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEColorSpace.htm#_t_PDEDeviceNColorData" title=" A structure describing a DeviceRGB or DeviceCMYK color space."><code>PDEDeviceNColorData</code></a> <code>*</code><code>devn</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><code><code>}</code> <a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceStruct" title=" A color space structure for PDEColorSpaceCreate()."><code>PDEColorSpaceStruct</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreate" title=" Creates a new color space object of the specified type."><code>PDEColorSpaceCreate</code></a></td><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreateInCosDoc" title=" Creates a color space object like PDEColorSpaceCreate(), except that the client can specify the CosDoc in which the color space object is created."><code>PDEColorSpaceCreateInCosDoc</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceGetStruct" title=" Retrieves a PDEColorSpaceStruct from a PDEColorSpace."><code>PDEColorSpaceGetStruct</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEXYZColorFlt"><strong><span style="color:grey;">PDEXYZColorFlt</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:2109</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct PDEXYZColorFlt {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><code>float</code> <code>x</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><code>float</code> <code>y</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><code>float</code> <code>z</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><code><code>}</code> <a href="pdelayer_PDEColorSpace.htm#PDEXYZColorFlt"><code>PDEXYZColorFlt</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEColorSpace.htm#PDEBlackPointFlt" title=" A structure describing a black point in a calibrated color space."><code>PDEBlackPointFlt</code></a></td><td><a href="pdelayer_PDEColorSpace.htm#PDEWhitePointFlt" title=" A structure describing a white point in a calibrated color space."><code>PDEWhitePointFlt</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_PDEDeviceNColorData"><strong><span style="color:grey;">_t_PDEDeviceNColorData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:2268</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A structure describing a DeviceRGB or DeviceCMYK color space. To learn about color spaces, see the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 9.9, page 155. You can find this document on the web store of the International Standards Organization (ISO). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreate" title=" Creates a new color space object of the specified type.">PDEColorSpaceCreate</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDEDeviceNColorData {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASSize_t"><code>ASSize_t</code></a> <code>size</code><code>;</code> </div>
+</td><td><span>The size of the data structure. It must be set to <code>sizeof(PDEDeviceNColorData)</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>*</code><code>names</code><code>;</code> </div>
+</td><td><span>The names of the colorants. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>nNames</code><code>;</code> </div>
+</td><td><span>The number of colorants. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>alt</code><code>;</code> </div>
+</td><td><span>The alternate color space. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>tintTransform</code><code>;</code> </div>
+</td><td><span>The tintTransform dictionary or function. See the "Special Color Spaces" section in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 8.6.6, page 155. </span>
+</td></tr>
+<tr><td><code id="PDEDeviceNColorData"><code>}</code> <a href="pdelayer_PDEColorSpace.htm#_t_PDEDeviceNColorData" title=" A structure describing a DeviceRGB or DeviceCMYK color space."><code>PDEDeviceNColorData</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceStruct" title=" A color space structure for PDEColorSpaceCreate()."><code>PDEColorSpaceStruct</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_PDEGrayCalFlt"><strong><span style="color:grey;">_t_PDEGrayCalFlt</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:2131</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>A structure describing a CalGray color space.<br/>
+<p>Default value: <a href="pdelayer_PDEColorSpace.htm#_t_PDEGrayCalFlt" title=" A structure describing a CalGray color space."><code>PDEGrayCalFlt</code></a> <code>calGray</code> <code>=</code> <code>{{0,</code> <code>0,</code> <code>0},</code> <code>{0,</code> <code>0,</code> <code>0},</code> <code>1};</code><br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreate" title=" Creates a new color space object of the specified type.">PDEColorSpaceCreate</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDEGrayCalFlt {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEColorSpace.htm#PDEWhitePointFlt" title=" A structure describing a white point in a calibrated color space."><code>PDEWhitePointFlt</code></a> <code>whitePoint</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEColorSpace.htm#PDEBlackPointFlt" title=" A structure describing a black point in a calibrated color space."><code>PDEBlackPointFlt</code></a> <code>blackPoint</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><code>float</code> <code>gamma</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><code id="PDEGrayCalFlt"><code>}</code> <a href="pdelayer_PDEColorSpace.htm#_t_PDEGrayCalFlt" title=" A structure describing a CalGray color space."><code>PDEGrayCalFlt</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceStruct" title=" A color space structure for PDEColorSpaceCreate()."><code>PDEColorSpaceStruct</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_PDEICCBasedColorData"><strong><span style="color:grey;">_t_PDEICCBasedColorData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:2197</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>An ICC-based color space. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDEICCBasedColorData {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASSize_t"><code>ASSize_t</code></a> <code>size</code><code>;</code> </div>
+</td><td><span>Set the size to <code>sizeof(PDEICCColorData)</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>iccstream</code><code>;</code> </div>
+</td><td><span>A stream containing an ICC Profile. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>nComps</code><code>;</code> </div>
+</td><td><span>The number of color components ( <code>1</code>, <code>3</code>, or <code>4</code>). </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>altCs</code><code>;</code> </div>
+</td><td><span>(Optional) An alternate color space. </span>
+</td></tr>
+<tr><td><code id="PDEICCBasedColorData"><code>}</code> <a href="pdelayer_PDEColorSpace.htm#_t_PDEICCBasedColorData" title=" An ICC-based color space."><code>PDEICCBasedColorData</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceStruct" title=" A color space structure for PDEColorSpaceCreate()."><code>PDEColorSpaceStruct</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_PDEIndexedColorData"><strong><span style="color:grey;">_t_PDEIndexedColorData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:2215</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A structure describing an indexed color space. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreate" title=" Creates a new color space object of the specified type.">PDEColorSpaceCreate</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDEIndexedColorData {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASSize_t"><code>ASSize_t</code></a> <code>size</code><code>;</code> </div>
+</td><td><span>Set the size to <code>sizeof(PDEIndexedColorData)</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>baseCs</code><code>;</code> </div>
+</td><td><span>The base color space. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>hival</code><code>;</code> </div>
+</td><td><span>The highest color value. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>char</code> <code>*</code><code>lookup</code><code>;</code> </div>
+</td><td><span>Indexed color lookup data. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>lookupLen</code><code>;</code> </div>
+</td><td><span>The number of bytes in the lookup data. </span>
+</td></tr>
+<tr><td><code id="PDEIndexedColorData"><code>}</code> <a href="pdelayer_PDEColorSpace.htm#_t_PDEIndexedColorData" title=" A structure describing an indexed color space."><code>PDEIndexedColorData</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceStruct" title=" A color space structure for PDEColorSpaceCreate()."><code>PDEColorSpaceStruct</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_PDELabCalFlt"><strong><span style="color:grey;">_t_PDELabCalFlt</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:2177</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>A structure describing a Lab color space.<br/>
+<p>Default value: <code>{{0,</code> <code>0,</code> <code>0},</code> <code>{0,</code> <code>0,</code> <code>0},</code> <code>{-100,</code> <code>100},</code> <code>{-100,</code> <code>100}};</code><br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreate" title=" Creates a new color space object of the specified type.">PDEColorSpaceCreate</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDELabCalFlt {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEColorSpace.htm#PDEWhitePointFlt" title=" A structure describing a white point in a calibrated color space."><code>PDEWhitePointFlt</code></a> <code>whitePoint</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEColorSpace.htm#PDEBlackPointFlt" title=" A structure describing a black point in a calibrated color space."><code>PDEBlackPointFlt</code></a> <code>blackPoint</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEColorSpace.htm#PDEColorRangeFlt"><code>PDEColorRangeFlt</code></a> <code>rangeA</code><code>,</code> <code>rangeB</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><code id="PDELabCalFlt"><code>}</code> <a href="pdelayer_PDEColorSpace.htm#_t_PDELabCalFlt" title=" A structure describing a Lab color space."><code>PDELabCalFlt</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceStruct" title=" A color space structure for PDEColorSpaceCreate()."><code>PDEColorSpaceStruct</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_PDERGBCalFlt"><strong><span style="color:grey;">_t_PDERGBCalFlt</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:2150</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>A structure describing a CalRGB color space. It is the same as AGMRGBCalFlt (it is only available as part of the PDF Library SDK).<br/>
+<p>Default value: <code>{{0,</code> <code>0,</code> <code>0},</code> <code>{0,</code> <code>0,</code> <code>0},</code> <code>1,</code> <code>1,</code> <code>1,</code> <code>{1,</code> <code>0,</code> <code>0,</code> <code>0,</code> <code>1,</code> <code>0,</code> <code>0,</code> <code>0,</code> <code>1}};</code><br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreate" title=" Creates a new color space object of the specified type.">PDEColorSpaceCreate</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDERGBCalFlt {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEColorSpace.htm#PDEWhitePointFlt" title=" A structure describing a white point in a calibrated color space."><code>PDEWhitePointFlt</code></a> <code>whitePoint</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEColorSpace.htm#PDEBlackPointFlt" title=" A structure describing a black point in a calibrated color space."><code>PDEBlackPointFlt</code></a> <code>blackPoint</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><code>float</code> <code>redGamma</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><code>float</code> <code>greenGamma</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><code>float</code> <code>blueGamma</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><code>float</code> <code>matrix</code> <code>[</code><code>9</code><code>]</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><code id="PDERGBCalFlt"><code>}</code> <a href="pdelayer_PDEColorSpace.htm#_t_PDERGBCalFlt" title=" A structure describing a CalRGB color space."><code>PDERGBCalFlt</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceStruct" title=" A color space structure for PDEColorSpaceCreate()."><code>PDEColorSpaceStruct</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_PDESeparationColorData"><strong><span style="color:grey;">_t_PDESeparationColorData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:2240</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A structure describing a separation color space. To learn about color spaces, see the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 9.9, page 155. You can find this document on the web store of the International Standards Organization (ISO). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreate" title=" Creates a new color space object of the specified type.">PDEColorSpaceCreate</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDESeparationColorData {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASSize_t"><code>ASSize_t</code></a> <code>size</code><code>;</code> </div>
+</td><td><span>The size of the data structure. It must be set to <code>sizeof(PDESeparationColorData)</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>name</code><code>;</code> </div>
+</td><td><span>The name of the separation or colorant. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>alt</code><code>;</code> </div>
+</td><td><span>The alternate color space. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>tintTransform</code><code>;</code> </div>
+</td><td><span>The tintTransform dictionary or function. See the "Special Color Spaces" section in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 8.6.6, page 155. </span>
+</td></tr>
+<tr><td><code id="PDESeparationColorData"><code>}</code> <a href="pdelayer_PDEColorSpace.htm#_t_PDESeparationColorData" title=" A structure describing a separation color space."><code>PDESeparationColorData</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceStruct" title=" A color space structure for PDEColorSpaceCreate()."><code>PDEColorSpaceStruct</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDEColorSpace Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDEColorSpaceCreate">PDEColorSpaceCreate</a></dt><dd> -  Creates a new color space object of the specified type.</dd>
+<dt><a href="#PDEColorSpaceCreateFromCosObj">PDEColorSpaceCreateFromCosObj</a></dt><dd> -  Creates a new color space object from a Cos object.</dd>
+<dt><a href="#PDEColorSpaceCreateFromName">PDEColorSpaceCreateFromName</a></dt><dd> -  Creates a new color space object.</dd>
+<dt><a href="#PDEColorSpaceCreateInCosDoc">PDEColorSpaceCreateInCosDoc</a></dt><dd> -  Creates a color space object like PDEColorSpaceCreate(), except that the client can specify the CosDoc in which the color space object is created.</dd>
+<dt><a href="#PDEColorSpaceGetBase">PDEColorSpaceGetBase</a></dt><dd> -  Gets the name of the base color space.</dd>
+<dt><a href="#PDEColorSpaceGetBaseNumComps">PDEColorSpaceGetBaseNumComps</a></dt><dd> -  Gets the number of components in the base color space of an indexed color space.</dd>
+<dt><a href="#PDEColorSpaceGetCTable">PDEColorSpaceGetCTable</a></dt><dd> -  Gets the component information for an indexed color space.</dd>
+<dt><a href="#PDEColorSpaceGetCosObj">PDEColorSpaceGetCosObj</a></dt><dd> -  Gets the CosObj representation of the color space object.</dd>
+<dt><a href="#PDEColorSpaceGetHiVal">PDEColorSpaceGetHiVal</a></dt><dd> -  Gets the highest index for the color lookup table for an indexed color space.</dd>
+<dt><a href="#PDEColorSpaceGetName">PDEColorSpaceGetName</a></dt><dd> -  Gets the name of a color space object.</dd>
+<dt><a href="#PDEColorSpaceGetNumComps">PDEColorSpaceGetNumComps</a></dt><dd> -  Calculates the number of components in a color space.</dd>
+<dt><a href="#PDEColorSpaceGetStruct">PDEColorSpaceGetStruct</a></dt><dd> -  Retrieves a PDEColorSpaceStruct from a PDEColorSpace.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEColorSpaceCreate"><strong><span style="color:grey;">PDEColorSpaceCreate</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1393</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a new color space object of the specified type.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned color space object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreateFromCosObj" title=" Creates a new color space object from a Cos object.">PDEColorSpaceCreateFromCosObj</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>PDEColorSpaceCreate(</code><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>family</code><code>,</code> <a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceStruct" title=" A color space structure for PDEColorSpaceCreate()."><code>PDEColorSpaceStruct</code></a> <code>*</code><code>csStruct</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>family</code></span>
+</td><td><div><span>IN/OUT Supports all PDF 1.3 color spaces, which include: </span>
+
+<table class="ruled"><tr><th><span>Type of names</span>
+</th><th><span>Names</span>
+</th></tr>
+<tr><td><span>Device-dependent names</span>
+</td><td><span><li> <code>DeviceCMYK</code><br/><li> <code>DeviceGray</code><br/><li> <code>DeviceN</code><br/><li> <code>DeviceRGB</code><br/></span>
+</td></tr>
+<tr><td><span>
+<p>Device-independent names</span>
+</td><td><span><li> <code>CalGray</code><br/><li> <code>CalRGB</code><br/><li> <code>Lab</code><br/><li> <code>ICCBased</code><br/></span>
+</td></tr>
+<tr><td><span>
+<p>Special names</span>
+</td><td><span><li> <code>Indexed</code><br/><li> <code>Pattern</code><br/><li> <code>Separation</code><br/></span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>csStruct</code></span>
+</td><td><span>IN/OUT Data for the type of color space you want to create. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created color space object. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#cosErrExpectedArray" title=" An array object was expected."><code>cosErrExpectedArray</code></a></td><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEColorSpaceCreateFromCosObj"><strong><span style="color:grey;">PDEColorSpaceCreateFromCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:932</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a new color space object from a Cos object.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned color space object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreate" title=" Creates a new color space object of the specified type."><code>PDEColorSpaceCreate</code></a>
+<a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreateFromName" title=" Creates a new color space object."><code>PDEColorSpaceCreateFromName</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>PDEColorSpaceCreateFromCosObj(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>const</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>cosObjP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>cosObjP</code></span>
+</td><td><div><span>IN/OUT Supports all PDF 1.3 color spaces, which include: </span>
+
+<table class="ruled"><tr><th><span>Type of names</span>
+</th><th><span>Names</span>
+</th></tr>
+<tr><td><span>Device-dependent names</span>
+</td><td><span><li> <code>DeviceCMYK</code><br/><li> <code>DeviceGray</code><br/><li> <code>DeviceN</code><br/><li> <code>DeviceRGB</code><br/></span>
+</td></tr>
+<tr><td><span>
+<p>Device-independent names</span>
+</td><td><span><li> <code>CalGray</code><br/><li> <code>CalRGB</code><br/><li> <code>Lab</code><br/><li> <code>ICCBased</code><br/></span>
+</td></tr>
+<tr><td><span>
+<p>Special names</span>
+</td><td><span><li> <code>Indexed</code><br/><li> <code>Pattern</code><br/><li> <code>Separation</code><br/></span>
+</td></tr></table>
+</div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created color space object. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#cosErrExpectedArray" title=" An array object was expected."><code>cosErrExpectedArray</code></a></td><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEColorSpaceCreateFromName"><strong><span style="color:grey;">PDEColorSpaceCreateFromName</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:906</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a new color space object.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned color space object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreate" title=" Creates a new color space object of the specified type."><code>PDEColorSpaceCreate</code></a>
+<a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreateFromCosObj" title=" Creates a new color space object from a Cos object."><code>PDEColorSpaceCreateFromCosObj</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>PDEColorSpaceCreateFromName(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>name</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>name</code></span>
+</td><td><span>IN/OUT The <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> for the name of the color space created. The name must be one of the following: DeviceCMYK, DeviceGray, or DeviceRGB. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created color space object. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#cosErrExpectedName" title=" A name object was expected."><code>cosErrExpectedName</code></a></td><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEColorSpaceCreateInCosDoc"><strong><span style="color:grey;">PDEColorSpaceCreateInCosDoc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2961</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a color space object like <a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreate" title=" Creates a new color space object of the specified type.">PDEColorSpaceCreate</a>(), except that the client can specify the <a href="coslayer_CosDoc.htm#CosDoc">CosDoc</a> in which the color space object is created.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned color space object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreateFromCosObj" title=" Creates a new color space object from a Cos object.">PDEColorSpaceCreateFromCosObj</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>PDEColorSpaceCreateInCosDoc(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>family</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceStruct" title=" A color space structure for PDEColorSpaceCreate()."><code>PDEColorSpaceStruct</code></a> <code>*</code><code>csStruct</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>cosDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>family</code></span>
+</td><td><div><span>IN/OUT Supports all PDF 1.3 color spaces, which include: </span>
+
+<table class="ruled"><tr><th><span>Type of names</span>
+</th><th><span>Names</span>
+</th></tr>
+<tr><td><span>Device-dependent names</span>
+</td><td><span><li> <code>DeviceCMYK</code><br/><li> <code>DeviceGray</code><br/><li> <code>DeviceN</code><br/><li> <code>DeviceRGB</code><br/></span>
+</td></tr>
+<tr><td><span>
+<p>Device-independent names</span>
+</td><td><span><li> <code>CalGray</code><br/><li> <code>CalRGB</code><br/><li> <code>Lab</code><br/><li> <code>ICCBased</code><br/></span>
+</td></tr>
+<tr><td><span>
+<p>Special names</span>
+</td><td><span><li> <code>Indexed</code><br/><li> <code>Pattern</code><br/><li> <code>Separation</code><br/></span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>csStruct</code></span>
+</td><td><span>IN/OUT Data for the type of color space you want to create. </span>
+</td></tr>
+<tr><td><span><code>cosDoc</code></span>
+</td><td><span>IN/OUT The document in which to put the Cos representation of resource. It may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created color space object. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#cosErrExpectedArray" title=" An array object was expected."><code>cosErrExpectedArray</code></a></td><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEColorSpaceGetBase"><strong><span style="color:grey;">PDEColorSpaceGetBase</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1128</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the name of the base color space. This is a helper routine for indexed color spaces.<br/>
+<p>Call this method to obtain the base color space and color values for an uncolored pattern in PDFEdit.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceGetBaseNumComps" title=" Gets the number of components in the base color space of an indexed color space.">PDEColorSpaceGetBaseNumComps</a> Note that the base color values are in the color array in the <a href="pdelayer_General.htm#_t_PDEColorValue" title=" A structure describing a color value.">PDEColorValue</a> field for stroke and fill of a <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicStateP</a>. Or, they are in the <code>colorObj2</code> object if the base color space is DeviceN. To get the color values, a client gets the base color space, determines the type and number of components of the value, and looks them up in the <a href="pdelayer_General.htm#_t_PDEColorValue" title=" A structure describing a color value.">PDEColorValue</a> field. </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>PDEColorSpaceGetBase(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>colorSpace</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>colorSpace</code></span>
+</td><td><span>The base color space. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> for the name of the base color space. Use <a href="aslayer_ASAtom.htm#ASAtomGetString" title=" Gets the string associated with the specified ASAtom.">ASAtomGetString</a>() to obtain a C string for the <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEColorSpaceGetBaseNumComps"><strong><span style="color:grey;">PDEColorSpaceGetBaseNumComps</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1404</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the number of components in the base color space of an indexed color space.<br/>
+<p>For example, for <code>[/</code> <code>Indexed</code> <code>/</code> <code>DeviceRGB...]</code>, the number of components is <code>3</code>.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceGetBase" title=" Gets the name of the base color space."><code>PDEColorSpaceGetBase</code></a>
+<a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceGetNumComps" title=" Calculates the number of components in a color space."><code>PDEColorSpaceGetNumComps</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDEColorSpaceGetBaseNumComps(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>colorSpace</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>colorSpace</code></span>
+</td><td><span>IN/OUT The indexed color space. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of components in <code>colorSpace</code>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEColorSpaceGetCTable"><strong><span style="color:grey;">PDEColorSpaceGetCTable</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1158</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets the component information for an indexed color space. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEColorSpaceGetCTable(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>colorSpace</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>*</code><code>colorTableP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>colorSpace</code></span>
+</td><td><span>IN/OUT The color space whose component information table is obtained. </span>
+</td></tr>
+<tr><td><span><code>colorTableP</code></span>
+</td><td><span>IN/OUT (Filled by the method) The color lookup table, which is <code>numComps</code> <code>*</code> <code>(hiVal</code> <code>+</code> <code>1)</code> bytes long, where <code>numComps</code> is the number of components in the base <code>colorSpace</code>. Each entry in the table contains <code>numComps</code> bytes, and the table is indexed from <code>0</code> to <code>hiVal</code>, where <code>hiVal</code> is the highest index in the color table. The table is indexed from <code>0</code> to <code>hival</code>, thus the table contains <code>hival</code> <code>+</code> <code>1</code> entries. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEColorSpaceGetCosObj"><strong><span style="color:grey;">PDEColorSpaceGetCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1077</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the <a href="coslayer_CosObj.htm#CosObj">CosObj</a> representation of the color space object.<br/>
+<p>For image masks, use <a href="pdelayer_PDEElement.htm#PDEElementGetGState" title=" Gets the graphics state information for an element.">PDEElementGetGState</a>() to obtain color information.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEColorSpaceGetCosObj(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>colorSpace</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>cosObjP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>colorSpace</code></span>
+</td><td><span>IN/OUT The color space whose Cos object is obtained. </span>
+</td></tr>
+<tr><td><span><code>cosObjP</code></span>
+</td><td><span>IN/OUT (Filled by the method) The Cos object for the color space. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The Cos object for <code>colorSpace</code>. Any color space that is in the Resources dictionary of the page is returned as a Cos object. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEColorSpaceGetHiVal"><strong><span style="color:grey;">PDEColorSpaceGetHiVal</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1140</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets the highest index for the color lookup table for an indexed color space. Since the color table is indexed from zero to <code>hiVal</code>, the actual number of entries is <code>hiVal</code> <code>+</code> <code>1</code>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDEColorSpaceGetHiVal(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>colorSpace</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>colorSpace</code></span>
+</td><td><span>IN/OUT An indexed color space. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The highest index ( <code>hiVal</code>) in the color lookup table. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEColorSpaceGetName"><strong><span style="color:grey;">PDEColorSpaceGetName</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1060</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets the name of a color space object. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>PDEColorSpaceGetName(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>colorSpace</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>colorSpace</code></span>
+</td><td><span>IN/OUT A color space object. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div><span>The color space object's name. It supports all PDF 1.3 color spaces, which include: </span>
+
+<table class="ruled"><tr><th><span>Type of names</span>
+</th><th><span>Names</span>
+</th></tr>
+<tr><td><span>Device-dependent names</span>
+</td><td><span><li> <code>DeviceCMYK</code><br/><li> <code>DeviceGray</code><br/><li> <code>DeviceN</code><br/><li> <code>DeviceRGB</code><br/></span>
+</td></tr>
+<tr><td><span>
+<p>Device-independent names</span>
+</td><td><span><li> <code>CalGray</code><br/><li> <code>CalRGB</code><br/><li> <code>Lab</code><br/><li> <code>ICCBased</code><br/></span>
+</td></tr>
+<tr><td><span>
+<p>Special names</span>
+</td><td><span><li> <code>Indexed</code><br/><li> <code>Pattern</code><br/><li> <code>Separation</code><br/></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEColorSpaceGetNumComps"><strong><span style="color:grey;">PDEColorSpaceGetNumComps</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1105</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Calculates the number of components in a color space. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceGetBaseNumComps" title=" Gets the number of components in the base color space of an indexed color space.">PDEColorSpaceGetBaseNumComps</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDEColorSpaceGetNumComps(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>colorSpace</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>colorSpace</code></span>
+</td><td><span>IN/OUT A color space object. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div><span>The number of components in <code>colorSpace</code>: </span>
+
+<table class="ruled"><tr><th><span>Color space</span>
+</th><th><span>Return value</span>
+</th></tr>
+<tr><td><span>DeviceGray</span>
+</td><td><span><code>1</code></span>
+</td></tr>
+<tr><td><span>CalGray</span>
+</td><td><span><code>1</code></span>
+</td></tr>
+<tr><td><span>Separation</span>
+</td><td><span><code>1</code></span>
+</td></tr>
+<tr><td><span>DeviceRGB</span>
+</td><td><span><code>3</code></span>
+</td></tr>
+<tr><td><span>CalRGB</span>
+</td><td><span><code>3</code></span>
+</td></tr>
+<tr><td><span>DeviceCMYK</span>
+</td><td><span><code>4</code></span>
+</td></tr>
+<tr><td><span>Lab</span>
+</td><td><span><code>4</code></span>
+</td></tr>
+<tr><td><span>DeviceN</span>
+</td><td><span>The number of components dependent on the specific color space object.</span>
+</td></tr>
+<tr><td><span>ICCBased</span>
+</td><td><span>The number of components dependent on the specific color space object.</span>
+</td></tr>
+<tr><td><span>Indexed</span>
+</td><td><span><code>1</code></span>
+</td></tr></table>
+
+<p>
+<p>Call <a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceGetBaseNumComps" title=" Gets the number of components in the base color space of an indexed color space.">PDEColorSpaceGetBaseNumComps</a>() to get the number of components in the base color space.<br/></p>
+</div>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEColorSpaceGetStruct"><strong><span style="color:grey;">PDEColorSpaceGetStruct</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2851</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>
+<p>Retrieves a <a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceStruct" title=" A color space structure for PDEColorSpaceCreate()."><code>PDEColorSpaceStruct</code></a> from a <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a>. It supports all PDF version 1.3 color spaces except the <code>Pattern</code> color space.<br/></p>
+
+<p>
+<p>It is the responsibility of the caller to free the <a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceStruct" title=" A color space structure for PDEColorSpaceCreate()."><code>PDEColorSpaceStruct</code></a> and the underlying allocations.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceCreate" title=" Creates a new color space object of the specified type.">PDEColorSpaceCreate</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEColorSpaceGetStruct(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> <code>cs</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceStruct" title=" A color space structure for PDEColorSpaceCreate()."><code>PDEColorSpaceStruct</code></a> <code>*</code><code>pdeColorSpaceStruct</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>cs</code></span>
+</td><td><span>IN/OUT The <a href="pdelayer_PDEColorSpace.htm#PDEColorSpace" title=" A reference to a color space used on a page in a PDF file."><code>PDEColorSpace</code></a> for which the structure is required. </span>
+</td></tr>
+<tr><td><span><code>pdeColorSpaceStruct</code></span>
+</td><td><span>IN/OUT The <a href="pdelayer_PDEColorSpace.htm#PDEColorSpaceStruct" title=" A color space structure for PDEColorSpaceCreate()."><code>PDEColorSpaceStruct</code></a> created for the color space. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+
+</div>
+</body></html>
