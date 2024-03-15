@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+COS Layer: CosString</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>COS Layer: CosString</h5>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Functions">
+<header><h2>CosString Functions</h2></header>
+<nav><dl>
+<dt><a href="#CosCopyStringValue">CosCopyStringValue</a></dt><dd> -  Returns a newly allocated buffer containing a copy of the Cos object's string value.</dd>
+<dt><a href="#CosNewString">CosNewString</a></dt><dd> -  Creates and returns a new Cos string object.</dd>
+<dt><a href="#CosStringGetHexFlag">CosStringGetHexFlag</a></dt><dd> -  Gets the hex flag of the CosString.</dd>
+<dt><a href="#CosStringSetHexFlag">CosStringSetHexFlag</a></dt><dd> -  Sets the hex flag of the CosString.</dd>
+<dt><a href="#CosStringValue">CosStringValue</a></dt><dd> -  Gets the value of a string Cos object, and the string's length.</dd>
+<dt><a href="#CosStringValueSafe">CosStringValueSafe</a></dt><dd> -  Copies at most bufferSize bytes from the obj parameter's string value into buffer, and stores the actual length of the Cos string in *nBytes.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="CosCopyStringValue"><strong><span style="color:grey;">CosCopyStringValue</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:1402</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>
+<p>Returns a newly allocated buffer containing a copy of the Cos object's string value. Upon return, <code>nBytes</code> contains the number of bytes in the original Cos string. <a href="coslayer_CosString.htm#CosCopyStringValue" title=" Returns a newly allocated buffer containing a copy of the Cos object's string value."><code>CosCopyStringValue</code></a><code>()</code> never returns <a href="aslayer_General.htm#NULL"><code>NULL</code></a>; it raises an exception if the allocation fails. The client is responsible for freeing the result by calling <a href="aslayer_ASMem.htm#ASfree" title=" Frees the specified memory block."><code>ASfree</code></a><code>()</code>.<br/></p>
+
+<p>
+<p><a href="coslayer_CosString.htm#CosCopyStringValue" title=" Returns a newly allocated buffer containing a copy of the Cos object's string value."><code>CosCopyStringValue</code></a><code>()</code> allocates extra memory past the end of the string and writes zeros into these extra bytes to ensure that the string is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated whether viewed as a UTF-16 (Unicode) string or as a C string (these bytes are not included in the number returned in <code>nBytes</code>). If the Cos string has <code>0</code> length, <code>nBytes</code> will be <code>0</code>, and a pointer to newly allocated memory containing some zero bytes is returned (that is, <a href="coslayer_CosString.htm#CosCopyStringValue" title=" Returns a newly allocated buffer containing a copy of the Cos object's string value."><code>CosCopyStringValue</code></a><code>()</code> still returns a <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated string but with zero length).<br/></p>
+
+<p>
+<p>An out-of-memory exception is raised if insufficient memory is available. It can also raise any exception that <a href="coslayer_CosString.htm#CosStringValue" title=" Gets the value of a string Cos object, and the string's length.">CosStringValue</a>() can raise.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> In general, the returned value is not a <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated C string. Cos string objects are binary and can contain arbitrary byte sequences, including <a href="aslayer_General.htm#NULL"><code>NULL</code></a> characters. Standard C string handling functions may not work as expected. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="coslayer_CosString.htm#CosStringValueSafe" title=" Copies at most bufferSize bytes from the obj parameter's string value into buffer, and stores the actual length of the Cos string in *nBytes.">CosStringValueSafe</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>char</code> <code>*</code><code>CosCopyStringValue(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>obj</code><code>,</code> <a href="aslayer_General.htm#ASTCount"><code>ASTCount</code></a> <code>*</code><code>nBytes</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>obj</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The Cos object whose string value is copied and returned. </span>
+</td></tr>
+<tr><td><span><code>nBytes</code></span>
+</td><td><span><a href="pdslayer_General.htm#OUT">OUT</a> (Filled by the method) The length of the original Cos string in bytes. It can be <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if you do not care how many bytes were in the original string. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A copy of the Cos object's string value. </span>
+</section>
+<section><div class="infoRow"><h3 id="CosNewString"><strong><span style="color:grey;">CosNewString</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:223</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates and returns a new Cos string object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="coslayer_CosObj.htm#CosObjDestroy" title=" Destroys a Cos object."><code>CosObjDestroy</code></a>
+<a href="coslayer_CosString.htm#CosStringValue" title=" Gets the value of a string Cos object, and the string's length."><code>CosStringValue</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>CosNewString(</code><a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>dP</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>indirect</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>str</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>nBytes</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>dP</code></span>
+</td><td><span>The document in which the string is used. </span>
+</td></tr>
+<tr><td><span><code>indirect</code></span>
+</td><td><span>If <a href="aslayer_General.htm#true"><code>true</code></a>, it creates the string as an indirect object, and sets the document ( <code>dP</code>) object's <a href="pdlayer_PDDoc.htm#PDDocNeedsSave" title=" The document has been modified and needs to be saved."><code>PDDocNeedsSave</code></a> flag (see <a href="pdlayer_PDDoc.htm#PDDocFlags" title=" A signed int (which is never negative), for historical reasons."><code>PDDocFlags</code></a>). If <a href="aslayer_General.htm#false"><code>false</code></a>, it creates the string as a direct object. </span>
+</td></tr>
+<tr><td><span><code>str</code></span>
+</td><td><span>The value that the new string will have. It is not a C string, since Cos strings can contain <a href="aslayer_General.htm#NULL"><code>NULL</code></a> characters. The data in <code>str</code> is copied; that is, if <code>str</code> was dynamically allocated, it can be freed after this call. </span>
+</td></tr>
+<tr><td><span><code>nBytes</code></span>
+</td><td><span>The length of <code>str</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created string Cos object. </span>
+</section>
+<section><div class="infoRow"><h3 id="CosStringGetHexFlag"><strong><span style="color:grey;">CosStringGetHexFlag</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:1252</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the hex flag of the <a href="coslayer_General.htm#CosString" title=" A string object."><code>CosString</code></a>. The hex flag specifies whether the <a href="coslayer_General.htm#CosString" title=" A string object."><code>CosString</code></a> should be written out as hex when writing the Cos Object to file. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="coslayer_CosString.htm#CosStringSetHexFlag" title=" Sets the hex flag of the CosString.">CosStringSetHexFlag</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>CosStringGetHexFlag(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>cosObj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>cosObj</code></span>
+</td><td><span>IN/OUT The <a href="coslayer_General.htm#CosString" title=" A string object."><code>CosString</code></a> for which the hex flag is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The current value of the flag. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#cosErrExpectedString" title=" A string object was expected."><code>cosErrExpectedString</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="CosStringSetHexFlag"><strong><span style="color:grey;">CosStringSetHexFlag</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:1240</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the hex flag of the <a href="coslayer_General.htm#CosString" title=" A string object."><code>CosString</code></a>. The hex flag specifies whether the <a href="coslayer_General.htm#CosString" title=" A string object."><code>CosString</code></a> should be written out as hex when writing the Cos Object to file. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="coslayer_CosString.htm#CosStringGetHexFlag" title=" Gets the hex flag of the CosString.">CosStringGetHexFlag</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>CosStringSetHexFlag(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>cosObj</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>setHex</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>cosObj</code></span>
+</td><td><span>The <a href="coslayer_General.htm#CosString" title=" A string object."><code>CosString</code></a> for which the hex flag is set. </span>
+</td></tr>
+<tr><td><span><code>setHex</code></span>
+</td><td><span>The value to set for the flag. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The value of <code>setHex</code>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#cosErrExpectedString" title=" A string object was expected."><code>cosErrExpectedString</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="CosStringValue"><strong><span style="color:grey;">CosStringValue</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:567</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the value of a string Cos object, and the string's length.<br/>
+<p>An exception is raised if the type of <code>obj</code> is not a <a href="coslayer_General.htm#CosString" title=" A string object."><code>CosString</code></a>.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The pointer returned from this method is not guaranteed to remain valid if <a href="coslayer_CosString.htm#CosStringValue" title=" Gets the value of a string Cos object, and the string's length."><code>CosStringValue</code></a><code>()</code> is called again. It is recommended that you use <a href="coslayer_CosString.htm#CosStringValueSafe" title=" Copies at most bufferSize bytes from the obj parameter's string value into buffer, and stores the actual length of the Cos string in *nBytes."><code>CosStringValueSafe</code></a><code>()</code> or <a href="coslayer_CosString.htm#CosCopyStringValue" title=" Returns a newly allocated buffer containing a copy of the Cos object's string value."><code>CosCopyStringValue</code></a><code>()</code> instead; these methods place the string into a user-allocated buffer. </p>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The returned value is not a C-style string. Cos string objects can contain <a href="aslayer_General.htm#NULL"><code>NULL</code></a> bytes. Standard C string-handling functions may not work as expected. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="coslayer_CosString.htm#CosCopyStringValue" title=" Returns a newly allocated buffer containing a copy of the Cos object's string value."><code>CosCopyStringValue</code></a>
+<a href="coslayer_CosString.htm#CosNewString" title=" Creates and returns a new Cos string object."><code>CosNewString</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>char</code> <code>*</code><code>CosStringValue(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>obj</code><code>,</code> <a href="aslayer_General.htm#ASTCount"><code>ASTCount</code></a> <code>*</code><code>nBytes</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>obj</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The object whose value is obtained. </span>
+</td></tr>
+<tr><td><span><code>nBytes</code></span>
+</td><td><span><a href="pdslayer_General.htm#OUT">OUT</a> (Filled by the method) The length of the string, in bytes. It must be a non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a> pointer. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The value of <code>obj</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="CosStringValueSafe"><strong><span style="color:grey;">CosStringValueSafe</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:1430</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>
+<p>Copies at most <code>bufferSize</code> bytes from the <code>obj</code> parameter's string value into <code>buffer</code>, and stores the actual length of the Cos string in <code>*nBytes</code>. If <code>bufferSize</code> is greater than the length of the Cos string, the remaining bytes in <code>buffer</code> have undefined values upon return.<br/></p>
+
+<p>
+<p>A bad-parameter exception is raised if <code>bufferSize</code> is less than <code>0</code> or <code>nBytes</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. It can also raise any exception that <a href="coslayer_CosString.htm#CosStringValue" title=" Gets the value of a string Cos object, and the string's length."><code>CosStringValue</code></a><code>()</code> can raise.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> In general, the returned value is not a <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated C string. Cos string objects are binary data and can contain any arbitrary byte sequence, including embedded <a href="aslayer_General.htm#NULL"><code>NULL</code></a> characters. Standard C string handling functions may not work as expected. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="coslayer_CosString.htm#CosCopyStringValue" title=" Returns a newly allocated buffer containing a copy of the Cos object's string value.">CosCopyStringValue</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>char</code> <code>*</code><code>CosStringValueSafe(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>obj</code><code>,</code> <code>char</code> <code>*</code><code>buffer</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>bufferSize</code><code>,</code> <a href="aslayer_General.htm#ASTCount"><code>ASTCount</code></a> <code>*</code><code>nBytes</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>obj</code></span>
+</td><td><span>The Cos object whose string value is copied. </span>
+</td></tr>
+<tr><td><span><code>buffer</code></span>
+</td><td><span>The buffer into which the Cos string value is copied, or <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr>
+<tr><td><span><code>bufferSize</code></span>
+</td><td><span>The length of <code>buffer</code> or <code>0</code>. </span>
+</td></tr>
+<tr><td><span><code>nBytes</code></span>
+</td><td><span>(Filled by the method) The length of the original Cos string in bytes (which may be more than <code>bufferSize</code>). It must be a non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a> pointer. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A copy of the Cos string value or an exception. It will never return <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</section>
+</section>
+
+</div>
+</body></html>

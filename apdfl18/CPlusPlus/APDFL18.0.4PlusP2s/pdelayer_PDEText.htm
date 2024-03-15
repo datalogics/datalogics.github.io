@@ -1,0 +1,2537 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDF Edit Layer: PDEText</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDF Edit Layer: PDEText</h5>
+<li><a href="#Enumerations">Enumerations</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Enumerations">
+<header><h2>PDEText Enumerations</h2></header>
+<nav><dl>
+<dt><a href="#PDETextFlags">PDETextFlags</a></dt><dd> -  A bit field used in PDEText methods.</dd>
+<dt><a href="#PDETextRenderMode">PDETextRenderMode</a></dt><dd> -  Flags indicating text rendering mode set by the Tr operator.</dd>
+<dt><a href="#PDETextStateWasSetFlags">PDETextStateWasSetFlags</a></dt><dd> -  A structure describing the text state that was set.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDETextFlags"><strong><span style="color:grey;">PDETextFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:1713</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A bit field used in <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a> methods. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextAdd" title=" Superseded by PDETextAddEx() in Acrobat 10.0."><code>PDETextAdd</code></a>
+<a href="pdelayer_PDEText.htm#PDETextGetFont" title=" Gets the font for a text character or element."><code>PDETextGetFont</code></a>
+<a href="pdelayer_PDEText.htm#PDETextGetText" title=" Gets the text for a text run or character."><code>PDETextGetText</code></a></div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kPDETextRun"><code>kPDETextRun</code><code>=</code><code>0x0001</code></span>
+</td><td><span>Text run. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDETextChar"><code>kPDETextChar</code><code>=</code><code>0x0002</code></span>
+</td><td><span>Character (text run with only one character). </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDETextPageSpace"><code>kPDETextPageSpace</code><code>=</code><code>0x0004</code></span>
+</td><td><span>Obtain the advance width in page space. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDETextGetBounds"><code>kPDETextGetBounds</code><code>=</code><code>0x0008</code></span>
+</td><td><span>Fill in the left and right bounds of the text run's bounding box. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDETextPreciseQuad"><code>kPDETextPreciseQuad</code><code>=</code><code>0x0010</code></span>
+</td><td><span></span>
+</td></tr></table>
+</section>
+<section><div class="infoRow"><h3 id="PDETextRenderMode"><strong><span style="color:grey;">PDETextRenderMode</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:1737</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Flags indicating text rendering mode set by the Tr operator. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEText.htm#PDETextCreate" title=" Creates an empty text object.">PDETextCreate</a> </span>
+</div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kPDETextFill"><code>kPDETextFill</code></span>
+</td><td><span>Fill text. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDETextStroke"><code>kPDETextStroke</code></span>
+</td><td><span>Stroke text. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDETextFillAndStroke"><code>kPDETextFillAndStroke</code></span>
+</td><td><span>Fill and stroke text. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDETextInvisible"><code>kPDETextInvisible</code></span>
+</td><td><span>Text with no fill and no stroke (invisible). </span>
+</td></tr></table>
+</section>
+<section><div class="infoRow"><h3 id="PDETextStateWasSetFlags"><strong><span style="color:grey;">PDETextStateWasSetFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:672</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A structure describing the text state that was set. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextAdd" title=" Superseded by PDETextAddEx() in Acrobat 10.0."><code>PDETextAdd</code></a>
+<a href="pdelayer_PDEText.htm#PDETextGetTextState" title=" Gets the text state of a character or a text element."><code>PDETextGetTextState</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunSetTextState" title=" Sets the text state of a text run."><code>PDETextRunSetTextState</code></a></div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kPDECharSpacingWasSet"><code>kPDECharSpacingWasSet</code><code>=</code><code>0x0001</code></span>
+</td><td><span>Character spacing was set corresponding to the Tc operator. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEWordSpacingWasSet"><code>kPDEWordSpacingWasSet</code><code>=</code><code>0x0002</code></span>
+</td><td><span>Word spacing was set corresponding to the Tw operator. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDERenderModeWasSet"><code>kPDERenderModeWasSet</code><code>=</code><code>0x0004</code></span>
+</td><td><span>Text rendering mode was set corresponding to the Tr operator. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEFontSizeWasSet"><code>kPDEFontSizeWasSet</code><code>=</code><code>0x0008</code></span>
+</td><td><span>Font size was set corresponding to the Tf operator. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEHScaleWasSet"><code>kPDEHScaleWasSet</code><code>=</code><code>0x0010</code></span>
+</td><td><span>Horizontal Scaling was set corresponding to the Tz operator. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDETextRiseWasSet"><code>kPDETextRiseWasSet</code><code>=</code><code>0x0020</code></span>
+</td><td><span>Text rise was set corresponding to the Ts operator. </span>
+</td></tr></table>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>PDEText Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDEText">PDEText</a></dt><dd> -  A PDEElement representing text.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEText"><strong><span style="color:grey;">PDEText</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:166</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> representing text. It is a container for text as show strings or as individual characters. Each sub-element may have different graphics state properties. However, the same clip applies to all sub-elements of a <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a>. Also, the <code>charpath</code> of a <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a> can be used to represent a clip. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDEText</code> <code>*</code><code>PDEText</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEText.htm#PDETextCreate" title=" Creates an empty text object."><code>PDETextCreate</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEText.htm#PDETextAdd" title=" Superseded by PDETextAddEx() in Acrobat 10.0."><code>PDETextAdd</code></a></td><td><a href="dlextras_PDEText.htm#PDETextAddASText" title=" Adds a character or a text run to a PDEText object, taking them from the ASText; thus Unicode characters can be placed in the PDEText."><code>PDETextAddASText</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextAddEx" title=" Adds a character or a text run to a PDEThe text object."><code>PDETextAddEx</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextAddGlyphs" title=" Superseded by PDETextAddGlyphsEx() in Acrobat 10.0."><code>PDETextAddGlyphs</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextAddGlyphsEx" title=" Adds Unicode text to a PDEText object."><code>PDETextAddGlyphsEx</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextAddItem" title=" Adds a text item to a text element at a given index position."><code>PDETextAddItem</code></a></td></tr>
+<tr><td><a href="dlextras_PDEText.htm#PDETextGetASText" title=" Gets the text for a text run or character."><code>PDETextGetASText</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextGetAdvance" title=" Gets the advance width of a character or a text element."><code>PDETextGetAdvance</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextGetAdvanceWidth" title=" Gets the advance width of a character or a text element."><code>PDETextGetAdvanceWidth</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextGetBBox" title=" Gets the bounding box of a character or a text run."><code>PDETextGetBBox</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextGetFont" title=" Gets the font for a text character or element."><code>PDETextGetFont</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextGetGState" title=" Gets the graphics state of a character or a text run."><code>PDETextGetGState</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextGetGStateEx" title=" Gets the graphics state of a character or a text run."><code>PDETextGetGStateEx</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextGetItem" title=" Obtains a text item from a text element at a given index position."><code>PDETextGetItem</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextGetMatrix" title=" Superseded by PDETextGetMatrixEx() in Acrobat 10.0."><code>PDETextGetMatrix</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextGetMatrixEx" title=" Supersedes PDETextGetMatrix() in Acrobat 10.0."><code>PDETextGetMatrixEx</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextGetNumBytes" title=" Gets the number of bytes occupied by the character code or text run."><code>PDETextGetNumBytes</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextGetNumChars" title=" Gets the number of characters in a text object."><code>PDETextGetNumChars</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextGetNumRuns" title=" Gets the number of text runs (show strings) in a text object."><code>PDETextGetNumRuns</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextGetQuad" title=" Gets the quad bounding the specified text run or character."><code>PDETextGetQuad</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextGetRunForChar" title=" Gets the index of the text run that contains the nth character in a text object."><code>PDETextGetRunForChar</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextGetState" title=" Returns the text state of a character or a text element."><code>PDETextGetState</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextGetStrokeMatrix" title=" Superseded by PDETextGetStrokeMatrixEx() in Acrobat 10.0."><code>PDETextGetStrokeMatrix</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextGetStrokeMatrixEx" title=" Supersedes PDETextGetStrokeMatrix() in Acrobat 10.0."><code>PDETextGetStrokeMatrixEx</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextGetText" title=" Gets the text for a text run or character."><code>PDETextGetText</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextGetTextMatrix" title=" Superseded by PDETextGetTextMatrixEx() in Acrobat 10.0."><code>PDETextGetTextMatrix</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextGetTextMatrixEx" title=" Supersedes PDETextGetTextMatrix() in Acrobat 10.0."><code>PDETextGetTextMatrixEx</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextGetTextState" title=" Gets the text state of a character or a text element."><code>PDETextGetTextState</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextIsAtPoint" title=" Tests whether a point is on specified text."><code>PDETextIsAtPoint</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextIsAtRect" title=" Tests whether any part of a rectangle is on the specified text."><code>PDETextIsAtRect</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextRemove" title=" Removes characters or text runs from a text object."><code>PDETextRemove</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextRemoveItems" title=" Removes contiguous text items from a text element starting at a given index position."><code>PDETextRemoveItems</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextReplaceChars" title=" Replaces characters in a text object."><code>PDETextReplaceChars</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextRunGetCharOffset" title=" Gets the character offset of the first character of the specified text run."><code>PDETextRunGetCharOffset</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextRunGetNumChars" title=" Gets the number of characters in a text run."><code>PDETextRunGetNumChars</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextRunSetFont" title=" Sets the font of a text run."><code>PDETextRunSetFont</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextRunSetGState" title=" Sets the graphics state of a text run."><code>PDETextRunSetGState</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextRunSetGStateEx" title=" Sets the graphics state of a text run."><code>PDETextRunSetGStateEx</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextRunSetMatrix" title=" Superseded by PDETextRunSetMatrixEx() in Acrobat 10.0."><code>PDETextRunSetMatrix</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextRunSetMatrixEx" title=" Sets the matrix of a text run."><code>PDETextRunSetMatrixEx</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextRunSetState" title=" Sets the text state of a text run."><code>PDETextRunSetState</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextRunSetStrokeMatrix" title=" Superseded by PDETextRunSetStrokeMatrixEx() in Acrobat 10.0."><code>PDETextRunSetStrokeMatrix</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextRunSetStrokeMatrixEx" title=" Sets the stroke matrix of a text run."><code>PDETextRunSetStrokeMatrixEx</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextRunSetTextMatrix" title=" Superseded by PDETextRunSetTextMatrixEx() in Acrobat 10.0."><code>PDETextRunSetTextMatrix</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextRunSetTextMatrixEx" title=" Sets the text matrix of a text run."><code>PDETextRunSetTextMatrixEx</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextRunSetTextState" title=" Sets the text state of a text run."><code>PDETextRunSetTextState</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextSplitRunAt" title=" Splits a text run into two text runs."><code>PDETextSplitRunAt</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>PDEText Structures</h2></header>
+<nav><dl>
+<dt><a href="#_t_PDETextState">_t_PDETextState</a></dt><dd> -  Attributes of a PDEText element.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="_t_PDETextState"><strong><span style="color:grey;">_t_PDETextState</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:850</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Attributes of a <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a> element. To learn more about Text Rise, see the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, page 247. You can find this document on the web store of the International Standards Organization (ISO). </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDETextState {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>wasSetFlags</code><code>;</code> </div>
+</td><td><span><a href="pdelayer_PDEText.htm#PDETextStateWasSetFlags" title=" A structure describing the text state that was set.">PDETextStateWasSetFlags</a> indicates whether an attribute has been set. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>charSpacing</code><code>;</code> </div>
+</td><td><span>Character spacing was set corresponding to the Tc operator. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>wordSpacing</code><code>;</code> </div>
+</td><td><span>Word spacing corresponding to the Tw operator. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>renderMode</code><code>;</code> </div>
+</td><td><span>Text rendering mode corresponding to the Tr operator. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>fontSize</code><code>;</code> </div>
+</td><td><span>Default is <code>1</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>hScale</code><code>;</code> </div>
+</td><td><span>Default is <code>100</code> (meaning 100%). </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>textRise</code><code>;</code> </div>
+</td><td><span>Specifies the distance, in text space units that are not scaled, to move the baseline up or down from its default location. See the description of Text Rise in the ISO 32000-1:2008, Document Management- Portable Document Format-Part 1: PDF 1.7, section 9.3.7, page 247. </span>
+</td></tr>
+<tr><td><code id="PDETextState"><code>}</code> <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element."><code>PDETextState</code></a><code>,</code> <code>*</code><a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element."><code>PDETextStateP</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDEForm.htm#PDEFormGetTextState" title=" Gets the PDETextState for a form."><code>PDEFormGetTextState</code></a></td><td><a href="dlextras_PDEForm.htm#PDEFormSetTextState" title=" Sets the PDETextState for a form."><code>PDEFormSetTextState</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextAdd" title=" Superseded by PDETextAddEx() in Acrobat 10.0."><code>PDETextAdd</code></a></td><td><a href="dlextras_PDEText.htm#PDETextAddASText" title=" Adds a character or a text run to a PDEText object, taking them from the ASText; thus Unicode characters can be placed in the PDEText."><code>PDETextAddASText</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextAddEx" title=" Adds a character or a text run to a PDEThe text object."><code>PDETextAddEx</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextAddGlyphs" title=" Superseded by PDETextAddGlyphsEx() in Acrobat 10.0."><code>PDETextAddGlyphs</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextAddGlyphsEx" title=" Adds Unicode text to a PDEText object."><code>PDETextAddGlyphsEx</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextGetState" title=" Returns the text state of a character or a text element."><code>PDETextGetState</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextGetTextState" title=" Gets the text state of a character or a text element."><code>PDETextGetTextState</code></a></td><td><a href="pdelayer_PDETextItem.htm#PDETextItemCreate" title=" Superseded by PDETextItemCreateEx() in Acrobat 10.0."><code>PDETextItemCreate</code></a></td></tr>
+<tr><td><a href="dlextras_PDETextItem.htm#PDETextItemCreateASText" title=" Creates a text element containing a character or text run which can be added to a PDEText object."><code>PDETextItemCreateASText</code></a></td><td><a href="pdelayer_PDETextItem.htm#PDETextItemCreateEx" title=" Creates a text item element containing a character or text run, which can be added to a PDEText text object."><code>PDETextItemCreateEx</code></a></td></tr>
+<tr><td><a href="pdelayer_PDETextItem.htm#PDETextItemGetTextState" title=" Gets the text state of a text item."><code>PDETextItemGetTextState</code></a></td><td><a href="pdelayer_PDETextItem.htm#PDETextItemSetTextState" title=" Sets the text state for a text item."><code>PDETextItemSetTextState</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEText.htm#PDETextRunSetState" title=" Sets the text state of a text run."><code>PDETextRunSetState</code></a></td><td><a href="pdelayer_PDEText.htm#PDETextRunSetTextState" title=" Sets the text state of a text run."><code>PDETextRunSetTextState</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDEText Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDETextAdd">PDETextAdd</a></dt><dd> -  Superseded by PDETextAddEx() in Acrobat 10.0.</dd>
+<dt><a href="#PDETextAddEx">PDETextAddEx</a></dt><dd> -  Adds a character or a text run to a PDEThe text object.</dd>
+<dt><a href="#PDETextAddGlyphs">PDETextAddGlyphs</a></dt><dd> -  Superseded by PDETextAddGlyphsEx() in Acrobat 10.0.</dd>
+<dt><a href="#PDETextAddGlyphsEx">PDETextAddGlyphsEx</a></dt><dd> -  Adds Unicode text to a PDEText object.</dd>
+<dt><a href="#PDETextAddItem">PDETextAddItem</a></dt><dd> -  Adds a text item to a text element at a given index position.</dd>
+<dt><a href="#PDETextCreate">PDETextCreate</a></dt><dd> -  Creates an empty text object.</dd>
+<dt><a href="#PDETextGetAdvance">PDETextGetAdvance</a></dt><dd> -  Gets the advance width of a character or a text element.</dd>
+<dt><a href="#PDETextGetAdvanceWidth">PDETextGetAdvanceWidth</a></dt><dd> -  Gets the advance width of a character or a text element.</dd>
+<dt><a href="#PDETextGetBBox">PDETextGetBBox</a></dt><dd> -  Gets the bounding box of a character or a text run.</dd>
+<dt><a href="#PDETextGetFont">PDETextGetFont</a></dt><dd> -  Gets the font for a text character or element.</dd>
+<dt><a href="#PDETextGetGState">PDETextGetGState</a></dt><dd> -  Gets the graphics state of a character or a text run.</dd>
+<dt><a href="#PDETextGetGStateEx">PDETextGetGStateEx</a></dt><dd> -  Gets the graphics state of a character or a text run.</dd>
+<dt><a href="#PDETextGetItem">PDETextGetItem</a></dt><dd> -  Obtains a text item from a text element at a given index position.</dd>
+<dt><a href="#PDETextGetMatrix">PDETextGetMatrix</a></dt><dd> -  Superseded by PDETextGetMatrixEx() in Acrobat 10.0.</dd>
+<dt><a href="#PDETextGetMatrixEx">PDETextGetMatrixEx</a></dt><dd> -  Supersedes PDETextGetMatrix() in Acrobat 10.0.</dd>
+<dt><a href="#PDETextGetNumBytes">PDETextGetNumBytes</a></dt><dd> -  Gets the number of bytes occupied by the character code or text run.</dd>
+<dt><a href="#PDETextGetNumChars">PDETextGetNumChars</a></dt><dd> -  Gets the number of characters in a text object.</dd>
+<dt><a href="#PDETextGetNumRuns">PDETextGetNumRuns</a></dt><dd> -  Gets the number of text runs (show strings) in a text object.</dd>
+<dt><a href="#PDETextGetQuad">PDETextGetQuad</a></dt><dd> -  Gets the quad bounding the specified text run or character.</dd>
+<dt><a href="#PDETextGetRunForChar">PDETextGetRunForChar</a></dt><dd> -  Gets the index of the text run that contains the nth character in a text object.</dd>
+<dt><a href="#PDETextGetState">PDETextGetState</a></dt><dd> -  Returns the text state of a character or a text element.</dd>
+<dt><a href="#PDETextGetStrokeMatrix">PDETextGetStrokeMatrix</a></dt><dd> -  Superseded by PDETextGetStrokeMatrixEx() in Acrobat 10.0.</dd>
+<dt><a href="#PDETextGetStrokeMatrixEx">PDETextGetStrokeMatrixEx</a></dt><dd> -  Supersedes PDETextGetStrokeMatrix() in Acrobat 10.0.</dd>
+<dt><a href="#PDETextGetText">PDETextGetText</a></dt><dd> -  Gets the text for a text run or character.</dd>
+<dt><a href="#PDETextGetTextMatrix">PDETextGetTextMatrix</a></dt><dd> -  Superseded by PDETextGetTextMatrixEx() in Acrobat 10.0.</dd>
+<dt><a href="#PDETextGetTextMatrixEx">PDETextGetTextMatrixEx</a></dt><dd> -  Supersedes PDETextGetTextMatrix() in Acrobat 10.0.</dd>
+<dt><a href="#PDETextGetTextState">PDETextGetTextState</a></dt><dd> -  Gets the text state of a character or a text element.</dd>
+<dt><a href="#PDETextIsAtPoint">PDETextIsAtPoint</a></dt><dd> -  Tests whether a point is on specified text.</dd>
+<dt><a href="#PDETextIsAtRect">PDETextIsAtRect</a></dt><dd> -  Tests whether any part of a rectangle is on the specified text.</dd>
+<dt><a href="#PDETextRemove">PDETextRemove</a></dt><dd> -  Removes characters or text runs from a text object.</dd>
+<dt><a href="#PDETextRemoveItems">PDETextRemoveItems</a></dt><dd> -  Removes contiguous text items from a text element starting at a given index position.</dd>
+<dt><a href="#PDETextReplaceChars">PDETextReplaceChars</a></dt><dd> -  Replaces characters in a text object.</dd>
+<dt><a href="#PDETextRunGetCharOffset">PDETextRunGetCharOffset</a></dt><dd> -  Gets the character offset of the first character of the specified text run.</dd>
+<dt><a href="#PDETextRunGetNumChars">PDETextRunGetNumChars</a></dt><dd> -  Gets the number of characters in a text run.</dd>
+<dt><a href="#PDETextRunSetFont">PDETextRunSetFont</a></dt><dd> -  Sets the font of a text run.</dd>
+<dt><a href="#PDETextRunSetGState">PDETextRunSetGState</a></dt><dd> -  Sets the graphics state of a text run.</dd>
+<dt><a href="#PDETextRunSetGStateEx">PDETextRunSetGStateEx</a></dt><dd> -  Sets the graphics state of a text run.</dd>
+<dt><a href="#PDETextRunSetMatrix">PDETextRunSetMatrix</a></dt><dd> -  Superseded by PDETextRunSetMatrixEx() in Acrobat 10.0.</dd>
+<dt><a href="#PDETextRunSetMatrixEx">PDETextRunSetMatrixEx</a></dt><dd> -  Sets the matrix of a text run.</dd>
+<dt><a href="#PDETextRunSetState">PDETextRunSetState</a></dt><dd> -  Sets the text state of a text run.</dd>
+<dt><a href="#PDETextRunSetStrokeMatrix">PDETextRunSetStrokeMatrix</a></dt><dd> -  Superseded by PDETextRunSetStrokeMatrixEx() in Acrobat 10.0.</dd>
+<dt><a href="#PDETextRunSetStrokeMatrixEx">PDETextRunSetStrokeMatrixEx</a></dt><dd> -  Sets the stroke matrix of a text run.</dd>
+<dt><a href="#PDETextRunSetTextMatrix">PDETextRunSetTextMatrix</a></dt><dd> -  Superseded by PDETextRunSetTextMatrixEx() in Acrobat 10.0.</dd>
+<dt><a href="#PDETextRunSetTextMatrixEx">PDETextRunSetTextMatrixEx</a></dt><dd> -  Sets the text matrix of a text run.</dd>
+<dt><a href="#PDETextRunSetTextState">PDETextRunSetTextState</a></dt><dd> -  Sets the text state of a text run.</dd>
+<dt><a href="#PDETextSplitRunAt">PDETextSplitRunAt</a></dt><dd> -  Splits a text run into two text runs.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDETextAdd"><strong><span style="color:grey;">PDETextAdd</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:370</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Superseded by <a href="pdelayer_PDEText.htm#PDETextAddEx" title=" Adds a character or a text run to a PDEThe text object.">PDETextAddEx</a>() in Acrobat 10.0. Adds a character or a text run to a PDEThe text object. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method does not change the reference count of <code>pdeText</code>; however, the reference count of the objects in the <code>gstateP</code> parameter are incremented. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextAddEx" title=" Adds a character or a text run to a PDEThe text object."><code>PDETextAddEx</code></a>
+<a href="pdelayer_PDEText.htm#PDETextIsAtPoint" title=" Tests whether a point is on specified text."><code>PDETextIsAtPoint</code></a>
+<a href="pdelayer_PDEText.htm#PDETextReplaceChars" title=" Replaces characters in a text object."><code>PDETextReplaceChars</code></a>
+<a href="pdelayer_PDEText.htm#PDETextSplitRunAt" title=" Splits a text run into two text runs."><code>PDETextSplitRunAt</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextAdd(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>*</code><code>text</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>textLen</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element."><code>PDEGraphicStateP</code></a> <code>gstateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>gstateLen</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element."><code>PDETextStateP</code></a> <code>tstateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>tstateLen</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>textMatrixP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>strokeMatrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>The text object to which a character or text run is added. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies what kind of text to add. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The index after which to add the character or text run. </span>
+</td></tr>
+<tr><td><span><code>text</code></span>
+</td><td><span>A pointer to the characters to add. Note that passing <a href="aslayer_General.htm#NULL"><code>NULL</code></a> for the text can invalidate the text object, but will not raise an error. Callers must not pass <a href="aslayer_General.htm#NULL"><code>NULL</code></a> for this parameter. </span>
+</td></tr>
+<tr><td><span><code>textLen</code></span>
+</td><td><span>The length of the text in bytes. </span>
+</td></tr>
+<tr><td><span><code>font</code></span>
+</td><td><span>The font for the element. </span>
+</td></tr>
+<tr><td><span><code>gstateP</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicStateP</a> structure with the graphics state for the element. </span>
+</td></tr>
+<tr><td><span><code>gstateLen</code></span>
+</td><td><span>The length of the graphics state for the element. </span>
+</td></tr>
+<tr><td><span><code>tstateP</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> structure with the text state for the element. Note that PDFEdit ignores the <code>wasSetFlags</code> flag of the <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> structure, so you must initialize the <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> fields. </span>
+</td></tr>
+<tr><td><span><code>tstateLen</code></span>
+</td><td><span>The length of the text state for the element. </span>
+</td></tr>
+<tr><td><span><code>textMatrixP</code></span>
+</td><td><span>A pointer to an <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> that holds the matrix for the element. </span>
+</td></tr>
+<tr><td><span><code>strokeMatrixP</code></span>
+</td><td><span>A pointer to an <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> that holds the matrix for the line width when stroking text. It may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. Note that this field is not currently used. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pdErrBadResMetrics" title=" There are invalid or corrupt font metrics in the resource file."><code>pdErrBadResMetrics</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextAddEx"><strong><span style="color:grey;">PDETextAddEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:3475</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Adds a character or a text run to a PDEThe text object. Supersedes <a href="pdelayer_PDEText.htm#PDETextAdd" title=" Superseded by PDETextAddEx() in Acrobat 10.0.">PDETextAdd</a>() in Acrobat 10.0. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method does not change the reference count of <code>pdeText</code>; however, the reference count of the objects in the <code>gstateP</code> parameter are incremented. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextAdd" title=" Superseded by PDETextAddEx() in Acrobat 10.0."><code>PDETextAdd</code></a>
+<a href="pdelayer_PDEText.htm#PDETextIsAtPoint" title=" Tests whether a point is on specified text."><code>PDETextIsAtPoint</code></a>
+<a href="pdelayer_PDEText.htm#PDETextReplaceChars" title=" Replaces characters in a text object."><code>PDETextReplaceChars</code></a>
+<a href="pdelayer_PDEText.htm#PDETextSplitRunAt" title=" Splits a text run into two text runs."><code>PDETextSplitRunAt</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextAddEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>*</code><code>text</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>textLen</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element."><code>PDEGraphicStateP</code></a> <code>gstateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>gstateLen</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element."><code>PDETextStateP</code></a> <code>tstateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>tstateLen</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers."><code>ASDoubleMatrixP</code></a> <code>textMatrixP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers."><code>ASDoubleMatrixP</code></a> <code>strokeMatrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>The text object to which a character or text run is added. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies what kind of text to add. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The index after which to add the character or text run. </span>
+</td></tr>
+<tr><td><span><code>text</code></span>
+</td><td><span>A pointer to the characters to add. Note that passing <a href="aslayer_General.htm#NULL"><code>NULL</code></a> for the text can invalidate the text object, but will not raise an error. Callers must not pass <a href="aslayer_General.htm#NULL"><code>NULL</code></a> for this parameter. </span>
+</td></tr>
+<tr><td><span><code>textLen</code></span>
+</td><td><span>The length of the text in bytes. </span>
+</td></tr>
+<tr><td><span><code>font</code></span>
+</td><td><span>The font for the element. </span>
+</td></tr>
+<tr><td><span><code>gstateP</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicStateP</a> structure with the graphics state for the element. </span>
+</td></tr>
+<tr><td><span><code>gstateLen</code></span>
+</td><td><span>The length of the graphics state for the element. </span>
+</td></tr>
+<tr><td><span><code>tstateP</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> structure with the text state for the element. Note that PDFEdit ignores the <code>wasSetFlags</code> flag of the <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> structure, so you must initialize the <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> fields. </span>
+</td></tr>
+<tr><td><span><code>tstateLen</code></span>
+</td><td><span>The length of the text state for the element. </span>
+</td></tr>
+<tr><td><span><code>textMatrixP</code></span>
+</td><td><span>A pointer to an <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers.">ASDoubleMatrix</a> that holds the matrix for the element. </span>
+</td></tr>
+<tr><td><span><code>strokeMatrixP</code></span>
+</td><td><span>A pointer to an <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers.">ASDoubleMatrix</a> that holds the matrix for the line width when stroking text. It may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. Note that this field is currently not used. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pdErrBadResMetrics" title=" There are invalid or corrupt font metrics in the resource file."><code>pdErrBadResMetrics</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextAddGlyphs"><strong><span style="color:grey;">PDETextAddGlyphs</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2512</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Superseded by <a href="pdelayer_PDEText.htm#PDETextAddGlyphsEx" title=" Adds Unicode text to a PDEText object.">PDETextAddGlyphsEx</a>() in Acrobat 10.0. Adds Unicode text to a <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a> object. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method does not change the reference count of <code>pdeText</code>; however, the reference count of the objects in the <code>gstateP</code> parameter are incremented. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextAdd" title=" Superseded by PDETextAddEx() in Acrobat 10.0."><code>PDETextAdd</code></a>
+<a href="pdelayer_PDEText.htm#PDETextAddGlyphsEx" title=" Adds Unicode text to a PDEText object."><code>PDETextAddGlyphsEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextAddGlyphs(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEGlyphRun" title=" A data structure used for adding Unicode text."><code>PDEGlyphRunP</code></a> <code>glyphRun</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element."><code>PDEGraphicStateP</code></a> <code>gstateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>gstateLen</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element."><code>PDETextStateP</code></a> <code>tstateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>tstateLen</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>textMatrixP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>strokeMatrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>The text object to which a character or text run is added. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies what kind of text to add. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The index after which to add the character or text run. </span>
+</td></tr>
+<tr><td><span><code>glyphRun</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_General.htm#_t_PDEGlyphRun" title=" A data structure used for adding Unicode text.">PDEGlyphRun</a> structure with Unicode data, GlyphIDs and their correspondence. </span>
+</td></tr>
+<tr><td><span><code>font</code></span>
+</td><td><span>The font for the element. </span>
+</td></tr>
+<tr><td><span><code>gstateP</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicStateP</a> structure with the graphics state for the element. </span>
+</td></tr>
+<tr><td><span><code>gstateLen</code></span>
+</td><td><span>The length of the graphics state for the element. </span>
+</td></tr>
+<tr><td><span><code>tstateP</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> structure with text state for the element. Note that PDFEdit ignores the <code>wasSetFlags</code> flag of the <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> structure, so you must initialize the <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> fields. </span>
+</td></tr>
+<tr><td><span><code>tstateLen</code></span>
+</td><td><span>The length of the text state for the element. </span>
+</td></tr>
+<tr><td><span><code>textMatrixP</code></span>
+</td><td><span>A pointer to an <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> that holds the matrix for the element. </span>
+</td></tr>
+<tr><td><span><code>strokeMatrixP</code></span>
+</td><td><span>A pointer to an <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> that holds the matrix for the line width when stroking text. It may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. Note that, currently, this field is not used. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pdErrBadResMetrics" title=" There are invalid or corrupt font metrics in the resource file."><code>pdErrBadResMetrics</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextAddGlyphsEx"><strong><span style="color:grey;">PDETextAddGlyphsEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:3422</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Adds Unicode text to a <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a> object. Supersedes <a href="pdelayer_PDEText.htm#PDETextAddGlyphs" title=" Superseded by PDETextAddGlyphsEx() in Acrobat 10.0.">PDETextAddGlyphs</a>() in Acrobat 10.0. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method does not change the reference count of <code>pdeText</code>; however, the reference count of the objects in the <code>gstateP</code> parameter are incremented. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextAddEx" title=" Adds a character or a text run to a PDEThe text object."><code>PDETextAddEx</code></a>
+<a href="pdelayer_PDEText.htm#PDETextAddGlyphs" title=" Superseded by PDETextAddGlyphsEx() in Acrobat 10.0."><code>PDETextAddGlyphs</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextAddGlyphsEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEGlyphRun" title=" A data structure used for adding Unicode text."><code>PDEGlyphRunP</code></a> <code>glyphRun</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element."><code>PDEGraphicStateP</code></a> <code>gstateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>gstateLen</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element."><code>PDETextStateP</code></a> <code>tstateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>tstateLen</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers."><code>ASDoubleMatrixP</code></a> <code>textMatrixP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers."><code>ASDoubleMatrixP</code></a> <code>strokeMatrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>The text object to which a character or text run is added. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies what kind of text to add. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The index after which to add the character or text run. </span>
+</td></tr>
+<tr><td><span><code>glyphRun</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_General.htm#_t_PDEGlyphRun" title=" A data structure used for adding Unicode text.">PDEGlyphRun</a> structure with Unicode data, GlyphIDs and their correspondence. </span>
+</td></tr>
+<tr><td><span><code>font</code></span>
+</td><td><span>The font for the element. </span>
+</td></tr>
+<tr><td><span><code>gstateP</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicStateP</a> structure with the graphics state for the element. </span>
+</td></tr>
+<tr><td><span><code>gstateLen</code></span>
+</td><td><span>The length of the graphics state for the element. </span>
+</td></tr>
+<tr><td><span><code>tstateP</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> structure with text state for the element. Note that PDFEdit ignores the <code>wasSetFlags</code> flag of the <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> structure, so you must initialize the <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> fields. </span>
+</td></tr>
+<tr><td><span><code>tstateLen</code></span>
+</td><td><span>The length of the text state for the element. </span>
+</td></tr>
+<tr><td><span><code>textMatrixP</code></span>
+</td><td><span>A pointer to an <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers.">ASDoubleMatrix</a> that holds the matrix for the element. </span>
+</td></tr>
+<tr><td><span><code>strokeMatrixP</code></span>
+</td><td><span>A pointer to an <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers.">ASDoubleMatrix</a> that holds the matrix for the line width when stroking text. It may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. Note that this field is currently not used. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pdErrBadResMetrics" title=" There are invalid or corrupt font metrics in the resource file."><code>pdErrBadResMetrics</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextAddItem"><strong><span style="color:grey;">PDETextAddItem</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2425</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Adds a text item to a text element at a given index position. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetItem" title=" Obtains a text item from a text element at a given index position."><code>PDETextGetItem</code></a>
+<a href="pdelayer_PDETextItem.htm#PDETextItemCreate" title=" Superseded by PDETextItemCreateEx() in Acrobat 10.0."><code>PDETextItemCreate</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRemoveItems" title=" Removes contiguous text items from a text element starting at a given index position."><code>PDETextRemoveItems</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextAddItem(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>text</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>addIndex</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDETextItem.htm#PDETextItem" title=" A reference to a PDETextItem."><code>PDETextItem</code></a> <code>textItem</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>text</code></span>
+</td><td><span>The text object to which the text item is added. </span>
+</td></tr>
+<tr><td><span><code>addIndex</code></span>
+</td><td><span>The index of the text item in <code>pdeText</code>. </span>
+</td></tr>
+<tr><td><span><code>textItem</code></span>
+</td><td><span>The text item to add. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pdErrBadResMetrics" title=" There are invalid or corrupt font metrics in the resource file."><code>pdErrBadResMetrics</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextCreate"><strong><span style="color:grey;">PDETextCreate</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:420</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Creates an empty text object.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned text object when finished with it.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>PDETextCreate(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>An empty text object. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetAdvance"><strong><span style="color:grey;">PDETextGetAdvance</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2421</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the advance width of a character or a text element. Advance width is returned in either character space or user space. The advance width is the amount by which the current point advances when the character is drawn.<br/>
+<p>Advance width may be horizontal or vertical, depending on the writing style. Thus <code>advanceP</code> has both a horizontal and vertical component.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEText.htm#PDETextGetAdvanceWidth" title=" Gets the advance width of a character or a text element.">PDETextGetAdvanceWidth</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextGetAdvance(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar, kPDETextPageSpace */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers."><code>ASFixedPointP</code></a> <code>advanceP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>A text object containing a character or text run whose advance width is found. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> value that specifies whether index refers to the character offset from the beginning of the text object or the index of the text run in the text object. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+
+<p>
+<p>In addition, set the <a href="pdelayer_PDEText.htm#kPDETextPageSpace" title=" Obtain the advance width in page space.">kPDETextPageSpace</a> flag to obtain the advance width in user space. If it is not set, the advance width is in character space. If this flag is not set, this method returns a value that is independent of any sizes, matrices, or scaling, simply adding up the font's raw glyph widths, supplemented only by unscaled character and word spacing.<br/></p>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The index of the character or text run in <code>pdeText</code>. </span>
+</td></tr>
+<tr><td><span><code>advanceP</code></span>
+</td><td><span>(Filled by the method) A pointer to a <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers.">ASFixedPoint</a> value indicating the advance width. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pdErrBadResMetrics" title=" There are invalid or corrupt font metrics in the resource file."><code>pdErrBadResMetrics</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetAdvanceWidth"><strong><span style="color:grey;">PDETextGetAdvanceWidth</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:593</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the advance width of a character or a text element. Advance width is returned in either character space or user space. The advance width is the amount by which the current point advances when the character is drawn.<br/>
+<p>Advance width may be horizontal or vertical, depending on the writing style. Thus <code>advanceP</code> has both a horizontal and vertical component.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextGetAdvanceWidth(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar, kPDETextPageSpace */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers."><code>ASFixedPointP</code></a> <code>advanceP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>A text object containing a character or text run whose advance width is found. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> value that specifies whether <code>index</code> refers to the character offset from the beginning of the text object or the index of the text run in the text object. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+
+<p>
+<p>In addition, set the <a href="pdelayer_PDEText.htm#kPDETextPageSpace" title=" Obtain the advance width in page space.">kPDETextPageSpace</a> flag to obtain the advance width in user space. If it is not set, the advance width is in character space. If this flag is not set, this method returns a value that is independent of any sizes, matrices, or scaling, simply adding up the font's raw glyph widths, supplemented only by unscaled character and word spacing.<br/></p>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The index of the character or text run in <code>pdeText</code>. </span>
+</td></tr>
+<tr><td><span><code>advanceP</code></span>
+</td><td><span>(Filled by the method) A pointer to a <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers.">ASFixedPoint</a> value indicating the advance width. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pdErrBadResMetrics" title=" There are invalid or corrupt font metrics in the resource file."><code>pdErrBadResMetrics</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetBBox"><strong><span style="color:grey;">PDETextGetBBox</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:384</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets the bounding box of a character or a text run. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextGetBBox(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRectP</code></a> <code>bboxP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT A text object containing a character or text run whose bounding box is found. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>IN/OUT A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies whether <code>index</code> refers to the character offset from the beginning of the text object or the index of the text run in the text object. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>IN/OUT The index of the character or text run in <code>pdeText</code>. </span>
+</td></tr>
+<tr><td><span><code>bboxP</code></span>
+</td><td><span>IN/OUT (Filled by the method) A pointer to <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides.">ASFixedRect</a> to set to the bounding box of specified character or text run. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pdErrBadResMetrics" title=" There are invalid or corrupt font metrics in the resource file."><code>pdErrBadResMetrics</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetFont"><strong><span style="color:grey;">PDETextGetFont</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:483</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the font for a text character or element. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method does not change the reference count of the returned <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a>. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEText.htm#PDETextRunSetFont" title=" Sets the font of a text run.">PDETextRunSetFont</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>PDETextGetFont(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT A text object containing a character or text run whose font is found. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>IN/OUT A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies whether <code>index</code> refers to the character offset from the beginning of the text object or the index of the text run in the text object. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>IN/OUT The index of the character or text run in <code>pdeText</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The font of the specified character or text run. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pdErrBadResMetrics" title=" There are invalid or corrupt font metrics in the resource file."><code>pdErrBadResMetrics</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetGState"><strong><span style="color:grey;">PDETextGetGState</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:417</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the graphics state of a character or a text run. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method does not increment the reference count of the objects in <code>stateP</code>. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetGStateEx" title=" Gets the graphics state of a character or a text run."><code>PDETextGetGStateEx</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunSetGState" title=" Sets the graphics state of a text run."><code>PDETextRunSetGState</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextGetGState(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element."><code>PDEGraphicStateP</code></a> <code>stateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>stateSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>A text object containing a character or text run whose graphics state is found. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies whether <code>index</code> refers to the character offset from the beginning of the text object or the index of the text run in the text object. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The index of the character or text run in <code>pdeText</code>. </span>
+</td></tr>
+<tr><td><span><code>stateP</code></span>
+</td><td><span>(Filled by the method) A pointer to a <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicState</a> structure with the graphics state of the specified character or text run. </span>
+</td></tr>
+<tr><td><span><code>stateSize</code></span>
+</td><td><span>The size of the <code>stateP</code> buffer in bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetGStateEx"><strong><span style="color:grey;">PDETextGetGStateEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:3152</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the graphics state of a character or a text run. This method fills <a href="pdelayer_General.htm#_t_PDEGraphicStateEx" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicStateEx</a> as output which is higher precision alternative of <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicState</a> structure. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method does not increment the reference count of the objects in <code>stateP</code>. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetGState" title=" Gets the graphics state of a character or a text run."><code>PDETextGetGState</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunSetGState" title=" Sets the graphics state of a text run."><code>PDETextRunSetGState</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunSetGStateEx" title=" Sets the graphics state of a text run."><code>PDETextRunSetGStateEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextGetGStateEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="pdelayer_General.htm#_t_PDEGraphicStateEx" title=" Attributes of a PDEElement or a PDEText sub-element."><code>PDEGraphicStateExP</code></a> <code>stateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>stateSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>A text object containing a character or text run whose graphics state is found. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies whether <code>index</code> refers to the character offset from the beginning of the text object or the index of the text run in the text object. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The index of the character or text run in <code>pdeText</code>. </span>
+</td></tr>
+<tr><td><span><code>stateP</code></span>
+</td><td><span>(Filled by the method) A pointer to a <a href="pdelayer_General.htm#_t_PDEGraphicStateEx" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicStateExP</a> structure with the graphics state of the specified character or text run. </span>
+</td></tr>
+<tr><td><span><code>stateSize</code></span>
+</td><td><span>The size of the <code>stateP</code> buffer in bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetItem"><strong><span style="color:grey;">PDETextGetItem</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2533</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Obtains a text item from a text element at a given index position. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextAddItem" title=" Adds a text item to a text element at a given index position."><code>PDETextAddItem</code></a>
+<a href="pdelayer_PDETextItem.htm#PDETextItemCreate" title=" Superseded by PDETextItemCreateEx() in Acrobat 10.0."><code>PDETextItemCreate</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDETextItem.htm#PDETextItem" title=" A reference to a PDETextItem."><code>PDETextItem</code></a> <code>PDETextGetItem(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>text</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>index</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>text</code></span>
+</td><td><span>Text object from which the text item is obtained. </span>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The index of the text item in <code>pdeText</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The text item object. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pdErrBadResMetrics" title=" There are invalid or corrupt font metrics in the resource file."><code>pdErrBadResMetrics</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetMatrix"><strong><span style="color:grey;">PDETextGetMatrix</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2241</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Superseded by <a href="pdelayer_PDEText.htm#PDETextGetMatrixEx" title=" Supersedes PDETextGetMatrix() in Acrobat 10.0.">PDETextGetMatrixEx</a>() in Acrobat 10.0. Returns the matrix of a character or a text element. Unlike <a href="pdelayer_PDEText.htm#PDETextGetTextMatrix" title=" Superseded by PDETextGetTextMatrixEx() in Acrobat 10.0.">PDETextGetTextMatrix</a>(), this function does not take <code>fontSize</code>, <code>hScale</code>, and <code>textRise</code> in the <code>textState</code> into account. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetMatrixEx" title=" Supersedes PDETextGetMatrix() in Acrobat 10.0."><code>PDETextGetMatrixEx</code></a>
+<a href="pdelayer_PDEText.htm#PDETextGetTextMatrix" title=" Superseded by PDETextGetTextMatrixEx() in Acrobat 10.0."><code>PDETextGetTextMatrix</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextGetMatrix(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT A text object containing a character or text run whose graphics state is found. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>IN/OUT A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies whether <code>index</code> refers to the character offset from the beginning of the text object or the index of the text run in the text object. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>IN/OUT The index of the character or text run in <code>pdeText</code>. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>IN/OUT (Filled by the method) An <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrixP</a> that holds the matrix of the specified character or text run. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetMatrixEx"><strong><span style="color:grey;">PDETextGetMatrixEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:3024</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Supersedes <a href="pdelayer_PDEText.htm#PDETextGetMatrix" title=" Superseded by PDETextGetMatrixEx() in Acrobat 10.0.">PDETextGetMatrix</a>() in Acrobat 10.0. Returns the matrix of a character or a text element. Unlike <a href="pdelayer_PDEText.htm#PDETextGetTextMatrixEx" title=" Supersedes PDETextGetTextMatrix() in Acrobat 10.0.">PDETextGetTextMatrixEx</a>(), this function does not take <code>fontSize</code>, <code>hScale</code>, and <code>textRise</code> in the <code>textState</code> into account. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetMatrix" title=" Superseded by PDETextGetMatrixEx() in Acrobat 10.0."><code>PDETextGetMatrix</code></a>
+<a href="pdelayer_PDEText.htm#PDETextGetTextMatrixEx" title=" Supersedes PDETextGetTextMatrix() in Acrobat 10.0."><code>PDETextGetTextMatrixEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextGetMatrixEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers."><code>ASDoubleMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT A text object containing a character or text run whose graphics state is found. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>IN/OUT A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies whether <code>index</code> refers to the character offset from the beginning of the text object or the index of the text run in the text object. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>IN/OUT The index of the character or text run in <code>pdeText</code>. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>IN/OUT (Filled by the method) An <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers.">ASDoubleMatrixP</a> that holds the matrix of the specified character or text run. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetNumBytes"><strong><span style="color:grey;">PDETextGetNumBytes</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1560</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the number of bytes occupied by the character code or text run. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEFont.htm#PDEFontGetNumCodeBytes" title=" Gets the number of bytes comprising the next code in a string of single or multi-byte character codes.">PDEFontGetNumCodeBytes</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDETextGetNumBytes(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun or kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT A <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a> object returned from one of the <a href="pdelayer_PDEText.htm#PDETextCreate" title=" Creates an empty text object."><code>PDETextCreate</code></a> methods whose text is examined. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>IN/OUT A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies whether <code>index</code> refers to the character offset from the beginning of the text object or the index of the text run in the text object. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>IN/OUT The index of the character or text run in <code>pdeText</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of bytes occupied by the text run or character. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetNumChars"><strong><span style="color:grey;">PDETextGetNumChars</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:296</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the number of characters in a text object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetNumRuns" title=" Gets the number of text runs (show strings) in a text object."><code>PDETextGetNumRuns</code></a>
+<a href="pdelayer_PDEText.htm#PDETextGetRunForChar" title=" Gets the index of the text run that contains the nth character in a text object."><code>PDETextGetRunForChar</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDETextGetNumChars(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT A text object whose number of characters is found. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The total number of characters in <code>pdeText</code>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetNumRuns"><strong><span style="color:grey;">PDETextGetNumRuns</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:309</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the number of text runs (show strings) in a text object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetNumBytes" title=" Gets the number of bytes occupied by the character code or text run."><code>PDETextGetNumBytes</code></a>
+<a href="pdelayer_PDEText.htm#PDETextGetRunForChar" title=" Gets the index of the text run that contains the nth character in a text object."><code>PDETextGetRunForChar</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDETextGetNumRuns(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT A text object whose number of text runs is found. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of text runs in <code>pdeText</code>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetQuad"><strong><span style="color:grey;">PDETextGetQuad</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1312</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the quad bounding the specified text run or character.<br/>
+<p>The advance portion of the quad is based on the left side bearing and advance width.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextGetQuad(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar, kPDETextBounding */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedQuad" title=" A quadrilateral represented by four fixed points (one at each corner)."><code>ASFixedQuadP</code></a> <code>quadP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT A text object containing a character or text run whose quad is found. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>IN/OUT A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies whether <code>index</code> refers to the character offset from the beginning of the text object or the index of the text run in the text object. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+
+<p>
+<p>In addition, if the kPDETextBounding flag is set, <a href="pdelayer_PDEText.htm#PDETextGetQuad" title=" Gets the quad bounding the specified text run or character.">PDETextGetQuad</a>() uses the font descriptor's <code>FontBBox</code>, which is the smallest rectangle that encloses all characters in the font. The advance portion is based on the x-coordinates of the left and right sides of <code>FontBBox</code> and the advance width.<br/></p>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>IN/OUT The index of the character or text run in <code>pdeText</code>. </span>
+</td></tr>
+<tr><td><span><code>quadP</code></span>
+</td><td><span>IN/OUT (Filled by the method) A pointer to <a href="aslayer_ASFixed.htm#_t_ASFixedQuad" title=" A quadrilateral represented by four fixed points (one at each corner).">ASFixedQuad</a> that bounds the specified character or text run. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pdErrBadResMetrics" title=" There are invalid or corrupt font metrics in the resource file."><code>pdErrBadResMetrics</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetRunForChar"><strong><span style="color:grey;">PDETextGetRunForChar</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:341</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets the index of the text run that contains the nth character in a text object. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDETextGetRunForChar(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>charIndex</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT A text object to examine. </span>
+</td></tr>
+<tr><td><span><code>charIndex</code></span>
+</td><td><span>IN/OUT The number of the character to find in <code>pdeText</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The index of the text run with the specified character index into <code>pdeText</code>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetState"><strong><span style="color:grey;">PDETextGetState</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2144</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the text state of a character or a text element. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetTextState" title=" Gets the text state of a character or a text element."><code>PDETextGetTextState</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunSetTextState" title=" Sets the text state of a text run."><code>PDETextRunSetTextState</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextGetState(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element."><code>PDETextStateP</code></a> <code>stateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>stateSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT A text object containing a character or text run whose text state is found. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>IN/OUT A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies whether <code>index</code> refers to the character offset from the beginning of the text object or the index of the text run in the text object. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>IN/OUT The index of the character or text run in <code>pdeText</code>. </span>
+</td></tr>
+<tr><td><span><code>stateP</code></span>
+</td><td><span>IN/OUT (Filled by the method) A pointer to a <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> structure to fill with the text state of the specified character or text run. </span>
+</td></tr>
+<tr><td><span><code>stateSize</code></span>
+</td><td><span>IN/OUT The size of the <code>stateP</code> buffer in bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetStrokeMatrix"><strong><span style="color:grey;">PDETextGetStrokeMatrix</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:552</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Superseded by <a href="pdelayer_PDEText.htm#PDETextGetStrokeMatrixEx" title=" Supersedes PDETextGetStrokeMatrix() in Acrobat 10.0.">PDETextGetStrokeMatrixEx</a>() in Acrobat 10.0. Gets the stroke matrix of a character or a text run. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method returns no valid information. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetStrokeMatrixEx" title=" Supersedes PDETextGetStrokeMatrix() in Acrobat 10.0."><code>PDETextGetStrokeMatrixEx</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunSetStrokeMatrix" title=" Superseded by PDETextRunSetStrokeMatrixEx() in Acrobat 10.0."><code>PDETextRunSetStrokeMatrix</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextGetStrokeMatrix(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>A text object containing a character or text run whose stroke matrix is found. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies whether <code>index</code> refers to the character offset from the beginning of the text object or the index of the text run in the text object. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The index of the character or text run in <code>pdeText</code>. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>(Filled by the method) A pointer to <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> that holds the stroke matrix of the specified character or text run. This matrix is the transformation for line widths when stroking. The <code>h</code> and <code>v</code> values of the matrix are ignored. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetStrokeMatrixEx"><strong><span style="color:grey;">PDETextGetStrokeMatrixEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2958</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Supersedes <a href="pdelayer_PDEText.htm#PDETextGetStrokeMatrix" title=" Superseded by PDETextGetStrokeMatrixEx() in Acrobat 10.0.">PDETextGetStrokeMatrix</a>() in Acrobat 10.0. Gets the stroke matrix of a character or a text run. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method returns no valid information. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetStrokeMatrix" title=" Superseded by PDETextGetStrokeMatrixEx() in Acrobat 10.0."><code>PDETextGetStrokeMatrix</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunSetStrokeMatrixEx" title=" Sets the stroke matrix of a text run."><code>PDETextRunSetStrokeMatrixEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextGetStrokeMatrixEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers."><code>ASDoubleMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>A text object containing a character or text run whose stroke matrix is found. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies whether <code>index</code> refers to the character offset from the beginning of the text object or the index of the text run in the text object. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The index of the character or text run in <code>pdeText</code>. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>(Filled by the method) A pointer to <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers.">ASDoubleMatrix</a> that holds the stroke matrix of the specified character or text run. This matrix is the transformation for line widths when stroking. The <code>h</code> and <code>v</code> values of the matrix are ignored. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetText"><strong><span style="color:grey;">PDETextGetText</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:625</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the text for a text run or character. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetTextMatrix" title=" Superseded by PDETextGetTextMatrixEx() in Acrobat 10.0."><code>PDETextGetTextMatrix</code></a>
+<a href="pdelayer_PDEText.htm#PDETextGetTextState" title=" Gets the text state of a character or a text element."><code>PDETextGetTextState</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDETextGetText(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>*</code><code>textBuffer</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT A text object containing a character or text run whose text is found. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>IN/OUT A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies whether <code>index</code> refers to the character offset from the beginning of the text object or the index of the text run in the text object. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>IN/OUT The index of the character or text run in <code>pdeText</code>. </span>
+</td></tr>
+<tr><td><span><code>textBuffer</code></span>
+</td><td><span>IN/OUT (Filled by the method) The text of the specified character or text run. <code>textBuffer</code> must be large enough to hold the returned text. If <code>textBuffer</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, it returns the number of bytes required to hold the data. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of bytes in the text run or character. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetTextMatrix"><strong><span style="color:grey;">PDETextGetTextMatrix</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:518</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Superseded by <a href="pdelayer_PDEText.htm#PDETextGetTextMatrixEx" title=" Supersedes PDETextGetTextMatrix() in Acrobat 10.0.">PDETextGetTextMatrixEx</a>() in Acrobat 10.0. Gets the matrix of a character or a text run. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetMatrix" title=" Superseded by PDETextGetMatrixEx() in Acrobat 10.0."><code>PDETextGetMatrix</code></a>
+<a href="pdelayer_PDEText.htm#PDETextGetTextMatrixEx" title=" Supersedes PDETextGetTextMatrix() in Acrobat 10.0."><code>PDETextGetTextMatrixEx</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunSetTextMatrix" title=" Superseded by PDETextRunSetTextMatrixEx() in Acrobat 10.0."><code>PDETextRunSetTextMatrix</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextGetTextMatrix(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>A text object containing a character or text run whose matrix is found. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies whether <code>index</code> refers to the character offset from the beginning of the text object or the index of the text run in the text object. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The index of the character or text run in <code>pdeText</code>. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>(Filled by the method) A pointer to <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> that holds the matrix of the specified character or text run. This is the transformation matrix from user space to the current text space. The <code>h</code> and <code>v</code> values of the matrix indicate the origin of the first character. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pdErrBadResMetrics" title=" There are invalid or corrupt font metrics in the resource file."><code>pdErrBadResMetrics</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetTextMatrixEx"><strong><span style="color:grey;">PDETextGetTextMatrixEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2924</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Supersedes <a href="pdelayer_PDEText.htm#PDETextGetTextMatrix" title=" Superseded by PDETextGetTextMatrixEx() in Acrobat 10.0.">PDETextGetTextMatrix</a>() in Acrobat 10.0. Gets the matrix of a character or a text run. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetMatrixEx" title=" Supersedes PDETextGetMatrix() in Acrobat 10.0."><code>PDETextGetMatrixEx</code></a>
+<a href="pdelayer_PDEText.htm#PDETextGetTextMatrix" title=" Superseded by PDETextGetTextMatrixEx() in Acrobat 10.0."><code>PDETextGetTextMatrix</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunSetTextMatrixEx" title=" Sets the text matrix of a text run."><code>PDETextRunSetTextMatrixEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextGetTextMatrixEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers."><code>ASDoubleMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>A text object containing a character or text run whose matrix is found. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies whether <code>index</code> refers to the character offset from the beginning of the text object or the index of the text run in the text object. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The index of the character or text run in <code>pdeText</code>. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>(Filled by the method) A pointer to <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers.">ASDoubleMatrix</a> that holds the matrix of the specified character or text run. This is the transformation matrix from user space to the current text space. The <code>h</code> and <code>v</code> values of the matrix indicate the origin of the first character. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pdErrBadResMetrics" title=" There are invalid or corrupt font metrics in the resource file."><code>pdErrBadResMetrics</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetTextState"><strong><span style="color:grey;">PDETextGetTextState</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:452</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the text state of a character or a text element. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This function handles only <code>charSpacing</code>, <code>wordSpacing</code>, and <code>renderMode</code> for backward compatibility. For all attributes, use <a href="pdelayer_PDEText.htm#PDETextGetState" title=" Returns the text state of a character or a text element.">PDETextGetState</a>() instead. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetState" title=" Returns the text state of a character or a text element."><code>PDETextGetState</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunSetTextState" title=" Sets the text state of a text run."><code>PDETextRunSetTextState</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextGetTextState(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element."><code>PDETextStateP</code></a> <code>stateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>stateSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT A text object containing a character or text run whose text state is found. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>IN/OUT A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies whether <code>index</code> refers to the character offset from the beginning of the text object or the index of the text run in the text object. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>IN/OUT The index of the character or text run in <code>pdeText</code>. </span>
+</td></tr>
+<tr><td><span><code>stateP</code></span>
+</td><td><span>IN/OUT (Filled by the method) A pointer to a <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> structure to fill with the text state of the specified character or text run. </span>
+</td></tr>
+<tr><td><span><code>stateSize</code></span>
+</td><td><span>IN/OUT The size of the <code>stateP</code> buffer in bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextIsAtPoint"><strong><span style="color:grey;">PDETextIsAtPoint</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1668</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Tests whether a point is on specified text. It checks if the point is in a bounding box for the <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEElement.htm#PDEElementIsAtPoint" title=" Tests whether a point is on an element."><code>PDEElementIsAtPoint</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementIsAtRect" title=" Tests whether any part of a rectangle is on an element."><code>PDEElementIsAtRect</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDETextIsAtPoint(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers."><code>ASFixedPoint</code></a> <code>point</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT The text to test. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>IN/OUT A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies whether <code>index</code> refers to the character offset from the beginning of the text object or the index of the text run in the text object. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>IN/OUT The index of the character or text run in <code>pdeText</code>. </span>
+</td></tr>
+<tr><td><span><code>point</code></span>
+</td><td><span>IN/OUT The point, specified in user space coordinates. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the point is on the text, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDETextIsAtRect"><strong><span style="color:grey;">PDETextIsAtRect</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1697</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Tests whether any part of a rectangle is on the specified text. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEElement.htm#PDEElementIsAtPoint" title=" Tests whether a point is on an element."><code>PDEElementIsAtPoint</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementIsAtRect" title=" Tests whether any part of a rectangle is on an element."><code>PDEElementIsAtRect</code></a>
+<a href="pdelayer_PDEText.htm#PDETextIsAtPoint" title=" Tests whether a point is on specified text."><code>PDETextIsAtPoint</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDETextIsAtRect(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRect</code></a> <code>rect</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT The text to test. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>IN/OUT A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> flag that specifies whether index refers to the character offset from the beginning of the text object or the index of the text run in the text object. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>IN/OUT The index of the character or text run in <code>pdeText</code>. </span>
+</td></tr>
+<tr><td><span><code>rect</code></span>
+</td><td><span>IN/OUT The rectangle, specified in user space coordinates. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the text is on the rectangle, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDETextRemove"><strong><span style="color:grey;">PDETextRemove</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:407</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Removes characters or text runs from a text object. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method decrements the reference count of objects associated with the <code>pdeText</code> in the graphic state and font. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextAdd" title=" Superseded by PDETextAddEx() in Acrobat 10.0."><code>PDETextAdd</code></a>
+<a href="pdelayer_PDEText.htm#PDETextReplaceChars" title=" Replaces characters in a text object."><code>PDETextReplaceChars</code></a>
+<a href="pdelayer_PDEText.htm#PDETextSplitRunAt" title=" Splits a text run into two text runs."><code>PDETextSplitRunAt</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextRemove(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>count</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT The text object from which text is removed. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>IN/OUT A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies whether <code>index</code> refers to the character offset from the beginning of the text object or the index of the text run in the text object. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>IN/OUT The index of the character or text run in <code>pdeText</code>. </span>
+</td></tr>
+<tr><td><span><code>count</code></span>
+</td><td><span>IN/OUT The number of characters or text runs to remove. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pdErrBadResMetrics" title=" There are invalid or corrupt font metrics in the resource file."><code>pdErrBadResMetrics</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextRemoveItems"><strong><span style="color:grey;">PDETextRemoveItems</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2441</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Removes contiguous text items from a text element starting at a given index position. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextAddItem" title=" Adds a text item to a text element at a given index position."><code>PDETextAddItem</code></a>
+<a href="pdelayer_PDEText.htm#PDETextGetItem" title=" Obtains a text item from a text element at a given index position."><code>PDETextGetItem</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextRemoveItems(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>text</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>count</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>text</code></span>
+</td><td><span>The text object from which the text items are removed. </span>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The index of the first text item in <code>pdeText</code> to remove. </span>
+</td></tr>
+<tr><td><span><code>count</code></span>
+</td><td><span>The number of text items to remove. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pdErrBadResMetrics" title=" There are invalid or corrupt font metrics in the resource file."><code>pdErrBadResMetrics</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextReplaceChars"><strong><span style="color:grey;">PDETextReplaceChars</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1261</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Replaces characters in a text object.<br/>
+<p>This method does not change the number of characters in the text object; extra characters are ignored.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextAdd" title=" Superseded by PDETextAddEx() in Acrobat 10.0."><code>PDETextAdd</code></a>
+<a href="pdelayer_PDEText.htm#PDETextIsAtPoint" title=" Tests whether a point is on specified text."><code>PDETextIsAtPoint</code></a>
+<a href="pdelayer_PDEText.htm#PDETextSplitRunAt" title=" Splits a text run into two text runs."><code>PDETextSplitRunAt</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextReplaceChars(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <code>/* kPDETextRun, kPDETextChar */</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>*</code><code>textBuffer</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>numChars</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT The text object in which characters are replaced. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><div><span>IN/OUT A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies whether <code>index</code> refers to the character offset from the beginning of the text object or the index of the text run in the text object. It must be one of the following values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextChar" title=" Character (text run with only one character).">kPDETextChar</a></span>
+</td><td><span>Used for a text character.</span>
+</td></tr>
+<tr><td><span><a href="pdelayer_PDEText.htm#kPDETextRun" title=" Text run.">kPDETextRun</a></span>
+</td><td><span>Used for a text run.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>IN/OUT The index of the character or text run in <code>pdeText</code>. </span>
+</td></tr>
+<tr><td><span><code>textBuffer</code></span>
+</td><td><span>IN/OUT Replacement text. </span>
+</td></tr>
+<tr><td><span><code>numChars</code></span>
+</td><td><span>IN/OUT The number of bytes to replace. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextRunGetCharOffset"><strong><span style="color:grey;">PDETextRunGetCharOffset</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:327</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the character offset of the first character of the specified text run. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetNumBytes" title=" Gets the number of bytes occupied by the character code or text run."><code>PDETextGetNumBytes</code></a>
+<a href="pdelayer_PDEText.htm#PDETextGetNumRuns" title=" Gets the number of text runs (show strings) in a text object."><code>PDETextGetNumRuns</code></a>
+<a href="pdelayer_PDEText.htm#PDETextGetRunForChar" title=" Gets the index of the text run that contains the nth character in a text object."><code>PDETextGetRunForChar</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDETextRunGetCharOffset(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>runIndex</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT A text object containing a character or text run whose graphics state is found. </span>
+</td></tr>
+<tr><td><span><code>runIndex</code></span>
+</td><td><span>IN/OUT The index of the text run whose first character's index is returned. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The character offset of the first character of the specified text run in <code>pdeText</code>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextRunGetNumChars"><strong><span style="color:grey;">PDETextRunGetNumChars</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:357</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the number of characters in a text run. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetNumRuns" title=" Gets the number of text runs (show strings) in a text object."><code>PDETextGetNumRuns</code></a>
+<a href="pdelayer_PDEText.htm#PDETextGetRunForChar" title=" Gets the index of the text run that contains the nth character in a text object."><code>PDETextGetRunForChar</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunGetCharOffset" title=" Gets the character offset of the first character of the specified text run."><code>PDETextRunGetCharOffset</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDETextRunGetNumChars(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>runIndex</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT A text object containing a text run whose number of characters is found. </span>
+</td></tr>
+<tr><td><span><code>runIndex</code></span>
+</td><td><span>IN/OUT The index of the text run whose number of characters is returned. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of characters in the specified text run. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextRunSetFont"><strong><span style="color:grey;">PDETextRunSetFont</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:283</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the font of a text run. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method decrements the reference count of the previous font and increments the reference count of the new font. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEText.htm#PDETextGetFont" title=" Gets the font for a text character or element.">PDETextGetFont</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextRunSetFont(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>runIndex</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT The text object containing a text run whose font is set. </span>
+</td></tr>
+<tr><td><span><code>runIndex</code></span>
+</td><td><span>IN/OUT The index of the text run. </span>
+</td></tr>
+<tr><td><span><code>font</code></span>
+</td><td><span>IN/OUT The font set for the text run. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextRunSetGState"><strong><span style="color:grey;">PDETextRunSetGState</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:241</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the graphics state of a text run. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method increments the reference count of objects in <code>stateP</code>. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetGState" title=" Gets the graphics state of a character or a text run."><code>PDETextGetGState</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunSetGStateEx" title=" Sets the graphics state of a text run."><code>PDETextRunSetGStateEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextRunSetGState(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>runIndex</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element."><code>PDEGraphicStateP</code></a> <code>stateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>stateSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>The text object containing a text run whose graphics state is set. </span>
+</td></tr>
+<tr><td><span><code>runIndex</code></span>
+</td><td><span>The index of the text run. </span>
+</td></tr>
+<tr><td><span><code>stateP</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicState</a> structure with the graphics state to set. </span>
+</td></tr>
+<tr><td><span><code>stateSize</code></span>
+</td><td><span>The size of the <code>stateP</code> buffer in bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextRunSetGStateEx"><strong><span style="color:grey;">PDETextRunSetGStateEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:3619</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the graphics state of a text run. This method takes pointer to <a href="pdelayer_General.htm#_t_PDEGraphicStateEx" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicStateEx</a> as input which is higher precision alternative of <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicState</a> structure. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method increments the reference count of objects in <code>stateP</code>. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetGState" title=" Gets the graphics state of a character or a text run."><code>PDETextGetGState</code></a>
+<a href="pdelayer_PDEText.htm#PDETextGetGStateEx" title=" Gets the graphics state of a character or a text run."><code>PDETextGetGStateEx</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunSetGState" title=" Sets the graphics state of a text run."><code>PDETextRunSetGState</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextRunSetGStateEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>runIndex</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEGraphicStateEx" title=" Attributes of a PDEElement or a PDEText sub-element."><code>PDEGraphicStateExP</code></a> <code>stateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>stateSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>The text object containing a text run whose graphics state is set. </span>
+</td></tr>
+<tr><td><span><code>runIndex</code></span>
+</td><td><span>The index of the text run. </span>
+</td></tr>
+<tr><td><span><code>stateP</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_General.htm#_t_PDEGraphicStateEx" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicStateEx</a> structure with the graphics state to set. </span>
+</td></tr>
+<tr><td><span><code>stateSize</code></span>
+</td><td><span>The size of the <code>stateP</code> buffer in bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextRunSetMatrix"><strong><span style="color:grey;">PDETextRunSetMatrix</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2163</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Superseded by <a href="pdelayer_PDEText.htm#PDETextRunSetMatrixEx" title=" Sets the matrix of a text run.">PDETextRunSetMatrixEx</a>() in Acrobat 10.0. Sets the matrix of a text run. Unlike <a href="pdelayer_PDEText.htm#PDETextRunSetTextMatrix" title=" Superseded by PDETextRunSetTextMatrixEx() in Acrobat 10.0.">PDETextRunSetTextMatrix</a>(), this function does not change <code>fontSize</code>, <code>hScale</code>, and <code>textRise</code> in the <code>textState</code> of <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextRunSetMatrixEx" title=" Sets the matrix of a text run."><code>PDETextRunSetMatrixEx</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunSetTextMatrix" title=" Superseded by PDETextRunSetTextMatrixEx() in Acrobat 10.0."><code>PDETextRunSetTextMatrix</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextRunSetMatrix(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>runIndex</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT The text object containing a text run. </span>
+</td></tr>
+<tr><td><span><code>runIndex</code></span>
+</td><td><span>IN/OUT The index of the text run. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>IN/OUT <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrixP</a> pointer. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextRunSetMatrixEx"><strong><span style="color:grey;">PDETextRunSetMatrixEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:3534</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the matrix of a text run. Supersedes <a href="pdelayer_PDEText.htm#PDETextRunSetMatrix" title=" Superseded by PDETextRunSetMatrixEx() in Acrobat 10.0.">PDETextRunSetMatrix</a>() in Acrobat 10.0. Unlike <a href="pdelayer_PDEText.htm#PDETextRunSetTextMatrixEx" title=" Sets the text matrix of a text run.">PDETextRunSetTextMatrixEx</a>(), this function does not change <code>fontSize</code>, <code>hScale</code>, and <code>textRise</code> in the <code>textState</code> of <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextRunSetMatrix" title=" Superseded by PDETextRunSetMatrixEx() in Acrobat 10.0."><code>PDETextRunSetMatrix</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunSetTextMatrixEx" title=" Sets the text matrix of a text run."><code>PDETextRunSetTextMatrixEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextRunSetMatrixEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>runIndex</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers."><code>ASDoubleMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT The text object containing a text run. </span>
+</td></tr>
+<tr><td><span><code>runIndex</code></span>
+</td><td><span>IN/OUT The index of the text run. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>IN/OUT <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers.">ASDoubleMatrixP</a> pointer. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextRunSetState"><strong><span style="color:grey;">PDETextRunSetState</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1988</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the text state of a text run. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEText.htm#PDETextRunSetTextState" title=" Sets the text state of a text run.">PDETextRunSetTextState</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextRunSetState(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>runIndex</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element."><code>PDETextStateP</code></a> <code>stateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>stateSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>The text object containing a text run whose state is set. </span>
+</td></tr>
+<tr><td><span><code>runIndex</code></span>
+</td><td><span>The index of the text run. </span>
+</td></tr>
+<tr><td><span><code>stateP</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> structure with the state to set. </span>
+</td></tr>
+<tr><td><span><code>stateSize</code></span>
+</td><td><span>The size of the <code>stateP</code> buffer in bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextRunSetStrokeMatrix"><strong><span style="color:grey;">PDETextRunSetStrokeMatrix</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:319</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Superseded by <a href="pdelayer_PDEText.htm#PDETextRunSetStrokeMatrixEx" title=" Sets the stroke matrix of a text run.">PDETextRunSetStrokeMatrixEx</a>() in Acrobat 10.0. Sets the stroke matrix of a text run. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> Currently this method is not implemented. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetStrokeMatrix" title=" Superseded by PDETextGetStrokeMatrixEx() in Acrobat 10.0."><code>PDETextGetStrokeMatrix</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunSetStrokeMatrixEx" title=" Sets the stroke matrix of a text run."><code>PDETextRunSetStrokeMatrixEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextRunSetStrokeMatrix(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>runIndex</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>The text object containing a text run whose stroke matrix is set. </span>
+</td></tr>
+<tr><td><span><code>runIndex</code></span>
+</td><td><span>The index of the text run. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>A pointer to an <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> that holds the stroke matrix. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextRunSetStrokeMatrixEx"><strong><span style="color:grey;">PDETextRunSetStrokeMatrixEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:3303</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the stroke matrix of a text run. Supersedes <a href="pdelayer_PDEText.htm#PDETextRunSetStrokeMatrix" title=" Superseded by PDETextRunSetStrokeMatrixEx() in Acrobat 10.0.">PDETextRunSetStrokeMatrix</a>() in Acrobat 10.0. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> Currently this method is not implemented (Acrobat 10 and later). </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetStrokeMatrixEx" title=" Supersedes PDETextGetStrokeMatrix() in Acrobat 10.0."><code>PDETextGetStrokeMatrixEx</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunSetStrokeMatrix" title=" Superseded by PDETextRunSetStrokeMatrixEx() in Acrobat 10.0."><code>PDETextRunSetStrokeMatrix</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextRunSetStrokeMatrixEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>runIndex</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers."><code>ASDoubleMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>The text object containing a text run whose stroke matrix is set. </span>
+</td></tr>
+<tr><td><span><code>runIndex</code></span>
+</td><td><span>The index of the text run. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>A pointer to an <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers.">ASDoubleMatrix</a> that holds the stroke matrix. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextRunSetTextMatrix"><strong><span style="color:grey;">PDETextRunSetTextMatrix</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:301</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Superseded by <a href="pdelayer_PDEText.htm#PDETextRunSetTextMatrixEx" title=" Sets the text matrix of a text run.">PDETextRunSetTextMatrixEx</a>() in Acrobat 10.0. Sets the text matrix of a text run. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetTextMatrix" title=" Superseded by PDETextGetTextMatrixEx() in Acrobat 10.0."><code>PDETextGetTextMatrix</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunSetMatrix" title=" Superseded by PDETextRunSetMatrixEx() in Acrobat 10.0."><code>PDETextRunSetMatrix</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunSetTextMatrixEx" title=" Sets the text matrix of a text run."><code>PDETextRunSetTextMatrixEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextRunSetTextMatrix(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>runIndex</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT The text object containing a text run whose text matrix is set. </span>
+</td></tr>
+<tr><td><span><code>runIndex</code></span>
+</td><td><span>IN/OUT The index of the text run. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>IN/OUT A pointer to an <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> that holds the text matrix. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextRunSetTextMatrixEx"><strong><span style="color:grey;">PDETextRunSetTextMatrixEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:3287</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the text matrix of a text run. Supersedes <a href="pdelayer_PDEText.htm#PDETextRunSetTextMatrix" title=" Superseded by PDETextRunSetTextMatrixEx() in Acrobat 10.0.">PDETextRunSetTextMatrix</a>() in Acrobat 10.0. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetTextMatrixEx" title=" Supersedes PDETextGetTextMatrix() in Acrobat 10.0."><code>PDETextGetTextMatrixEx</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunSetMatrixEx" title=" Sets the matrix of a text run."><code>PDETextRunSetMatrixEx</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunSetTextMatrix" title=" Superseded by PDETextRunSetTextMatrixEx() in Acrobat 10.0."><code>PDETextRunSetTextMatrix</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextRunSetTextMatrixEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>runIndex</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers."><code>ASDoubleMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>IN/OUT The text object containing a text run whose text matrix is set. </span>
+</td></tr>
+<tr><td><span><code>runIndex</code></span>
+</td><td><span>IN/OUT The index of the text run. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>IN/OUT A pointer to an <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers.">ASDoubleMatrix</a> that holds the text matrix. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextRunSetTextState"><strong><span style="color:grey;">PDETextRunSetTextState</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:265</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the text state of a text run. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method has the following side effect: It modifies the text matrix of the run. In order to maintain backward compatibility, this method only directly operates on the first four fields of <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a>. When it is called, it calculates a new text matrix with three additional fields: <code>fontSize</code>, <code>hScale</code>, and <code>textRise</code> (see <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a>). To avoid this behavior, use <a href="pdelayer_PDEText.htm#PDETextRunSetState" title=" Sets the text state of a text run.">PDETextRunSetState</a>() instead (which was added to address this problem). </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextGetTextState" title=" Gets the text state of a character or a text element."><code>PDETextGetTextState</code></a>
+<a href="pdelayer_PDEText.htm#PDETextRunSetState" title=" Sets the text state of a text run."><code>PDETextRunSetState</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextRunSetTextState(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>runIndex</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element."><code>PDETextStateP</code></a> <code>stateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>stateSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>The text object containing a text run whose text state is set. </span>
+</td></tr>
+<tr><td><span><code>runIndex</code></span>
+</td><td><span>The index of the text run. </span>
+</td></tr>
+<tr><td><span><code>stateP</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> structure with text state. </span>
+</td></tr>
+<tr><td><span><code>stateSize</code></span>
+</td><td><span>The size of the <code>stateP</code> buffer in bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDETextSplitRunAt"><strong><span style="color:grey;">PDETextSplitRunAt</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1213</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Splits a text run into two text runs. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEText.htm#PDETextIsAtPoint" title=" Tests whether a point is on specified text."><code>PDETextIsAtPoint</code></a>
+<a href="pdelayer_PDEText.htm#PDETextReplaceChars" title=" Replaces characters in a text object."><code>PDETextReplaceChars</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextSplitRunAt(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>splitLoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>The text object containing a text run to split. </span>
+</td></tr>
+<tr><td><span><code>splitLoc</code></span>
+</td><td><span>The split location, relative to the text object. The first text run is from character index <code>0</code> up to <code>splitLoc</code>. The second text run is from <code>splitLoc</code> <code>+</code> <code>1</code> to the end of the run. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#pdErrBadResMetrics" title=" There are invalid or corrupt font metrics in the resource file."><code>pdErrBadResMetrics</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+
+</div>
+</body></html>

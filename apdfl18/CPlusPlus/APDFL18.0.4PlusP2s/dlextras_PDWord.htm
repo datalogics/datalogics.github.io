@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Additional functionality from Datalogics: PDWord</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Additional functionality from Datalogics: PDWord</h5>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Functions">
+<header><h2>PDWord Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDWordGetCharPoint">PDWordGetCharPoint</a></dt><dd> -  Gets the placement point of the character at a given index position in the word.</dd>
+<dt><a href="#PDWordGetNthQuadPoint">PDWordGetNthQuadPoint</a></dt><dd> -  Gets the specified word's nth quad placement point, specified in user space coordinates.</dd>
+<dt><a href="#PDWordIsLastWordInRegion">PDWordIsLastWordInRegion</a></dt><dd> -  Routine to check if a word is the last word in a region as determined by the WordFinder.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDWordGetCharPoint"><strong><span style="color:grey;">PDWordGetCharPoint</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:101</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the placement point of the character at a given index position in the word. If the specified character is constructed with multiple bytes, only the first byte returns a valid quad. Otherwise, this method returns <a href="aslayer_General.htm#false">false</a>. The placement point is specified in user space coordinates. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDWord.htm#PDWordGetCharQuad" title=" Gets the quadrilateral bounding of the character at a given index position in the word.">PDWordGetCharQuad</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDWordGetCharPoint(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>,</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>byteIdx</code><code>,</code> <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers."><code>ASFixedPoint</code></a> <code>*</code><code>point</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>The word whose character placement point is obtained. </span>
+</td></tr>
+<tr><td><span><code>byteIdx</code></span>
+</td><td><span>The byte index within the word of the character whose placement point is obtained. Valid values are 0 to <a href="pdlayer_PDWord.htm#PDWordGetLength" title=" Gets the number of bytes in a word.">PDWordGetLength</a>(word)-1. </span>
+</td></tr>
+<tr><td><span><code>point</code></span>
+</td><td><span>(Filled by the method) Pointer to the character's placement point, specified in user-space coordinates. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>Returns <a href="aslayer_General.htm#true">true</a> if the word has an nth quad, <a href="aslayer_General.htm#false">false</a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordGetNthQuadPoint"><strong><span style="color:grey;">PDWordGetNthQuadPoint</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:82</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the specified word's nth quad placement point, specified in user space coordinates. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDWord.htm#PDWordGetNumQuads" title=" Gets the number of quads in a word.">PDWordGetNumQuads</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDWordGetNthQuadPoint(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>,</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>nTh</code><code>,</code> <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers."><code>ASFixedPoint</code></a> <code>*</code><code>point</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>The word whose nth quad is obtained. </span>
+</td></tr>
+<tr><td><span><code>nTh</code></span>
+</td><td><span>The quad placement point to obtain. A word's first quad has an index of zero. </span>
+</td></tr>
+<tr><td><span><code>point</code></span>
+</td><td><span>(Filled by the method) Pointer to the word's nth quad placement point, specified in user-space coordinates. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>Returns <a href="aslayer_General.htm#true">true</a> if the word has an nth quad, <a href="aslayer_General.htm#false">false</a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDWordIsLastWordInRegion"><strong><span style="color:grey;">PDWordIsLastWordInRegion</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:110</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Routine to check if a word is the last word in a region as determined by the WordFinder. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDWordIsLastWordInRegion(</code><a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>word</code></span>
+</td><td><span>The word to check. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>Returns <a href="aslayer_General.htm#true">true</a> if the given <a href="pdlayer_PDWord.htm#PDWord" title=" A word in a PDF file.">PDWord</a> is the last word in a region, <a href="aslayer_General.htm#false">false</a> otherwise. </span>
+</section>
+</section>
+
+</div>
+</body></html>

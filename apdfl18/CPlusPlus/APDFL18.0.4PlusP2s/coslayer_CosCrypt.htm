@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+COS Layer: CosCrypt</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>COS Layer: CosCrypt</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#CallbackSignatures">Callback Signatures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>CosCrypt Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#CosCryptVersion">CosCryptVersion</a></dt><dd> - </dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="CosCryptVersion"><strong><span style="color:grey;">CosCryptVersion</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosExpT.h:42</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>CosCryptVersion</code><code>;</code> </code>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="coslayer_CosDoc.htm#_t_CosDocSaveParams" title=" Parameters used when saving a file using CosDocSaveToFile() and CosDocSaveWithParams()."><code>_t_CosDocSaveParams</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="CallbackSignatures">
+<header><h2>CosCrypt Callback Signatures</h2></header>
+<nav><dl>
+<dt><a href="#CosCryptStringProc">CosCryptStringProc</a></dt><dd> -  A prototype for the string encryption/decryption callback.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="CosCryptStringProc"><strong><span style="color:grey;">CosCryptStringProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosExpT.h:318</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A prototype for the string encryption/decryption callback. This is part of the Crypt Filter mechanism. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>CosCryptStringProc(</code><a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>dP</code><code>,</code> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>filterName</code><code>,</code> <code>char</code> <code>*</code><code>dest</code><code>,</code> <code>char</code> <code>*</code><code>src</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>dstSize</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>srcLength</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>genNumber</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>objNumber</code><code>);</code> </code>
+</section>
+</section>
+<section id="Functions">
+<header><h2>CosCrypt Functions</h2></header>
+<nav><dl>
+<dt><a href="#CosCryptGetVersion">CosCryptGetVersion</a></dt><dd> -  Gets the current version number of the encryption algorithm supported.</dd>
+<dt><a href="#CosDecryptData">CosDecryptData</a></dt><dd> -  Decrypts data in a buffer using the specified encryption key.</dd>
+<dt><a href="#CosDecryptGetMaxKeyBytes">CosDecryptGetMaxKeyBytes</a></dt><dd> -  Gets the maximum number of the decryption key length, in bytes, for the specified cryptVersion.</dd>
+<dt><a href="#CosEncryptData">CosEncryptData</a></dt><dd> -  Encrypts data in a buffer using the specified encryption key.</dd>
+<dt><a href="#CosEncryptGetMaxKeyBytes">CosEncryptGetMaxKeyBytes</a></dt><dd> -  Gets the maximum number of the encryption key length, in bytes, for the specified cryptVersion.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="CosCryptGetVersion"><strong><span style="color:grey;">CosCryptGetVersion</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:1336</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the current version number of the encryption algorithm supported. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="coslayer_CosCrypt.htm#CosDecryptGetMaxKeyBytes" title=" Gets the maximum number of the decryption key length, in bytes, for the specified cryptVersion."><code>CosDecryptGetMaxKeyBytes</code></a>
+<a href="coslayer_CosCrypt.htm#CosEncryptGetMaxKeyBytes" title=" Gets the maximum number of the encryption key length, in bytes, for the specified cryptVersion."><code>CosEncryptGetMaxKeyBytes</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASTVersion"><code>ASTVersion</code></a> <code>CosCryptGetVersion(</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The current version number of the encryption supported. </span>
+</section>
+<section><div class="infoRow"><h3 id="CosDecryptData"><strong><span style="color:grey;">CosDecryptData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:970</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>
+<p>Decrypts data in a buffer using the specified encryption key. The standard Acrobat viewer encryption/decryption algorithm (RC4 from RSA Data Security, Inc.) is used.<br/></p>
+
+<p>
+<p>An exception is raised if encryption encounters an internal error.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="coslayer_CosCrypt.htm#CosEncryptData" title=" Encrypts data in a buffer using the specified encryption key.">CosEncryptData</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>CosDecryptData(</code><code>void</code> <code>*</code><code>src</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>len</code><code>,</code> <code>void</code> <code>*</code><code>dst</code><code>,</code> <code>char</code> <code>*</code><code>cryptData</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>cryptDataLen</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>src</code></span>
+</td><td><span>The buffer containing the data to decrypt. </span>
+</td></tr>
+<tr><td><span><code>len</code></span>
+</td><td><span>The number of bytes in <code>src</code>. </span>
+</td></tr>
+<tr><td><span><code>dst</code></span>
+</td><td><span>(Filled by the method) The buffer into which the decrypted data will be placed. This may point to the same location as <code>src</code>. </span>
+</td></tr>
+<tr><td><span><code>cryptData</code></span>
+</td><td><span>The encryption key. </span>
+</td></tr>
+<tr><td><span><code>cryptDataLen</code></span>
+</td><td><span>The length of the encryption key in bytes. It cannot be greater than <code>5</code>. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="CosDecryptGetMaxKeyBytes"><strong><span style="color:grey;">CosDecryptGetMaxKeyBytes</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:1351</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the maximum number of the decryption key length, in bytes, for the specified <code>cryptVersion</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="coslayer_CosCrypt.htm#CosCryptGetVersion" title=" Gets the current version number of the encryption algorithm supported."><code>CosCryptGetVersion</code></a>
+<a href="coslayer_CosCrypt.htm#CosEncryptGetMaxKeyBytes" title=" Gets the maximum number of the encryption key length, in bytes, for the specified cryptVersion."><code>CosEncryptGetMaxKeyBytes</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="coslayer_CosStream.htm#CosByteMax" title="-1 for none, error, or other special meaning"><code>CosByteMax</code></a> <code>CosDecryptGetMaxKeyBytes(</code><a href="aslayer_General.htm#ASTVersion"><code>ASTVersion</code></a> <code>cryptVersion</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>cryptVersion</code></span>
+</td><td><span>IN/OUT The Cos crypt version, which is the version of the algorithm that is used to encrypt and decrypt document data. <code>cryptVersion</code> equal to <code>0</code> is treated as <code>cryptVersion</code> equal to <code>1</code> to maintain backward compatibility. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The maximum number of key length, in bytes, for the specified <code>cryptVersion</code>. If <code>cryptVersion</code> is not currently supported, it returns<code>-1</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="CosEncryptData"><strong><span style="color:grey;">CosEncryptData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:991</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>
+<p>Encrypts data in a buffer using the specified encryption key. The standard Acrobat viewer encryption/decryption algorithm (RC4 from RSA Data Security, Inc.) is used.<br/></p>
+
+<p>
+<p>An exception is raised if encryption encounters an internal error.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="coslayer_CosCrypt.htm#CosDecryptData" title=" Decrypts data in a buffer using the specified encryption key.">CosDecryptData</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>CosEncryptData(</code><code>void</code> <code>*</code><code>src</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>len</code><code>,</code> <code>void</code> <code>*</code><code>dst</code><code>,</code> <code>char</code> <code>*</code><code>cryptData</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>cryptDataLen</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>src</code></span>
+</td><td><span>The buffer containing the data to encrypt. </span>
+</td></tr>
+<tr><td><span><code>len</code></span>
+</td><td><span>The number of bytes in <code>src</code>. </span>
+</td></tr>
+<tr><td><span><code>dst</code></span>
+</td><td><span>(Filled by the method) The buffer into which the encrypted data will be placed. This may point to the same location as <code>src</code>. </span>
+</td></tr>
+<tr><td><span><code>cryptData</code></span>
+</td><td><span>The encryption key. </span>
+</td></tr>
+<tr><td><span><code>cryptDataLen</code></span>
+</td><td><span>Length of the encryption key, in bytes. It cannot be greater than <code>5</code>. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="CosEncryptGetMaxKeyBytes"><strong><span style="color:grey;">CosEncryptGetMaxKeyBytes</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:1366</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the maximum number of the encryption key length, in bytes, for the specified <code>cryptVersion</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="coslayer_CosCrypt.htm#CosCryptGetVersion" title=" Gets the current version number of the encryption algorithm supported."><code>CosCryptGetVersion</code></a>
+<a href="coslayer_CosCrypt.htm#CosDecryptGetMaxKeyBytes" title=" Gets the maximum number of the decryption key length, in bytes, for the specified cryptVersion."><code>CosDecryptGetMaxKeyBytes</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="coslayer_CosStream.htm#CosByteMax" title="-1 for none, error, or other special meaning"><code>CosByteMax</code></a> <code>CosEncryptGetMaxKeyBytes(</code><a href="aslayer_General.htm#ASTVersion"><code>ASTVersion</code></a> <code>cryptVersion</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>cryptVersion</code></span>
+</td><td><span>IN/OUT The Cos crypt version, which is the version of the algorithm that is used to encrypt and decrypt document data. <code>cryptVersion</code> equal to <code>0</code> is treated as <code>cryptVersion</code> equal to <code>1</code> to maintain backward compatibility. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The maximum number of key length, in bytes, for the specified <code>cryptVersion</code>. If <code>cryptVersion</code> is not currently supported, it returns<code>-1</code>. </span>
+</section>
+</section>
+
+</div>
+</body></html>

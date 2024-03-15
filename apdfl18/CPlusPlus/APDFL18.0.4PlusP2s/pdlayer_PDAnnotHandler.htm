@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PD Layer: PDAnnotHandler</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PD Layer: PDAnnotHandler</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#CallbackSignatures">Callback Signatures</a></li>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>PDAnnotHandler Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDAnnotHandler">PDAnnotHandler</a></dt><dd> -  A data structure containing callbacks that implement an annotation manager.</dd>
+<dt><a href="#PDAnnotHandlerClipboardData">PDAnnotHandlerClipboardData</a></dt><dd> -  Opaque data used by PDAnnotHandlers.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDAnnotHandler"><strong><span style="color:grey;">PDAnnotHandler</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:508</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>A data structure containing callbacks that implement an annotation manager. The callbacks implement the annotation manager functions (for example, view, delete, or export the annotations of a document as a list, sorted by type, author, or date).<br/>
+<p>To fully use a <a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager.">PDAnnotHandler</a>, the AVAnnotHandler associated with this annotation must have its AVAnnotHandlerGetInfoProc() and AVAnnotHandlerDeleteInfoProc() callbacks defined.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>_t_PDAnnotHandler</code></a> <code>*</code><code>PDAnnotHandler</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnotHandler.htm#PDGetAnnotHandlerByName" title=" Gets the annotation handler that handles the specified annotation type."><code>PDGetAnnotHandlerByName</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCanCopyProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCanCopyProc</code></a></td><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCanPasteProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCanPasteProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCopyProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCopyProc</code></a></td><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerDeleteAnnotInfoProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerDeleteAnnotInfoProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerDestroyDataProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerDestroyDataProc</code></a></td><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerDestroyProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerDestroyProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetAnnotInfoFlagsProc" title=" A callback for PDAnnotHandler."><code>PDAnnotHandlerGetAnnotInfoFlagsProc</code></a></td><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetAnnotInfoProc" title=" A callback for PDAnnotHandler."><code>PDAnnotHandlerGetAnnotInfoProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetHeelPointProc" title=" A callback for PDAnnotHandler."><code>PDAnnotHandlerGetHeelPointProc</code></a></td><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetPrintAppearanceProc" title=" A callback for PDAnnotHandler."><code>PDAnnotHandlerGetPrintAppearanceProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetTypeProc" title=" A callback for PDAnnotHandler."><code>PDAnnotHandlerGetTypeProc</code></a></td><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerPasteProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerPasteProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnot.htm#PDAnnotWillPrintProc" title=" A callback for PDAnnotHandler."><code>PDAnnotWillPrintProc</code></a></td><td><a href="pdlayer_PDDoc.htm#PDDocWillExportAnnotProc" title=" A callback for PDAnnotHandler."><code>PDDocWillExportAnnotProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDDoc.htm#PDDocWillImportAnnotProc" title=" A callback for PDAnnotHandler."><code>PDDocWillImportAnnotProc</code></a></td><td><a href="pdlayer_PDAnnotHandler.htm#PDRegisterAnnotHandler" title=" Registers a handler for an annotation subtype, replacing any previous handler that had been registered for that subtype."><code>PDRegisterAnnotHandler</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotHandlerClipboardData"><strong><span style="color:grey;">PDAnnotHandlerClipboardData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:520</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Opaque data used by PDAnnotHandlers. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>void</code> <code>*</code><code>PDAnnotHandlerClipboardData</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCanPasteProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCanPasteProc</code></a></td><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerDestroyDataProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerDestroyDataProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerPasteProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerPasteProc</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="CallbackSignatures">
+<header><h2>PDAnnotHandler Callback Signatures</h2></header>
+<nav><dl>
+<dt><a href="#PDAnnotHandlerCanCopyProc">PDAnnotHandlerCanCopyProc</a></dt><dd> -  (Optional) A callback for PDAnnotHandler.</dd>
+<dt><a href="#PDAnnotHandlerCanPasteProc">PDAnnotHandlerCanPasteProc</a></dt><dd> -  (Optional) A callback for PDAnnotHandler.</dd>
+<dt><a href="#PDAnnotHandlerCopyProc">PDAnnotHandlerCopyProc</a></dt><dd> -  (Optional) A callback for PDAnnotHandler.</dd>
+<dt><a href="#PDAnnotHandlerDeleteAnnotInfoProc">PDAnnotHandlerDeleteAnnotInfoProc</a></dt><dd> -  (Optional) A callback for PDAnnotHandler.</dd>
+<dt><a href="#PDAnnotHandlerDestroyDataProc">PDAnnotHandlerDestroyDataProc</a></dt><dd> -  (Optional) A callback for PDAnnotHandler.</dd>
+<dt><a href="#PDAnnotHandlerDestroyProc">PDAnnotHandlerDestroyProc</a></dt><dd> -  (Optional) A callback for PDAnnotHandler.</dd>
+<dt><a href="#PDAnnotHandlerGetAnnotInfoFlagsProc">PDAnnotHandlerGetAnnotInfoFlagsProc</a></dt><dd> -  A callback for PDAnnotHandler.</dd>
+<dt><a href="#PDAnnotHandlerGetAnnotInfoProc">PDAnnotHandlerGetAnnotInfoProc</a></dt><dd> -  A callback for PDAnnotHandler.</dd>
+<dt><a href="#PDAnnotHandlerGetHeelPointProc">PDAnnotHandlerGetHeelPointProc</a></dt><dd> -  A callback for PDAnnotHandler.</dd>
+<dt><a href="#PDAnnotHandlerGetPrintAppearanceProc">PDAnnotHandlerGetPrintAppearanceProc</a></dt><dd> -  A callback for PDAnnotHandler.</dd>
+<dt><a href="#PDAnnotHandlerGetTypeProc">PDAnnotHandlerGetTypeProc</a></dt><dd> -  A callback for PDAnnotHandler.</dd>
+<dt><a href="#PDAnnotHandlerPasteProc">PDAnnotHandlerPasteProc</a></dt><dd> -  (Optional) A callback for PDAnnotHandler.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDAnnotHandlerCanCopyProc"><strong><span style="color:grey;">PDAnnotHandlerCanCopyProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:665</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>(Optional) A callback for <a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager.">PDAnnotHandler</a>. It returns <a href="aslayer_General.htm#true"><code>true</code></a> if the copy operation is expected to succeed. It tests, for example, whether copying is allowed by document permissions. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotCanCopy" title=" Tests whether the data from an annotation on a given page can be copied to a clipboard for pasting."><code>PDAnnotCanCopy</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCanPasteProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCanPasteProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCopyProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCopyProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerDestroyDataProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerDestroyDataProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerPasteProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerPasteProc</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDAnnotHandlerCanCopyProc(</code><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>PDAnnotHandler</code></a> <code>pdanh</code><code>,</code> <a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document."><code>PDPage</code></a> <code>sourcePage</code><code>,</code> <a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>pdan</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdanh</code></span>
+</td><td><span>IN/OUT The annotation handler responsible for this annotation. </span>
+</td></tr>
+<tr><td><span><code>sourcePage</code></span>
+</td><td><span>The page the annotation is on. </span>
+</td></tr>
+<tr><td><span><code>pdan</code></span>
+</td><td><span>IN/OUT The annotation object. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the annotation can be copied, <a href="aslayer_General.htm#false"><code>false</code></a> if it cannot. </span>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>_t_PDAnnotHandler</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotHandlerCanPasteProc"><strong><span style="color:grey;">PDAnnotHandlerCanPasteProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:712</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>(Optional) A callback for <a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager.">PDAnnotHandler</a>. It returns <a href="aslayer_General.htm#true"><code>true</code></a> if the paste operation is expected to succeed. It tests whether data from an annotation that has been copied to a clipboard can be pasted to a location on a page. Pasting can be disallowed by document permissions, or because the annotation cannot be accurately reproduced in the destination document. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotCanPaste" title=" Tests whether data from an annotation that has been copied to a clipboard can be pasted to a location on a page."><code>PDAnnotCanPaste</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCanCopyProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCanCopyProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCopyProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCopyProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerDestroyDataProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerDestroyDataProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerPasteProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerPasteProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDRegisterAnnotHandler" title=" Registers a handler for an annotation subtype, replacing any previous handler that had been registered for that subtype."><code>PDRegisterAnnotHandler</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDAnnotHandlerCanPasteProc(</code><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>PDAnnotHandler</code></a> <code>pdanh</code><code>,</code> <a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document."><code>PDPage</code></a> <code>destPage</code><code>,</code> <code>const</code> <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers."><code>ASFixedPoint</code></a> <code>*</code><code>center</code><code>,</code> <a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerClipboardData" title=" Opaque data used by PDAnnotHandlers."><code>PDAnnotHandlerClipboardData</code></a> <code>data</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdanh</code></span>
+</td><td><span>The annotation handler responsible for this annotation. </span>
+</td></tr>
+<tr><td><span><code>destPage</code></span>
+</td><td><span>The page to which the annotation would be pasted. </span>
+</td></tr>
+<tr><td><span><code>center</code></span>
+</td><td><span>The location for the center of the annotation on the destination page, or a <a href="aslayer_General.htm#NULL"><code>NULL</code></a> pointer to center the annotation on the destination page's crop box. </span>
+</td></tr>
+<tr><td><span><code>data</code></span>
+</td><td><span>The copied annotation data to test. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the annotation data can be pasted, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>_t_PDAnnotHandler</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotHandlerCopyProc"><strong><span style="color:grey;">PDAnnotHandlerCopyProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:685</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>(Optional) A callback for <a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager.">PDAnnotHandler</a>. It copies data from the annotation object to a new clipboard structure, and returns the clipboard structure. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotCopy" title=" Copies action object data to a clipboard structure, from which it can be pasted."><code>PDAnnotCopy</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCanCopyProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCanCopyProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCanPasteProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCanPasteProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCopyProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCopyProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerDestroyDataProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerDestroyDataProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerPasteProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerPasteProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDRegisterAnnotHandler" title=" Registers a handler for an annotation subtype, replacing any previous handler that had been registered for that subtype."><code>PDRegisterAnnotHandler</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerClipboardData" title=" Opaque data used by PDAnnotHandlers."><code>PDAnnotHandlerClipboardData</code></a> <code>PDAnnotHandlerCopyProc(</code><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>PDAnnotHandler</code></a> <code>pdanh</code><code>,</code> <a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document."><code>PDPage</code></a> <code>sourcePage</code><code>,</code> <a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>pdan</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdanh</code></span>
+</td><td><span>The annotation handler responsible for this annotation. </span>
+</td></tr>
+<tr><td><span><code>sourcePage</code></span>
+</td><td><span>The page containing the annotation to be copied. </span>
+</td></tr>
+<tr><td><span><code>pdan</code></span>
+</td><td><span>The annotation object. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The clipboard structure containing the copied data. </span>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>_t_PDAnnotHandler</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotHandlerDeleteAnnotInfoProc"><strong><span style="color:grey;">PDAnnotHandlerDeleteAnnotInfoProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:566</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>(Optional) A callback for <a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager.">PDAnnotHandler</a>. It deletes information associated with an annotation. It frees all the memory associated with the annotation information. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetAnnotInfoProc" title=" A callback for PDAnnotHandler."><code>PDAnnotHandlerGetAnnotInfoProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDRegisterAnnotHandler" title=" Registers a handler for an annotation subtype, replacing any previous handler that had been registered for that subtype."><code>PDRegisterAnnotHandler</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDAnnotHandlerDeleteAnnotInfoProc(</code><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>PDAnnotHandler</code></a> <code>pdanh</code><code>,</code> <a href="pdlayer_PDAnnot.htm#_PDAnnotInfoRec" title=" Information associated with an annotation."><code>PDAnnotInfo</code></a> <code>info</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdanh</code></span>
+</td><td><span>IN/OUT The annotation handler responsible for this annotation. </span>
+</td></tr>
+<tr><td><span><code>information</code></span>
+</td><td><span>IN/OUT Information associated with the annotation. </span>
+</td></tr></Table>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>_t_PDAnnotHandler</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotHandlerDestroyDataProc"><strong><span style="color:grey;">PDAnnotHandlerDestroyDataProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:754</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>(Optional) A callback for <a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager.">PDAnnotHandler</a>. It destroys data from an annotation that has been copied to a clipboard. This callback may be executed regardless of how many times (if any) the annotation was pasted. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotDestroyClipboardData" title=" Destroys data that has been copied from an annotation object into a clipboard."><code>PDAnnotDestroyClipboardData</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCanCopyProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCanCopyProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCanPasteProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCanPasteProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCopyProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCopyProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerPasteProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerPasteProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDRegisterAnnotHandler" title=" Registers a handler for an annotation subtype, replacing any previous handler that had been registered for that subtype."><code>PDRegisterAnnotHandler</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDAnnotHandlerDestroyDataProc(</code><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>PDAnnotHandler</code></a> <code>pdanh</code><code>,</code> <a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerClipboardData" title=" Opaque data used by PDAnnotHandlers."><code>PDAnnotHandlerClipboardData</code></a> <code>data</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdanh</code></span>
+</td><td><span>The annotation handler responsible for this annotation. </span>
+</td></tr>
+<tr><td><span><code>data</code></span>
+</td><td><span>The copied annotation data to destroy. </span>
+</td></tr></Table>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>_t_PDAnnotHandler</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotHandlerDestroyProc"><strong><span style="color:grey;">PDAnnotHandlerDestroyProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:764</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>(Optional) A callback for <a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager.">PDAnnotHandler</a>. It destroys the annotation handler structure when the application no longer requires it. The handler should destroy any dynamic memory stored in the <code>userData</code> field. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDAnnotHandler.htm#PDRegisterAnnotHandler" title=" Registers a handler for an annotation subtype, replacing any previous handler that had been registered for that subtype.">PDRegisterAnnotHandler</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDAnnotHandlerDestroyProc(</code><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>PDAnnotHandler</code></a> <code>pdanh</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdanh</code></span>
+</td><td><span>The annotation handler to destroy. </span>
+</td></tr></Table>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>_t_PDAnnotHandler</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotHandlerGetAnnotInfoFlagsProc"><strong><span style="color:grey;">PDAnnotHandlerGetAnnotInfoFlagsProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:649</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A callback for <a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager.">PDAnnotHandler</a>. It gets the annotation handler information flags, which indicate the operations allowed with annotations of this type. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetAnnotInfoProc" title=" A callback for PDAnnotHandler."><code>PDAnnotHandlerGetAnnotInfoProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDRegisterAnnotHandler" title=" Registers a handler for an annotation subtype, replacing any previous handler that had been registered for that subtype."><code>PDRegisterAnnotHandler</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASFlagBits" title=" A flag-bits value."><code>ASFlagBits</code></a> <code>PDAnnotHandlerGetAnnotInfoFlagsProc(</code><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>PDAnnotHandler</code></a> <code>pdanh</code><code>,</code> <a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>pdan</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdanh</code></span>
+</td><td><span>IN/OUT The annotation handler responsible for the annotation. </span>
+</td></tr>
+<tr><td><span><code>pdan</code></span>
+</td><td><span>IN/OUT The annotation. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div><p>The operations allowed.<br/>
+<p>The value is an OR of the following flags:<br/></p>
+
+<table class="ruled"><tr><th><span>
+<p>Operation</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdlayer_PDAnnot.htm#PDAnnotOperationSummarize" title=" It is okay to summarize annotations."><code>PDAnnotOperationSummarize</code></a></span>
+</td><td><span>It is okay to summarize annotations.</span>
+</td></tr>
+<tr><td><span><a href="pdlayer_PDAnnot.htm#PDAnnotOperationFilter" title=" It is okay to filter annotations."><code>PDAnnotOperationFilter</code></a></span>
+</td><td><span>It is okay to filter annotations.</span>
+</td></tr>
+<tr><td><span><a href="pdlayer_PDAnnot.htm#PDAnnotOperationManager" title=" It is okay to manage annotations."><code>PDAnnotOperationManager</code></a></span>
+</td><td><span>It is okay to manage annotations.</span>
+</td></tr>
+<tr><td><span><a href="pdlayer_PDAnnot.htm#PDAnnotIgnorePerms" title=" Allows modifying this annotation type in a write-protected document."><code>PDAnnotIgnorePerms</code></a></span>
+</td><td><span>Allow modifying this annotation type in a write-protected document.</span>
+</td></tr>
+<tr><td><span><a href="pdlayer_PDAnnot.htm#PDAnnotOperationAll" title=" All operations are allowed."><code>PDAnnotOperationAll</code></a></span>
+</td><td><span>All operations are allowed.</span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>_t_PDAnnotHandler</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotHandlerGetAnnotInfoProc"><strong><span style="color:grey;">PDAnnotHandlerGetAnnotInfoProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:552</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A callback for <a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager.">PDAnnotHandler</a>. It gets the annotation information for an annotation. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerDeleteAnnotInfoProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerDeleteAnnotInfoProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDRegisterAnnotHandler" title=" Registers a handler for an annotation subtype, replacing any previous handler that had been registered for that subtype."><code>PDRegisterAnnotHandler</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDAnnot.htm#_PDAnnotInfoRec" title=" Information associated with an annotation."><code>PDAnnotInfo</code></a> <code>PDAnnotHandlerGetAnnotInfoProc(</code><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>PDAnnotHandler</code></a> <code>pdanh</code><code>,</code> <a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>pdan</code><code>,</code> <a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document."><code>PDPage</code></a> <code>pdpage</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdanh</code></span>
+</td><td><span>IN/OUT The annotation handler responsible for this annotation. </span>
+</td></tr>
+<tr><td><span><code>pdan</code></span>
+</td><td><span>IN/OUT The annotation for which information is obtained. </span>
+</td></tr>
+<tr><td><span><code>pdpage</code></span>
+</td><td><span>IN/OUT The page associated with the annotation for which information is obtained. If the page associated with the annotation is not known, pass <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The annotation information, described in a <a href="pdlayer_PDAnnot.htm#_PDAnnotInfoRec" title=" Information associated with an annotation.">PDAnnotInfo</a> structure. </span>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>_t_PDAnnotHandler</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotHandlerGetHeelPointProc"><strong><span style="color:grey;">PDAnnotHandlerGetHeelPointProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:776</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A callback for <a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager.">PDAnnotHandler</a>. It gets the heel point (the focus or starting point) for the annotation. For a rectangular annotation, this is usually the top left corner. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDAnnotHandler.htm#PDRegisterAnnotHandler" title=" Registers a handler for an annotation subtype, replacing any previous handler that had been registered for that subtype.">PDRegisterAnnotHandler</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDAnnotHandlerGetHeelPointProc(</code><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>PDAnnotHandler</code></a> <code>pdanh</code><code>,</code> <a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>pdan</code><code>,</code> <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers."><code>ASFixedPoint</code></a> <code>*</code><code>point</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdanh</code></span>
+</td><td><span>The annotation handler whose heel point is obtained. </span>
+</td></tr>
+<tr><td><span><code>pdan</code></span>
+</td><td><span>The annotation object. </span>
+</td></tr>
+<tr><td><span><code>point</code></span>
+</td><td><span>(Filled by the method) The heel point for the annotation. </span>
+</td></tr></Table>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>_t_PDAnnotHandler</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotHandlerGetPrintAppearanceProc"><strong><span style="color:grey;">PDAnnotHandlerGetPrintAppearanceProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:797</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A callback for <a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager.">PDAnnotHandler</a>. It is called by the host application to obtain a print appearance (a Form XObject). If this callback is not implemented, the default appearance (if any) is used. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDAnnotHandler.htm#PDRegisterAnnotHandler" title=" Registers a handler for an annotation subtype, replacing any previous handler that had been registered for that subtype.">PDRegisterAnnotHandler</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>PDAnnotHandlerGetPrintAppearanceProc(</code><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>PDAnnotHandler</code></a> <code>pdanh</code><code>,</code> <a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>pdan</code><code>,</code> <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRect</code></a> <code>*</code><code>frAnnot</code><code>,</code> <a href="pdlayer_PDAnnot.htm#PDAnnotPrintOp" title=" PDAnnotPrintOp is passed to the PDAnnotHandlerGetPrintAppearanceProc() callback to specify the type of print operation being performed."><code>PDAnnotPrintOp</code></a> <code>op</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdanh</code></span>
+</td><td><span>The annotation handler whose print appearance is obtained. </span>
+</td></tr>
+<tr><td><span><code>pdan</code></span>
+</td><td><span>The annotation object. </span>
+</td></tr>
+<tr><td><span><code>frAnnot</code></span>
+</td><td><span>The rectangle in user space in which the annotation will be printed. The handler is free to modify it. </span>
+</td></tr>
+<tr><td><span><code>op</code></span>
+</td><td><span>The print operation being performed. This is <a href="pdlayer_PDAnnot.htm#kPDAnnotPrintStandard" title=" A standard print operation.">kPDAnnotPrintStandard</a> for a standard print operation, or <a href="pdlayer_PDAnnot.htm#kPDAnnotPrintVariableData" title=" The user selected Form Fields Only.">kPDAnnotPrintVariableData</a> if the user selected Form Fields Only. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The Form XObject representing the print appearance of the annotation. </span>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>_t_PDAnnotHandler</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotHandlerGetTypeProc"><strong><span style="color:grey;">PDAnnotHandlerGetTypeProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:579</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A callback for <a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager.">PDAnnotHandler</a>. It gets an <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> indicating the annotation type for which the handler is responsible. This corresponds to the annotation's Subtype key in the PDF file. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetAnnotInfoProc" title=" A callback for PDAnnotHandler."><code>PDAnnotHandlerGetAnnotInfoProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDRegisterAnnotHandler" title=" Registers a handler for an annotation subtype, replacing any previous handler that had been registered for that subtype."><code>PDRegisterAnnotHandler</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>PDAnnotHandlerGetTypeProc(</code><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>PDAnnotHandler</code></a> <code>pdanh</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdanh</code></span>
+</td><td><span>IN/OUT The annotation handler whose type is returned. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The annotation type for which this handler is responsible. </span>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>_t_PDAnnotHandler</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotHandlerPasteProc"><strong><span style="color:grey;">PDAnnotHandlerPasteProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:736</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>(Optional) A callback for <a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager.">PDAnnotHandler</a>. It creates a new annotation on the specified page using clipboard data generated by <a href="pdlayer_PDAnnot.htm#PDAnnotCopy" title=" Copies action object data to a clipboard structure, from which it can be pasted.">PDAnnotCopy</a>(). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotCopy" title=" Copies action object data to a clipboard structure, from which it can be pasted."><code>PDAnnotCopy</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCanCopyProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCanCopyProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCanPasteProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCanPasteProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCopyProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCopyProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerDestroyDataProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerDestroyDataProc</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotPaste" title=" Pastes copied annotation data from a clipboard structure to a new annotation object in a specified document."><code>PDAnnotPaste</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDRegisterAnnotHandler" title=" Registers a handler for an annotation subtype, replacing any previous handler that had been registered for that subtype."><code>PDRegisterAnnotHandler</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>PDAnnotHandlerPasteProc(</code><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>PDAnnotHandler</code></a> <code>pdanh</code><code>,</code> <a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document."><code>PDPage</code></a> <code>destPage</code><code>,</code> <code>const</code> <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers."><code>ASFixedPoint</code></a> <code>*</code><code>center</code><code>,</code> <a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerClipboardData" title=" Opaque data used by PDAnnotHandlers."><code>PDAnnotHandlerClipboardData</code></a> <code>data</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdanh</code></span>
+</td><td><span>The annotation handler responsible for this annotation. </span>
+</td></tr>
+<tr><td><span><code>destPage</code></span>
+</td><td><span>The page to which the annotation is pasted. </span>
+</td></tr>
+<tr><td><span><code>center</code></span>
+</td><td><span>The location for the center of the annotation on the destination page, or a <a href="aslayer_General.htm#NULL"><code>NULL</code></a> pointer to center the annotation in the destination page's crop box. </span>
+</td></tr>
+<tr><td><span><code>data</code></span>
+</td><td><span>The copied annotation data to paste. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The new annotation object associated with the page's document. </span>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>_t_PDAnnotHandler</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>PDAnnotHandler Structures</h2></header>
+<nav><dl>
+<dt><a href="#_t_PDAnnotHandler">_t_PDAnnotHandler</a></dt><dd> -  A data structure containing callbacks that implement an annotation manager.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="_t_PDAnnotHandler"><strong><span style="color:grey;">_t_PDAnnotHandler</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:811</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>A data structure containing callbacks that implement an annotation manager. The callbacks implement the annotation manager functions (for example, view, delete, or export the annotations of a document as a list, sorted by type, author, or date).<br/>
+<p>To fully use a <a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager.">PDAnnotHandler</a>, the AVAnnotHandler associated with this annotation must have its AVAnnotHandlerGetInfoProc() and AVAnnotHandlerDeleteInfoProc() callbacks defined.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDAnnotHandler.htm#PDRegisterAnnotHandler" title=" Registers a handler for an annotation subtype, replacing any previous handler that had been registered for that subtype.">PDRegisterAnnotHandler</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDAnnotHandler {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASSize_t"><code>ASSize_t</code></a> <code>size</code><code>;</code> </div>
+</td><td><span>The size of the data structure. It must be set to <code>sizeof(PDAnnotHandlerRec)</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>void</code> <code>*</code><code>userData</code><code>;</code> </div>
+</td><td><span>A pointer to a block of user-supplied data. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetTypeProc" title=" A callback for PDAnnotHandler."><code>PDAnnotHandlerGetTypeProc</code></a> <code>GetType</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetAnnotInfoProc" title=" A callback for PDAnnotHandler."><code>PDAnnotHandlerGetAnnotInfoProc</code></a> <code>GetAnnotInfo</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerDeleteAnnotInfoProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerDeleteAnnotInfoProc</code></a> <code>DeleteAnnotInfo</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDDoc.htm#PDDocWillExportAnnotProc" title=" A callback for PDAnnotHandler."><code>PDDocWillExportAnnotProc</code></a> <code>WillExportAnnot</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDDoc.htm#PDDocWillImportAnnotProc" title=" A callback for PDAnnotHandler."><code>PDDocWillImportAnnotProc</code></a> <code>WillImportAnnot</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDAnnot.htm#PDAnnotWillPrintProc" title=" A callback for PDAnnotHandler."><code>PDAnnotWillPrintProc</code></a> <code>WillPrintAnnot</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetAnnotInfoFlagsProc" title=" A callback for PDAnnotHandler."><code>PDAnnotHandlerGetAnnotInfoFlagsProc</code></a> <code>GetAnnotInfoFlags</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCanCopyProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCanCopyProc</code></a> <code>CanCopy</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCopyProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCopyProc</code></a> <code>Copy</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCanPasteProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCanPasteProc</code></a> <code>CanPaste</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerPasteProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerPasteProc</code></a> <code>Paste</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerDestroyDataProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerDestroyDataProc</code></a> <code>DestroyData</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerDestroyProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerDestroyProc</code></a> <code>Destroy</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetHeelPointProc" title=" A callback for PDAnnotHandler."><code>PDAnnotHandlerGetHeelPointProc</code></a> <code>GetHeelPoint</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetPrintAppearanceProc" title=" A callback for PDAnnotHandler."><code>PDAnnotHandlerGetPrintAppearanceProc</code></a> <code>GetPrintAppearance</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><code id="PDAnnotHandlerRec"><code>}</code> <a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>PDAnnotHandlerRec</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>PDAnnotHandler</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDAnnotHandler Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDGetAnnotHandlerByName">PDGetAnnotHandlerByName</a></dt><dd> -  Gets the annotation handler that handles the specified annotation type.</dd>
+<dt><a href="#PDRegisterAnnotHandler">PDRegisterAnnotHandler</a></dt><dd> -  Registers a handler for an annotation subtype, replacing any previous handler that had been registered for that subtype.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDGetAnnotHandlerByName"><strong><span style="color:grey;">PDGetAnnotHandlerByName</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:6616</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the annotation handler that handles the specified annotation type. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDAnnotHandler.htm#PDRegisterAnnotHandler" title=" Registers a handler for an annotation subtype, replacing any previous handler that had been registered for that subtype.">PDRegisterAnnotHandler</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>PDAnnotHandler</code></a> <code>PDGetAnnotHandlerByName(</code><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>name</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>name</code></span>
+</td><td><span>IN/OUT The name of the requested annotation handler. The character string for the name can be converted to an <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> using <a href="aslayer_ASAtom.htm#ASAtomFromString" title=" Gets the ASAtom for the specified string.">ASAtomFromString</a>(). </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The annotation handler that services annotations of type <code>name</code>. It returns the default annotation handler if no handler services the specified annotation type. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDRegisterAnnotHandler"><strong><span style="color:grey;">PDRegisterAnnotHandler</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:6601</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Registers a handler for an annotation subtype, replacing any previous handler that had been registered for that subtype. The annotation handler is not registered if its <a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetTypeProc" title=" A callback for PDAnnotHandler.">PDAnnotHandlerGetTypeProc</a>() returns <a href="aslayer_General.htm#NULL"><code>NULL</code></a>.<br/>
+<p>To effectively use a <a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager.">PDAnnotHandler</a>, the AVAnnotHandler associated with this annotation must have its AVAnnotHandlerGetInfoProc() and AVAnnotHandlerDeleteInfoProc() callbacks defined.<br/></p>
+
+<p>
+<p>PDF Library applications can use this method to register their annotation handlers. Link and Watermark annotations have default handlers. For other annotation types, the applications should register their own handlers.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDAnnotHandler.htm#PDGetAnnotHandlerByName" title=" Gets the annotation handler that handles the specified annotation type.">PDGetAnnotHandlerByName</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDRegisterAnnotHandler(</code><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>PDAnnotHandler</code></a> <code>handler</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>handler</code></span>
+</td><td><span>IN/OUT A pointer to a structure containing the annotation handler's callbacks. This structure must not be freed after this call, but must be retained. </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

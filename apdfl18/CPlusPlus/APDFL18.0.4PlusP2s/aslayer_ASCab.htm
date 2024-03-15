@@ -1,0 +1,2670 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Acro Support Layer: ASCab</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Acro Support Layer: ASCab</h5>
+<li><a href="#Definitions">Definitions</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#CallbackSignatures">Callback Signatures</a></li>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Definitions">
+<header><h2>ASCab Definitions</h2></header>
+<nav><dl>
+<dt><a href="#MAX_ASCAB_KEY">MAX_ASCAB_KEY</a></dt><dd> -  Cabinet keys are NULL-terminated C strings.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="MAX_ASCAB_KEY"><strong><span style="color:grey;">MAX_ASCAB_KEY</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraExpT.h:177</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Cabinet keys are <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated C strings. This constant declares the maximum length of one component of that string.<br/>
+<p>The characters in the key string must all be low ASCII alphanumeric characters, such as <code>'0'</code><code>-</code> <code>'9'</code>, <code>'a'</code><code>-</code> <code>'z'</code>, <code>'A'</code><code>-</code> <code>'Z'</code>.<br/></p>
+
+<p>
+<p>You can burrow through multiple levels of a cabinet heirarchy by passing in a string of individual key names separated by colons.<br/></p>
+
+<p>
+<p>For example, <a href="aslayer_ASCab.htm#ASCabGetInt" title=" Returns the ASInt32 value stored under theKey in theCab."><code>ASCabGetInt</code></a><code>(cab,</code> <code>"Hello:World",</code><code>-1);</code> is equivalent to <a href="aslayer_ASCab.htm#ASCabGetInt" title=" Returns the ASInt32 value stored under theKey in theCab."><code>ASCabGetInt</code></a><code>(ASCabGetCab(cab,</code> <code>"Hello"),</code> <code>"World",</code><code>-1);</code>.<br/></p>
+
+<p>
+<p>Similarly, <a href="aslayer_ASCab.htm#ASCabPutInt" title=" Stores an ASInt32 value in theCab under theKey."><code>ASCabPutInt</code></a><code>(theCab,</code> <code>"Hello:World",</code> <code>33);</code> will create an integer key named <code>"World"</code> inside the <code>"Hello"</code> cabinet inside theCab, creating the <code>"Hello"</code> key and cabinet if necessary.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define MAX_ASCAB_KEY</code> <code>1024</code> </code>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>ASCab Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#ASCab">ASCab</a></dt><dd> -  ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.</dd>
+<dt><a href="#ASCabMungeAction">ASCabMungeAction</a></dt><dd> -  A value that determines the actions to be taken when ASCabMunge() is called.</dd>
+<dt><a href="#ASCabValueType">ASCabValueType</a></dt><dd> -  A constant that specifies the various types of values in ASCab objects.</dd>
+<dt><a href="#ASConstCab">ASConstCab</a></dt><dd> - </dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASCab"><strong><span style="color:grey;">ASCab</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1292</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> objects ( <em>cabinets</em>) can be used to store arbitrary key/value pairs. The keys are always <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated strings containing only low ASCII alphanumeric characters and spaces (ASCII character <code>32</code>). Key names cannot begin or end with a space.<br/>
+<p>Every time you place a non-scalar value inside a cabinet, you are handing that value to the <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> implementation to manage. Putting a value in a cabinet is always a handoff operation. For example, if you create an <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object and add it as a value in an <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a>, the <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object is no longer managed by you; it is managed by the <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a>. The <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> will destroy the <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object when its associated key is removed or the key's value is overwritten. Pointer values are a special case discussed in more detail below.<br/></p>
+
+<p>
+<p>The routine naming convention is as follows:<br/></p>
+
+<table class="ruled"><tr><th><span>
+<p>Name</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span>Get</span>
+</td><td><span><code>Get</code> routines return a value. These objects are owned by the <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> and should not be destroyed by the caller of <code>Get</code>.</span>
+</td></tr>
+<tr><td><span>GetCopy</span>
+</td><td><span><code>GetCopy</code> routines make a copy of the data; the <code>GetCopy</code> client owns the resulting information and can modify it at will; it is also responsible for destroying it.</span>
+</td></tr>
+<tr><td><span>Detach</span>
+</td><td><span><code>Detach</code> routines work the same way as <code>Get</code> routines, but the key is removed from the <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> without destroying the associated value that is passed back to the client of <code>Detach</code>. The client is responsible for destroying the returned object.</span>
+</td></tr></table>
+
+<p>
+<p>Normally, pointers are treated the same way as scalars; the <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> passes the pointer value back and forth but does not manage the data to which it points. This all changes if the pointer has an associated <code>destroyProc</code>. If the <code>destroyProc</code> is set, the <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> will reference count the pointer to track how many times the pointer is referenced from any <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a>. For example, the reference count will be bumped up whenever the pointer is copied via <a href="aslayer_ASCab.htm#ASCabCopy" title=" For each key/value pair in srcCab a copy of the key/value pair will be placed into dstCab, possibly overwriting any identically named key/value pair in dstCab.">ASCabCopy</a>() or added to another <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> via ASCabPutPointer(), and will destroy the data associated with the pointer when the reference count goes to <code>0</code>. The data is destroyed by calling the <code>destroyProc</code>. Detaching a pointer removes one reference to the pointer without ever destroying the information to which it points. ASCabDetachPointer() returns a separate value indicating whether the pointer can safely be destroyed by the client or is still referred to by other key/value pairs inside any <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> objects (for example, whether the reference count went to zero when the pointer was detached from the <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a>).<br/></p>
+
+<p>
+<p>Any of the <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> API's can take a compound name: a string consisting of multiple keys separated by the colon (:) character. For example, <code>"Grandparent:Parent:Child:Key"</code> can be such a compound name. The implementation will burrow down through such a compound string until it reaches the most deeply nested cabinet. Also, any of the <code>Put</code> routines can take a <a href="aslayer_General.htm#NULL"><code>NULL</code></a> key name. If the key name is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, the routine creates a new numeric key name. If the cabinet is empty, the first generated key name will be <code>"0"</code> and subsequent names will increase in ascending order. This is useful when treating an <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> as a bag of unnamed items, or when adding an ordered list of items to an empty <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a>.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_ASCabinet</code> <code>*</code><code>ASCab</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCab.htm#ASCabDetachCab" title=" Retrieves the ASCab stored under theKey in theCab and removes the key from theCab."><code>ASCabDetachCab</code></a></td><td><a href="aslayer_ASCab.htm#ASCabDup" title=" Creates a new ASCab and populates it with copies of the key/value pairs in srcCab."><code>ASCabDup</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabFromEntryList" title=" Builds a cabinet based on a constant array of ASCabDescriptor records (see ASCabEntryRec)."><code>ASCabFromEntryList</code></a></td><td><a href="aslayer_ASCab.htm#ASCabGetCab" title=" Returns the ASCab stored under theKey in theCab."><code>ASCabGetCab</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabNew" title=" Creates a new, empty cabinet."><code>ASCabNew</code></a></td><td><a href="aslayer_ASCab.htm#ASCabReadFromStream" title=" Reads a previously written cabinet from a stream."><code>ASCabReadFromStream</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCab.htm#ASCabCopy" title=" For each key/value pair in srcCab a copy of the key/value pair will be placed into dstCab, possibly overwriting any identically named key/value pair in dstCab."><code>ASCabCopy</code></a></td><td><a href="aslayer_ASCab.htm#ASCabDestroy" title=" Destroys the cabinet and all its key/value pairs."><code>ASCabDestroy</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabDestroyEmpties" title=" Finds any empty cabinets in theCab, removes their corresponding keys, and destroys them."><code>ASCabDestroyEmpties</code></a></td><td><a href="aslayer_ASCab.htm#ASCabDetachBinary" title=" Retrieves the binary object stored under theKey in theCab and removes the key from theCab."><code>ASCabDetachBinary</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabDetachCab" title=" Retrieves the ASCab stored under theKey in theCab and removes the key from theCab."><code>ASCabDetachCab</code></a></td><td><a href="aslayer_ASCab.htm#ASCabDetachPathName" title=" Retrieves the ASPathName stored under theKey in theCab and removes the key from theCab."><code>ASCabDetachPathName</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabDetachPointerRaw" title=" Retrieves the pointer stored under theKey in theCab and removes the key from theCab."><code>ASCabDetachPointerRaw</code></a></td><td><a href="aslayer_ASCab.htm#ASCabDetachString" title=" Retrieves the string stored under theKey in theCab and removes the key from theCab."><code>ASCabDetachString</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabDetachText" title=" Retrieves the ASText object stored under theKey in theCab and removes the key from theCab."><code>ASCabDetachText</code></a></td><td><a href="aslayer_ASCab.htm#ASCabEnum" title=" Enumerates all the keys in the cabinet."><code>ASCabEnum</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabEnumProc" title=" Used when enumerating the values inside a cabinet."><code>ASCabEnumProc</code></a></td><td><a href="aslayer_ASCab.htm#ASCabMakeEmpty" title=" Removes all keys from theCab and destroys all values they point to."><code>ASCabMakeEmpty</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabMunge" title=" Munges the keys and the corresponding values in theCab based on the keys in keyCab and the munge action."><code>ASCabMunge</code></a></td><td><a href="aslayer_ASCab.htm#ASCabPutAtom" title=" Stores an ASAtom value in theCab under theKey."><code>ASCabPutAtom</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabPutBinary" title=" Stores a binary object in theCab under theKey."><code>ASCabPutBinary</code></a></td><td><a href="aslayer_ASCab.htm#ASCabPutBool" title=" Stores an ASBool value in theCab under theKey."><code>ASCabPutBool</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabPutCab" title=" Stores an ASCab in theCab under theKey."><code>ASCabPutCab</code></a></td><td><a href="aslayer_ASCab.htm#ASCabPutDouble" title=" Stores a double value in theCab under theKey."><code>ASCabPutDouble</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabPutInt" title=" Stores an ASInt32 value in theCab under theKey."><code>ASCabPutInt</code></a></td><td><a href="aslayer_ASCab.htm#ASCabPutInt64" title=" Stores an ASInt64 value in theCab under theKey."><code>ASCabPutInt64</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabPutNull" title=" Stores a value with a type of kASValueNull in theCab under theKey."><code>ASCabPutNull</code></a></td><td><a href="aslayer_ASCab.htm#ASCabPutPathName" title=" Stores an ASPathName in theCab under theKey."><code>ASCabPutPathName</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabPutPointerRaw" title=" Stores a pointer in theCab under theKey."><code>ASCabPutPointerRaw</code></a></td><td><a href="aslayer_ASCab.htm#ASCabPutString" title=" Stores a string in theCab under theKey."><code>ASCabPutString</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabPutText" title=" Stores an ASText object in theCab under theKey."><code>ASCabPutText</code></a></td><td><a href="aslayer_ASCab.htm#ASCabPutUns" title=" Stores the ASUns32 value under theKey in theCab."><code>ASCabPutUns</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabPutUns64" title=" Stores an ASUns64 value in theCab under theKey."><code>ASCabPutUns64</code></a></td><td><a href="aslayer_ASCab.htm#ASCabRemove" title=" Removes theKey entry from theCab, destroying the associated value."><code>ASCabRemove</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabRename" title=" Renames a key within theCab while preserving the value associated with it."><code>ASCabRename</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysConvertCabToItemProps" title=" Converts a set of item properties from the ASCab format to the ASFileSysItemPropsRec format."><code>ASFileSysConvertCabToItemProps</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysConvertItemPropsToCab" title=" Converts a set of item properties from the ASFileSysItemPropsRec format to the ASCab format."><code>ASFileSysConvertItemPropsToCab</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysGetItemPropsAsCab" title=" Gets a full description of the file system object associated with pathName, returning the item properties in the ASCab format."><code>ASFileSysGetItemPropsAsCab</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysGetItemPropsAsCabProc" title=" A callback for ASFileSysRec that gets a full description of the file system object associated with pathName, returning the item properties in the ASCab format."><code>ASFileSysGetItemPropsAsCabProc</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysPerformOpOnItem" title=" Performs a specified operation on a particular file, passing specified parameters."><code>ASFileSysPerformOpOnItem</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysPerformOpOnItemProc" title=" A callback for ASFileSysRec that performs the specified operation on a particular file."><code>ASFileSysPerformOpOnItemProc</code></a></td><td><a href="aslayer_General.htm#ASReportProc" title=" A report proc can be used to report errors, warnings, and other messages to the user."><code>ASReportProc</code></a></td></tr>
+<tr><td><a href="aslayer_ASText.htm#ASTextEval" title=" Replaces percent-quoted expressions in the text object with the result of their evaluation, using key/value pairs in the ASCab."><code>ASTextEval</code></a></td><td><a href="aslayer_ASText.htm#ASTextEvalProc"><code>ASTextEvalProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDCollection.htm#PDCollectionGetInitialStyle" title=" Gets the initial style dictionary for the collection."><code>PDCollectionGetInitialStyle</code></a></td><td><a href="pdlayer_PDCrypt.htm#PDCryptBatchParamDescProc" title=" A callback for PDCryptBatchHandler."><code>PDCryptBatchParamDescProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDCrypt.htm#PDCryptBatchPostSequenceProc" title=" A callback for PDCryptBatchHandler."><code>PDCryptBatchPostSequenceProc</code></a></td><td><a href="pdlayer_PDCrypt.htm#PDCryptBatchPreSequenceProc" title=" A callback for PDCryptBatchHandler."><code>PDCryptBatchPreSequenceProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDCrypt.htm#PDCryptBatchShowDialogProc" title=" A callback for PDCryptBatchHandler."><code>PDCryptBatchShowDialogProc</code></a></td><td><a href="pdlayer_PDCrypt.htm#PDCryptBatchUpdateSecurityDataProc" title=" A callback for PDCryptBatchHandler."><code>PDCryptBatchUpdateSecurityDataProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDCrypt.htm#PDCryptReservedProc2" title=" (Optional) Used by Acrobat for Automated Permission Testing."><code>PDCryptReservedProc2</code></a></td><td><a href="pdlayer_PDFileAttachment.htm#PDFileAttachmentGetFieldStyle" title=" Gets the value of the specified text field in the file attachment."><code>PDFileAttachmentGetFieldStyle</code></a></td></tr>
+<tr><td><a href="pdlayer_PDFolder.htm#PDFolderGetFieldStyle" title=" Gets the style dictionary for the specified field in the folder"><code>PDFolderGetFieldStyle</code></a></td><td><a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemoryEx" title=" Supersedes PDPageDrawContentsToMemory() in Acrobat 10.0."><code>PDPageDrawContentsToMemoryEx</code></a></td></tr>
+<tr><td><a href="pdlayer_PDPage.htm#PDPageDrawContentsToWindowEx2" title=" Draws the contents of a page into the specified window."><code>PDPageDrawContentsToWindowEx2</code></a></td><td><a href="plugins_xps2pdf.htm#XPS2PDFConvert" title=" Converts aa XPS file into a PDF file."><code>XPS2PDFConvert</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASCabMungeAction"><strong><span style="color:grey;">ASCabMungeAction</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraExpT.h:296</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A value that determines the actions to be taken when <a href="aslayer_ASCab.htm#ASCabMunge" title=" Munges the keys and the corresponding values in theCab based on the keys in keyCab and the munge action.">ASCabMunge</a>() is called. <code>keyCab</code> is the <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> that provides the keys determining how <code>theCab</code> is to be changed. During an <a href="aslayer_ASCab.htm#ASCabMunge" title=" Munges the keys and the corresponding values in theCab based on the keys in keyCab and the munge action.">ASCabMunge</a>() operation, the key cab will not be altered. 
+<p>For value options see <a href="aslayer_General.htm#ASMungeOptions" title=" A value that determines the actions to be taken when ASCabMunge() is called."><code>ASMungeOptions.</code></a> </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASEnum16" title=" 2-byte enumeration with values from 0 to 32,767, used in data structures."><code>ASEnum16</code></a> <code>ASCabMungeAction</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCab.htm#ASCabMunge" title=" Munges the keys and the corresponding values in theCab based on the keys in keyCab and the munge action."><code>ASCabMunge</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASCabValueType"><strong><span style="color:grey;">ASCabValueType</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraExpT.h:157</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A constant that specifies the various types of values in <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> objects. <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> objects can be used to store arbitrary key/value pairs. The keys are always <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated strings containing only low ASCII alphanumeric characters. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabFromEntryList" title=" Builds a cabinet based on a constant array of ASCabDescriptor records (see ASCabEntryRec).">ASCabFromEntryList</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASEnum16" title=" 2-byte enumeration with values from 0 to 32,767, used in data structures."><code>ASEnum16</code></a> <code>ASCabValueType</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCab.htm#ASCabGetType" title=" Returns the type of value stored under theKey in theCab."><code>ASCabGetType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCab.htm#ASCabEnumProc" title=" Used when enumerating the values inside a cabinet."><code>ASCabEnumProc</code></a></td><td><a href="aslayer_ASCab.htm#ASConstCabEnumProc" title=" Used when enumerating the values inside a constant cabinet."><code>ASConstCabEnumProc</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCab.htm#_t_ASCabEntryRec" title=" A data structure representing a cabinet entry."><code>_t_ASCabEntryRec</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASConstCab"><strong><span style="color:grey;">ASConstCab</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1293</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>const</code> <code>struct</code> <code>_t_ASCabinet</code> <code>*</code><code>ASConstCab</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCab.htm#ASCabCopy" title=" For each key/value pair in srcCab a copy of the key/value pair will be placed into dstCab, possibly overwriting any identically named key/value pair in dstCab."><code>ASCabCopy</code></a></td><td><a href="aslayer_ASCab.htm#ASCabDup" title=" Creates a new ASCab and populates it with copies of the key/value pairs in srcCab."><code>ASCabDup</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabEqual" title=" Compares two cabinets and verifies that they have a matching set of keys and that all key values are equal as reported by ASCabValueEqual()."><code>ASCabEqual</code></a></td><td><a href="aslayer_ASCab.htm#ASCabGetAtom" title=" Returns the ASAtom value stored under theKey in theCab."><code>ASCabGetAtom</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabGetBinary" title=" Returns the binary object stored under theKey in theCab."><code>ASCabGetBinary</code></a></td><td><a href="aslayer_ASCab.htm#ASCabGetBinaryCopy" title=" Returns a copy of the binary object stored under theKey in theCab."><code>ASCabGetBinaryCopy</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabGetBool" title=" Returns the ASBool value stored under theKey in theCab."><code>ASCabGetBool</code></a></td><td><a href="aslayer_ASCab.htm#ASCabGetCab" title=" Returns the ASCab stored under theKey in theCab."><code>ASCabGetCab</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabGetDouble" title=" Returns the double value stored under theKey in theCab."><code>ASCabGetDouble</code></a></td><td><a href="aslayer_ASCab.htm#ASCabGetInt" title=" Returns the ASInt32 value stored under theKey in theCab."><code>ASCabGetInt</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabGetInt64" title=" Returns the ASInt64 value stored under theKey in theCab."><code>ASCabGetInt64</code></a></td><td><a href="aslayer_ASCab.htm#ASCabGetPathNameCopy" title=" Returns a copy of ASPathName stored under theKey in theCab."><code>ASCabGetPathNameCopy</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabGetPointerDestroyProc" title=" Obtains the resource deallocation callback associated with the pointer stored under theKey in theCab."><code>ASCabGetPointerDestroyProc</code></a></td><td><a href="aslayer_ASCab.htm#ASCabGetPointerRaw" title=" Returns the pointer value stored under theKey in theCab."><code>ASCabGetPointerRaw</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabGetPointerType" title=" Returns a string representation of the data type referenced by the pointer stored under theKey in theCab."><code>ASCabGetPointerType</code></a></td><td><a href="aslayer_ASCab.htm#ASCabGetString" title=" Returns the string stored under theKey in theCab."><code>ASCabGetString</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabGetStringCopy" title=" Returns a copy of the string stored under theKey in theCab."><code>ASCabGetStringCopy</code></a></td><td><a href="aslayer_ASCab.htm#ASCabGetText" title=" Returns the ASText object stored under theKey in theCab."><code>ASCabGetText</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabGetType" title=" Returns the type of value stored under theKey in theCab."><code>ASCabGetType</code></a></td><td><a href="aslayer_ASCab.htm#ASCabGetUns" title=" Returns the ASUns32 value stored under theKey in theCab."><code>ASCabGetUns</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabGetUns64" title=" Returns the ASUns64 value stored under theKey in theCab."><code>ASCabGetUns64</code></a></td><td><a href="aslayer_ASCab.htm#ASCabKnown" title=" Returns true if theKey is present in theCab."><code>ASCabKnown</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabMunge" title=" Munges the keys and the corresponding values in theCab based on the keys in keyCab and the munge action."><code>ASCabMunge</code></a></td><td><a href="aslayer_ASCab.htm#ASCabNumEntries" title=" Returns the number of key/value pairs in theCab."><code>ASCabNumEntries</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASCabValueEqual" title=" Compares two cabinet values and returns true only if they are equal (meaning that they have the same type and value)."><code>ASCabValueEqual</code></a></td><td><a href="aslayer_ASCab.htm#ASCabWriteToStream" title=" Writes theCab out to a stream."><code>ASCabWriteToStream</code></a></td></tr>
+<tr><td><a href="aslayer_ASCab.htm#ASConstCabEnum" title=" Enumerates all the keys in the constant cabinet."><code>ASConstCabEnum</code></a></td><td><a href="aslayer_ASCab.htm#ASConstCabEnumProc" title=" Used when enumerating the values inside a constant cabinet."><code>ASConstCabEnumProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDCollection.htm#PDCollectionSetInitialStyle" title=" Sets the initial style dictionary for the collection."><code>PDCollectionSetInitialStyle</code></a></td><td><a href="pdlayer_PDFileAttachment.htm#PDFileAttachmentSetFieldStyle" title=" Sets the specified text field in the file attachment using styled text."><code>PDFileAttachmentSetFieldStyle</code></a></td></tr>
+<tr><td><a href="pdlayer_PDFolder.htm#PDFolderSetFieldStyle" title=" Sets the style dictionary for the specified field in the folder."><code>PDFolderSetFieldStyle</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="CallbackSignatures">
+<header><h2>ASCab Callback Signatures</h2></header>
+<nav><dl>
+<dt><a href="#ASCabEnumProc">ASCabEnumProc</a></dt><dd> -  Used when enumerating the values inside a cabinet.</dd>
+<dt><a href="#ASCabPointerDestroyProc">ASCabPointerDestroyProc</a></dt><dd> -  A deallocation callback that can be associated with a pointer in an ASCab.</dd>
+<dt><a href="#ASConstCabEnumProc">ASConstCabEnumProc</a></dt><dd> -  Used when enumerating the values inside a constant cabinet.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASCabEnumProc"><strong><span style="color:grey;">ASCabEnumProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraExpT.h:248</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Used when enumerating the values inside a cabinet. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ASCabEnumProc(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <a href="aslayer_ASCab.htm#ASCabValueType" title=" A constant that specifies the various types of values in ASCab objects."><code>ASCabValueType</code></a> <code>itsType</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>The cabinet being enumerated. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>The key name of an entry in the cabinet. </span>
+</td></tr>
+<tr><td><span><code>itsType</code></span>
+</td><td><span>The type of the value associated with <code>theKey</code>. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>User-supplied data passed into <a href="aslayer_ASCab.htm#ASCabEnum" title=" Enumerates all the keys in the cabinet.">ASCabEnum</a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> to continue enumeration, <a href="aslayer_General.htm#false"><code>false</code></a> to halt enumeration. </span>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCab.htm#ASCabEnum" title=" Enumerates all the keys in the cabinet."><code>ASCabEnum</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASCabPointerDestroyProc"><strong><span style="color:grey;">ASCabPointerDestroyProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraExpT.h:306</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A deallocation callback that can be associated with a pointer in an <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a>. When the reference count of the pointer falls to zero, this callback is called to free the resources associated with the object the pointer references. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabPointerDestroyProc(</code><code>void</code> <code>*</code><code>ptr</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ptr</code></span>
+</td><td><span>IN/OUT The value stored in an <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCab.htm#ASCabGetPointerDestroyProc" title=" Obtains the resource deallocation callback associated with the pointer stored under theKey in theCab."><code>ASCabGetPointerDestroyProc</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCab.htm#ASCabPutPointerRaw" title=" Stores a pointer in theCab under theKey."><code>ASCabPutPointerRaw</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASConstCabEnumProc"><strong><span style="color:grey;">ASConstCabEnumProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraExpT.h:263</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Used when enumerating the values inside a constant cabinet. The callback procedure must not add, delete, or modify items in <code>theCab</code> during the enumeration. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ASConstCabEnumProc(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <a href="aslayer_ASCab.htm#ASCabValueType" title=" A constant that specifies the various types of values in ASCab objects."><code>ASCabValueType</code></a> <code>itsType</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>The cabinet being enumerated. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>The key name of an entry in the cabinet. </span>
+</td></tr>
+<tr><td><span><code>itsType</code></span>
+</td><td><span>The type of the value associated with <code>theKey</code>. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>User-supplied data passed into <a href="aslayer_ASCab.htm#ASCabEnum" title=" Enumerates all the keys in the cabinet.">ASCabEnum</a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> to continue enumeration, <a href="aslayer_General.htm#false"><code>false</code></a> to halt enumeration. </span>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCab.htm#ASConstCabEnum" title=" Enumerates all the keys in the constant cabinet."><code>ASConstCabEnum</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>ASCab Structures</h2></header>
+<nav><dl>
+<dt><a href="#_t_ASCabEntryRec">_t_ASCabEntryRec</a></dt><dd> -  A data structure representing a cabinet entry.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="_t_ASCabEntryRec"><strong><span style="color:grey;">_t_ASCabEntryRec</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraExpT.h:202</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>A data structure representing a cabinet entry. The first entry in each descriptor specifies the name of the key, the second field contains the type, and the following fields contain the values. The entry list must end with a descriptor containing <a href="aslayer_General.htm#NULL"><code>NULL</code></a> for the key name. It can be used as shown below to construct an <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a>:<br/>
+<p><a href="aslayer_ASCab.htm#_t_ASCabEntryRec" title=" A data structure representing a cabinet entry."><code>ASCabEntryRec</code></a> <code>cabData[]</code> <code>=</code> <code>{{"key1",</code> <a href="aslayer_General.htm#kASValueInteger" title=" An ASInt32."><code>kASValueInteger</code></a><code>,</code> <code>1},</code> <code>{"key2",</code> <a href="aslayer_General.htm#kASValueInteger" title=" An ASInt32."><code>kASValueInteger</code></a><code>,</code><code>-1},</code> <code>{"key3",</code> <a href="aslayer_General.htm#kASValueBool" title=" An ASBool."><code>kASValueBool</code></a><code>,</code> <code>false},</code> <code>{NULL}};</code><br/></p>
+
+<p>
+<p><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>CreateDefaultCab()</code> <code>{</code> <code>return</code> <a href="aslayer_ASCab.htm#ASCabFromEntryList" title=" Builds a cabinet based on a constant array of ASCabDescriptor records (see ASCabEntryRec)."><code>ASCabFromEntryList</code></a> <code>(cabData);</code> <code>}</code><br/></p>
+
+<p>
+<p>This example uses just three values for each record. However, more may be required, such as a <code>double</code>:<br/></p>
+
+<p>
+<p><code>{"keyDouble",</code> <a href="aslayer_General.htm#kASValueDouble" title=" A double precision floating-point number."><code>kASValueDouble</code></a><code>,</code> <code>0,</code> <a href="aslayer_General.htm#NULL"><code>NULL</code></a><code>,</code> <code>double}</code><br/></p>
+
+<p>
+<p>For a <code>string</code>, the following code could be used:<br/></p>
+
+<p>
+<p><code>{"keyString",</code> <a href="aslayer_General.htm#kASValueString" title=" A NULL-terminated, unencoded string."><code>kASValueString</code></a><code>,</code> <code>0,</code> <code>(void</code> <code>*)string}</code><br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_ASCabEntryRec {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><code>const</code> <code>char</code> <code>*</code><code>keyName</code><code>;</code> </div>
+</td><td><span>The name of the key. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASCab.htm#ASCabValueType" title=" A constant that specifies the various types of values in ASCab objects."><code>ASCabValueType</code></a> <code>type</code><code>;</code> </div>
+</td><td><div><span>The supported ASCabValueTypes are: </span>
+
+<table class="ruled"><tr><th><span>Type</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="aslayer_General.htm#kASValueBool" title=" An ASBool.">kASValueBool</a></span>
+</td><td><span>A <a href="aslayer_General.htm#boolean">boolean</a> value. <code>intVal</code> contains the value.</span>
+</td></tr>
+<tr><td><span><a href="aslayer_General.htm#kASValueInteger" title=" An ASInt32.">kASValueInteger</a></span>
+</td><td><span>An integer value. <code>intVal</code> contains the value.</span>
+</td></tr>
+<tr><td><span><a href="aslayer_General.htm#kASValueAtom" title=" An ASAtom.">kASValueAtom</a></span>
+</td><td><span>An atom. <code>intVal</code> contains the value.</span>
+</td></tr>
+<tr><td><span><a href="aslayer_General.htm#kASValueDouble" title=" A double precision floating-point number.">kASValueDouble</a></span>
+</td><td><span>A double value. <code>doubleVal</code> contains the value.</span>
+</td></tr>
+<tr><td><span><a href="aslayer_General.htm#kASValueString" title=" A NULL-terminated, unencoded string.">kASValueString</a></span>
+</td><td><span><code>ptrVal</code> points to a <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated C string.</span>
+</td></tr>
+<tr><td><span><a href="aslayer_General.htm#kASValueText" title=" An ASText object.">kASValueText</a></span>
+</td><td><span><code>ptrVal</code> points to a <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated string containing script text, and <code>intVal</code> specifies the <a href="aslayer_ASText.htm#ASScript" title=" An enumeration of writing scripts.">ASScript</a> code for the text.</span>
+</td></tr>
+<tr><td><span><a href="aslayer_General.htm#kASValueBinary" title=" A binary blob of any size.">kASValueBinary</a></span>
+</td><td><span><code>ptrVal</code> points to the binary data, and <code>intVal</code> specifies the size of the data.</span>
+</td></tr>
+<tr><td><span><a href="aslayer_General.htm#kASValueNull" title=" The key exists but has no useful value.">kASValueNull</a></span>
+</td><td><span>Creates an entry with a <a href="aslayer_General.htm#NULL">NULL</a> value.</span>
+</td></tr></table>
+
+<p>
+<p>No other types are supported (specifically <a href="aslayer_General.htm#kASValueCabinet" title=" Another cabinet.">kASValueCabinet</a> and <a href="aslayer_General.htm#kASValuePointer" title=" A pointer to something outside the cabinet.">kASValuePointer</a>). You can build nested cabinets using the <code>"key:</code> <code>key"</code> syntax for the <code>keyNames</code>.<br/></p>
+</div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>intVal</code><code>;</code> </div>
+</td><td><span>See above. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>const</code> <code>void</code> <code>*</code><code>ptrVal</code><code>;</code> </div>
+</td><td><span>See above. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>double</code> <code>doubleVal</code><code>;</code> </div>
+</td><td><span>See above. </span>
+</td></tr>
+<tr><td><code id="ASCabEntryRec"><code>}</code> <a href="aslayer_ASCab.htm#_t_ASCabEntryRec" title=" A data structure representing a cabinet entry."><code>ASCabEntryRec</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCab.htm#ASCabFromEntryList" title=" Builds a cabinet based on a constant array of ASCabDescriptor records (see ASCabEntryRec)."><code>ASCabFromEntryList</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>ASCab Functions</h2></header>
+<nav><dl>
+<dt><a href="#ASCabCopy">ASCabCopy</a></dt><dd> -  For each key/value pair in srcCab a copy of the key/value pair will be placed into dstCab, possibly overwriting any identically named key/value pair in dstCab.</dd>
+<dt><a href="#ASCabDestroy">ASCabDestroy</a></dt><dd> -  Destroys the cabinet and all its key/value pairs.</dd>
+<dt><a href="#ASCabDestroyEmpties">ASCabDestroyEmpties</a></dt><dd> -  Finds any empty cabinets in theCab, removes their corresponding keys, and destroys them.</dd>
+<dt><a href="#ASCabDetachBinary">ASCabDetachBinary</a></dt><dd> -  Retrieves the binary object stored under theKey in theCab and removes the key from theCab.</dd>
+<dt><a href="#ASCabDetachCab">ASCabDetachCab</a></dt><dd> -  Retrieves the ASCab stored under theKey in theCab and removes the key from theCab.</dd>
+<dt><a href="#ASCabDetachPathName">ASCabDetachPathName</a></dt><dd> -  Retrieves the ASPathName stored under theKey in theCab and removes the key from theCab.</dd>
+<dt><a href="#ASCabDetachPointerRaw">ASCabDetachPointerRaw</a></dt><dd> -  Retrieves the pointer stored under theKey in theCab and removes the key from theCab.</dd>
+<dt><a href="#ASCabDetachString">ASCabDetachString</a></dt><dd> -  Retrieves the string stored under theKey in theCab and removes the key from theCab.</dd>
+<dt><a href="#ASCabDetachText">ASCabDetachText</a></dt><dd> -  Retrieves the ASText object stored under theKey in theCab and removes the key from theCab.</dd>
+<dt><a href="#ASCabDup">ASCabDup</a></dt><dd> -  Creates a new ASCab and populates it with copies of the key/value pairs in srcCab.</dd>
+<dt><a href="#ASCabEnum">ASCabEnum</a></dt><dd> -  Enumerates all the keys in the cabinet.</dd>
+<dt><a href="#ASCabEqual">ASCabEqual</a></dt><dd> -  Compares two cabinets and verifies that they have a matching set of keys and that all key values are equal as reported by ASCabValueEqual().</dd>
+<dt><a href="#ASCabFromEntryList">ASCabFromEntryList</a></dt><dd> -  Builds a cabinet based on a constant array of ASCabDescriptor records (see ASCabEntryRec).</dd>
+<dt><a href="#ASCabGetAtom">ASCabGetAtom</a></dt><dd> -  Returns the ASAtom value stored under theKey in theCab.</dd>
+<dt><a href="#ASCabGetBinary">ASCabGetBinary</a></dt><dd> -  Returns the binary object stored under theKey in theCab.</dd>
+<dt><a href="#ASCabGetBinaryCopy">ASCabGetBinaryCopy</a></dt><dd> -  Returns a copy of the binary object stored under theKey in theCab.</dd>
+<dt><a href="#ASCabGetBool">ASCabGetBool</a></dt><dd> -  Returns the ASBool value stored under theKey in theCab.</dd>
+<dt><a href="#ASCabGetCab">ASCabGetCab</a></dt><dd> -  Returns the ASCab stored under theKey in theCab.</dd>
+<dt><a href="#ASCabGetDouble">ASCabGetDouble</a></dt><dd> -  Returns the double value stored under theKey in theCab.</dd>
+<dt><a href="#ASCabGetInt">ASCabGetInt</a></dt><dd> -  Returns the ASInt32 value stored under theKey in theCab.</dd>
+<dt><a href="#ASCabGetInt64">ASCabGetInt64</a></dt><dd> -  Returns the ASInt64 value stored under theKey in theCab.</dd>
+<dt><a href="#ASCabGetPathNameCopy">ASCabGetPathNameCopy</a></dt><dd> -  Returns a copy of ASPathName stored under theKey in theCab.</dd>
+<dt><a href="#ASCabGetPointerDestroyProc">ASCabGetPointerDestroyProc</a></dt><dd> -  Obtains the resource deallocation callback associated with the pointer stored under theKey in theCab.</dd>
+<dt><a href="#ASCabGetPointerRaw">ASCabGetPointerRaw</a></dt><dd> -  Returns the pointer value stored under theKey in theCab.</dd>
+<dt><a href="#ASCabGetPointerType">ASCabGetPointerType</a></dt><dd> -  Returns a string representation of the data type referenced by the pointer stored under theKey in theCab.</dd>
+<dt><a href="#ASCabGetString">ASCabGetString</a></dt><dd> -  Returns the string stored under theKey in theCab.</dd>
+<dt><a href="#ASCabGetStringCopy">ASCabGetStringCopy</a></dt><dd> -  Returns a copy of the string stored under theKey in theCab.</dd>
+<dt><a href="#ASCabGetText">ASCabGetText</a></dt><dd> -  Returns the ASText object stored under theKey in theCab.</dd>
+<dt><a href="#ASCabGetType">ASCabGetType</a></dt><dd> -  Returns the type of value stored under theKey in theCab.</dd>
+<dt><a href="#ASCabGetUns">ASCabGetUns</a></dt><dd> -  Returns the ASUns32 value stored under theKey in theCab.</dd>
+<dt><a href="#ASCabGetUns64">ASCabGetUns64</a></dt><dd> -  Returns the ASUns64 value stored under theKey in theCab.</dd>
+<dt><a href="#ASCabKnown">ASCabKnown</a></dt><dd> -  Returns true if theKey is present in theCab.</dd>
+<dt><a href="#ASCabMakeEmpty">ASCabMakeEmpty</a></dt><dd> -  Removes all keys from theCab and destroys all values they point to.</dd>
+<dt><a href="#ASCabMunge">ASCabMunge</a></dt><dd> -  Munges the keys and the corresponding values in theCab based on the keys in keyCab and the munge action.</dd>
+<dt><a href="#ASCabNew">ASCabNew</a></dt><dd> -  Creates a new, empty cabinet.</dd>
+<dt><a href="#ASCabNumEntries">ASCabNumEntries</a></dt><dd> -  Returns the number of key/value pairs in theCab.</dd>
+<dt><a href="#ASCabPutAtom">ASCabPutAtom</a></dt><dd> -  Stores an ASAtom value in theCab under theKey.</dd>
+<dt><a href="#ASCabPutBinary">ASCabPutBinary</a></dt><dd> -  Stores a binary object in theCab under theKey.</dd>
+<dt><a href="#ASCabPutBool">ASCabPutBool</a></dt><dd> -  Stores an ASBool value in theCab under theKey.</dd>
+<dt><a href="#ASCabPutCab">ASCabPutCab</a></dt><dd> -  Stores an ASCab in theCab under theKey.</dd>
+<dt><a href="#ASCabPutDouble">ASCabPutDouble</a></dt><dd> -  Stores a double value in theCab under theKey.</dd>
+<dt><a href="#ASCabPutInt">ASCabPutInt</a></dt><dd> -  Stores an ASInt32 value in theCab under theKey.</dd>
+<dt><a href="#ASCabPutInt64">ASCabPutInt64</a></dt><dd> -  Stores an ASInt64 value in theCab under theKey.</dd>
+<dt><a href="#ASCabPutNull">ASCabPutNull</a></dt><dd> -  Stores a value with a type of kASValueNull in theCab under theKey.</dd>
+<dt><a href="#ASCabPutPathName">ASCabPutPathName</a></dt><dd> -  Stores an ASPathName in theCab under theKey.</dd>
+<dt><a href="#ASCabPutPointerRaw">ASCabPutPointerRaw</a></dt><dd> -  Stores a pointer in theCab under theKey.</dd>
+<dt><a href="#ASCabPutString">ASCabPutString</a></dt><dd> -  Stores a string in theCab under theKey.</dd>
+<dt><a href="#ASCabPutText">ASCabPutText</a></dt><dd> -  Stores an ASText object in theCab under theKey.</dd>
+<dt><a href="#ASCabPutUns">ASCabPutUns</a></dt><dd> -  Stores the ASUns32 value under theKey in theCab.</dd>
+<dt><a href="#ASCabPutUns64">ASCabPutUns64</a></dt><dd> -  Stores an ASUns64 value in theCab under theKey.</dd>
+<dt><a href="#ASCabReadFromStream">ASCabReadFromStream</a></dt><dd> -  Reads a previously written cabinet from a stream.</dd>
+<dt><a href="#ASCabRemove">ASCabRemove</a></dt><dd> -  Removes theKey entry from theCab, destroying the associated value.</dd>
+<dt><a href="#ASCabRename">ASCabRename</a></dt><dd> -  Renames a key within theCab while preserving the value associated with it.</dd>
+<dt><a href="#ASCabValueEqual">ASCabValueEqual</a></dt><dd> -  Compares two cabinet values and returns true only if they are equal (meaning that they have the same type and value).</dd>
+<dt><a href="#ASCabWriteToStream">ASCabWriteToStream</a></dt><dd> -  Writes theCab out to a stream.</dd>
+<dt><a href="#ASConstCabEnum">ASConstCabEnum</a></dt><dd> -  Enumerates all the keys in the constant cabinet.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASCabCopy"><strong><span style="color:grey;">ASCabCopy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1283</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>For each key/value pair in <code>srcCab</code> a copy of the key/value pair will be placed into <code>dstCab</code>, possibly overwriting any identically named key/value pair in <code>dstCab</code>. If the value being copied is a pointer with an associated <code>destroyProc</code>, the pointer and its type string, but not the data it points to, will be copied and an internal reference count will be incremented. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabDup" title=" Creates a new ASCab and populates it with copies of the key/value pairs in srcCab.">ASCabDup</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabCopy(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>srcCab</code><code>,</code> <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>dstCab</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>srcCab</code></span>
+</td><td><span>The source cabinet. </span>
+</td></tr>
+<tr><td><span><code>dstCab</code></span>
+</td><td><span>The destination cabinet. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#genErrNoMemory" title=" Out of memory."><code>genErrNoMemory</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASCabDestroy"><strong><span style="color:grey;">ASCabDestroy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:644</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Destroys the cabinet and all its key/value pairs. This method raises an exception if the cabinet is the value for some key in another cabinet. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabDestroy(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>The cabinet. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabDestroyEmpties"><strong><span style="color:grey;">ASCabDestroyEmpties</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1267</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Finds any empty cabinets in <code>theCab</code>, removes their corresponding keys, and destroys them. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabDestroyEmpties(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>recurse</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>The cabinet. </span>
+</td></tr>
+<tr><td><span><code>recurse</code></span>
+</td><td><span><a href="aslayer_General.htm#true"><code>true</code></a> to recurse through all sub-cabinets inside <code>theCab</code>; <a href="aslayer_General.htm#false"><code>false</code></a> to limit enumeration to key/value pairs directly inside <code>theCab</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabDetachBinary"><strong><span style="color:grey;">ASCabDetachBinary</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1219</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Retrieves the binary object stored under <code>theKey</code> in <code>theCab</code> and removes the key from <code>theCab</code>.<br/>
+<p>The client assumes ownership of the object and is responsible for deallocating any resources associated with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCab.htm#ASCabGetBinary" title=" Returns the binary object stored under theKey in theCab."><code>ASCabGetBinary</code></a>
+<a href="aslayer_ASCab.htm#ASCabGetBinaryCopy" title=" Returns a copy of the binary object stored under theKey in theCab."><code>ASCabGetBinaryCopy</code></a>
+<a href="aslayer_ASCab.htm#ASCabPutBinary" title=" Stores a binary object in theCab under theKey."><code>ASCabPutBinary</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>*</code><code>ASCabDetachBinary(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>*</code><code>numBytes</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr>
+<tr><td><span><code>numBytes</code></span>
+</td><td><span>IN/OUT (Filled by the method, may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) If it is not <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, it contains the size (in bytes) of the object retrieved. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A pointer to the binary object. It will be <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if <code>theKey</code> is not present in <code>theCab</code> or if the value stored under <code>theKey</code> is not of type kASTypeBinary. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabDetachCab"><strong><span style="color:grey;">ASCabDetachCab</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1038</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Retrieves the <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> stored under <code>theKey</code> in <code>theCab</code> and removes the key from <code>theCab</code>.<br/>
+<p>The client assumes ownership of the <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> returned and is responsible for destroying it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCab.htm#ASCabGetCab" title=" Returns the ASCab stored under theKey in theCab."><code>ASCabGetCab</code></a>
+<a href="aslayer_ASCab.htm#ASCabPutCab" title=" Stores an ASCab in theCab under theKey."><code>ASCabPutCab</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>ASCabDetachCab(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The cabinet. Will be <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if <code>theKey</code> is not present in <code>theCab</code>, or if the value stored under <code>theKey</code> is not of type <a href="aslayer_General.htm#kASValueCabinet" title=" Another cabinet.">kASValueCabinet</a>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabDetachPathName"><strong><span style="color:grey;">ASCabDetachPathName</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1401</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Retrieves the <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> stored under <code>theKey</code> in <code>theCab</code> and removes the key from <code>theCab</code>.<br/>
+<p>Both <code>fileSys</code> and <code>pathName</code> will be <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if <code>theKey</code> was not found, there was no valid <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> stored under the key, or if the <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> does not point to an existing file.<br/></p>
+
+<p>
+<p>It is the client's responsibility to release the memory associated with the <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> using <a href="aslayer_ASFileSys.htm#ASFileSysReleasePath" title=" Decrements the internal reference count for the path name and disposes of the path name (but not the file itself) if the reference count is zero.">ASFileSysReleasePath</a>().<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCab.htm#ASCabGetPathNameCopy" title=" Returns a copy of ASPathName stored under theKey in theCab."><code>ASCabGetPathNameCopy</code></a>
+<a href="aslayer_ASCab.htm#ASCabPutPathName" title=" Stores an ASPathName in theCab under theKey."><code>ASCabPutPathName</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabDetachPathName(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>keyName</code><code>,</code> <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>*</code><code>fileSys</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>*</code><code>pathName</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>keyName</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr>
+<tr><td><span><code>fileSys</code></span>
+</td><td><span>IN/OUT (Filled by the method) The <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system.">ASFileSys</a> that pathName was opened through. </span>
+</td></tr>
+<tr><td><span><code>pathName</code></span>
+</td><td><span>IN/OUT (Filled by the method) The path name. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrNoMemory" title=" Out of memory."><code>genErrNoMemory</code></a></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span>Any</span>
+</td><td><span>exceptions raised by <a href="aslayer_ASFileSys.htm#ASFileSysPathFromDIPath" title=" Converts a device-independent path name to an ASPathName.">ASFileSysPathFromDIPath</a>. </span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabDetachPointerRaw"><strong><span style="color:grey;">ASCabDetachPointerRaw</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:940</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Retrieves the pointer stored under <code>theKey</code> in <code>theCab</code> and removes the key from <code>theCab</code>. If <code>noRefs</code> is set to <a href="aslayer_General.htm#true"><code>true</code></a>, the client assumes ownership of the data referenced by the pointer and is responsible for deallocating any resources associated with it. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>*</code><code>ASCabDetachPointerRaw(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>expectedType</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>*</code><code>noRefs</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>The key name. </span>
+</td></tr>
+<tr><td><span><code>expectedType</code></span>
+</td><td><span>The data type referenced by the pointer. Since ASCabGetPointer() is actually a macro, you should pass the type as a literal name, not a string. For example, use <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> instead of <code>"PDDoc"</code>. Pointers are always <em>typed</em>, in that they always have associated with them a string indicating the type to which they point. </span>
+</td></tr>
+<tr><td><span><code>noRefs</code></span>
+</td><td><span>(Filled by the method, may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) If non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, a value of <a href="aslayer_General.htm#true"><code>true</code></a> indicates that there are no other <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> objects that reference this pointer, and a value of <a href="aslayer_General.htm#false"><code>false</code></a> indicates that some <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> object still contains a copy of the pointer. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The pointer value stored under <code>theKey</code>. It will be <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if <code>theKey</code> is not present in <code>theCab</code>, the value stored under <code>theKey</code> is not of type <a href="aslayer_General.htm#kASValuePointer" title=" A pointer to something outside the cabinet.">kASValuePointer</a>, or the type of the pointer does not match <code>expectedType</code>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabDetachString"><strong><span style="color:grey;">ASCabDetachString</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1091</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Retrieves the string stored under <code>theKey</code> in <code>theCab</code> and removes the key from <code>theCab</code>.<br/>
+<p>The client assumes ownership of the string and is responsible for deallocating any resources associated with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCab.htm#ASCabGetString" title=" Returns the string stored under theKey in theCab."><code>ASCabGetString</code></a>
+<a href="aslayer_ASCab.htm#ASCabGetStringCopy" title=" Returns a copy of the string stored under theKey in theCab."><code>ASCabGetStringCopy</code></a>
+<a href="aslayer_ASCab.htm#ASCabPutString" title=" Stores a string in theCab under theKey."><code>ASCabPutString</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>char</code> <code>*</code><code>ASCabDetachString(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The string stored under <code>theKey</code>. Will be <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if <code>theKey</code> is not present in <code>theCab</code>, or if the value stored under <code>theKey</code> is not of type <a href="aslayer_General.htm#kASValueString" title=" A NULL-terminated, unencoded string.">kASValueString</a>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabDetachText"><strong><span style="color:grey;">ASCabDetachText</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1142</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Retrieves the <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object stored under <code>theKey</code> in <code>theCab</code> and removes the key from <code>theCab</code>.<br/>
+<p>The client assumes ownership of the <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object and is responsible for deallocating it using <a href="aslayer_ASText.htm#ASTextDestroy" title=" Frees all memory associated with the text object.">ASTextDestroy</a>().<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCab.htm#ASCabGetText" title=" Returns the ASText object stored under theKey in theCab."><code>ASCabGetText</code></a>
+<a href="aslayer_ASCab.htm#ASCabPutText" title=" Stores an ASText object in theCab under theKey."><code>ASCabPutText</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>ASCabDetachText(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>The key name. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object stored under <code>theKey</code>. It will be <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if <code>theKey</code> is not present in <code>theCab</code>, or if the value stored under <code>theKey</code> is not of type <a href="aslayer_General.htm#kASValueText" title=" An ASText object.">kASValueText</a>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabDup"><strong><span style="color:grey;">ASCabDup</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1294</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a new <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> and populates it with copies of the key/value pairs in <code>srcCab</code>. It is equivalent to <a href="aslayer_ASCab.htm#ASCabCopy" title=" For each key/value pair in srcCab a copy of the key/value pair will be placed into dstCab, possibly overwriting any identically named key/value pair in dstCab."><code>ASCabCopy</code></a><code>(</code> <code>srcCab,</code> <a href="aslayer_ASCab.htm#ASCabNew" title=" Creates a new, empty cabinet."><code>ASCabNew</code></a> <code>()</code><code>)</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabCopy" title=" For each key/value pair in srcCab a copy of the key/value pair will be placed into dstCab, possibly overwriting any identically named key/value pair in dstCab.">ASCabCopy</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>ASCabDup(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>srcCab</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>srcCab</code></span>
+</td><td><span>The source cabinet. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#genErrNoMemory" title=" Out of memory."><code>genErrNoMemory</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASCabEnum"><strong><span style="color:grey;">ASCabEnum</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:698</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Enumerates all the keys in the cabinet.<br/>
+<p>Keys consisting solely of digits are enumerated first, in numeric order (assuming they are not padded with zeros at the front, which will confuse matters). Non-numeric keys are then enumerated in <code>strcmp</code> order.<br/></p>
+
+<p>
+<p>It is safe to add, delete, and modify items in <code>theCab</code> during the enumeration. Items that are added during the enumeration will not be enumerated. Modified items that have been enumerated already will not be enumerated again. Deleted items that have not yet been enumerated will not be enumerated.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This will <code>RERAISE</code> any exceptions thrown by <code>enumProc</code>. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASConstCabEnum" title=" Enumerates all the keys in the constant cabinet.">ASConstCabEnum</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabEnum(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <a href="aslayer_ASCab.htm#ASCabEnumProc" title=" Used when enumerating the values inside a cabinet."><code>ASCabEnumProc</code></a> <code>enumProc</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>The cabinet. </span>
+</td></tr>
+<tr><td><span><code>enumProc</code></span>
+</td><td><span>A user-supplied callback that is called for each entry found in <code>theCab</code>. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>A pointer to user-supplied data to pass to <code>enumProc</code> each time it is called. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabEqual"><strong><span style="color:grey;">ASCabEqual</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1326</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Compares two cabinets and verifies that they have a matching set of keys and that all key values are equal as reported by <a href="aslayer_ASCab.htm#ASCabValueEqual" title=" Compares two cabinet values and returns true only if they are equal (meaning that they have the same type and value).">ASCabValueEqual</a>(). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabValueEqual" title=" Compares two cabinet values and returns true only if they are equal (meaning that they have the same type and value).">ASCabValueEqual</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ASCabEqual(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>cab1</code><code>,</code> <a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>cab2</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>cab1</code></span>
+</td><td><span>The first cabinet. </span>
+</td></tr>
+<tr><td><span><code>cab2</code></span>
+</td><td><span>The second cabinet. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the cabinets are equal, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabFromEntryList"><strong><span style="color:grey;">ASCabFromEntryList</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:635</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Builds a cabinet based on a constant array of ASCabDescriptor records (see <a href="aslayer_ASCab.htm#_t_ASCabEntryRec" title=" A data structure representing a cabinet entry.">ASCabEntryRec</a>). The first entry in each descriptor specifies the name of the key; subsequent fields contain the value. The entry list must end with a descriptor containing <a href="aslayer_General.htm#NULL"><code>NULL</code></a> for the key name. See ASExtraExpT.h for more info. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>ASCabFromEntryList(</code><code>const</code> <a href="aslayer_ASCab.htm#_t_ASCabEntryRec" title=" A data structure representing a cabinet entry."><code>ASCabEntryRec</code></a> <code>*</code><code>entryList</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>entryList</code></span>
+</td><td><span>A constant array of ASCabDescriptor records (see <a href="aslayer_ASCab.htm#_t_ASCabEntryRec" title=" A data structure representing a cabinet entry.">ASCabEntryRec</a>). Passing <a href="aslayer_General.htm#NULL"><code>NULL</code></a> generates an empty <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabGetAtom"><strong><span style="color:grey;">ASCabGetAtom</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:822</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> value stored under <code>theKey</code> in <code>theCab</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabPutAtom" title=" Stores an ASAtom value in theCab under theKey.">ASCabPutAtom</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>ASCabGetAtom(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>defValue</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr>
+<tr><td><span><code>defValue</code></span>
+</td><td><span>IN/OUT The default value. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> value stored under <code>theKey</code> if the key is found and the value stored under it is of type <a href="aslayer_General.htm#kASValueAtom" title=" An ASAtom.">kASValueAtom</a>; otherwise <code>defValue</code> is returned. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabGetBinary"><strong><span style="color:grey;">ASCabGetBinary</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1177</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the binary object stored under <code>theKey</code> in <code>theCab</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCab.htm#ASCabDetachBinary" title=" Retrieves the binary object stored under theKey in theCab and removes the key from theCab."><code>ASCabDetachBinary</code></a>
+<a href="aslayer_ASCab.htm#ASCabGetBinaryCopy" title=" Returns a copy of the binary object stored under theKey in theCab."><code>ASCabGetBinaryCopy</code></a>
+<a href="aslayer_ASCab.htm#ASCabPutBinary" title=" Stores a binary object in theCab under theKey."><code>ASCabPutBinary</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>const</code> <code>void</code> <code>*</code><code>ASCabGetBinary(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>*</code><code>numBytes</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr>
+<tr><td><span><code>numBytes</code></span>
+</td><td><span>IN/OUT (Filled by the method, may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) If it is not <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, it contains the size (in bytes) of the object returned. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The binary object stored under <code>theKey</code> if the key is found and the value stored under it is of type <a href="aslayer_General.htm#kASValueBinary" title=" A binary blob of any size.">kASValueBinary</a>; otherwise <a href="aslayer_General.htm#NULL"><code>NULL</code></a> is returned. This object is owned by the <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> and should not be destroyed by the caller. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabGetBinaryCopy"><strong><span style="color:grey;">ASCabGetBinaryCopy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1198</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Returns a copy of the binary object stored under <code>theKey</code> in <code>theCab</code>.<br/>
+<p>It is the client's responsibility to release the memory associated with the object using <a href="aslayer_ASMem.htm#ASfree" title=" Frees the specified memory block.">ASfree</a>().<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCab.htm#ASCabDetachBinary" title=" Retrieves the binary object stored under theKey in theCab and removes the key from theCab."><code>ASCabDetachBinary</code></a>
+<a href="aslayer_ASCab.htm#ASCabGetBinary" title=" Returns the binary object stored under theKey in theCab."><code>ASCabGetBinary</code></a>
+<a href="aslayer_ASCab.htm#ASCabPutBinary" title=" Stores a binary object in theCab under theKey."><code>ASCabPutBinary</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>*</code><code>ASCabGetBinaryCopy(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>*</code><code>numBytes</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr>
+<tr><td><span><code>numBytes</code></span>
+</td><td><span>IN/OUT (Filled by the method, may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) If it is not <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, it contains the size of the object returned. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The binary object stored under <code>theKey</code> if the key is found and the value stored under it is of type <a href="aslayer_General.htm#kASValueBinary" title=" A binary blob of any size.">kASValueBinary</a>; otherwise <a href="aslayer_General.htm#NULL"><code>NULL</code></a> is returned. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#genErrNoMemory" title=" Out of memory."><code>genErrNoMemory</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASCabGetBool"><strong><span style="color:grey;">ASCabGetBool</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:774</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the <a href="aslayer_General.htm#ASBool" title=" ASBool">ASBool</a> value stored under <code>theKey</code> in <code>theCab</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabPutBool" title=" Stores an ASBool value in theCab under theKey.">ASCabPutBool</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ASCabGetBool(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>defValue</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr>
+<tr><td><span><code>defValue</code></span>
+</td><td><span>IN/OUT The default value. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="aslayer_General.htm#ASBool" title=" ASBool">ASBool</a> value stored under <code>theKey</code> if the key is found and the value stored under it is of type <a href="aslayer_General.htm#kASValueBool" title=" An ASBool.">kASValueBool</a>; otherwise <code>defValue</code> is returned. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabGetCab"><strong><span style="color:grey;">ASCabGetCab</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1021</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> stored under <code>theKey</code> in <code>theCab</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCab.htm#ASCabDetachCab" title=" Retrieves the ASCab stored under theKey in theCab and removes the key from theCab."><code>ASCabDetachCab</code></a>
+<a href="aslayer_ASCab.htm#ASCabPutCab" title=" Stores an ASCab in theCab under theKey."><code>ASCabPutCab</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>ASCabGetCab(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> stored under <code>theKey</code> if the key is found and the value stored under it is of type <a href="aslayer_General.htm#kASValueCabinet" title=" Another cabinet.">kASValueCabinet</a>; otherwise <a href="aslayer_General.htm#NULL"><code>NULL</code></a> is returned. This object is owned by <code>theCab</code> and should not be destroyed by the client. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabGetDouble"><strong><span style="color:grey;">ASCabGetDouble</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:847</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the <code>double</code> value stored under <code>theKey</code> in <code>theCab</code>. If the value stored under <code>theKey</code> is of type <a href="aslayer_General.htm#kASValueInteger" title=" An ASInt32.">kASValueInteger</a>, this value will be cast to a <code>double</code> and returned to the client. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabPutDouble" title=" Stores a double value in theCab under theKey.">ASCabPutDouble</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>double</code> <code>ASCabGetDouble(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <code>double</code> <code>defValue</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr>
+<tr><td><span><code>defValue</code></span>
+</td><td><span>IN/OUT The default value. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <code>double</code> value stored under <code>theKey</code> if the key is found and the value stored under it is of type <a href="aslayer_General.htm#kASValueDouble" title=" A double precision floating-point number.">kASValueDouble</a> or <a href="aslayer_General.htm#kASValueInteger" title=" An ASInt32.">kASValueInteger</a>; otherwise <code>defValue</code> is returned. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabGetInt"><strong><span style="color:grey;">ASCabGetInt</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:798</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value.">ASInt32</a> value stored under <code>theKey</code> in <code>theCab</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabPutInt" title=" Stores an ASInt32 value in theCab under theKey.">ASCabPutInt</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>ASCabGetInt(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>defValue</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr>
+<tr><td><span><code>defValue</code></span>
+</td><td><span>IN/OUT The default value. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value.">ASInt32</a> value stored under <code>theKey</code> if the key is found and the value stored under it is of type <a href="aslayer_General.htm#kASValueInteger" title=" An ASInt32.">kASValueInteger</a>; otherwise <code>defValue</code> is returned. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabGetInt64"><strong><span style="color:grey;">ASCabGetInt64</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:2240</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the <a href="aslayer_General.htm#ASInt64" title=" 8-byte signed long numeric value.">ASInt64</a> value stored under <code>theKey</code> in <code>theCab</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabPutInt64" title=" Stores an ASInt64 value in theCab under theKey.">ASCabPutInt64</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt64" title=" 8-byte signed long numeric value."><code>ASInt64</code></a> <code>ASCabGetInt64(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <a href="aslayer_General.htm#ASInt64" title=" 8-byte signed long numeric value."><code>ASInt64</code></a> <code>defValue</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr>
+<tr><td><span><code>defValue</code></span>
+</td><td><span>IN/OUT The default value. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="aslayer_General.htm#ASInt64" title=" 8-byte signed long numeric value.">ASInt64</a> value stored under <code>theKey</code> if the key is found and the value stored under it is of type <a href="aslayer_General.htm#kASValueInt64" title=" An ASInt64.">kASValueInt64</a>; otherwise <code>defValue</code> is returned. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabGetPathNameCopy"><strong><span style="color:grey;">ASCabGetPathNameCopy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1377</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Returns a copy of <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> stored under <code>theKey</code> in <code>theCab</code>.<br/>
+<p>It is the client's responsibility to release the <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> using <a href="aslayer_ASFileSys.htm#ASFileSysReleasePath" title=" Decrements the internal reference count for the path name and disposes of the path name (but not the file itself) if the reference count is zero.">ASFileSysReleasePath</a>().<br/></p>
+
+<p>
+<p>Both <code>fileSys</code> and <code>pathName</code> will be <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if <code>theKey</code> was not found, there was no valid <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> stored under the key, or if <code>pathName</code> does not point to an existing file.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCab.htm#ASCabDetachPathName" title=" Retrieves the ASPathName stored under theKey in theCab and removes the key from theCab."><code>ASCabDetachPathName</code></a>
+<a href="aslayer_ASCab.htm#ASCabPutPathName" title=" Stores an ASPathName in theCab under theKey."><code>ASCabPutPathName</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabGetPathNameCopy(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>keyName</code><code>,</code> <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>*</code><code>fileSys</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>*</code><code>pathName</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>keyName</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr>
+<tr><td><span><code>fileSys</code></span>
+</td><td><span>IN/OUT (Filled by the method) The <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system.">ASFileSys</a> that <code>pathName</code> was opened through. </span>
+</td></tr>
+<tr><td><span><code>pathName</code></span>
+</td><td><span>IN/OUT (Filled by the method) The path name. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrNoMemory" title=" Out of memory."><code>genErrNoMemory</code></a></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span>Any</span>
+</td><td><span>exception raised by <a href="aslayer_ASFileSys.htm#ASFileSysPathFromDIPath" title=" Converts a device-independent path name to an ASPathName.">ASFileSysPathFromDIPath</a>. </span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabGetPointerDestroyProc"><strong><span style="color:grey;">ASCabGetPointerDestroyProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:976</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Obtains the resource deallocation callback associated with the pointer stored under <code>theKey</code> in <code>theCab</code>. When the reference count of the pointer falls to zero, the callback is called to free the resources associated with the object it references. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASCab.htm#ASCabPointerDestroyProc" title=" A deallocation callback that can be associated with a pointer in an ASCab."><code>ASCabPointerDestroyProc</code></a> <code>ASCabGetPointerDestroyProc(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The callback (if any) associated with the pointer if the key is found and the value stored under it is of type <a href="aslayer_General.htm#kASValuePointer" title=" A pointer to something outside the cabinet.">kASValuePointer</a>; otherwise <a href="aslayer_General.htm#NULL"><code>NULL</code></a> is returned. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabGetPointerRaw"><strong><span style="color:grey;">ASCabGetPointerRaw</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:914</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Returns the pointer value stored under <code>theKey</code> in <code>theCab</code>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>*</code><code>ASCabGetPointerRaw(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>expectedType</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>The key name. </span>
+</td></tr>
+<tr><td><span><code>expectedType</code></span>
+</td><td><span>The data type referenced by the pointer. Since ASCabGetPointer() is actually a macro, you should pass the type as a literal name, not a string. For example, use <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> instead of <code>"PDDoc"</code>. Pointers are always <em>typed</em>, in that they always have associated with them a string indicating the type to which they point. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The pointer value stored under <code>theKey</code> if the key is found, the value stored under <code>theKey</code> is of type <a href="aslayer_General.htm#kASValuePointer" title=" A pointer to something outside the cabinet.">kASValuePointer</a>, and the type of the pointer matches <code>expectedType</code>; otherwise <a href="aslayer_General.htm#NULL"><code>NULL</code></a> is returned. The object referenced by this pointer is owned by <code>theCab</code> and should not be destroyed by the client. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabGetPointerType"><strong><span style="color:grey;">ASCabGetPointerType</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:988</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Returns a string representation of the data type referenced by the pointer stored under <code>theKey</code> in <code>theCab</code>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>const</code> <code>char</code> <code>*</code><code>ASCabGetPointerType(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The string if the key is found and the value stored under it is of type <a href="aslayer_General.htm#kASValuePointer" title=" A pointer to something outside the cabinet.">kASValuePointer</a>; otherwise <a href="aslayer_General.htm#NULL"><code>NULL</code></a> is returned. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabGetString"><strong><span style="color:grey;">ASCabGetString</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1055</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the string stored under <code>theKey</code> in <code>theCab</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCab.htm#ASCabDetachString" title=" Retrieves the string stored under theKey in theCab and removes the key from theCab."><code>ASCabDetachString</code></a>
+<a href="aslayer_ASCab.htm#ASCabGetStringCopy" title=" Returns a copy of the string stored under theKey in theCab."><code>ASCabGetStringCopy</code></a>
+<a href="aslayer_ASCab.htm#ASCabPutString" title=" Stores a string in theCab under theKey."><code>ASCabPutString</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>const</code> <code>char</code> <code>*</code><code>ASCabGetString(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The string stored under <code>theKey</code> if the key is found and the value stored under it is of type <a href="aslayer_General.htm#kASValueString" title=" A NULL-terminated, unencoded string.">kASValueString</a>; otherwise <a href="aslayer_General.htm#NULL"><code>NULL</code></a> is returned. The object referenced by this pointer is owned by <code>theCab</code> and should not be destroyed by the client. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#genErrNoMemory" title=" Out of memory."><code>genErrNoMemory</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASCabGetStringCopy"><strong><span style="color:grey;">ASCabGetStringCopy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1073</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Returns a copy of the string stored under <code>theKey</code> in <code>theCab</code>.<br/>
+<p>It is the client's responsibility to release the memory allocated for the string using <a href="aslayer_ASMem.htm#ASfree" title=" Frees the specified memory block.">ASfree</a>().<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCab.htm#ASCabDetachString" title=" Retrieves the string stored under theKey in theCab and removes the key from theCab."><code>ASCabDetachString</code></a>
+<a href="aslayer_ASCab.htm#ASCabGetString" title=" Returns the string stored under theKey in theCab."><code>ASCabGetString</code></a>
+<a href="aslayer_ASCab.htm#ASCabPutString" title=" Stores a string in theCab under theKey."><code>ASCabPutString</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>char</code> <code>*</code><code>ASCabGetStringCopy(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A copy of the string stored under <code>theKey</code> if the key is found and the value stored under it is of type <a href="aslayer_General.htm#kASValueString" title=" A NULL-terminated, unencoded string.">kASValueString</a>; otherwise <a href="aslayer_General.htm#NULL"><code>NULL</code></a> is returned. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#genErrNoMemory" title=" Out of memory."><code>genErrNoMemory</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASCabGetText"><strong><span style="color:grey;">ASCabGetText</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1125</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object stored under <code>theKey</code> in <code>theCab</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCab.htm#ASCabDetachText" title=" Retrieves the ASText object stored under theKey in theCab and removes the key from theCab."><code>ASCabDetachText</code></a>
+<a href="aslayer_ASCab.htm#ASCabPutText" title=" Stores an ASText object in theCab under theKey."><code>ASCabPutText</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>ASCabGetText(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object stored under <code>theKey</code> if the key is found and the value stored under it is of type <a href="aslayer_General.htm#kASValueText" title=" An ASText object.">kASValueText</a>; otherwise <a href="aslayer_General.htm#NULL"><code>NULL</code></a> is returned. This object is owned by <code>theCab</code> and should not be destroyed by the client. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabGetType"><strong><span style="color:grey;">ASCabGetType</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:672</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Returns the type of value stored under <code>theKey</code> in <code>theCab</code>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASCab.htm#ASCabValueType" title=" A constant that specifies the various types of values in ASCab objects."><code>ASCabValueType</code></a> <code>ASCabGetType(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The type of value stored under <code>theKey</code>, or <a href="aslayer_General.htm#kASValueUnknown" title=" An invalid type.">kASValueUnknown</a> if the key is not found. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabGetUns"><strong><span style="color:grey;">ASCabGetUns</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1515</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value.">ASUns32</a> value stored under <code>theKey</code> in <code>theCab</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabPutUns" title=" Stores the ASUns32 value under theKey in theCab.">ASCabPutUns</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>ASCabGetUns(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>defValue</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>The key name. </span>
+</td></tr>
+<tr><td><span><code>defValue</code></span>
+</td><td><span>The default value. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value.">ASUns32</a> value stored under <code>theKey</code> if the key is found and the value stored under it is of type <a href="aslayer_General.htm#kASValueUns" title=" An ASUns32.">kASValueUns</a>; otherwise <code>defValue</code> is returned. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabGetUns64"><strong><span style="color:grey;">ASCabGetUns64</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:2264</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the <a href="aslayer_General.htm#ASUns64" title=" 8-byte unsigned long numeric value.">ASUns64</a> value stored under <code>theKey</code> in <code>theCab</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabPutUns64" title=" Stores an ASUns64 value in theCab under theKey.">ASCabPutUns64</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns64" title=" 8-byte unsigned long numeric value."><code>ASUns64</code></a> <code>ASCabGetUns64(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <a href="aslayer_General.htm#ASUns64" title=" 8-byte unsigned long numeric value."><code>ASUns64</code></a> <code>defValue</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr>
+<tr><td><span><code>defValue</code></span>
+</td><td><span>IN/OUT The default value. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="aslayer_General.htm#ASUns64" title=" 8-byte unsigned long numeric value.">ASUns64</a> value stored under <code>theKey</code> if the key is found and the value stored under it is of type <a href="aslayer_General.htm#kASValueUns64" title=" An ASUns64.">kASValueUns64</a>; otherwise <code>defValue</code> is returned. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabKnown"><strong><span style="color:grey;">ASCabKnown</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:661</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Returns <a href="aslayer_General.htm#true"><code>true</code></a> if <code>theKey</code> is present in <code>theCab</code>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ASCabKnown(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>See above. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabMakeEmpty"><strong><span style="color:grey;">ASCabMakeEmpty</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1256</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Removes all keys from <code>theCab</code> and destroys all values they point to. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabMakeEmpty(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabMunge"><strong><span style="color:grey;">ASCabMunge</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1337</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Munges the keys and the corresponding values in <code>theCab</code> based on the keys in <code>keyCab</code> and the munge action. Note that <code>keyCab</code> is never altered, but <code>theCab</code> is. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabMunge(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>keyCab</code><code>,</code> <a href="aslayer_ASCab.htm#ASCabMungeAction" title=" A value that determines the actions to be taken when ASCabMunge() is called."><code>ASCabMungeAction</code></a> <code>action</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet to be modified. </span>
+</td></tr>
+<tr><td><span><code>keyCab</code></span>
+</td><td><span>IN/OUT The cabinet used to modify <code>theCab</code>. </span>
+</td></tr>
+<tr><td><span><code>action</code></span>
+</td><td><span>IN/OUT The type of action to be taken. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabNew"><strong><span style="color:grey;">ASCabNew</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:621</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Creates a new, empty cabinet. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>ASCabNew(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created cabinet. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrNoMemory" title=" Out of memory."><code>genErrNoMemory</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabNumEntries"><strong><span style="color:grey;">ASCabNumEntries</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:652</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Returns the number of key/value pairs in <code>theCab</code>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>ASCabNumEntries(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>The cabinet. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>See above. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabPutAtom"><strong><span style="color:grey;">ASCabPutAtom</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:832</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Stores an <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> value in <code>theCab</code> under <code>theKey</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabGetAtom" title=" Returns the ASAtom value stored under theKey in theCab.">ASCabGetAtom</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabPutAtom(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>atomValue</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT (May be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) The key name. </span>
+</td></tr>
+<tr><td><span><code>atomValue</code></span>
+</td><td><span>IN/OUT The value to be stored. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabPutBinary"><strong><span style="color:grey;">ASCabPutBinary</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1237</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Stores a binary object in <code>theCab</code> under <code>theKey</code>. The <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> assumes ownership of the binary object, so the client should not attempt to free the memory associated with it. The binary object must have been allocated using <a href="aslayer_ASMem.htm#ASmalloc" title=" Allocates and returns a pointer to a memory block containing the specified number of bytes.">ASmalloc</a>(). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCab.htm#ASCabDetachBinary" title=" Retrieves the binary object stored under theKey in theCab and removes the key from theCab."><code>ASCabDetachBinary</code></a>
+<a href="aslayer_ASCab.htm#ASCabGetBinary" title=" Returns the binary object stored under theKey in theCab."><code>ASCabGetBinary</code></a>
+<a href="aslayer_ASCab.htm#ASCabGetBinaryCopy" title=" Returns a copy of the binary object stored under theKey in theCab."><code>ASCabGetBinaryCopy</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabPutBinary(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <code>void</code> <code>*</code><code>theBlob</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>blobSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT (May be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) The key name. </span>
+</td></tr>
+<tr><td><span><code>theBlob</code></span>
+</td><td><span>IN/OUT (May be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) A pointer to the binary object to be stored. If it is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, the value (if any) stored under <code>theKey</code> in <code>theCab</code> is destroyed and <code>theKey</code> removed from <code>theCab</code>. </span>
+</td></tr>
+<tr><td><span><code>blobSize</code></span>
+</td><td><span>IN/OUT The size of the binary object. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabPutBool"><strong><span style="color:grey;">ASCabPutBool</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:784</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Stores an <a href="aslayer_General.htm#ASBool" title=" ASBool">ASBool</a> value in theCab under theKey. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabGetBool" title=" Returns the ASBool value stored under theKey in theCab.">ASCabGetBool</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabPutBool(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>theBool</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> (May be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) The key name. </span>
+</td></tr>
+<tr><td><span><code>theBool</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The value to be stored. Non-zero values are stored as <a href="aslayer_General.htm#true"><code>true</code></a>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabPutCab"><strong><span style="color:grey;">ASCabPutCab</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1007</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Stores an <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> in <code>theCab</code> under <code>theKey</code>. If the cabinet is already a value for some other <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a>, <a href="aslayer_ASCab.htm#ASCabPutCab" title=" Stores an ASCab in theCab under theKey.">ASCabPutCab</a>() will raise an exception, since any cabinet can be contained by at most one other cabinet.<br/>
+<p><code>theCab</code> assumes ownership of the cabinet, so the client must not destroy it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCab.htm#ASCabDetachCab" title=" Retrieves the ASCab stored under theKey in theCab and removes the key from theCab."><code>ASCabDetachCab</code></a>
+<a href="aslayer_ASCab.htm#ASCabGetCab" title=" Returns the ASCab stored under theKey in theCab."><code>ASCabGetCab</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabPutCab(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>keyName</code><code>,</code> <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>putCab</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>keyName</code></span>
+</td><td><span>IN/OUT (May be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) The key name. </span>
+</td></tr>
+<tr><td><span><code>putCab</code></span>
+</td><td><span>IN/OUT (May be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) The <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> to be stored in <code>theCab</code>. If <code>cabVal</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, then any value under <code>theKey</code> is destroyed and <code>theKey</code> is removed from <code>theCab</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabPutDouble"><strong><span style="color:grey;">ASCabPutDouble</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:857</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Stores a <code>double</code> value in <code>theCab</code> under <code>theKey</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabGetDouble" title=" Returns the double value stored under theKey in theCab.">ASCabGetDouble</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabPutDouble(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <code>double</code> <code>floatValue</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT (May be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) The key name. </span>
+</td></tr>
+<tr><td><span><code>floatValue</code></span>
+</td><td><span>IN/OUT The value to be stored. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabPutInt"><strong><span style="color:grey;">ASCabPutInt</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:808</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Stores an <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value.">ASInt32</a> value in <code>theCab</code> under <code>theKey</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabGetInt" title=" Returns the ASInt32 value stored under theKey in theCab.">ASCabGetInt</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabPutInt(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>theInt</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT (May be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) The key name. </span>
+</td></tr>
+<tr><td><span><code>theInt</code></span>
+</td><td><span>IN/OUT The value to be stored. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabPutInt64"><strong><span style="color:grey;">ASCabPutInt64</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:2250</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Stores an <a href="aslayer_General.htm#ASInt64" title=" 8-byte signed long numeric value.">ASInt64</a> value in <code>theCab</code> under <code>theKey</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabGetInt64" title=" Returns the ASInt64 value stored under theKey in theCab.">ASCabGetInt64</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabPutInt64(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <a href="aslayer_General.htm#ASInt64" title=" 8-byte signed long numeric value."><code>ASInt64</code></a> <code>theInt</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT (May be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) The key name. </span>
+</td></tr>
+<tr><td><span><code>theInt</code></span>
+</td><td><span>IN/OUT The value to be stored. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabPutNull"><strong><span style="color:grey;">ASCabPutNull</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1248</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Stores a value with a type of <a href="aslayer_General.htm#kASValueNull" title=" The key exists but has no useful value.">kASValueNull</a> in <code>theCab</code> under <code>theKey</code>. <a href="aslayer_General.htm#NULL"><code>NULL</code></a> cabinet entries are used as placeholders or to removed other cabinet entries during an <a href="aslayer_ASCab.htm#ASCabMunge" title=" Munges the keys and the corresponding values in theCab based on the keys in keyCab and the munge action.">ASCabMunge</a> operation. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabPutNull(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabPutPathName"><strong><span style="color:grey;">ASCabPutPathName</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1355</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Stores an <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> in <code>theCab</code> under <code>theKey</code>.<br/>
+<p><code>theCab</code> assumes ownership of the <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a>, so the client need not call <a href="aslayer_ASFileSys.htm#ASFileSysReleasePath" title=" Decrements the internal reference count for the path name and disposes of the path name (but not the file itself) if the reference count is zero.">ASFileSysReleasePath</a>().<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCab.htm#ASCabDetachPathName" title=" Retrieves the ASPathName stored under theKey in theCab and removes the key from theCab."><code>ASCabDetachPathName</code></a>
+<a href="aslayer_ASCab.htm#ASCabGetPathNameCopy" title=" Returns a copy of ASPathName stored under theKey in theCab."><code>ASCabGetPathNameCopy</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabPutPathName(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>keyName</code><code>,</code> <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>pathName</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>keyName</code></span>
+</td><td><span>IN/OUT (May be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) The key name. </span>
+</td></tr>
+<tr><td><span><code>fileSys</code></span>
+</td><td><span>IN/OUT The <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system.">ASFileSys</a> from which the path was obtained. </span>
+</td></tr>
+<tr><td><span><code>pathName</code></span>
+</td><td><span>IN/OUT (May be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) The <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> to be stored. If <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, the value (if any) stored under <code>theKey</code> in <code>theCab</code> is destroyed and <code>theKey</code> is removed from <code>theCab</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabPutPointerRaw"><strong><span style="color:grey;">ASCabPutPointerRaw</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:959</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Stores a pointer in <code>theCab</code> under <code>theKey</code>. See the <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a> description for more information. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabPutPointerRaw(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theType</code><code>,</code> <code>void</code> <code>*</code><code>thePtr</code><code>,</code> <a href="aslayer_ASCab.htm#ASCabPointerDestroyProc" title=" A deallocation callback that can be associated with a pointer in an ASCab."><code>ASCabPointerDestroyProc</code></a> <code>destroy</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>(May be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) The key name. </span>
+</td></tr>
+<tr><td><span><code>theType</code></span>
+</td><td><span>The data type referenced by the pointer. Since ASCabGetPointer() is actually a macro, you should pass the type as a literal name, not a string. For example, use <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> instead of <code>"PDDoc"</code>. Pointers are always <em>typed</em>, in that they always have associated with them a string indicating the type to which they point. </span>
+</td></tr>
+<tr><td><span><code>thePtr</code></span>
+</td><td><span>The value to be stored. </span>
+</td></tr>
+<tr><td><span><code>destroy</code></span>
+</td><td><span>(May be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) A user-supplied callback which is called when the reference count associated with <code>thePtr</code> is zero. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#genErrNoMemory" title=" Out of memory."><code>genErrNoMemory</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASCabPutString"><strong><span style="color:grey;">ASCabPutString</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1110</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Stores a string in <code>theCab</code> under <code>theKey</code>. A string consists of some number of bytes followed by a single <a href="aslayer_General.htm#NULL"><code>NULL</code></a> (zero) byte. The string must have been allocated using <a href="aslayer_ASMem.htm#ASmalloc" title=" Allocates and returns a pointer to a memory block containing the specified number of bytes.">ASmalloc</a>().<br/>
+<p><code>theCab</code> assumes ownership of the string, so the client should not attempt to free the memory associated with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCab.htm#ASCabDetachString" title=" Retrieves the string stored under theKey in theCab and removes the key from theCab."><code>ASCabDetachString</code></a>
+<a href="aslayer_ASCab.htm#ASCabGetString" title=" Returns the string stored under theKey in theCab."><code>ASCabGetString</code></a>
+<a href="aslayer_ASCab.htm#ASCabGetStringCopy" title=" Returns a copy of the string stored under theKey in theCab."><code>ASCabGetStringCopy</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabPutString(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theStr</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT (May be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) The key name. </span>
+</td></tr>
+<tr><td><span><code>theStr</code></span>
+</td><td><span>IN/OUT (May be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) The string to be stored. If <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, the value (if any) stored under <code>theKey</code> in <code>theCab</code> is destroyed and <code>theKey</code> is removed from <code>theCab</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabPutText"><strong><span style="color:grey;">ASCabPutText</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1158</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Stores an <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object in <code>theCab</code> under <code>theKey</code>.<br/>
+<p><code>theCab</code> assumes ownership of the object, so the client should not attempt to free the memory associated with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCab.htm#ASCabDetachText" title=" Retrieves the ASText object stored under theKey in theCab and removes the key from theCab."><code>ASCabDetachText</code></a>
+<a href="aslayer_ASCab.htm#ASCabGetText" title=" Returns the ASText object stored under theKey in theCab."><code>ASCabGetText</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabPutText(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>theText</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT (May be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) The key name. </span>
+</td></tr>
+<tr><td><span><code>theText</code></span>
+</td><td><span>IN/OUT (May be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) The object to be stored. If its value is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, the value (if any) stored under <code>theKey</code> in <code>theCab</code> is destroyed and <code>theKey</code> is removed from <code>theCab</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabPutUns"><strong><span style="color:grey;">ASCabPutUns</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1525</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Stores the <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value.">ASUns32</a> value under <code>theKey</code> in <code>theCab</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabGetUns" title=" Returns the ASUns32 value stored under theKey in theCab.">ASCabGetUns</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabPutUns(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>theUns</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>The key name. </span>
+</td></tr>
+<tr><td><span><code>theUns</code></span>
+</td><td><span>The value to be stored. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabPutUns64"><strong><span style="color:grey;">ASCabPutUns64</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:2274</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Stores an <a href="aslayer_General.htm#ASUns64" title=" 8-byte unsigned long numeric value.">ASUns64</a> value in <code>theCab</code> under <code>theKey</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabGetUns64" title=" Returns the ASUns64 value stored under theKey in theCab.">ASCabGetUns64</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabPutUns64(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>,</code> <a href="aslayer_General.htm#ASUns64" title=" 8-byte unsigned long numeric value."><code>ASUns64</code></a> <code>theInt</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT (May be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) The key name. </span>
+</td></tr>
+<tr><td><span><code>theInt</code></span>
+</td><td><span>IN/OUT The value to be stored. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabReadFromStream"><strong><span style="color:grey;">ASCabReadFromStream</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1423</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Reads a previously written cabinet from a stream. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabWriteToStream" title=" Writes theCab out to a stream.">ASCabWriteToStream</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>ASCabReadFromStream(</code><a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>stm</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>stm</code></span>
+</td><td><span>Must be a stream opened through <a href="aslayer_ASFile.htm#ASFileStmRdOpen" title=" Creates a read-only ASStm from a file.">ASFileStmRdOpen</a>(), <a href="aslayer_ASStm.htm#ASMemStmRdOpen" title=" Creates a read-only ASStm from a memory-resident buffer.">ASMemStmRdOpen</a>(), or <a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure.">ASProcStmRdOpenEx</a>(). </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs.">ASCab</a>, or <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if it could not be constructed. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASCabRemove"><strong><span style="color:grey;">ASCabRemove</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:760</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Removes <code>theKey</code> entry from <code>theCab</code>, destroying the associated value. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabRemove(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>theKey</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theKey</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabRename"><strong><span style="color:grey;">ASCabRename</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1441</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Renames a key within <code>theCab</code> while preserving the value associated with it. If there is already a key equal to <code>newKeyName</code> in <code>theCab</code>, its value will be destroyed and replaced with the value of oldKeyName.<br/>
+<p>Any attempt to move the item from one sub-cabinet to another will cause <a href="aslayer_ASCab.htm#ASCabRename" title=" Renames a key within theCab while preserving the value associated with it.">ASCabRename</a>() to raise an exception. For example, <a href="aslayer_ASCab.htm#ASCabRename" title=" Renames a key within theCab while preserving the value associated with it."><code>ASCabRename</code></a><code>(theCab,</code> <code>"SubCab1:Key1",</code> <code>"SubCab2:Key1")</code> will raise an exception. If this routine raises an exception, <code>theCab</code> will be untouched.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabRename(</code><a href="aslayer_ASCab.htm#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>theCab</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>oldKeyName</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>newKeyName</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>The cabinet. </span>
+</td></tr>
+<tr><td><span><code>oldKeyName</code></span>
+</td><td><span>The key name to be changed. </span>
+</td></tr>
+<tr><td><span><code>newKeyName</code></span>
+</td><td><span>The new name. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabValueEqual"><strong><span style="color:grey;">ASCabValueEqual</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1314</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Compares two cabinet values and returns <a href="aslayer_General.htm#true"><code>true</code></a> only if they are equal (meaning that they have the same type and value). Cabinets are compared using <a href="aslayer_ASCab.htm#ASCabEqual" title=" Compares two cabinets and verifies that they have a matching set of keys and that all key values are equal as reported by ASCabValueEqual().">ASCabEqual</a>(). <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> values are compared by using <a href="aslayer_ASText.htm#ASTextCmp" title=" Compares two ASText objects.">ASTextCmp</a>() and testing for a return value of <code>0</code> (zero). Strings and binary values must have the same lengths and byte-for-byte contents. Booleans, atoms, doubles, and integers must have equal values. Pointer values must point to the same location in memory but may have different <em>destroyProcs</em> and type strings. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabEqual" title=" Compares two cabinets and verifies that they have a matching set of keys and that all key values are equal as reported by ASCabValueEqual().">ASCabEqual</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ASCabValueEqual(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>cab1</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>keyName1</code><code>,</code> <a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>cab2</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>keyName2</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>cab1</code></span>
+</td><td><span>IN/OUT The first cabinet. </span>
+</td></tr>
+<tr><td><span><code>keyName1</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr>
+<tr><td><span><code>cab2</code></span>
+</td><td><span>IN/OUT The second cabinet. </span>
+</td></tr>
+<tr><td><span><code>keyName2</code></span>
+</td><td><span>IN/OUT The key name. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>See above. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASCabWriteToStream"><strong><span style="color:grey;">ASCabWriteToStream</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:1414</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Writes <code>theCab</code> out to a stream. The caller retains ownership of the cabinet. The stream will not be closed or flushed. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabReadFromStream" title=" Reads a previously written cabinet from a stream.">ASCabReadFromStream</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASCabWriteToStream(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>theStm</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>IN/OUT The cabinet. </span>
+</td></tr>
+<tr><td><span><code>theStm</code></span>
+</td><td><span>IN/OUT Must be a stream opened through <a href="aslayer_ASFile.htm#ASFileStmWrOpen" title=" Creates a writable ASStm from a file.">ASFileStmWrOpen</a>() or <a href="aslayer_ASStm.htm#ASProcStmWrOpen" title=" Creates an ASStm from an arbitrary data-producing procedure.">ASProcStmWrOpen</a>(). </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#fileErrWrite" title=" A file write error has occurred."><code>fileErrWrite</code></a></td><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASConstCabEnum"><strong><span style="color:grey;">ASConstCabEnum</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExtraProcs.h:2201</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Enumerates all the keys in the constant cabinet.<br/>
+<p>Keys consisting solely of digits are enumerated first, in numeric order (assuming they are not padded with zeros at the front, which will confuse matters). Non-numeric keys are then enumerated in <code>strcmp</code> order.<br/></p>
+
+<p>
+<p>The callback procedure must not add, delete, or modify items in <code>theCab</code> during the enumeration.<br/></p>
+
+<p>
+<p>It will <code>RERAISE</code> any exceptions thrown by <code>enumProc</code>.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASCab.htm#ASCabEnum" title=" Enumerates all the keys in the cabinet.">ASCabEnum</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASConstCabEnum(</code><a href="aslayer_ASCab.htm#ASConstCab"><code>ASConstCab</code></a> <code>theCab</code><code>,</code> <a href="aslayer_ASCab.htm#ASConstCabEnumProc" title=" Used when enumerating the values inside a constant cabinet."><code>ASConstCabEnumProc</code></a> <code>enumProc</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theCab</code></span>
+</td><td><span>The cabinet. </span>
+</td></tr>
+<tr><td><span><code>enumProc</code></span>
+</td><td><span>User-supplied callback that is called for each entry found in <code>theCab</code>. This callback cannot modify the <a href="aslayer_ASCab.htm#ASConstCab">ASConstCab</a> object. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>A pointer to user-supplied data to pass to <code>enumProc</code> each time it is called. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+</section>
+
+</div>
+</body></html>

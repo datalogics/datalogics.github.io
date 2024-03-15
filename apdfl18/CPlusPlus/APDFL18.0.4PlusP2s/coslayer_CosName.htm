@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+COS Layer: CosName</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>COS Layer: CosName</h5>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Functions">
+<header><h2>CosName Functions</h2></header>
+<nav><dl>
+<dt><a href="#CosCopyNameStringValue">CosCopyNameStringValue</a></dt><dd> -  Returns a newly allocated buffer containing a copy of the Cos object's name as a NULL-terminated string.</dd>
+<dt><a href="#CosNameValue">CosNameValue</a></dt><dd> -  Gets the value of a name object.</dd>
+<dt><a href="#CosNewName">CosNewName</a></dt><dd> -  Creates a new name object associated with the specified document and having the specified value.</dd>
+<dt><a href="#CosNewNameFromString">CosNewNameFromString</a></dt><dd> -  Creates a new name object associated with the specified document and having the specified value.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="CosCopyNameStringValue"><strong><span style="color:grey;">CosCopyNameStringValue</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:2094</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>
+<p>Returns a newly allocated buffer containing a copy of the Cos object's name as a <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated string. Upon return, <code>nBytes</code> contains the number of bytes in the string. <a href="coslayer_CosName.htm#CosCopyNameStringValue" title=" Returns a newly allocated buffer containing a copy of the Cos object's name as a NULL-terminated string."><code>CosCopyNameStringValue</code></a><code>()</code> never returns <a href="aslayer_General.htm#NULL"><code>NULL</code></a>; it raises an exception if the allocation fails. The client is responsible for freeing the result by calling <a href="aslayer_ASMem.htm#ASfree" title=" Frees the specified memory block."><code>ASfree</code></a><code>()</code>.<br/></p>
+
+<p>
+<p>Unlike Cos strings, the strings corresponding to Cos names are <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated.<br/></p>
+
+<p>
+<p>This routine will avoid creating an <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> corresponding to the object's name and is generally more efficient than copying the value returned by <a href="aslayer_ASAtom.htm#ASAtomGetString" title=" Gets the string associated with the specified ASAtom."><code>ASAtomGetString</code></a><code>(CosNameValue(obj))</code>. ( <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> objects consume global memory that is not deallocated.)<br/>
+<p>An out-of-memory exception is raised if insufficient memory is available.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="coslayer_CosString.htm#CosCopyStringValue" title=" Returns a newly allocated buffer containing a copy of the Cos object's string value."><code>CosCopyStringValue</code></a>
+<a href="coslayer_CosName.htm#CosNameValue" title=" Gets the value of a name object."><code>CosNameValue</code></a>
+<a href="coslayer_CosName.htm#CosNewName" title=" Creates a new name object associated with the specified document and having the specified value."><code>CosNewName</code></a>
+<a href="coslayer_CosName.htm#CosNewNameFromString" title=" Creates a new name object associated with the specified document and having the specified value."><code>CosNewNameFromString</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>char</code> <code>*</code><code>CosCopyNameStringValue(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>obj</code><code>,</code> <a href="aslayer_General.htm#ASTCount"><code>ASTCount</code></a> <code>*</code><code>nBytes</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>obj</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> A Cos name object. </span>
+</td></tr>
+<tr><td><span><code>nBytes</code></span>
+</td><td><span><a href="pdslayer_General.htm#OUT">OUT</a> The length of the name of the Cos object, and therefore the length of the returned string. <code>nBytes</code> may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if you do not care how many bytes are in the name. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A copy of the Cos object's name, as a <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated string. </span>
+</section>
+<section><div class="infoRow"><h3 id="CosNameValue"><strong><span style="color:grey;">CosNameValue</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:529</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the value of a name object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="coslayer_CosName.htm#CosCopyNameStringValue" title=" Returns a newly allocated buffer containing a copy of the Cos object's name as a NULL-terminated string."><code>CosCopyNameStringValue</code></a>
+<a href="coslayer_CosName.htm#CosNewName" title=" Creates a new name object associated with the specified document and having the specified value."><code>CosNewName</code></a>
+<a href="coslayer_CosName.htm#CosNewNameFromString" title=" Creates a new name object associated with the specified document and having the specified value."><code>CosNewNameFromString</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>CosNameValue(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>obj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>obj</code></span>
+</td><td><span>The object of type <a href="coslayer_General.htm#CosName" title=" A name object."><code>CosName</code></a> whose value is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div><p>The <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> corresponding to the specified name object. An <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> can be converted to a string using <a href="aslayer_ASAtom.htm#ASAtomGetString" title=" Gets the string associated with the specified ASAtom."><code>ASAtomGetString</code></a><code>()</code>. Note that <a href="coslayer_CosName.htm#CosCopyNameStringValue" title=" Returns a newly allocated buffer containing a copy of the Cos object's name as a NULL-terminated string."><code>CosCopyNameStringValue</code></a><code>()</code> can be used to obtain the name as a string, without creating an <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> ( <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> objects consume global memory that is not deallocated).<br/>
+<p>An exception is raised if <code>obj</code> has the wrong type, if storage is exhausted, or if file access fails.<br/></p>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="CosNewName"><strong><span style="color:grey;">CosNewName</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:205</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a new name object associated with the specified document and having the specified value. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="coslayer_CosName.htm#CosCopyNameStringValue" title=" Returns a newly allocated buffer containing a copy of the Cos object's name as a NULL-terminated string."><code>CosCopyNameStringValue</code></a>
+<a href="coslayer_CosName.htm#CosNameValue" title=" Gets the value of a name object."><code>CosNameValue</code></a>
+<a href="coslayer_CosName.htm#CosNewNameFromString" title=" Creates a new name object associated with the specified document and having the specified value."><code>CosNewNameFromString</code></a>
+<a href="coslayer_CosObj.htm#CosObjDestroy" title=" Destroys a Cos object."><code>CosObjDestroy</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>CosNewName(</code><a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>dP</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>indirect</code><code>,</code> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>name</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>dP</code></span>
+</td><td><span>The document in which the new name is used. </span>
+</td></tr>
+<tr><td><span><code>indirect</code></span>
+</td><td><span>If <a href="aslayer_General.htm#true"><code>true</code></a>, it creates the name as an indirect object, and sets the document's <a href="pdlayer_PDDoc.htm#PDDocNeedsSave" title=" The document has been modified and needs to be saved."><code>PDDocNeedsSave</code></a> flag (see <a href="pdlayer_PDDoc.htm#PDDocFlags" title=" A signed int (which is never negative), for historical reasons."><code>PDDocFlags</code></a>) flag. If <a href="aslayer_General.htm#false"><code>false</code></a>, it creates the name as a direct object. </span>
+</td></tr>
+<tr><td><span><code>name</code></span>
+</td><td><span>The <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> corresponding to the name to create. A C string can be converted to an <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> using <a href="aslayer_ASAtom.htm#ASAtomFromString" title=" Gets the ASAtom for the specified string."><code>ASAtomFromString</code></a><code>()</code>. Note that a name object can be created directly from a C string, without creating an <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a>, by using <a href="coslayer_CosName.htm#CosNewNameFromString" title=" Creates a new name object associated with the specified document and having the specified value."><code>CosNewNameFromString</code></a><code>()</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created name Cos object. </span>
+</section>
+<section><div class="infoRow"><h3 id="CosNewNameFromString"><strong><span style="color:grey;">CosNewNameFromString</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:2064</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a new name object associated with the specified document and having the specified value. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="coslayer_CosName.htm#CosCopyNameStringValue" title=" Returns a newly allocated buffer containing a copy of the Cos object's name as a NULL-terminated string."><code>CosCopyNameStringValue</code></a>
+<a href="coslayer_CosName.htm#CosNameValue" title=" Gets the value of a name object."><code>CosNameValue</code></a>
+<a href="coslayer_CosName.htm#CosNewName" title=" Creates a new name object associated with the specified document and having the specified value."><code>CosNewName</code></a>
+<a href="coslayer_CosObj.htm#CosObjDestroy" title=" Destroys a Cos object."><code>CosObjDestroy</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>CosNewNameFromString(</code><a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>dP</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>indirect</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>namestring</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>dP</code></span>
+</td><td><span>The document in which the new name is used. </span>
+</td></tr>
+<tr><td><span><code>indirect</code></span>
+</td><td><span>If <a href="aslayer_General.htm#true"><code>true</code></a>, it creates the name as an indirect object, and sets the document's <a href="pdlayer_PDDoc.htm#PDDocNeedsSave" title=" The document has been modified and needs to be saved."><code>PDDocNeedsSave</code></a> flag (see <a href="pdlayer_PDDoc.htm#PDDocFlags" title=" A signed int (which is never negative), for historical reasons."><code>PDDocFlags</code></a>) flag. If <a href="aslayer_General.htm#false"><code>false</code></a>, it creates the name as a direct object. </span>
+</td></tr>
+<tr><td><span><code>namestring</code></span>
+</td><td><span>The name to create. This routine will not create an <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> corresponding to <code>namestring</code> and is generally more efficient than <a href="coslayer_CosName.htm#CosNewName" title=" Creates a new name object associated with the specified document and having the specified value."><code>CosNewName</code></a><code>()</code>. ( <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> objects consume global memory that is not deallocated.) </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created name Cos object. </span>
+</section>
+</section>
+
+</div>
+</body></html>

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Acro Support Layer: ASStm</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Acro Support Layer: ASStm</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#CallbackSignatures">Callback Signatures</a></li>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>ASStm Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#ASSmallBufferSize">ASSmallBufferSize</a></dt><dd> -  May not be larger than int16.</dd>
+<dt><a href="#ASStmRec">ASStmRec</a></dt><dd> -  A stream object definition (see ASStream.h).</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASSmallBufferSize"><strong><span style="color:grey;">ASSmallBufferSize</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:167</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>May not be larger than <code>int16</code>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>ASSmallBufferSize</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASFile.htm#ASFileStmRdOpen" title=" Creates a read-only ASStm from a file."><code>ASFileStmRdOpen</code></a></td><td><a href="aslayer_ASFile.htm#ASFileStmWrOpen" title=" Creates a writable ASStm from a file."><code>ASFileStmWrOpen</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASStmRec"><strong><span style="color:grey;">ASStmRec</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:291</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A stream object definition (see ASStream.h). It is a data stream that may be a buffer in memory, a file, or an arbitrary user-written procedure. It is typically used to extract data from a PDF file. When writing or extracting data streams, the <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a> must be connected to a Cos stream. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_ASStmRec</code> <code>ASStmRec</code><code>,</code> <code>*</code><a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASFile.htm#ASFileStmRdOpen" title=" Creates a read-only ASStm from a file."><code>ASFileStmRdOpen</code></a></td><td><a href="aslayer_ASFile.htm#ASFileStmWrOpen" title=" Creates a writable ASStm from a file."><code>ASFileStmWrOpen</code></a></td></tr>
+<tr><td><a href="aslayer_ASStm.htm#ASMemStmRdOpen" title=" Creates a read-only ASStm from a memory-resident buffer."><code>ASMemStmRdOpen</code></a></td><td><a href="aslayer_ASStm.htm#ASProcStmRdOpen" title=" Creates a read-only ASStm from an arbitrary data-producing procedure."><code>ASProcStmRdOpen</code></a></td></tr>
+<tr><td><a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure."><code>ASProcStmRdOpenEx</code></a></td><td><a href="aslayer_ASStm.htm#ASProcStmWrOpen" title=" Creates an ASStm from an arbitrary data-producing procedure."><code>ASProcStmWrOpen</code></a></td></tr>
+<tr><td><a href="coslayer_CosStream.htm#CosStreamOpenStm" title=" Creates a new, non-seekable ASStm for reading data from a Cos stream."><code>CosStreamOpenStm</code></a></td><td><a href="pdelayer_JPXPalette.htm#JPXPaletteGetTable" title=" Returns the palette data as a read only non-seekable ASStm."><code>JPXPaletteGetTable</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImageFlate.htm#PDEImageFlateGetDataStm" title=" Gets a data stream for a flate compressed image, PDEImageFlate object."><code>PDEImageFlateGetDataStm</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageGetDataStm" title=" Gets a data stream for an image."><code>PDEImageGetDataStm</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImageJPX.htm#PDEImageJPXGetDataStm" title=" Returns a stream containing the image data."><code>PDEImageJPXGetDataStm</code></a></td><td><a href="pdelayer_PDEPS.htm#PDEPSGetDataStm"><code>PDEPSGetDataStm</code></a></td></tr>
+<tr><td><a href="pdlayer_PDFileAttachment.htm#PDFileAttachmentOpenStream" title=" Returns a stream for reading the data from an existing file attachment."><code>PDFileAttachmentOpenStream</code></a></td><td><a href="pdlayer_PDThumb.htm#PDThumbGetImageData" title=" Gets an ASStm from a thumbnail data."><code>PDThumbGetImageData</code></a></td></tr>
+<tr><td><a href="pdlayer_PDThumb.htm#PDThumbGetIndexedColorSpace" title=" Gets an ASStm from a thumbnail's indexed color space table."><code>PDThumbGetIndexedColorSpace</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCab.htm#ASCabReadFromStream" title=" Reads a previously written cabinet from a stream."><code>ASCabReadFromStream</code></a></td><td><a href="aslayer_ASCab.htm#ASCabWriteToStream" title=" Writes theCab out to a stream."><code>ASCabWriteToStream</code></a></td></tr>
+<tr><td><a href="aslayer_ASStm.htm#ASStmClose" title=" Closes the specified stream."><code>ASStmClose</code></a></td><td><a href="aslayer_ASStm.htm#ASStmFlush" title=" Flushes any buffered data to the specified stream."><code>ASStmFlush</code></a></td></tr>
+<tr><td><a href="aslayer_ASStm.htm#ASStmRead" title=" Reads data from stm into memory."><code>ASStmRead</code></a></td><td><a href="aslayer_ASStm.htm#ASStmWrite" title=" Writes data from a memory buffer into an ASStm."><code>ASStmWrite</code></a></td></tr>
+<tr><td><a href="coslayer_CosStream.htm#CosNewStream" title=" Creates a new Cos stream, using data from an existing ASStm."><code>CosNewStream</code></a></td><td><a href="coslayer_CosStream.htm#CosNewStream64" title=" Creates a new Cos stream, using data from an existing ASStm."><code>CosNewStream64</code></a></td></tr>
+<tr><td><a href="dlextras_CosStream.htm#CosStreamSetData" title=" Essentially identical to CosNewStream, except that the result is a modification of an existing stream."><code>CosStreamSetData</code></a></td><td><a href="pdelayer_PDEFont.htm#PDEFontCreate" title=" Creates a new PDEFont from the specified parameters."><code>PDEFontCreate</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEFont.htm#PDEFontCreateInCosDoc" title=" Creates a font object like PDEFontCreate(), except that the client can specify the CosDoc in which the font is created."><code>PDEFontCreateInCosDoc</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageCreate" title=" Superseded by PDEImageCreateEx() in Acrobat 10.0."><code>PDEImageCreate</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageCreateEx" title=" Creates an image object."><code>PDEImageCreateEx</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDoc" title=" Superseded by PDEImageCreateInCosDocEx() in Acrobat 10.0."><code>PDEImageCreateInCosDoc</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDoc64" title=" Superseded by PDEImageCreateInCosDocEx() in Acrobat 10.0."><code>PDEImageCreateInCosDoc64</code></a></td><td><a href="pdelayer_PDEImage.htm#PDEImageCreateInCosDocEx" title=" Creates an image object like PDEImageCreateInCosDoc(), except that the client can create an image with a large amount of data, and using a double precision transformation matrix."><code>PDEImageCreateInCosDocEx</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEImage.htm#PDEImageSetDataStm" title=" Sets a data stream for an image."><code>PDEImageSetDataStm</code></a></td><td><a href="pdelayer_PDEPS.htm#PDEPSCreate"><code>PDEPSCreate</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEPS.htm#PDEPSSetDataStm"><code>PDEPSSetDataStm</code></a></td><td><a href="pdfllayer_PDFont.htm#PDFontPSEmitGlyphsIncr" title=" Emit glyphs incrementally."><code>PDFontPSEmitGlyphsIncr</code></a></td></tr>
+<tr><td><a href="pdfllayer_PDFont.htm#PDFontPSFlushIncrGlyphList" title=" Flush the incremental glyphs list from a stream."><code>PDFontPSFlushIncrGlyphList</code></a></td><td><a href="pdfllayer_PDFont.htm#PDFontStreamPS" title=" Emits a font into a specified stream."><code>PDFontStreamPS</code></a></td></tr>
+<tr><td><a href="pdfllayer_PDPage.htm#PDPageEmitPSOrient"><code>PDPageEmitPSOrient</code></a></td><td><a href="pdlayer_PDPage.htm#PDPageStmGetInlineImage" title=" Reads a PDF page content inline image from a stream."><code>PDPageStmGetInlineImage</code></a></td></tr>
+<tr><td><a href="pdlayer_PDPage.htm#PDPageStmGetToken" title=" Reads a PDF page content token from a stream."><code>PDPageStmGetToken</code></a></td><td><a href="pdfllayer_PDFLPrint.htm#PDPrintEmitFontProc" title=" (Required) A callback for PDPrintClient."><code>PDPrintEmitFontProc</code></a></td></tr>
+<tr><td><a href="pdslayer_PDSElement.htm#PDSElementExportUserProperties" title=" Exports user properties of the specified PDSElement in XML."><code>PDSElementExportUserProperties</code></a></td><td><a href="pdfllayer_General.htm#TKResourceAcquireProc" title=" A callback in the TKResourceProcs structure in the Adobe PDF Library."><code>TKResourceAcquireProc</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#TKResourceReleaseProc" title=" A callback in the TKResourceProcs structure in the Adobe PDF Library."><code>TKResourceReleaseProc</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCryptStm.htm#_t_ASCryptStmRec" title=" An ASStm object cover used for a cryptographic filter's stream callbacks."><code>_t_ASCryptStmRec</code></a></td><td><a href="pdelayer_PDEFont.htm#_t_PDEFontCreateParams" title=" Parameters used for PDEFontCreateWithParams() to describe a font."><code>_t_PDEFontCreateParams</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEColorSpace.htm#_t_PDEICCBasedColorData" title=" An ICC-based color space."><code>_t_PDEICCBasedColorData</code></a></td><td><a href="pdfllayer_PDFLPrint.htm#_t_PDFLPrintUserParams" title=" Used to control printing with PDFLPrintDoc."><code>_t_PDFLPrintUserParams</code></a></td></tr>
+<tr><td><a href="pdfllayer_PDFLPrint.htm#_t_PDFLPrintUserParamsEx" title=" Used to control printing with PDFLPrintDoc."><code>_t_PDFLPrintUserParamsEx</code></a></td><td><a href="pdlayer_PDPage.htm#_t_PDHostSepsPlateRec" title=" Used to specify per-plate options when doing separations."><code>_t_PDHostSepsPlateRec</code></a></td></tr>
+<tr><td><a href="pdfllayer_PDFLPrint.htm#_t_PDPrintClient" title=" A data structure used by PDDocPrintPages."><code>_t_PDPrintClient</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="CallbackSignatures">
+<header><h2>ASStm Callback Signatures</h2></header>
+<nav><dl>
+<dt><a href="#ASProcStmDestroyProc">ASProcStmDestroyProc</a></dt><dd> -  A callback for use by ASProcStmWrOpen() and ASProcStmRdOpenEx().</dd>
+<dt><a href="#ASProcStmGetLength">ASProcStmGetLength</a></dt><dd> -  A callback for use by ASProcStmRdOpenEx().</dd>
+<dt><a href="#ASProcStmSeekProc">ASProcStmSeekProc</a></dt><dd> -  A callback for use by ASProcStmRdOpenEx().</dd>
+<dt><a href="#ASStmProc">ASStmProc</a></dt><dd> -  A callback for use by ASProcStmRdOpenEx() and ASProcStmWrOpen().</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASProcStmDestroyProc"><strong><span style="color:grey;">ASProcStmDestroyProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:508</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>A callback for use by <a href="aslayer_ASStm.htm#ASProcStmWrOpen" title=" Creates an ASStm from an arbitrary data-producing procedure.">ASProcStmWrOpen</a>() and <a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure.">ASProcStmRdOpenEx</a>().<br/>
+<p>This is called at the end of the stream so you can do clean up and free allocated memory.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure."><code>ASProcStmRdOpenEx</code></a>
+<a href="aslayer_ASStm.htm#ASStmProc" title=" A callback for use by ASProcStmRdOpenEx() and ASProcStmWrOpen()."><code>ASStmProc</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASProcStmDestroyProc(</code><code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>clientData</code></span>
+</td><td><span>IN/OUT User-supplied data that was passed in the call to <a href="aslayer_ASStm.htm#ASProcStmWrOpen" title=" Creates an ASStm from an arbitrary data-producing procedure.">ASProcStmWrOpen</a>() or <a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure.">ASProcStmRdOpenEx</a>(). </span>
+</td></tr></Table>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASStm.htm#ASProcStmWrOpen" title=" Creates an ASStm from an arbitrary data-producing procedure."><code>ASProcStmWrOpen</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASStm.htm#_s_ASProcStmRdExHandler" title=" For use by ASProcStmRdOpenEx()."><code>_s_ASProcStmRdExHandler</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASProcStmGetLength"><strong><span style="color:grey;">ASProcStmGetLength</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:537</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>A callback for use by <a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure.">ASProcStmRdOpenEx</a>().<br/>
+<p>This is called to get the length of the stream, which may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if the stream cannot be set to a new position. <a href="aslayer_ASStm.htm#ASProcStmSeekProc" title=" A callback for use by ASProcStmRdOpenEx().">ASProcStmSeekProc</a>() and <a href="aslayer_ASStm.htm#ASProcStmGetLength" title=" A callback for use by ASProcStmRdOpenEx().">ASProcStmGetLength</a>() must be provided together. If either is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, the stream will not be set to a new position.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure."><code>ASProcStmRdOpenEx</code></a>
+<a href="aslayer_ASStm.htm#ASStmProc" title=" A callback for use by ASProcStmRdOpenEx() and ASProcStmWrOpen()."><code>ASStmProc</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFile.htm#ASFilePos64" title=" The absolute position within a file."><code>ASFilePos64</code></a> <code>ASProcStmGetLength(</code><code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>clientData</code></span>
+</td><td><span>IN/OUT User-supplied data that was passed in the call to <a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure.">ASProcStmRdOpenEx</a>(). </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The length of the stream in bytes. </span>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASStm.htm#_s_ASProcStmRdExHandler" title=" For use by ASProcStmRdOpenEx()."><code>_s_ASProcStmRdExHandler</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASProcStmSeekProc"><strong><span style="color:grey;">ASProcStmSeekProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:523</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>A callback for use by <a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure.">ASProcStmRdOpenEx</a>().<br/>
+<p>This is called to set the stream position to a new location, which may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if the stream cannot be set to a new position. <a href="aslayer_ASStm.htm#ASProcStmSeekProc" title=" A callback for use by ASProcStmRdOpenEx().">ASProcStmSeekProc</a>() and <a href="aslayer_ASStm.htm#ASProcStmGetLength" title=" A callback for use by ASProcStmRdOpenEx().">ASProcStmGetLength</a>() must be provided together. If either is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, the stream will not be set to a new position.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure."><code>ASProcStmRdOpenEx</code></a>
+<a href="aslayer_ASStm.htm#ASStmProc" title=" A callback for use by ASProcStmRdOpenEx() and ASProcStmWrOpen()."><code>ASStmProc</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASProcStmSeekProc(</code><a href="aslayer_ASFile.htm#ASFilePos64" title=" The absolute position within a file."><code>ASFilePos64</code></a> <code>newPos</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>newPos</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>IN/OUT User-supplied data that was passed in the call to <a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure.">ASProcStmRdOpenEx</a>(). </span>
+</td></tr></Table>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASStm.htm#_s_ASProcStmRdExHandler" title=" For use by ASProcStmRdOpenEx()."><code>_s_ASProcStmRdExHandler</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASStmProc"><strong><span style="color:grey;">ASStmProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:495</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>A callback for use by <a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure.">ASProcStmRdOpenEx</a>() and <a href="aslayer_ASStm.htm#ASProcStmWrOpen" title=" Creates an ASStm from an arbitrary data-producing procedure.">ASProcStmWrOpen</a>(). This should place data in the buffer specified by the parameter data.<br/>
+<p>If your procedure reads data from a file, it is generally quite inefficient to open the file, read the bytes, and close the file each time bytes are requested. Instead, consider opening the file the first time bytes are requested from it, reading the entire file into a secondary buffer, and closing the file. When subsequent requests for data from the file are received, simply copy data from the secondary buffer, rather than reopening the file.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASStm.htm#ASProcStmDestroyProc" title=" A callback for use by ASProcStmWrOpen() and ASProcStmRdOpenEx()."><code>ASProcStmDestroyProc</code></a>
+<a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure."><code>ASProcStmRdOpenEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASTCount"><code>ASTCount</code></a> <code>ASStmProc(</code><code>char</code> <code>*</code><code>data</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>nData</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>data</code></span>
+</td><td><span>(Filled by the callback) The buffer into which your procedure must place the number of bytes specified by <code>nData</code>. </span>
+</td></tr>
+<tr><td><span><code>nData</code></span>
+</td><td><span>The number of bytes to read from the stream and place into <code>data</code>. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>User-supplied data that was passed in the call to <a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure.">ASProcStmRdOpenEx</a>() or <a href="aslayer_ASStm.htm#ASProcStmWrOpen" title=" Creates an ASStm from an arbitrary data-producing procedure.">ASProcStmWrOpen</a>(). </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of bytes actually read or written. This should be equal to the <code>nData</code> parameter unless the end of file marker (EOF) has been reached, an error has occurred, or this is short block of data just before EOF. If EOF has been reached, a zero should be returned. If an error has occurred, a negative value should be returned. </span>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASStm.htm#ASProcStmRdOpen" title=" Creates a read-only ASStm from an arbitrary data-producing procedure."><code>ASProcStmRdOpen</code></a></td><td><a href="aslayer_ASStm.htm#ASProcStmWrOpen" title=" Creates an ASStm from an arbitrary data-producing procedure."><code>ASProcStmWrOpen</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASStm.htm#_s_ASProcStmRdExHandler" title=" For use by ASProcStmRdOpenEx()."><code>_s_ASProcStmRdExHandler</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>ASStm Structures</h2></header>
+<nav><dl>
+<dt><a href="#_s_ASProcStmRdExHandler">_s_ASProcStmRdExHandler</a></dt><dd> -  For use by ASProcStmRdOpenEx().</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="_s_ASProcStmRdExHandler"><strong><span style="color:grey;">_s_ASProcStmRdExHandler</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:540</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>For use by <a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure.">ASProcStmRdOpenEx</a>(). </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _s_ASProcStmRdExHandler {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASByteCount" title=" A byte count value for use in ASProcStmRdExHandler and ASFileSysItemProps."><code>ASByteCount</code></a> <code>size</code><code>;</code> </div>
+</td><td><span>Set to <code>sizeof(ASProcStmRdExHandlerRec)</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASStm.htm#ASStmProc" title=" A callback for use by ASProcStmRdOpenEx() and ASProcStmWrOpen()."><code>ASStmProc</code></a> <code>readProc</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASStm.htm#ASProcStmDestroyProc" title=" A callback for use by ASProcStmWrOpen() and ASProcStmRdOpenEx()."><code>ASProcStmDestroyProc</code></a> <code>destroyProc</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASStm.htm#ASProcStmSeekProc" title=" A callback for use by ASProcStmRdOpenEx()."><code>ASProcStmSeekProc</code></a> <code>seekProc</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASStm.htm#ASProcStmGetLength" title=" A callback for use by ASProcStmRdOpenEx()."><code>ASProcStmGetLength</code></a> <code>getLengthProc</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASByteCount" title=" A byte count value for use in ASProcStmRdExHandler and ASFileSysItemProps."><code>ASByteCount</code></a> <code>bufSize</code><code>;</code> </div>
+</td><td><span>The size of the buffer to use for the stream. If this field is missing, the default is <code>65535</code>. If this field is present and has a value of <code>0</code>, then the default is implementation-specific. </span>
+</td></tr>
+<tr><td><code id="ASProcStmRdExHandlerRec"><code>}</code> <a href="aslayer_ASStm.htm#_s_ASProcStmRdExHandler" title=" For use by ASProcStmRdOpenEx()."><code>ASProcStmRdExHandlerRec</code></a><code>,</code> <code>*</code><a href="aslayer_ASStm.htm#_s_ASProcStmRdExHandler" title=" For use by ASProcStmRdOpenEx()."><code>ASProcStmRdExHandler</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure."><code>ASProcStmRdOpenEx</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>ASStm Functions</h2></header>
+<nav><dl>
+<dt><a href="#ASMemStmRdOpen">ASMemStmRdOpen</a></dt><dd> -  Creates a read-only ASStm from a memory-resident buffer.</dd>
+<dt><a href="#ASProcStmRdOpen">ASProcStmRdOpen</a></dt><dd> -  Creates a read-only ASStm from an arbitrary data-producing procedure.</dd>
+<dt><a href="#ASProcStmRdOpenEx">ASProcStmRdOpenEx</a></dt><dd> -  Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure.</dd>
+<dt><a href="#ASProcStmWrOpen">ASProcStmWrOpen</a></dt><dd> -  Creates an ASStm from an arbitrary data-producing procedure.</dd>
+<dt><a href="#ASStmClose">ASStmClose</a></dt><dd> -  Closes the specified stream.</dd>
+<dt><a href="#ASStmFlush">ASStmFlush</a></dt><dd> -  Flushes any buffered data to the specified stream.</dd>
+<dt><a href="#ASStmRead">ASStmRead</a></dt><dd> -  Reads data from stm into memory.</dd>
+<dt><a href="#ASStmWrite">ASStmWrite</a></dt><dd> -  Writes data from a memory buffer into an ASStm.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASMemStmRdOpen"><strong><span style="color:grey;">ASMemStmRdOpen</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1034</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a read-only <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a> from a memory-resident buffer. The stream supports seek operations. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASStm.htm#ASMemStmRdOpen" title=" Creates a read-only ASStm from a memory-resident buffer."><code>ASMemStmRdOpen</code></a>
+<a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure."><code>ASProcStmRdOpenEx</code></a>
+<a href="aslayer_ASStm.htm#ASStmClose" title=" Closes the specified stream."><code>ASStmClose</code></a>
+<a href="aslayer_ASStm.htm#ASStmRead" title=" Reads data from stm into memory."><code>ASStmRead</code></a>
+<a href="coslayer_CosStream.htm#CosNewStream" title=" Creates a new Cos stream, using data from an existing ASStm."><code>CosNewStream</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>ASMemStmRdOpen(</code><code>const</code> <code>char</code> <code>*</code><code>data</code><code>,</code> <a href="aslayer_General.htm#ASArraySize" title=" An array size value for use in callback procedures."><code>ASArraySize</code></a> <code>len</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>data</code></span>
+</td><td><span>A buffer containing the data to read into the stream. This data buffer must not be disposed of until the <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a> is closed. </span>
+</td></tr>
+<tr><td><span><code>len</code></span>
+</td><td><span>The length in bytes of <code>data</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a>. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASProcStmRdOpen"><strong><span style="color:grey;">ASProcStmRdOpen</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1054</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a read-only <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a> from an arbitrary data-producing procedure. The stream does not support seek operations.<br/>
+<p><code>readProc</code> is called when the client of the stream attempts to read data from it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileStmRdOpen" title=" Creates a read-only ASStm from a file."><code>ASFileStmRdOpen</code></a>
+<a href="aslayer_ASStm.htm#ASMemStmRdOpen" title=" Creates a read-only ASStm from a memory-resident buffer."><code>ASMemStmRdOpen</code></a>
+<a href="aslayer_ASStm.htm#ASStmClose" title=" Closes the specified stream."><code>ASStmClose</code></a>
+<a href="aslayer_ASStm.htm#ASStmRead" title=" Reads data from stm into memory."><code>ASStmRead</code></a>
+<a href="coslayer_CosStream.htm#CosNewStream" title=" Creates a new Cos stream, using data from an existing ASStm."><code>CosNewStream</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>ASProcStmRdOpen(</code><a href="aslayer_ASStm.htm#ASStmProc" title=" A callback for use by ASProcStmRdOpenEx() and ASProcStmWrOpen()."><code>ASStmProc</code></a> <code>readProc</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>readProc</code></span>
+</td><td><span>A user-supplied callback that supplies the stream's data. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>A pointer to user-supplied data to pass to <code>readProc</code> each time it is called. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrNoMemory" title=" Out of memory."><code>genErrNoMemory</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASProcStmRdOpenEx"><strong><span style="color:grey;">ASProcStmRdOpenEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:2054</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Extends <a href="aslayer_ASStm.htm#ASProcStmRdOpen" title=" Creates a read-only ASStm from an arbitrary data-producing procedure.">ASProcStmRdOpen</a>() and creates a read-only <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a> from an arbitrary data-producing procedure. The stream optionally supports seek operations, although external clients do not have the ability to initiate a seek operation.<br/>
+<p>The supplied handlers are called when the client of the stream attempts to read data from it, seek it, or find it's length, as well as when the client closes it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASStm.htm#ASProcStmRdOpen" title=" Creates a read-only ASStm from an arbitrary data-producing procedure."><code>ASProcStmRdOpen</code></a>
+<a href="aslayer_ASStm.htm#ASStmClose" title=" Closes the specified stream."><code>ASStmClose</code></a>
+<a href="aslayer_ASStm.htm#ASStmRead" title=" Reads data from stm into memory."><code>ASStmRead</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>ASProcStmRdOpenEx(</code><a href="aslayer_ASStm.htm#_s_ASProcStmRdExHandler" title=" For use by ASProcStmRdOpenEx()."><code>ASProcStmRdExHandler</code></a> <code>handler</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>handler</code></span>
+</td><td><span>A structure containing user-supplied callbacks that supply the stream's data and destroy the stream. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>A pointer to user-supplied data to pass to the procedures each time they are called. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrNoMemory" title=" Out of memory."><code>genErrNoMemory</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASProcStmWrOpen"><strong><span style="color:grey;">ASProcStmWrOpen</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1472</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates an <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a> from an arbitrary data-producing procedure. The stream does not support seek operations. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileStmRdOpen" title=" Creates a read-only ASStm from a file."><code>ASFileStmRdOpen</code></a>
+<a href="aslayer_ASFile.htm#ASFileStmWrOpen" title=" Creates a writable ASStm from a file."><code>ASFileStmWrOpen</code></a>
+<a href="aslayer_ASStm.htm#ASMemStmRdOpen" title=" Creates a read-only ASStm from a memory-resident buffer."><code>ASMemStmRdOpen</code></a>
+<a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure."><code>ASProcStmRdOpenEx</code></a>
+<a href="aslayer_ASStm.htm#ASStmClose" title=" Closes the specified stream."><code>ASStmClose</code></a>
+<a href="aslayer_ASStm.htm#ASStmRead" title=" Reads data from stm into memory."><code>ASStmRead</code></a>
+<a href="aslayer_ASStm.htm#ASStmWrite" title=" Writes data from a memory buffer into an ASStm."><code>ASStmWrite</code></a>
+<a href="coslayer_CosStream.htm#CosNewStream" title=" Creates a new Cos stream, using data from an existing ASStm."><code>CosNewStream</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>ASProcStmWrOpen(</code><a href="aslayer_ASStm.htm#ASStmProc" title=" A callback for use by ASProcStmRdOpenEx() and ASProcStmWrOpen()."><code>ASStmProc</code></a> <code>writeProc</code><code>,</code> <a href="aslayer_ASStm.htm#ASProcStmDestroyProc" title=" A callback for use by ASProcStmWrOpen() and ASProcStmRdOpenEx()."><code>ASProcStmDestroyProc</code></a> <code>destroyProc</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>writeProc</code></span>
+</td><td><span>A user-supplied callback that provides the data for the stream. </span>
+</td></tr>
+<tr><td><span><code>destroyProc</code></span>
+</td><td><span>A user-supplied callback that destroys the specified <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a>. (Generally, this means deallocating the memory associated with the <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a>.) </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>A pointer to user-supplied data to pass to <code>writeProc</code> each time it is called. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrNoMemory" title=" Out of memory."><code>genErrNoMemory</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASStmClose"><strong><span style="color:grey;">ASStmClose</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1111</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Closes the specified stream. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileStmRdOpen" title=" Creates a read-only ASStm from a file."><code>ASFileStmRdOpen</code></a>
+<a href="aslayer_ASFile.htm#ASFileStmWrOpen" title=" Creates a writable ASStm from a file."><code>ASFileStmWrOpen</code></a>
+<a href="aslayer_ASStm.htm#ASMemStmRdOpen" title=" Creates a read-only ASStm from a memory-resident buffer."><code>ASMemStmRdOpen</code></a>
+<a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure."><code>ASProcStmRdOpenEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASStmClose(</code><a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>stm</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>stm</code></span>
+</td><td><span>The stream to close. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASStmFlush"><strong><span style="color:grey;">ASStmFlush</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:2347</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Flushes any buffered data to the specified stream. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASStm.htm#ASStmClose" title=" Closes the specified stream.">ASStmClose</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASTCount"><code>ASTCount</code></a> <code>ASStmFlush(</code><a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>stm</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>stm</code></span>
+</td><td><span>The stream to flush. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><code>0</code> if successful, non-zero otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASStmRead"><strong><span style="color:grey;">ASStmRead</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1072</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Reads data from <code>stm</code> into memory. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASStm.htm#ASStmWrite" title=" Writes data from a memory buffer into an ASStm.">ASStmWrite</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASTCount"><code>ASTCount</code></a> <code>ASStmRead(</code><code>char</code> <code>*</code><code>ptr</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>itemSize</code><code>,</code> <a href="aslayer_General.htm#ASTCount"><code>ASTCount</code></a> <code>nItems</code><code>,</code> <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>stm</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ptr</code></span>
+</td><td><span>(Filled by the method) A buffer into which data is written. </span>
+</td></tr>
+<tr><td><span><code>itemSize</code></span>
+</td><td><span>The number of bytes in a stream item. See the description of <code>nItems</code> for further information. </span>
+</td></tr>
+<tr><td><span><code>nItems</code></span>
+</td><td><span>The number of items to read. The amount of data read into the memory buffer will be <code>itemSize</code> <code>*</code> <code>nItems</code>, unless an EOF is encountered first. The relative values of <code>itemSize</code> and <code>nItems</code> really do not matter; the only thing that matters is their product. It is often convenient to set <code>itemSize</code> to <code>1</code>, so that <code>nItems</code> is the number of bytes to read. </span>
+</td></tr>
+<tr><td><span><code>stm</code></span>
+</td><td><span>The stream from which data is read. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of items (not bytes) read. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASStmWrite"><strong><span style="color:grey;">ASStmWrite</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1101</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Writes data from a memory buffer into an <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a>.<br/>
+<p>You cannot use this method to change a PDF page content stream. It can only be used for a print stream.<br/></p>
+
+<p>
+<p>.<br/>
+<p>Historically, this method was provided to allow plug-ins to write data into the print stream when printing to a PostScript printer (see the PDDocWillPrintPage() notification). However, <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a> is a general purpose I/O mechanism in Acrobat even though only limited open and read/write methods are provided in the plug-in API. For instance, not all <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a> objects support seek operations.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASStm.htm#ASStmRead" title=" Reads data from stm into memory.">ASStmRead</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASTCount"><code>ASTCount</code></a> <code>ASStmWrite(</code><code>const</code> <code>char</code> <code>*</code><code>ptr</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>itemSize</code><code>,</code> <a href="aslayer_General.htm#ASTCount"><code>ASTCount</code></a> <code>nItems</code><code>,</code> <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>stm</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ptr</code></span>
+</td><td><span>A buffer from which data is read. </span>
+</td></tr>
+<tr><td><span><code>itemSize</code></span>
+</td><td><span>The number of bytes in a stream item. See the description of <code>nItems</code> for additional information. </span>
+</td></tr>
+<tr><td><span><code>nItems</code></span>
+</td><td><span>The number of items to write. The amount of data written into the stream will be <code>itemSize</code> <code>*</code> <code>nItems</code>. The relative values of <code>itemSize</code> and <code>nItems</code> really do not matter; the only thing that matters is their product. It is often convenient to set <code>itemSize</code> to <code>1</code>, so that <code>nItems</code> is the number of bytes to read. </span>
+</td></tr>
+<tr><td><span><code>stm</code></span>
+</td><td><span>The stream into which data is written. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of items (not bytes) written. </span>
+</section>
+</section>
+
+</div>
+</body></html>

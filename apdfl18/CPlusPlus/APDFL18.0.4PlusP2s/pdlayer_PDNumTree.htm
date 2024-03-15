@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PD Layer: PDNumTree</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PD Layer: PDNumTree</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>PDNumTree Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDNumTree">PDNumTree</a></dt><dd> -  An object that points to the root node of a number tree inside a PDF file.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDNumTree"><strong><span style="color:grey;">PDNumTree</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:5354</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>An object that points to the root node of a number tree inside a PDF file. A number tree is used to map integers to arbitrary Cos objects just as a Cos dictionary is used to map Cos names to Cos objects. However, a number tree can have many more entries than a Cos dictionary can. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#OPAQUE_64_BITS"><code>OPAQUE_64_BITS</code></a> <code>PDNumTree</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDNumTree.htm#PDNumTreeFromCosObj" title=" Creates a type cast of the CosObj to a number tree."><code>PDNumTreeFromCosObj</code></a></td><td><a href="pdlayer_PDNumTree.htm#PDNumTreeNew" title=" Creates a new number tree in the document."><code>PDNumTreeNew</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDNumTree.htm#PDNumTreeEnum" title=" Enumerates the entries in the tree."><code>PDNumTreeEnum</code></a></td><td><a href="pdlayer_PDNumTree.htm#PDNumTreeEqual" title=" Compares two number trees to determine if they are the same object."><code>PDNumTreeEqual</code></a></td></tr>
+<tr><td><a href="pdlayer_PDNumTree.htm#PDNumTreeGet" title=" Retrieves an object from the number tree."><code>PDNumTreeGet</code></a></td><td><a href="pdlayer_PDNumTree.htm#PDNumTreeGetCosObj" title=" Creates a type cast of the number tree to a CosObj."><code>PDNumTreeGetCosObj</code></a></td></tr>
+<tr><td><a href="pdlayer_PDNumTree.htm#PDNumTreeIsValid" title=" Validates whether a PDNumTree is a CosDict Cos object."><code>PDNumTreeIsValid</code></a></td><td><a href="pdlayer_PDNumTree.htm#PDNumTreePut" title=" Puts a new entry in the number tree."><code>PDNumTreePut</code></a></td></tr>
+<tr><td><a href="pdlayer_PDNumTree.htm#PDNumTreeRemove" title=" Removes the specified object from the tree."><code>PDNumTreeRemove</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDNumTree Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDNumTreeEnum">PDNumTreeEnum</a></dt><dd> -  Enumerates the entries in the tree.</dd>
+<dt><a href="#PDNumTreeEqual">PDNumTreeEqual</a></dt><dd> -  Compares two number trees to determine if they are the same object.</dd>
+<dt><a href="#PDNumTreeFromCosObj">PDNumTreeFromCosObj</a></dt><dd> -  Creates a type cast of the CosObj to a number tree.</dd>
+<dt><a href="#PDNumTreeGet">PDNumTreeGet</a></dt><dd> -  Retrieves an object from the number tree.</dd>
+<dt><a href="#PDNumTreeGetCosObj">PDNumTreeGetCosObj</a></dt><dd> -  Creates a type cast of the number tree to a CosObj.</dd>
+<dt><a href="#PDNumTreeIsValid">PDNumTreeIsValid</a></dt><dd> -  Validates whether a PDNumTree is a CosDict Cos object.</dd>
+<dt><a href="#PDNumTreeNew">PDNumTreeNew</a></dt><dd> -  Creates a new number tree in the document.</dd>
+<dt><a href="#PDNumTreePut">PDNumTreePut</a></dt><dd> -  Puts a new entry in the number tree.</dd>
+<dt><a href="#PDNumTreeRemove">PDNumTreeRemove</a></dt><dd> -  Removes the specified object from the tree.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDNumTreeEnum"><strong><span style="color:grey;">PDNumTreeEnum</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:7451</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Enumerates the entries in the tree. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDNumTree.htm#PDNumTreeGet" title=" Retrieves an object from the number tree."><code>PDNumTreeGet</code></a>
+<a href="pdlayer_PDNumTree.htm#PDNumTreePut" title=" Puts a new entry in the number tree."><code>PDNumTreePut</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDNumTreeEnum(</code><a href="pdlayer_PDNumTree.htm#PDNumTree" title=" An object that points to the root node of a number tree inside a PDF file."><code>PDNumTree</code></a> <code>theTree</code><code>,</code> <a href="coslayer_CosObj.htm#CosObjEnumProc" title=" A callback for CosObjEnum(), CosDocEnumIndirect(), and PDDocEnumOCGs()."><code>CosObjEnumProc</code></a> <code>proc</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theTree</code></span>
+</td><td><span>IN/OUT A number tree. </span>
+</td></tr>
+<tr><td><span><code>proc</code></span>
+</td><td><span>IN/OUT A procedure to call once for each number destination pair in <code>theTree</code>. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>IN/OUT Data used by the enumeration procedure. <code>clientData</code> is passed to the enumeration procedure proc each time a number tree is encountered. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDNumTreeEqual"><strong><span style="color:grey;">PDNumTreeEqual</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:7396</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Compares two number trees to determine if they are the same object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDNumTree.htm#PDNumTreeIsValid" title=" Validates whether a PDNumTree is a CosDict Cos object.">PDNumTreeIsValid</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDNumTreeEqual(</code><a href="pdlayer_PDNumTree.htm#PDNumTree" title=" An object that points to the root node of a number tree inside a PDF file."><code>PDNumTree</code></a> <code>tree1</code><code>,</code> <a href="pdlayer_PDNumTree.htm#PDNumTree" title=" An object that points to the root node of a number tree inside a PDF file."><code>PDNumTree</code></a> <code>tree2</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>tree1</code></span>
+</td><td><span>A number tree. </span>
+</td></tr>
+<tr><td><span><code>tree2</code></span>
+</td><td><span>Another number tree. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the two number trees are equivalent, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDNumTreeFromCosObj"><strong><span style="color:grey;">PDNumTreeFromCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:7364</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a type cast of the <a href="coslayer_CosObj.htm#CosObj">CosObj</a> to a number tree. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDNumTree.htm#PDNumTreeGetCosObj" title=" Creates a type cast of the number tree to a CosObj."><code>PDNumTreeGetCosObj</code></a>
+<a href="pdlayer_PDNumTree.htm#PDNumTreeNew" title=" Creates a new number tree in the document."><code>PDNumTreeNew</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDNumTree.htm#PDNumTree" title=" An object that points to the root node of a number tree inside a PDF file."><code>PDNumTree</code></a> <code>PDNumTreeFromCosObj(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>obj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>obj</code></span>
+</td><td><span>IN/OUT The <a href="coslayer_CosObj.htm#CosObj">CosObj</a> for which a <a href="pdlayer_PDNumTree.htm#PDNumTree" title=" An object that points to the root node of a number tree inside a PDF file.">PDNumTree</a> representation is desired. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A <a href="pdlayer_PDNumTree.htm#PDNumTree" title=" An object that points to the root node of a number tree inside a PDF file.">PDNumTree</a> representation of <code>obj</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDNumTreeGet"><strong><span style="color:grey;">PDNumTreeGet</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:7423</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Retrieves an object from the number tree. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDNumTree.htm#PDNumTreePut" title=" Puts a new entry in the number tree."><code>PDNumTreePut</code></a>
+<a href="pdlayer_PDNumTree.htm#PDNumTreeRemove" title=" Removes the specified object from the tree."><code>PDNumTreeRemove</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDNumTreeGet(</code><a href="pdlayer_PDNumTree.htm#PDNumTree" title=" An object that points to the root node of a number tree inside a PDF file."><code>PDNumTree</code></a> <code>theTree</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>key</code><code>,</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>value</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theTree</code></span>
+</td><td><span>The <a href="pdlayer_PDNumTree.htm#PDNumTree" title=" An object that points to the root node of a number tree inside a PDF file.">PDNumTree</a> requested. </span>
+</td></tr>
+<tr><td><span><code>key</code></span>
+</td><td><span>The number of the entry to retrieve. </span>
+</td></tr>
+<tr><td><span><code>value</code></span>
+</td><td><span>(Filled by the method) The value associated with <code>key</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the object was retrieved, <a href="aslayer_General.htm#false"><code>false</code></a> if no object with this number exists. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDNumTreeGetCosObj"><strong><span style="color:grey;">PDNumTreeGetCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:7375</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a type cast of the number tree to a <a href="coslayer_CosObj.htm#CosObj">CosObj</a>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDNumTree.htm#PDNumTreeFromCosObj" title=" Creates a type cast of the CosObj to a number tree."><code>PDNumTreeFromCosObj</code></a>
+<a href="pdlayer_PDNumTree.htm#PDNumTreeNew" title=" Creates a new number tree in the document."><code>PDNumTreeNew</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>PDNumTreeGetCosObj(</code><a href="pdlayer_PDNumTree.htm#PDNumTree" title=" An object that points to the root node of a number tree inside a PDF file."><code>PDNumTree</code></a> <code>theTree</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theTree</code></span>
+</td><td><span>IN/OUT The <a href="pdlayer_PDNumTree.htm#PDNumTree" title=" An object that points to the root node of a number tree inside a PDF file.">PDNumTree</a> for which a <a href="coslayer_CosObj.htm#CosObj">CosObj</a> representation is desired. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A <a href="coslayer_CosObj.htm#CosObj">CosObj</a> representation of <code>theTree</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDNumTreeIsValid"><strong><span style="color:grey;">PDNumTreeIsValid</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:7385</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Validates whether a <a href="pdlayer_PDNumTree.htm#PDNumTree" title=" An object that points to the root node of a number tree inside a PDF file.">PDNumTree</a> is a <a href="coslayer_General.htm#CosDict" title=" A dictionary object.">CosDict</a> Cos object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDNumTree.htm#PDNumTreeEqual" title=" Compares two number trees to determine if they are the same object.">PDNumTreeEqual</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDNumTreeIsValid(</code><a href="pdlayer_PDNumTree.htm#PDNumTree" title=" An object that points to the root node of a number tree inside a PDF file."><code>PDNumTree</code></a> <code>theTree</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theTree</code></span>
+</td><td><span>The <a href="pdlayer_PDNumTree.htm#PDNumTree" title=" An object that points to the root node of a number tree inside a PDF file.">PDNumTree</a> whose validity is desired. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the number tree is a <a href="coslayer_General.htm#CosDict" title=" A dictionary object.">CosDict</a>, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDNumTreeNew"><strong><span style="color:grey;">PDNumTreeNew</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:7353</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a new number tree in the document. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDNumTree.htm#PDNumTreeFromCosObj" title=" Creates a type cast of the CosObj to a number tree."><code>PDNumTreeFromCosObj</code></a>
+<a href="pdlayer_PDNumTree.htm#PDNumTreeGetCosObj" title=" Creates a type cast of the number tree to a CosObj."><code>PDNumTreeGetCosObj</code></a>
+<a href="pdlayer_PDNumTree.htm#PDNumTreeIsValid" title=" Validates whether a PDNumTree is a CosDict Cos object."><code>PDNumTreeIsValid</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDNumTree.htm#PDNumTree" title=" An object that points to the root node of a number tree inside a PDF file."><code>PDNumTree</code></a> <code>PDNumTreeNew(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document for which a new number tree is desired. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div><p>The newly created number tree, or a <a href="aslayer_General.htm#NULL"><code>NULL</code></a> <a href="coslayer_CosObj.htm#CosObj">CosObj</a> if Acrobat is unable to create a <a href="pdlayer_PDNumTree.htm#PDNumTree" title=" An object that points to the root node of a number tree inside a PDF file.">PDNumTree</a> for the document specified by <code>pdDoc</code>.<br/>
+<p><a href="pdlayer_PDNumTree.htm#PDNumTreeIsValid" title=" Validates whether a PDNumTree is a CosDict Cos object.">PDNumTreeIsValid</a>() should be called to determine if the number tree returned by <a href="pdlayer_PDNumTree.htm#PDNumTreeNew" title=" Creates a new number tree in the document.">PDNumTreeNew</a>() is usable.<br/></p>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDNumTreePut"><strong><span style="color:grey;">PDNumTreePut</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:7410</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Puts a new entry in the number tree. If an entry with this number is already in the tree, it is replaced. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDNumTree.htm#PDNumTreeGet" title=" Retrieves an object from the number tree."><code>PDNumTreeGet</code></a>
+<a href="pdlayer_PDNumTree.htm#PDNumTreeRemove" title=" Removes the specified object from the tree."><code>PDNumTreeRemove</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDNumTreePut(</code><a href="pdlayer_PDNumTree.htm#PDNumTree" title=" An object that points to the root node of a number tree inside a PDF file."><code>PDNumTree</code></a> <code>theTree</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>key</code><code>,</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>value</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theTree</code></span>
+</td><td><span>IN/OUT The number tree for which a new entry is added </span>
+</td></tr>
+<tr><td><span><code>key</code></span>
+</td><td><span>IN/OUT The number of the entry. </span>
+</td></tr>
+<tr><td><span><code>value</code></span>
+</td><td><span>IN/OUT The value associated with <code>key</code>. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDNumTreeRemove"><strong><span style="color:grey;">PDNumTreeRemove</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:7436</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Removes the specified object from the tree. It does nothing if no object with that number exists. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDNumTree.htm#PDNumTreeGet" title=" Retrieves an object from the number tree."><code>PDNumTreeGet</code></a>
+<a href="pdlayer_PDNumTree.htm#PDNumTreePut" title=" Puts a new entry in the number tree."><code>PDNumTreePut</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDNumTreeRemove(</code><a href="pdlayer_PDNumTree.htm#PDNumTree" title=" An object that points to the root node of a number tree inside a PDF file."><code>PDNumTree</code></a> <code>theTree</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>key</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>theTree</code></span>
+</td><td><span>IN/OUT The number tree from which an entry is removed. </span>
+</td></tr>
+<tr><td><span><code>key</code></span>
+</td><td><span>IN/OUT The number of the entry to remove. </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

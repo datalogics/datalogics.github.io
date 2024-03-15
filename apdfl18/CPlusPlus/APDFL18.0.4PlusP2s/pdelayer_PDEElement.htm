@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDF Edit Layer: PDEElement</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDF Edit Layer: PDEElement</h5>
+<li><a href="#Enumerations">Enumerations</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#CallbackSignatures">Callback Signatures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Enumerations">
+<header><h2>PDEElement Enumerations</h2></header>
+<nav><dl>
+<dt><a href="#PDEElementCopyFlags">PDEElementCopyFlags</a></dt><dd> -  A bit field for PDEElementCopy().</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEElementCopyFlags"><strong><span style="color:grey;">PDEElementCopyFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:1909</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A bit field for <a href="pdelayer_PDEElement.htm#PDEElementCopy" title=" Makes a copy of an element."><code>PDEElementCopy</code></a><code>()</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEElement.htm#PDEElementCopy" title=" Makes a copy of an element.">PDEElementCopy</a> </span>
+</div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kPDEElementCopyForClip"><code>kPDEElementCopyForClip</code><code>=</code><code>0x0001</code></span>
+</td><td><span>The copied element does not need <code>gstate</code> or <code>clip</code>. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDEElementCopyClipping"><code>kPDEElementCopyClipping</code><code>=</code><code>0x0002</code></span>
+</td><td><span>Acquire the clip path and put it in the copied object. </span>
+</td></tr></table>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>PDEElement Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDEElement">PDEElement</a></dt><dd> -  The base class for elements of a page display list (PDEContent) and for clip objects.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEElement"><strong><span style="color:grey;">PDEElement</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:143</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>The base class for elements of a page display list (PDEContent) and for clip objects. The general <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> methods allow you to get and set general element properties. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDEElement</code> <code>*</code><code>PDEElement</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="acrocolor_acrocolor.htm#PDColorConvertPDEElement" title=" Converts a PDEElement to the supplied color space."><code>PDColorConvertPDEElement</code></a></td><td><a href="acrocolor_acrocolor.htm#PDColorConvertPDEElementEx" title=" Converts a PDEElement to the supplied color space."><code>PDColorConvertPDEElementEx</code></a></td></tr>
+<tr><td><a href="acrocolor_acrocolor.htm#PDColorConvertPDEElementEx2" title=" Converts a PDEElement to the supplied color space."><code>PDColorConvertPDEElementEx2</code></a></td><td><a href="pdelayer_PDEClip.htm#PDEClipGetElem" title=" Gets an element from a clip object."><code>PDEClipGetElem</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEContent.htm#PDEContentGetElem" title=" Gets the requested element from a content."><code>PDEContentGetElem</code></a></td><td><a href="pdelayer_PDEElement.htm#PDEElementCopy" title=" Makes a copy of an element."><code>PDEElementCopy</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="acrocolor_acrocolor.htm#PDColorConvertPDEElement" title=" Converts a PDEElement to the supplied color space."><code>PDColorConvertPDEElement</code></a></td><td><a href="acrocolor_acrocolor.htm#PDColorConvertPDEElementEx" title=" Converts a PDEElement to the supplied color space."><code>PDColorConvertPDEElementEx</code></a></td></tr>
+<tr><td><a href="acrocolor_acrocolor.htm#PDColorConvertPDEElementEx2" title=" Converts a PDEElement to the supplied color space."><code>PDColorConvertPDEElementEx2</code></a></td><td><a href="pdelayer_PDEClip.htm#PDEClipAddElem" title=" Adds an element to a clip path."><code>PDEClipAddElem</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEClip.htm#PDEClipEnumProc" title=" A callback for PDEClipFlattenedEnumElems(), which enumerates all of a PDEClip object's PDEElement objects in a flattened manner."><code>PDEClipEnumProc</code></a></td><td><a href="pdelayer_PDEContent.htm#PDEContentAddElem" title=" Inserts an element into a PDEContent."><code>PDEContentAddElem</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEElement.htm#PDEElementCopy" title=" Makes a copy of an element."><code>PDEElementCopy</code></a></td><td><a href="pdelayer_PDEElement.htm#PDEElementEnumProc" title=" A callback for PDEEnumElements()."><code>PDEElementEnumProc</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEElement.htm#PDEElementGetAllVisibilities" title=" Tests whether all occurrences of the element are visible in a given content and optional-content context."><code>PDEElementGetAllVisibilities</code></a></td><td><a href="pdelayer_PDEElement.htm#PDEElementGetBBox" title=" Gets the bounding box for an element."><code>PDEElementGetBBox</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEElement.htm#PDEElementGetClip" title=" Gets the current clip for an element."><code>PDEElementGetClip</code></a></td><td><a href="pdelayer_PDEElement.htm#PDEElementGetGState" title=" Gets the graphics state information for an element."><code>PDEElementGetGState</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEElement.htm#PDEElementGetGStateEx" title=" Gets the graphics state information for an element."><code>PDEElementGetGStateEx</code></a></td><td><a href="pdelayer_PDEElement.htm#PDEElementGetMatrix" title=" Superseded by PDEElementGetMatrixEx() in Acrobat 10.0."><code>PDEElementGetMatrix</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEElement.htm#PDEElementGetMatrixEx" title=" Supersedes PDEElementGetMatrix() in Acrobat 10.0."><code>PDEElementGetMatrixEx</code></a></td><td><a href="pdelayer_PDEElement.htm#PDEElementGetOCMD" title=" Gets an optional-content membership dictionary (OCMD) object associated with the element."><code>PDEElementGetOCMD</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEElement.htm#PDEElementHasGState" title=" Gets the graphics state information for an element."><code>PDEElementHasGState</code></a></td><td><a href="pdelayer_PDEElement.htm#PDEElementHasGStateEx" title=" Gets the graphics state information for an element."><code>PDEElementHasGStateEx</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEElement.htm#PDEElementIsAtPoint" title=" Tests whether a point is on an element."><code>PDEElementIsAtPoint</code></a></td><td><a href="pdelayer_PDEElement.htm#PDEElementIsAtRect" title=" Tests whether any part of a rectangle is on an element."><code>PDEElementIsAtRect</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEElement.htm#PDEElementIsCurrentlyVisible" title=" Tests whether an element is visible in a given content and optional-content context."><code>PDEElementIsCurrentlyVisible</code></a></td><td><a href="pdelayer_PDEElement.htm#PDEElementMakeVisible" title=" Makes an element visible in a given content and optional-content context, by manipulating the ON-OFF states of the optional-content groups."><code>PDEElementMakeVisible</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEElement.htm#PDEElementRemoveOCMD" title=" Dissociates an optional-content membership dictionary (OCMD) object from the element."><code>PDEElementRemoveOCMD</code></a></td><td><a href="pdelayer_PDEElement.htm#PDEElementSetClip" title=" Sets the current clip for an element."><code>PDEElementSetClip</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEElement.htm#PDEElementSetGState" title=" Sets the graphics state information for an element."><code>PDEElementSetGState</code></a></td><td><a href="pdelayer_PDEElement.htm#PDEElementSetGStateEx" title=" Sets the graphics state information for an element."><code>PDEElementSetGStateEx</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEElement.htm#PDEElementSetMatrix" title=" Superseded by PDEElementSetMatrixEx() in Acrobat 10.0."><code>PDEElementSetMatrix</code></a></td><td><a href="pdelayer_PDEElement.htm#PDEElementSetMatrixEx" title=" Sets the transformation matrix for an element."><code>PDEElementSetMatrixEx</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEElement.htm#PDEElementSetOCMD" title=" Associates an optional-content membership dictionary (OCMD) object with the element."><code>PDEElementSetOCMD</code></a></td><td><a href="pdslayer_PDSMC.htm#PDSMCRefCreate" title=" Creates a reference handle to a piece of marked content that can be used to associate the content with structure."><code>PDSMCRefCreate</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="CallbackSignatures">
+<header><h2>PDEElement Callback Signatures</h2></header>
+<nav><dl>
+<dt><a href="#PDEElementEnumProc">PDEElementEnumProc</a></dt><dd> -  A callback for PDEEnumElements().</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEElementEnumProc"><strong><span style="color:grey;">PDEElementEnumProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:2050</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A callback for <a href="pdelayer_PDEElements.htm#PDEEnumElements" title=" Enumerates all the PDEElements in a given stream.">PDEEnumElements</a>(). It is called once for each <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> in a page's Contents Stream or Resources dictionary. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDEElementEnumProc(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>elem</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>elem</code></span>
+</td><td><span>The <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a>. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>User-supplied data that was specified in the call to <a href="pdelayer_PDEElements.htm#PDEEnumElements" title=" Enumerates all the PDEElements in a given stream.">PDEEnumElements</a>(). </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> to continue enumeration, <a href="aslayer_General.htm#false"><code>false</code></a> to halt enumeration. </span>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEElements.htm#PDEEnumElements" title=" Enumerates all the PDEElements in a given stream."><code>PDEEnumElements</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDEElement Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDEElementCopy">PDEElementCopy</a></dt><dd> -  Makes a copy of an element.</dd>
+<dt><a href="#PDEElementGetAllVisibilities">PDEElementGetAllVisibilities</a></dt><dd> -  Tests whether all occurrences of the element are visible in a given content and optional-content context.</dd>
+<dt><a href="#PDEElementGetBBox">PDEElementGetBBox</a></dt><dd> -  Gets the bounding box for an element.</dd>
+<dt><a href="#PDEElementGetClip">PDEElementGetClip</a></dt><dd> -  Gets the current clip for an element.</dd>
+<dt><a href="#PDEElementGetGState">PDEElementGetGState</a></dt><dd> -  Gets the graphics state information for an element.</dd>
+<dt><a href="#PDEElementGetGStateEx">PDEElementGetGStateEx</a></dt><dd> -  Gets the graphics state information for an element.</dd>
+<dt><a href="#PDEElementGetMatrix">PDEElementGetMatrix</a></dt><dd> -  Superseded by PDEElementGetMatrixEx() in Acrobat 10.0.</dd>
+<dt><a href="#PDEElementGetMatrixEx">PDEElementGetMatrixEx</a></dt><dd> -  Supersedes PDEElementGetMatrix() in Acrobat 10.0.</dd>
+<dt><a href="#PDEElementGetOCMD">PDEElementGetOCMD</a></dt><dd> -  Gets an optional-content membership dictionary (OCMD) object associated with the element.</dd>
+<dt><a href="#PDEElementHasGState">PDEElementHasGState</a></dt><dd> -  Gets the graphics state information for an element.</dd>
+<dt><a href="#PDEElementHasGStateEx">PDEElementHasGStateEx</a></dt><dd> -  Gets the graphics state information for an element.</dd>
+<dt><a href="#PDEElementIsAtPoint">PDEElementIsAtPoint</a></dt><dd> -  Tests whether a point is on an element.</dd>
+<dt><a href="#PDEElementIsAtRect">PDEElementIsAtRect</a></dt><dd> -  Tests whether any part of a rectangle is on an element.</dd>
+<dt><a href="#PDEElementIsCurrentlyVisible">PDEElementIsCurrentlyVisible</a></dt><dd> -  Tests whether an element is visible in a given content and optional-content context.</dd>
+<dt><a href="#PDEElementMakeVisible">PDEElementMakeVisible</a></dt><dd> -  Makes an element visible in a given content and optional-content context, by manipulating the ON-OFF states of the optional-content groups.</dd>
+<dt><a href="#PDEElementRemoveOCMD">PDEElementRemoveOCMD</a></dt><dd> -  Dissociates an optional-content membership dictionary (OCMD) object from the element.</dd>
+<dt><a href="#PDEElementSetClip">PDEElementSetClip</a></dt><dd> -  Sets the current clip for an element.</dd>
+<dt><a href="#PDEElementSetGState">PDEElementSetGState</a></dt><dd> -  Sets the graphics state information for an element.</dd>
+<dt><a href="#PDEElementSetGStateEx">PDEElementSetGStateEx</a></dt><dd> -  Sets the graphics state information for an element.</dd>
+<dt><a href="#PDEElementSetMatrix">PDEElementSetMatrix</a></dt><dd> -  Superseded by PDEElementSetMatrixEx() in Acrobat 10.0.</dd>
+<dt><a href="#PDEElementSetMatrixEx">PDEElementSetMatrixEx</a></dt><dd> -  Sets the transformation matrix for an element.</dd>
+<dt><a href="#PDEElementSetOCMD">PDEElementSetOCMD</a></dt><dd> -  Associates an optional-content membership dictionary (OCMD) object with the element.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEElementCopy"><strong><span style="color:grey;">PDEElementCopy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:219</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Makes a copy of an element. The caller is responsible for releasing the copy with <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>(). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEContent.htm#PDEContentGetElem" title=" Gets the requested element from a content.">PDEContentGetElem</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>PDEElementCopy(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>pdeElement</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeElement</code></span>
+</td><td><span>IN/OUT The element to copy. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>IN/OUT A bit field of <a href="pdelayer_PDEElement.htm#PDEElementCopyFlags" title=" A bit field for PDEElementCopy().">PDEElementCopyFlags</a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A copy of <code>pdeElement</code>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEElementGetAllVisibilities"><strong><span style="color:grey;">PDEElementGetAllVisibilities</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2326</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Tests whether all occurrences of the element are visible in a given content and optional-content context. It traverses the content to find each occurrence of the element, in the supplied content and in all nested contents. To find the visibility of a content element without considering its parent, use <a href="pdelayer_PDEElement.htm#PDEElementIsCurrentlyVisible" title=" Tests whether an element is visible in a given content and optional-content context.">PDEElementIsCurrentlyVisible</a>().<br/>
+<p>It returns the number of occurrences and an array of <a href="aslayer_General.htm#boolean">boolean</a> values containing <a href="aslayer_General.htm#true"><code>true</code></a> for each occurrence of the element that is visible in the context, taking into account the context's NonOCDrawing and <a href="pdlayer_PDOCContext.htm#PDOCDrawEnumType" title=" PDOCDrawEnumType controls drawing or enumerating the page with respect to optional content.">PDOCDrawEnumType</a> values.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEElement.htm#PDEElementIsCurrentlyVisible" title=" Tests whether an element is visible in a given content and optional-content context."><code>PDEElementIsCurrentlyVisible</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementMakeVisible" title=" Makes an element visible in a given content and optional-content context, by manipulating the ON-OFF states of the optional-content groups."><code>PDEElementMakeVisible</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>PDEElementGetAllVisibilities(</code><a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>elem</code><code>,</code> <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage."><code>PDEContent</code></a> <code>content</code><code>,</code> <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ocContext</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>*</code><code>visibilities</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>capacity</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>elem</code></span>
+</td><td><span>The element for which to obtain visibilities. </span>
+</td></tr>
+<tr><td><span><code>content</code></span>
+</td><td><span>The content containing the element. </span>
+</td></tr>
+<tr><td><span><code>ocContext</code></span>
+</td><td><span>The optional-content context in which the element is tested. </span>
+</td></tr>
+<tr><td><span><code>visibilities</code></span>
+</td><td><span>(Filled by the method) An array of <a href="aslayer_General.htm#boolean">boolean</a> values containing <a href="aslayer_General.htm#true"><code>true</code></a> for each occurrence of the element that is visible in the context. </span>
+</td></tr>
+<tr><td><span><code>capacity</code></span>
+</td><td><span>The size of the visibilities array. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of occurrences of the element in the content. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDEElementGetBBox"><strong><span style="color:grey;">PDEElementGetBBox</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:191</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the bounding box for an element.<br/>
+<p>The returned bounding box is guaranteed to encompass the element, but is not guaranteed to be the smallest box that could contain the element. For example, for an arc, <code>bboxP</code> encloses the bezier control points, and not just the curve itself.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEElementGetBBox(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>pdeElement</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRectP</code></a> <code>bboxP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeElement</code></span>
+</td><td><span>IN/OUT An element whose bounding box is obtained. </span>
+</td></tr>
+<tr><td><span><code>bboxP</code></span>
+</td><td><span>IN/OUT (Filled by the method) A pointer to a <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides.">ASFixedRect</a> structure specifying the bounding box of <code>pdeElement</code>, specified in user space coordinates. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEElementGetClip"><strong><span style="color:grey;">PDEElementGetClip</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:262</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the current clip for an element. The current clipping path is part of the graphics state. Element types that are not graphics elements (for example, <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file.">PDEContainer</a> and <a href="pdelayer_PDEPlace.htm#PDEPlace" title=" A PDEElement that marks a place on a page in a PDF file.">PDEPlace</a>) do not have an associated <code>gstate</code> and should not be expected to return valid results. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method does not change the reference count of the clip object. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEElement.htm#PDEElementGetBBox" title=" Gets the bounding box for an element."><code>PDEElementGetBBox</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementGetGState" title=" Gets the graphics state information for an element."><code>PDEElementGetGState</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementGetMatrix" title=" Superseded by PDEElementGetMatrixEx() in Acrobat 10.0."><code>PDEElementGetMatrix</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementIsAtRect" title=" Tests whether any part of a rectangle is on an element."><code>PDEElementIsAtRect</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state."><code>PDEClip</code></a> <code>PDEElementGetClip(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>pdeElement</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeElement</code></span>
+</td><td><span>IN/OUT An element whose clip is obtained. Note that a clip may be shared by many elements. Use care when modifying a clip. Copy it first if you want to modify the clip for a specific element. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The clip object for <code>pdeElement</code>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEElementGetGState"><strong><span style="color:grey;">PDEElementGetGState</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:217</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the graphics state information for an element.<br/>
+<p>This method is only valid for <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a>, <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a>, <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path.">PDEPath</a>, and <a href="pdelayer_PDEShading.htm#PDEShading" title=" A PDEElement that represents smooth shading.">PDEShading</a> elements.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEElement.htm#PDEElementGetBBox" title=" Gets the bounding box for an element."><code>PDEElementGetBBox</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementGetClip" title=" Gets the current clip for an element."><code>PDEElementGetClip</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementGetGStateEx" title=" Gets the graphics state information for an element."><code>PDEElementGetGStateEx</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementGetMatrix" title=" Superseded by PDEElementGetMatrixEx() in Acrobat 10.0."><code>PDEElementGetMatrix</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementSetGState" title=" Sets the graphics state information for an element."><code>PDEElementSetGState</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEElementGetGState(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>pdeElement</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element."><code>PDEGraphicStateP</code></a> <code>stateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>stateSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeElement</code></span>
+</td><td><span>An element whose graphics state is obtained. </span>
+</td></tr>
+<tr><td><span><code>stateP</code></span>
+</td><td><span>(Filled by the method) A pointer to a <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicState</a> structure that contains graphics state information for <code>pdeElement</code>. This <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicStateP</a> may contain PDEObjects for color spaces or an ExtGState. They are not acquired by this method. Note that for a <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a>, only the ExtGState value is used for images. For indexed images, the fill color space and values are categorized in the <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a> object. </span>
+</td></tr>
+<tr><td><span><code>stateSize</code></span>
+</td><td><span>The size of the <code>stateP</code> buffer in bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEElementGetGStateEx"><strong><span style="color:grey;">PDEElementGetGStateEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:3095</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the graphics state information for an element. This method fills <a href="pdelayer_General.htm#_t_PDEGraphicStateEx" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicStateEx</a> as output which is higher precision alternative of <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicState</a> structure.<br/>
+<p>This method is only valid for <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a>, <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a>, <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path.">PDEPath</a>, and <a href="pdelayer_PDEShading.htm#PDEShading" title=" A PDEElement that represents smooth shading.">PDEShading</a> elements.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEElement.htm#PDEElementGetBBox" title=" Gets the bounding box for an element."><code>PDEElementGetBBox</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementGetClip" title=" Gets the current clip for an element."><code>PDEElementGetClip</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementGetGState" title=" Gets the graphics state information for an element."><code>PDEElementGetGState</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementGetMatrix" title=" Superseded by PDEElementGetMatrixEx() in Acrobat 10.0."><code>PDEElementGetMatrix</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementSetGState" title=" Sets the graphics state information for an element."><code>PDEElementSetGState</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementSetGStateEx" title=" Sets the graphics state information for an element."><code>PDEElementSetGStateEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEElementGetGStateEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>pdeElement</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="pdelayer_General.htm#_t_PDEGraphicStateEx" title=" Attributes of a PDEElement or a PDEText sub-element."><code>PDEGraphicStateExP</code></a> <code>stateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>stateSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeElement</code></span>
+</td><td><span>An element whose graphics state is obtained. </span>
+</td></tr>
+<tr><td><span><code>stateP</code></span>
+</td><td><span>(Filled by the method) A pointer to a <a href="pdelayer_General.htm#_t_PDEGraphicStateEx" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicStateEx</a> structure that contains graphics state information for <code>pdeElement</code>. This <a href="pdelayer_General.htm#_t_PDEGraphicStateEx" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicStateExP</a> may contain PDEObjects for color spaces or an ExtGState. They are not acquired by this method. Note that for a <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a>, only the ExtGState value is used for images. For indexed images, the fill color space and values are categorized in the <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a> object. </span>
+</td></tr>
+<tr><td><span><code>stateSize</code></span>
+</td><td><span>The size of the <code>stateP</code> buffer in bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEElementGetMatrix"><strong><span style="color:grey;">PDEElementGetMatrix</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:241</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Superseded by <a href="pdelayer_PDEElement.htm#PDEElementGetMatrixEx" title=" Supersedes PDEElementGetMatrix() in Acrobat 10.0.">PDEElementGetMatrixEx</a>() in Acrobat 10.0. Gets the transformation matrix for an element.<br/>
+<p>This matrix provides the transformation from user space to device space for the element. If there is no cm ( <code>concatmatrix</code>) operator in the page stream, the matrix is the identity matrix.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEElement.htm#PDEElementGetBBox" title=" Gets the bounding box for an element."><code>PDEElementGetBBox</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementGetGState" title=" Gets the graphics state information for an element."><code>PDEElementGetGState</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementGetMatrixEx" title=" Supersedes PDEElementGetMatrix() in Acrobat 10.0."><code>PDEElementGetMatrixEx</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementSetMatrix" title=" Superseded by PDEElementSetMatrixEx() in Acrobat 10.0."><code>PDEElementSetMatrix</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEElementGetMatrix(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>pdeElement</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeElement</code></span>
+</td><td><span>An element whose transformation matrix is obtained. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>(Filled by the method) A pointer to <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> that holds a transformation matrix for <code>pdeElement</code>. If <code>pdeElement</code> is a text object, it returns the identity matrix. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEElementGetMatrixEx"><strong><span style="color:grey;">PDEElementGetMatrixEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2891</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Supersedes <a href="pdelayer_PDEElement.htm#PDEElementGetMatrix" title=" Superseded by PDEElementGetMatrixEx() in Acrobat 10.0.">PDEElementGetMatrix</a>() in Acrobat 10.0. Gets the transformation matrix for an element.<br/>
+<p>This matrix provides the transformation from user space to device space for the element. If there is no cm ( <code>concatmatrix</code>) operator in the page stream, the matrix is the identity matrix.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEElement.htm#PDEElementGetBBox" title=" Gets the bounding box for an element."><code>PDEElementGetBBox</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementGetGState" title=" Gets the graphics state information for an element."><code>PDEElementGetGState</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementGetMatrix" title=" Superseded by PDEElementGetMatrixEx() in Acrobat 10.0."><code>PDEElementGetMatrix</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementSetMatrixEx" title=" Sets the transformation matrix for an element."><code>PDEElementSetMatrixEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEElementGetMatrixEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>pdeElement</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers."><code>ASDoubleMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeElement</code></span>
+</td><td><span>An element whose transformation matrix is obtained. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>(Filled by the method) A pointer to <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers.">ASDoubleMatrix</a> that holds a transformation matrix for <code>pdeElement</code>. If <code>pdeElement</code> is a text object, it returns the identity matrix. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEElementGetOCMD"><strong><span style="color:grey;">PDEElementGetOCMD</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2268</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><UL>Gets an optional-content membership dictionary (OCMD) object associated with the element. The element must be a <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a>, <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a> (XObject image), or <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file.">PDEContainer</a>. If it is not one of these, the method returns <a href="aslayer_General.htm#NULL"><code>NULL</code></a>.<br/><li> If the element is a <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> or <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a>, the method returns the dictionary attached to the element's Cos XObject dictionary.<br/><li> If the element is a <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file.">PDEContainer</a>, and it is for optional content, the method returns the dictionary. If it is not for optional content, the method returns <a href="aslayer_General.htm#NULL"><code>NULL</code></a>.<br/></UL>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetOCMD" title=" Gets an optional-content membership dictionary (OCMD) object associated with the annotation."><code>PDAnnotGetOCMD</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementRemoveOCMD" title=" Dissociates an optional-content membership dictionary (OCMD) object from the element."><code>PDEElementRemoveOCMD</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementSetOCMD" title=" Associates an optional-content membership dictionary (OCMD) object with the element."><code>PDEElementSetOCMD</code></a>
+<a href="pdlayer_PDOCMD.htm#PDOCMDFindOrCreate" title=" Locates an existing optional-content membership dictionary (OCMD) object that references the given groups, and that uses the same visibility policy."><code>PDOCMDFindOrCreate</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDOCMD.htm#PDOCMD" title=" A PDOCMD is an object that is attached to content to indicate membership in an OCG or group of OCGs."><code>PDOCMD</code></a> <code>PDEElementGetOCMD(</code><a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>elem</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>elem</code></span>
+</td><td><span>The element from which the dictionary is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The dictionary object, or <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if the element is not a <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a>, <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a> (XObject image), or <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file.">PDEContainer</a>, or if it is a container that is not for optional content. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDEElementHasGState"><strong><span style="color:grey;">PDEElementHasGState</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1948</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the graphics state information for an element. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEElement.htm#PDEElementHasGStateEx" title=" Gets the graphics state information for an element.">PDEElementHasGStateEx</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDEElementHasGState(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>pdeElement</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element."><code>PDEGraphicStateP</code></a> <code>stateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>stateSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeElement</code></span>
+</td><td><span>The <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> whose graphics state is to be obtained. </span>
+</td></tr>
+<tr><td><span><code>stateP</code></span>
+</td><td><span>(Filled by the method) A pointer to a <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicState</a> structure that contains graphics state information for <code>pdeElement</code>. </span>
+</td></tr>
+<tr><td><span><code>stateSize</code></span>
+</td><td><span>The size of the <code>stateP</code> buffer. Set it to <code>sizeof(PDEGraphicState)</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the element has a graphics state, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEElementHasGStateEx"><strong><span style="color:grey;">PDEElementHasGStateEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:3115</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the graphics state information for an element. This method fills <a href="pdelayer_General.htm#_t_PDEGraphicStateEx" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicStateEx</a> as output which is higher precision alternative of <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicState</a> structure. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEElement.htm#PDEElementHasGState" title=" Gets the graphics state information for an element.">PDEElementHasGState</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDEElementHasGStateEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>pdeElement</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="pdelayer_General.htm#_t_PDEGraphicStateEx" title=" Attributes of a PDEElement or a PDEText sub-element."><code>PDEGraphicStateExP</code></a> <code>stateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>stateSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeElement</code></span>
+</td><td><span>The <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> whose graphics state is to be obtained. </span>
+</td></tr>
+<tr><td><span><code>stateP</code></span>
+</td><td><span>(Filled by the method) A pointer to a <a href="pdelayer_General.htm#_t_PDEGraphicStateEx" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicStateEx</a> structure that contains graphics state information for <code>pdeElement</code>. </span>
+</td></tr>
+<tr><td><span><code>stateSize</code></span>
+</td><td><span>The size of the <code>stateP</code> buffer. Set it to <code>sizeof(PDEGraphicStateEx)</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the element has a graphics state, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEElementIsAtPoint"><strong><span style="color:grey;">PDEElementIsAtPoint</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1619</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Tests whether a point is on an element. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEElement.htm#PDEElementIsAtRect" title=" Tests whether any part of a rectangle is on an element."><code>PDEElementIsAtRect</code></a>
+<a href="pdelayer_PDEText.htm#PDETextIsAtPoint" title=" Tests whether a point is on specified text."><code>PDETextIsAtPoint</code></a>
+<a href="pdelayer_PDEText.htm#PDETextIsAtRect" title=" Tests whether any part of a rectangle is on the specified text."><code>PDETextIsAtRect</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDEElementIsAtPoint(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>elem</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers."><code>ASFixedPoint</code></a> <code>point</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>elem</code></span>
+</td><td><span>IN/OUT The element to test. If <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> is a <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a> or <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a>, it uses the bounding box of the <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> to make the check. If the <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> is a <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path.">PDEPath</a> and it is stroked, it checks if the point is on the path. If the <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> is a <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path.">PDEPath</a> and it is filled, it checks if the point is in the fill area, taking into consideration whether it is filled using the non-zero winding number rule or the even-odd rule. </span>
+</td></tr>
+<tr><td><span><code>point</code></span>
+</td><td><span>IN/OUT The point, specified in user space coordinates. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the point is on the element, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEElementIsAtRect"><strong><span style="color:grey;">PDEElementIsAtRect</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1642</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Tests whether any part of a rectangle is on an element. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEElement.htm#PDEElementIsAtPoint" title=" Tests whether a point is on an element."><code>PDEElementIsAtPoint</code></a>
+<a href="pdelayer_PDEText.htm#PDETextIsAtPoint" title=" Tests whether a point is on specified text."><code>PDETextIsAtPoint</code></a>
+<a href="pdelayer_PDEText.htm#PDETextIsAtRect" title=" Tests whether any part of a rectangle is on the specified text."><code>PDETextIsAtRect</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDEElementIsAtRect(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>elem</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRect</code></a> <code>rect</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>elem</code></span>
+</td><td><span>IN/OUT The element to test. If <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> is a <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a> or <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a>, it uses the bounding box of the <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> to make the check. If the <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> is a <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path.">PDEPath</a> and it is stroked, it checks if the rectangle is on the path. If the <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> is a <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path.">PDEPath</a> and it is filled, it checks if the rectangle is in the fill area, taking into consideration whether it is filled using the non-zero winding number rule or the even-odd rule. </span>
+</td></tr>
+<tr><td><span><code>rect</code></span>
+</td><td><span>IN/OUT The rectangle, specified in user space coordinates. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if any part of the rectangle is on the element, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEElementIsCurrentlyVisible"><strong><span style="color:grey;">PDEElementIsCurrentlyVisible</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2297</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Tests whether an element is visible in a given content and optional-content context. It traverses the content to find the first occurrence of the element, in the supplied content and in all nested contents. It returns <a href="aslayer_General.htm#true"><code>true</code></a> if the first occurrence of the element is visible in the context, taking into account the context's NonOCDrawing and <a href="pdlayer_PDOCContext.htm#PDOCDrawEnumType" title=" PDOCDrawEnumType controls drawing or enumerating the page with respect to optional content.">PDOCDrawEnumType</a> values.<br/>
+<p>The content can be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. In this case:<br/></p>
+
+<UL><li> If the element is a <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a>, <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a>, or <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file.">PDEContainer</a>, the method checks the object to see if it has an optional-content membership dictionary (OCMD) attached to it. If so, the method returns <a href="aslayer_General.htm#true"><code>true</code></a> if the object is visible, without considering whether the <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage.">PDEContent</a> that the element belongs to is visible.<br/><li> If the element is not one of these types, the method returns <a href="aslayer_General.htm#true"><code>true</code></a>.<br/></UL>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEElement.htm#PDEElementGetAllVisibilities" title=" Tests whether all occurrences of the element are visible in a given content and optional-content context."><code>PDEElementGetAllVisibilities</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementMakeVisible" title=" Makes an element visible in a given content and optional-content context, by manipulating the ON-OFF states of the optional-content groups."><code>PDEElementMakeVisible</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDEElementIsCurrentlyVisible(</code><a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>elem</code><code>,</code> <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage."><code>PDEContent</code></a> <code>content</code><code>,</code> <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ocContext</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>elem</code></span>
+</td><td><span>The element to test. </span>
+</td></tr>
+<tr><td><span><code>content</code></span>
+</td><td><span>The content containing the element. </span>
+</td></tr>
+<tr><td><span><code>ocContext</code></span>
+</td><td><span>The optional-content context in which the element is tested. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>Returns <a href="aslayer_General.htm#true"><code>true</code></a> if the element is visible in the given content and context, <a href="aslayer_General.htm#false"><code>false</code></a> if it is hidden. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDEElementMakeVisible"><strong><span style="color:grey;">PDEElementMakeVisible</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:2344</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Makes an element visible in a given content and optional-content context, by manipulating the <code>ON-OFF</code> states of the optional-content groups. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEElement.htm#PDEElementGetAllVisibilities" title=" Tests whether all occurrences of the element are visible in a given content and optional-content context."><code>PDEElementGetAllVisibilities</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementIsCurrentlyVisible" title=" Tests whether an element is visible in a given content and optional-content context."><code>PDEElementIsCurrentlyVisible</code></a>
+<a href="pdlayer_PDOCMD.htm#PDOCMDsMakeContentVisible" title=" Makes content that uses any of a set of optional-content membership dictionaries visible in a given optional-content context."><code>PDOCMDsMakeContentVisible</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDEElementMakeVisible(</code><a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>elem</code><code>,</code> <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage."><code>PDEContent</code></a> <code>content</code><code>,</code> <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ocContext</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>elem</code></span>
+</td><td><span>The element for which to set the visibility state. </span>
+</td></tr>
+<tr><td><span><code>content</code></span>
+</td><td><span>The content containing the element. </span>
+</td></tr>
+<tr><td><span><code>ocContext</code></span>
+</td><td><span>The optional-content context in which the element is made visible. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the element is successfully made visible in the given content and context, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDEElementRemoveOCMD"><strong><span style="color:grey;">PDEElementRemoveOCMD</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2213</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Dissociates an optional-content membership dictionary (OCMD) object from the element. The element must be a <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a>, a <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a> (XObject image), or a <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file.">PDEContainer</a>.<br/>
+<p>If it is not one of these, nothing happens:<br/></p>
+
+<UL><li> If the element is a <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> or <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a>, the method removes the dictionary from the element's Cos XObject dictionary.<br/><li> If the element is a <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file.">PDEContainer</a> for optional content, the method removes the dictionary, but does not destroy the container.<br/></UL>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEElement.htm#PDEElementGetOCMD" title=" Gets an optional-content membership dictionary (OCMD) object associated with the element."><code>PDEElementGetOCMD</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementSetOCMD" title=" Associates an optional-content membership dictionary (OCMD) object with the element."><code>PDEElementSetOCMD</code></a>
+<a href="pdlayer_PDOCMD.htm#PDOCMDFindOrCreate" title=" Locates an existing optional-content membership dictionary (OCMD) object that references the given groups, and that uses the same visibility policy."><code>PDOCMDFindOrCreate</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEElementRemoveOCMD(</code><a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>elem</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>elem</code></span>
+</td><td><span>The element for which to remove the dictionary. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDEElementSetClip"><strong><span style="color:grey;">PDEElementSetClip</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:206</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the current clip for an element. The <code>pdeElement</code> parameter's previous clip's reference count is decremented (if it had one), and the <code>pdeClip</code> parameter's reference count is incremented. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEElement.htm#PDEElementGetClip" title=" Gets the current clip for an element.">PDEElementGetClip</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEElementSetClip(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>pdeElement</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state."><code>PDEClip</code></a> <code>pdeClip</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeElement</code></span>
+</td><td><span>IN/OUT An element whose clip is set. </span>
+</td></tr>
+<tr><td><span><code>pdeClip</code></span>
+</td><td><span>IN/OUT The clip to set for <code>pdeContent</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEElementSetGState"><strong><span style="color:grey;">PDEElementSetGState</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:171</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Sets the graphics state information for an element.<br/>
+<p>This method is valid only for <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a>, <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a>, <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path.">PDEPath</a>, and <a href="pdelayer_PDEShading.htm#PDEShading" title=" A PDEElement that represents smooth shading.">PDEShading</a> elements.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method causes any of the <code>stateP</code> parameter's color space or ExtGState objects to have their reference count incremented, and previous graphic state objects to be decremented. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEElement.htm#PDEElementGetGState" title=" Gets the graphics state information for an element."><code>PDEElementGetGState</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementSetGStateEx" title=" Sets the graphics state information for an element."><code>PDEElementSetGStateEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEElementSetGState(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>pdeElement</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element."><code>PDEGraphicStateP</code></a> <code>stateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>stateSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeElement</code></span>
+</td><td><span>An element whose graphics state is set. </span>
+</td></tr>
+<tr><td><span><code>stateP</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicState</a> structure with graphics state information to set for <code>pdeContent</code>. Any of the <code>stateP</code> parameter's color space or ExtGState objects have their reference count incremented. </span>
+</td></tr>
+<tr><td><span><code>stateSize</code></span>
+</td><td><span>The size of the <code>stateP</code> buffer in bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span>will be raised if the first parameter, <code>pdeElement</code>, does not have a graphics state associated with it. </span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEElementSetGStateEx"><strong><span style="color:grey;">PDEElementSetGStateEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:3596</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Sets the graphics state information for an element. This method takes pointer to <a href="pdelayer_General.htm#_t_PDEGraphicStateEx" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicStateEx</a> as input which is higher precision alternative of <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicState</a> structure.<br/>
+<p>This method is valid only for <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a>, <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a>, <a href="pdelayer_PDEPath.htm#PDEPath" title=" A PDEElement that contains a path.">PDEPath</a>, and <a href="pdelayer_PDEShading.htm#PDEShading" title=" A PDEElement that represents smooth shading.">PDEShading</a> elements.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method causes any of the <code>stateP</code> parameter's color space or ExtGState objects to have their reference count incremented, and previous graphic state objects to be decremented. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEElement.htm#PDEElementGetGState" title=" Gets the graphics state information for an element."><code>PDEElementGetGState</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementGetGStateEx" title=" Gets the graphics state information for an element."><code>PDEElementGetGStateEx</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementSetGState" title=" Sets the graphics state information for an element."><code>PDEElementSetGState</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEElementSetGStateEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>pdeElement</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_General.htm#_t_PDEGraphicStateEx" title=" Attributes of a PDEElement or a PDEText sub-element."><code>PDEGraphicStateExP</code></a> <code>stateP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>stateSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeElement</code></span>
+</td><td><span>An element whose graphics state is set. </span>
+</td></tr>
+<tr><td><span><code>stateP</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_General.htm#_t_PDEGraphicStateEx" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicStateEx</a> structure with graphics state information to set for <code>pdeContent</code>. Any of the <code>stateP</code> parameter's color space or ExtGState objects have their reference count incremented. </span>
+</td></tr>
+<tr><td><span><code>stateSize</code></span>
+</td><td><span>The size of the <code>stateP</code> buffer in bytes. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span>will be raised if the first parameter, <code>pdeElement</code>, does not have a graphics state associated with it. </span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEElementSetMatrix"><strong><span style="color:grey;">PDEElementSetMatrix</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:191</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Superseded by <a href="pdelayer_PDEElement.htm#PDEElementSetMatrixEx" title=" Sets the transformation matrix for an element.">PDEElementSetMatrixEx</a>() in Acrobat 10.0. Sets the transformation matrix for an element.<br/>
+<p>The element may not be a <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file.">PDEContainer</a>, a <a href="pdelayer_PDEGroup.htm#PDEGroup" title=" An in-memory representation of objects in a PDEContent object.">PDEGroup</a>, a <a href="pdelayer_PDEPlace.htm#PDEPlace" title=" A PDEElement that marks a place on a page in a PDF file.">PDEPlace</a>, or a <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a>.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEElement.htm#PDEElementGetMatrix" title=" Superseded by PDEElementGetMatrixEx() in Acrobat 10.0."><code>PDEElementGetMatrix</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementSetMatrixEx" title=" Sets the transformation matrix for an element."><code>PDEElementSetMatrixEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEElementSetMatrix(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>pdeElement</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeElement</code></span>
+</td><td><span>IN/OUT An element whose transformation matrix is set. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>IN/OUT A pointer to an <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> that holds the transformation matrix to set for <code>pdeContent</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEElementSetMatrixEx"><strong><span style="color:grey;">PDEElementSetMatrixEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:3497</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Sets the transformation matrix for an element. Supersedes <a href="pdelayer_PDEElement.htm#PDEElementSetMatrix" title=" Superseded by PDEElementSetMatrixEx() in Acrobat 10.0.">PDEElementSetMatrix</a>() in Acrobat 10.0.<br/>
+<p>The element may not be a <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file.">PDEContainer</a>, a <a href="pdelayer_PDEGroup.htm#PDEGroup" title=" An in-memory representation of objects in a PDEContent object.">PDEGroup</a>, a <a href="pdelayer_PDEPlace.htm#PDEPlace" title=" A PDEElement that marks a place on a page in a PDF file.">PDEPlace</a>, or a <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a>.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEElement.htm#PDEElementGetMatrixEx" title=" Supersedes PDEElementGetMatrix() in Acrobat 10.0."><code>PDEElementGetMatrixEx</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementSetMatrix" title=" Superseded by PDEElementSetMatrixEx() in Acrobat 10.0."><code>PDEElementSetMatrix</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEElementSetMatrixEx(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>pdeElement</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers."><code>ASDoubleMatrixP</code></a> <code>matrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeElement</code></span>
+</td><td><span>IN/OUT An element whose transformation matrix is set. </span>
+</td></tr>
+<tr><td><span><code>matrixP</code></span>
+</td><td><span>IN/OUT A pointer to an <a href="aslayer_ASDouble.htm#_t_ASDoubleMatrix" title=" Matrix containing double numbers.">ASDoubleMatrix</a> that holds the transformation matrix to set for <code>pdeContent</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEElementSetOCMD"><strong><span style="color:grey;">PDEElementSetOCMD</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:2191</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Associates an optional-content membership dictionary (OCMD) object with the element. The element must be a <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a>, a <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a> (XObject image), or a <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file.">PDEContainer</a>.<br/>
+<p>If it is not one of these, nothing happens:<br/></p>
+
+<UL><li> If the element is a <a href="pdelayer_PDEForm.htm#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> or <a href="pdelayer_PDEImage.htm#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a>, the method attaches the dictionary to the element's Cos XObject dictionary.<br/><li> If the element is a <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file.">PDEContainer</a>, and it is already for optional content, the optional-content information is replaced.<br/><li> If it is not already for optional content, a new <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file.">PDEContainer</a> for optional content is created and nested inside the specified container.<br/></UL>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdelayer_PDEElement.htm#PDEElementGetOCMD" title=" Gets an optional-content membership dictionary (OCMD) object associated with the element."><code>PDEElementGetOCMD</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementRemoveOCMD" title=" Dissociates an optional-content membership dictionary (OCMD) object from the element."><code>PDEElementRemoveOCMD</code></a>
+<a href="pdlayer_PDOCMD.htm#PDOCMDFindOrCreate" title=" Locates an existing optional-content membership dictionary (OCMD) object that references the given groups, and that uses the same visibility policy."><code>PDOCMDFindOrCreate</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEElementSetOCMD(</code><a href="pdelayer_PDEElement.htm#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects."><code>PDEElement</code></a> <code>elem</code><code>,</code> <a href="pdlayer_PDOCMD.htm#PDOCMD" title=" A PDOCMD is an object that is attached to content to indicate membership in an OCG or group of OCGs."><code>PDOCMD</code></a> <code>pdOCMD</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>elem</code></span>
+</td><td><span>The element for which to set the dictionary. </span>
+</td></tr>
+<tr><td><span><code>pdOCMD</code></span>
+</td><td><span>The new dictionary. </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

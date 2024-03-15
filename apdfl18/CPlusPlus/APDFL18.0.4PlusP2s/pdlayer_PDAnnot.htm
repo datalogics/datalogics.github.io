@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PD Layer: PDAnnot</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PD Layer: PDAnnot</h5>
+<li><a href="#Definitions">Definitions</a></li>
+<li><a href="#Enumerations">Enumerations</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#CallbackSignatures">Callback Signatures</a></li>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Definitions">
+<header><h2>PDAnnot Definitions</h2></header>
+<nav><dl>
+<dt><a href="#CastToPDAnnot">CastToPDAnnot</a></dt><dd> -  Casts a link annotation or a text annotation to a generic annotation.</dd>
+<dt><a href="#PDAnnotIgnorePerms">PDAnnotIgnorePerms</a></dt><dd> -  Allows modifying this annotation type in a write-protected document.</dd>
+<dt><a href="#PDAnnotInfoInit">PDAnnotInfoInit</a></dt><dd> - </dd>
+<dt><a href="#PDAnnotMaxDashes">PDAnnotMaxDashes</a></dt><dd> - </dd>
+<dt><a href="#PDAnnotOperationAll">PDAnnotOperationAll</a></dt><dd> -  All operations are allowed.</dd>
+<dt><a href="#PDAnnotOperationFilter">PDAnnotOperationFilter</a></dt><dd> -  It is okay to filter annotations.</dd>
+<dt><a href="#PDAnnotOperationFlatten">PDAnnotOperationFlatten</a></dt><dd> -  When creating a flattened page include this annot</dd>
+<dt><a href="#PDAnnotOperationManager">PDAnnotOperationManager</a></dt><dd> -  It is okay to manage annotations.</dd>
+<dt><a href="#PDAnnotOperationSummarize">PDAnnotOperationSummarize</a></dt><dd> -  It is okay to summarize annotations.</dd>
+<dt><a href="#pdAnnotHidden">pdAnnotHidden</a></dt><dd> -  The annotation is not visible and does not print.</dd>
+<dt><a href="#pdAnnotInvisible">pdAnnotInvisible</a></dt><dd> -  If there is no annotation handler, the annotation is invisible.</dd>
+<dt><a href="#pdAnnotLock">pdAnnotLock</a></dt><dd> -  The annotation does not move or resize with the view.</dd>
+<dt><a href="#pdAnnotLockContents">pdAnnotLockContents</a></dt><dd> -  If the annotation is content-locked, the user can not change its content key.</dd>
+<dt><a href="#pdAnnotNoRotate">pdAnnotNoRotate</a></dt><dd> -  The annotation does not rotate with the page.</dd>
+<dt><a href="#pdAnnotNoView">pdAnnotNoView</a></dt><dd> -  The annotation does not view but can print.</dd>
+<dt><a href="#pdAnnotNoZoom">pdAnnotNoZoom</a></dt><dd> -  The annotation does not zoom with the view.</dd>
+<dt><a href="#pdAnnotPrint">pdAnnotPrint</a></dt><dd> -  The annotation prints.</dd>
+<dt><a href="#pdAnnotReadOnly">pdAnnotReadOnly</a></dt><dd> -  The annotation does not interact with the user.</dd>
+<dt><a href="#pdAnnotSequenceAdjust">pdAnnotSequenceAdjust</a></dt><dd> -  A place holder used only at runtime.</dd>
+<dt><a href="#pdAnnotToggleNoView">pdAnnotToggleNoView</a></dt><dd> -  A mouse-over or selection causes the noView bit to toggle.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="CastToPDAnnot"><strong><span style="color:grey;">CastToPDAnnot</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:408</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Casts a link annotation or a text annotation to a generic annotation. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDLinkAnnot.htm#CastToPDLinkAnnot" title=" Casts a generic annotation or a text annotation to a link annotation."><code>CastToPDLinkAnnot</code></a>
+<a href="pdlayer_PDTextAnnot.htm#CastToPDTextAnnot" title=" Casts a link annotation or a generic annotation to a text annotation."><code>CastToPDTextAnnot</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define CastToPDAnnot</code> <code>(</code> <code>a</code> <code>)</code> <code>*</code><code>(</code> <a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>*</code><code>)</code> <code>&amp;</code><code>(</code> <code>a</code> <code>)</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>a</code></span>
+</td><td><span>The link annotation or text annotation to cast. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotIgnorePerms"><strong><span style="color:grey;">PDAnnotIgnorePerms</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:444</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Allows modifying this annotation type in a write-protected document. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define PDAnnotIgnorePerms</code> <code>0x0008</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotInfoInit"><strong><span style="color:grey;">PDAnnotInfoInit</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:491</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define PDAnnotInfoInit</code> <code>(</code> <code>x</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotMaxDashes"><strong><span style="color:grey;">PDAnnotMaxDashes</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:980</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define PDAnnotMaxDashes</code> <code>10</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotOperationAll"><strong><span style="color:grey;">PDAnnotOperationAll</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:454</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>All operations are allowed. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define PDAnnotOperationAll</code> <code>0xFFFF</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotOperationFilter"><strong><span style="color:grey;">PDAnnotOperationFilter</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:434</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>It is okay to filter annotations. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define PDAnnotOperationFilter</code> <code>0x0002</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotOperationFlatten"><strong><span style="color:grey;">PDAnnotOperationFlatten</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:449</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>When creating a flattened page include this annot </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define PDAnnotOperationFlatten</code> <code>0x0010</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotOperationManager"><strong><span style="color:grey;">PDAnnotOperationManager</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:439</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>It is okay to manage annotations. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define PDAnnotOperationManager</code> <code>0x0004</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotOperationSummarize"><strong><span style="color:grey;">PDAnnotOperationSummarize</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:429</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>It is okay to summarize annotations. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define PDAnnotOperationSummarize</code> <code>0x0001</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="pdAnnotHidden"><strong><span style="color:grey;">pdAnnotHidden</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:354</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The annotation is not visible and does not print. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define pdAnnotHidden</code> <code>0x02</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="pdAnnotInvisible"><strong><span style="color:grey;">pdAnnotInvisible</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:349</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>If there is no annotation handler, the annotation is invisible. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define pdAnnotInvisible</code> <code>0x01</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="pdAnnotLock"><strong><span style="color:grey;">pdAnnotLock</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:385</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The annotation does not move or resize with the view. Currently only form fields respect this flag. If the annotation is locked, the user cannot delete, move or change its associated form field's properties. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define pdAnnotLock</code> <code>0x80</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="pdAnnotLockContents"><strong><span style="color:grey;">pdAnnotLockContents</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:395</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>If the annotation is content-locked, the user can not change its content key. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define pdAnnotLockContents</code> <code>0x200</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="pdAnnotNoRotate"><strong><span style="color:grey;">pdAnnotNoRotate</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:369</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The annotation does not rotate with the page. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define pdAnnotNoRotate</code> <code>0x10</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="pdAnnotNoView"><strong><span style="color:grey;">pdAnnotNoView</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:374</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The annotation does not view but can print. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define pdAnnotNoView</code> <code>0x20</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="pdAnnotNoZoom"><strong><span style="color:grey;">pdAnnotNoZoom</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:364</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The annotation does not zoom with the view. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define pdAnnotNoZoom</code> <code>0x08</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="pdAnnotPrint"><strong><span style="color:grey;">pdAnnotPrint</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:359</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The annotation prints. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define pdAnnotPrint</code> <code>0x04</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="pdAnnotReadOnly"><strong><span style="color:grey;">pdAnnotReadOnly</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:379</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The annotation does not interact with the user. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define pdAnnotReadOnly</code> <code>0x40</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="pdAnnotSequenceAdjust"><strong><span style="color:grey;">pdAnnotSequenceAdjust</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:400</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A place holder used only at runtime. Do not set this bit in PDF/FDF files. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define pdAnnotSequenceAdjust</code> <code>0x80000000</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="pdAnnotToggleNoView"><strong><span style="color:grey;">pdAnnotToggleNoView</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:390</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A mouse-over or selection causes the <code>noView</code> bit to toggle. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define pdAnnotToggleNoView</code> <code>0x100</code> </code>
+</section>
+</section>
+<section id="Enumerations">
+<header><h2>PDAnnot Enumerations</h2></header>
+<nav><dl>
+<dt><a href="#PDAnnotPrintOps">PDAnnotPrintOps</a></dt><dd> -  PDAnnotPrintOp is passed to the PDAnnotHandlerGetPrintAppearanceProc() callback to specify the type of print operation being performed.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDAnnotPrintOps"><strong><span style="color:grey;">PDAnnotPrintOps</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:527</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span><a href="pdlayer_PDAnnot.htm#PDAnnotPrintOp" title=" PDAnnotPrintOp is passed to the PDAnnotHandlerGetPrintAppearanceProc() callback to specify the type of print operation being performed.">PDAnnotPrintOp</a> is passed to the <a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetPrintAppearanceProc" title=" A callback for PDAnnotHandler.">PDAnnotHandlerGetPrintAppearanceProc</a>() callback to specify the type of print operation being performed. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetPrintAppearanceProc" title=" A callback for PDAnnotHandler.">PDAnnotHandlerGetPrintAppearanceProc</a> </span>
+</div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kPDAnnotPrintStandard"><code>kPDAnnotPrintStandard</code><code>=</code><code>1</code></span>
+</td><td><span>A standard print operation. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDAnnotPrintVariableData"><code>kPDAnnotPrintVariableData</code></span>
+</td><td><span>The user selected Form Fields Only. </span>
+</td></tr></table>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>PDAnnot Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDAnnot">PDAnnot</a></dt><dd> -  An annotation on a page in a PDF file.</dd>
+<dt><a href="#PDAnnotClipboardData">PDAnnotClipboardData</a></dt><dd> -  Used to store PDAnnot data for copy and paste operations.</dd>
+<dt><a href="#PDAnnotPrintOp">PDAnnotPrintOp</a></dt><dd> -  PDAnnotPrintOp is passed to the PDAnnotHandlerGetPrintAppearanceProc() callback to specify the type of print operation being performed.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDAnnot"><strong><span style="color:grey;">PDAnnot</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:303</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>An annotation on a page in a PDF file. Acrobat viewers have two built-in annotation types: <a href="pdlayer_PDTextAnnot.htm#PDTextAnnot" title=" A PDF text annotation on a page in a PDF file.">PDTextAnnot</a> and <a href="pdlayer_PDLinkAnnot.htm#PDLinkAnnot" title=" A link annotation on a page in a PDF file.">PDLinkAnnot</a>. Physical attributes of the annotation can be set and queried. Plug-ins add movie and Widget (form field) annotations. Developers can define new annotation subtypes by creating new annotation handlers. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDPage.htm#PDPageRemoveAnnot" title=" Removes an annotation from the specified page.">PDPageRemoveAnnot</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#OPAQUE_64_BITS"><code>OPAQUE_64_BITS</code></a> <code>PDAnnot</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnot.htm#PDAnnotFromCosObj" title=" Converts a dictionary Cos object to an annotation."><code>PDAnnotFromCosObj</code></a></td><td><a href="pdlayer_PDAnnot.htm#PDAnnotPaste" title=" Pastes copied annotation data from a clipboard structure to a new annotation object in a specified document."><code>PDAnnotPaste</code></a></td></tr>
+<tr><td><a href="pdlayer_PDDoc.htm#PDDocCreateRedaction" title=" Creates a redaction mark on a given page."><code>PDDocCreateRedaction</code></a></td><td><a href="pdlayer_PDPage.htm#PDPageAddNewAnnot" title=" Adds an annotation to the page."><code>PDPageAddNewAnnot</code></a></td></tr>
+<tr><td><a href="pdlayer_PDPage.htm#PDPageCreateAnnot" title=" Creates a new annotation, associated with the specified page's CosDoc, but not added to the page."><code>PDPageCreateAnnot</code></a></td><td><a href="pdlayer_PDPage.htm#PDPageGetAnnot" title=" Gets the annotIndex annotation on the page."><code>PDPageGetAnnot</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnot.htm#PDAnnotCanCopy" title=" Tests whether the data from an annotation on a given page can be copied to a clipboard for pasting."><code>PDAnnotCanCopy</code></a></td><td><a href="pdlayer_PDAnnot.htm#PDAnnotCopy" title=" Copies action object data to a clipboard structure, from which it can be pasted."><code>PDAnnotCopy</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnot.htm#PDAnnotEqual" title=" Tests whether two annotations are identical."><code>PDAnnotEqual</code></a></td><td><a href="pdlayer_PDAnnot.htm#PDAnnotGetColor" title=" Gets a note or link annotation's color."><code>PDAnnotGetColor</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnot.htm#PDAnnotGetCosObj" title=" Gets the Cos object corresponding to an annotation."><code>PDAnnotGetCosObj</code></a></td><td><a href="pdlayer_PDAnnot.htm#PDAnnotGetDate" title=" Gets an annotation's date."><code>PDAnnotGetDate</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnot.htm#PDAnnotGetFlags" title=" Gets an annotation's flags."><code>PDAnnotGetFlags</code></a></td><td><a href="pdlayer_PDAnnot.htm#PDAnnotGetOCMD" title=" Gets an optional-content membership dictionary (OCMD) object associated with the annotation."><code>PDAnnotGetOCMD</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnot.htm#PDAnnotGetRect" title=" Gets the size and location of an annotation on its page."><code>PDAnnotGetRect</code></a></td><td><a href="pdlayer_PDAnnot.htm#PDAnnotGetSubtype" title=" Gets an annotation's subtype."><code>PDAnnotGetSubtype</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnot.htm#PDAnnotGetTitle" title=" Gets an annotation's label text."><code>PDAnnotGetTitle</code></a></td><td><a href="pdlayer_PDAnnot.htm#PDAnnotGetTitleASText" title=" Gets an annotation's label text as an ASText object."><code>PDAnnotGetTitleASText</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCanCopyProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCanCopyProc</code></a></td><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerCopyProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerCopyProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetAnnotInfoFlagsProc" title=" A callback for PDAnnotHandler."><code>PDAnnotHandlerGetAnnotInfoFlagsProc</code></a></td><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetAnnotInfoProc" title=" A callback for PDAnnotHandler."><code>PDAnnotHandlerGetAnnotInfoProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetHeelPointProc" title=" A callback for PDAnnotHandler."><code>PDAnnotHandlerGetHeelPointProc</code></a></td><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetPrintAppearanceProc" title=" A callback for PDAnnotHandler."><code>PDAnnotHandlerGetPrintAppearanceProc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnot.htm#PDAnnotIsCurrentlyVisible" title=" Tests whether an annotation with an OC entry is visible in a given optional-content context, considering the current ON-OFF states of the optional-content groups in the optional-content dictionary (OCMD) and the dictionary's visibility policy."><code>PDAnnotIsCurrentlyVisible</code></a></td><td><a href="pdlayer_PDAnnot.htm#PDAnnotIsValid" title=" Tests whether an annotation is valid."><code>PDAnnotIsValid</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnot.htm#PDAnnotNotifyDidChange" title=" Broadcasts a PDAnnotDidChange() notification."><code>PDAnnotNotifyDidChange</code></a></td><td><a href="pdlayer_PDAnnot.htm#PDAnnotNotifyWillChange" title=" Broadcasts a PDAnnotWillChange() notification."><code>PDAnnotNotifyWillChange</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnot.htm#PDAnnotRemoveOCMD" title=" Dissociates any optional-content membership dictionary (OCMD) object from the annotation."><code>PDAnnotRemoveOCMD</code></a></td><td><a href="pdlayer_PDAnnot.htm#PDAnnotSetColor" title=" Sets a note or link annotation's color."><code>PDAnnotSetColor</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnot.htm#PDAnnotSetDate" title=" Sets an annotation's date."><code>PDAnnotSetDate</code></a></td><td><a href="pdlayer_PDAnnot.htm#PDAnnotSetFlags" title=" Sets an annotation's flags."><code>PDAnnotSetFlags</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnot.htm#PDAnnotSetOCMD" title=" Associates an optional-content membership dictionary (OCMD) object with the annotation, making it optionally visible according to the OCMD's visibility policy."><code>PDAnnotSetOCMD</code></a></td><td><a href="pdlayer_PDAnnot.htm#PDAnnotSetRect" title=" Sets the size and location of an annotation on its page."><code>PDAnnotSetRect</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnot.htm#PDAnnotSetTitle" title=" Sets an annotation's label text."><code>PDAnnotSetTitle</code></a></td><td><a href="pdlayer_PDAnnot.htm#PDAnnotSetTitleASText" title=" Sets an annotation's label text."><code>PDAnnotSetTitleASText</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnot.htm#PDAnnotWillPrintProc" title=" A callback for PDAnnotHandler."><code>PDAnnotWillPrintProc</code></a></td><td><a href="pdlayer_PDDoc.htm#PDDocWillExportAnnotCallback" title=" A callback for PDDocExportNotes."><code>PDDocWillExportAnnotCallback</code></a></td></tr>
+<tr><td><a href="pdlayer_PDDoc.htm#PDDocWillExportAnnotProc" title=" A callback for PDAnnotHandler."><code>PDDocWillExportAnnotProc</code></a></td><td><a href="pdlayer_PDDoc.htm#PDDocWillImportAnnotCallback" title=" A callback for PDDocImportCosDocNotes() and PDDocImportNotes()."><code>PDDocWillImportAnnotCallback</code></a></td></tr>
+<tr><td><a href="pdlayer_PDDoc.htm#PDDocWillImportAnnotProc" title=" A callback for PDAnnotHandler."><code>PDDocWillImportAnnotProc</code></a></td><td><a href="pdlayer_PDPage.htm#PDPageAddAnnot" title=" Adds an annotation at the specified location in a page's annotation array."><code>PDPageAddAnnot</code></a></td></tr>
+<tr><td><a href="pdlayer_PDPage.htm#PDPageGetAnnotIndex" title=" Gets the index of a given annotation object on a given page."><code>PDPageGetAnnotIndex</code></a></td><td><a href="pdlayer_PDPage.htm#PDPageGetAnnotSequence" title=" Returns the sequence number of the specified annotation for the given page."><code>PDPageGetAnnotSequence</code></a></td></tr>
+<tr><td><a href="pdlayer_PDRedaction.htm#PDRedactionGetProps" title=" Retrieves a set of properties for a given redaction mark."><code>PDRedactionGetProps</code></a></td><td><a href="pdlayer_PDRedaction.htm#PDRedactionSetProps" title=" Assigns a set of properties to a given redaction mark."><code>PDRedactionSetProps</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDDoc.htm#_s_PDAnnotArray" title=" Used by PDDocExportSomeNotes()."><code>_s_PDAnnotArray</code></a></td><td><a href="pdlayer_PDDoc.htm#_t_PDApplyRedactionParams" title=" Parameters used for applying redaction marks."><code>_t_PDApplyRedactionParams</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotClipboardData"><strong><span style="color:grey;">PDAnnotClipboardData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:517</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Used to store <a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file.">PDAnnot</a> data for copy and paste operations. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDAnnotClipboardData</code> <code>*</code><code>PDAnnotClipboardData</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnot.htm#PDAnnotCopy" title=" Copies action object data to a clipboard structure, from which it can be pasted."><code>PDAnnotCopy</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnot.htm#PDAnnotCanPaste" title=" Tests whether data from an annotation that has been copied to a clipboard can be pasted to a location on a page."><code>PDAnnotCanPaste</code></a></td><td><a href="pdlayer_PDAnnot.htm#PDAnnotDestroyClipboardData" title=" Destroys data that has been copied from an annotation object into a clipboard."><code>PDAnnotDestroyClipboardData</code></a></td></tr>
+<tr><td><a href="pdlayer_PDAnnot.htm#PDAnnotPaste" title=" Pastes copied annotation data from a clipboard structure to a new annotation object in a specified document."><code>PDAnnotPaste</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotPrintOp"><strong><span style="color:grey;">PDAnnotPrintOp</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:535</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span><a href="pdlayer_PDAnnot.htm#PDAnnotPrintOp" title=" PDAnnotPrintOp is passed to the PDAnnotHandlerGetPrintAppearanceProc() callback to specify the type of print operation being performed.">PDAnnotPrintOp</a> is passed to the <a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetPrintAppearanceProc" title=" A callback for PDAnnotHandler.">PDAnnotHandlerGetPrintAppearanceProc</a>() callback to specify the type of print operation being performed. 
+<p>For value options see <a href="pdlayer_PDAnnot.htm#PDAnnotPrintOps" title=" PDAnnotPrintOp is passed to the PDAnnotHandlerGetPrintAppearanceProc() callback to specify the type of print operation being performed."><code>PDAnnotPrintOps.</code></a> </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASEnum16" title=" 2-byte enumeration with values from 0 to 32,767, used in data structures."><code>ASEnum16</code></a> <code>PDAnnotPrintOp</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetPrintAppearanceProc" title=" A callback for PDAnnotHandler."><code>PDAnnotHandlerGetPrintAppearanceProc</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="CallbackSignatures">
+<header><h2>PDAnnot Callback Signatures</h2></header>
+<nav><dl>
+<dt><a href="#PDAnnotWillPrintProc">PDAnnotWillPrintProc</a></dt><dd> -  A callback for PDAnnotHandler.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDAnnotWillPrintProc"><strong><span style="color:grey;">PDAnnotWillPrintProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:626</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A callback for <a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager.">PDAnnotHandler</a>. This method is called to determine whether an annotation is printed. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDDoc.htm#PDDocWillExportAnnotProc" title=" A callback for PDAnnotHandler."><code>PDDocWillExportAnnotProc</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocWillImportAnnotProc" title=" A callback for PDAnnotHandler."><code>PDDocWillImportAnnotProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDRegisterAnnotHandler" title=" Registers a handler for an annotation subtype, replacing any previous handler that had been registered for that subtype."><code>PDRegisterAnnotHandler</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDAnnotWillPrintProc(</code><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>PDAnnotHandler</code></a> <code>pdanh</code><code>,</code> <a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>annot</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdanh</code></span>
+</td><td><span>The annotation handler of the annotation type to print. </span>
+</td></tr>
+<tr><td><span><code>annot</code></span>
+</td><td><span>The annotation to print. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the annotation is printed, <a href="aslayer_General.htm#false"><code>false</code></a> if the annotation is not printed. </span>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager."><code>_t_PDAnnotHandler</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>PDAnnot Structures</h2></header>
+<nav><dl>
+<dt><a href="#_PDAnnotInfoRec">_PDAnnotInfoRec</a></dt><dd> -  Information associated with an annotation.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="_PDAnnotInfoRec"><strong><span style="color:grey;">_PDAnnotInfoRec</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:461</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Information associated with an annotation. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerGetAnnotInfoProc" title=" A callback for PDAnnotHandler."><code>PDAnnotHandlerGetAnnotInfoProc</code></a>
+<a href="pdlayer_PDAnnotHandler.htm#PDRegisterAnnotHandler" title=" Registers a handler for an annotation subtype, replacing any previous handler that had been registered for that subtype."><code>PDRegisterAnnotHandler</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _PDAnnotInfoRec {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASSize_t"><code>ASSize_t</code></a> <code>size</code><code>;</code> </div>
+</td><td><span>The size of the data structure. It must be set to <code>sizeof(PDAnnotInfoRec)</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASFlagBits" title=" A flag-bits value."><code>ASFlagBits</code></a> <code>nOperationFlags</code><code>;</code> </div>
+</td><td><span>The allowed operations. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>unsigned</code> <code>char</code> <code>*</code><code>cAuthor</code><code>;</code> </div>
+</td><td><span>The author of this annotation. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>unsigned</code> <code>char</code> <code>*</code><code>cContents</code><code>;</code> </div>
+</td><td><span>The associated text for this annotation. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>unsigned</code> <code>char</code> <code>*</code><code>cDate</code><code>;</code> </div>
+</td><td><span>The modification date of this annotation. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>fxLayer</code><code>;</code> </div>
+</td><td><span>The layer of this annotation. </span>
+</td></tr>
+<tr><td><code id="PDAnnotInfoRec"><code>}</code> <a href="pdlayer_PDAnnot.htm#_PDAnnotInfoRec" title=" Information associated with an annotation."><code>PDAnnotInfoRec</code></a><code>,</code> <code>*</code><a href="pdlayer_PDAnnot.htm#_PDAnnotInfoRec" title=" Information associated with an annotation."><code>PDAnnotInfo</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnotHandler.htm#PDAnnotHandlerDeleteAnnotInfoProc" title=" (Optional) A callback for PDAnnotHandler."><code>PDAnnotHandlerDeleteAnnotInfoProc</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDAnnot Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDAnnotCanCopy">PDAnnotCanCopy</a></dt><dd> -  Tests whether the data from an annotation on a given page can be copied to a clipboard for pasting.</dd>
+<dt><a href="#PDAnnotCanPaste">PDAnnotCanPaste</a></dt><dd> -  Tests whether data from an annotation that has been copied to a clipboard can be pasted to a location on a page.</dd>
+<dt><a href="#PDAnnotCopy">PDAnnotCopy</a></dt><dd> -  Copies action object data to a clipboard structure, from which it can be pasted.</dd>
+<dt><a href="#PDAnnotDestroyClipboardData">PDAnnotDestroyClipboardData</a></dt><dd> -  Destroys data that has been copied from an annotation object into a clipboard.</dd>
+<dt><a href="#PDAnnotEqual">PDAnnotEqual</a></dt><dd> -  Tests whether two annotations are identical.</dd>
+<dt><a href="#PDAnnotFromCosObj">PDAnnotFromCosObj</a></dt><dd> -  Converts a dictionary Cos object to an annotation.</dd>
+<dt><a href="#PDAnnotGetColor">PDAnnotGetColor</a></dt><dd> -  Gets a note or link annotation's color.</dd>
+<dt><a href="#PDAnnotGetCosObj">PDAnnotGetCosObj</a></dt><dd> -  Gets the Cos object corresponding to an annotation.</dd>
+<dt><a href="#PDAnnotGetDate">PDAnnotGetDate</a></dt><dd> -  Gets an annotation's date.</dd>
+<dt><a href="#PDAnnotGetFlags">PDAnnotGetFlags</a></dt><dd> -  Gets an annotation's flags.</dd>
+<dt><a href="#PDAnnotGetOCMD">PDAnnotGetOCMD</a></dt><dd> -  Gets an optional-content membership dictionary (OCMD) object associated with the annotation.</dd>
+<dt><a href="#PDAnnotGetRect">PDAnnotGetRect</a></dt><dd> -  Gets the size and location of an annotation on its page.</dd>
+<dt><a href="#PDAnnotGetSubtype">PDAnnotGetSubtype</a></dt><dd> -  Gets an annotation's subtype.</dd>
+<dt><a href="#PDAnnotGetTitle">PDAnnotGetTitle</a></dt><dd> -  Gets an annotation's label text.</dd>
+<dt><a href="#PDAnnotGetTitleASText">PDAnnotGetTitleASText</a></dt><dd> -  Gets an annotation's label text as an ASText object.</dd>
+<dt><a href="#PDAnnotIsCurrentlyVisible">PDAnnotIsCurrentlyVisible</a></dt><dd> -  Tests whether an annotation with an OC entry is visible in a given optional-content context, considering the current ON-OFF states of the optional-content groups in the optional-content dictionary (OCMD) and the dictionary's visibility policy.</dd>
+<dt><a href="#PDAnnotIsValid">PDAnnotIsValid</a></dt><dd> -  Tests whether an annotation is valid.</dd>
+<dt><a href="#PDAnnotNotifyDidChange">PDAnnotNotifyDidChange</a></dt><dd> -  Broadcasts a PDAnnotDidChange() notification.</dd>
+<dt><a href="#PDAnnotNotifyWillChange">PDAnnotNotifyWillChange</a></dt><dd> -  Broadcasts a PDAnnotWillChange() notification.</dd>
+<dt><a href="#PDAnnotPaste">PDAnnotPaste</a></dt><dd> -  Pastes copied annotation data from a clipboard structure to a new annotation object in a specified document.</dd>
+<dt><a href="#PDAnnotRemoveOCMD">PDAnnotRemoveOCMD</a></dt><dd> -  Dissociates any optional-content membership dictionary (OCMD) object from the annotation.</dd>
+<dt><a href="#PDAnnotSetColor">PDAnnotSetColor</a></dt><dd> -  Sets a note or link annotation's color.</dd>
+<dt><a href="#PDAnnotSetDate">PDAnnotSetDate</a></dt><dd> -  Sets an annotation's date.</dd>
+<dt><a href="#PDAnnotSetFlags">PDAnnotSetFlags</a></dt><dd> -  Sets an annotation's flags.</dd>
+<dt><a href="#PDAnnotSetOCMD">PDAnnotSetOCMD</a></dt><dd> -  Associates an optional-content membership dictionary (OCMD) object with the annotation, making it optionally visible according to the OCMD's visibility policy.</dd>
+<dt><a href="#PDAnnotSetRect">PDAnnotSetRect</a></dt><dd> -  Sets the size and location of an annotation on its page.</dd>
+<dt><a href="#PDAnnotSetTitle">PDAnnotSetTitle</a></dt><dd> -  Sets an annotation's label text.</dd>
+<dt><a href="#PDAnnotSetTitleASText">PDAnnotSetTitleASText</a></dt><dd> -  Sets an annotation's label text.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDAnnotCanCopy"><strong><span style="color:grey;">PDAnnotCanCopy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:10434</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Tests whether the data from an annotation on a given page can be copied to a clipboard for pasting. This depends on whether there is a <a href="pdlayer_PDAnnotHandler.htm#_t_PDAnnotHandler" title=" A data structure containing callbacks that implement an annotation manager.">PDAnnotHandler</a> with copy and paste support for the annotation, and whether copying is allowed by document permissions. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotCanPaste" title=" Tests whether data from an annotation that has been copied to a clipboard can be pasted to a location on a page."><code>PDAnnotCanPaste</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotCopy" title=" Copies action object data to a clipboard structure, from which it can be pasted."><code>PDAnnotCopy</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotDestroyClipboardData" title=" Destroys data that has been copied from an annotation object into a clipboard."><code>PDAnnotDestroyClipboardData</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotPaste" title=" Pastes copied annotation data from a clipboard structure to a new annotation object in a specified document."><code>PDAnnotPaste</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDAnnotCanCopy(</code><a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document."><code>PDPage</code></a> <code>sourcePage</code><code>,</code> <a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>annot</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sourcePage</code></span>
+</td><td><span>The page containing the annotation to test. It can be <a href="aslayer_General.htm#NULL"><code>NULL</code></a> (as when copying annotations while spawning a hidden template). </span>
+</td></tr>
+<tr><td><span><code>annot</code></span>
+</td><td><span>The annotation to test. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the annotation object can be copied, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotCanPaste"><strong><span style="color:grey;">PDAnnotCanPaste</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:10470</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Tests whether data from an annotation that has been copied to a clipboard can be pasted to a location on a page. Pasting can be disallowed by document permissions, or because the annotation cannot be accurately reproduced in the destination document. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotCanCopy" title=" Tests whether the data from an annotation on a given page can be copied to a clipboard for pasting."><code>PDAnnotCanCopy</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotCopy" title=" Copies action object data to a clipboard structure, from which it can be pasted."><code>PDAnnotCopy</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotDestroyClipboardData" title=" Destroys data that has been copied from an annotation object into a clipboard."><code>PDAnnotDestroyClipboardData</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotPaste" title=" Pastes copied annotation data from a clipboard structure to a new annotation object in a specified document."><code>PDAnnotPaste</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDAnnotCanPaste(</code><a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document."><code>PDPage</code></a> <code>destPage</code><code>,</code> <code>const</code> <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers."><code>ASFixedPoint</code></a> <code>*</code><code>center</code><code>,</code> <a href="pdlayer_PDAnnot.htm#PDAnnotClipboardData" title=" Used to store PDAnnot data for copy and paste operations."><code>PDAnnotClipboardData</code></a> <code>data</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>destPage</code></span>
+</td><td><span>The page to which the annotation would be pasted. </span>
+</td></tr>
+<tr><td><span><code>center</code></span>
+</td><td><span>The location for the center of the annotation on the destination page, or a <a href="aslayer_General.htm#NULL"><code>NULL</code></a> pointer to center the annotation on the destination page. </span>
+</td></tr>
+<tr><td><span><code>data</code></span>
+</td><td><span>The copied annotation data to test. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the annotation data can be pasted, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotCopy"><strong><span style="color:grey;">PDAnnotCopy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:10449</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Copies action object data to a clipboard structure, from which it can be pasted. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotCanCopy" title=" Tests whether the data from an annotation on a given page can be copied to a clipboard for pasting."><code>PDAnnotCanCopy</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotCanPaste" title=" Tests whether data from an annotation that has been copied to a clipboard can be pasted to a location on a page."><code>PDAnnotCanPaste</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotDestroyClipboardData" title=" Destroys data that has been copied from an annotation object into a clipboard."><code>PDAnnotDestroyClipboardData</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotPaste" title=" Pastes copied annotation data from a clipboard structure to a new annotation object in a specified document."><code>PDAnnotPaste</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDAnnot.htm#PDAnnotClipboardData" title=" Used to store PDAnnot data for copy and paste operations."><code>PDAnnotClipboardData</code></a> <code>PDAnnotCopy(</code><a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document."><code>PDPage</code></a> <code>sourcePage</code><code>,</code> <a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>annot</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>sourcePage</code></span>
+</td><td><span>The page containing the annotation to copy. It can be <a href="aslayer_General.htm#NULL"><code>NULL</code></a> (as when copying annotations while spawning a hidden template). </span>
+</td></tr>
+<tr><td><span><code>annot</code></span>
+</td><td><span>The annotation to copy. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The annotation clipboard data object. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotDestroyClipboardData"><strong><span style="color:grey;">PDAnnotDestroyClipboardData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:10503</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Destroys data that has been copied from an annotation object into a clipboard. Use this method after successfully pasting the data to a new document. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotCanCopy" title=" Tests whether the data from an annotation on a given page can be copied to a clipboard for pasting."><code>PDAnnotCanCopy</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotCanPaste" title=" Tests whether data from an annotation that has been copied to a clipboard can be pasted to a location on a page."><code>PDAnnotCanPaste</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotCopy" title=" Copies action object data to a clipboard structure, from which it can be pasted."><code>PDAnnotCopy</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotPaste" title=" Pastes copied annotation data from a clipboard structure to a new annotation object in a specified document."><code>PDAnnotPaste</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDAnnotDestroyClipboardData(</code><a href="pdlayer_PDAnnot.htm#PDAnnotClipboardData" title=" Used to store PDAnnot data for copy and paste operations."><code>PDAnnotClipboardData</code></a> <code>data</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>data</code></span>
+</td><td><span>The clipboard annotation data to destroy. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotEqual"><strong><span style="color:grey;">PDAnnotEqual</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:374</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Tests whether two annotations are identical. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="coslayer_CosObj.htm#CosObjEqual" title=" Tests whether two Cos objects are equal.">CosObjEqual</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDAnnotEqual(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>anAnnot</code><code>,</code> <a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>annot2</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>anAnnot</code></span>
+</td><td><span>The first annotation to compare. </span>
+</td></tr>
+<tr><td><span><code>annot2</code></span>
+</td><td><span>The second annotation to compare. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the annotations are equal, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. Two annotations are equal only if their Cos objects are equal (see <a href="coslayer_CosObj.htm#CosObjEqual" title=" Tests whether two Cos objects are equal.">CosObjEqual</a>()). </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdErrBadAnnotation" title=" Invalid annotation object."><code>pdErrBadAnnotation</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotFromCosObj"><strong><span style="color:grey;">PDAnnotFromCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:539</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Converts a dictionary Cos object to an annotation. This method does not copy the object, but is instead the logical equivalent of a type cast. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDAnnot.htm#PDAnnotGetCosObj" title=" Gets the Cos object corresponding to an annotation.">PDAnnotGetCosObj</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>PDAnnotFromCosObj(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>obj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>obj</code></span>
+</td><td><span>The dictionary Cos object whose annotation is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file.">PDAnnot</a> corresponding to the Cos object. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdErrBadAnnotation" title=" Invalid annotation object."><code>pdErrBadAnnotation</code></a></span>
+</td><td><span>is raised if the annotation is invalid, as determined by <a href="pdlayer_PDAnnot.htm#PDAnnotIsValid" title=" Tests whether an annotation is valid.">PDAnnotIsValid</a>(). </span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotGetColor"><strong><span style="color:grey;">PDAnnotGetColor</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:403</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets a note or link annotation's color. If the annotation does not specify an explicit color, a default color is returned. Text annotations return <em>default</em> <em>yellow</em>; all others return black. Only RGB color specifications are currently supported. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetDate" title=" Gets an annotation's date."><code>PDAnnotGetDate</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetFlags" title=" Gets an annotation's flags."><code>PDAnnotGetFlags</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetRect" title=" Gets the size and location of an annotation on its page."><code>PDAnnotGetRect</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetTitle" title=" Gets an annotation's label text."><code>PDAnnotGetTitle</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetColor" title=" Sets a note or link annotation's color."><code>PDAnnotSetColor</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDAnnotGetColor(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>anAnnot</code><code>,</code> <a href="pdlayer_General.htm#_t_PDColorValueRec" title=" A data structure representing a color."><code>PDColorValue</code></a> <code>color</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>anAnnot</code></span>
+</td><td><span>The note or link annotation whose color is obtained. </span>
+</td></tr>
+<tr><td><span><code>color</code></span>
+</td><td><div><span>(Filled by the method) The annotation's color, which is used as follows: </span>
+
+<table class="ruled"><tr><th><span>Annotation</span>
+</th><th><span>Use</span>
+</th></tr>
+<tr><td><span>Closed text note</span>
+</td><td><span>The icon background color.</span>
+</td></tr>
+<tr><td><span>Open, un-selected text note</span>
+</td><td><span>The bounding rectangle color.</span>
+</td></tr>
+<tr><td><span>Open, selected text note</span>
+</td><td><span>The color of the annotation's title bar.</span>
+</td></tr>
+<tr><td><span>Link annotation</span>
+</td><td><span>The link border color.</span>
+</td></tr></table>
+</div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the annotation specifies an explicit color, <a href="aslayer_General.htm#false"><code>false</code></a> if a default color was used. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotGetCosObj"><strong><span style="color:grey;">PDAnnotGetCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:526</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the Cos object corresponding to an annotation. This method does not copy the object, but is instead the logical equivalent of a type cast. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDAnnot.htm#PDAnnotFromCosObj" title=" Converts a dictionary Cos object to an annotation.">PDAnnotFromCosObj</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>PDAnnotGetCosObj(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>annot</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>annot</code></span>
+</td><td><span>IN/OUT The annotation whose Cos object is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The dictionary Cos object for the annotation. The contents of the dictionary can be enumerated using <a href="coslayer_CosObj.htm#CosObjEnum" title=" Enumerates the elements of a Cos object by calling a user-supplied procedure for each component of the object.">CosObjEnum</a>(). It returns a <a href="aslayer_General.htm#NULL"><code>NULL</code></a> Cos object if the annotation is not valid, as determined by <a href="pdlayer_PDAnnot.htm#PDAnnotIsValid" title=" Tests whether an annotation is valid.">PDAnnotIsValid</a>(). </span>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotGetDate"><strong><span style="color:grey;">PDAnnotGetDate</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:498</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets an annotation's date. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetColor" title=" Gets a note or link annotation's color."><code>PDAnnotGetColor</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetFlags" title=" Gets an annotation's flags."><code>PDAnnotGetFlags</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetRect" title=" Gets the size and location of an annotation on its page."><code>PDAnnotGetRect</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetTitle" title=" Gets an annotation's label text."><code>PDAnnotGetTitle</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetDate" title=" Sets an annotation's date."><code>PDAnnotSetDate</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDAnnotGetDate(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>anAnnot</code><code>,</code> <a href="aslayer_ASDate.htm#_t_ASTimeRec" title=" A time/date structure."><code>ASTimeRecP</code></a> <code>date</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>anAnnot</code></span>
+</td><td><span>The annotation whose date is obtained. </span>
+</td></tr>
+<tr><td><span><code>date</code></span>
+</td><td><span>(Filled by the method) The annotation's time and date. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the annotation contains a date key and the value of that key can be successfully parsed as a date string, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdErrBadAnnotation" title=" Invalid annotation object."><code>pdErrBadAnnotation</code></a></span>
+</td><td><span>is raised if the annotation is not valid or if the value of the annotation's M (ModDate) key is not a string. </span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span>is raised if <code>date</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotGetFlags"><strong><span style="color:grey;">PDAnnotGetFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:682</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets an annotation's flags. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetColor" title=" Gets a note or link annotation's color."><code>PDAnnotGetColor</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetDate" title=" Gets an annotation's date."><code>PDAnnotGetDate</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetRect" title=" Gets the size and location of an annotation on its page."><code>PDAnnotGetRect</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetTitle" title=" Gets an annotation's label text."><code>PDAnnotGetTitle</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetFlags" title=" Sets an annotation's flags."><code>PDAnnotSetFlags</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>PDAnnotGetFlags(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>anAnnot</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>anAnnot</code></span>
+</td><td><span>IN/OUT The annotation whose flags are obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The flags, or <code>0</code> if the annotation does not have a flags key. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotGetOCMD"><strong><span style="color:grey;">PDAnnotGetOCMD</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:8955</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets an optional-content membership dictionary (OCMD) object associated with the annotation. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotRemoveOCMD" title=" Dissociates any optional-content membership dictionary (OCMD) object from the annotation."><code>PDAnnotRemoveOCMD</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetOCMD" title=" Associates an optional-content membership dictionary (OCMD) object with the annotation, making it optionally visible according to the OCMD's visibility policy."><code>PDAnnotSetOCMD</code></a>
+<a href="pdelayer_PDEElement.htm#PDEElementGetOCMD" title=" Gets an optional-content membership dictionary (OCMD) object associated with the element."><code>PDEElementGetOCMD</code></a>
+<a href="pdlayer_PDOCMD.htm#PDOCMDFindOrCreate" title=" Locates an existing optional-content membership dictionary (OCMD) object that references the given groups, and that uses the same visibility policy."><code>PDOCMDFindOrCreate</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDOCMD.htm#PDOCMD" title=" A PDOCMD is an object that is attached to content to indicate membership in an OCG or group of OCGs."><code>PDOCMD</code></a> <code>PDAnnotGetOCMD(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>annot</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>annot</code></span>
+</td><td><span>The annotation from which the dictionary is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The dictionary object, or <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if the annotation does not contain a dictionary. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotGetRect"><strong><span style="color:grey;">PDAnnotGetRect</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:344</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the size and location of an annotation on its page. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetColor" title=" Gets a note or link annotation's color."><code>PDAnnotGetColor</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetDate" title=" Gets an annotation's date."><code>PDAnnotGetDate</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetFlags" title=" Gets an annotation's flags."><code>PDAnnotGetFlags</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetTitle" title=" Gets an annotation's label text."><code>PDAnnotGetTitle</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetRect" title=" Sets the size and location of an annotation on its page."><code>PDAnnotSetRect</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDAnnotGetRect(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>anAnnot</code><code>,</code> <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRect</code></a> <code>*</code><code>boxP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>anAnnot</code></span>
+</td><td><span>IN/OUT The annotation whose location and size are set. </span>
+</td></tr>
+<tr><td><span><code>boxP</code></span>
+</td><td><span>IN/OUT (Filled by the method) A pointer to a rectangle that specifies the annotation's bounding rectangle, specified in user space coordinates. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdErrBadAnnotation" title=" Invalid annotation object."><code>pdErrBadAnnotation</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotGetSubtype"><strong><span style="color:grey;">PDAnnotGetSubtype</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:327</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets an annotation's subtype. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>PDAnnotGetSubtype(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>anAnnot</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>anAnnot</code></span>
+</td><td><span>The annotation whose subtype is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> for the annotation's subtype. This can be converted to a string using <a href="aslayer_ASAtom.htm#ASAtomGetString" title=" Gets the string associated with the specified ASAtom.">ASAtomGetString</a>(). The storage pointed to by the return value is owned by the Acrobat viewer and should be assumed to be valid only until the next call into any client API method; it should be immediately copied by the client if the client wants to reference it later. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdErrBadAnnotation" title=" Invalid annotation object."><code>pdErrBadAnnotation</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotGetTitle"><strong><span style="color:grey;">PDAnnotGetTitle</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:457</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets an annotation's label text. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This text is stored in either <a href="pdlayer_PDFont.htm#PDFDocEncoding" title=" PDFDocEncoding, see Annex D, "Character Sets and Encodings," page 651.">PDFDocEncoding</a> or in Unicode. If it is stored in Unicode, a valid Byte Order Mark must be present. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetColor" title=" Gets a note or link annotation's color."><code>PDAnnotGetColor</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetDate" title=" Gets an annotation's date."><code>PDAnnotGetDate</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetFlags" title=" Gets an annotation's flags."><code>PDAnnotGetFlags</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetRect" title=" Gets the size and location of an annotation on its page."><code>PDAnnotGetRect</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetTitle" title=" Sets an annotation's label text."><code>PDAnnotSetTitle</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDAnnotGetTitle(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>anAnnot</code><code>,</code> <code>char</code> <code>*</code><code>buffer</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>bufSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>anAnnot</code></span>
+</td><td><span>IN/OUT The annotation whose label is obtained. </span>
+</td></tr>
+<tr><td><span><code>buffer</code></span>
+</td><td><span>IN/OUT (Filled by the method) The string into which the annotation's label string is copied. If the string is non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, up to <code>bufsSize</code> bytes are copied into the buffer. </span>
+</td></tr>
+<tr><td><span><code>bufSize</code></span>
+</td><td><span>IN/OUT The buffer size in bytes. Up to <code>bufSize</code> bytes of the annotation label string are copied into the string and an ASCII <a href="aslayer_General.htm#NULL"><code>NULL</code></a> character is appended. The caller is expected to have allocated <code>bufSize</code> <code>+</code> <code>1</code> bytes to allow for the <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. If <code>buffer</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, it copies nothing. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>If the string is non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, it returns the number of bytes copied, not counting the trailing <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. If the string is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, it returns the number of bytes that would be copied if the string were not <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdErrBadAnnotation" title=" Invalid annotation object."><code>pdErrBadAnnotation</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotGetTitleASText"><strong><span style="color:grey;">PDAnnotGetTitleASText</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:10953</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets an annotation's label text as an <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetColor" title=" Gets a note or link annotation's color."><code>PDAnnotGetColor</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetDate" title=" Gets an annotation's date."><code>PDAnnotGetDate</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetFlags" title=" Gets an annotation's flags."><code>PDAnnotGetFlags</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetRect" title=" Gets the size and location of an annotation on its page."><code>PDAnnotGetRect</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetTitle" title=" Gets an annotation's label text."><code>PDAnnotGetTitle</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetTitle" title=" Sets an annotation's label text."><code>PDAnnotSetTitle</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetTitleASText" title=" Sets an annotation's label text."><code>PDAnnotSetTitleASText</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDAnnotGetTitleASText(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>anAnnot</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>title</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>anAnnot</code></span>
+</td><td><span>The annotation whose label is obtained. </span>
+</td></tr>
+<tr><td><span><code>title</code></span>
+</td><td><span>(Filled by the method) The text object containing the annotation's label string. The client must pass a valid <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object title. The routine does not allocate it. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdErrBadAnnotation" title=" Invalid annotation object."><code>pdErrBadAnnotation</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotIsCurrentlyVisible"><strong><span style="color:grey;">PDAnnotIsCurrentlyVisible</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9017</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Tests whether an annotation with an OC entry is visible in a given optional-content context, considering the current <code>ON-OFF</code> states of the optional-content groups in the optional-content dictionary (OCMD) and the dictionary's visibility policy. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDAnnot.htm#PDAnnotGetOCMD" title=" Gets an optional-content membership dictionary (OCMD) object associated with the annotation.">PDAnnotGetOCMD</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDAnnotIsCurrentlyVisible(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>annot</code><code>,</code> <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ocContext</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>annot</code></span>
+</td><td><span>The annotation to test. </span>
+</td></tr>
+<tr><td><span><code>ocContext</code></span>
+</td><td><span>The optional-content context in which the visibility is tested. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the annotation is visible in the given context or if the annotation has no OC entry, <a href="aslayer_General.htm#false"><code>false</code></a> if it is hidden. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotIsValid"><strong><span style="color:grey;">PDAnnotIsValid</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:311</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Tests whether an annotation is valid. This is intended only to ensure that the annotation has not been deleted, not to ensure that all necessary information is present and valid. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDAnnot.htm#PDAnnotEqual" title=" Tests whether two annotations are identical.">PDAnnotEqual</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDAnnotIsValid(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>anAnnot</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>anAnnot</code></span>
+</td><td><span>The annotation whose validity is tested. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if <code>anAnnot</code> is a valid annotation object, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. An annotation is valid if it is a Cos dictionary object and has a Rect key. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotNotifyDidChange"><strong><span style="color:grey;">PDAnnotNotifyDidChange</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:261</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Broadcasts a PDAnnotDidChange() notification. Clients must call this method after making any change to a custom annotation. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDAnnot.htm#PDAnnotNotifyWillChange" title=" Broadcasts a PDAnnotWillChange() notification.">PDAnnotNotifyWillChange</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDAnnotNotifyDidChange(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>annot</code><code>,</code> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>key</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>err</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>annot</code></span>
+</td><td><span>The annotation that has changed. </span>
+</td></tr>
+<tr><td><span><code>key</code></span>
+</td><td><span>The <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> corresponding to the name of the key in the annotation's Cos dictionary that is changing. </span>
+</td></tr>
+<tr><td><span><code>err</code></span>
+</td><td><span>An error code to pass to any method registered to receive the PDAnnotDidChange() notification. Pass zero if the annotation was changed successfully. Pass a nonzero value if an error occurred while changing the annotation. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotNotifyWillChange"><strong><span style="color:grey;">PDAnnotNotifyWillChange</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:243</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Broadcasts a PDAnnotWillChange() notification. Clients must call this method before making any change to a custom annotation. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDAnnot.htm#PDAnnotNotifyDidChange" title=" Broadcasts a PDAnnotDidChange() notification.">PDAnnotNotifyDidChange</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDAnnotNotifyWillChange(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>annot</code><code>,</code> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>key</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>annot</code></span>
+</td><td><span>The annotation that has changed. </span>
+</td></tr>
+<tr><td><span><code>key</code></span>
+</td><td><span>The <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> corresponding to the name of the key in the annotation's Cos dictionary that is changing. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotPaste"><strong><span style="color:grey;">PDAnnotPaste</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:10491</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Pastes copied annotation data from a clipboard structure to a new annotation object in a specified document. After successfully pasting the data, use <a href="pdlayer_PDAnnot.htm#PDAnnotDestroyClipboardData" title=" Destroys data that has been copied from an annotation object into a clipboard.">PDAnnotDestroyClipboardData</a>() to free the associated memory. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotCanCopy" title=" Tests whether the data from an annotation on a given page can be copied to a clipboard for pasting."><code>PDAnnotCanCopy</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotCanPaste" title=" Tests whether data from an annotation that has been copied to a clipboard can be pasted to a location on a page."><code>PDAnnotCanPaste</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotCopy" title=" Copies action object data to a clipboard structure, from which it can be pasted."><code>PDAnnotCopy</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotDestroyClipboardData" title=" Destroys data that has been copied from an annotation object into a clipboard."><code>PDAnnotDestroyClipboardData</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>PDAnnotPaste(</code><a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document."><code>PDPage</code></a> <code>destPage</code><code>,</code> <code>const</code> <a href="aslayer_ASFixed.htm#_t_ASFixedPoint" title=" A point (in two-dimensional space) represented by two fixed numbers."><code>ASFixedPoint</code></a> <code>*</code><code>center</code><code>,</code> <a href="pdlayer_PDAnnot.htm#PDAnnotClipboardData" title=" Used to store PDAnnot data for copy and paste operations."><code>PDAnnotClipboardData</code></a> <code>data</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>destPage</code></span>
+</td><td><span>The page to which the annotation is pasted. </span>
+</td></tr>
+<tr><td><span><code>center</code></span>
+</td><td><span>The location for the center of the annotation on the destination page, or a <a href="aslayer_General.htm#NULL"><code>NULL</code></a> pointer to center the annotation on the destination page. </span>
+</td></tr>
+<tr><td><span><code>data</code></span>
+</td><td><span>The copied annotation data to paste. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A newly created annotation object associated with the specified document, containing the same data as the copied annotation. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotRemoveOCMD"><strong><span style="color:grey;">PDAnnotRemoveOCMD</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:8965</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Dissociates any optional-content membership dictionary (OCMD) object from the annotation. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetOCMD" title=" Gets an optional-content membership dictionary (OCMD) object associated with the annotation."><code>PDAnnotGetOCMD</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetOCMD" title=" Associates an optional-content membership dictionary (OCMD) object with the annotation, making it optionally visible according to the OCMD's visibility policy."><code>PDAnnotSetOCMD</code></a>
+<a href="pdlayer_PDOCMD.htm#PDOCMDFindOrCreate" title=" Locates an existing optional-content membership dictionary (OCMD) object that references the given groups, and that uses the same visibility policy."><code>PDOCMDFindOrCreate</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDAnnotRemoveOCMD(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>annot</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>annot</code></span>
+</td><td><span>The annotation for which to remove the dictionary. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotSetColor"><strong><span style="color:grey;">PDAnnotSetColor</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:428</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets a note or link annotation's color. Only RGB color specifications are currently supported. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetColor" title=" Gets a note or link annotation's color."><code>PDAnnotGetColor</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetDate" title=" Sets an annotation's date."><code>PDAnnotSetDate</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetFlags" title=" Sets an annotation's flags."><code>PDAnnotSetFlags</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetRect" title=" Sets the size and location of an annotation on its page."><code>PDAnnotSetRect</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetTitle" title=" Sets an annotation's label text."><code>PDAnnotSetTitle</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDAnnotSetColor(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>anAnnot</code><code>,</code> <code>const</code> <a href="pdlayer_General.htm#_t_PDColorValueRec" title=" A data structure representing a color."><code>PDColorValue</code></a> <code>color</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>anAnnot</code></span>
+</td><td><span>IN/OUT The note or link annotation whose color is set. </span>
+</td></tr>
+<tr><td><span><code>color</code></span>
+</td><td><div><span>IN/OUT The annotation's color, which is used as follows: </span>
+
+<table class="ruled"><tr><th><span>Annotation</span>
+</th><th><span>Use</span>
+</th></tr>
+<tr><td><span>Closed text note</span>
+</td><td><span>The icon background color.</span>
+</td></tr>
+<tr><td><span>Open, un-selected text note</span>
+</td><td><span>The bounding rectangle color.</span>
+</td></tr>
+<tr><td><span>Open, selected text note</span>
+</td><td><span>The color of the annotation's title bar.</span>
+</td></tr>
+<tr><td><span>Link annotation</span>
+</td><td><span>The link border color.</span>
+</td></tr></table>
+</div>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotSetDate"><strong><span style="color:grey;">PDAnnotSetDate</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:512</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets an annotation's date. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetDate" title=" Gets an annotation's date."><code>PDAnnotGetDate</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetColor" title=" Sets a note or link annotation's color."><code>PDAnnotSetColor</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetFlags" title=" Sets an annotation's flags."><code>PDAnnotSetFlags</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetRect" title=" Sets the size and location of an annotation on its page."><code>PDAnnotSetRect</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetTitle" title=" Sets an annotation's label text."><code>PDAnnotSetTitle</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDAnnotSetDate(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>anAnnot</code><code>,</code> <code>const</code> <a href="aslayer_ASDate.htm#_t_ASTimeRec" title=" A time/date structure."><code>ASTimeRecP</code></a> <code>date</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>anAnnot</code></span>
+</td><td><span>IN/OUT The annotation whose date is set. </span>
+</td></tr>
+<tr><td><span><code>date</code></span>
+</td><td><span>IN/OUT The annotation's time and date. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotSetFlags"><strong><span style="color:grey;">PDAnnotSetFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:696</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets an annotation's flags. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetFlags" title=" Gets an annotation's flags."><code>PDAnnotGetFlags</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetColor" title=" Sets a note or link annotation's color."><code>PDAnnotSetColor</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetDate" title=" Sets an annotation's date."><code>PDAnnotSetDate</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetRect" title=" Sets the size and location of an annotation on its page."><code>PDAnnotSetRect</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetTitle" title=" Sets an annotation's label text."><code>PDAnnotSetTitle</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDAnnotSetFlags(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>anAnnot</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>anAnnot</code></span>
+</td><td><span>IN/OUT The annotation whose flags are set. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>IN/OUT An <code>OR</code> of the <a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file.">PDAnnot</a> Flags values. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotSetOCMD"><strong><span style="color:grey;">PDAnnotSetOCMD</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:8941</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Associates an optional-content membership dictionary (OCMD) object with the annotation, making it optionally visible according to the OCMD's visibility policy. If the annotation already has a dictionary, the method replaces it. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetOCMD" title=" Gets an optional-content membership dictionary (OCMD) object associated with the annotation."><code>PDAnnotGetOCMD</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotRemoveOCMD" title=" Dissociates any optional-content membership dictionary (OCMD) object from the annotation."><code>PDAnnotRemoveOCMD</code></a>
+<a href="pdlayer_PDOCMD.htm#PDOCMDFindOrCreate" title=" Locates an existing optional-content membership dictionary (OCMD) object that references the given groups, and that uses the same visibility policy."><code>PDOCMDFindOrCreate</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDAnnotSetOCMD(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>annot</code><code>,</code> <a href="pdlayer_PDOCMD.htm#PDOCMD" title=" A PDOCMD is an object that is attached to content to indicate membership in an OCG or group of OCGs."><code>PDOCMD</code></a> <code>pdocmd</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>annot</code></span>
+</td><td><span>The annotation for which to set the dictionary. </span>
+</td></tr>
+<tr><td><span><code>pdocmd</code></span>
+</td><td><span>The new dictionary. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotSetRect"><strong><span style="color:grey;">PDAnnotSetRect</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:362</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the size and location of an annotation on its page. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetRect" title=" Gets the size and location of an annotation on its page."><code>PDAnnotGetRect</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetColor" title=" Sets a note or link annotation's color."><code>PDAnnotSetColor</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetDate" title=" Sets an annotation's date."><code>PDAnnotSetDate</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetFlags" title=" Sets an annotation's flags."><code>PDAnnotSetFlags</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetTitle" title=" Sets an annotation's label text."><code>PDAnnotSetTitle</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDAnnotSetRect(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>anAnnot</code><code>,</code> <code>const</code> <a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRect</code></a> <code>*</code><code>newBox</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>anAnnot</code></span>
+</td><td><span>IN/OUT The annotation whose location and size are set. </span>
+</td></tr>
+<tr><td><span><code>newBox</code></span>
+</td><td><span>IN/OUT A pointer to a rectangle that specifies the annotation's bounding rectangle, specified in user space coordinates. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotSetTitle"><strong><span style="color:grey;">PDAnnotSetTitle</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:478</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets an annotation's label text. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This text is stored in either <a href="pdlayer_PDFont.htm#PDFDocEncoding" title=" PDFDocEncoding, see Annex D, "Character Sets and Encodings," page 651.">PDFDocEncoding</a> or in Unicode. If it is stored in Unicode, a valid Byte Order Mark must be present. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetTitle" title=" Gets an annotation's label text."><code>PDAnnotGetTitle</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetColor" title=" Sets a note or link annotation's color."><code>PDAnnotSetColor</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetDate" title=" Sets an annotation's date."><code>PDAnnotSetDate</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetFlags" title=" Sets an annotation's flags."><code>PDAnnotSetFlags</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetRect" title=" Sets the size and location of an annotation on its page."><code>PDAnnotSetRect</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDAnnotSetTitle(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>anAnnot</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>str</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>nBytes</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>anAnnot</code></span>
+</td><td><span>IN/OUT The annotation whose label is set. </span>
+</td></tr>
+<tr><td><span><code>str</code></span>
+</td><td><span>IN/OUT The string containing the label to set. </span>
+</td></tr>
+<tr><td><span><code>nBytes</code></span>
+</td><td><span>IN/OUT The length of the label. The first <code>nBytes</code> bytes of <code>str</code> are used as the label. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDAnnotSetTitleASText"><strong><span style="color:grey;">PDAnnotSetTitleASText</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:10971</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets an annotation's label text. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetTitle" title=" Gets an annotation's label text."><code>PDAnnotGetTitle</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotGetTitleASText" title=" Gets an annotation's label text as an ASText object."><code>PDAnnotGetTitleASText</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetColor" title=" Sets a note or link annotation's color."><code>PDAnnotSetColor</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetDate" title=" Sets an annotation's date."><code>PDAnnotSetDate</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetFlags" title=" Sets an annotation's flags."><code>PDAnnotSetFlags</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetRect" title=" Sets the size and location of an annotation on its page."><code>PDAnnotSetRect</code></a>
+<a href="pdlayer_PDAnnot.htm#PDAnnotSetTitle" title=" Sets an annotation's label text."><code>PDAnnotSetTitle</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDAnnotSetTitleASText(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>anAnnot</code><code>,</code> <code>const</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>title</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>anAnnot</code></span>
+</td><td><span>The annotation whose label is set. </span>
+</td></tr>
+<tr><td><span><code>title</code></span>
+</td><td><span>The text object containing the label to set. </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

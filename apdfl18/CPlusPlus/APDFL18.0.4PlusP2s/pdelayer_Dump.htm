@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDF Edit Layer: Dump</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDF Edit Layer: Dump</h5>
+<li><a href="#CallbackSignatures">Callback Signatures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="CallbackSignatures">
+<header><h2>Dump Callback Signatures</h2></header>
+<nav><dl>
+<dt><a href="#PDEAttrEnumProc">PDEAttrEnumProc</a></dt><dd> -  A callback for PDEAttrEnumTable().</dd>
+<dt><a href="#PDEObjectDumpProc">PDEObjectDumpProc</a></dt><dd> -  A callback for PDELogDump() or PDEObjectDump().</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEAttrEnumProc"><strong><span style="color:grey;">PDEAttrEnumProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:2097</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A callback for <a href="pdelayer_Dump.htm#PDEAttrEnumTable" title=" Enumerates the table of attributes.">PDEAttrEnumTable</a>(). It is called once for each attribute in a table. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDEAttrEnumProc(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>void</code> <code>*</code><code>attrHdrP</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>refCount</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>size</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>attrHdrP</code></span>
+</td><td><span>An opaque pointer to the attribute. The actual attribute type is not specified in this function, since the storage mechanism only knows the size of the attribute, not its type. </span>
+</td></tr>
+<tr><td><span><code>refCount</code></span>
+</td><td><span>The reference count of the attribute. </span>
+</td></tr>
+<tr><td><span><code>size</code></span>
+</td><td><span>The size of <code>attrHdrP</code> in bytes. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>User-supplied data that was specified in the call to <a href="pdelayer_Dump.htm#PDEAttrEnumTable" title=" Enumerates the table of attributes.">PDEAttrEnumTable</a>(). </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> to continue enumeration, <a href="aslayer_General.htm#false"><code>false</code></a> to halt enumeration. </span>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_Dump.htm#PDEAttrEnumTable" title=" Enumerates the table of attributes."><code>PDEAttrEnumTable</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEObjectDumpProc"><strong><span style="color:grey;">PDEObjectDumpProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:2080</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A callback for <a href="pdelayer_Dump.htm#PDELogDump" title=" Enumerates the PDEObject objects.">PDELogDump</a>() or <a href="pdelayer_Dump.htm#PDEObjectDump" title=" The object, its children and attributes are dumped.">PDEObjectDump</a>(). It is called once for each <a href="pdelayer_PDEObject.htm#PDEObject" title=" The abstract super class of the PDFEdit classes.">PDEObject</a>, its children, and their attributes for the specified number of levels. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEObjectDumpProc(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEObject.htm#PDEObject" title=" The abstract super class of the PDFEdit classes."><code>PDEObject</code></a> <code>obj</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>const</code> <code>char</code> <code>*</code><code>dumpInfo</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>obj</code></span>
+</td><td><span>IN/OUT The <a href="pdelayer_PDEObject.htm#PDEObject" title=" The abstract super class of the PDFEdit classes.">PDEObject</a>. </span>
+</td></tr>
+<tr><td><span><code>dumpInfo</code></span>
+</td><td><span>IN/OUT Contains information about an object. Information fields are delimited by tabs. There are no newline characters in this string. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>IN/OUT User-supplied data that was specified in the call to <a href="pdelayer_Dump.htm#PDELogDump" title=" Enumerates the PDEObject objects.">PDELogDump</a>() or <a href="pdelayer_Dump.htm#PDEObjectDump" title=" The object, its children and attributes are dumped.">PDEObjectDump</a>(). </span>
+</td></tr></Table>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_Dump.htm#PDELogDump" title=" Enumerates the PDEObject objects."><code>PDELogDump</code></a></td><td><a href="pdelayer_Dump.htm#PDEObjectDump" title=" The object, its children and attributes are dumped."><code>PDEObjectDump</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>Dump Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDEAttrEnumTable">PDEAttrEnumTable</a></dt><dd> -  Enumerates the table of attributes.</dd>
+<dt><a href="#PDELogDump">PDELogDump</a></dt><dd> -  Enumerates the PDEObject objects.</dd>
+<dt><a href="#PDEObjectDump">PDEObjectDump</a></dt><dd> -  The object, its children and attributes are dumped.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEAttrEnumTable"><strong><span style="color:grey;">PDEAttrEnumTable</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1259</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Enumerates the table of attributes. This method enumerates the shared resource objects. It is useful when looking for orphaned attributes. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEAttrEnumTable(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_Dump.htm#PDEAttrEnumProc" title=" A callback for PDEAttrEnumTable()."><code>PDEAttrEnumProc</code></a> <code>enumProc</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>enumProc</code></span>
+</td><td><span>IN/OUT A callback to call for each attribute. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>IN/OUT A pointer to user-supplied data to pass to <code>enumProc</code> each time it is called. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDELogDump"><strong><span style="color:grey;">PDELogDump</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1247</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Enumerates the <a href="pdelayer_PDEObject.htm#PDEObject" title=" The abstract super class of the PDFEdit classes.">PDEObject</a> objects. This is useful when looking for orphaned objects. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_Dump.htm#PDEObjectDump" title=" The object, its children and attributes are dumped.">PDEObjectDump</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDELogDump(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_Dump.htm#PDEObjectDumpProc" title=" A callback for PDELogDump() or PDEObjectDump()."><code>PDEObjectDumpProc</code></a> <code>proc</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>proc</code></span>
+</td><td><span>A callback to call once for each <a href="pdelayer_PDEObject.htm#PDEObject" title=" The abstract super class of the PDFEdit classes.">PDEObject</a>. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>A pointer to user-supplied data to pass to <code>proc</code> each time it is called. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.htm#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEObjectDump"><strong><span style="color:grey;">PDEObjectDump</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1233</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><UL>The object, its children and attributes are dumped. The dump contains information about each individual object. The output for child elements is indented with respect to their parents.<br/><li> The information for each object is <code>char</code> <code>*</code>- the string describing Object Type. (See <a href="pdelayer_PDEObject.htm#PDEObjectGetType" title=" Gets the type of an element.">PDEObjectGetType</a>()).<br/><li> The number representing Object Type. (See PEExpT.h: <a href="pdelayer_General.htm#PDEType" title=" The types of PDEObject, which is the superclass for PDEContent, PDEElement, PDEClip, and so on.">PDEType</a> <code>enum</code>).<br/><li> The object reference count.<br/><li> The memory location for the object.<br/></UL>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_Dump.htm#PDELogDump" title=" Enumerates the PDEObject objects.">PDELogDump</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEObjectDump(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEObject.htm#PDEObject" title=" The abstract super class of the PDFEdit classes."><code>PDEObject</code></a> <code>obj</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>levels</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_Dump.htm#PDEObjectDumpProc" title=" A callback for PDELogDump() or PDEObjectDump()."><code>PDEObjectDumpProc</code></a> <code>proc</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>obj</code></span>
+</td><td><span>The <a href="pdelayer_PDEObject.htm#PDEObject" title=" The abstract super class of the PDFEdit classes.">PDEObject</a> to dump. </span>
+</td></tr>
+<tr><td><span><code>levels</code></span>
+</td><td><span>The depth of children to dump. </span>
+</td></tr>
+<tr><td><span><code>proc</code></span>
+</td><td><span>A callback with the dump information; it may be called more than once per object. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>Provided by the caller as the parameter of the same name for <code>proc</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+</section>
+
+</div>
+</body></html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDFL Library Layer: ASExtension</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDFL Library Layer: ASExtension</h5>
+<li><a href="#Enumerations">Enumerations</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#CallbackSignatures">Callback Signatures</a></li>
+</ul></nav>
+<section id="Enumerations">
+<header><h2>ASExtension Enumerations</h2></header>
+<nav><dl>
+<dt><a href="#ASExtensionPhase_INGs">ASExtensionPhase_INGs</a></dt><dd> - </dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASExtensionPhase_INGs"><strong><span style="color:grey;">ASExtensionPhase_INGs</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFInit.h:322</div>
+</div>
+
+<H4><strong>Description</strong></H4>
+
+<span>Value options for <a href="pdfllayer_ASExtension.htm#ASExtensionPhase"><code>ASExtensionPhase.</code></a> </span>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="ASExtensionPhase_LOADING"><code>ASExtensionPhase_LOADING</code></span>
+</td><td><span>Loading </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="ASExtensionPhase_EXPORTING"><code>ASExtensionPhase_EXPORTING</code></span>
+</td><td><span>Exporting </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="ASExtensionPhase_IMPORTING"><code>ASExtensionPhase_IMPORTING</code></span>
+</td><td><span>Importing </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="ASExtensionPhase_INITIALIZING"><code>ASExtensionPhase_INITIALIZING</code></span>
+</td><td><span>Initializing </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="ASExtensionPhase_UNLOADING"><code>ASExtensionPhase_UNLOADING</code></span>
+</td><td><span>Unloading </span>
+</td></tr></table>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>ASExtension Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#ASExtensionPhase">ASExtensionPhase</a></dt><dd> - </dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASExtensionPhase"><strong><span style="color:grey;">ASExtensionPhase</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFInit.h:340</div>
+</div>
+
+<H4><strong>Description</strong></H4>
+
+<span>For value options see <a href="pdfllayer_ASExtension.htm#ASExtensionPhase_INGs"><code>ASExtensionPhase_INGs.</code></a> </span>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>ASExtensionPhase</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_ASExtension.htm#ASExtensionProgressProc" title=" Called periodically during plug-in loading with the ASExtension currently being loaded."><code>ASExtensionProgressProc</code></a></td><td><a href="pdfllayer_ASExtension.htm#ASExtensionReportErrorProc" title=" Called during ASExtension initialization whenever an error occurs."><code>ASExtensionReportErrorProc</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="CallbackSignatures">
+<header><h2>ASExtension Callback Signatures</h2></header>
+<nav><dl>
+<dt><a href="#ASExtensionProgressProc">ASExtensionProgressProc</a></dt><dd> -  Called periodically during plug-in loading with the ASExtension currently being loaded.</dd>
+<dt><a href="#ASExtensionReportErrorProc">ASExtensionReportErrorProc</a></dt><dd> -  Called during ASExtension initialization whenever an error occurs.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASExtensionProgressProc"><strong><span style="color:grey;">ASExtensionProgressProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFInit.h:365</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Called periodically during plug-in loading with the <a href="aslayer_ASExtension.htm#ASExtension" title=" An opaque pointer to an object that identifies a specific loaded plug-in.">ASExtension</a> currently being loaded. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> Extensions to the PDF Library are very similar to plugins to the Acrobat application. However, Adobe does not currently supply any extensions or support their creation. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_ASExtension.htm#ASExtensionReportErrorProc" title=" Called during ASExtension initialization whenever an error occurs.">ASExtensionReportErrorProc</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASExtensionProgressProc(</code><a href="aslayer_ASExtension.htm#ASExtension" title=" An opaque pointer to an object that identifies a specific loaded plug-in."><code>ASExtension</code></a> <code>extension</code><code>,</code> <a href="pdfllayer_ASExtension.htm#ASExtensionPhase"><code>ASExtensionPhase</code></a> <code>phase</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>extension</code></span>
+</td><td><span>The plug-in. </span>
+</td></tr>
+<tr><td><span><code>phase</code></span>
+</td><td><div><UL>The context of the load, which determines the sequence of operations during the load operation. It is one of these constants:<br/><li> <a href="pdfllayer_ASExtension.htm#ASExtensionPhase_LOADING" title=" Loading">ASExtensionPhase_LOADING</a><br/><li> <a href="pdfllayer_ASExtension.htm#ASExtensionPhase_EXPORTING" title=" Exporting">ASExtensionPhase_EXPORTING</a><br/><li> <a href="pdfllayer_ASExtension.htm#ASExtensionPhase_IMPORTING" title=" Importing">ASExtensionPhase_IMPORTING</a><br/><li> <a href="pdfllayer_ASExtension.htm#ASExtensionPhase_INITIALIZING" title=" Initializing">ASExtensionPhase_INITIALIZING</a><br/><li> <a href="pdfllayer_ASExtension.htm#ASExtensionPhase_UNLOADING" title=" Unloading">ASExtensionPhase_UNLOADING</a><br/></UL>
+</div>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>A pointer to the client data. </span>
+</td></tr></Table>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#_t_TKExtensionProcs" title=" A structure containing function pointers for ASExtension callbacks used by the PDF Library."><code>_t_TKExtensionProcs</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASExtensionReportErrorProc"><strong><span style="color:grey;">ASExtensionReportErrorProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFInit.h:376</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Called during <a href="aslayer_ASExtension.htm#ASExtension" title=" An opaque pointer to an object that identifies a specific loaded plug-in.">ASExtension</a> initialization whenever an error occurs. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdfllayer_ASExtension.htm#ASExtensionProgressProc" title=" Called periodically during plug-in loading with the ASExtension currently being loaded.">ASExtensionProgressProc</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASExtensionReportErrorProc(</code><a href="aslayer_ASExtension.htm#ASExtension" title=" An opaque pointer to an object that identifies a specific loaded plug-in."><code>ASExtension</code></a> <code>extension</code><code>,</code> <a href="pdfllayer_ASExtension.htm#ASExtensionPhase"><code>ASExtensionPhase</code></a> <code>phase</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>error</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>extension</code></span>
+</td><td><span>The plug-in. </span>
+</td></tr>
+<tr><td><span><code>phase</code></span>
+</td><td><span>Phase. </span>
+</td></tr>
+<tr><td><span><code>error</code></span>
+</td><td><span>The error code. </span>
+</td></tr>
+<tr><td><span><code>clientData</code></span>
+</td><td><span>A pointer to the client data. </span>
+</td></tr></Table>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#_t_TKExtensionProcs" title=" A structure containing function pointers for ASExtension callbacks used by the PDF Library."><code>_t_TKExtensionProcs</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+
+</div>
+</body></html>

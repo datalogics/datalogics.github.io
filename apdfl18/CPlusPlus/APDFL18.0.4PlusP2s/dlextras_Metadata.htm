@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Additional functionality from Datalogics: Metadata</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Additional functionality from Datalogics: Metadata</h5>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Functions">
+<header><h2>Metadata Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDDocGetXAPMetadataCompactOptional">PDDocGetXAPMetadataCompactOptional</a></dt><dd> -  Allow customer to get XML/RDF metadata in a full (non-compact) form</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDDocGetXAPMetadataCompactOptional"><strong><span style="color:grey;">PDDocGetXAPMetadataCompactOptional</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDMetadataProcs.h:560</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Allow customer to get XML/RDF metadata in a full (non-compact) form Gets the XMP metadata associated with a document. It returns an <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> whose text is the XML text of the XMP metadata associated with the document <code>pdDoc</code>. The <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> becomes the property of the client, which is free to alter or destroy it.<br/>
+<p>The XMP metadata returned always represents all the properties in the <code>pdDoc</code> object's Info dictionary, and can also contain properties not present in the Info dictionary. This call is preferred to <a href="pdlayer_Metadata.htm#PDDocGetInfo" title=" Gets the value of a key in a document's Info dictionary, or the value of this same key in the XMP metadata, whichever is later.">PDDocGetInfo</a>(), which only returns properties that are in the Info dictionary (although the older function is supported for compatibility).<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The term <em>XAP</em> refers to an early internal code name for Adobe's Extensible Metadata Platform (XMP). For more information on this protocol, see the Adobe XMP specification. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_Metadata.htm#PDDocGetXAPMetadataProperty" title=" Gets the value of an XMP metadata property associated with a document."><code>PDDocGetXAPMetadataProperty</code></a>
+<a href="pdlayer_Metadata.htm#PDDocSetXAPMetadata" title=" Sets the XMP metadata associated with a document."><code>PDDocSetXAPMetadata</code></a>
+<a href="pdlayer_Metadata.htm#PDDocSetXAPMetadataProperty" title=" Sets the value of an XMP metadata property associated with a document."><code>PDDocSetXAPMetadataProperty</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>PDDocGetXAPMetadataCompactOptional(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>enableCompactRDF</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document containing the metadata. </span>
+</td></tr>
+<tr><td><span><code>enableCompactRDF</code></span>
+</td><td><span>True if the XML/RDF output is in compact form. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>An <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object containing the XMP metadata associated with the document pdDoc. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdMetadataErrCouldntCreateMetaXAP" title=" An internal representation of the XAP metadata could not be created."><code>pdMetadataErrCouldntCreateMetaXAP</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+</section>
+
+</div>
+</body></html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDF Edit Layer: PDEGroup</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDF Edit Layer: PDEGroup</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>PDEGroup Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDEGroup">PDEGroup</a></dt><dd> -  An in-memory representation of objects in a PDEContent object.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEGroup"><strong><span style="color:grey;">PDEGroup</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:257</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>An in-memory representation of objects in a <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage.">PDEContent</a> object. It has no state and is not represented in any way in a PDF content stream (that is, <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage.">PDEContent</a>). When used in a <a href="pdelayer_PDEClip.htm#PDEClip" title=" A list of PDEElement objects containing a list of PDEPath objects and PDEText objects that describe a clip state.">PDEClip</a>, this object is used to associate <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a> objects into a single clipping object. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDEGroup</code> <code>*</code><code>PDEGroup</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEGroup.htm#PDEGroupCreate" title=" Creates a PDEGroup object."><code>PDEGroupCreate</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEGroup.htm#PDEGroupGetContent" title=" Gets the PDEContent for a PDEGroup."><code>PDEGroupGetContent</code></a></td><td><a href="pdelayer_PDEGroup.htm#PDEGroupSetContent" title=" Sets the PDEContent for a PDEGroup."><code>PDEGroupSetContent</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDEGroup Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDEGroupCreate">PDEGroupCreate</a></dt><dd> -  Creates a PDEGroup object.</dd>
+<dt><a href="#PDEGroupGetContent">PDEGroupGetContent</a></dt><dd> -  Gets the PDEContent for a PDEGroup.</dd>
+<dt><a href="#PDEGroupSetContent">PDEGroupSetContent</a></dt><dd> -  Sets the PDEContent for a PDEGroup.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEGroupCreate"><strong><span style="color:grey;">PDEGroupCreate</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1436</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a <a href="pdelayer_PDEGroup.htm#PDEGroup" title=" An in-memory representation of objects in a PDEContent object.">PDEGroup</a> object.<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned <a href="pdelayer_PDEGroup.htm#PDEGroup" title=" An in-memory representation of objects in a PDEContent object.">PDEGroup</a> object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEGroup.htm#PDEGroupSetContent" title=" Sets the PDEContent for a PDEGroup.">PDEGroupSetContent</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEGroup.htm#PDEGroup" title=" An in-memory representation of objects in a PDEContent object."><code>PDEGroup</code></a> <code>PDEGroupCreate(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created <a href="pdelayer_PDEGroup.htm#PDEGroup" title=" An in-memory representation of objects in a PDEContent object.">PDEGroup</a>. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDEGroupGetContent"><strong><span style="color:grey;">PDEGroupGetContent</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1575</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage.">PDEContent</a> for a <a href="pdelayer_PDEGroup.htm#PDEGroup" title=" An in-memory representation of objects in a PDEContent object.">PDEGroup</a>. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method does not change the reference count of the returned <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage.">PDEContent</a>. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEGroup.htm#PDEGroupSetContent" title=" Sets the PDEContent for a PDEGroup.">PDEGroupSetContent</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage."><code>PDEContent</code></a> <code>PDEGroupGetContent(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEGroup.htm#PDEGroup" title=" An in-memory representation of objects in a PDEContent object."><code>PDEGroup</code></a> <code>pdeGroup</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeGroup</code></span>
+</td><td><span>IN/OUT The group whose content is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage.">PDEContent</a> in <code>pdeGroup</code>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEGroupSetContent"><strong><span style="color:grey;">PDEGroupSetContent</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1450</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage.">PDEContent</a> for a <a href="pdelayer_PDEGroup.htm#PDEGroup" title=" An in-memory representation of objects in a PDEContent object.">PDEGroup</a>. The existing <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage.">PDEContent</a> is released by this method. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method increments the reference count of <code>pdeContent</code>. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEGroup.htm#PDEGroupGetContent" title=" Gets the PDEContent for a PDEGroup.">PDEGroupGetContent</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEGroupSetContent(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEGroup.htm#PDEGroup" title=" An in-memory representation of objects in a PDEContent object."><code>PDEGroup</code></a> <code>pdeGroup</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage."><code>PDEContent</code></a> <code>pdeContent</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeGroup</code></span>
+</td><td><span>IN/OUT A container object. </span>
+</td></tr>
+<tr><td><span><code>pdeContent</code></span>
+</td><td><span>IN/OUT The content to set for <code>pdeGroup</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+</section>
+
+</div>
+</body></html>

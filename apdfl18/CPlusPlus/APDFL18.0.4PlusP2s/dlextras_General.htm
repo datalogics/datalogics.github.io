@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Additional functionality from Datalogics: General</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Additional functionality from Datalogics: General</h5>
+<li><a href="#Definitions">Definitions</a></li>
+<li><a href="#Enumerations">Enumerations</a></li>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Definitions">
+<header><h2>General Definitions</h2></header>
+<nav><dl>
+<dt><a href="#FOUR_CHAR_CODE">FOUR_CHAR_CODE</a></dt><dd> - </dd>
+</dl></nav>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">FOUR_CHAR_CODE</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:16</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define FOUR_CHAR_CODE</code> <code>(</code> <code>x</code> <code>)</code><code>(</code> <code>x</code> <code>)</code> </code>
+</section>
+</section>
+<section id="Enumerations">
+<header><h2>General Enumerations</h2></header>
+<nav><dl>
+<dt><a href="#AC_OptionCode">AC_OptionCode</a></dt><dd> -  Datalogics-specific flags for the Acro Color Layer.</dd>
+<dt><a href="#FontRescanFlags">FontRescanFlags</a></dt><dd> -  flags for rescanning font directories for additional fonts after Library initialization.</dd>
+<dt><a href="#PDFOptimizerCompressionType">PDFOptimizerCompressionType</a></dt><dd> -  types of compression for PDFOptimizer</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="AC_OptionCode"><strong><span style="color:grey;">AC_OptionCode</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:22</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Datalogics-specific flags for the Acro Color Layer. </span>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="AC_Option_BlackPointCompensation"><code>AC_Option_BlackPointCompensation</code><code>=</code><code>FOUR_CHAR_CODE</code><code>(</code><code>'kptc'</code><code>)</code></span>
+</td><td><span>Controls whether to adjust for differences in black points when converting colors between color spaces. If enabled the full dynamic range of the source space is mapped into the full dynamic range of the destination space. If disabled, the dynamic range of the source space is simulated in the destination space (which can result in blocked or gray shadows) This option is ignored if the rendering intent for the transformation is <a href="acrocolor_acrocolor.htm#AC_AbsColorimetric" title=" Tries to maintain color accuracy at the expense of preserving relationships between colors.">AC_AbsColorimetric</a>. Default is 0 (zero). </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="AC_Option_Dither8"><code>AC_Option_Dither8</code><code>=</code><code>FOUR_CHAR_CODE</code><code>(</code><code>'dth8'</code><code>)</code></span>
+</td><td><span>Dither transformations to 8 bit color spaces. This may be ignored by optimized transforms. This option is used by AC_ApplyTransform. Default is 0 (zero). </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="AC_OptionCode_MaxEnum"><code>AC_OptionCode_MaxEnum</code><code>=</code><code>0xFFFFFFFFL</code></span>
+</td><td><span></span>
+</td></tr></table>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_General.htm#ACGetOption" title=" Returns the current value for the given AC_OptionCode."><code>ACGetOption</code></a></td><td><a href="dlextras_General.htm#ACSetOption" title=" Sets the current value for the option specified by the supplied AC_OptionCode."><code>ACSetOption</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="FontRescanFlags"><strong><span style="color:grey;">FontRescanFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:73</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>flags for rescanning font directories for additional fonts after Library initialization. </span>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="FontRescan_Files"><code>FontRescan_Files</code><code>=</code><code>1</code></span>
+</td><td><span>This will rescan just the fields defined in dirList, plus those added with <a href="dlextras_General.htm#PDFLAddFontDirectories" title=" This call allows Adobe PDF Library to rescan for fonts without re-initializing.">PDFLAddFontDirectories</a>. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="FontRescan_System"><code>FontRescan_System</code><code>=</code><code>2</code></span>
+</td><td><span>This will rescan the system directories. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="FontRescan_All"><code>FontRescan_All</code><code>=</code><code>3</code></span>
+</td><td><span>This, or an "or" of the previous two, will rescan both. </span>
+</td></tr></table>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_General.htm#PDFLRescanFontDirectories" title=" This call allows Adobe PDF Library to rescan for fonts without re-initializing."><code>PDFLRescanFontDirectories</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDFOptimizerCompressionType"><strong><span style="color:grey;">PDFOptimizerCompressionType</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:84</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>types of compression for PDFOptimizer </span>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="PDFOptimizerRecompressNone"><code>PDFOptimizerRecompressNone</code><code>=</code><code>0</code></span>
+</td><td><span>Used only when original image is not compressed </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerRecompressSame"><code>PDFOptimizerRecompressSame</code></span>
+</td><td><span>Compress using the same compression </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerRecompressFlate"><code>PDFOptimizerRecompressFlate</code></span>
+</td><td><span>Compress image using Flate </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerRecompressJpeg"><code>PDFOptimizerRecompressJpeg</code></span>
+</td><td><span>Compress image using Jpeg </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerRecompressJP2k"><code>PDFOptimizerRecompressJP2k</code></span>
+</td><td><span>Compress image using JPEG2000 </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerRecompressJBig"><code>PDFOptimizerRecompressJBig</code></span>
+</td><td><span>Compress image using JBig2 </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerRecompressCCITTG4"><code>PDFOptimizerRecompressCCITTG4</code></span>
+</td><td><span>Compress image using CCITTG4 </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerRecompressCCITTG3"><code>PDFOptimizerRecompressCCITTG3</code></span>
+</td><td><span>Compress image using CCITTG3 </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDFOptimizerRecompressFlateJpeg"><code>PDFOptimizerRecompressFlateJpeg</code></span>
+</td><td><span>Compress using Flate and Jpeg </span>
+</td></tr></table>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDDoc.htm#PDDocOptimizeGetImageRecompress" title=" This will return the values set for one of the three cases of Image Recompression and Downsampling."><code>PDDocOptimizeGetImageRecompress</code></a></td><td><a href="dlextras_PDDoc.htm#PDDocOptimizeSetImageRecompress" title=" This will set the value for one of the cases of Image Recompression and Downsampling."><code>PDDocOptimizeSetImageRecompress</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_General.htm#OptimizedImage" title=" Structure representing an Optimized Image."><code>OptimizedImage</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>General Structures</h2></header>
+<nav><dl>
+<dt><a href="#OptimizedFont">OptimizedFont</a></dt><dd> -  Structure representing an Optimized Font.</dd>
+<dt><a href="#OptimizedImage">OptimizedImage</a></dt><dd> -  Structure representing an Optimized Image.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="OptimizedFont"><strong><span style="color:grey;">OptimizedFont</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:294</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Structure representing an Optimized Font. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct OptimizedFont {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>name</code><code>;</code> </div>
+</td><td><span>The name of the Font. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>previousSizeInBytes</code><code>;</code> </div>
+</td><td><span>The size of the Embedded Font file in bytes prior to Optimization. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>currentSizeInBytes</code><code>;</code> </div>
+</td><td><span>The size of the Embedded Font file in bytes after Optimization. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>fontObj</code><code>;</code> </div>
+</td><td><span>The Font object. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>reSubset</code><code>;</code> </div>
+</td><td><span>This font was re-subset during Optimization. </span>
+</td></tr>
+<tr><td><code id="OptimizedFontRec"><code>}</code> <a href="dlextras_General.htm#OptimizedFont" title=" Structure representing an Optimized Font."><code>OptimizedFontRec</code></a><code>,</code> <code>*</code><a href="dlextras_General.htm#OptimizedFont" title=" Structure representing an Optimized Font."><code>OptimizedFont</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDDoc.htm#PDFOptimizerReport" title=" Structure representing data reported from the optimization process."><code>PDFOptimizerReport</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="OptimizedImage"><strong><span style="color:grey;">OptimizedImage</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:278</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Structure representing an Optimized Image. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct OptimizedImage {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>previousDPI</code><code>;</code> </div>
+</td><td><span>The DPI of the Image prior to Optimization. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>currentDPI</code><code>;</code> </div>
+</td><td><span>The DPI of the Image after Optimization, this may be unchanged from the value prior to Optimization if downsampling was not used. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="dlextras_General.htm#PDFOptimizerCompressionType" title=" types of compression for PDFOptimizer"><code>PDFOptimizerCompressionType</code></a> <code>previousCompression</code><code>;</code> </div>
+</td><td><span>The compression of the Image prior to Optimization. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="dlextras_General.htm#PDFOptimizerCompressionType" title=" types of compression for PDFOptimizer"><code>PDFOptimizerCompressionType</code></a> <code>currentCompression</code><code>;</code> </div>
+</td><td><span>The compression of the Image prior to Optimization. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>previousSizeInBytes</code><code>;</code> </div>
+</td><td><span>The size of the Image in bytes prior to Optimization. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>currentSizeInBytes</code><code>;</code> </div>
+</td><td><span>The size of the Image in bytes after Optimization. </span>
+</td></tr>
+<tr><td><code id="OptimizedImageRec"><code>}</code> <a href="dlextras_General.htm#OptimizedImage" title=" Structure representing an Optimized Image."><code>OptimizedImageRec</code></a><code>,</code> <code>*</code><a href="dlextras_General.htm#OptimizedImage" title=" Structure representing an Optimized Image."><code>OptimizedImage</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDDoc.htm#PDFOptimizerReport" title=" Structure representing data reported from the optimization process."><code>PDFOptimizerReport</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>General Functions</h2></header>
+<nav><dl>
+<dt><a href="#ACGetOption">ACGetOption</a></dt><dd> -  Returns the current value for the given AC_OptionCode.</dd>
+<dt><a href="#ACSetOption">ACSetOption</a></dt><dd> -  Sets the current value for the option specified by the supplied AC_OptionCode.</dd>
+<dt><a href="#ASSetDefaultFileSys">ASSetDefaultFileSys</a></dt><dd> -  Sets the default file system implementation for a platform.</dd>
+<dt><a href="#ConvertPDFToExcel">ConvertPDFToExcel</a></dt><dd> -  Converts a PDF file from the specified file path to a Microsoft Excel document (.xlsx)</dd>
+<dt><a href="#ConvertPDFToPowerPoint">ConvertPDFToPowerPoint</a></dt><dd> -  Converts a PDF file from the specified file path to a Microsoft Powerpoint document (.pptx)</dd>
+<dt><a href="#ConvertPDFToWord">ConvertPDFToWord</a></dt><dd> -  Converts a PDF file from the specified file path to a Microsoft Word document (.docx)</dd>
+<dt><a href="#DLEnableLicensedBehavior">DLEnableLicensedBehavior</a></dt><dd> - </dd>
+<dt><a href="#PDFLAddFontDirectories">PDFLAddFontDirectories</a></dt><dd> -  This call allows Adobe PDF Library to rescan for fonts without re-initializing.</dd>
+<dt><a href="#PDFLReinit">PDFLReinit</a></dt><dd> -  Warm reinitialization of the Adobe PDF Library.</dd>
+<dt><a href="#PDFLRescanFontDirectories">PDFLRescanFontDirectories</a></dt><dd> -  This call allows Adobe PDF Library to rescan for fonts without re-initializing.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ACGetOption"><strong><span style="color:grey;">ACGetOption</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:122</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the current value for the given <a href="dlextras_General.htm#AC_OptionCode" title=" Datalogics-specific flags for the Acro Color Layer.">AC_OptionCode</a>. This call controls the behavior of colorspace conversions and manipulations carried out via AC-layer calls; it does not impact other Adobe PDF Library color behaviors. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_General.htm#ACSetOption" title=" Sets the current value for the option specified by the supplied AC_OptionCode.">ACSetOption</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="acrocolor_acrocolor.htm#AC_Error" title=" Error codes returned by AcroColor functions."><code>AC_Error</code></a> <code>ACGetOption(</code><a href="dlextras_General.htm#AC_OptionCode" title=" Datalogics-specific flags for the Acro Color Layer."><code>AC_OptionCode</code></a> <code>code</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>*</code><code>value</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>code</code></span>
+</td><td><span><a href="dlextras_General.htm#AC_Option_BlackPointCompensation" title=" Controls whether to adjust for differences in black points when converting colors between color spaces.">AC_Option_BlackPointCompensation</a> indicates whether the Acrobat Color Engine will carry out black point compensation when converting between colorspaces with different black points. </span>
+</td></tr>
+<tr><td><span><code>value</code></span>
+</td><td><span><a href="dlextras_General.htm#AC_Option_BlackPointCompensation" title=" Controls whether to adjust for differences in black points when converting colors between color spaces.">AC_Option_BlackPointCompensation</a> flag value to be retrieved (Filled by the method) </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>Indicates if an error occurred. </span>
+</section>
+<section><div class="infoRow"><h3 id="ACSetOption"><strong><span style="color:grey;">ACSetOption</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:132</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the current value for the option specified by the supplied <a href="dlextras_General.htm#AC_OptionCode" title=" Datalogics-specific flags for the Acro Color Layer.">AC_OptionCode</a>. This call controls the behavior of colorspace conversions and manipulations carried out via AC-layer calls; it does not impact other Adobe PDF Library color behaviors. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_General.htm#ACGetOption" title=" Returns the current value for the given AC_OptionCode.">ACGetOption</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="acrocolor_acrocolor.htm#AC_Error" title=" Error codes returned by AcroColor functions."><code>AC_Error</code></a> <code>ACSetOption(</code><a href="dlextras_General.htm#AC_OptionCode" title=" Datalogics-specific flags for the Acro Color Layer."><code>AC_OptionCode</code></a> <code>code</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>value</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>The</code></span>
+</td><td><span>option code. </span>
+</td></tr>
+<tr><td><span><code>value</code></span>
+</td><td><span>The flag value to be set. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>Indicates if an error occurred. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASSetDefaultFileSys"><strong><span style="color:grey;">ASSetDefaultFileSys</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:18</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the default file system implementation for a platform. Added by Datalogics. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFileSys.htm#ASGetDefaultFileSys" title=" Gets the default standard file system implementation for a platform."><code>ASGetDefaultFileSys</code></a>
+<a href="aslayer_ASFileSys.htm#ASGetRamFileSys" title=" Gets the in-memory file system implementation for a platform."><code>ASGetRamFileSys</code></a>
+<a href="aslayer_ASFileSys.htm#ASGetTempFileSys" title=" Gets the temporary file system implementation for a platform."><code>ASGetTempFileSys</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASSetDefaultFileSys(</code><a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fileSys</code></span>
+</td><td><span>Alternate file system to be used </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ConvertPDFToExcel"><strong><span style="color:grey;">ConvertPDFToExcel</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:988</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Converts a PDF file from the specified file path to a Microsoft Excel document (.xlsx) at the specified file path. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ConvertPDFToExcel(</code><a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>inputPath</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>outputPath</code><code>,</code> <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>inputPath</code></span>
+</td><td><span>The input path of the PDF document. </span>
+</td></tr>
+<tr><td><span><code>outputPath</code></span>
+</td><td><span>The output path of the Office document. </span>
+</td></tr>
+<tr><td><span><code>fileSys</code></span>
+</td><td><span>The File System in use. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>if True, the Conversion was successful. </span>
+</section>
+<section><div class="infoRow"><h3 id="ConvertPDFToPowerPoint"><strong><span style="color:grey;">ConvertPDFToPowerPoint</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:998</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Converts a PDF file from the specified file path to a Microsoft Powerpoint document (.pptx) at the specified file path. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ConvertPDFToPowerPoint(</code><a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>inputPath</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>outputPath</code><code>,</code> <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>inputPath</code></span>
+</td><td><span>The input path of the PDF document. </span>
+</td></tr>
+<tr><td><span><code>outputPath</code></span>
+</td><td><span>The output path of the Office document. </span>
+</td></tr>
+<tr><td><span><code>fileSys</code></span>
+</td><td><span>The File System in use. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>if True, the Conversion was successful. </span>
+</section>
+<section><div class="infoRow"><h3 id="ConvertPDFToWord"><strong><span style="color:grey;">ConvertPDFToWord</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:978</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Converts a PDF file from the specified file path to a Microsoft Word document (.docx) at the specified file path. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ConvertPDFToWord(</code><a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>inputPath</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>outputPath</code><code>,</code> <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>inputPath</code></span>
+</td><td><span>The input path of the PDF document. </span>
+</td></tr>
+<tr><td><span><code>outputPath</code></span>
+</td><td><span>The output path of the Office document. </span>
+</td></tr>
+<tr><td><span><code>fileSys</code></span>
+</td><td><span>The File System in use. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>if True, the Conversion was successful. </span>
+</section>
+<section><div class="infoRow"><h3 id="DLEnableLicensedBehavior"><strong><span style="color:grey;">DLEnableLicensedBehavior</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:20</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>DLEnableLicensedBehavior(</code><code>const</code> <code>char</code> <code>*</code><code>keyVal</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>additionalInfo</code><code>);</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDFLAddFontDirectories"><strong><span style="color:grey;">PDFLAddFontDirectories</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:432</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>This call allows Adobe PDF Library to rescan for fonts without re-initializing. This will allow an operating Library process to detect and update new font directories and resources after startup, without requiring a restart and re-initialization.<br/>
+<p>This will add one or more directories, and the fonts within them, to the set of all directories containing fonts (those specified in the DirList string arrays of resource locations).<br/></p>
+
+<p>
+<p>This call should be followed by a call to <a href="dlextras_General.htm#PDFLRescanFontDirectories" title=" This call allows Adobe PDF Library to rescan for fonts without re-initializing.">PDFLRescanFontDirectories</a> after all new font directories have been loaded.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_General.htm#PDFLRescanFontDirectories" title=" This call allows Adobe PDF Library to rescan for fonts without re-initializing.">PDFLRescanFontDirectories</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDFLAddFontDirectories(</code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>pathCount</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>*</code><code>paths</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pathCount</code></span>
+</td><td><span>Number of new paths to be added. </span>
+</td></tr>
+<tr><td><span><code>paths</code></span>
+</td><td><span>Paths to new resource locations to be added. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>Indicates if fonts directories were changed. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDFLReinit"><strong><span style="color:grey;">PDFLReinit</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:653</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Warm reinitialization of the Adobe PDF Library. Call this method if you closed all documents and other PD/PDE/Cos objects. Releases memory used for cached data. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDFLReinit(</code><code>void</code><code>);</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDFLRescanFontDirectories"><strong><span style="color:grey;">PDFLRescanFontDirectories</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:419</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>This call allows Adobe PDF Library to rescan for fonts without re-initializing. This will allow an operating Library process to detect and update new font directories and resources after startup, without requiring a restart and re-initialization.<br/>
+<p>This call can, depending on flag settings, force a rescan of font resource areas defined in your dirList array, a rescan of those residing in the System folder, or both. To add new font resources to your dirList array, use the <a href="dlextras_General.htm#PDFLAddFontDirectories" title=" This call allows Adobe PDF Library to rescan for fonts without re-initializing.">PDFLAddFontDirectories</a> call.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_General.htm#PDFLAddFontDirectories" title=" This call allows Adobe PDF Library to rescan for fonts without re-initializing.">PDFLAddFontDirectories</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDFLRescanFontDirectories(</code><a href="dlextras_General.htm#FontRescanFlags" title=" flags for rescanning font directories for additional fonts after Library initialization."><code>FontRescanFlags</code></a> <code>flags</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>flags</code></span>
+</td><td><span>Flags controlling rescan process. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>Indicates if fonts directories were changed. </span>
+</section>
+</section>
+
+</div>
+</body></html>

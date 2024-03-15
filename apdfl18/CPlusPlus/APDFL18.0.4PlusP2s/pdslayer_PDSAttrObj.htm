@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDSEdit Layer: PDSAttrObj</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDSEdit Layer: PDSAttrObj</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>PDSAttrObj Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDSAttrObj">PDSAttrObj</a></dt><dd> -  Represents PDF logical structure attribute objects, which are dictionaries containing application-specific data that can be attached to PDSElement objects.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDSAttrObj"><strong><span style="color:grey;">PDSAttrObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSExpT.h:101</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Represents PDF logical structure attribute objects, which are dictionaries containing application-specific data that can be attached to <a href="pdslayer_PDSElement.htm#PDSElement" title=" Represents PDF structural elements, which are nodes in a tree giving a PDF document's logical structure.">PDSElement</a> objects. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>PDSAttrObj</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdslayer_PDSAttrObj.htm#PDSAttrObjCreate" title=" Creates a new attribute object with the specified owner."><code>PDSAttrObjCreate</code></a></td><td><a href="pdslayer_PDSAttrObj.htm#PDSAttrObjCreateFromStream" title=" Creates an attribute object with the specified owner from the specified Cos stream."><code>PDSAttrObjCreateFromStream</code></a></td></tr>
+<tr><td><a href="pdslayer_PDSAttrObj.htm#PDSAttrObjGetCosObj" title=" Gets the Cos object corresponding to the specified attribute object."><code>PDSAttrObjGetCosObj</code></a></td><td><a href="pdslayer_PDSAttrObj.htm#PDSAttrObjGetOwner" title=" Gets the value of the key (Owner) in the specified attribute object."><code>PDSAttrObjGetOwner</code></a></td></tr>
+<tr><td><a href="pdslayer_PDSClassMap.htm#PDSClassMapAddAttrObj" title=" Adds the specified attribute object to the specified PDSClassMap for the given class name."><code>PDSClassMapAddAttrObj</code></a></td><td><a href="pdslayer_PDSClassMap.htm#PDSClassMapGetAttrObj" title=" Gets the attribute object associated with the specified class name at an index in the class."><code>PDSClassMapGetAttrObj</code></a></td></tr>
+<tr><td><a href="pdslayer_PDSClassMap.htm#PDSClassMapRemoveAttrObj" title=" Removes the specified attribute object from the specified PDSClassMap."><code>PDSClassMapRemoveAttrObj</code></a></td><td><a href="pdslayer_PDSElement.htm#PDSElementAddAttrObj" title=" Associates the specified attribute object with an element at the element's current revision value."><code>PDSElementAddAttrObj</code></a></td></tr>
+<tr><td><a href="pdslayer_PDSElement.htm#PDSElementGetAttrObj" title=" Gets the attribute object at a specified array index in the specified element."><code>PDSElementGetAttrObj</code></a></td><td><a href="pdslayer_PDSElement.htm#PDSElementRemoveAttrObj" title=" Removes the specified attribute object from an element."><code>PDSElementRemoveAttrObj</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDSAttrObj Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDSAttrObjCreate">PDSAttrObjCreate</a></dt><dd> -  Creates a new attribute object with the specified owner.</dd>
+<dt><a href="#PDSAttrObjCreateFromStream">PDSAttrObjCreateFromStream</a></dt><dd> -  Creates an attribute object with the specified owner from the specified Cos stream.</dd>
+<dt><a href="#PDSAttrObjGetCosObj">PDSAttrObjGetCosObj</a></dt><dd> -  Gets the Cos object corresponding to the specified attribute object.</dd>
+<dt><a href="#PDSAttrObjGetOwner">PDSAttrObjGetOwner</a></dt><dd> -  Gets the value of the key (Owner) in the specified attribute object.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDSAttrObjCreate"><strong><span style="color:grey;">PDSAttrObjCreate</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSWriteProcs.h:553</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a new attribute object with the specified owner. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdslayer_PDSAttrObj.htm#PDSAttrObjCreateFromStream" title=" Creates an attribute object with the specified owner from the specified Cos stream.">PDSAttrObjCreateFromStream</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDSAttrObjCreate(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>owner</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>indirect</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="pdslayer_PDSAttrObj.htm#PDSAttrObj" title=" Represents PDF logical structure attribute objects, which are dictionaries containing application-specific data that can be attached to PDSElement objects."><code>PDSAttrObj</code></a> <code>*</code><code>attrObj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><div><p>The document in which the attribute object is created.<br/>
+<p>This may raise various exceptions.<br/></p>
+</div>
+</td></tr>
+<tr><td><span><code>owner</code></span>
+</td><td><span>The owner of the new attribute object. </span>
+</td></tr>
+<tr><td><span><code>indirect</code></span>
+</td><td><span>If <a href="aslayer_General.htm#true"><code>true</code></a>, it creates the attribute object as an indirect Cos object and sets the <code>pdDoc</code> parameter's <a href="pdlayer_PDDoc.htm#PDDocNeedsSave" title=" The document has been modified and needs to be saved.">PDDocNeedsSave</a> flag (see <a href="pdlayer_PDDoc.htm#PDDocFlags" title=" A signed int (which is never negative), for historical reasons.">PDDocFlags</a>). If <a href="aslayer_General.htm#false"><code>false</code></a>, it creates the attribute object as a direct object. </span>
+</td></tr>
+<tr><td><span><code>attrObj</code></span>
+</td><td><span>(Filled by the method) The newly created attribute object. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDSAttrObjCreateFromStream"><strong><span style="color:grey;">PDSAttrObjCreateFromStream</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSWriteProcs.h:568</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates an attribute object with the specified owner from the specified Cos stream. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdslayer_PDSAttrObj.htm#PDSAttrObjCreate" title=" Creates a new attribute object with the specified owner.">PDSAttrObjCreate</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDSAttrObjCreateFromStream(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>owner</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>cosStreamObj</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="pdslayer_PDSAttrObj.htm#PDSAttrObj" title=" Represents PDF logical structure attribute objects, which are dictionaries containing application-specific data that can be attached to PDSElement objects."><code>PDSAttrObj</code></a> <code>*</code><code>attrObj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>owner</code></span>
+</td><td><span>The owner of the new attribute object. </span>
+</td></tr>
+<tr><td><span><code>cosStreamObj</code></span>
+</td><td><span>The Cos stream containing the data with which to create the attribute. The dictionary of this stream is modified. </span>
+</td></tr>
+<tr><td><span><code>attrObj</code></span>
+</td><td><span>(Filled by the method) A pointer to the newly created attribute object. This actually points to <code>cosStreamObj</code>. May be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdsErrWrongTypeParameter" title=" The wrong type parameter was supplied to a PDS procedure."><code>pdsErrWrongTypeParameter</code></a></span>
+</td><td><span>is raised if <code>cosStreamObj</code> is not a Cos stream. It may raise other exceptions as well. </span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDSAttrObjGetCosObj"><strong><span style="color:grey;">PDSAttrObjGetCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSReadProcs.h:777</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets the Cos object corresponding to the specified attribute object. This method does not copy the object, but is instead the logical equivalent of a type cast. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>PDSAttrObjGetCosObj(</code><a href="pdslayer_PDSAttrObj.htm#PDSAttrObj" title=" Represents PDF logical structure attribute objects, which are dictionaries containing application-specific data that can be attached to PDSElement objects."><code>PDSAttrObj</code></a> <code>attrObj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>attrObj</code></span>
+</td><td><span>The attribute object whose Cos object is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The dictionary Cos object for the attribute object. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDSAttrObjGetOwner"><strong><span style="color:grey;">PDSAttrObjGetOwner</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSReadProcs.h:459</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the value of the key (Owner) in the specified attribute object.<br/>
+<p>This may throw various exceptions.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdslayer_PDSAttrObj.htm#PDSAttrObjCreate" title=" Creates a new attribute object with the specified owner.">PDSAttrObjCreate</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>PDSAttrObjGetOwner(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdslayer_PDSAttrObj.htm#PDSAttrObj" title=" Represents PDF logical structure attribute objects, which are dictionaries containing application-specific data that can be attached to PDSElement objects."><code>PDSAttrObj</code></a> <code>element</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>element</code></span>
+</td><td><span>The attribute object whose owner is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> for the owner's name. </span>
+</section>
+</section>
+
+</div>
+</body></html>

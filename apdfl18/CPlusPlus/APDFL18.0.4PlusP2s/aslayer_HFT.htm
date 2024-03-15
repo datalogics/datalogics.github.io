@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Acro Support Layer: HFT</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Acro Support Layer: HFT</h5>
+<li><a href="#Definitions">Definitions</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#CallbackSignatures">Callback Signatures</a></li>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Definitions">
+<header><h2>HFT Definitions</h2></header>
+<nav><dl>
+<dt><a href="#BAD_SELECTOR">BAD_SELECTOR</a></dt><dd> - </dd>
+<dt><a href="#HFTEntryReplaceable">HFTEntryReplaceable</a></dt><dd> -  A flag that specifies whether an HFT entry is replaceable: If the flag is set, the new entry can be replaced.</dd>
+<dt><a href="#HFT_ERROR_NO_VERSION">HFT_ERROR_NO_VERSION</a></dt><dd> - </dd>
+<dt><a href="#kHFT_IN_BETA_FLAG">kHFT_IN_BETA_FLAG</a></dt><dd> - </dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="BAD_SELECTOR"><strong><span style="color:grey;">BAD_SELECTOR</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CoreExpT.h:151</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define BAD_SELECTOR</code> <code>0</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="HFTEntryReplaceable"><strong><span style="color:grey;">HFTEntryReplaceable</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CoreExpT.h:180</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><UL>A flag that specifies whether an <a href="aslayer_HFT.htm#HFT">HFT</a> entry is replaceable:<br/><li> If the flag is set, the new entry can be replaced. Clients should generally use this value, allowing other clients to subsequently replace the method again.<br/><li> If the flag is not set, the new entry cannot be replaced.<br/></UL>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_HFT.htm#HFTReplaceEntry" title=" Replaces the specified entry in the specified HFT.">HFTReplaceEntry</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define HFTEntryReplaceable</code> <code>(</code> <code>0x00000001</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="HFT_ERROR_NO_VERSION"><strong><span style="color:grey;">HFT_ERROR_NO_VERSION</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:559</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define HFT_ERROR_NO_VERSION</code> <code>(</code> <code>0xFFFFFFFF</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kHFT_IN_BETA_FLAG"><strong><span style="color:grey;">kHFT_IN_BETA_FLAG</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CoreExpT.h:169</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kHFT_IN_BETA_FLAG</code> <code>0x80000000</code> </code>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>HFT Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#ASVersion">ASVersion</a></dt><dd> -  An HFT version number.</dd>
+<dt><a href="#HFT">HFT</a></dt><dd> - </dd>
+<dt><a href="#HFTData">HFTData</a></dt><dd> - </dd>
+<dt><a href="#HFTEntry">HFTEntry</a></dt><dd> -  An HFTEntry may be cast to a pointer to a function whose prototype must be provided by the HFT's description file.</dd>
+<dt><a href="#Selector">Selector</a></dt><dd> -  Uniquely identifies an entry within an HFT.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASVersion"><strong><span style="color:grey;">ASVersion</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:164</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>An <a href="aslayer_HFT.htm#HFT">HFT</a> version number. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>ASVersion</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_HFT.htm#HFTGetVersion" title=" Returns the version of the HFT, if available."><code>HFTGetVersion</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASExtension.htm#ASExtensionMgrGetHFT" title=" Gets the specified version of the Host Function Table (HFT) that has the specified name."><code>ASExtensionMgrGetHFT</code></a></td><td><a href="aslayer_HFT.htm#HFTServerProvideHFTProc" title=" A callback for an HFT server."><code>HFTServerProvideHFTProc</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_HFT.htm#_t_HFTData" title=" A data structure to pass to an HFT server to create a new HFT."><code>_t_HFTData</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="HFT"><strong><span style="color:grey;">HFT</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CoreExpT.h:166</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_HFT.htm#HFTEntry" title=" An HFTEntry may be cast to a pointer to a function whose prototype must be provided by the HFT's description file."><code>HFTEntry</code></a> <code>*</code><code>HFT</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASExtension.htm#ASExtensionMgrGetHFT" title=" Gets the specified version of the Host Function Table (HFT) that has the specified name."><code>ASExtensionMgrGetHFT</code></a></td><td><a href="aslayer_HFT.htm#HFTNew" title=" Obsolete."><code>HFTNew</code></a></td></tr>
+<tr><td><a href="aslayer_HFT.htm#HFTNewEx" title=" Extends HFTNew() with version information in Acrobat 6."><code>HFTNewEx</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_HFT.htm#HFTDestroy" title=" Destroys an existing HFT by freeing all the HFT's memory."><code>HFTDestroy</code></a></td><td><a href="aslayer_HFT.htm#HFTGetReplacedEntry" title=" Gets the HFTEntry that was replaced by the specified HFTEntry in the specified entry."><code>HFTGetReplacedEntry</code></a></td></tr>
+<tr><td><a href="aslayer_HFT.htm#HFTGetVersion" title=" Returns the version of the HFT, if available."><code>HFTGetVersion</code></a></td><td><a href="aslayer_HFT.htm#HFTIsValid" title=" Tests whether an HFT is valid."><code>HFTIsValid</code></a></td></tr>
+<tr><td><a href="aslayer_HFT.htm#HFTReplaceEntry" title=" Replaces the specified entry in the specified HFT."><code>HFTReplaceEntry</code></a></td><td><a href="aslayer_HFT.htm#HFTReplaceEntryEx" title=" A new version of HFTReplaceEntry() that adds the extension argument."><code>HFTReplaceEntryEx</code></a></td></tr>
+<tr><td><a href="aslayer_HFT.htm#HFTUnreplaceEntry" title=" Removes the oldEntry item from hft at sel if the extension fields match."><code>HFTUnreplaceEntry</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="HFTData"><strong><span style="color:grey;">HFTData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:578</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>const</code> <a href="aslayer_HFT.htm#_t_HFTData" title=" A data structure to pass to an HFT server to create a new HFT."><code>HFTDataRec</code></a> <code>*</code><code>HFTData</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_HFT.htm#HFTNewEx" title=" Extends HFTNew() with version information in Acrobat 6."><code>HFTNewEx</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="HFTEntry"><strong><span style="color:grey;">HFTEntry</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CoreExpT.h:156</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>An <a href="aslayer_HFT.htm#HFTEntry" title=" An HFTEntry may be cast to a pointer to a function whose prototype must be provided by the HFT's description file.">HFTEntry</a> may be cast to a pointer to a function whose prototype must be provided by the HFT's description file. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>void</code> <code>*</code><code>HFTEntry</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_HFT.htm#HFTGetReplacedEntry" title=" Gets the HFTEntry that was replaced by the specified HFTEntry in the specified entry."><code>HFTGetReplacedEntry</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_HFT.htm#HFTGetReplacedEntry" title=" Gets the HFTEntry that was replaced by the specified HFTEntry in the specified entry."><code>HFTGetReplacedEntry</code></a></td><td><a href="aslayer_HFT.htm#HFTReplaceEntry" title=" Replaces the specified entry in the specified HFT."><code>HFTReplaceEntry</code></a></td></tr>
+<tr><td><a href="aslayer_HFT.htm#HFTReplaceEntryEx" title=" A new version of HFTReplaceEntry() that adds the extension argument."><code>HFTReplaceEntryEx</code></a></td><td><a href="aslayer_HFT.htm#HFTUnreplaceEntry" title=" Removes the oldEntry item from hft at sel if the extension fields match."><code>HFTUnreplaceEntry</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_HFT.htm#HFT"><code>HFT</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="Selector"><strong><span style="color:grey;">Selector</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CoreExpT.h:150</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Uniquely identifies an entry within an <a href="aslayer_HFT.htm#HFT">HFT</a>. It is simply the integer offset of the entry from the start of the <a href="aslayer_HFT.htm#HFT">HFT</a>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>Selector</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_HFT.htm#HFTGetReplacedEntry" title=" Gets the HFTEntry that was replaced by the specified HFTEntry in the specified entry."><code>HFTGetReplacedEntry</code></a></td><td><a href="aslayer_HFT.htm#HFTReplaceEntry" title=" Replaces the specified entry in the specified HFT."><code>HFTReplaceEntry</code></a></td></tr>
+<tr><td><a href="aslayer_HFT.htm#HFTReplaceEntryEx" title=" A new version of HFTReplaceEntry() that adds the extension argument."><code>HFTReplaceEntryEx</code></a></td><td><a href="aslayer_HFT.htm#HFTUnreplaceEntry" title=" Removes the oldEntry item from hft at sel if the extension fields match."><code>HFTUnreplaceEntry</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="CallbackSignatures">
+<header><h2>HFT Callback Signatures</h2></header>
+<nav><dl>
+<dt><a href="#HFTServerProvideHFTProc">HFTServerProvideHFTProc</a></dt><dd> -  A callback for an HFT server.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="HFTServerProvideHFTProc"><strong><span style="color:grey;">HFTServerProvideHFTProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:602</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A callback for an <a href="aslayer_HFT.htm#HFT">HFT</a> server. This returns an <a href="aslayer_HFT.htm#HFT">HFT</a> with the specified version number. If the <a href="aslayer_HFT.htm#HFT">HFT</a> has not yet been created, create and return it. If the <a href="aslayer_HFT.htm#HFT">HFT</a> already exists, do not create a new copy of it; simply return the existing copy. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The version numeric type has changed in Acrobat 6.0. </p>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_HFT.htm#HFT"><code>HFT</code></a> <code>HFTServerProvideHFTProc(</code><a href="aslayer_HFTServer.htm#HFTServer" title=" Each HFT is serviced by an HFT server."><code>HFTServer</code></a> <code>hftServer</code><code>,</code> <a href="aslayer_HFT.htm#ASVersion" title=" An HFT version number."><code>ASVersion</code></a> <code>version</code><code>,</code> <code>void</code> <code>*</code><code>rock</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>hftServer</code></span>
+</td><td><span>The <a href="aslayer_HFT.htm#HFT">HFT</a> server associated with this proc. </span>
+</td></tr>
+<tr><td><span><code>version</code></span>
+</td><td><span>The <a href="aslayer_HFT.htm#HFT">HFT</a> version being requested. </span>
+</td></tr>
+<tr><td><span><code>rock</code></span>
+</td><td><span>User-supplied data passed in the call to <a href="aslayer_HFTServer.htm#HFTServerNew" title=" Creates a new Host Function Table (HFT) server.">HFTServerNew</a>(). </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The requested version of the <a href="aslayer_HFT.htm#HFT">HFT</a>. </span>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_HFTServer.htm#HFTServerNew" title=" Creates a new Host Function Table (HFT) server."><code>HFTServerNew</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>HFT Structures</h2></header>
+<nav><dl>
+<dt><a href="#_t_HFTData">_t_HFTData</a></dt><dd> -  A data structure to pass to an HFT server to create a new HFT.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="_t_HFTData"><strong><span style="color:grey;">_t_HFTData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:564</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A data structure to pass to an <a href="aslayer_HFT.htm#HFT">HFT</a> server to create a new <a href="aslayer_HFT.htm#HFT">HFT</a>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_HFT.htm#HFTNewEx" title=" Extends HFTNew() with version information in Acrobat 6.">HFTNewEx</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_HFTData {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>size</code><code>;</code> </div>
+</td><td><span>Set to <code>sizeof(HFTDataRec)</code> </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASCount" title=" A numeric count value."><code>ASCount</code></a> <code>numSelectors</code><code>;</code> </div>
+</td><td><span>The number of entries in the new <a href="aslayer_HFT.htm#HFT">HFT</a>. This determines the number of methods that the <a href="aslayer_HFT.htm#HFT">HFT</a> can contain; each method occupies one entry. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_HFT.htm#ASVersion" title=" An HFT version number."><code>ASVersion</code></a> <code>version</code><code>;</code> </div>
+</td><td><span>The version number. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>const</code> <code>void</code> <code>*</code><code>hftProcs</code><code>;</code> </div>
+</td><td><span>Optional. This should point to an <a href="aslayer_HFT.htm#HFT">HFT</a> array of function pointers. </span>
+</td></tr>
+<tr><td><code id="HFTDataRec"><code>}</code> <a href="aslayer_HFT.htm#_t_HFTData" title=" A data structure to pass to an HFT server to create a new HFT."><code>HFTDataRec</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+</section>
+<section id="Functions">
+<header><h2>HFT Functions</h2></header>
+<nav><dl>
+<dt><a href="#HFTDestroy">HFTDestroy</a></dt><dd> -  Destroys an existing HFT by freeing all the HFT's memory.</dd>
+<dt><a href="#HFTGetReplacedEntry">HFTGetReplacedEntry</a></dt><dd> -  Gets the HFTEntry that was replaced by the specified HFTEntry in the specified entry.</dd>
+<dt><a href="#HFTGetVersion">HFTGetVersion</a></dt><dd> -  Returns the version of the HFT, if available.</dd>
+<dt><a href="#HFTIsValid">HFTIsValid</a></dt><dd> -  Tests whether an HFT is valid.</dd>
+<dt><a href="#HFTNew">HFTNew</a></dt><dd> -  Obsolete.</dd>
+<dt><a href="#HFTNewEx">HFTNewEx</a></dt><dd> -  Extends HFTNew() with version information in Acrobat 6.</dd>
+<dt><a href="#HFTReplaceEntry">HFTReplaceEntry</a></dt><dd> -  Replaces the specified entry in the specified HFT.</dd>
+<dt><a href="#HFTReplaceEntryEx">HFTReplaceEntryEx</a></dt><dd> -  A new version of HFTReplaceEntry() that adds the extension argument.</dd>
+<dt><a href="#HFTUnreplaceEntry">HFTUnreplaceEntry</a></dt><dd> -  Removes the oldEntry item from hft at sel if the extension fields match.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="HFTDestroy"><strong><span style="color:grey;">HFTDestroy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:222</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Destroys an existing <a href="aslayer_HFT.htm#HFT">HFT</a> by freeing all the HFT's memory. Call this method only if you are absolutely sure that neither your plug-in nor any other plug-in will use the <a href="aslayer_HFT.htm#HFT">HFT</a> again. Because this is usually impossible to know, plug-ins should not destroy HFTs. It is even dangerous to destroy an <a href="aslayer_HFT.htm#HFT">HFT</a> at unload time, because the order in which plug-ins are unloaded is not specified. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_HFT.htm#HFTNew" title=" Obsolete.">HFTNew</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>HFTDestroy(</code><a href="aslayer_HFT.htm#HFT"><code>HFT</code></a> <code>hft</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>hft</code></span>
+</td><td><span>The <a href="aslayer_HFT.htm#HFT">HFT</a> to destroy. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="HFTGetReplacedEntry"><strong><span style="color:grey;">HFTGetReplacedEntry</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:294</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the <a href="aslayer_HFT.htm#HFTEntry" title=" An HFTEntry may be cast to a pointer to a function whose prototype must be provided by the HFT's description file.">HFTEntry</a> that was replaced by the specified <a href="aslayer_HFT.htm#HFTEntry" title=" An HFTEntry may be cast to a pointer to a function whose prototype must be provided by the HFT's description file.">HFTEntry</a> in the specified entry. Plug-ins should generally not use this method directly, but use the <code>CALL_REPLACED_PROC</code> macro instead.<br/>
+<p>It is necessary to specify both a selector (the index of an entry in the HFT's table of callback pointers) and an <a href="aslayer_HFT.htm#HFTEntry" title=" An HFTEntry may be cast to a pointer to a function whose prototype must be provided by the HFT's description file.">HFTEntry</a> (a callback pointer) because a method may be replaced several times, and the various replacement methods are kept in a linked list. The selector determines which linked list is examined, and the <a href="aslayer_HFT.htm#HFTEntry" title=" An HFTEntry may be cast to a pointer to a function whose prototype must be provided by the HFT's description file.">HFTEntry</a> determines the entry in the linked list to return.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASExtension.htm#ASExtensionMgrGetHFT" title=" Gets the specified version of the Host Function Table (HFT) that has the specified name.">ASExtensionMgrGetHFT</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_HFT.htm#HFTEntry" title=" An HFTEntry may be cast to a pointer to a function whose prototype must be provided by the HFT's description file."><code>HFTEntry</code></a> <code>HFTGetReplacedEntry(</code><a href="aslayer_HFT.htm#HFT"><code>HFT</code></a> <code>hft</code><code>,</code> <a href="aslayer_HFT.htm#Selector" title=" Uniquely identifies an entry within an HFT."><code>Selector</code></a> <code>sel</code><code>,</code> <a href="aslayer_HFT.htm#HFTEntry" title=" An HFTEntry may be cast to a pointer to a function whose prototype must be provided by the HFT's description file."><code>HFTEntry</code></a> <code>oldEntry</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>hft</code></span>
+</td><td><span>The <a href="aslayer_HFT.htm#HFT">HFT</a> in which a replaced entry is retrieved. See <a href="aslayer_HFT.htm#HFTReplaceEntry" title=" Replaces the specified entry in the specified HFT.">HFTReplaceEntry</a>() for more information. </span>
+</td></tr>
+<tr><td><span><code>sel</code></span>
+</td><td><span>The selector whose previous value is obtained. See <a href="aslayer_HFT.htm#HFTReplaceEntry" title=" Replaces the specified entry in the specified HFT.">HFTReplaceEntry</a>() for more information. </span>
+</td></tr>
+<tr><td><span><code>oldEntry</code></span>
+</td><td><span>The <a href="aslayer_HFT.htm#HFTEntry" title=" An HFTEntry may be cast to a pointer to a function whose prototype must be provided by the HFT's description file.">HFTEntry</a> for which the previous value is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The entry present prior to being replaced. <a href="aslayer_General.htm#NULL"><code>NULL</code></a> is returned if the entry has not been replaced. </span>
+</section>
+<section><div class="infoRow"><h3 id="HFTGetVersion"><strong><span style="color:grey;">HFTGetVersion</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:2377</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the version of the <a href="aslayer_HFT.htm#HFT">HFT</a>, if available. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_HFT.htm#HFTNewEx" title=" Extends HFTNew() with version information in Acrobat 6.">HFTNewEx</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_HFT.htm#ASVersion" title=" An HFT version number."><code>ASVersion</code></a> <code>HFTGetVersion(</code><a href="aslayer_HFT.htm#HFT"><code>HFT</code></a> <code>hft</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>hft</code></span>
+</td><td><span>The <a href="aslayer_HFT.htm#HFT">HFT</a> whose version is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The version number if the <a href="aslayer_HFT.htm#HFT">HFT</a> is valid and the version is available, <a href="aslayer_HFT.htm#HFT_ERROR_NO_VERSION"><code>HFT_ERROR_NO_VERSION</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="HFTIsValid"><strong><span style="color:grey;">HFTIsValid</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1509</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Tests whether an <a href="aslayer_HFT.htm#HFT">HFT</a> is valid. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>HFTIsValid(</code><a href="aslayer_HFT.htm#HFT"><code>HFT</code></a> <code>hft</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>hft</code></span>
+</td><td><span>IN/OUT The <a href="aslayer_HFT.htm#HFT">HFT</a> to test. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if <code>hft</code> is valid, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="HFTNew"><strong><span style="color:grey;">HFTNew</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:209</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Obsolete. See <a href="aslayer_HFT.htm#HFTNewEx" title=" Extends HFTNew() with version information in Acrobat 6.">HFTNewEx</a>(). Creates a new <a href="aslayer_HFT.htm#HFT">HFT</a> by calling the specified <a href="aslayer_HFT.htm#HFT">HFT</a> server's <a href="aslayer_HFT.htm#HFTServerProvideHFTProc" title=" A callback for an HFT server.">HFTServerProvideHFTProc</a>(). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASExtension.htm#ASExtensionMgrGetHFT" title=" Gets the specified version of the Host Function Table (HFT) that has the specified name."><code>ASExtensionMgrGetHFT</code></a>
+<a href="aslayer_HFT.htm#HFTDestroy" title=" Destroys an existing HFT by freeing all the HFT's memory."><code>HFTDestroy</code></a>
+<a href="aslayer_HFT.htm#HFTNewEx" title=" Extends HFTNew() with version information in Acrobat 6."><code>HFTNewEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_HFT.htm#HFT"><code>HFT</code></a> <code>HFTNew(</code><a href="aslayer_HFTServer.htm#HFTServer" title=" Each HFT is serviced by an HFT server."><code>HFTServer</code></a> <code>hftServer</code><code>,</code> <a href="aslayer_General.htm#ASTCount"><code>ASTCount</code></a> <code>numSelectors</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>hftServer</code></span>
+</td><td><span>The <a href="aslayer_HFT.htm#HFT">HFT</a> server for the <a href="aslayer_HFT.htm#HFT">HFT</a> being created. The <a href="aslayer_HFT.htm#HFT">HFT</a> server must have been created previously using <a href="aslayer_HFTServer.htm#HFTServerNew" title=" Creates a new Host Function Table (HFT) server.">HFTServerNew</a>(). </span>
+</td></tr>
+<tr><td><span><code>numSelectors</code></span>
+</td><td><span>The number of entries in the new <a href="aslayer_HFT.htm#HFT">HFT</a>. This determines the number of methods that the <a href="aslayer_HFT.htm#HFT">HFT</a> can contain; each method occupies one entry. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created <a href="aslayer_HFT.htm#HFT">HFT</a>. </span>
+</section>
+<section><div class="infoRow"><h3 id="HFTNewEx"><strong><span style="color:grey;">HFTNewEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:2400</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Extends <a href="aslayer_HFT.htm#HFTNew" title=" Obsolete.">HFTNew</a>() with version information in Acrobat 6. Creates a new <a href="aslayer_HFT.htm#HFT">HFT</a> by calling the specified <a href="aslayer_HFT.htm#HFT">HFT</a> server's <a href="aslayer_HFT.htm#HFTServerProvideHFTProc" title=" A callback for an HFT server.">HFTServerProvideHFTProc</a>(). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASExtension.htm#ASExtensionMgrGetHFT" title=" Gets the specified version of the Host Function Table (HFT) that has the specified name."><code>ASExtensionMgrGetHFT</code></a>
+<a href="aslayer_HFT.htm#HFTDestroy" title=" Destroys an existing HFT by freeing all the HFT's memory."><code>HFTDestroy</code></a>
+<a href="aslayer_HFT.htm#HFTNew" title=" Obsolete."><code>HFTNew</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_HFT.htm#HFT"><code>HFT</code></a> <code>HFTNewEx(</code><a href="aslayer_HFTServer.htm#HFTServer" title=" Each HFT is serviced by an HFT server."><code>HFTServer</code></a> <code>hftServer</code><code>,</code> <a href="aslayer_HFT.htm#HFTData"><code>HFTData</code></a> <code>data</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>hftServer</code></span>
+</td><td><span>The <a href="aslayer_HFT.htm#HFT">HFT</a> server for the <a href="aslayer_HFT.htm#HFT">HFT</a> being created. The <a href="aslayer_HFT.htm#HFT">HFT</a> server must have been created previously using <a href="aslayer_HFTServer.htm#HFTServerNew" title=" Creates a new Host Function Table (HFT) server.">HFTServerNew</a>(). </span>
+</td></tr>
+<tr><td><span><code>data</code></span>
+</td><td><div><UL>The data to pass to the server, which includes:<br/><li> The number of entries in the new <a href="aslayer_HFT.htm#HFT">HFT</a>, which determines the number of methods that the <a href="aslayer_HFT.htm#HFT">HFT</a> can contain. Each method occupies one entry.<br/><li> The <a href="aslayer_HFT.htm#HFT">HFT</a> version.<br/></UL>
+</div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created <a href="aslayer_HFT.htm#HFT">HFT</a>. </span>
+</section>
+<section><div class="infoRow"><h3 id="HFTReplaceEntry"><strong><span style="color:grey;">HFTReplaceEntry</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:268</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Replaces the specified entry in the specified <a href="aslayer_HFT.htm#HFT">HFT</a>. This allows a plug-in to override and replace certain methods in Acrobat's API. See Replaceable Methods for a list of replaceable methods. This method can be used from anywhere in the plug-in, but it makes the most sense for most plug-ins to replace methods in the importReplaceAndRegisterCallback() procedure. Plug-ins register their HFTs in the export callback, but the code to populate the function table is only executed when the first client requests the <a href="aslayer_HFT.htm#HFT">HFT</a>.<br/>
+<p>Plug-ins can use the <code>REPLACE</code> macro instead of calling <a href="aslayer_HFT.htm#HFTReplaceEntry" title=" Replaces the specified entry in the specified HFT.">HFTReplaceEntry</a>() directly.<br/></p>
+
+<p>
+<p>All plug-ins, and Acrobat itself, share a single copy of each <a href="aslayer_HFT.htm#HFT">HFT</a>. As a result, when a plug-in replaces the implementation of a method, all other plug-ins and Acrobat also use the new implementation of that method. In addition, once a method's implementation has been replaced, there is no way to remove the new implementation without restarting Acrobat.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The <code>CALL_REPLACED_PROC</code> macro is available to call the previous <a href="aslayer_HFT.htm#HFT">HFT</a> entry function that was replaced. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASExtension.htm#ASExtensionMgrGetHFT" title=" Gets the specified version of the Host Function Table (HFT) that has the specified name."><code>ASExtensionMgrGetHFT</code></a>
+<a href="aslayer_HFT.htm#HFTGetReplacedEntry" title=" Gets the HFTEntry that was replaced by the specified HFTEntry in the specified entry."><code>HFTGetReplacedEntry</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>HFTReplaceEntry(</code><a href="aslayer_HFT.htm#HFT"><code>HFT</code></a> <code>hft</code><code>,</code> <a href="aslayer_HFT.htm#Selector" title=" Uniquely identifies an entry within an HFT."><code>Selector</code></a> <code>sel</code><code>,</code> <a href="aslayer_HFT.htm#HFTEntry" title=" An HFTEntry may be cast to a pointer to a function whose prototype must be provided by the HFT's description file."><code>HFTEntry</code></a> <code>newEntry</code><code>,</code> <a href="aslayer_General.htm#ASFlagBits" title=" A flag-bits value."><code>ASFlagBits</code></a> <code>flags</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>hft</code></span>
+</td><td><span>The <a href="aslayer_HFT.htm#HFT">HFT</a> in which a method is replaced. Use <a href="aslayer_ASExtension.htm#ASExtensionMgrGetHFT" title=" Gets the specified version of the Host Function Table (HFT) that has the specified name.">ASExtensionMgrGetHFT</a>() to get the <a href="aslayer_HFT.htm#HFT">HFT</a>, given its name. For the HFTs built into the Acrobat viewer, global variables containing the HFTs have been defined, so you can skip calling <a href="aslayer_ASExtension.htm#ASExtensionMgrGetHFT" title=" Gets the specified version of the Host Function Table (HFT) that has the specified name.">ASExtensionMgrGetHFT</a>() for these HFTs. </span>
+</td></tr>
+<tr><td><span><code>sel</code></span>
+</td><td><span>The entry in the <a href="aslayer_HFT.htm#HFT">HFT</a> to replace, derived from the method's name by appending <code>SEL</code>. For example, to replace AVAlert, <code>sel</code> must be <code>AVAlertSEL</code>. </span>
+</td></tr>
+<tr><td><span><code>newEntry</code></span>
+</td><td><span>The function to replace the current one. The function pointer must be converted to an <a href="aslayer_HFT.htm#HFTEntry" title=" An HFTEntry may be cast to a pointer to a function whose prototype must be provided by the HFT's description file.">HFTEntry</a> using the ASCallbackCreateReplacement() macro. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>The new entry's properties. Currently, only <a href="aslayer_HFT.htm#HFTEntryReplaceable" title=" A flag that specifies whether an HFT entry is replaceable: If the flag is set, the new entry can be replaced.">HFTEntryReplaceable</a> is defined. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#xmErrCannotReplaceSelector" title=" There was an attempt to replace an unreplaceable selector."><code>xmErrCannotReplaceSelector</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="HFTReplaceEntryEx"><strong><span style="color:grey;">HFTReplaceEntryEx</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:2005</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>A new version of <a href="aslayer_HFT.htm#HFTReplaceEntry" title=" Replaces the specified entry in the specified HFT.">HFTReplaceEntry</a>() that adds the extension argument.<br/>
+<p>Plug-ins can use the REPLACE macro instead of calling <a href="aslayer_HFT.htm#HFTReplaceEntryEx" title=" A new version of HFTReplaceEntry() that adds the extension argument.">HFTReplaceEntryEx</a> directly.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The CALL_REPLACED_PROC macro is available to call the previous <a href="aslayer_HFT.htm#HFT">HFT</a> entry function that was replaced. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASExtension.htm#ASExtensionMgrGetHFT" title=" Gets the specified version of the Host Function Table (HFT) that has the specified name."><code>ASExtensionMgrGetHFT</code></a>
+<a href="aslayer_HFT.htm#HFTGetReplacedEntry" title=" Gets the HFTEntry that was replaced by the specified HFTEntry in the specified entry."><code>HFTGetReplacedEntry</code></a>
+<a href="aslayer_HFT.htm#HFTReplaceEntry" title=" Replaces the specified entry in the specified HFT."><code>HFTReplaceEntry</code></a>
+<a href="aslayer_HFT.htm#HFTUnreplaceEntry" title=" Removes the oldEntry item from hft at sel if the extension fields match."><code>HFTUnreplaceEntry</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>HFTReplaceEntryEx(</code><a href="aslayer_HFT.htm#HFT"><code>HFT</code></a> <code>hft</code><code>,</code> <a href="aslayer_HFT.htm#Selector" title=" Uniquely identifies an entry within an HFT."><code>Selector</code></a> <code>sel</code><code>,</code> <a href="aslayer_HFT.htm#HFTEntry" title=" An HFTEntry may be cast to a pointer to a function whose prototype must be provided by the HFT's description file."><code>HFTEntry</code></a> <code>newEntry</code><code>,</code> <a href="aslayer_ASExtension.htm#ASExtension" title=" An opaque pointer to an object that identifies a specific loaded plug-in."><code>ASExtension</code></a> <code>extension</code><code>,</code> <a href="aslayer_General.htm#ASFlagBits" title=" A flag-bits value."><code>ASFlagBits</code></a> <code>flags</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>hft</code></span>
+</td><td><span>The <a href="aslayer_HFT.htm#HFT">HFT</a> in which a method is replaced. Use <a href="aslayer_ASExtension.htm#ASExtensionMgrGetHFT" title=" Gets the specified version of the Host Function Table (HFT) that has the specified name.">ASExtensionMgrGetHFT</a>() to get the <a href="aslayer_HFT.htm#HFT">HFT</a>, given its name. For the HFTs built into the Acrobat viewer, global variables containing the HFTs have been defined, so you can skip calling <a href="aslayer_ASExtension.htm#ASExtensionMgrGetHFT" title=" Gets the specified version of the Host Function Table (HFT) that has the specified name.">ASExtensionMgrGetHFT</a>() for these HFTs. </span>
+</td></tr>
+<tr><td><span><code>sel</code></span>
+</td><td><span>The entry in the <a href="aslayer_HFT.htm#HFT">HFT</a> to replace, derived from the method's name by appending <code>SEL</code>. For example, to replace AVAlert, <code>sel</code> must be <code>AVAlertSEL</code>. </span>
+</td></tr>
+<tr><td><span><code>newEntry</code></span>
+</td><td><span>The function to replace the current one. The function pointer must be converted to an <a href="aslayer_HFT.htm#HFTEntry" title=" An HFTEntry may be cast to a pointer to a function whose prototype must be provided by the HFT's description file.">HFTEntry</a> using the ASCallbackCreateReplacement() macro. </span>
+</td></tr>
+<tr><td><span><code>extension</code></span>
+</td><td><span>Plug-ins should pass in <code>gExtensionID</code> for this parameter (see the code for the Acrobat 5.0 version of the REPLACE macro). This parameter is stored by Acrobat so that any entries that were replaced by a plug-in can be unreplaced in the event that the plug-in unloads. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>The new entry's properties. Currently, only <a href="aslayer_HFT.htm#HFTEntryReplaceable" title=" A flag that specifies whether an HFT entry is replaceable: If the flag is set, the new entry can be replaced."><code>HFTEntryReplaceable</code></a> is defined. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#xmErrCannotReplaceSelector" title=" There was an attempt to replace an unreplaceable selector."><code>xmErrCannotReplaceSelector</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="HFTUnreplaceEntry"><strong><span style="color:grey;">HFTUnreplaceEntry</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:2030</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Removes the <code>oldEntry</code> item from <code>hft</code> at <code>sel</code> if the extension fields match. It allows <a href="aslayer_HFT.htm#HFT">HFT</a> replacements to be undone in cases such as with the DigSig plug-in, which replaces a method that Acrobat could use after DigSig unloads. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASExtension.htm#ASExtensionMgrGetHFT" title=" Gets the specified version of the Host Function Table (HFT) that has the specified name."><code>ASExtensionMgrGetHFT</code></a>
+<a href="aslayer_HFT.htm#HFTGetReplacedEntry" title=" Gets the HFTEntry that was replaced by the specified HFTEntry in the specified entry."><code>HFTGetReplacedEntry</code></a>
+<a href="aslayer_HFT.htm#HFTReplaceEntry" title=" Replaces the specified entry in the specified HFT."><code>HFTReplaceEntry</code></a>
+<a href="aslayer_HFT.htm#HFTReplaceEntryEx" title=" A new version of HFTReplaceEntry() that adds the extension argument."><code>HFTReplaceEntryEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>HFTUnreplaceEntry(</code><a href="aslayer_HFT.htm#HFT"><code>HFT</code></a> <code>hft</code><code>,</code> <a href="aslayer_HFT.htm#Selector" title=" Uniquely identifies an entry within an HFT."><code>Selector</code></a> <code>sel</code><code>,</code> <a href="aslayer_HFT.htm#HFTEntry" title=" An HFTEntry may be cast to a pointer to a function whose prototype must be provided by the HFT's description file."><code>HFTEntry</code></a> <code>oldEntry</code><code>,</code> <a href="aslayer_ASExtension.htm#ASExtension" title=" An opaque pointer to an object that identifies a specific loaded plug-in."><code>ASExtension</code></a> <code>extension</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>hft</code></span>
+</td><td><span>The <a href="aslayer_HFT.htm#HFT">HFT</a> in which a method is un-replaced. Use <a href="aslayer_ASExtension.htm#ASExtensionMgrGetHFT" title=" Gets the specified version of the Host Function Table (HFT) that has the specified name.">ASExtensionMgrGetHFT</a>() to get the <a href="aslayer_HFT.htm#HFT">HFT</a>, given its name. For the HFTs built into the Acrobat viewer, global variables containing the HFTs have been defined, so you can skip calling <a href="aslayer_ASExtension.htm#ASExtensionMgrGetHFT" title=" Gets the specified version of the Host Function Table (HFT) that has the specified name.">ASExtensionMgrGetHFT</a>() for these HFTs. </span>
+</td></tr>
+<tr><td><span><code>sel</code></span>
+</td><td><span>The entry in the <a href="aslayer_HFT.htm#HFT">HFT</a> to un-replace, derived from the method's name by appending <code>SEL</code>. For example, to replace AVAlert, <code>sel</code> must be <code>AVAlertSEL</code>. </span>
+</td></tr>
+<tr><td><span><code>oldEntry</code></span>
+</td><td><span>The old function to be replaced. The function pointer must be converted to an <a href="aslayer_HFT.htm#HFTEntry" title=" An HFTEntry may be cast to a pointer to a function whose prototype must be provided by the HFT's description file.">HFTEntry</a> using the ASCallbackCreateReplacement() macro. </span>
+</td></tr>
+<tr><td><span><code>extension</code></span>
+</td><td><span>An object of type <a href="aslayer_ASExtension.htm#ASExtension" title=" An opaque pointer to an object that identifies a specific loaded plug-in.">ASExtension</a>. </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

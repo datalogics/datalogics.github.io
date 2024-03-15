@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PD Layer: PDFLPrint</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PD Layer: PDFLPrint</h5>
+<li><a href="#Enumerations">Enumerations</a></li>
+<li><a href="#Structures">Structures</a></li>
+</ul></nav>
+<section id="Enumerations">
+<header><h2>PDFLPrint Enumerations</h2></header>
+<nav><dl>
+<dt><a href="#PDPrintWhat_Options">PDPrintWhat_Options</a></dt><dd> -  Passed to the PDDocWillPrintDocInMode() notification to specify the type of print operation being performed.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDPrintWhat_Options"><strong><span style="color:grey;">PDPrintWhat_Options</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:5420</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Passed to the PDDocWillPrintDocInMode() notification to specify the type of print operation being performed. 
+<p>Value options for <a href="pdlayer_PDDoc.htm#PDPrintWhat" title=" Passed to the PDDocWillPrintDocInMode() notification to specify the type of print operation being performed."><code>PDPrintWhat.</code></a> </span>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="PDPrintWhat_DOCUMENT"><code>PDPrintWhat_DOCUMENT</code></span>
+</td><td><span>Print only the document. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDPrintWhat_DOCUMENT_AND_COMMENTS"><code>PDPrintWhat_DOCUMENT_AND_COMMENTS</code></span>
+</td><td><span>Print the document and associated annotations (WYSIWYG-- the default for Acrobat 8.0 and later). </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDPrintWhat_DOCUMENT_AND_STAMPS"><code>PDPrintWhat_DOCUMENT_AND_STAMPS</code></span>
+</td><td><span>Print the document and stamp annotations. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDPrintWhat_FORM_FIELDS_ONLY"><code>PDPrintWhat_FORM_FIELDS_ONLY</code></span>
+</td><td><span>Print only the data within form fields. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDPrintWhat_COUNT"><code>PDPrintWhat_COUNT</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDPrintWhat_MIN"><code>PDPrintWhat_MIN</code><code>=</code><code>PDPrintWhat_DOCUMENT</code></span>
+</td><td><span></span>
+</td></tr></table>
+</section>
+</section>
+<section id="Structures">
+<header><h2>PDFLPrint Structures</h2></header>
+<nav><dl>
+<dt><a href="#PDTile">PDTile</a></dt><dd> -  Printing flags</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDTile"><strong><span style="color:grey;">PDTile</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:6094</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Printing flags </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct PDTile {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>overlap</code><code>;</code> </div>
+</td><td><span>The number of points to overlap (user interface units may be anything, clients convert to points). </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>center</code><code>;</code> </div>
+</td><td><span>Center the pages' contents on the physical paper. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>marksflags</code><code>;</code> </div>
+</td><td><span>Determines which printer marks to emit. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>paperWidth</code><code>;</code> </div>
+</td><td><span>The width of the paper (points). It is client-provided since the client has PPD access. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>paperHeight</code><code>;</code> </div>
+</td><td><span>The height of the paper (points). </span>
+</td></tr>
+<tr><td><div class="structMember"><code>char</code> <code>*</code><code>docTitle</code><code>;</code> </div>
+</td><td><span>The title string for the slug (optional). </span>
+</td></tr>
+<tr><td><div class="structMember"><code>char</code> <code>*</code><code>docDate</code><code>;</code> </div>
+</td><td><span>The date string for the slug (optional). </span>
+</td></tr>
+<tr><td><div class="structMember"><code>char</code> <code>*</code><code>docTime</code><code>;</code> </div>
+</td><td><span>The time string for the slug (optional). </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>col</code><code>;</code> </div>
+</td><td><span>The current column <code>(0</code><code>-</code> <code>numcols-1)</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>row</code><code>;</code> </div>
+</td><td><span>The current row. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>numCols</code><code>;</code> </div>
+</td><td><span>The number of columns for this page. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>numRows</code><code>;</code> </div>
+</td><td><span>The number of rows for this page. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>xOffset</code><code>;</code> </div>
+</td><td><span>The amount to shift right. First tile to center the entire image on the sheets. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>yOffset</code><code>;</code> </div>
+</td><td><span>The amount to shift down. </span>
+</td></tr>
+<tr><td><code id="PDTileRec"><code>}</code> <a href="pdlayer_PDFLPrint.htm#PDTile" title=" Printing flags"><code>PDTileRec</code></a><code>,</code> <code>*</code><a href="pdlayer_PDFLPrint.htm#PDTile" title=" Printing flags"><code>PDTile</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_PDFLPrint.htm#PDTileEx"><code>PDTileEx</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+
+</div>
+</body></html>

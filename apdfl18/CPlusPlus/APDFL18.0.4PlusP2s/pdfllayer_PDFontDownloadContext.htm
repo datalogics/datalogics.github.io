@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDFL Library Layer: PDFontDownloadContext</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDFL Library Layer: PDFontDownloadContext</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>PDFontDownloadContext Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDFontDownloadContext">PDFontDownloadContext</a></dt><dd> -  Maintains information about the current print job and what fonts have been downloaded.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDFontDownloadContext"><strong><span style="color:grey;">PDFontDownloadContext</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLExpT.h:1736</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Maintains information about the current print job and what fonts have been downloaded. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDFontDownloadContext</code> <code>*</code><code>PDFontDownloadContext</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_PDFontDownloadContext.htm#PDFontDownloadContextCreate" title=" Creates a font download context object."><code>PDFontDownloadContextCreate</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_PDFontDownloadContext.htm#PDFontDownloadContextDestroy" title=" Destroys a font download context object."><code>PDFontDownloadContextDestroy</code></a></td><td><a href="pdfllayer_PDFont.htm#PDFontStreamPS" title=" Emits a font into a specified stream."><code>PDFontStreamPS</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDFontDownloadContext Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDFontDownloadContextCreate">PDFontDownloadContextCreate</a></dt><dd> -  Creates a font download context object.</dd>
+<dt><a href="#PDFontDownloadContextDestroy">PDFontDownloadContextDestroy</a></dt><dd> -  Destroys a font download context object.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDFontDownloadContextCreate"><strong><span style="color:grey;">PDFontDownloadContextCreate</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:256</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a font download context object. This object keeps track of the fonts downloaded during a print job and whether substitution fonts have already been downloaded. It also tracks the font download parameters, such as <code>binaryOK</code> and <code>'emit</code> <code>TrueType</code> <code>as</code> <code>Type</code> <code>42'</code>. It is meant for use in the <a href="pdfllayer_PDFont.htm#PDFontStreamPS" title=" Emits a font into a specified stream.">PDFontStreamPS</a>() method. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDDoc.htm#PDDocPrintPages" title=" Prints a range of pages from a document, controlled by a structure of data and callbacks."><code>PDDocPrintPages</code></a>
+<a href="pdfllayer_PDFontDownloadContext.htm#PDFontDownloadContextDestroy" title=" Destroys a font download context object."><code>PDFontDownloadContextDestroy</code></a>
+<a href="pdfllayer_PDFont.htm#PDFontStreamPS" title=" Emits a font into a specified stream."><code>PDFontStreamPS</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdfllayer_PDFontDownloadContext.htm#PDFontDownloadContext" title=" Maintains information about the current print job and what fonts have been downloaded."><code>PDFontDownloadContext</code></a> <code>PDFontDownloadContextCreate(</code><a href="pdfllayer_PDFLPrint.htm#_t_PDPrintClient" title=" A data structure used by PDDocPrintPages()."><code>PDPrintClient</code></a> <code>client</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>client</code></span>
+</td><td><span>The client record to pass to <a href="pdfllayer_PDDoc.htm#PDDocPrintPages" title=" Prints a range of pages from a document, controlled by a structure of data and callbacks.">PDDocPrintPages</a>(). </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly-created context. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDFontDownloadContextDestroy"><strong><span style="color:grey;">PDFontDownloadContextDestroy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:264</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Destroys a font download context object. Call this method after <a href="pdfllayer_PDDoc.htm#PDDocPrintPages" title=" Prints a range of pages from a document, controlled by a structure of data and callbacks.">PDDocPrintPages</a>() returns. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDDoc.htm#PDDocPrintPages" title=" Prints a range of pages from a document, controlled by a structure of data and callbacks."><code>PDDocPrintPages</code></a>
+<a href="pdfllayer_PDFontDownloadContext.htm#PDFontDownloadContextCreate" title=" Creates a font download context object."><code>PDFontDownloadContextCreate</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDFontDownloadContextDestroy(</code><a href="pdfllayer_PDFontDownloadContext.htm#PDFontDownloadContext" title=" Maintains information about the current print job and what fonts have been downloaded."><code>PDFontDownloadContext</code></a> <code>context</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>context</code></span>
+</td><td><span>IN/OUT The context to destroy. </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

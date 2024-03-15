@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Additional functionality from Datalogics: PDPage</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Additional functionality from Datalogics: PDPage</h5>
+<li><a href="#Enumerations">Enumerations</a></li>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Enumerations">
+<header><h2>PDPage Enumerations</h2></header>
+<nav><dl>
+<dt><a href="#PDPageDeleteFlags">PDPageDeleteFlags</a></dt><dd> -  Page Deletion Flags.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDPageDeleteFlags"><strong><span style="color:grey;">PDPageDeleteFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:421</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Page Deletion Flags. </span>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="PDDeleteNormal"><code>PDDeleteNormal</code><code>=</code><code>1</code></span>
+</td><td><span>Normal page deletion. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="PDDeleteDoNotParseStructureTree"><code>PDDeleteDoNotParseStructureTree</code><code>=</code><code>2</code></span>
+</td><td><span>Do not parse Structure Tree. For documents with a complicated Structure Tree, parsing can be exhorbitantly slow, set this flag to bypass processing it. </span>
+</td></tr></table>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDDoc.htm#PDDocDeletePagesEx" title=" Deletes the specified pages."><code>PDDocDeletePagesEx</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>PDPage Structures</h2></header>
+<nav><dl>
+<dt><a href="#PDPageEnumInksParam">PDPageEnumInksParam</a></dt><dd> -  Control structure for PDPageEnumInksWithParams</dd>
+<dt><a href="#_t_PDPageDrawMParamsRec">_t_PDPageDrawMParamsRec</a></dt><dd> -  Parameters for PDPageDrawContentsToMemoryWith Params.</dd>
+<dt><a href="#_t_PDPageDrawWParamsRec">_t_PDPageDrawWParamsRec</a></dt><dd> - </dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDPageEnumInksParam"><strong><span style="color:grey;">PDPageEnumInksParam</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:251</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Control structure for <a href="dlextras_PDPage.htm#PDPageEnumInksWithParams" title=" Enumerates the inks for a page, using the supplied options specified in the parameters.">PDPageEnumInksWithParams</a> </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct PDPageEnumInksParam {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>size</code><code>;</code> </div>
+</td><td><span>Size of the record </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDPage.htm#PDPageEnumInksCallback" title=" Used for enumerating the inks on a page via PDPageEnumInks()."><code>PDPageEnumInksCallback</code></a> <code>callBack</code><code>;</code> </div>
+</td><td><span>Callback Procedure, will be called once for each ink </span>
+</td></tr>
+<tr><td><div class="structMember"><code>void</code> <code>*</code><code>clientData</code><code>;</code> </div>
+</td><td><span>client data passed to callback procedure </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>colorModel</code><code>;</code> </div>
+</td><td><div><span>Color Model being represented. This is an <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> of string, which may take one of 4 values: </span>
+
+<table class="ruled"><tr><th><span>Value</span>
+</th><th><span>Result</span>
+</th></tr>
+<tr><td><span><a href="aslayer_ASAtom.htm#ASAtomNull">ASAtomNull</a></span>
+</td><td><span>Only separation colors will be specified</span>
+</td></tr>
+<tr><td><span>"DeviceCMYK"</span>
+</td><td><span>Will report the 4 process colors, Cyan, Magenta, Yellow, and black, as well as the separation colors.</span>
+</td></tr>
+<tr><td><span>"DeviceRGB"</span>
+</td><td><span>Will report the 3 process colors, Red, Green, and Blue, and all separation colors.</span>
+</td></tr>
+<tr><td><span>"DeviceGray"</span>
+</td><td><span>Will report the process color Gray, as well as all separation colors.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>includeOPI</code><code>;</code> </div>
+</td><td><span>When <a href="aslayer_General.htm#true">true</a>, Include inks used in OPI content </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>suppressDuplicateNames</code><code>;</code> </div>
+</td><td><span>When True, Report only the first separation color for any given separation color name </span>
+</td></tr>
+<tr><td><code id="PDPageEnumInksParamRec"><code>}</code> <a href="dlextras_PDPage.htm#PDPageEnumInksParam" title=" Control structure for PDPageEnumInksWithParams"><code>PDPageEnumInksParamRec</code></a><code>,</code> <code>*</code><a href="dlextras_PDPage.htm#PDPageEnumInksParam" title=" Control structure for PDPageEnumInksWithParams"><code>PDPageEnumInksParam</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDPage.htm#PDPageEnumInksWithParams" title=" Enumerates the inks for a page, using the supplied options specified in the parameters."><code>PDPageEnumInksWithParams</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_PDPageDrawMParamsRec"><strong><span style="color:grey;">_t_PDPageDrawMParamsRec</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDPageDrawM.h:48</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Parameters for PDPageDrawContentsToMemoryWith Params. Parameters supplied in the real-valued members will override those that take the <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part.">ASFixed</a> types if both are non-NULL. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDPageDrawMParamsRec {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>size</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRect</code></a> <code>*</code><code>destRect</code><code>;</code> </div>
+</td><td><span>A pointer to the rectangle of the bitmap. It is defined in device space coordinates. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#_t_ASFixedRect" title=" A rectangle represented by the coordinates of its four sides."><code>ASFixedRect</code></a> <code>*</code><code>updateRect</code><code>;</code> </div>
+</td><td><span>A pointer to the rectangle to draw, defined in user space coordinates. Any objects outside of <code>updateRect</code> will not be drawn. All objects are drawn if <code>updateRect</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrix</code></a> <code>*</code><code>matrix</code><code>;</code> </div>
+</td><td><span>A pointer to the matrix to be concatenated onto the default page matrix. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>char</code> <code>*</code><code>buffer</code><code>;</code> </div>
+</td><td><span>A pointer to the bitmap data. If it is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, this function returns the size of the buffer needed for the bitmap. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#CancelProc"><code>CancelProc</code></a> <code>cancelProc</code><code>;</code> </div>
+</td><td><span>A method to call to check whether drawing should be cancelled. If the method returns <a href="aslayer_General.htm#true"><code>true</code></a>, drawing is stopped, nothing is erased, and the buffer contains whatever was drawn up to the current state. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>void</code> <code>*</code><code>cancelProcData</code><code>;</code> </div>
+</td><td><span>User-supplied data to pass to <code>cancelProc</code> each time it is called. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASSize_t"><code>ASSize_t</code></a> <code>bufferSize</code><code>;</code> </div>
+</td><td><span>The size of the buffer. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>csAtom</code><code>;</code> </div>
+</td><td><span>The color space in which the bitmap data is represented. It must be one of DeviceGray, DeviceRGB, or DeviceCMYK. It may also be DeviceN after 8.1.0. DeviceRGBA is a special colorspace known to PDFL Rendering that can be used to produce a RGBA Bitmap (RGB + Alpha or 32-bit). DeviceCMYKA is a special colorspace known to PDFL Rendering that can be used to produce a CMYKA Bitmap (CMYK + Alpha or 40-bit). </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>bpc</code><code>;</code> </div>
+</td><td><span>The number of bits per color component in the bitmap data. <code>8</code> is the only valid value for DeviceCMYK, DeviceRGB and DeviceN color spaces. <code>1</code>, <code>8</code>, and <code>24</code> are valid for DeviceGray. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>smoothFlags</code><code>;</code> </div>
+</td><td><div><UL>A bit field of <a href="pdfllayer_PDPage.htm#PDPageDrawSmoothFlags" title=" Bit flags indicating how a page is rendered.">PDPageDrawSmoothFlags</a>(). It must be an <code>OR</code> of the following flags:<br/><li> <a href="pdfllayer_PDPage.htm#kPDPageDrawSmoothText" title=" Draw smooth text.">kPDPageDrawSmoothText</a><br/><li> <a href="pdfllayer_PDPage.htm#kPDPageDrawSmoothLineArt" title=" Draw smooth line art.">kPDPageDrawSmoothLineArt</a><br/><li> <a href="pdfllayer_PDPage.htm#kPDPageDrawSmoothImage" title=" Draw smooth image.">kPDPageDrawSmoothImage</a><br/><li> <a href="pdfllayer_PDPage.htm#kPDPageDrawSmoothBicubicImage" title=" Draw smooth image using bicubic resampling.">kPDPageDrawSmoothBicubicImage</a><br/><li> <a href="pdfllayer_PDPage.htm#kPDPageImageResampleBicubic" title=" Discrete control over image re-sampling.">kPDPageImageResampleBicubic</a><br/><li> <a href="pdfllayer_PDPage.htm#kPDPageImageResampleLinear" title=" Discrete control over image re-sampling.">kPDPageImageResampleLinear</a><br/><li> <a href="pdfllayer_PDPage.htm#kPDPageImageAntiAlias" title=" Discrete control over image anti-aliasing.">kPDPageImageAntiAlias</a><br/><li> <a href="pdfllayer_PDPage.htm#kPDPageDrawSmoothAATextDDR" title=" kPDPageDrawSmoothAATextDDR will enable text smoothing (antialiasing) using the DDR sub-pixel antialiasing algorithm.">kPDPageDrawSmoothAATextDDR</a><br/><li> <a href="pdfllayer_PDPage.htm#kPDPageDrawSmoothAATextPreview" title=" kPDPageDrawSmoothAATextPreview will enable special text rendering and anti-aliasing for better visual results when generating images at lower resolutions intended for on-screen viewing.">kPDPageDrawSmoothAATextPreview</a><br/></UL>
+</div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>;</code> </div>
+</td><td><div><span>A bit field of <a href="pdfllayer_PDPage.htm#PDPageDrawFlags" title=" Bit flags indicating how a page is rendered.">PDPageDrawFlags</a>. It must be an <code>OR</code> of the following flags: </span>
+
+<table class="ruled"><tr><th><span>Flag</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdfllayer_PDPage.htm#kPDPageDoLazyErase" title=" Erase the page while rendering only as needed.">kPDPageDoLazyErase</a></span>
+</td><td><span>If set, it erases the bitmap if the first object drawn does not cover the page's entire crop box.</span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_PDPage.htm#kPDPageUseAnnotFaces" title=" Draw annotation appearances.">kPDPageUseAnnotFaces</a></span>
+</td><td><span>If set, it draws annotations that have a default face, such as the visible fields in an Acrobat form. Text and link annotations are not drawn.</span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_PDPage.htm#kPDPageIsPrinting" title=" The page is being printed.">kPDPageIsPrinting</a></span>
+</td><td><span>If set, then form annotations are rendered as if they are being printed. This means that form fields marked as 'Hidden but printable' are rendered, but fields marked as 'Visible but doesn't print' will not be rendered. If it is not set, then form annotations are rendered as if they are being viewed. This means that form fields marked as 'Hidden but printable' are not rendered, but fields marked as 'Visible but doesn't print' will be.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>bypassCopyPerm</code><code>;</code> </div>
+</td><td><span>Bypass copy permissions </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASDouble.htm#_t_ASRealRect"><code>ASRealRect</code></a> <code>*</code><code>asRealDestRect</code><code>;</code> </div>
+</td><td><span>A pointer to the rectangle of the bitmap expressed with real values. It is defined in device space coordinates. It must be set if destRect is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASDouble.htm#_t_ASRealRect"><code>ASRealRect</code></a> <code>*</code><code>asRealUpdateRect</code><code>;</code> </div>
+</td><td><span>A pointer to the rectangle to draw, defined in user space coordinates and expressed in real values. Any objects outside of <code>updateRect</code> will not be drawn. All objects are drawn if <code>updateRect</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. Not supported yet, hopefully soon. Right now, it is internally truncated to a set of <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part.">ASFixed</a> types. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASDouble.htm#_t_ASRealMatrix"><code>ASRealMatrix</code></a> <code>*</code><code>asRealMatrix</code><code>;</code> </div>
+</td><td><span>A pointer to the matrix to be concatenated onto the default page matrix, expressed as real values. It must be set if matrix is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="acrocolor_acrocolor.htm#AC_Profile"><code>AC_Profile</code></a> <code>iccProfile</code><code>;</code> </div>
+</td><td><span>Specifies the characteristics of the colorspace used for rasterization; make sure it is compatible with the csAtom supplied. For RGB and RGBA, this defaults to sRGB if not specified. For Lab and LabA, this defaults to the CIE 1976 L *a *b definition w/ a D50 white point. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="acrocolor_acrocolor.htm#AC_RenderIntent" title=" Constants that specify a standard ICC rendering intent for a device color profile."><code>AC_RenderIntent</code></a> <code>renderIntent</code><code>;</code> </div>
+</td><td><span>The render intent should ALWAYS be specified. The "normal" behavior for APDFL color conversions is to use one single intent, the intent specified in the source element, for both the source to PCS and PCS to destination conversions. When we specify an ICC Profile above, and an intent below, we will NOT do that, instead, we will use the element specified intent for the source to PCS conversion, and the specified intent for the PCS to destination conversion. To that end, a new intent <a href="acrocolor_acrocolor.htm#AC_UseGStateIntent" title=" This intent can be used ONLY in PDPageDrawContentsToMemoryWithParams.">AC_UseGStateIntent</a> is defined. When this intent is used here, we will revert to the "normal" color conversion using only the element's specified intent. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>clientOCContext</code><code>;</code> </div>
+</td><td><div><p>An optional-content context that determines what contents are visible. <a href="aslayer_General.htm#NULL"><code>NULL</code></a> uses the document's optional-content context, as returned by <a href="pdlayer_PDDoc.htm#PDDocGetOCContext" title=" Gets the built-in default optional-content context for the document."><code>PDDocGetOCContext</code></a><code>(pddoc)</code>, which is equivalent to calling the version of the method without optional content parameters.<br/>
+<p>This context is copied and the copy is used in drawing. This allows a client to change its copy of the context without raising an exception.<br/></p>
+</div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>deviceNColorSize</code><code>;</code> </div>
+</td><td><span>The size of the colorants array if the user specifies "DeviceN" as the csAtom above. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>*</code><code>deviceNColorCount</code><code>;</code> </div>
+</td><td><span>The number of colorants present in the bitmap if the user specifies "DeviceN" as the csAtom above. If the color count is set to zero on entry to the routine, the array of colorants will be filled in with the colors actually used on the page, starting with the 4 process colorants (C M Y and K) which will always be present. If color count is set to a non zero value on entry to the call, a bitmap will be constructed which contains the specified colorants, in the specified order. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDPage.htm#_t_PDPageInkRec" title=" Represents an ink used on a page."><code>PDPageInkRec</code></a> <code>*</code><code>deviceNColorInks</code><code>;</code> </div>
+</td><td><span>A pointer to an array of desriptions of process or seperation colorants, if the user specifies "DeviceN" as the csAtom above. If the pointer to deviceNColorInks is a null pointer, the value at deviceNColorCount will be set to the number of inks present on the page, but no bitmap will be drawn. Any colorants on the page not present in this array will be ignored. Colorants specified but not present on the page will have their channels set to zero. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASProgressProc"><code>ASProgressProc</code></a> <code>progressProc</code><code>;</code> </div>
+</td><td><span>A pointer to a callback function for monitoring progress. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>void</code> <code>*</code><code>progressProcClientData</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><code id="PDPageDrawMParamsRec"><code>}</code> <a href="dlextras_PDPage.htm#_t_PDPageDrawMParamsRec" title=" Parameters for PDPageDrawContentsToMemoryWith Params."><code>PDPageDrawMParamsRec</code></a><code>,</code> <code>*</code><a href="dlextras_PDPage.htm#_t_PDPageDrawMParamsRec" title=" Parameters for PDPageDrawContentsToMemoryWith Params."><code>PDPageDrawMParams</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDPage.htm#PDPageDrawContentsToMemoryWithParams" title=" Renders a page to memory."><code>PDPageDrawContentsToMemoryWithParams</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_PDPageDrawWParamsRec"><strong><span style="color:grey;">_t_PDPageDrawWParamsRec</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDPageDrawM.h:198</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDPageDrawWParamsRec {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>size</code><code>;</code> </div>
+</td><td><span>The size of the data structure. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrix</code></a> <code>*</code><code>matrix</code><code>;</code> </div>
+</td><td><span>A pointer to the matrix to be concatenated onto the default page matrix. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASDouble.htm#_t_ASRealMatrix"><code>ASRealMatrix</code></a> <code>*</code><code>asRealMatrix</code><code>;</code> </div>
+</td><td><span>A pointer to the matrix to be concatenated onto the default page matrix, expressed as real values. It must be set if matrix is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>void</code> <code>*</code><code>window</code><code>;</code> </div>
+</td><td><span>A pointer to a platform-dependent window object ( <code>HWND</code> on Windows <code>WindowPtr</code>, or <code>CWindowPtr</code> on Mac OS). On Windows, to draw into an offscreen <code>DC</code>, pass <a href="aslayer_General.htm#NULL"><code>NULL</code></a> for <code>window</code>. On Mac OS, to draw into an offscreen <code>GWorld</code>, pass <a href="aslayer_General.htm#NULL"><code>NULL</code></a> in window and pass the <code>GWorldPtr</code> in <code>displayContext</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>void</code> <code>*</code><code>displayContext</code><code>;</code> </div>
+</td><td><span>A platform-dependent display context structure ( <code>HDC</code> on Windows, <code>GWorldPtr</code> on Mac OS). On Mac OS, <code>displayContext</code> is ignored if <code>window</code> is non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>;</code> </div>
+</td><td><div><span>A bit field of <a href="pdfllayer_PDPage.htm#PDPageDrawFlags" title=" Bit flags indicating how a page is rendered.">PDPageDrawFlags</a>. It must be an <code>OR</code> of the following flags: </span>
+
+<table class="ruled"><tr><th><span>Flag</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><a href="pdfllayer_PDPage.htm#kPDPageDoLazyErase" title=" Erase the page while rendering only as needed.">kPDPageDoLazyErase</a></span>
+</td><td><span>If set, it erases the bitmap if the first object drawn does not cover the page's entire crop box.</span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_PDPage.htm#kPDPageUseAnnotFaces" title=" Draw annotation appearances.">kPDPageUseAnnotFaces</a></span>
+</td><td><span>If set, it draws annotations that have a default face, such as the visible fields in an Acrobat form. Text and link annotations are not drawn.</span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_PDPage.htm#kPDPageIsPrinting" title=" The page is being printed.">kPDPageIsPrinting</a></span>
+</td><td><span>If set, then form annotations are rendered as if they are being printed. This means that form fields marked as 'Hidden but printable' are rendered, but fields marked as 'Visible but doesn't print' will not be rendered. If it is not set, then form annotations are rendered as if they are being viewed. This means that form fields marked as 'Hidden but printable' are not rendered, but fields marked as 'Visible but doesn't print' will be.</span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>clientOCContext</code><code>;</code> </div>
+</td><td><div><p>An optional-content context that determines what contents are visible. <a href="aslayer_General.htm#NULL"><code>NULL</code></a> uses the document's optional-content context, as returned by <a href="pdlayer_PDDoc.htm#PDDocGetOCContext" title=" Gets the built-in default optional-content context for the document."><code>PDDocGetOCContext</code></a><code>(pddoc)</code>, which is equivalent to calling the version of the method without optional content parameters.<br/>
+<p>This context is copied and the copy is used in drawing. This allows a client to change its copy of the context without raising an exception.<br/></p>
+</div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>flattenNoLimit</code><code>;</code> </div>
+</td><td><span>Controls if the Flattening process has no limit. * When the specified Device Content is a Printer Device and the document contains Transparency, it will be Flattened as an initial * step. By default the flattening process has in force limits because otherwise processing can be costly. When output quality is * critical however you can set this flag to <a href="aslayer_General.htm#true">true</a> to ignore those limits and let the Flattener take as much time and resources as * needed to produce a result. </span>
+</td></tr>
+<tr><td><code id="PDPageDrawWParamsRec"><code>}</code> <a href="dlextras_PDPage.htm#_t_PDPageDrawWParamsRec"><code>PDPageDrawWParamsRec</code></a><code>,</code> <code>*</code><a href="dlextras_PDPage.htm#_t_PDPageDrawWParamsRec"><code>PDPageDrawWParams</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDPage.htm#PDPageDrawContentsToWindowWithParams" title=" Renders a page to a (platform-dependent) window."><code>PDPageDrawContentsToWindowWithParams</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDPage Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDPageDrawContentsToMemoryWithParams">PDPageDrawContentsToMemoryWithParams</a></dt><dd> -  Renders a page to memory.</dd>
+<dt><a href="#PDPageDrawContentsToWindowWithParams">PDPageDrawContentsToWindowWithParams</a></dt><dd> -  Renders a page to a (platform-dependent) window.</dd>
+<dt><a href="#PDPageEnumInksWithParams">PDPageEnumInksWithParams</a></dt><dd> -  Enumerates the inks for a page, using the supplied options specified in the parameters.</dd>
+<dt><a href="#PDPageSetBlendingProfile">PDPageSetBlendingProfile</a></dt><dd> -  This function sets the blending profile for a PD page for the duration of of the PDPage.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDPageDrawContentsToMemoryWithParams"><strong><span style="color:grey;">PDPageDrawContentsToMemoryWithParams</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:47</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><UL>Renders a page to memory. For use in rasterizing pages for viewing or previewing. This call supports the same rasterization parameters as <a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemory" title=" Superseded by PDPageDrawContentsToMemoryEx() in Acrobat 10.0.">PDPageDrawContentsToMemory</a>, and also allows users to specify these additional arguments:<br/><li> The destination rectangle (in <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part.">ASFixed</a> or <a href="aslayer_ASDouble.htm#ASReal" title=" Definition of ASReal.">ASReal</a> notation)<br/><li> The update rectangle (in <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part.">ASFixed</a> notation)<br/><li> The transformation matrix (in <a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part.">ASFixed</a> or <a href="aslayer_ASDouble.htm#ASReal" title=" Definition of ASReal.">ASReal</a> notation)<br/><li> The colorspace to use, as a named colorspace or as a color profile<br/><li> The rendering intent to use for rendering<br/><li> A request to ignore restrictions on content copying &amp; page extraction<br/><li> Default profile for uncalibrated RGB<br/></UL>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdfllayer_PDPage.htm#PDPageDrawContentsToMemory" title=" Superseded by PDPageDrawContentsToMemoryEx() in Acrobat 10.0."><code>PDPageDrawContentsToMemory</code></a>
+<a href="dlextras_PDPage.htm#PDPageDrawContentsToWindowWithParams" title=" Renders a page to a (platform-dependent) window."><code>PDPageDrawContentsToWindowWithParams</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASSize_t"><code>ASSize_t</code></a> <code>PDPageDrawContentsToMemoryWithParams(</code><a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document."><code>PDPage</code></a> <code>page</code><code>,</code> <a href="dlextras_PDPage.htm#_t_PDPageDrawMParamsRec" title=" Parameters for PDPageDrawContentsToMemoryWith Params."><code>PDPageDrawMParams</code></a> <code>drawParams</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>page</code></span>
+</td><td><span>The <a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document.">PDPage</a> to be rendered. </span>
+</td></tr>
+<tr><td><span><code>drawParams</code></span>
+</td><td><span>Set of parameters describing how to rasterize the supplied <a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document.">PDPage</a>, rasterizing the <a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document.">PDPage</a> into a memory buffer supplied in the parameter set. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>the size of the buffer required to rasterize the <a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document.">PDPage</a> if the buffer is not supplied and the length of the buffer is specified as <code>0</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDPageDrawContentsToWindowWithParams"><strong><span style="color:grey;">PDPageDrawContentsToWindowWithParams</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:65</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Renders a page to a (platform-dependent) window. For use in rasterizing pages for viewing or previewing. This API accepts a structure of type <a href="dlextras_PDPage.htm#_t_PDPageDrawWParamsRec">PDPageDrawWParams</a>, which includes a set of ASReal-based values in the same manner as <a href="dlextras_PDPage.htm#PDPageDrawContentsToMemoryWithParams" title=" Renders a page to memory.">PDPageDrawContentsToMemoryWithParams</a>. It is intended to address overflow or underflow issues with the ASFixed-based drawing APIs when rendering a page to a window object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDPage.htm#PDPageDrawContentsToMemoryWithParams" title=" Renders a page to memory.">PDPageDrawContentsToMemoryWithParams</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPageDrawContentsToWindowWithParams(</code><a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document."><code>PDPage</code></a> <code>page</code><code>,</code> <a href="dlextras_PDPage.htm#_t_PDPageDrawWParamsRec"><code>PDPageDrawWParams</code></a> <code>drawParams</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>page</code></span>
+</td><td><span>The <a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document.">PDPage</a> to be rendered. </span>
+</td></tr>
+<tr><td><span><code>drawParams</code></span>
+</td><td><span>Set of parameters describing how to rasterize the supplied <a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document.">PDPage</a> to a platform-dependent window object. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPageEnumInksWithParams"><strong><span style="color:grey;">PDPageEnumInksWithParams</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:722</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Enumerates the inks for a page, using the supplied options specified in the parameters. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPageEnumInksWithParams(</code><a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document."><code>PDPage</code></a> <code>Page</code><code>,</code> <a href="dlextras_PDPage.htm#PDPageEnumInksParam" title=" Control structure for PDPageEnumInksWithParams"><code>PDPageEnumInksParam</code></a> <code>Params</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>Page</code></span>
+</td><td><span>The page of interest. </span>
+</td></tr>
+<tr><td><span><code>Params</code></span>
+</td><td><span>The parameters describing options for enumerating inks. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDPageSetBlendingProfile"><strong><span style="color:grey;">PDPageSetBlendingProfile</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:482</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>This function sets the blending profile for a PD page for the duration of of the <a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document.">PDPage</a>. Effectively, this creates an isolated page level, a non-knockout transparency group with the specified profile for the page. This apparent group will be used in rendering the page, but it is not preserved when the document is saved. In order to create a persistent transparency group, the user must add a "Group" entry to the page dictionary. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDPageSetBlendingProfile(</code><a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document."><code>PDPage</code></a> <code>page</code><code>,</code> <a href="acrocolor_acrocolor.htm#AC_Profile"><code>AC_Profile</code></a> <code>profile</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>page</code></span>
+</td><td><span>The <a href="pdlayer_PDPage.htm#PDPage" title=" A single page in the PDF representation of a document.">PDPage</a> to be rendered. </span>
+</td></tr>
+<tr><td><span><code>profile</code></span>
+</td><td><span>The color blending profile to be used when rendering. </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

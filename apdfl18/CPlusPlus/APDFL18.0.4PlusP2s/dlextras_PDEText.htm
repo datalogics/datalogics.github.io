@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Additional functionality from Datalogics: PDEText</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Additional functionality from Datalogics: PDEText</h5>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Functions">
+<header><h2>PDEText Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDETextAddASText">PDETextAddASText</a></dt><dd> -  Adds a character or a text run to a PDEText object, taking them from the ASText; thus Unicode characters can be placed in the PDEText.</dd>
+<dt><a href="#PDETextGetASText">PDETextGetASText</a></dt><dd> -  Gets the text for a text run or character.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDETextAddASText"><strong><span style="color:grey;">PDETextAddASText</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:346</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Adds a character or a text run to a <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a> object, taking them from the <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a>; thus Unicode characters can be placed in the <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a>. This function will accept characters that are not representable in the given font; such characters will be replaced with the.notdef glyph.<br/>
+<p>An exception will be raised if the supplied font is incompatible with the API. Such may happen, for example, if font is a Type 1 font or if the font is retrieved from an existing PDF document.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="dlextras_PDEFont.htm#PDEFontCheckASTextIsRepresentable" title=" Routine to check that the entire contents of an ASText are representable in the font."><code>PDEFontCheckASTextIsRepresentable</code></a>
+<a href="dlextras_PDEText.htm#PDETextGetASText" title=" Gets the text for a text run or character."><code>PDETextGetASText</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextAddASText(</code><a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>text</code><code>,</code> <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>font</code><code>,</code> <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element."><code>PDEGraphicStateP</code></a> <code>gstateP</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>gstateLen</code><code>,</code> <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element."><code>PDETextStateP</code></a> <code>tstateP</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>tstateLen</code><code>,</code> <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers."><code>ASFixedMatrixP</code></a> <code>textMatrixP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>The text object to which a character or text run is added. </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies what kind of text to add. </span>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The index after which to add the character or text run. </span>
+</td></tr>
+<tr><td><span><code>text</code></span>
+</td><td><span>An <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> containing the text to add </span>
+</td></tr>
+<tr><td><span><code>font</code></span>
+</td><td><span>The <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> for the element. Its type must be 'Type0' or 'TrueType'. </span>
+</td></tr>
+<tr><td><span><code>gstateP</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_General.htm#_t_PDEGraphicState" title=" Attributes of a PDEElement or a PDEText sub-element.">PDEGraphicStateP</a> structure with the graphics state for the element. </span>
+</td></tr>
+<tr><td><span><code>gstateLen</code></span>
+</td><td><span>The length of the graphics state for the element. </span>
+</td></tr>
+<tr><td><span><code>tstateP</code></span>
+</td><td><span>A pointer to a <a href="pdelayer_PDEText.htm#_t_PDETextState" title=" Attributes of a PDEText element.">PDETextState</a> structure with the text state for the element. </span>
+</td></tr>
+<tr><td><span><code>tstateLen</code></span>
+</td><td><span>The length of the text state for the element. </span>
+</td></tr>
+<tr><td><span><code>textMatrixP</code></span>
+</td><td><span>A pointer to an <a href="aslayer_ASFixed.htm#_t_ASFixedMatrix" title=" Matrix containing fixed numbers.">ASFixedMatrix</a> that holds the matrix for the element. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDETextGetASText"><strong><span style="color:grey;">PDETextGetASText</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:394</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the text for a text run or character. The <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> associated with the <a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text.">PDEText</a> must contain a ToUnicode table unless the descendant CIDFont uses the Adobe-GB1, Adobe-CNS1, Adobe-Japan1, or Adobe-Korea1 character collection. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="dlextras_PDEText.htm#PDETextAddASText" title=" Adds a character or a text run to a PDEText object, taking them from the ASText; thus Unicode characters can be placed in the PDEText.">PDETextAddASText</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDETextGetASText(</code><a href="pdelayer_PDEText.htm#PDEText" title=" A PDEElement representing text."><code>PDEText</code></a> <code>pdeText</code><code>,</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>flags</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>text</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeText</code></span>
+</td><td><span>A text object containing a character or text run whose text is found </span>
+</td></tr>
+<tr><td><span><code>flags</code></span>
+</td><td><span>A <a href="pdelayer_PDEText.htm#PDETextFlags" title=" A bit field used in PDEText methods.">PDETextFlags</a> that specifies whether index refers to a character or a text run. </span>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The index of the character or text run in pdeText </span>
+</td></tr>
+<tr><td><span><code>text</code></span>
+</td><td><span>An <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> that is filled with the text from the text item </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

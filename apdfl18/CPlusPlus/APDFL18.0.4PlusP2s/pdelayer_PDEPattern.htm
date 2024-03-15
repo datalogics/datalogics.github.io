@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDF Edit Layer: PDEPattern</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDF Edit Layer: PDEPattern</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>PDEPattern Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDEPattern">PDEPattern</a></dt><dd> -  A reference to a Pattern resource used on a page in a PDF file.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEPattern"><strong><span style="color:grey;">PDEPattern</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:352</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A reference to a Pattern resource used on a page in a PDF file. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDEPattern</code> <code>*</code><code>PDEPattern</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEPattern.htm#PDEPatternCreate" title=" Creates a pattern object that can be used for a Pattern color space."><code>PDEPatternCreate</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEPattern.htm#PDEPatternGetCosObj" title=" Gets a Cos object corresponding to a pattern object."><code>PDEPatternGetCosObj</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDEPattern Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDEPatternCreate">PDEPatternCreate</a></dt><dd> -  Creates a pattern object that can be used for a Pattern color space.</dd>
+<dt><a href="#PDEPatternGetCosObj">PDEPatternGetCosObj</a></dt><dd> -  Gets a Cos object corresponding to a pattern object.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEPatternCreate"><strong><span style="color:grey;">PDEPatternCreate</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1229</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a pattern object that can be used for a Pattern color space. See the description of Patterns in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 8.7, page 173. This document is provided on the web site of the International Standards Organization (ISO).<br/>
+<p>Call <a href="pdelayer_PDEObject.htm#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned pattern object when finished with it.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEPattern.htm#PDEPatternGetCosObj" title=" Gets a Cos object corresponding to a pattern object.">PDEPatternGetCosObj</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEPattern.htm#PDEPattern" title=" A reference to a Pattern resource used on a page in a PDF file."><code>PDEPattern</code></a> <code>PDEPatternCreate(</code><code>const</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>cosObjP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>cosObjP</code></span>
+</td><td><span>IN/OUT A <a href="coslayer_CosObj.htm#CosObj">CosObj</a> stream for the pattern. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A pattern. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDEPatternGetCosObj"><strong><span style="color:grey;">PDEPatternGetCosObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1428</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets a Cos object corresponding to a pattern object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdelayer_PDEPattern.htm#PDEPatternCreate" title=" Creates a pattern object that can be used for a Pattern color space.">PDEPatternCreate</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEPatternGetCosObj(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEPattern.htm#PDEPattern" title=" A reference to a Pattern resource used on a page in a PDF file."><code>PDEPattern</code></a> <code>pattern</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>*</code><code>cosObjP</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pattern</code></span>
+</td><td><span>IN/OUT The pattern whose Cos object is obtained. </span>
+</td></tr>
+<tr><td><span><code>cosObjP</code></span>
+</td><td><span>IN/OUT (Filled by the method) The Cos object for the pattern. </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

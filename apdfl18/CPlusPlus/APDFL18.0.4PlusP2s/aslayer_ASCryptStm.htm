@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Acro Support Layer: ASCryptStm</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Acro Support Layer: ASCryptStm</h5>
+<li><a href="#Definitions">Definitions</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#CallbackSignatures">Callback Signatures</a></li>
+<li><a href="#Structures">Structures</a></li>
+</ul></nav>
+<section id="Definitions">
+<header><h2>ASCryptStm Definitions</h2></header>
+<nav><dl>
+<dt><a href="#ASCRYPTSTM_EOF">ASCRYPTSTM_EOF</a></dt><dd> - </dd>
+<dt><a href="#ASCryptStmModeEOF">ASCryptStmModeEOF</a></dt><dd> - </dd>
+<dt><a href="#ASCryptStmModeRead">ASCryptStmModeRead</a></dt><dd> - </dd>
+<dt><a href="#ASCryptStmModeWrite">ASCryptStmModeWrite</a></dt><dd> - </dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASCRYPTSTM_EOF"><strong><span style="color:grey;">ASCRYPTSTM_EOF</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:292</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASCRYPTSTM_EOF</code> <code>(</code> <code>-</code> <code>1</code> <code>)</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="ASCryptStmModeEOF"><strong><span style="color:grey;">ASCryptStmModeEOF</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:303</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASCryptStmModeEOF</code> <code>0x0004</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="ASCryptStmModeRead"><strong><span style="color:grey;">ASCryptStmModeRead</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:301</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASCryptStmModeRead</code> <code>0x0001</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="ASCryptStmModeWrite"><strong><span style="color:grey;">ASCryptStmModeWrite</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:302</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASCryptStmModeWrite</code> <code>0x0002</code> </code>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>ASCryptStm Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#ASCryptStm">ASCryptStm</a></dt><dd> -  An ASStm object cover used for a cryptographic filter's stream callbacks.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASCryptStm"><strong><span style="color:grey;">ASCryptStm</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:310</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>An <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a> object cover used for a cryptographic filter's stream callbacks. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <a href="aslayer_ASCryptStm.htm#_t_ASCryptStmRec" title=" An ASStm object cover used for a cryptographic filter's stream callbacks."><code>_t_ASCryptStmRec</code></a> <code>*</code><code>ASCryptStm</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCryptStm.htm#ASCryptStmFCloseProc" title=" A callback for ASCryptStm."><code>ASCryptStmFCloseProc</code></a></td><td><a href="aslayer_ASCryptStm.htm#ASCryptStmFFlushProc" title=" A callback for ASCryptStm."><code>ASCryptStmFFlushProc</code></a></td></tr>
+<tr><td><a href="aslayer_ASCryptStm.htm#ASCryptStmFPutEOFProc" title=" A callback for ASCryptStm."><code>ASCryptStmFPutEOFProc</code></a></td><td><a href="aslayer_ASCryptStm.htm#ASCryptStmFResetProc" title=" A callback for ASCryptStm."><code>ASCryptStmFResetProc</code></a></td></tr>
+<tr><td><a href="aslayer_ASCryptStm.htm#ASCryptStmFilBufProc" title=" A callback for ASCryptStm."><code>ASCryptStmFilBufProc</code></a></td><td><a href="aslayer_ASCryptStm.htm#ASCryptStmFlsBufProc" title=" A callback for ASCryptStm."><code>ASCryptStmFlsBufProc</code></a></td></tr>
+<tr><td><a href="aslayer_ASCryptStm.htm#ASCryptStmUnGetcProc" title=" A callback for ASCryptStm."><code>ASCryptStmUnGetcProc</code></a></td><td><a href="pdlayer_PDCrypt.htm#PDCryptFilterStreamProc" title=" (Optional) A callback for PDCryptFilterHandler."><code>PDCryptFilterStreamProc</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="CallbackSignatures">
+<header><h2>ASCryptStm Callback Signatures</h2></header>
+<nav><dl>
+<dt><a href="#ASCryptStmFCloseProc">ASCryptStmFCloseProc</a></dt><dd> -  A callback for ASCryptStm.</dd>
+<dt><a href="#ASCryptStmFFlushProc">ASCryptStmFFlushProc</a></dt><dd> -  A callback for ASCryptStm.</dd>
+<dt><a href="#ASCryptStmFPutEOFProc">ASCryptStmFPutEOFProc</a></dt><dd> -  A callback for ASCryptStm.</dd>
+<dt><a href="#ASCryptStmFResetProc">ASCryptStmFResetProc</a></dt><dd> -  A callback for ASCryptStm.</dd>
+<dt><a href="#ASCryptStmFilBufProc">ASCryptStmFilBufProc</a></dt><dd> -  A callback for ASCryptStm.</dd>
+<dt><a href="#ASCryptStmFlsBufProc">ASCryptStmFlsBufProc</a></dt><dd> -  A callback for ASCryptStm.</dd>
+<dt><a href="#ASCryptStmUnGetcProc">ASCryptStmUnGetcProc</a></dt><dd> -  A callback for ASCryptStm.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASCryptStmFCloseProc"><strong><span style="color:grey;">ASCryptStmFCloseProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:381</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A callback for <a href="aslayer_ASCryptStm.htm#_t_ASCryptStmRec" title=" An ASStm object cover used for a cryptographic filter's stream callbacks.">ASCryptStm</a>. This closes a security stream. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFFlushProc" title=" A callback for ASCryptStm."><code>ASCryptStmFFlushProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFPutEOFProc" title=" A callback for ASCryptStm."><code>ASCryptStmFPutEOFProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFResetProc" title=" A callback for ASCryptStm."><code>ASCryptStmFResetProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFilBufProc" title=" A callback for ASCryptStm."><code>ASCryptStmFilBufProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFlsBufProc" title=" A callback for ASCryptStm."><code>ASCryptStmFlsBufProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmUnGetcProc" title=" A callback for ASCryptStm."><code>ASCryptStmUnGetcProc</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>ASCryptStmFCloseProc(</code><a href="aslayer_ASCryptStm.htm#_t_ASCryptStmRec" title=" An ASStm object cover used for a cryptographic filter's stream callbacks."><code>ASCryptStm</code></a> <code>stm</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>stm</code></span>
+</td><td><span>The security stream to be closed. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><code>0</code> when successful, a non-zero error code otherwise. </span>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCryptStm.htm#ASCryptStmProcs" title=" Callback procs for ASCryptStm"><code>ASCryptStmProcs</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASCryptStmFFlushProc"><strong><span style="color:grey;">ASCryptStmFFlushProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:369</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A callback for <a href="aslayer_ASCryptStm.htm#_t_ASCryptStmRec" title=" An ASStm object cover used for a cryptographic filter's stream callbacks.">ASCryptStm</a>. This flushes a dirty buffer if necessary. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFCloseProc" title=" A callback for ASCryptStm."><code>ASCryptStmFCloseProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFPutEOFProc" title=" A callback for ASCryptStm."><code>ASCryptStmFPutEOFProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFResetProc" title=" A callback for ASCryptStm."><code>ASCryptStmFResetProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFilBufProc" title=" A callback for ASCryptStm."><code>ASCryptStmFilBufProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFlsBufProc" title=" A callback for ASCryptStm."><code>ASCryptStmFlsBufProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmUnGetcProc" title=" A callback for ASCryptStm."><code>ASCryptStmUnGetcProc</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>ASCryptStmFFlushProc(</code><a href="aslayer_ASCryptStm.htm#_t_ASCryptStmRec" title=" An ASStm object cover used for a cryptographic filter's stream callbacks."><code>ASCryptStm</code></a> <code>stm</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>stm</code></span>
+</td><td><span>The security stream to be flushed. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><code>0</code> when successful, a non-zero error code otherwise. </span>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCryptStm.htm#ASCryptStmProcs" title=" Callback procs for ASCryptStm"><code>ASCryptStmProcs</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASCryptStmFPutEOFProc"><strong><span style="color:grey;">ASCryptStmFPutEOFProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:407</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A callback for <a href="aslayer_ASCryptStm.htm#_t_ASCryptStmRec" title=" An ASStm object cover used for a cryptographic filter's stream callbacks.">ASCryptStm</a>. This puts an end-of-file (EOF) marker to a security stream. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFCloseProc" title=" A callback for ASCryptStm."><code>ASCryptStmFCloseProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFFlushProc" title=" A callback for ASCryptStm."><code>ASCryptStmFFlushProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFResetProc" title=" A callback for ASCryptStm."><code>ASCryptStmFResetProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFilBufProc" title=" A callback for ASCryptStm."><code>ASCryptStmFilBufProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFlsBufProc" title=" A callback for ASCryptStm."><code>ASCryptStmFlsBufProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmUnGetcProc" title=" A callback for ASCryptStm."><code>ASCryptStmUnGetcProc</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>ASCryptStmFPutEOFProc(</code><a href="aslayer_ASCryptStm.htm#_t_ASCryptStmRec" title=" An ASStm object cover used for a cryptographic filter's stream callbacks."><code>ASCryptStm</code></a> <code>stm</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>stm</code></span>
+</td><td><span>The security stream to receive the EOF. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><code>0</code> when successful, a non-zero error code otherwise. </span>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCryptStm.htm#ASCryptStmProcs" title=" Callback procs for ASCryptStm"><code>ASCryptStmProcs</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASCryptStmFResetProc"><strong><span style="color:grey;">ASCryptStmFResetProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:394</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A callback for <a href="aslayer_ASCryptStm.htm#_t_ASCryptStmRec" title=" An ASStm object cover used for a cryptographic filter's stream callbacks.">ASCryptStm</a>. This resets a security stream, discarding any buffered data. It is called only during encryption (when writing to the stream, not when reading). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFCloseProc" title=" A callback for ASCryptStm."><code>ASCryptStmFCloseProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFFlushProc" title=" A callback for ASCryptStm."><code>ASCryptStmFFlushProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFPutEOFProc" title=" A callback for ASCryptStm."><code>ASCryptStmFPutEOFProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFilBufProc" title=" A callback for ASCryptStm."><code>ASCryptStmFilBufProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFlsBufProc" title=" A callback for ASCryptStm."><code>ASCryptStmFlsBufProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmUnGetcProc" title=" A callback for ASCryptStm."><code>ASCryptStmUnGetcProc</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>ASCryptStmFResetProc(</code><a href="aslayer_ASCryptStm.htm#_t_ASCryptStmRec" title=" An ASStm object cover used for a cryptographic filter's stream callbacks."><code>ASCryptStm</code></a> <code>stm</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>stm</code></span>
+</td><td><span>The security stream to be reset. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><code>0</code> when successful, a non-zero error code otherwise. </span>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCryptStm.htm#ASCryptStmProcs" title=" Callback procs for ASCryptStm"><code>ASCryptStmProcs</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASCryptStmFilBufProc"><strong><span style="color:grey;">ASCryptStmFilBufProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:325</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A callback for <a href="aslayer_ASCryptStm.htm#_t_ASCryptStmRec" title=" An ASStm object cover used for a cryptographic filter's stream callbacks.">ASCryptStm</a>. This is called by <code>getc</code> when the buffer is empty. It is called only during decryption (when reading from the stream, not when writing). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFCloseProc" title=" A callback for ASCryptStm."><code>ASCryptStmFCloseProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFFlushProc" title=" A callback for ASCryptStm."><code>ASCryptStmFFlushProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFPutEOFProc" title=" A callback for ASCryptStm."><code>ASCryptStmFPutEOFProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFResetProc" title=" A callback for ASCryptStm."><code>ASCryptStmFResetProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFlsBufProc" title=" A callback for ASCryptStm."><code>ASCryptStmFlsBufProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmUnGetcProc" title=" A callback for ASCryptStm."><code>ASCryptStmUnGetcProc</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>ASCryptStmFilBufProc(</code><a href="aslayer_ASCryptStm.htm#_t_ASCryptStmRec" title=" An ASStm object cover used for a cryptographic filter's stream callbacks."><code>ASCryptStm</code></a> <code>pistm</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pistm</code></span>
+</td><td><span>The security stream to fill. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><code>0</code> when successful, a non-zero error code otherwise. </span>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCryptStm.htm#ASCryptStmProcs" title=" Callback procs for ASCryptStm"><code>ASCryptStmProcs</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASCryptStmFlsBufProc"><strong><span style="color:grey;">ASCryptStmFlsBufProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:340</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A callback for <a href="aslayer_ASCryptStm.htm#_t_ASCryptStmRec" title=" An ASStm object cover used for a cryptographic filter's stream callbacks.">ASCryptStm</a>. This is called by <code>putc</code> when the buffer is full. It is called only during encryption (when writing to the stream, not when reading). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFCloseProc" title=" A callback for ASCryptStm."><code>ASCryptStmFCloseProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFFlushProc" title=" A callback for ASCryptStm."><code>ASCryptStmFFlushProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFPutEOFProc" title=" A callback for ASCryptStm."><code>ASCryptStmFPutEOFProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFResetProc" title=" A callback for ASCryptStm."><code>ASCryptStmFResetProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFilBufProc" title=" A callback for ASCryptStm."><code>ASCryptStmFilBufProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmUnGetcProc" title=" A callback for ASCryptStm."><code>ASCryptStmUnGetcProc</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>ASCryptStmFlsBufProc(</code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>ch</code><code>,</code> <a href="aslayer_ASCryptStm.htm#_t_ASCryptStmRec" title=" An ASStm object cover used for a cryptographic filter's stream callbacks."><code>ASCryptStm</code></a> <code>stm</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ch</code></span>
+</td><td><span>The character being written to the full stream. </span>
+</td></tr>
+<tr><td><span><code>stm</code></span>
+</td><td><span>The security stream that is full. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><code>0</code> when successful, a non-zero error code otherwise. </span>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCryptStm.htm#ASCryptStmProcs" title=" Callback procs for ASCryptStm"><code>ASCryptStmProcs</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASCryptStmUnGetcProc"><strong><span style="color:grey;">ASCryptStmUnGetcProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:356</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A callback for <a href="aslayer_ASCryptStm.htm#_t_ASCryptStmRec" title=" An ASStm object cover used for a cryptographic filter's stream callbacks.">ASCryptStm</a>. It goes back one character in the input stream, undoing a character <code>get</code> operation. It is called only during decryption (when reading from the stream, not when writing). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFCloseProc" title=" A callback for ASCryptStm."><code>ASCryptStmFCloseProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFFlushProc" title=" A callback for ASCryptStm."><code>ASCryptStmFFlushProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFPutEOFProc" title=" A callback for ASCryptStm."><code>ASCryptStmFPutEOFProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFResetProc" title=" A callback for ASCryptStm."><code>ASCryptStmFResetProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFilBufProc" title=" A callback for ASCryptStm."><code>ASCryptStmFilBufProc</code></a>
+<a href="aslayer_ASCryptStm.htm#ASCryptStmFlsBufProc" title=" A callback for ASCryptStm."><code>ASCryptStmFlsBufProc</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>ASCryptStmUnGetcProc(</code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>ch</code><code>,</code> <a href="aslayer_ASCryptStm.htm#_t_ASCryptStmRec" title=" An ASStm object cover used for a cryptographic filter's stream callbacks."><code>ASCryptStm</code></a> <code>stm</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ch</code></span>
+</td><td><span>The character being written to the stream. </span>
+</td></tr>
+<tr><td><span><code>stm</code></span>
+</td><td><span>The security stream to which the character is written. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><code>0</code> when successful, a non-zero error code otherwise. </span>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCryptStm.htm#ASCryptStmProcs" title=" Callback procs for ASCryptStm"><code>ASCryptStmProcs</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>ASCryptStm Structures</h2></header>
+<nav><dl>
+<dt><a href="#ASCryptStmProcs">ASCryptStmProcs</a></dt><dd> -  Callback procs for ASCryptStm</dd>
+<dt><a href="#_t_ASCryptStmRec">_t_ASCryptStmRec</a></dt><dd> -  An ASStm object cover used for a cryptographic filter's stream callbacks.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASCryptStmProcs"><strong><span style="color:grey;">ASCryptStmProcs</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:410</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Callback procs for <a href="aslayer_ASCryptStm.htm#_t_ASCryptStmRec" title=" An ASStm object cover used for a cryptographic filter's stream callbacks.">ASCryptStm</a> </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct ASCryptStmProcs {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASCryptStm.htm#ASCryptStmFilBufProc" title=" A callback for ASCryptStm."><code>ASCryptStmFilBufProc</code></a> <code>EmptyBuff</code><code>;</code> </div>
+</td><td><span>Called by <code>getc</code> when the buffer is empty. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASCryptStm.htm#ASCryptStmFlsBufProc" title=" A callback for ASCryptStm."><code>ASCryptStmFlsBufProc</code></a> <code>FullBuff</code><code>;</code> </div>
+</td><td><span>Called by <code>putc</code> when the buffer is full. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASCryptStm.htm#ASCryptStmUnGetcProc" title=" A callback for ASCryptStm."><code>ASCryptStmUnGetcProc</code></a> <code>UnGetCh</code><code>;</code> </div>
+</td><td><span>Backs up an input stream. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASCryptStm.htm#ASCryptStmFFlushProc" title=" A callback for ASCryptStm."><code>ASCryptStmFFlushProc</code></a> <code>FlushBuff</code><code>;</code> </div>
+</td><td><span>Flushes a dirty buffer if necessary. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASCryptStm.htm#ASCryptStmFCloseProc" title=" A callback for ASCryptStm."><code>ASCryptStmFCloseProc</code></a> <code>Close</code><code>;</code> </div>
+</td><td><span>Closes a stream. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASCryptStm.htm#ASCryptStmFResetProc" title=" A callback for ASCryptStm."><code>ASCryptStmFResetProc</code></a> <code>Reset</code><code>;</code> </div>
+</td><td><span>Discards any buffered data. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASCryptStm.htm#ASCryptStmFPutEOFProc" title=" A callback for ASCryptStm."><code>ASCryptStmFPutEOFProc</code></a> <code>PutEOF</code><code>;</code> </div>
+</td><td><span>Puts an EOF marker. </span>
+</td></tr>
+<tr><td><code><code>}</code> <a href="aslayer_ASCryptStm.htm#ASCryptStmProcs" title=" Callback procs for ASCryptStm"><code>ASCryptStmProcs</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCryptStm.htm#_t_ASCryptStmRec" title=" An ASStm object cover used for a cryptographic filter's stream callbacks."><code>_t_ASCryptStmRec</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_ASCryptStmRec"><strong><span style="color:grey;">_t_ASCryptStmRec</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:431</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>An <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a> object cover used for a cryptographic filter's stream callbacks. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDCrypt.htm#PDCryptFilterStreamProc" title=" (Optional) A callback for PDCryptFilterHandler.">PDCryptFilterStreamProc</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_ASCryptStmRec {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>count</code><code>;</code> </div>
+</td><td><span>The number of characters remaining in the buffer. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>char</code> <code>*</code><code>currentPointer</code><code>;</code> </div>
+</td><td><span>The next character to get or put. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>char</code> <code>*</code><code>basePointer</code><code>;</code> </div>
+</td><td><span>The base of the buffer, if any. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>modeFlag</code><code>;</code> </div>
+</td><td><div><span>Flag to indicate mode: </span>
+
+<table class="ruled"><tr><th><span>Flag</span>
+</th><th><span>Value</span>
+</th></tr>
+<tr><td><span><a href="aslayer_ASCryptStm.htm#ASCryptStmModeRead">ASCryptStmModeRead</a></span>
+</td><td><span><code>0x0001</code> (decryption)</span>
+</td></tr>
+<tr><td><span><a href="aslayer_ASCryptStm.htm#ASCryptStmModeWrite">ASCryptStmModeWrite</a></span>
+</td><td><span><code>0x0002</code> (encryption)</span>
+</td></tr>
+<tr><td><span><a href="aslayer_ASCryptStm.htm#ASCryptStmModeEOF">ASCryptStmModeEOF</a></span>
+</td><td><span><code>0x0004</code></span>
+</td></tr>
+<tr><td><span><a href="aslayer_General.htm#ASCryptStmModeError">ASCryptStmModeError</a></span>
+</td><td><span><code>0x0008</code></span>
+</td></tr></table>
+</div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASCryptStm.htm#ASCryptStmProcs" title=" Callback procs for ASCryptStm"><code>ASCryptStmProcs</code></a> <code>*</code><code>procs</code><code>;</code> </div>
+</td><td><span>Handlers for security stream access. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>baseStm</code><code>;</code> </div>
+</td><td><span>The base <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a> object. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>nBytesWanted</code><code>;</code> </div>
+</td><td><span>The number of bytes requested for decryption. </span>
+</td></tr>
+<tr><td><div class="structMember"><code>void</code> <code>*</code><code>clientData</code><code>;</code> </div>
+</td><td><span>A pointer to arbitrary user-defined data. </span>
+</td></tr>
+<tr><td><code id="ASCryptStmRec"><code>}</code> <a href="aslayer_ASCryptStm.htm#_t_ASCryptStmRec" title=" An ASStm object cover used for a cryptographic filter's stream callbacks."><code>ASCryptStmRec</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASCryptStm.htm#_t_ASCryptStmRec" title=" An ASStm object cover used for a cryptographic filter's stream callbacks."><code>ASCryptStm</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+
+</div>
+</body></html>

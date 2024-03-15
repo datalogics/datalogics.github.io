@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PD Layer: PDCollectionSchema</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PD Layer: PDCollectionSchema</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>PDCollectionSchema Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDCollectionSchema">PDCollectionSchema</a></dt><dd> -  An opaque pointer to a collection schema object.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDCollectionSchema"><strong><span style="color:grey;">PDCollectionSchema</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:6861</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>
+<p>An opaque pointer to a collection schema object.<br/></p>
+
+<p>
+<p>A <a href="pdlayer_PDCollectionSchema.htm#PDCollectionSchema" title=" An opaque pointer to a collection schema object."><code>PDCollectionSchema</code></a> is ordered with the following considerations. The <a href="pdlayer_PDCollectionSchema.htm#PDCollectionSchema" title=" An opaque pointer to a collection schema object."><code>PDCollectionSchema</code></a> has characteristics of both a collection of named fields and an array. Field names are guaranteed to be unique. Indexing is guaranteed to be 0-based, in ascending order, with no gaps. When repositioning a field by changing its index, the schema will be re-indexed as necessary to conform to this convention. If a field is assigned an out-of-bound index, the index is adjusted to be in bounds rather than raising an error.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>CPDCollectionSchema</code> <code>*</code><code>PDCollectionSchema</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDCollectionSchema.htm#PDCollectionSchemaAcquire" title=" Acquires the PDCollectionSchema object for a collection."><code>PDCollectionSchemaAcquire</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDCollectionSchema.htm#PDCollectionSchemaDestroy" title=" Destroys a PDCollectionSchema object."><code>PDCollectionSchemaDestroy</code></a></td><td><a href="pdlayer_PDCollectionSchema.htm#PDCollectionSchemaGetField" title=" Gets a field by name or position."><code>PDCollectionSchemaGetField</code></a></td></tr>
+<tr><td><a href="pdlayer_PDCollectionSchema.htm#PDCollectionSchemaGetLength" title=" Gets the number of fields in the schema."><code>PDCollectionSchemaGetLength</code></a></td><td><a href="pdlayer_PDCollectionSchema.htm#PDCollectionSchemaRemoveField" title=" Removes a field from the collection schema."><code>PDCollectionSchemaRemoveField</code></a></td></tr>
+<tr><td><a href="pdlayer_PDCollectionSchema.htm#PDCollectionSchemaSetField" title=" Sets a field with new values."><code>PDCollectionSchemaSetField</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDCollectionSchema Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDCollectionSchemaAcquire">PDCollectionSchemaAcquire</a></dt><dd> -  Acquires the PDCollectionSchema object for a collection.</dd>
+<dt><a href="#PDCollectionSchemaDestroy">PDCollectionSchemaDestroy</a></dt><dd> -  Destroys a PDCollectionSchema object.</dd>
+<dt><a href="#PDCollectionSchemaGetField">PDCollectionSchemaGetField</a></dt><dd> -  Gets a field by name or position.</dd>
+<dt><a href="#PDCollectionSchemaGetLength">PDCollectionSchemaGetLength</a></dt><dd> -  Gets the number of fields in the schema.</dd>
+<dt><a href="#PDCollectionSchemaRemoveField">PDCollectionSchemaRemoveField</a></dt><dd> -  Removes a field from the collection schema.</dd>
+<dt><a href="#PDCollectionSchemaSetField">PDCollectionSchemaSetField</a></dt><dd> -  Sets a field with new values.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDCollectionSchemaAcquire"><strong><span style="color:grey;">PDCollectionSchemaAcquire</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:11837</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Acquires the <a href="pdlayer_PDCollectionSchema.htm#PDCollectionSchema" title=" An opaque pointer to a collection schema object."><code>PDCollectionSchema</code></a> object for a collection. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDCollectionSchema.htm#PDCollectionSchema" title=" An opaque pointer to a collection schema object."><code>PDCollectionSchema</code></a> <code>PDCollectionSchemaAcquire(</code><a href="pdlayer_PDCollection.htm#PDCollection" title=" A PDCollection represents a collection dictionary in a PDF file."><code>PDCollection</code></a> <code>collection</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>collection</code></span>
+</td><td><span>The collection object. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The collection object. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDCollectionSchemaDestroy"><strong><span style="color:grey;">PDCollectionSchemaDestroy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:11843</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Destroys a <a href="pdlayer_PDCollectionSchema.htm#PDCollectionSchema" title=" An opaque pointer to a collection schema object."><code>PDCollectionSchema</code></a> object. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDCollectionSchemaDestroy(</code><a href="pdlayer_PDCollectionSchema.htm#PDCollectionSchema" title=" An opaque pointer to a collection schema object."><code>PDCollectionSchema</code></a> <code>schema</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>collection</code></span>
+</td><td><span>The collection object. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The collection object. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDCollectionSchemaGetField"><strong><span style="color:grey;">PDCollectionSchemaGetField</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:11861</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets a field by name or position. The caller must set <code>field.size</code> to <code>sizeof(PDCollectionFieldRec)</code>. To look up a field by name, set <code>field.fieldName</code> to the appropriate name. To look up a field by position, set <code>field.fieldName</code> to <a href="aslayer_ASAtom.htm#ASAtomNull"><code>ASAtomNull</code></a>, and set <code>field.index</code> to the position. The caller owns (and must destroy) <code>field.fieldText</code> if it is not <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDCollectionSchemaGetField(</code><a href="pdlayer_PDCollectionSchema.htm#PDCollectionSchema" title=" An opaque pointer to a collection schema object."><code>PDCollectionSchema</code></a> <code>schema</code><code>,</code> <a href="pdlayer_PDCollection.htm#_t_PDCollectionField" title=" A structure corresponding to a field in the collection schema."><code>PDCollectionFieldRec</code></a> <code>*</code><code>field</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>schema</code></span>
+</td><td><span>The collection schema object. </span>
+</td></tr>
+<tr><td><span><code>field</code></span>
+</td><td><span>The field to be obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the field was found, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDCollectionSchemaGetLength"><strong><span style="color:grey;">PDCollectionSchemaGetLength</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:11849</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets the number of fields in the schema. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASArraySize" title=" An array size value for use in callback procedures."><code>ASArraySize</code></a> <code>PDCollectionSchemaGetLength(</code><a href="pdlayer_PDCollectionSchema.htm#PDCollectionSchema" title=" An opaque pointer to a collection schema object."><code>PDCollectionSchema</code></a> <code>schema</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>collection</code></span>
+</td><td><span>The collection object. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of fields in the schema. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDCollectionSchemaRemoveField"><strong><span style="color:grey;">PDCollectionSchemaRemoveField</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:11879</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Removes a field from the collection schema. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDCollectionSchemaRemoveField(</code><a href="pdlayer_PDCollectionSchema.htm#PDCollectionSchema" title=" An opaque pointer to a collection schema object."><code>PDCollectionSchema</code></a> <code>schema</code><code>,</code> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>fieldName</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>schema</code></span>
+</td><td><span>The collection schema. </span>
+</td></tr>
+<tr><td><span><code>fieldName</code></span>
+</td><td><span>The name of the field to remove from the collection schema. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDCollectionSchemaSetField"><strong><span style="color:grey;">PDCollectionSchemaSetField</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:11873</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Sets a field with new values. The target field is identified by the <code>field.fieldName</code> member. If the target field exists, it is overwritten; otherwise a new field is added. The caller must set <code>field.size</code> to <code>sizeof(PDCollectionFieldRec)</code>. Specifying a new value for <code>field.index</code> will affect other field values as necessary to maintain the correct overall ordering. See <a href="pdlayer_PDCollectionSchema.htm#PDCollectionSchema" title=" An opaque pointer to a collection schema object."><code>PDCollectionSchema</code></a> for information about ordering. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDCollectionSchemaSetField(</code><a href="pdlayer_PDCollectionSchema.htm#PDCollectionSchema" title=" An opaque pointer to a collection schema object."><code>PDCollectionSchema</code></a> <code>schema</code><code>,</code> <code>const</code> <a href="pdlayer_PDCollection.htm#_t_PDCollectionField" title=" A structure corresponding to a field in the collection schema."><code>PDCollectionFieldRec</code></a> <code>*</code><code>field</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>schema</code></span>
+</td><td><span>The collection schema object. </span>
+</td></tr>
+<tr><td><span><code>field</code></span>
+</td><td><span>The field to add or modify in the collection schema. </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

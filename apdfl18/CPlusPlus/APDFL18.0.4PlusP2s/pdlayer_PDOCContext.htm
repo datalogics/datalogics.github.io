@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PD Layer: PDOCContext</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PD Layer: PDOCContext</h5>
+<li><a href="#Enumerations">Enumerations</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Enumerations">
+<header><h2>PDOCContext Enumerations</h2></header>
+<nav><dl>
+<dt><a href="#PDOCContextChangeTypes">PDOCContextChangeTypes</a></dt><dd> -  The optional-content group (OCG) state is changing.</dd>
+<dt><a href="#PDOCContextInitPolicies">PDOCContextInitPolicies</a></dt><dd> -  PDOCContextInitPolicy is used to specify how to initialize the states of Optional Content Groups (OCGs) when calling PDOCContextNew() or PDOCContextInit().</dd>
+<dt><a href="#PDOCDrawEnumTypes">PDOCDrawEnumTypes</a></dt><dd> -  PDOCDrawEnumType controls drawing or enumerating the page with respect to optional content.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDOCContextChangeTypes"><strong><span style="color:grey;">PDOCContextChangeTypes</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:5569</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The optional-content group (OCG) state is changing. 
+<p>Value options for <a href="pdlayer_PDOCContext.htm#PDOCContextChangeType" title=" The optional-content group (OCG) state is changing."><code>PDOCContextChangeType.</code></a> </span>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kPDOCGState"><code>kPDOCGState</code></span>
+</td><td><span>The OCGs' states are changing. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDOCContextDrawEnumType"><code>kPDOCContextDrawEnumType</code></span>
+</td><td><span>The <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a> object's PDDrawEnumType is changing. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDOCContextNonOCDrawing"><code>kPDOCContextNonOCDrawing</code></span>
+</td><td><span>The <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a> object's non-optional content drawing is changing. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDOCContextIntent"><code>kPDOCContextIntent</code></span>
+</td><td><span>The <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a> object's intent is changing. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDOCContextInit"><code>kPDOCContextInit</code></span>
+</td><td><span>The <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a> is being reset using <a href="pdlayer_PDOCContext.htm#PDOCContextInit" title=" Initializes the ON-OFF states of all optional-content groups (OCGs) within an existing context.">PDOCContextInit</a>(). </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDOC_LastContextChangeType"><code>kPDOC_LastContextChangeType</code><code>=</code><code>kPDOCContextInit</code></span>
+</td><td><span></span>
+</td></tr></table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextInitPolicies"><strong><span style="color:grey;">PDOCContextInitPolicies</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:5498</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span><a href="pdlayer_PDOCContext.htm#PDOCContextInitPolicy" title=" PDOCContextInitPolicy is used to specify how to initialize the states of Optional Content Groups (OCGs) when calling PDOCContextNew() or PDOCContextInit().">PDOCContextInitPolicy</a> is used to specify how to initialize the states of Optional Content Groups (OCGs) when calling <a href="pdlayer_PDOCContext.htm#PDOCContextNew" title=" Creates a context object that represents an optional-content state of the document, initializing it in the same way as PDOCContextInit().">PDOCContextNew</a>() or <a href="pdlayer_PDOCContext.htm#PDOCContextInit" title=" Initializes the ON-OFF states of all optional-content groups (OCGs) within an existing context.">PDOCContextInit</a>(). </span>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kOCCInit_OFF"><code>kOCCInit_OFF</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kOCCInit_ON"><code>kOCCInit_ON</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kOCCInit_FromOtherContext"><code>kOCCInit_FromOtherContext</code></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kOCCInit_FromConfig"><code>kOCCInit_FromConfig</code></span>
+</td><td><span></span>
+</td></tr></table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCDrawEnumTypes"><strong><span style="color:grey;">PDOCDrawEnumTypes</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:5546</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><UL><a href="pdlayer_PDOCContext.htm#PDOCDrawEnumType" title=" PDOCDrawEnumType controls drawing or enumerating the page with respect to optional content.">PDOCDrawEnumType</a> controls drawing or enumerating the page with respect to optional content. It is an enumerated type that, together with the <code>NonOCDrawing</code> value, controls drawing or enumerating content on a page with optional content:<br/><li> Content that is marked as optional content is drawn or not drawn according to the <a href="pdlayer_PDOCContext.htm#PDOCDrawEnumType" title=" PDOCDrawEnumType controls drawing or enumerating the page with respect to optional content.">PDOCDrawEnumType</a> and the visibility state as determined by the Optional Content Groups (OCGs) and OCMDs.<br/><li> Content that is not marked as optional content is drawn when <code>NonOCDrawing</code> is <a href="aslayer_General.htm#true"><code>true</code></a>, and not drawn when <code>NonOCDrawing</code> is <a href="aslayer_General.htm#false"><code>false</code></a>.<br/></UL>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCContext.htm#PDOCContextGetNonOCDrawing" title=" Gets the non-OC drawing status for an optional-content context."><code>PDOCContextGetNonOCDrawing</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextGetOCDrawEnumType" title=" Gets the drawing and enumeration type for an optional-content context."><code>PDOCContextGetOCDrawEnumType</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextSetNonOCDrawing" title=" Sets the non-OC status for an optional-content context."><code>PDOCContextSetNonOCDrawing</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextSetOCDrawEnumType" title=" Sets the drawing and enumeration type for an optional-content context."><code>PDOCContextSetOCDrawEnumType</code></a></div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kPDOC_VisibleOC"><code>kPDOC_VisibleOC</code><code>=</code><code>0</code></span>
+</td><td><span>Draw or enumerate optional content that is visible, according to the current state of Optional Content Groups (OCGs) and Optional Content Membership Dictionaries (OCMDs). This is the normal default mode. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDOC_AllOC"><code>kPDOC_AllOC</code></span>
+</td><td><span>Draw or enumerate all optional content, regardless of its visibility state. If the context's <code>NonOCDrawing</code> is <a href="aslayer_General.htm#true"><code>true</code></a>, all contents of document are shown. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDOC_NoOC"><code>kPDOC_NoOC</code></span>
+</td><td><span>Draw or enumerate no optional content, regardless of its visibility state. If the context's <code>NonOCDrawing</code> is <a href="aslayer_General.htm#false"><code>false</code></a>, nothing is drawn, resulting in a blank page. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kPDOC_LastDrawEnumType"><code>kPDOC_LastDrawEnumType</code><code>=</code><code>kPDOC_NoOC</code></span>
+</td><td><span></span>
+</td></tr></table>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>PDOCContext Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDOCContext">PDOCContext</a></dt><dd> -  A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.</dd>
+<dt><a href="#PDOCContextChangeType">PDOCContextChangeType</a></dt><dd> -  The optional-content group (OCG) state is changing.</dd>
+<dt><a href="#PDOCContextInitPolicy">PDOCContextInitPolicy</a></dt><dd> -  PDOCContextInitPolicy is used to specify how to initialize the states of Optional Content Groups (OCGs) when calling PDOCContextNew() or PDOCContextInit().</dd>
+<dt><a href="#PDOCDrawEnumType">PDOCDrawEnumType</a></dt><dd> -  PDOCDrawEnumType controls drawing or enumerating the page with respect to optional content.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDOCContext"><strong><span style="color:grey;">PDOCContext</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:5468</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a> is an object that keeps track the on/off states of all of the OCGs in a document. There can be more than one <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a> object, representing different combinations of OCG states. The <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document.">PDDoc</a> contains an internal <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a> that is used for on-screen drawing and as the default state used for any other drawing or content enumeration. Clients can change the states of OCGs within any <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a>. Clients can build (and save in the PDF file) <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a> objects with their own combination of OCG states, and issue drawing or enumeration commands using their own <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a> instead of the document's internal <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a>. All discussion of <em>visibility</em> of content is therefore meant to be with respect to the OCG states stored in a specific <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDOCContext</code> <code>*</code><code>PDOCContext</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDDoc.htm#PDDocGetOCContext" title=" Gets the built-in default optional-content context for the document."><code>PDDocGetOCContext</code></a></td><td><a href="pdlayer_PDOCContext.htm#PDOCContextMakeCopy" title=" Creates a new context object to represent an optional-content state of the document, using an existing context as a template."><code>PDOCContextMakeCopy</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCContext.htm#PDOCContextMakeCopyWithAutoStateChanges" title=" Creates a new context object that represents an optional-content state of the document, using an existing context as a template, but applying an automatic state change for the specified event."><code>PDOCContextMakeCopyWithAutoStateChanges</code></a></td><td><a href="pdlayer_PDOCContext.htm#PDOCContextNew" title=" Creates a context object that represents an optional-content state of the document, initializing it in the same way as PDOCContextInit()."><code>PDOCContextNew</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCContext.htm#PDOCContextNewWithInitialState" title=" Creates a context object that represents an optional-content state of the document, using the current state as the initial state for each group (OCG), as determined by the document's optional-content configuration (returned by PDDocGetOCConfig(pdDoc) )."><code>PDOCContextNewWithInitialState</code></a></td><td><a href="pdlayer_PDOCContext.htm#PDOCContextNewWithOCDisabled" title=" Creates a context object that represents an optional-content state of the document, with the PDOCDrawEnumType property set to kPDOC_NoOC, so that no content marked as optional content is drawn, regardless of the visibility according to the OCGs and OCMDs."><code>PDOCContextNewWithOCDisabled</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDAnnot.htm#PDAnnotIsCurrentlyVisible" title=" Tests whether an annotation with an OC entry is visible in a given optional-content context, considering the current ON-OFF states of the optional-content groups in the optional-content dictionary (OCMD) and the dictionary's visibility policy."><code>PDAnnotIsCurrentlyVisible</code></a></td><td><a href="pdlayer_PDDoc.htm#PDDocFlattenOC" title=" Replaces the contents of every page in the document with a version that has no optional content, containing only what was visible on the page when the call was made, and removes all other optional-content information."><code>PDDocFlattenOC</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEContent.htm#PDEContentFlattenOC" title=" Flattens the content, removing any PDEElement objects that are not visible in the given optional-content context, and removing the optional-content information from any visible PDFElement objects."><code>PDEContentFlattenOC</code></a></td><td><a href="pdelayer_PDEElement.htm#PDEElementGetAllVisibilities" title=" Tests whether all occurrences of the element are visible in a given content and optional-content context."><code>PDEElementGetAllVisibilities</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEElement.htm#PDEElementIsCurrentlyVisible" title=" Tests whether an element is visible in a given content and optional-content context."><code>PDEElementIsCurrentlyVisible</code></a></td><td><a href="pdelayer_PDEElement.htm#PDEElementMakeVisible" title=" Makes an element visible in a given content and optional-content context, by manipulating the ON-OFF states of the optional-content groups."><code>PDEElementMakeVisible</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCContext.htm#PDOCContextApplyAutoStateChanges" title=" Calls PDOCContextFindAutoStateChanges() to find optional-content groups whose ON-OFF states should be toggled, based on usage application directives contained in the configuration's AS array, and applies the changes within the given context."><code>PDOCContextApplyAutoStateChanges</code></a></td><td><a href="pdlayer_PDOCContext.htm#PDOCContextClearAllUserOverrides" title=" Removes usage override marks in all optional-content groups in the given context."><code>PDOCContextClearAllUserOverrides</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCContext.htm#PDOCContextContentIsVisible" title=" Tests whether content is visible in the optional-content context."><code>PDOCContextContentIsVisible</code></a></td><td><a href="pdlayer_PDOCContext.htm#PDOCContextFindAutoStateChanges" title=" Finds optional-content groups whose ON-OFF states should be toggled in the context, based on usage application directives contained in the configuration's AS array."><code>PDOCContextFindAutoStateChanges</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCContext.htm#PDOCContextFree" title=" Destroys an optional-content context object and frees the associated memory as needed."><code>PDOCContextFree</code></a></td><td><a href="pdlayer_PDOCContext.htm#PDOCContextGetIntent" title=" Gets the intent list for an optional-content context."><code>PDOCContextGetIntent</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCContext.htm#PDOCContextGetNonOCDrawing" title=" Gets the non-OC drawing status for an optional-content context."><code>PDOCContextGetNonOCDrawing</code></a></td><td><a href="pdlayer_PDOCContext.htm#PDOCContextGetOCDrawEnumType" title=" Gets the drawing and enumeration type for an optional-content context."><code>PDOCContextGetOCDrawEnumType</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCContext.htm#PDOCContextGetOCGStates" title=" Gets the ON-OFF states for the given optional-content groups (OCGs) in the given optional-content context."><code>PDOCContextGetOCGStates</code></a></td><td><a href="pdlayer_PDOCContext.htm#PDOCContextGetPDDoc" title=" Gets the document that contains an optional-content context."><code>PDOCContextGetPDDoc</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCContext.htm#PDOCContextInit" title=" Initializes the ON-OFF states of all optional-content groups (OCGs) within an existing context."><code>PDOCContextInit</code></a></td><td><a href="pdlayer_PDOCContext.htm#PDOCContextMakeCopy" title=" Creates a new context object to represent an optional-content state of the document, using an existing context as a template."><code>PDOCContextMakeCopy</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCContext.htm#PDOCContextMakeCopyWithAutoStateChanges" title=" Creates a new context object that represents an optional-content state of the document, using an existing context as a template, but applying an automatic state change for the specified event."><code>PDOCContextMakeCopyWithAutoStateChanges</code></a></td><td><a href="pdlayer_PDOCContext.htm#PDOCContextNew" title=" Creates a context object that represents an optional-content state of the document, initializing it in the same way as PDOCContextInit()."><code>PDOCContextNew</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCContext.htm#PDOCContextPopOCMD" title=" Pops the optional-content membership dictionary (OCMD) stack for an optional-content context."><code>PDOCContextPopOCMD</code></a></td><td><a href="pdlayer_PDOCContext.htm#PDOCContextPushOCMD" title=" Pushes a new optional-content membership dictionary (OCMD) onto the stack for an optional-content context."><code>PDOCContextPushOCMD</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCContext.htm#PDOCContextResetOCMDStack" title=" Clears the Optional Content Membership Dictionary (OCMD) stack for an optional-content context, and resets the current visibility for the context based on the context's non-OC drawing setting (see PDOCContextSetNonOCDrawing())."><code>PDOCContextResetOCMDStack</code></a></td><td><a href="pdlayer_PDOCContext.htm#PDOCContextSetIntent" title=" Sets the Intent entry in an optional-content context's Cos dictionary."><code>PDOCContextSetIntent</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCContext.htm#PDOCContextSetNonOCDrawing" title=" Sets the non-OC status for an optional-content context."><code>PDOCContextSetNonOCDrawing</code></a></td><td><a href="pdlayer_PDOCContext.htm#PDOCContextSetOCDrawEnumType" title=" Sets the drawing and enumeration type for an optional-content context."><code>PDOCContextSetOCDrawEnumType</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCContext.htm#PDOCContextSetOCGStates" title=" Sets the ON-OFF states for the given optional-content groups (OCGs) in the given optional-content context."><code>PDOCContextSetOCGStates</code></a></td><td><a href="pdlayer_PDOCContext.htm#PDOCContextXObjectIsVisible" title=" Tests whether an XObject form or image contained in obj is visible in the optional-content context."><code>PDOCContextXObjectIsVisible</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCG.htm#PDOCGGetCurrentState" title=" Gets the current ON-OFF state of the optional-content group (OCG) object in a given context."><code>PDOCGGetCurrentState</code></a></td><td><a href="pdlayer_PDOCG.htm#PDOCGGetUserOverride" title=" Tests whether the optional-content group is marked as having had its state set directly by client code in the specified context (as opposed to automatically by the optional-content AutoState mechanism)."><code>PDOCGGetUserOverride</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCG.htm#PDOCGSetCurrentState" title=" Sets the current ON-OFF state of the optional-content group (OCG) object in a given context."><code>PDOCGSetCurrentState</code></a></td><td><a href="pdlayer_PDOCG.htm#PDOCGSetUserOverride" title=" Marks the optional-content group as having had its state set directly by client code in the specified context (as opposed to automatically by the optional-content AutoState mechanism)."><code>PDOCGSetUserOverride</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCG.htm#PDOCGUsedInOCContext" title=" Tests whether an optional-content group (OCG) object is used in a given context."><code>PDOCGUsedInOCContext</code></a></td><td><a href="pdlayer_PDOCMD.htm#PDOCMDIsCurrentlyVisible" title=" Based on the optional-content groups listed in the dictionary, the current ON-OFF state of those groups within the specified context, and the dictionary's visibility policy, test whether the content tagged with this dictionary would be visible."><code>PDOCMDIsCurrentlyVisible</code></a></td></tr>
+<tr><td><a href="pdlayer_PDOCMD.htm#PDOCMDsAreCurrentlyVisible" title=" Tests a set of optional-content membership dictionaries to determine whether contents tagged with any of them is visible in a given optional-content context."><code>PDOCMDsAreCurrentlyVisible</code></a></td><td><a href="pdlayer_PDOCMD.htm#PDOCMDsMakeContentVisible" title=" Makes content that uses any of a set of optional-content membership dictionaries visible in a given optional-content context."><code>PDOCMDsMakeContentVisible</code></a></td></tr>
+<tr><td><a href="pdlayer_PDPage.htm#PDPageFlattenOC" title=" Replaces the page's contents with a version that has no optional content, containing only what was visible on the page when the call was made."><code>PDPageFlattenOC</code></a></td><td><a href="pdlayer_PDPage.htm#PDPageGetVisibleBBox" title=" Gets the bounding box for a given page for those contents that are visible in the given optional-content context."><code>PDPageGetVisibleBBox</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWordFinder.htm#PDWordFinderAcquireVisibleWordList" title=" Finds all words on the specified page that are visible in the given optional-content context and returns one or more tables containing the words."><code>PDWordFinderAcquireVisibleWordList</code></a></td><td><a href="pdlayer_PDWordFinder.htm#PDWordFinderEnumVisibleWords" title=" Extracts visible words, one at a time, from the specified page or the entire document."><code>PDWordFinderEnumVisibleWords</code></a></td></tr>
+<tr><td><a href="pdlayer_PDWord.htm#PDWordIsCurrentlyVisible" title=" Tests whether a word is visible in a given optional-content context on a given page."><code>PDWordIsCurrentlyVisible</code></a></td><td><a href="pdlayer_PDWord.htm#PDWordMakeVisible" title=" Makes a word visible in a given optional-content context on a given page."><code>PDWordMakeVisible</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_PDFLPrint.htm#PDPrintParams" title=" A data structure indicating how a document should be printed."><code>PDPrintParams</code></a></td><td><a href="pdlayer_General.htm#_t_PDDrawParams" title=" Parameters used for optional-content drawing control."><code>_t_PDDrawParams</code></a></td></tr>
+<tr><td><a href="pdlayer_General.htm#_t_PDGraphicEnumParams" title=" Enumeration parameters used for optional-content drawing control in PDFormEnumPaintProcWithParams() and PDCharProcEnumWithParams()."><code>_t_PDGraphicEnumParams</code></a></td><td><a href="pdlayer_PDPage.htm#_t_PDHostSepsSpecRec" title=" Used to control the generation of separations from Acrobat."><code>_t_PDHostSepsSpecRec</code></a></td></tr>
+<tr><td><a href="dlextras_PDPage.htm#_t_PDPageDrawMParamsRec" title=" Parameters for PDPageDrawContentsToMemoryWith Params."><code>_t_PDPageDrawMParamsRec</code></a></td><td><a href="dlextras_PDPage.htm#_t_PDPageDrawWParamsRec"><code>_t_PDPageDrawWParamsRec</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextChangeType"><strong><span style="color:grey;">PDOCContextChangeType</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:5583</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The optional-content group (OCG) state is changing. 
+<p>For value options see <a href="pdlayer_PDOCContext.htm#PDOCContextChangeTypes" title=" The optional-content group (OCG) state is changing."><code>PDOCContextChangeTypes.</code></a> </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>PDOCContextChangeType</code><code>;</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextInitPolicy"><strong><span style="color:grey;">PDOCContextInitPolicy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:5508</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span><a href="pdlayer_PDOCContext.htm#PDOCContextInitPolicy" title=" PDOCContextInitPolicy is used to specify how to initialize the states of Optional Content Groups (OCGs) when calling PDOCContextNew() or PDOCContextInit().">PDOCContextInitPolicy</a> is used to specify how to initialize the states of Optional Content Groups (OCGs) when calling <a href="pdlayer_PDOCContext.htm#PDOCContextNew" title=" Creates a context object that represents an optional-content state of the document, initializing it in the same way as PDOCContextInit().">PDOCContextNew</a>() or <a href="pdlayer_PDOCContext.htm#PDOCContextInit" title=" Initializes the ON-OFF states of all optional-content groups (OCGs) within an existing context.">PDOCContextInit</a>(). 
+<p>For value options see <a href="pdlayer_PDOCContext.htm#PDOCContextInitPolicies" title=" PDOCContextInitPolicy is used to specify how to initialize the states of Optional Content Groups (OCGs) when calling PDOCContextNew() or PDOCContextInit()."><code>PDOCContextInitPolicies.</code></a> </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>PDOCContextInitPolicy</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDOCContext.htm#PDOCContextInit" title=" Initializes the ON-OFF states of all optional-content groups (OCGs) within an existing context."><code>PDOCContextInit</code></a></td><td><a href="pdlayer_PDOCContext.htm#PDOCContextNew" title=" Creates a context object that represents an optional-content state of the document, initializing it in the same way as PDOCContextInit()."><code>PDOCContextNew</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDOCDrawEnumType"><strong><span style="color:grey;">PDOCDrawEnumType</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:5565</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><UL><a href="pdlayer_PDOCContext.htm#PDOCDrawEnumType" title=" PDOCDrawEnumType controls drawing or enumerating the page with respect to optional content.">PDOCDrawEnumType</a> controls drawing or enumerating the page with respect to optional content. It is an enumerated type that, together with the <code>NonOCDrawing</code> value, controls drawing or enumerating content on a page with optional content:<br/><li> Content that is marked as optional content is drawn or not drawn according to the <a href="pdlayer_PDOCContext.htm#PDOCDrawEnumType" title=" PDOCDrawEnumType controls drawing or enumerating the page with respect to optional content.">PDOCDrawEnumType</a> and the visibility state as determined by the Optional Content Groups (OCGs) and OCMDs.<br/><li> Content that is not marked as optional content is drawn when <code>NonOCDrawing</code> is <a href="aslayer_General.htm#true"><code>true</code></a>, and not drawn when <code>NonOCDrawing</code> is <a href="aslayer_General.htm#false"><code>false</code></a>.<br/></UL>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCContext.htm#PDOCContextGetNonOCDrawing" title=" Gets the non-OC drawing status for an optional-content context."><code>PDOCContextGetNonOCDrawing</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextSetNonOCDrawing" title=" Sets the non-OC status for an optional-content context."><code>PDOCContextSetNonOCDrawing</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASUns8" title=" 1-byte unsigned char value."><code>ASUns8</code></a> <code>PDOCDrawEnumType</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDOCContext.htm#PDOCContextGetOCDrawEnumType" title=" Gets the drawing and enumeration type for an optional-content context."><code>PDOCContextGetOCDrawEnumType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDOCContext.htm#PDOCContextSetOCDrawEnumType" title=" Sets the drawing and enumeration type for an optional-content context."><code>PDOCContextSetOCDrawEnumType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDOCContext Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDOCContextApplyAutoStateChanges">PDOCContextApplyAutoStateChanges</a></dt><dd> -  Calls PDOCContextFindAutoStateChanges() to find optional-content groups whose ON-OFF states should be toggled, based on usage application directives contained in the configuration's AS array, and applies the changes within the given context.</dd>
+<dt><a href="#PDOCContextClearAllUserOverrides">PDOCContextClearAllUserOverrides</a></dt><dd> -  Removes usage override marks in all optional-content groups in the given context.</dd>
+<dt><a href="#PDOCContextContentIsVisible">PDOCContextContentIsVisible</a></dt><dd> -  Tests whether content is visible in the optional-content context.</dd>
+<dt><a href="#PDOCContextFindAutoStateChanges">PDOCContextFindAutoStateChanges</a></dt><dd> -  Finds optional-content groups whose ON-OFF states should be toggled in the context, based on usage application directives contained in the configuration's AS array.</dd>
+<dt><a href="#PDOCContextFree">PDOCContextFree</a></dt><dd> -  Destroys an optional-content context object and frees the associated memory as needed.</dd>
+<dt><a href="#PDOCContextGetIntent">PDOCContextGetIntent</a></dt><dd> -  Gets the intent list for an optional-content context.</dd>
+<dt><a href="#PDOCContextGetNonOCDrawing">PDOCContextGetNonOCDrawing</a></dt><dd> -  Gets the non-OC drawing status for an optional-content context.</dd>
+<dt><a href="#PDOCContextGetOCDrawEnumType">PDOCContextGetOCDrawEnumType</a></dt><dd> -  Gets the drawing and enumeration type for an optional-content context.</dd>
+<dt><a href="#PDOCContextGetOCGStates">PDOCContextGetOCGStates</a></dt><dd> -  Gets the ON-OFF states for the given optional-content groups (OCGs) in the given optional-content context.</dd>
+<dt><a href="#PDOCContextGetPDDoc">PDOCContextGetPDDoc</a></dt><dd> -  Gets the document that contains an optional-content context.</dd>
+<dt><a href="#PDOCContextInit">PDOCContextInit</a></dt><dd> -  Initializes the ON-OFF states of all optional-content groups (OCGs) within an existing context.</dd>
+<dt><a href="#PDOCContextMakeCopy">PDOCContextMakeCopy</a></dt><dd> -  Creates a new context object to represent an optional-content state of the document, using an existing context as a template.</dd>
+<dt><a href="#PDOCContextMakeCopyWithAutoStateChanges">PDOCContextMakeCopyWithAutoStateChanges</a></dt><dd> -  Creates a new context object that represents an optional-content state of the document, using an existing context as a template, but applying an automatic state change for the specified event.</dd>
+<dt><a href="#PDOCContextNew">PDOCContextNew</a></dt><dd> -  Creates a context object that represents an optional-content state of the document, initializing it in the same way as PDOCContextInit().</dd>
+<dt><a href="#PDOCContextNewWithInitialState">PDOCContextNewWithInitialState</a></dt><dd> -  Creates a context object that represents an optional-content state of the document, using the current state as the initial state for each group (OCG), as determined by the document's optional-content configuration (returned by PDDocGetOCConfig(pdDoc) ).</dd>
+<dt><a href="#PDOCContextNewWithOCDisabled">PDOCContextNewWithOCDisabled</a></dt><dd> -  Creates a context object that represents an optional-content state of the document, with the PDOCDrawEnumType property set to kPDOC_NoOC, so that no content marked as optional content is drawn, regardless of the visibility according to the OCGs and OCMDs.</dd>
+<dt><a href="#PDOCContextPopOCMD">PDOCContextPopOCMD</a></dt><dd> -  Pops the optional-content membership dictionary (OCMD) stack for an optional-content context.</dd>
+<dt><a href="#PDOCContextPushOCMD">PDOCContextPushOCMD</a></dt><dd> -  Pushes a new optional-content membership dictionary (OCMD) onto the stack for an optional-content context.</dd>
+<dt><a href="#PDOCContextResetOCMDStack">PDOCContextResetOCMDStack</a></dt><dd> -  Clears the Optional Content Membership Dictionary (OCMD) stack for an optional-content context, and resets the current visibility for the context based on the context's non-OC drawing setting (see PDOCContextSetNonOCDrawing()).</dd>
+<dt><a href="#PDOCContextSetIntent">PDOCContextSetIntent</a></dt><dd> -  Sets the Intent entry in an optional-content context's Cos dictionary.</dd>
+<dt><a href="#PDOCContextSetNonOCDrawing">PDOCContextSetNonOCDrawing</a></dt><dd> -  Sets the non-OC status for an optional-content context.</dd>
+<dt><a href="#PDOCContextSetOCDrawEnumType">PDOCContextSetOCDrawEnumType</a></dt><dd> -  Sets the drawing and enumeration type for an optional-content context.</dd>
+<dt><a href="#PDOCContextSetOCGStates">PDOCContextSetOCGStates</a></dt><dd> -  Sets the ON-OFF states for the given optional-content groups (OCGs) in the given optional-content context.</dd>
+<dt><a href="#PDOCContextXObjectIsVisible">PDOCContextXObjectIsVisible</a></dt><dd> -  Tests whether an XObject form or image contained in obj is visible in the optional-content context.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDOCContextApplyAutoStateChanges"><strong><span style="color:grey;">PDOCContextApplyAutoStateChanges</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9296</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Calls <a href="pdlayer_PDOCContext.htm#PDOCContextFindAutoStateChanges" title=" Finds optional-content groups whose ON-OFF states should be toggled in the context, based on usage application directives contained in the configuration's AS array.">PDOCContextFindAutoStateChanges</a>() to find optional-content groups whose <code>ON-OFF</code> states should be toggled, based on usage application directives contained in the configuration's AS array, and applies the changes within the given context.<br/>
+<p>The AS array defines how usage entries are used to automatically manipulate the OCG states. It associates an event ( <code>View</code>, <code>Print</code>, or <code>Export</code>) with a list of OCGs and a category, or list of usage keys identifying OCG usage dictionary entries.<br/></p>
+
+<p>
+<p>See the description of the Optional Content Groups (OCG) in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 8.11.2, page 222.<br/></p>
+
+<span>
+<p>You can find this document on the web store of the International Standards Organization (ISO).</span>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCContext.htm#PDOCContextClearAllUserOverrides" title=" Removes usage override marks in all optional-content groups in the given context."><code>PDOCContextClearAllUserOverrides</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextFindAutoStateChanges" title=" Finds optional-content groups whose ON-OFF states should be toggled in the context, based on usage application directives contained in the configuration's AS array."><code>PDOCContextFindAutoStateChanges</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextMakeCopyWithAutoStateChanges" title=" Creates a new context object that represents an optional-content state of the document, using an existing context as a template, but applying an automatic state change for the specified event."><code>PDOCContextMakeCopyWithAutoStateChanges</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGGetUserOverride" title=" Tests whether the optional-content group is marked as having had its state set directly by client code in the specified context (as opposed to automatically by the optional-content AutoState mechanism)."><code>PDOCGGetUserOverride</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGSetUserOverride" title=" Marks the optional-content group as having had its state set directly by client code in the specified context (as opposed to automatically by the optional-content AutoState mechanism)."><code>PDOCGSetUserOverride</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDOCContextApplyAutoStateChanges(</code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ctx</code><code>,</code> <a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>cfg</code><code>,</code> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>event</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ctx</code></span>
+</td><td><span>The context for which the visibility state is changed. </span>
+</td></tr>
+<tr><td><span><code>cfg</code></span>
+</td><td><span>The configuration whose usage directives are used. </span>
+</td></tr>
+<tr><td><span><code>event</code></span>
+</td><td><span>The event for which an <code>ON-OFF</code> state is automatically changed. Events are <code>View</code>, <code>Export</code>, and <code>Print</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if successful, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextClearAllUserOverrides"><strong><span style="color:grey;">PDOCContextClearAllUserOverrides</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:10013</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Removes usage override marks in all optional-content groups in the given context.<br/>
+<p>When an optional-content group is marked as having had its state set explicitly in a specified context, automatic state changes caused by the <code>View</code> event are prevented. When a group's automatic state change is caused by the <code>Export</code> or <code>Print</code> event, the user-override setting for the group is ignored.<br/></p>
+
+<p>
+<p>A configuration's AS array defines how usage entries are used to automatically manipulate the OCG states. It associates an event ( <code>View</code>, <code>Print</code>, or <code>Export</code>) with a list of OCGs and a category, or list of usage keys identifying OCG usage dictionary entries.<br/></p>
+
+<p>
+<p>See the description of the Optional Content Groups (OCG) in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 8.11.2, page 222.<br/></p>
+
+<span>
+<p>You can find this document on the web store of the International Standards Organization (ISO).</span>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCContext.htm#PDOCContextApplyAutoStateChanges" title=" Calls PDOCContextFindAutoStateChanges() to find optional-content groups whose ON-OFF states should be toggled, based on usage application directives contained in the configuration's AS array, and applies the changes within the given context."><code>PDOCContextApplyAutoStateChanges</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextFindAutoStateChanges" title=" Finds optional-content groups whose ON-OFF states should be toggled in the context, based on usage application directives contained in the configuration's AS array."><code>PDOCContextFindAutoStateChanges</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextMakeCopyWithAutoStateChanges" title=" Creates a new context object that represents an optional-content state of the document, using an existing context as a template, but applying an automatic state change for the specified event."><code>PDOCContextMakeCopyWithAutoStateChanges</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGGetUserOverride" title=" Tests whether the optional-content group is marked as having had its state set directly by client code in the specified context (as opposed to automatically by the optional-content AutoState mechanism)."><code>PDOCGGetUserOverride</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGSetUserOverride" title=" Marks the optional-content group as having had its state set directly by client code in the specified context (as opposed to automatically by the optional-content AutoState mechanism)."><code>PDOCGSetUserOverride</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDOCContextClearAllUserOverrides(</code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ctx</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ctx</code></span>
+</td><td><span>The context for which the user override marks are removed. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextContentIsVisible"><strong><span style="color:grey;">PDOCContextContentIsVisible</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9543</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Tests whether content is visible in the optional-content context. The method considers the context's current OCMD stack, the group <code>ON-OFF</code> states, the non-OC drawing status, the drawing and enumeration type, and the intent.<br/>
+<p>Use this method in conjunction with the OCMD stack methods.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCContext.htm#PDOCContextPopOCMD" title=" Pops the optional-content membership dictionary (OCMD) stack for an optional-content context."><code>PDOCContextPopOCMD</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextPushOCMD" title=" Pushes a new optional-content membership dictionary (OCMD) onto the stack for an optional-content context."><code>PDOCContextPushOCMD</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextResetOCMDStack" title=" Clears the Optional Content Membership Dictionary (OCMD) stack for an optional-content context, and resets the current visibility for the context based on the context's non-OC drawing setting (see PDOCContextSetNonOCDrawing())."><code>PDOCContextResetOCMDStack</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextXObjectIsVisible" title=" Tests whether an XObject form or image contained in obj is visible in the optional-content context."><code>PDOCContextXObjectIsVisible</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDOCContextContentIsVisible(</code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ocContext</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ocContext</code></span>
+</td><td><span>The context for which the visibility state is desired. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the content is visible, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextFindAutoStateChanges"><strong><span style="color:grey;">PDOCContextFindAutoStateChanges</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9265</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Finds optional-content groups whose <code>ON-OFF</code> states should be toggled in the context, based on usage application directives contained in the configuration's AS array.<br/>
+<p>The AS array defines how usage entries are used to automatically manipulate the OCG states. It associates an event ( <code>View</code>, <code>Print</code>, or <code>Export</code>) with a list of OCGs and a category, or list of usage keys identifying OCG usage dictionary entries.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCContext.htm#PDOCContextApplyAutoStateChanges" title=" Calls PDOCContextFindAutoStateChanges() to find optional-content groups whose ON-OFF states should be toggled, based on usage application directives contained in the configuration's AS array, and applies the changes within the given context."><code>PDOCContextApplyAutoStateChanges</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextClearAllUserOverrides" title=" Removes usage override marks in all optional-content groups in the given context."><code>PDOCContextClearAllUserOverrides</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextMakeCopyWithAutoStateChanges" title=" Creates a new context object that represents an optional-content state of the document, using an existing context as a template, but applying an automatic state change for the specified event."><code>PDOCContextMakeCopyWithAutoStateChanges</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGGetUserOverride" title=" Tests whether the optional-content group is marked as having had its state set directly by client code in the specified context (as opposed to automatically by the optional-content AutoState mechanism)."><code>PDOCGGetUserOverride</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGSetUserOverride" title=" Marks the optional-content group as having had its state set directly by client code in the specified context (as opposed to automatically by the optional-content AutoState mechanism)."><code>PDOCGSetUserOverride</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDOCG.htm#PDOCG" title=" A PDOCG represents a named object whose state can be toggled in a user interface to affect changes in visibility of content."><code>PDOCG</code></a> <code>*</code><code>PDOCContextFindAutoStateChanges(</code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ctx</code><code>,</code> <a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>cfg</code><code>,</code> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>event</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ctx</code></span>
+</td><td><span>The context for which the visibility state should be changed. </span>
+</td></tr>
+<tr><td><span><code>cfg</code></span>
+</td><td><span>The configuration whose usage directives are used. </span>
+</td></tr>
+<tr><td><span><code>event</code></span>
+</td><td><span>The event for which an <code>ON-OFF</code> state is automatically changed. Events are <code>View</code>, <code>Export</code>, and <code>Print</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated array of optional-content group objects. The client is responsible for freeing it using <a href="aslayer_ASMem.htm#ASfree" title=" Frees the specified memory block.">ASfree</a>(). </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextFree"><strong><span style="color:grey;">PDOCContextFree</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9078</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Destroys an optional-content context object and frees the associated memory as needed. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCContext.htm#PDOCContextInit" title=" Initializes the ON-OFF states of all optional-content groups (OCGs) within an existing context."><code>PDOCContextInit</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextNew" title=" Creates a context object that represents an optional-content state of the document, initializing it in the same way as PDOCContextInit()."><code>PDOCContextNew</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDOCContextFree(</code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ocContext</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ocContext</code></span>
+</td><td><span>The context object to free. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextGetIntent"><strong><span style="color:grey;">PDOCContextGetIntent</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9380</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the intent list for an optional-content context. An intent is an <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> value broadly describing the intended use, either <code>View</code> or <code>Design</code>.<br/>
+<p>A group's content is considered to be optional (that is, the group's state is considered in its visibility) if any intent in its list matches an intent of the context. The intent list of the context is usually set from the intent list of the document configuration.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigGetIntent" title=" Gets the Intent entry for an optional-content configuration."><code>PDOCConfigGetIntent</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextSetIntent" title=" Sets the Intent entry in an optional-content context's Cos dictionary."><code>PDOCContextSetIntent</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGGetIntent" title=" Gets the intent list for an optional-content group."><code>PDOCGGetIntent</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGUsedInOCConfig" title=" Tests whether an optional-content group (OCG) object is used in a context initialized using the given configuration."><code>PDOCGUsedInOCConfig</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGUsedInOCContext" title=" Tests whether an optional-content group (OCG) object is used in a given context."><code>PDOCGUsedInOCContext</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>*</code><code>PDOCContextGetIntent(</code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ocContext</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ocContext</code></span>
+</td><td><span>The context for which an intent is desired. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>An array containing intent entries (ASAtom objects) terminated by <a href="aslayer_ASAtom.htm#ASAtomNull">ASAtomNull</a>. The client is responsible for freeing it using <a href="aslayer_ASMem.htm#ASfree" title=" Frees the specified memory block.">ASfree</a>(). </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextGetNonOCDrawing"><strong><span style="color:grey;">PDOCContextGetNonOCDrawing</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9419</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the non-OC drawing status for an optional-content context. Content that is not marked as optional content is drawn when NonOCDrawing is <a href="aslayer_General.htm#true"><code>true</code></a>, and not drawn when NonOCDrawing is <a href="aslayer_General.htm#false"><code>false</code></a>.<br/>
+<p>Together, this value and the <a href="pdlayer_PDOCContext.htm#PDOCDrawEnumType" title=" PDOCDrawEnumType controls drawing or enumerating the page with respect to optional content.">PDOCDrawEnumType</a> value of the context determine how both optional and non-optional content on a page is drawn or enumerated. See <a href="pdlayer_PDOCContext.htm#PDOCDrawEnumType" title=" PDOCDrawEnumType controls drawing or enumerating the page with respect to optional content.">PDOCDrawEnumType</a>().<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCContext.htm#PDOCContextGetOCDrawEnumType" title=" Gets the drawing and enumeration type for an optional-content context."><code>PDOCContextGetOCDrawEnumType</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextNewWithOCDisabled" title=" Creates a context object that represents an optional-content state of the document, with the PDOCDrawEnumType property set to kPDOC_NoOC, so that no content marked as optional content is drawn, regardless of the visibility according to the OCGs and OCMDs."><code>PDOCContextNewWithOCDisabled</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextSetNonOCDrawing" title=" Sets the non-OC status for an optional-content context."><code>PDOCContextSetNonOCDrawing</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDOCContextGetNonOCDrawing(</code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ocContext</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ocContext</code></span>
+</td><td><span>The context for which the non-OC drawing status is desired. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the context's NonOCDrawing is <a href="aslayer_General.htm#true"><code>true</code></a>, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextGetOCDrawEnumType"><strong><span style="color:grey;">PDOCContextGetOCDrawEnumType</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9332</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the drawing and enumeration type for an optional-content context. This type, together with the visibility determined by the OCG and Optional Content Membership Dictionary (OCMD) states, controls whether content that is marked as optional content is drawn or enumerated.<br/>
+<p>Together, this value and the NonOCDrawing value of the context determine how both optional and non-optional content on a page is drawn or enumerated. See <a href="pdlayer_PDOCContext.htm#PDOCDrawEnumType" title=" PDOCDrawEnumType controls drawing or enumerating the page with respect to optional content.">PDOCDrawEnumType</a>().<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCContext.htm#PDOCContextGetNonOCDrawing" title=" Gets the non-OC drawing status for an optional-content context."><code>PDOCContextGetNonOCDrawing</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextSetOCDrawEnumType" title=" Sets the drawing and enumeration type for an optional-content context."><code>PDOCContextSetOCDrawEnumType</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDOCContext.htm#PDOCDrawEnumType" title=" PDOCDrawEnumType controls drawing or enumerating the page with respect to optional content."><code>PDOCDrawEnumType</code></a> <code>PDOCContextGetOCDrawEnumType(</code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ocContext</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ocContext</code></span>
+</td><td><span>The context for which the drawing and enumeration type is desired. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The drawing and enumeration type value. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextGetOCGStates"><strong><span style="color:grey;">PDOCContextGetOCGStates</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9195</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the <code>ON-OFF</code> states for the given optional-content groups (OCGs) in the given optional-content context. It returns the states in the <code>states</code> array, which must be large enough to hold as many <a href="aslayer_General.htm#ASBool" title=" ASBool">ASBool</a> values as there are OCGs. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDOCContext.htm#PDOCContextSetOCGStates" title=" Sets the ON-OFF states for the given optional-content groups (OCGs) in the given optional-content context.">PDOCContextSetOCGStates</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDOCContextGetOCGStates(</code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ocContext</code><code>,</code> <a href="pdlayer_PDOCG.htm#PDOCG" title=" A PDOCG represents a named object whose state can be toggled in a user interface to affect changes in visibility of content."><code>PDOCG</code></a> <code>*</code><code>pdocgs</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>*</code><code>states</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ocContext</code></span>
+</td><td><span>The context for which the OCG states are desired. </span>
+</td></tr>
+<tr><td><span><code>pdocgs</code></span>
+</td><td><span>A <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated array of optional-content groups whose states are obtained. </span>
+</td></tr>
+<tr><td><span><code>states</code></span>
+</td><td><span>(Filled by the method) An array of OCG states corresponding to the array of OCGs, <a href="aslayer_General.htm#true"><code>true</code></a> for ON and <a href="aslayer_General.htm#false"><code>false</code></a> for <code>OFF</code>. The array must be large enough to hold as many states as there are non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a> OCGs. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextGetPDDoc"><strong><span style="color:grey;">PDOCContextGetPDDoc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9100</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the document that contains an optional-content context. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDDoc.htm#PDDocGetOCContext" title=" Gets the built-in default optional-content context for the document.">PDDocGetOCContext</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>PDOCContextGetPDDoc(</code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ocContext</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ocContext</code></span>
+</td><td><span>The context for which a document is desired. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The document object. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextInit"><strong><span style="color:grey;">PDOCContextInit</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9118</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Initializes the <code>ON-OFF</code> states of all optional-content groups (OCGs) within an existing context. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCContext.htm#PDOCContextFree" title=" Destroys an optional-content context object and frees the associated memory as needed."><code>PDOCContextFree</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextNew" title=" Creates a context object that represents an optional-content state of the document, initializing it in the same way as PDOCContextInit()."><code>PDOCContextNew</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDOCContextInit(</code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ocContext</code><code>,</code> <a href="pdlayer_PDOCContext.htm#PDOCContextInitPolicy" title=" PDOCContextInitPolicy is used to specify how to initialize the states of Optional Content Groups (OCGs) when calling PDOCContextNew() or PDOCContextInit()."><code>PDOCContextInitPolicy</code></a> <code>policy</code><code>,</code> <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>otherCtx</code><code>,</code> <a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>pdOCCfg</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ocContext</code></span>
+</td><td><span>The context to initialize. </span>
+</td></tr>
+<tr><td><span><code>policy</code></span>
+</td><td><span>The initialization policy for the context. This value determines whether optional-content groups are initially <code>ON</code> or <code>OFF</code>. </span>
+</td></tr>
+<tr><td><span><code>otherCtx</code></span>
+</td><td><span>Another context from which to take initial OCG states when the policy is <a href="pdlayer_PDOCContext.htm#kOCCInit_FromOtherContext">kOCCInit_FromOtherContext</a>. It is ignored for other policies. </span>
+</td></tr>
+<tr><td><span><code>pdOCCfg</code></span>
+</td><td><span>A configuration from which to take initial OCG states when the policy is <a href="pdlayer_PDOCContext.htm#kOCCInit_FromConfig">kOCCInit_FromConfig</a>. It is ignored for other policies. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextMakeCopy"><strong><span style="color:grey;">PDOCContextMakeCopy</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9137</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a new context object to represent an optional-content state of the document, using an existing context as a template.<br/>
+<p>This is the same as the following call:<br/></p>
+
+<p>
+<p><code>PDOCCOntextNew(kOCCInit_FromOtherContext,</code> <code>ocContext,</code> <a href="aslayer_General.htm#NULL"><code>NULL</code></a><code>,</code> <a href="pdlayer_PDOCContext.htm#PDOCContextGetPDDoc" title=" Gets the document that contains an optional-content context."><code>PDOCContextGetPDDoc</code></a><code>(ocContext));</code><br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDDoc.htm#PDDocGetOCContext" title=" Gets the built-in default optional-content context for the document."><code>PDDocGetOCContext</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextFree" title=" Destroys an optional-content context object and frees the associated memory as needed."><code>PDOCContextFree</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextInit" title=" Initializes the ON-OFF states of all optional-content groups (OCGs) within an existing context."><code>PDOCContextInit</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextNew" title=" Creates a context object that represents an optional-content state of the document, initializing it in the same way as PDOCContextInit()."><code>PDOCContextNew</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>PDOCContextMakeCopy(</code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ocContext</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ocContext</code></span>
+</td><td><span>The context to copy. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The new <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a> object. The client is responsible for freeing the context using <a href="pdlayer_PDOCContext.htm#PDOCContextFree" title=" Destroys an optional-content context object and frees the associated memory as needed.">PDOCContextFree</a>(). </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextMakeCopyWithAutoStateChanges"><strong><span style="color:grey;">PDOCContextMakeCopyWithAutoStateChanges</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9239</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a new context object that represents an optional-content state of the document, using an existing context as a template, but applying an automatic state change for the specified event. An automatic state change toggles all groups' <code>ON-OFF</code> states when the triggering event occurs.<br/>
+<p>A configuration's AS array defines how usage entries are used to automatically manipulate the OCG states. It associates an event ( <code>View</code>, <code>Print</code>, or <code>Export</code>) with a list of OCGs and a category, or list of usage keys identifying OCG usage dictionary entries.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCContext.htm#PDOCContextApplyAutoStateChanges" title=" Calls PDOCContextFindAutoStateChanges() to find optional-content groups whose ON-OFF states should be toggled, based on usage application directives contained in the configuration's AS array, and applies the changes within the given context."><code>PDOCContextApplyAutoStateChanges</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextClearAllUserOverrides" title=" Removes usage override marks in all optional-content groups in the given context."><code>PDOCContextClearAllUserOverrides</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextFindAutoStateChanges" title=" Finds optional-content groups whose ON-OFF states should be toggled in the context, based on usage application directives contained in the configuration's AS array."><code>PDOCContextFindAutoStateChanges</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGGetUserOverride" title=" Tests whether the optional-content group is marked as having had its state set directly by client code in the specified context (as opposed to automatically by the optional-content AutoState mechanism)."><code>PDOCGGetUserOverride</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGSetUserOverride" title=" Marks the optional-content group as having had its state set directly by client code in the specified context (as opposed to automatically by the optional-content AutoState mechanism)."><code>PDOCGSetUserOverride</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>PDOCContextMakeCopyWithAutoStateChanges(</code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>inCtx</code><code>,</code> <a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>cfg</code><code>,</code> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>event</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>inCtx</code></span>
+</td><td><span>The context to copy. </span>
+</td></tr>
+<tr><td><span><code>cfg</code></span>
+</td><td><span>The configuration in which the automatic state change applies. </span>
+</td></tr>
+<tr><td><span><code>event</code></span>
+</td><td><span>The event for which state will automatically change. Events are <code>View</code>, <code>Export</code>, and <code>Print</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The new <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a> object. The client is responsible for freeing the context using <a href="pdlayer_PDOCContext.htm#PDOCContextFree" title=" Destroys an optional-content context object and frees the associated memory as needed.">PDOCContextFree</a>(). </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextNew"><strong><span style="color:grey;">PDOCContextNew</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9068</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a context object that represents an optional-content state of the document, initializing it in the same way as <a href="pdlayer_PDOCContext.htm#PDOCContextInit" title=" Initializes the ON-OFF states of all optional-content groups (OCGs) within an existing context.">PDOCContextInit</a>(). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCContext.htm#PDOCContextFree" title=" Destroys an optional-content context object and frees the associated memory as needed."><code>PDOCContextFree</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextInit" title=" Initializes the ON-OFF states of all optional-content groups (OCGs) within an existing context."><code>PDOCContextInit</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>PDOCContextNew(</code><a href="pdlayer_PDOCContext.htm#PDOCContextInitPolicy" title=" PDOCContextInitPolicy is used to specify how to initialize the states of Optional Content Groups (OCGs) when calling PDOCContextNew() or PDOCContextInit()."><code>PDOCContextInitPolicy</code></a> <code>policy</code><code>,</code> <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>otherCtx</code><code>,</code> <a href="pdlayer_PDOCConfig.htm#PDOCConfig" title=" A PDOCConfig represents a set of states and other information that is saved in a PDF file for future use."><code>PDOCConfig</code></a> <code>pdOCCfg</code><code>,</code> <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>policy</code></span>
+</td><td><span>The initialization policy for the new context. This value determines whether optional-content groups (OCGs) are initially <code>ON</code> or <code>OFF</code>. </span>
+</td></tr>
+<tr><td><span><code>otherCtx</code></span>
+</td><td><span>Another context from which to take initial OCG states when the policy is <a href="pdlayer_PDOCContext.htm#kOCCInit_FromOtherContext">kOCCInit_FromOtherContext</a>. It is ignored for other policies. </span>
+</td></tr>
+<tr><td><span><code>pdOCCfg</code></span>
+</td><td><span>A configuration from which to take initial OCG states when the policy is <a href="pdlayer_PDOCContext.htm#kOCCInit_FromConfig">kOCCInit_FromConfig</a>. It is ignored for other policies. </span>
+</td></tr>
+<tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document for which to create a context. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The new <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a> object. The client is responsible for freeing the context using <a href="pdlayer_PDOCContext.htm#PDOCContextFree" title=" Destroys an optional-content context object and frees the associated memory as needed.">PDOCContextFree</a>(). </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextNewWithInitialState"><strong><span style="color:grey;">PDOCContextNewWithInitialState</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9178</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a context object that represents an optional-content state of the document, using the current state as the initial state for each group (OCG), as determined by the document's optional-content configuration (returned by <a href="pdlayer_PDDoc.htm#PDDocGetOCConfig" title=" Gets the built-in default optional-content configuration for the document from the OCProperties D entry."><code>PDDocGetOCConfig</code></a><code>(pdDoc)</code>). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDDoc.htm#PDDocGetOCConfig" title=" Gets the built-in default optional-content configuration for the document from the OCProperties D entry."><code>PDDocGetOCConfig</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextFree" title=" Destroys an optional-content context object and frees the associated memory as needed."><code>PDOCContextFree</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextInit" title=" Initializes the ON-OFF states of all optional-content groups (OCGs) within an existing context."><code>PDOCContextInit</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextNew" title=" Creates a context object that represents an optional-content state of the document, initializing it in the same way as PDOCContextInit()."><code>PDOCContextNew</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextNewWithOCDisabled" title=" Creates a context object that represents an optional-content state of the document, with the PDOCDrawEnumType property set to kPDOC_NoOC, so that no content marked as optional content is drawn, regardless of the visibility according to the OCGs and OCMDs."><code>PDOCContextNewWithOCDisabled</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>PDOCContextNewWithInitialState(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document for which to create a context. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The new <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a> object. The client is responsible for freeing the context using <a href="pdlayer_PDOCContext.htm#PDOCContextFree" title=" Destroys an optional-content context object and frees the associated memory as needed.">PDOCContextFree</a>(). </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextNewWithOCDisabled"><strong><span style="color:grey;">PDOCContextNewWithOCDisabled</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9161</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a context object that represents an optional-content state of the document, with the <a href="pdlayer_PDOCContext.htm#PDOCDrawEnumType" title=" PDOCDrawEnumType controls drawing or enumerating the page with respect to optional content.">PDOCDrawEnumType</a> property set to <a href="pdlayer_PDOCContext.htm#kPDOC_NoOC" title=" Draw or enumerate no optional content, regardless of its visibility state.">kPDOC_NoOC</a>, so that no content marked as optional content is drawn, regardless of the visibility according to the OCGs and OCMDs.<br/>
+<p>Content that is not marked as optional content may still be drawn, depending on the NonOCDrawing property.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCContext.htm#PDOCContextFree" title=" Destroys an optional-content context object and frees the associated memory as needed."><code>PDOCContextFree</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextGetNonOCDrawing" title=" Gets the non-OC drawing status for an optional-content context."><code>PDOCContextGetNonOCDrawing</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextGetOCDrawEnumType" title=" Gets the drawing and enumeration type for an optional-content context."><code>PDOCContextGetOCDrawEnumType</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextInit" title=" Initializes the ON-OFF states of all optional-content groups (OCGs) within an existing context."><code>PDOCContextInit</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextNew" title=" Creates a context object that represents an optional-content state of the document, initializing it in the same way as PDOCContextInit()."><code>PDOCContextNew</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextNewWithInitialState" title=" Creates a context object that represents an optional-content state of the document, using the current state as the initial state for each group (OCG), as determined by the document's optional-content configuration (returned by PDDocGetOCConfig(pdDoc) )."><code>PDOCContextNewWithInitialState</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextSetNonOCDrawing" title=" Sets the non-OC status for an optional-content context."><code>PDOCContextSetNonOCDrawing</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextSetOCDrawEnumType" title=" Sets the drawing and enumeration type for an optional-content context."><code>PDOCContextSetOCDrawEnumType</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>PDOCContextNewWithOCDisabled(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document for which to create a context. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The new <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a> object. The client is responsible for freeing the context using <a href="pdlayer_PDOCContext.htm#PDOCContextFree" title=" Destroys an optional-content context object and frees the associated memory as needed.">PDOCContextFree</a>(). </span>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextPopOCMD"><strong><span style="color:grey;">PDOCContextPopOCMD</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9524</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><UL>Pops the optional-content membership dictionary (OCMD) stack for an optional-content context. The stack is used to track nesting of optional-content states as contents are enumerated or drawn:<br/><li> Call the <a href="pdlayer_PDOCContext.htm#PDOCContextPushOCMD" title=" Pushes a new optional-content membership dictionary (OCMD) onto the stack for an optional-content context.">PDOCContextPushOCMD</a>() method when entering BDC for optional content or beginning to process a form or annotation that has a OC entry.<br/><li> Call this method to pop the stack when encountering EMC, or finishing the processing of a form or annotation appearance.<br/></UL>
+
+<p>
+<p>To track nested content that is not for optional content, pass in <a href="aslayer_General.htm#NULL"><code>NULL</code></a> for pdOCMD when pushing the OCMD stack for BMC, patterns, and charprocs, for BDC with no optional content, or for forms or annotations that do not have an OC entry. When finished processing any of these objects, you can call <a href="pdlayer_PDOCContext.htm#PDOCContextPopOCMD" title=" Pops the optional-content membership dictionary (OCMD) stack for an optional-content context.">PDOCContextPopOCMD</a>() without worrying about whether the content was optional.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCContext.htm#PDOCContextContentIsVisible" title=" Tests whether content is visible in the optional-content context."><code>PDOCContextContentIsVisible</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextPushOCMD" title=" Pushes a new optional-content membership dictionary (OCMD) onto the stack for an optional-content context."><code>PDOCContextPushOCMD</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextResetOCMDStack" title=" Clears the Optional Content Membership Dictionary (OCMD) stack for an optional-content context, and resets the current visibility for the context based on the context's non-OC drawing setting (see PDOCContextSetNonOCDrawing())."><code>PDOCContextResetOCMDStack</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextXObjectIsVisible" title=" Tests whether an XObject form or image contained in obj is visible in the optional-content context."><code>PDOCContextXObjectIsVisible</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDOCContextPopOCMD(</code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ocContext</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ocContext</code></span>
+</td><td><span>The context for which to pop the OCMD stack. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextPushOCMD"><strong><span style="color:grey;">PDOCContextPushOCMD</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9493</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Pushes a new optional-content membership dictionary (OCMD) onto the stack for an optional-content context.<br/>
+<p>The stack is used to track nesting of optional-content states as contents are enumerated or drawn. Call this method when entering the BDC for optional content or beginning to process a form or annotation that has a OC entry. Call <a href="pdlayer_PDOCContext.htm#PDOCContextPopOCMD" title=" Pops the optional-content membership dictionary (OCMD) stack for an optional-content context.">PDOCContextPopOCMD</a>() when encountering an EMC, or finishing the processing of a form or annotation appearance.<br/></p>
+
+<p>
+<p>To make it easier to track nested content that is not for optional content, pass <a href="aslayer_General.htm#NULL"><code>NULL</code></a> for pdOCMD when encountering BMC, patterns, and charprocs. Also pass <a href="aslayer_General.htm#NULL"><code>NULL</code></a> for a BDC with no optional content or for forms or annotations that do not have an OC entry. When finished processing any of these objects, you can call <a href="pdlayer_PDOCContext.htm#PDOCContextPopOCMD" title=" Pops the optional-content membership dictionary (OCMD) stack for an optional-content context.">PDOCContextPopOCMD</a>() without worrying about whether the content was optional.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCContext.htm#PDOCContextContentIsVisible" title=" Tests whether content is visible in the optional-content context."><code>PDOCContextContentIsVisible</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextPopOCMD" title=" Pops the optional-content membership dictionary (OCMD) stack for an optional-content context."><code>PDOCContextPopOCMD</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextResetOCMDStack" title=" Clears the Optional Content Membership Dictionary (OCMD) stack for an optional-content context, and resets the current visibility for the context based on the context's non-OC drawing setting (see PDOCContextSetNonOCDrawing())."><code>PDOCContextResetOCMDStack</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextXObjectIsVisible" title=" Tests whether an XObject form or image contained in obj is visible in the optional-content context."><code>PDOCContextXObjectIsVisible</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDOCContextPushOCMD(</code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>pdOCContext</code><code>,</code> <a href="pdlayer_PDOCMD.htm#PDOCMD" title=" A PDOCMD is an object that is attached to content to indicate membership in an OCG or group of OCGs."><code>PDOCMD</code></a> <code>pdOCMD</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdOCContext</code></span>
+</td><td><span>The context containing the OCMD stack. </span>
+</td></tr>
+<tr><td><span><code>pdOCMD</code></span>
+</td><td><span>The OCMD to push onto the stack. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextResetOCMDStack"><strong><span style="color:grey;">PDOCContextResetOCMDStack</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9464</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Clears the Optional Content Membership Dictionary (OCMD) stack for an optional-content context, and resets the current visibility for the context based on the context's non-OC drawing setting (see <a href="pdlayer_PDOCContext.htm#PDOCContextSetNonOCDrawing" title=" Sets the non-OC status for an optional-content context.">PDOCContextSetNonOCDrawing</a>()). Call this method at the start of an enumeration or drawing operation that uses a given context.<br/>
+<p>The OCMD stack contains optional-content membership dictionary objects. The OCMD stack methods and the various methods that test visibility (such as <a href="pdlayer_PDAnnot.htm#PDAnnotIsCurrentlyVisible" title=" Tests whether an annotation with an OC entry is visible in a given optional-content context, considering the current ON-OFF states of the optional-content groups in the optional-content dictionary (OCMD) and the dictionary's visibility policy.">PDAnnotIsCurrentlyVisible</a>()) work together as content is being enumerated or drawn to determine whether particular graphical elements are visible or not. Visibility is based on the context's collection of <code>ON-OFF</code> states for optional-content groups, the context's current settings for NonOCDrawing and <a href="pdlayer_PDOCContext.htm#PDOCDrawEnumType" title=" PDOCDrawEnumType controls drawing or enumerating the page with respect to optional content.">PDOCDrawEnumType</a>, and the state of the OCMD stack.<br/></p>
+
+<p>
+<p>Any custom drawing or enumerating code that needs to keep track of visibility of content must make a private copy of the <a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document.">PDOCContext</a> if that context could be accessed by some other client, in order to avoid conflicting state changes. In particular, you must copy the document's default context (as returned by <a href="pdlayer_PDDoc.htm#PDDocGetOCContext" title=" Gets the built-in default optional-content context for the document.">PDDocGetOCContext</a>()). To enforce this, this reset method does nothing when given a document's default context. Similarly, the push and pop stack operations raise an error for the default context.<br/></p>
+
+<p>
+<p>If you are using the PD-level draw and enumeration methods, you do not need to copy the context or explicitly call the OCMD stack methods, as the PD-level methods do this internally.<br/></p>
+
+<p>
+<p>Clients of PDFEdit and other libraries that enumerate contents need to use these three methods when traversing the <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage.">PDEContent</a> structure. When entering a new <a href="pdelayer_PDEContent.htm#PDEContent" title=" Contains the modifiable contents of a PDPage.">PDEContent</a>, call <a href="pdlayer_PDOCContext.htm#PDOCContextPushOCMD" title=" Pushes a new optional-content membership dictionary (OCMD) onto the stack for an optional-content context.">PDOCContextPushOCMD</a>() (passing an OCMD object or <a href="aslayer_General.htm#NULL"><code>NULL</code></a>). Upon finishing the traversal, call <a href="pdlayer_PDOCContext.htm#PDOCContextPopOCMD" title=" Pops the optional-content membership dictionary (OCMD) stack for an optional-content context.">PDOCContextPopOCMD</a>().<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCContext.htm#PDOCContextContentIsVisible" title=" Tests whether content is visible in the optional-content context."><code>PDOCContextContentIsVisible</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextPopOCMD" title=" Pops the optional-content membership dictionary (OCMD) stack for an optional-content context."><code>PDOCContextPopOCMD</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextPushOCMD" title=" Pushes a new optional-content membership dictionary (OCMD) onto the stack for an optional-content context."><code>PDOCContextPushOCMD</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextXObjectIsVisible" title=" Tests whether an XObject form or image contained in obj is visible in the optional-content context."><code>PDOCContextXObjectIsVisible</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDOCContextResetOCMDStack(</code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>pdOCContext</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdOCContext</code></span>
+</td><td><span>The context for which to reset the OCMD stack. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextSetIntent"><strong><span style="color:grey;">PDOCContextSetIntent</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9357</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Sets the Intent entry in an optional-content context's Cos dictionary. An intent is an <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> value broadly describing the intended use, either <code>View</code> or <code>Design</code>.<br/>
+<p>A group's content is considered to be optional (that is, the group's state is considered in its visibility) if any intent in its list matches an intent of the context. The intent list of the context is usually set from the intent list of the document configuration.<br/></p>
+
+<p>
+<p>It raises an exception if the context is busy.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCConfig.htm#PDOCConfigSetIntent" title=" Sets the Intent entry in an optional-content configuration's Cos dictionary."><code>PDOCConfigSetIntent</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextGetIntent" title=" Gets the intent list for an optional-content context."><code>PDOCContextGetIntent</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGSetIntent" title=" Sets the Intent entry in an optional-content group's Cos dictionary."><code>PDOCGSetIntent</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGUsedInOCConfig" title=" Tests whether an optional-content group (OCG) object is used in a context initialized using the given configuration."><code>PDOCGUsedInOCConfig</code></a>
+<a href="pdlayer_PDOCG.htm#PDOCGUsedInOCContext" title=" Tests whether an optional-content group (OCG) object is used in a given context."><code>PDOCGUsedInOCContext</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDOCContextSetIntent(</code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ocContext</code><code>,</code> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>*</code><code>intent</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ocContext</code></span>
+</td><td><span>The context for which to set the intent. </span>
+</td></tr>
+<tr><td><span><code>intent</code></span>
+</td><td><span>The new Intent entry value, an array of atoms terminated with <a href="aslayer_ASAtom.htm#ASAtomNull">ASAtomNull</a>. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextSetNonOCDrawing"><strong><span style="color:grey;">PDOCContextSetNonOCDrawing</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9399</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Sets the non-OC status for an optional-content context. Content that is not marked as optional content is drawn when NonOCDrawing is <a href="aslayer_General.htm#true"><code>true</code></a>, and not drawn when NonOCDrawing is <a href="aslayer_General.htm#false"><code>false</code></a>.<br/>
+<p>Together, this value and the <a href="pdlayer_PDOCContext.htm#PDOCDrawEnumType" title=" PDOCDrawEnumType controls drawing or enumerating the page with respect to optional content.">PDOCDrawEnumType</a> value of the context determine how both optional and non-optional content on a page is drawn or enumerated. See <a href="pdlayer_PDOCContext.htm#PDOCDrawEnumType" title=" PDOCDrawEnumType controls drawing or enumerating the page with respect to optional content.">PDOCDrawEnumType</a>().<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCContext.htm#PDOCContextGetNonOCDrawing" title=" Gets the non-OC drawing status for an optional-content context."><code>PDOCContextGetNonOCDrawing</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextGetOCDrawEnumType" title=" Gets the drawing and enumeration type for an optional-content context."><code>PDOCContextGetOCDrawEnumType</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDOCContextSetNonOCDrawing(</code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ocContext</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>drawNonOC</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ocContext</code></span>
+</td><td><span>The context for which to set the non-OC drawing status. </span>
+</td></tr>
+<tr><td><span><code>drawNonOC</code></span>
+</td><td><span>The new value for the non-OC drawing status, <a href="aslayer_General.htm#true"><code>true</code></a> or <a href="aslayer_General.htm#false"><code>false</code></a>. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextSetOCDrawEnumType"><strong><span style="color:grey;">PDOCContextSetOCDrawEnumType</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9314</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Sets the drawing and enumeration type for an optional-content context. This type, together with the visibility determined by the OCG and OCMD states, controls whether content that is marked as optional content is drawn or enumerated.<br/>
+<p>Together, this value and the NonOCDrawing value of the context determine how both optional and non-optional content on a page is drawn or enumerated. See <a href="pdlayer_PDOCContext.htm#PDOCDrawEnumType" title=" PDOCDrawEnumType controls drawing or enumerating the page with respect to optional content.">PDOCDrawEnumType</a>().<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCContext.htm#PDOCContextGetOCDrawEnumType" title=" Gets the drawing and enumeration type for an optional-content context."><code>PDOCContextGetOCDrawEnumType</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextSetNonOCDrawing" title=" Sets the non-OC status for an optional-content context."><code>PDOCContextSetNonOCDrawing</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDOCContextSetOCDrawEnumType(</code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ocContext</code><code>,</code> <a href="pdlayer_PDOCContext.htm#PDOCDrawEnumType" title=" PDOCDrawEnumType controls drawing or enumerating the page with respect to optional content."><code>PDOCDrawEnumType</code></a> <code>dt</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ocContext</code></span>
+</td><td><span>The context for which the drawing and enumeration type is desired. </span>
+</td></tr>
+<tr><td><span><code>dt</code></span>
+</td><td><span>The new drawing and enumeration type. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextSetOCGStates"><strong><span style="color:grey;">PDOCContextSetOCGStates</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9212</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the <code>ON-OFF</code> states for the given optional-content groups (OCGs) in the given optional-content context. The <code>newStates</code> array must be large enough to hold as many <a href="aslayer_General.htm#ASBool" title=" ASBool">ASBool</a> values as there are OCGs. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDOCContext.htm#PDOCContextGetOCGStates" title=" Gets the ON-OFF states for the given optional-content groups (OCGs) in the given optional-content context.">PDOCContextGetOCGStates</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDOCContextSetOCGStates(</code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>ocContext</code><code>,</code> <a href="pdlayer_PDOCG.htm#PDOCG" title=" A PDOCG represents a named object whose state can be toggled in a user interface to affect changes in visibility of content."><code>PDOCG</code></a> <code>*</code><code>pdocgs</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>*</code><code>newStates</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>ocContext</code></span>
+</td><td><span>The context for which the OCG states are set. </span>
+</td></tr>
+<tr><td><span><code>pdocgs</code></span>
+</td><td><span>A <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated array of optional-content groups. </span>
+</td></tr>
+<tr><td><span><code>newStates</code></span>
+</td><td><span>An array of new OCG states corresponding to the array of OCGs, <a href="aslayer_General.htm#true"><code>true</code></a> for ON and <a href="aslayer_General.htm#false"><code>false</code></a> for <code>OFF</code>. The array must contain as many states as there are non- <a href="aslayer_General.htm#NULL"><code>NULL</code></a> OCGs in the <code>pdocgs</code> array. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCContextXObjectIsVisible"><strong><span style="color:grey;">PDOCContextXObjectIsVisible</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:9564</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Tests whether an XObject form or image contained in <code>obj</code> is visible in the optional-content context. The method considers the context's current OCMD stack, optional-content group <code>ON-OFF</code> states, the non-OC drawing status, the drawing and enumeration type, the intent, and the specific OCG.<br/>
+<p>Use this method in conjunction with the OCMD stack methods.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDOCContext.htm#PDOCContextContentIsVisible" title=" Tests whether content is visible in the optional-content context."><code>PDOCContextContentIsVisible</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextPopOCMD" title=" Pops the optional-content membership dictionary (OCMD) stack for an optional-content context."><code>PDOCContextPopOCMD</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextPushOCMD" title=" Pushes a new optional-content membership dictionary (OCMD) onto the stack for an optional-content context."><code>PDOCContextPushOCMD</code></a>
+<a href="pdlayer_PDOCContext.htm#PDOCContextResetOCMDStack" title=" Clears the Optional Content Membership Dictionary (OCMD) stack for an optional-content context, and resets the current visibility for the context based on the context's non-OC drawing setting (see PDOCContextSetNonOCDrawing())."><code>PDOCContextResetOCMDStack</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDOCContextXObjectIsVisible(</code><a href="pdlayer_PDOCContext.htm#PDOCContext" title=" A PDOCContext is an object that keeps track the on/off states of all of the OCGs in a document."><code>PDOCContext</code></a> <code>pdOCContext</code><code>,</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>obj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdOCContext</code></span>
+</td><td><span>The context for which to test visibility. </span>
+</td></tr>
+<tr><td><span><code>obj</code></span>
+</td><td><span>The external object. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the external object is visible, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+</section>
+
+</div>
+</body></html>

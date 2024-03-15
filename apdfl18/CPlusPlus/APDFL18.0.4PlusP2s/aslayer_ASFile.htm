@@ -1,0 +1,1907 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Acro Support Layer: ASFile</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Acro Support Layer: ASFile</h5>
+<li><a href="#Definitions">Definitions</a></li>
+<li><a href="#Enumerations">Enumerations</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#CallbackSignatures">Callback Signatures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Definitions">
+<header><h2>ASFile Definitions</h2></header>
+<nav><dl>
+<dt><a href="#ASFILE_CREATE">ASFILE_CREATE</a></dt><dd> -  Create the file if it does not exist.</dd>
+<dt><a href="#ASFILE_ENCRYPT">ASFILE_ENCRYPT</a></dt><dd> -  File is to be encrypted when written to disk Encryption is with an instance specific key, so that the file is NOT readable if it is accidentally left when Acrobat exits (say, on a crash)</dd>
+<dt><a href="#ASFILE_LOCAL">ASFILE_LOCAL</a></dt><dd> -  A hint indicating that a local copy of the file will be needed.</dd>
+<dt><a href="#ASFILE_RANDOMACCESS">ASFILE_RANDOMACCESS</a></dt><dd> -  A hint indicating that the file will be primarily accessed randomly.</dd>
+<dt><a href="#ASFILE_READ">ASFILE_READ</a></dt><dd> -  Open the file for reading.</dd>
+<dt><a href="#ASFILE_SERIAL">ASFILE_SERIAL</a></dt><dd> -  A hint indicating that the file will be primarily accessed sequentially.</dd>
+<dt><a href="#ASFILE_TEMPORARY">ASFILE_TEMPORARY</a></dt><dd> -  A hint that file is for temporary usage.</dd>
+<dt><a href="#ASFILE_WRITE">ASFILE_WRITE</a></dt><dd> -  Open the file for writing.</dd>
+<dt><a href="#MDFile">MDFile</a></dt><dd> - </dd>
+<dt><a href="#kASFileDialUp">kASFileDialUp</a></dt><dd> -  Set if media/access is a dial up connection.</dd>
+<dt><a href="#kASFileDoCaching">kASFileDoCaching</a></dt><dd> -  Set if the file is to be cached (requires kASFileUseMRead to be set as well).</dd>
+<dt><a href="#kASFileHasOutstandingMReads">kASFileHasOutstandingMReads</a></dt><dd> -  true if the file has outstanding MReads.</dd>
+<dt><a href="#kASFileHasVirtualEOF">kASFileHasVirtualEOF</a></dt><dd> -  true if the file is built with a Virtual EOF (Acrobat 10).</dd>
+<dt><a href="#kASFileModeDisableExplicitMReadRequests">kASFileModeDisableExplicitMReadRequests</a></dt><dd> -  If set, the file will be read all at once regardless of multiple read requests.</dd>
+<dt><a href="#kASFileModeDoNotYieldIfBytesNotReady">kASFileModeDoNotYieldIfBytesNotReady</a></dt><dd> -  If set, ASFileRead does not yield if bytes are not ready (which raises the fileErrBytesNotReady exception).</dd>
+<dt><a href="#kASFileNoRequestIfBytesNotReady">kASFileNoRequestIfBytesNotReady</a></dt><dd> -  If set, no read requests are issued if bytes are not ready (that is, the bytes are not in the cache).</dd>
+<dt><a href="#kASFileRaiseIfBytesNotReady">kASFileRaiseIfBytesNotReady</a></dt><dd> -  If set, ASFileRead will raise the fileErrBytesNotReady exception when trying to read from a file with a cache for which the requested bytes are not yet present.</dd>
+<dt><a href="#kASFileSlowConnect">kASFileSlowConnect</a></dt><dd> -  Set if initiating each access to the file is slow.</dd>
+<dt><a href="#kASFileSlowTransfer">kASFileSlowTransfer</a></dt><dd> -  Set if the file's data transfer rate is generally slow.</dd>
+<dt><a href="#kASFileStillFetching">kASFileStillFetching</a></dt><dd> -  Set if the file is still being loaded.</dd>
+<dt><a href="#kASFileSuspendIfBytesNotReady">kASFileSuspendIfBytesNotReady</a></dt><dd> -  If set, ASFileRead will suspend the current thread when trying to read from a file with a cache for which the requested bytes are not yet present.</dd>
+<dt><a href="#kASFileUseMRead">kASFileUseMRead</a></dt><dd> -  Use multi-read commands to access the file.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASFILE_CREATE"><strong><span style="color:grey;">ASFILE_CREATE</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1404</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Create the file if it does not exist. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASFILE_CREATE</code> <code>4</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="ASFILE_ENCRYPT"><strong><span style="color:grey;">ASFILE_ENCRYPT</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1434</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>File is to be encrypted when written to disk Encryption is with an instance specific key, so that the file is NOT readable if it is accidentally left when Acrobat exits (say, on a crash) </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASFILE_ENCRYPT</code> <code>128</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="ASFILE_LOCAL"><strong><span style="color:grey;">ASFILE_LOCAL</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1414</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A hint indicating that a local copy of the file will be needed. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASFILE_LOCAL</code> <code>16</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="ASFILE_RANDOMACCESS"><strong><span style="color:grey;">ASFILE_RANDOMACCESS</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1419</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A hint indicating that the file will be primarily accessed randomly. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASFILE_RANDOMACCESS</code> <code>32</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="ASFILE_READ"><strong><span style="color:grey;">ASFILE_READ</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1394</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Open the file for reading. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASFILE_READ</code> <code>1</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="ASFILE_SERIAL"><strong><span style="color:grey;">ASFILE_SERIAL</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1409</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A hint indicating that the file will be primarily accessed sequentially. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASFILE_SERIAL</code> <code>8</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="ASFILE_TEMPORARY"><strong><span style="color:grey;">ASFILE_TEMPORARY</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1426</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A hint that file is for temporary usage. Disk backing store is deleted on close, writes are not flushed to disk on close. If possible the file will be kept in memory. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASFILE_TEMPORARY</code> <code>64</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="ASFILE_WRITE"><strong><span style="color:grey;">ASFILE_WRITE</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1399</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Open the file for writing. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define ASFILE_WRITE</code> <code>2</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="MDFile"><strong><span style="color:grey;">MDFile</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1829</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define MDFile</code> <a href="aslayer_ASFile.htm#ASMDFile" title=" ASMDFile replaces MDFile."><code>ASMDFile</code></a> </code>
+</section>
+<section><div class="infoRow"><h3 id="kASFileDialUp"><strong><span style="color:grey;">kASFileDialUp</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1465</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Set if media/access is a dial up connection. This flag is only fully implemented on Windows. On Mac OS, this flag is always conservatively set to <a href="aslayer_General.htm#true"><code>true</code></a>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kASFileDialUp</code> <code>0x00000010L</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kASFileDoCaching"><strong><span style="color:grey;">kASFileDoCaching</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1458</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Set if the file is to be cached (requires <a href="aslayer_ASFile.htm#kASFileUseMRead" title=" Use multi-read commands to access the file.">kASFileUseMRead</a> to be set as well). </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kASFileDoCaching</code> <code>0x00000008L</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kASFileHasOutstandingMReads"><strong><span style="color:grey;">kASFileHasOutstandingMReads</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1475</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the file has outstanding MReads. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kASFileHasOutstandingMReads</code> <code>0x00000040L</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kASFileHasVirtualEOF"><strong><span style="color:grey;">kASFileHasVirtualEOF</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1480</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the file is built with a Virtual EOF (Acrobat 10). </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kASFileHasVirtualEOF</code> <code>0x00000080L</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kASFileModeDisableExplicitMReadRequests"><strong><span style="color:grey;">kASFileModeDisableExplicitMReadRequests</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1495</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>If set, the file will be read all at once regardless of multiple read requests. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kASFileModeDisableExplicitMReadRequests</code> <code>0x0002</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kASFileModeDoNotYieldIfBytesNotReady"><strong><span style="color:grey;">kASFileModeDoNotYieldIfBytesNotReady</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1488</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>If set, <a href="aslayer_ASFile.htm#ASFileRead" title=" Reads data from a file, beginning at the current seek position.">ASFileRead</a> does not yield if bytes are not ready (which raises the <a href="pdfllayer_General.htm#fileErrBytesNotReady" title=" The bytes are not ready.">fileErrBytesNotReady</a> exception). </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kASFileModeDoNotYieldIfBytesNotReady</code> <code>0x0001</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kASFileNoRequestIfBytesNotReady"><strong><span style="color:grey;">kASFileNoRequestIfBytesNotReady</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1508</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>If set, no read requests are issued if bytes are not ready (that is, the bytes are not in the cache). </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kASFileNoRequestIfBytesNotReady</code> <code>0x0008</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kASFileRaiseIfBytesNotReady"><strong><span style="color:grey;">kASFileRaiseIfBytesNotReady</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1502</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>If set, <a href="aslayer_ASFile.htm#ASFileRead" title=" Reads data from a file, beginning at the current seek position.">ASFileRead</a> will raise the <a href="pdfllayer_General.htm#fileErrBytesNotReady" title=" The bytes are not ready.">fileErrBytesNotReady</a> exception when trying to read from a file with a cache for which the requested bytes are not yet present. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kASFileRaiseIfBytesNotReady</code> <code>0x0004</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kASFileSlowConnect"><strong><span style="color:grey;">kASFileSlowConnect</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1448</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Set if initiating each access to the file is slow. For example, access may be slow because the file is served by an HTTP server that spawns a new process for each request. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kASFileSlowConnect</code> <code>0x00000002L</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kASFileSlowTransfer"><strong><span style="color:grey;">kASFileSlowTransfer</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1440</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Set if the file's data transfer rate is generally slow. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kASFileSlowTransfer</code> <code>0x00000001L</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kASFileStillFetching"><strong><span style="color:grey;">kASFileStillFetching</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1470</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Set if the file is still being loaded. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kASFileStillFetching</code> <code>0x00000020L</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kASFileSuspendIfBytesNotReady"><strong><span style="color:grey;">kASFileSuspendIfBytesNotReady</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1517</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>If set, <a href="aslayer_ASFile.htm#ASFileRead" title=" Reads data from a file, beginning at the current seek position."><code>ASFileRead</code></a> will suspend the current thread when trying to read from a file with a cache for which the requested bytes are not yet present. Note that if <a href="aslayer_ASFile.htm#kASFileSuspendIfBytesNotReady" title=" If set, ASFileRead will suspend the current thread when trying to read from a file with a cache for which the requested bytes are not yet present."><code>kASFileSuspendIfBytesNotReady</code></a> is set, the <a href="aslayer_ASFile.htm#kASFileRaiseIfBytesNotReady" title=" If set, ASFileRead will raise the fileErrBytesNotReady exception when trying to read from a file with a cache for which the requested bytes are not yet present."><code>kASFileRaiseIfBytesNotReady</code></a> is ignored. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kASFileSuspendIfBytesNotReady</code> <code>0x0010</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="kASFileUseMRead"><strong><span style="color:grey;">kASFileUseMRead</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1453</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Use multi-read commands to access the file. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define kASFileUseMRead</code> <code>0x00000004L</code> </code>
+</section>
+</section>
+<section id="Enumerations">
+<header><h2>ASFile Enumerations</h2></header>
+<nav><dl>
+<dt><a href="#ASFileStatusFlags">ASFileStatusFlags</a></dt><dd> -  Values returned by ASFileSysGetStatusProc().</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASFileStatusFlags"><strong><span style="color:grey;">ASFileStatusFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1842</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Values returned by <a href="aslayer_ASFileSys.htm#ASFileSysGetStatusProc" title=" A callback for ASFileSysRec that gets the status of the specified file.">ASFileSysGetStatusProc</a>(). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileRead" title=" Reads data from a file, beginning at the current seek position."><code>ASFileRead</code></a>
+<a href="aslayer_ASFileSys.htm#ASFileSysGetStatusProc" title=" A callback for ASFileSysRec that gets the status of the specified file."><code>ASFileSysGetStatusProc</code></a></div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><span class="enumEntry" id="kASFileOkay"><code>kASFileOkay</code><code>=</code><code>0x0000</code></span>
+</td><td><span>The <a href="aslayer_ASFile.htm#MDFile">MDFile</a> is in a valid state. </span>
+</td></tr>
+<tr><td><span class="enumEntry" id="kASFileIsTerminating"><code>kASFileIsTerminating</code><code>=</code><code>0x0001</code></span>
+</td><td><span>The <a href="aslayer_ASFile.htm#MDFile">MDFile</a> is being closed (for example, because the file is being displayed in a web browser's window and the user cancelled downloading). </span>
+</td></tr></table>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>ASFile Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#ASFile">ASFile</a></dt><dd> -  An opaque representation of a particular open file.</dd>
+<dt><a href="#ASFileOffset">ASFileOffset</a></dt><dd> -  A file offset value for use in callback procedures.</dd>
+<dt><a href="#ASFileOffset64">ASFileOffset64</a></dt><dd> - </dd>
+<dt><a href="#ASFilePos">ASFilePos</a></dt><dd> -  A file position value for use in callback procedures.</dd>
+<dt><a href="#ASFilePos64">ASFilePos64</a></dt><dd> -  The absolute position within a file.</dd>
+<dt><a href="#ASMDFile">ASMDFile</a></dt><dd> -  ASMDFile replaces MDFile.</dd>
+<dt><a href="#ASTFilePos">ASTFilePos</a></dt><dd> -  A numeric count value for use in I/O methods and data structures.</dd>
+<dt><a href="#ASTFilePos">ASTFilePos</a></dt><dd> - </dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASFile"><strong><span style="color:grey;">ASFile</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1763</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>An opaque representation of a particular open file. Each open file has a unique <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a>. The <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> value has meaning only to the common <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> implementation and bears no relationship to platform-specific file objects. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>void</code> <code>*</code><code>ASFile</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDDoc.htm#PDDocGetFile" title=" Gets the file object for a document."><code>PDDocGetFile</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASFile.htm#ASFileAcquirePathName" title=" Gets the path name for a file and increments an internal reference count."><code>ASFileAcquirePathName</code></a></td><td><a href="aslayer_ASFile.htm#ASFileCanSetEOF" title=" Checks if ASFileSetEOF() can be done for this file with a specified new file size."><code>ASFileCanSetEOF</code></a></td></tr>
+<tr><td><a href="aslayer_ASFile.htm#ASFileClearOutstandingMReads" title=" Clears all outstanding mreads for the given file."><code>ASFileClearOutstandingMReads</code></a></td><td><a href="aslayer_ASFile.htm#ASFileClose" title=" Closes the specified file."><code>ASFileClose</code></a></td></tr>
+<tr><td><a href="aslayer_ASFile.htm#ASFileCompletionProc" title=" Called when an asynchronous read or write request has completed."><code>ASFileCompletionProc</code></a></td><td><a href="aslayer_ASFile.htm#ASFileFlush" title=" Flushes any buffered data to a file."><code>ASFileFlush</code></a></td></tr>
+<tr><td><a href="aslayer_ASFile.htm#ASFileFromMDFile" title=" Gets the ASFile associated with the specified ASMDFile and ASFileSys."><code>ASFileFromMDFile</code></a></td><td><a href="aslayer_ASFile.htm#ASFileGetEOF" title=" Gets the current size of a file."><code>ASFileGetEOF</code></a></td></tr>
+<tr><td><a href="aslayer_ASFile.htm#ASFileGetEOF64" title=" Gets the current size of a file."><code>ASFileGetEOF64</code></a></td><td><a href="aslayer_ASFile.htm#ASFileGetFileSys" title=" Gets the file system through which a file was opened."><code>ASFileGetFileSys</code></a></td></tr>
+<tr><td><a href="aslayer_ASFile.htm#ASFileGetMDFile" title=" Given an ASFile, returns the fileSys and the ASMDFile identification in that fileSys."><code>ASFileGetMDFile</code></a></td><td><a href="aslayer_ASFile.htm#ASFileGetOpenMode" title=" Gets the file access mode(s) specified for the file when it was opened."><code>ASFileGetOpenMode</code></a></td></tr>
+<tr><td><a href="aslayer_ASFile.htm#ASFileGetPos" title=" Gets the current seek position in a file."><code>ASFileGetPos</code></a></td><td><a href="aslayer_ASFile.htm#ASFileGetPos64" title=" Gets the current seek position in a file."><code>ASFileGetPos64</code></a></td></tr>
+<tr><td><a href="aslayer_ASFile.htm#ASFileGetURL" title=" Returns the URL associated with file."><code>ASFileGetURL</code></a></td><td><a href="aslayer_ASFile.htm#ASFileHardFlush" title=" Causes a hard flush on a file, which means that the file is flushed to the physical destination."><code>ASFileHardFlush</code></a></td></tr>
+<tr><td><a href="aslayer_ASFile.htm#ASFileHasOutstandingMReads" title=" Determines whether there are any outstanding multi-byte range requests for a file."><code>ASFileHasOutstandingMReads</code></a></td><td><a href="aslayer_ASFile.htm#ASFileIsSame" title=" Performs a comparison between the file and path to determine if they represent the same file."><code>ASFileIsSame</code></a></td></tr>
+<tr><td><a href="aslayer_ASFile.htm#ASFileMReadRequest" title=" Initiates a byte range request for a given file, if the file is in the browser."><code>ASFileMReadRequest</code></a></td><td><a href="aslayer_ASFile.htm#ASFileOpenWithVirtualEOF" title=" ASFileOpenWithVirtualEOF attempts to create a second ASFile instance to a file that is already open."><code>ASFileOpenWithVirtualEOF</code></a></td></tr>
+<tr><td><a href="aslayer_ASFile.htm#ASFilePushData" title=" Sends data from a file system implementation to an ASFile."><code>ASFilePushData</code></a></td><td><a href="aslayer_ASFile.htm#ASFileRead" title=" Reads data from a file, beginning at the current seek position."><code>ASFileRead</code></a></td></tr>
+<tr><td><a href="aslayer_ASFile.htm#ASFileReopen" title=" Attempts to reopen a file using the specified read/write mode."><code>ASFileReopen</code></a></td><td><a href="aslayer_ASFile.htm#ASFileSetEOF" title=" Changes the size of a file."><code>ASFileSetEOF</code></a></td></tr>
+<tr><td><a href="aslayer_ASFile.htm#ASFileSetEOF64" title=" Changes the size of a file."><code>ASFileSetEOF64</code></a></td><td><a href="aslayer_ASFile.htm#ASFileSetMode" title=" Gets or sets the mode flags for a file."><code>ASFileSetMode</code></a></td></tr>
+<tr><td><a href="aslayer_ASFile.htm#ASFileSetPos" title=" Seeks to the specified position in a file."><code>ASFileSetPos</code></a></td><td><a href="aslayer_ASFile.htm#ASFileSetPos64" title=" Seeks to the specified position in a file."><code>ASFileSetPos64</code></a></td></tr>
+<tr><td><a href="aslayer_ASFile.htm#ASFileStmRdOpen" title=" Creates a read-only ASStm from a file."><code>ASFileStmRdOpen</code></a></td><td><a href="aslayer_ASFile.htm#ASFileStmWrOpen" title=" Creates a writable ASStm from a file."><code>ASFileStmWrOpen</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysMReadRequestProc" title=" A callback for ASFileSysRec that queues asynchronous requests for one or more byte ranges that the caller (usually the Acrobat viewer or library) will need in the near future."><code>ASFileSysMReadRequestProc</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysOpenFile" title=" Attempts to open a file in the specified file system, in the specified read/write/create mode."><code>ASFileSysOpenFile</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysOpenFile64" title=" Attempts to open a file in the specified file system, in the specified read/write/create mode."><code>ASFileSysOpenFile64</code></a></td><td><a href="aslayer_ASFile.htm#ASFileWrite" title=" Writes data to a file, beginning at the current seek position."><code>ASFileWrite</code></a></td></tr>
+<tr><td><a href="coslayer_CosDoc.htm#CosDocSaveToFile" title=" Saves a Cos document to a file."><code>CosDocSaveToFile</code></a></td><td><a href="coslayer_CosDoc.htm#CosDocSaveWithParams" title=" Saves a Cos document, optionally to a new file."><code>CosDocSaveWithParams</code></a></td></tr>
+<tr><td><a href="pdlayer_PDDoc.htm#PDDocOpenFromASFile" title=" Opens the document specified by the ASFile."><code>PDDocOpenFromASFile</code></a></td><td><a href="pdlayer_PDDoc.htm#PDDocOpenFromASFileEx" title=" Opens the document specified by the ASFile."><code>PDDocOpenFromASFileEx</code></a></td></tr>
+<tr><td><a href="pdlayer_PDFileAttachment.htm#PDFileAttachmentNewFromFile" title=" Creates a new file attachment from the given file."><code>PDFileAttachmentNewFromFile</code></a></td><td><a href="pdlayer_PDFileAttachment.htm#PDFileAttachmentSaveToFile" title=" Copies the data embedded in the file attachment to the specified file."><code>PDFileAttachmentSaveToFile</code></a></td></tr>
+<tr><td><a href="pdlayer_PDFileAttachment.htm#PDFileAttachmentUpdateFromFile" title=" Updates a file attachment from the given file."><code>PDFileAttachmentUpdateFromFile</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDDoc.htm#_t_PDDocOpenParams" title=" A structure used by PDDocOpenWithParams() to specify file open information."><code>_t_PDDocOpenParams</code></a></td><td><a href="pdlayer_PDPage.htm#_t_PDHostSepsPlateRec" title=" Used to specify per-plate options when doing separations."><code>_t_PDHostSepsPlateRec</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASFileOffset"><strong><span style="color:grey;">ASFileOffset</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:99</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A file offset value for use in callback procedures. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>ASFileOffset</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="coslayer_CosDoc.htm#CosDocEnumEOFsProc" title=" A callback for CosDocEnumEOFs()."><code>CosDocEnumEOFsProc</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASFileOffset64"><strong><span style="color:grey;">ASFileOffset64</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:100</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASInt64" title=" 8-byte signed long numeric value."><code>ASInt64</code></a> <code>ASFileOffset64</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="coslayer_CosDoc.htm#CosDocEnumEOFsProc64" title=" A callback for CosDocEnumEOFs64()."><code>CosDocEnumEOFsProc64</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASFilePos"><strong><span style="color:grey;">ASFilePos</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:94</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A file position value for use in callback procedures. This value cannot exceed 2 GB. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>ASFilePos</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASFileSys.htm#ASFileSysCanSetEofProc" title=" A callback for ASFileSysRec that determines whether ASFileSys can set the end of file marker (EOF) to a new offset for the specified file."><code>ASFileSysCanSetEofProc</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysGetEofProc" title=" A callback for ASFileSysRec that gets a file's current logical size."><code>ASFileSysGetEofProc</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysGetPosProc" title=" A callback for ASFileSysRec that gets the current position for the specified file."><code>ASFileSysGetPosProc</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysSetEofProc" title=" A callback for ASFileSysRec that increases or decreases the logical size of a file."><code>ASFileSysSetEofProc</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysSetPosProc" title=" A callback for ASFileSysRec that sets the current position in a file (the point from which data will next be read)."><code>ASFileSysSetPosProc</code></a></td><td><a href="coslayer_CosObj.htm#CosObjOffsetProc" title=" A callback for PDDocSaveParams() used by PDDocSaveWithParams()."><code>CosObjOffsetProc</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASFilePos64"><strong><span style="color:grey;">ASFilePos64</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:103</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>The absolute position within a file. This value can exceed 2 GB. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASUns64" title=" 8-byte unsigned long numeric value."><code>ASUns64</code></a> <code>ASFilePos64</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASFile.htm#ASFileGetEOF64" title=" Gets the current size of a file."><code>ASFileGetEOF64</code></a></td><td><a href="aslayer_ASFile.htm#ASFileGetPos64" title=" Gets the current seek position in a file."><code>ASFileGetPos64</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysGetFilePosLimit" title=" Returns the maximum file position that can be processed by this file system."><code>ASFileSysGetFilePosLimit</code></a></td><td><a href="coslayer_CosStream.htm#CosStreamPos64" title=" Gets the byte offset of the start of a Cos stream's data in the PDF file."><code>CosStreamPos64</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASFile.htm#ASFileOpenWithVirtualEOF" title=" ASFileOpenWithVirtualEOF attempts to create a second ASFile instance to a file that is already open."><code>ASFileOpenWithVirtualEOF</code></a></td><td><a href="aslayer_ASFile.htm#ASFileSetEOF64" title=" Changes the size of a file."><code>ASFileSetEOF64</code></a></td></tr>
+<tr><td><a href="aslayer_ASFile.htm#ASFileSetPos64" title=" Seeks to the specified position in a file."><code>ASFileSetPos64</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysGetEof64Proc" title=" A callback for ASFileSysRec that gets a file's current logical size."><code>ASFileSysGetEof64Proc</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysGetFilePositionLimitProc" title=" A callback for ASFileSysRec that returns the maximum file position that can be processed by this file system."><code>ASFileSysGetFilePositionLimitProc</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysGetPos64Proc" title=" A callback that gets the current position for the specified file."><code>ASFileSysGetPos64Proc</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysSetEof64Proc" title=" A callback for ASFileSysRec that increases or decreases the logical size of a file."><code>ASFileSysSetEof64Proc</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysSetPos64Proc" title=" A callback for ASFileSysRec that sets the current position in a file, which is the point from which data will next be read."><code>ASFileSysSetPos64Proc</code></a></td></tr>
+<tr><td><a href="aslayer_ASStm.htm#ASProcStmSeekProc" title=" A callback for use by ASProcStmRdOpenEx()."><code>ASProcStmSeekProc</code></a></td><td><a href="coslayer_CosDoc.htm#CosDocObjIsWithinRange64" title=" Tests whether the definition of a specified Cos object, in the file associated with the object's CosDoc, begins within any of a set of byte ranges."><code>CosDocObjIsWithinRange64</code></a></td></tr>
+<tr><td><a href="coslayer_CosObj.htm#CosObjOffsetProc64"><code>CosObjOffsetProc64</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASMDFile"><strong><span style="color:grey;">ASMDFile</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1827</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p><a href="aslayer_ASFile.htm#ASMDFile" title=" ASMDFile replaces MDFile.">ASMDFile</a> replaces <a href="aslayer_ASFile.htm#MDFile">MDFile</a>. <a href="aslayer_ASFile.htm#MDFile">MDFile</a> is an obsolete name for this data type for backward compatibility.<br/>
+<p>An <a href="aslayer_ASFile.htm#MDFile">MDFile</a> is an opaque representation of a file instance for a particular file system. File system implementors may choose any convenient representation for an <a href="aslayer_ASFile.htm#MDFile">MDFile</a>. In particular, file systems need not worry about <a href="aslayer_ASFile.htm#MDFile">MDFile</a> space conflicts; the <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> object exported by the common implementation is guaranteed to be unique across all open files, and the common implementation maps calls of <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> methods to calls of ASFileSystem callbacks with the corresponding <a href="aslayer_ASFile.htm#MDFile">MDFile</a>.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>void</code> <code>*</code><code>ASMDFile</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASFile.htm#ASFileFromMDFile" title=" Gets the ASFile associated with the specified ASMDFile and ASFileSys."><code>ASFileFromMDFile</code></a></td><td><a href="aslayer_ASFile.htm#ASFileGetMDFile" title=" Given an ASFile, returns the fileSys and the ASMDFile identification in that fileSys."><code>ASFileGetMDFile</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysAsyncAbortProc" title=" A callback for ASFileSysRec that aborts all uncompleted asynchronous I/O requests for the specified file."><code>ASFileSysAsyncAbortProc</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysCanSetEofProc" title=" A callback for ASFileSysRec that determines whether ASFileSys can set the end of file marker (EOF) to a new offset for the specified file."><code>ASFileSysCanSetEofProc</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysClearOutstandingMReadsProc" title=" A callback for ASFileSysRec that is used to advise a file system that the previous range of bytes requested to read are not needed, so that it may drop the read requests."><code>ASFileSysClearOutstandingMReadsProc</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysCloseProc" title=" A callback for ASFileSysRec."><code>ASFileSysCloseProc</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysFlushProc" title=" A callback for ASFileSysRec that flushes data for the specified file."><code>ASFileSysFlushProc</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysGetEof64Proc" title=" A callback for ASFileSysRec that gets a file's current logical size."><code>ASFileSysGetEof64Proc</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysGetEofProc" title=" A callback for ASFileSysRec that gets a file's current logical size."><code>ASFileSysGetEofProc</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysGetFileFlags" title=" A callback for ASFileSysRec that gets the flags for the specified file."><code>ASFileSysGetFileFlags</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysGetPos64Proc" title=" A callback that gets the current position for the specified file."><code>ASFileSysGetPos64Proc</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysGetPosProc" title=" A callback for ASFileSysRec that gets the current position for the specified file."><code>ASFileSysGetPosProc</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysGetStatusProc" title=" A callback for ASFileSysRec that gets the status of the specified file."><code>ASFileSysGetStatusProc</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysHardFlushProc" title=" Does a hard flush on the file."><code>ASFileSysHardFlushProc</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysIsSameFileProc" title=" A callback for ASFileSysRec that tests whether two files are the same."><code>ASFileSysIsSameFileProc</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysMReadRequestProc" title=" A callback for ASFileSysRec that queues asynchronous requests for one or more byte ranges that the caller (usually the Acrobat viewer or library) will need in the near future."><code>ASFileSysMReadRequestProc</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysOpen64Proc" title=" A callback for ASFileSysRec that opens the specified file."><code>ASFileSysOpen64Proc</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysOpenProc" title=" A callback for ASFileSysRec that opens the specified file."><code>ASFileSysOpenProc</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysReadProc" title=" A callback for ASFileSysRec that reads data from the specified file."><code>ASFileSysReadProc</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysRenameProc" title=" A callback for ASFileSysRec that renames a file."><code>ASFileSysRenameProc</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysReopenProc" title=" A callback for ASFileSysRec that reopens a file in the specified mode."><code>ASFileSysReopenProc</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysSetEof64Proc" title=" A callback for ASFileSysRec that increases or decreases the logical size of a file."><code>ASFileSysSetEof64Proc</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysSetEofProc" title=" A callback for ASFileSysRec that increases or decreases the logical size of a file."><code>ASFileSysSetEofProc</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysSetModeProc" title=" ASFileSysSetMode() sets and gets parameters for the specified file."><code>ASFileSysSetModeProc</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysSetPos64Proc" title=" A callback for ASFileSysRec that sets the current position in a file, which is the point from which data will next be read."><code>ASFileSysSetPos64Proc</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysSetPosProc" title=" A callback for ASFileSysRec that sets the current position in a file (the point from which data will next be read)."><code>ASFileSysSetPosProc</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysWriteProc" title=" A callback for ASFileSysRec that writes data to the specified file."><code>ASFileSysWriteProc</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysYieldProc" title=" A callback for ASFileSysRec that yields the asynchronous I/O requests for the specified file."><code>ASFileSysYieldProc</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASFileSys.htm#_t_ASIORequestRec" title=" The first five items in the ASIORequestSingleRec structure exactly match the parameters of an ASFileSys read or write call."><code>_t_ASIORequestRec</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASTFilePos"><strong><span style="color:grey;">ASTFilePos</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:195</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A numeric count value for use in I/O methods and data structures. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileCompletionProc" title=" Called when an asynchronous read or write request has completed."><code>ASFileCompletionProc</code></a>
+<a href="aslayer_ASFile.htm#ASFileGetEOF" title=" Gets the current size of a file."><code>ASFileGetEOF</code></a>
+<a href="aslayer_ASFile.htm#ASFileGetPos" title=" Gets the current seek position in a file."><code>ASFileGetPos</code></a>
+<a href="aslayer_ASFile.htm#ASFilePushData" title=" Sends data from a file system implementation to an ASFile."><code>ASFilePushData</code></a>
+<a href="aslayer_ASFile.htm#ASFileSetPos" title=" Seeks to the specified position in a file."><code>ASFileSetPos</code></a>
+<a href="aslayer_ASFileSys.htm#ASFileSysMReadRequestProc" title=" A callback for ASFileSysRec that queues asynchronous requests for one or more byte ranges that the caller (usually the Acrobat viewer or library) will need in the near future."><code>ASFileSysMReadRequestProc</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>ASTFilePos</code><code>;</code> </code>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">ASTFilePos</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:269</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>ASTFilePos</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASFile.htm#ASFileGetEOF" title=" Gets the current size of a file."><code>ASFileGetEOF</code></a></td><td><a href="aslayer_ASFile.htm#ASFileGetPos" title=" Gets the current seek position in a file."><code>ASFileGetPos</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASFile.htm#ASFileCompletionProc" title=" Called when an asynchronous read or write request has completed."><code>ASFileCompletionProc</code></a></td><td><a href="aslayer_ASFile.htm#ASFilePushData" title=" Sends data from a file system implementation to an ASFile."><code>ASFilePushData</code></a></td></tr>
+<tr><td><a href="aslayer_ASFile.htm#ASFileSetEOF" title=" Changes the size of a file."><code>ASFileSetEOF</code></a></td><td><a href="aslayer_ASFile.htm#ASFileSetPos" title=" Seeks to the specified position in a file."><code>ASFileSetPos</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysMReadRequestProc" title=" A callback for ASFileSysRec that queues asynchronous requests for one or more byte ranges that the caller (usually the Acrobat viewer or library) will need in the near future."><code>ASFileSysMReadRequestProc</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASFileSys.htm#_t_ASIORequestRec" title=" The first five items in the ASIORequestSingleRec structure exactly match the parameters of an ASFileSys read or write call."><code>_t_ASIORequestRec</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="CallbackSignatures">
+<header><h2>ASFile Callback Signatures</h2></header>
+<nav><dl>
+<dt><a href="#ASFileCompletionProc">ASFileCompletionProc</a></dt><dd> -  Called when an asynchronous read or write request has completed.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASFileCompletionProc"><strong><span style="color:grey;">ASFileCompletionProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:1786</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Called when an asynchronous read or write request has completed. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFileSys.htm#ASFileSysAsyncAbortProc" title=" A callback for ASFileSysRec that aborts all uncompleted asynchronous I/O requests for the specified file."><code>ASFileSysAsyncAbortProc</code></a>
+<a href="aslayer_ASFileSys.htm#ASFileSysAsyncReadProc" title=" A callback for ASFileSysRec that asynchronously reads the specified data, returning immediately after the request has been queued."><code>ASFileSysAsyncReadProc</code></a>
+<a href="aslayer_ASFileSys.htm#ASFileSysAsyncWriteProc" title=" A callback for ASFileSysRec that asynchronously writes the specified data, returning immediately after the request has been queued."><code>ASFileSysAsyncWriteProc</code></a>
+<a href="aslayer_ASFileSys.htm#ASFileSysYieldProc" title=" A callback for ASFileSysRec that yields the asynchronous I/O requests for the specified file."><code>ASFileSysYieldProc</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASFileCompletionProc(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>aFile</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>p</code><code>,</code> <a href="aslayer_ASFile.htm#ASTFilePos"><code>ASTFilePos</code></a> <code>fileOffsetRequested</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>countRequested</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>nBytesRead</code><code>,</code> <a href="aslayer_ASException.htm#ASErrorCode" title=" An error code value for use in ASFile and ASFileSys methods and callbacks."><code>ASErrorCode</code></a> <code>error</code><code>,</code> <code>void</code> <code>*</code><code>compProcClientData</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aFile</code></span>
+</td><td><span>IN/OUT The <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> for which data is read or written. </span>
+</td></tr>
+<tr><td><span><code>p</code></span>
+</td><td><span>IN/OUT A pointer to the buffer provided by the client. It contains <code>nBytesRead</code> bytes of data if <code>error</code> is zero. </span>
+</td></tr>
+<tr><td><span><code>fileOffsetRequested</code></span>
+</td><td><span>IN/OUT The file offset requested by the client. </span>
+</td></tr>
+<tr><td><span><code>countRequested</code></span>
+</td><td><span>IN/OUT The number of bytes requested by the client. </span>
+</td></tr>
+<tr><td><span><code>nBytesRead</code></span>
+</td><td><span>IN/OUT The number of bytes actually read or written. </span>
+</td></tr>
+<tr><td><span><code>error</code></span>
+</td><td><span>IN/OUT The error condition if it is non-zero; see AcroErr.h. </span>
+</td></tr>
+<tr><td><span><code>compProcClientData</code></span>
+</td><td><span>IN/OUT The client data parameter provided by client. </span>
+</td></tr></Table>
+</section>
+</section>
+<section id="Functions">
+<header><h2>ASFile Functions</h2></header>
+<nav><dl>
+<dt><a href="#ASFileAcquirePathName">ASFileAcquirePathName</a></dt><dd> -  Gets the path name for a file and increments an internal reference count.</dd>
+<dt><a href="#ASFileCanSetEOF">ASFileCanSetEOF</a></dt><dd> -  Checks if ASFileSetEOF() can be done for this file with a specified new file size.</dd>
+<dt><a href="#ASFileClearOutstandingMReads">ASFileClearOutstandingMReads</a></dt><dd> -  Clears all outstanding mreads for the given file.</dd>
+<dt><a href="#ASFileClose">ASFileClose</a></dt><dd> -  Closes the specified file.</dd>
+<dt><a href="#ASFileFlush">ASFileFlush</a></dt><dd> -  Flushes any buffered data to a file.</dd>
+<dt><a href="#ASFileFromMDFile">ASFileFromMDFile</a></dt><dd> -  Gets the ASFile associated with the specified ASMDFile and ASFileSys.</dd>
+<dt><a href="#ASFileGetEOF">ASFileGetEOF</a></dt><dd> -  Gets the current size of a file.</dd>
+<dt><a href="#ASFileGetEOF64">ASFileGetEOF64</a></dt><dd> -  Gets the current size of a file.</dd>
+<dt><a href="#ASFileGetFileSys">ASFileGetFileSys</a></dt><dd> -  Gets the file system through which a file was opened.</dd>
+<dt><a href="#ASFileGetFileSysByName">ASFileGetFileSysByName</a></dt><dd> -  Gets the file system that was registered with the specified name.</dd>
+<dt><a href="#ASFileGetMDFile">ASFileGetMDFile</a></dt><dd> -  Given an ASFile, returns the fileSys and the ASMDFile identification in that fileSys.</dd>
+<dt><a href="#ASFileGetOpenMode">ASFileGetOpenMode</a></dt><dd> -  Gets the file access mode(s) specified for the file when it was opened.</dd>
+<dt><a href="#ASFileGetPos">ASFileGetPos</a></dt><dd> -  Gets the current seek position in a file.</dd>
+<dt><a href="#ASFileGetPos64">ASFileGetPos64</a></dt><dd> -  Gets the current seek position in a file.</dd>
+<dt><a href="#ASFileGetURL">ASFileGetURL</a></dt><dd> -  Returns the URL associated with file.</dd>
+<dt><a href="#ASFileHardFlush">ASFileHardFlush</a></dt><dd> -  Causes a hard flush on a file, which means that the file is flushed to the physical destination.</dd>
+<dt><a href="#ASFileHasOutstandingMReads">ASFileHasOutstandingMReads</a></dt><dd> -  Determines whether there are any outstanding multi-byte range requests for a file.</dd>
+<dt><a href="#ASFileIsSame">ASFileIsSame</a></dt><dd> -  Performs a comparison between the file and path to determine if they represent the same file.</dd>
+<dt><a href="#ASFileMReadRequest">ASFileMReadRequest</a></dt><dd> -  Initiates a byte range request for a given file, if the file is in the browser.</dd>
+<dt><a href="#ASFileOpenWithVirtualEOF">ASFileOpenWithVirtualEOF</a></dt><dd> -  ASFileOpenWithVirtualEOF attempts to create a second ASFile instance to a file that is already open.</dd>
+<dt><a href="#ASFilePushData">ASFilePushData</a></dt><dd> -  Sends data from a file system implementation to an ASFile.</dd>
+<dt><a href="#ASFileRead">ASFileRead</a></dt><dd> -  Reads data from a file, beginning at the current seek position.</dd>
+<dt><a href="#ASFileRegisterFileSys">ASFileRegisterFileSys</a></dt><dd> -  Allows an implementor to provide a file system for use by external clients.</dd>
+<dt><a href="#ASFileReopen">ASFileReopen</a></dt><dd> -  Attempts to reopen a file using the specified read/write mode.</dd>
+<dt><a href="#ASFileSetEOF">ASFileSetEOF</a></dt><dd> -  Changes the size of a file.</dd>
+<dt><a href="#ASFileSetEOF64">ASFileSetEOF64</a></dt><dd> -  Changes the size of a file.</dd>
+<dt><a href="#ASFileSetMode">ASFileSetMode</a></dt><dd> -  Gets or sets the mode flags for a file.</dd>
+<dt><a href="#ASFileSetPos">ASFileSetPos</a></dt><dd> -  Seeks to the specified position in a file.</dd>
+<dt><a href="#ASFileSetPos64">ASFileSetPos64</a></dt><dd> -  Seeks to the specified position in a file.</dd>
+<dt><a href="#ASFileStmRdOpen">ASFileStmRdOpen</a></dt><dd> -  Creates a read-only ASStm from a file.</dd>
+<dt><a href="#ASFileStmWrOpen">ASFileStmWrOpen</a></dt><dd> -  Creates a writable ASStm from a file.</dd>
+<dt><a href="#ASFileUnregisterFileSys">ASFileUnregisterFileSys</a></dt><dd> -  Allows a fileSys to be unregistered.</dd>
+<dt><a href="#ASFileWrite">ASFileWrite</a></dt><dd> -  Writes data to a file, beginning at the current seek position.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASFileAcquirePathName"><strong><span style="color:grey;">ASFileAcquirePathName</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:977</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the path name for a file and increments an internal reference count. It is the caller's responsibility to release the <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> when it is no longer needed by using <a href="aslayer_ASFileSys.htm#ASFileSysReleasePath" title=" Decrements the internal reference count for the path name and disposes of the path name (but not the file itself) if the reference count is zero.">ASFileSysReleasePath</a>(). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASFileSys.htm#ASFileSysReleasePath" title=" Decrements the internal reference count for the path name and disposes of the path name (but not the file itself) if the reference count is zero.">ASFileSysReleasePath</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>ASFileAcquirePathName(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>aFile</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aFile</code></span>
+</td><td><span>IN/OUT The file whose path name is acquired. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> associated with <code>asFile</code>. You can use <a href="aslayer_ASFileSys.htm#ASFileSysDIPathFromPath" title=" Converts a file name, specified as an ASPathName, to a device-independent path name.">ASFileSysDIPathFromPath</a>() to convert this to a device-independent path name. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASFileCanSetEOF"><strong><span style="color:grey;">ASFileCanSetEOF</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:2368</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Checks if <a href="aslayer_ASFile.htm#ASFileSetEOF" title=" Changes the size of a file.">ASFileSetEOF</a>() can be done for this file with a specified new file size. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileGetEOF" title=" Gets the current size of a file."><code>ASFileGetEOF</code></a>
+<a href="aslayer_ASFile.htm#ASFileGetPos" title=" Gets the current seek position in a file."><code>ASFileGetPos</code></a>
+<a href="aslayer_ASFile.htm#ASFileSetEOF" title=" Changes the size of a file."><code>ASFileSetEOF</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ASFileCanSetEOF(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>file</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>newFileSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>file</code></span>
+</td><td><span>The file in question. </span>
+</td></tr>
+<tr><td><span><code>newFileSize</code></span>
+</td><td><span>The proposed new file size. This parameter will be treated as unsigned. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASFileClearOutstandingMReads"><strong><span style="color:grey;">ASFileClearOutstandingMReads</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1770</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Clears all outstanding <code>mreads</code> for the given file. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASFile.htm#ASFileHasOutstandingMReads" title=" Determines whether there are any outstanding multi-byte range requests for a file.">ASFileHasOutstandingMReads</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASFileClearOutstandingMReads(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>fN</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fN</code></span>
+</td><td><span>The file to clear <code>mreads</code> for. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASFileClose"><strong><span style="color:grey;">ASFileClose</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:859</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Closes the specified file. After a call to <a href="aslayer_ASFile.htm#ASFileClose" title=" Closes the specified file.">ASFileClose</a>(), the file handle is no longer valid but may be reused as the result of a subsequent call to <a href="aslayer_ASFileSys.htm#ASFileSysOpenFile" title=" Attempts to open a file in the specified file system, in the specified read/write/create mode.">ASFileSysOpenFile</a>(). </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileFlush" title=" Flushes any buffered data to a file."><code>ASFileFlush</code></a>
+<a href="aslayer_ASFile.htm#ASFileReopen" title=" Attempts to reopen a file using the specified read/write mode."><code>ASFileReopen</code></a>
+<a href="aslayer_ASFile.htm#ASFileStmRdOpen" title=" Creates a read-only ASStm from a file."><code>ASFileStmRdOpen</code></a>
+<a href="aslayer_ASFile.htm#ASFileStmWrOpen" title=" Creates a writable ASStm from a file."><code>ASFileStmWrOpen</code></a>
+<a href="aslayer_ASFileSys.htm#ASFileSysOpenFile" title=" Attempts to open a file in the specified file system, in the specified read/write/create mode."><code>ASFileSysOpenFile</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASException.htm#ASErrorCode" title=" An error code value for use in ASFile and ASFileSys methods and callbacks."><code>ASErrorCode</code></a> <code>ASFileClose(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>aFile</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aFile</code></span>
+</td><td><span>IN/OUT The file to close. The file must have been opened previously using <a href="aslayer_ASFileSys.htm#ASFileSysOpenFile" title=" Attempts to open a file in the specified file system, in the specified read/write/create mode.">ASFileSysOpenFile</a>(). </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><code>0</code> if the operation was successful; some file system or platform-dependent error code is returned otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASFileFlush"><strong><span style="color:grey;">ASFileFlush</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:965</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Flushes any buffered data to a file. This method may raise file system or platform-specific exceptions. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASFile.htm#ASFileHardFlush" title=" Causes a hard flush on a file, which means that the file is flushed to the physical destination.">ASFileHardFlush</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASFileFlush(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>aFile</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aFile</code></span>
+</td><td><span>The file whose data is flushed. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#fileErrIO" title=" A file I/O error has occurred."><code>fileErrIO</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASFileFromMDFile"><strong><span style="color:grey;">ASFileFromMDFile</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1207</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> associated with the specified <a href="aslayer_ASFile.htm#ASMDFile" title=" ASMDFile replaces MDFile.">ASMDFile</a> and <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system.">ASFileSys</a>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileGetFileSys" title=" Gets the file system through which a file was opened."><code>ASFileGetFileSys</code></a>
+<a href="aslayer_ASFile.htm#ASFileGetMDFile" title=" Given an ASFile, returns the fileSys and the ASMDFile identification in that fileSys."><code>ASFileGetMDFile</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ASFileFromMDFile(</code><a href="aslayer_ASFile.htm#ASMDFile" title=" ASMDFile replaces MDFile."><code>ASMDFile</code></a> <code>mdFile</code><code>,</code> <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>,</code> <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>*</code><code>pfN</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>mdFile</code></span>
+</td><td><span>IN/OUT The <a href="aslayer_ASFile.htm#ASMDFile" title=" ASMDFile replaces MDFile.">ASMDFile</a> for which the information is desired. </span>
+</td></tr>
+<tr><td><span><code>fileSys</code></span>
+</td><td><span>IN/OUT The <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system.">ASFileSys</a> through which <code>fileID</code> was opened. </span>
+</td></tr>
+<tr><td><span><code>pfN</code></span>
+</td><td><span>IN/OUT (Filled by the method, may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) The <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> representing <code>fileID</code> within <code>fileSys</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if <code>fileID</code> is determined to be a valid file opened through <code>fileSys</code>, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASFileGetEOF"><strong><span style="color:grey;">ASFileGetEOF</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:920</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the current size of a file. It calls <a href="aslayer_ASFileSys.htm#ASFileSysGetEofProc" title=" A callback for ASFileSysRec that gets a file's current logical size.">ASFileSysGetEofProc</a>(). This call returns an error if the file size is greater than 2 GB. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileGetEOF64" title=" Gets the current size of a file."><code>ASFileGetEOF64</code></a>
+<a href="aslayer_ASFile.htm#ASFileSetEOF" title=" Changes the size of a file."><code>ASFileSetEOF</code></a>
+<a href="aslayer_ASFile.htm#ASFileSetPos" title=" Seeks to the specified position in a file."><code>ASFileSetPos</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFile.htm#ASTFilePos"><code>ASTFilePos</code></a> <code>ASFileGetEOF(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>aFile</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aFile</code></span>
+</td><td><span>The <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> whose size is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The size of the file. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#fileErrIO" title=" A file I/O error has occurred."><code>fileErrIO</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASFileGetEOF64"><strong><span style="color:grey;">ASFileGetEOF64</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:2631</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the current size of a file. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileSetEOF64" title=" Changes the size of a file."><code>ASFileSetEOF64</code></a>
+<a href="aslayer_ASFile.htm#ASFileSetPos" title=" Seeks to the specified position in a file."><code>ASFileSetPos</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFile.htm#ASFilePos64" title=" The absolute position within a file."><code>ASFilePos64</code></a> <code>ASFileGetEOF64(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>aFile</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aFile</code></span>
+</td><td><span>IN/OUT The <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> whose size is obtained. This call will work with files over 2 GB in length. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The size of the file. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#fileErrIO" title=" A file I/O error has occurred."><code>fileErrIO</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASFileGetFileSys"><strong><span style="color:grey;">ASFileGetFileSys</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:987</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the file system through which a file was opened. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASFile.htm#ASFileGetFileSysByName" title=" Gets the file system that was registered with the specified name.">ASFileGetFileSysByName</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>ASFileGetFileSys(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>aFile</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aFile</code></span>
+</td><td><span>IN/OUT The open file whose file system is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The file's <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system.">ASFileSys</a>. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASFileGetFileSysByName"><strong><span style="color:grey;">ASFileGetFileSysByName</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1190</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the file system that was registered with the specified name. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASFile.htm#ASFileGetFileSys" title=" Gets the file system through which a file was opened.">ASFileGetFileSys</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>ASFileGetFileSysByName(</code><a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>name</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>name</code></span>
+</td><td><div><span>IN/OUT The <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> corresponding to the name of the file system to obtain. It may be one of the following: </span>
+
+<table class="ruled"><tr><th><span>String</span>
+</th><th><span>Description</span>
+</th></tr>
+<tr><td><span><code>"Mac_K"</code></span>
+</td><td><span>Mac OS file system</span>
+</td></tr>
+<tr><td><span><code>"DOS_K"</code></span>
+</td><td><span>Classic Windows file system (it only supports host-encoded paths)</span>
+</td></tr>
+<tr><td><span><code>"Win_K"</code></span>
+</td><td><span>Unicode Windows file system</span>
+</td></tr>
+<tr><td><span><code>"Unix_K"</code></span>
+</td><td><span>UNIX file system</span>
+</td></tr>
+<tr><td><span><code>"CHTTP"</code></span>
+</td><td><span>HTTP file system</span>
+</td></tr>
+<tr><td><span><code>"CDocumentum"</code></span>
+</td><td><span>Documentum file system</span>
+</td></tr>
+<tr><td><span><code>"CODMA"</code></span>
+</td><td><span>Open Document Management file system</span>
+</td></tr></table>
+</div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The file system, otherwise <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if no matching file system was found. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASFileGetMDFile"><strong><span style="color:grey;">ASFileGetMDFile</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1225</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Given an <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a>, returns the <code>fileSys</code> and the <a href="aslayer_ASFile.htm#ASMDFile" title=" ASMDFile replaces MDFile.">ASMDFile</a> identification in that <code>fileSys</code>. This call is needed for a file system in a plug-in to be able to call the inner routines in another file system. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileFromMDFile" title=" Gets the ASFile associated with the specified ASMDFile and ASFileSys."><code>ASFileFromMDFile</code></a>
+<a href="aslayer_ASFile.htm#ASFileGetFileSys" title=" Gets the file system through which a file was opened."><code>ASFileGetFileSys</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ASFileGetMDFile(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>fN</code><code>,</code> <a href="aslayer_ASFile.htm#ASMDFile" title=" ASMDFile replaces MDFile."><code>ASMDFile</code></a> <code>*</code><code>pFileID</code><code>,</code> <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>*</code><code>pFileSys</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fN</code></span>
+</td><td><span>IN/OUT The <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> for which the information is desired. </span>
+</td></tr>
+<tr><td><span><code>pFileID</code></span>
+</td><td><span>IN/OUT (Filled by the method, may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) The <a href="aslayer_ASFile.htm#ASMDFile" title=" ASMDFile replaces MDFile.">ASMDFile</a> identifier associated with file. </span>
+</td></tr>
+<tr><td><span><code>pFileSys</code></span>
+</td><td><span>IN/OUT (Filled by the method, may be <a href="aslayer_General.htm#NULL"><code>NULL</code></a>) The file system through which this file was opened. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the file is an open file, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASFileGetOpenMode"><strong><span style="color:grey;">ASFileGetOpenMode</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1846</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets the file access mode(s) specified for the file when it was opened. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFileSys.htm#ASFileMode" title=" File access modes used to specify how a file can be used when it is open."><code>ASFileMode</code></a> <code>ASFileGetOpenMode(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>fN</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fN</code></span>
+</td><td><span>The file in question. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div><p>A value corresponding to one or more <a href="aslayer_ASFileSys.htm#ASFileMode" title=" File access modes used to specify how a file can be used when it is open.">ASFileMode</a> objects used to access or create the file, as shown in the table below. The values that can be returned include combinations of the following, OR'd with each other:<br/>
+<p>Return value from <a href="aslayer_ASFile.htm#ASFileGetOpenMode" title=" Gets the file access mode(s) specified for the file when it was opened.">ASFileGetOpenMode</a>():<br/></p>
+
+<table class="ruled"><tr><th><span>
+<p>Return value</span>
+</th><th><span>Meaning</span>
+</th></tr>
+<tr><td><span><code>0</code></span>
+</td><td><span>created</span>
+</td></tr>
+<tr><td><span><code>1</code></span>
+</td><td><span>readable</span>
+</td></tr>
+<tr><td><span><code>2</code></span>
+</td><td><span>readable and writable</span>
+</td></tr>
+<tr><td><span><code>8</code></span>
+</td><td><span>sequential access</span>
+</td></tr>
+<tr><td><span><code>16</code></span>
+</td><td><span>local</span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASFileGetPos"><strong><span style="color:grey;">ASFileGetPos</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:890</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the current seek position in a file. This is the position at which the next read or write will begin. This call returns an error if the file position is greater than 2 GB. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileGetPos64" title=" Gets the current seek position in a file."><code>ASFileGetPos64</code></a>
+<a href="aslayer_ASFile.htm#ASFileRead" title=" Reads data from a file, beginning at the current seek position."><code>ASFileRead</code></a>
+<a href="aslayer_ASFile.htm#ASFileSetPos" title=" Seeks to the specified position in a file."><code>ASFileSetPos</code></a>
+<a href="aslayer_ASFile.htm#ASFileWrite" title=" Writes data to a file, beginning at the current seek position."><code>ASFileWrite</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFile.htm#ASTFilePos"><code>ASTFilePos</code></a> <code>ASFileGetPos(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>aFile</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aFile</code></span>
+</td><td><span>IN/OUT The file in which to get the seek position. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The current seek position. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#fileErrIO" title=" A file I/O error has occurred."><code>fileErrIO</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASFileGetPos64"><strong><span style="color:grey;">ASFileGetPos64</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:2605</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the current seek position in a file. This is the position at which the next read or write will begin. This call will work with files over 2 GB in length. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileRead" title=" Reads data from a file, beginning at the current seek position."><code>ASFileRead</code></a>
+<a href="aslayer_ASFile.htm#ASFileSetPos64" title=" Seeks to the specified position in a file."><code>ASFileSetPos64</code></a>
+<a href="aslayer_ASFile.htm#ASFileWrite" title=" Writes data to a file, beginning at the current seek position."><code>ASFileWrite</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFile.htm#ASFilePos64" title=" The absolute position within a file."><code>ASFilePos64</code></a> <code>ASFileGetPos64(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>aFile</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aFile</code></span>
+</td><td><span>IN/OUT The file in which to get the seek position. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The current seek position. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#fileErrIO" title=" A file I/O error has occurred."><code>fileErrIO</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASFileGetURL"><strong><span style="color:grey;">ASFileGetURL</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1796</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Returns the URL associated with file. It is the caller's responsibility to release the memory associated with the returned string using <a href="aslayer_ASMem.htm#ASfree" title=" Frees the specified memory block.">ASfree</a>(). </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>char</code> <code>*</code><code>ASFileGetURL(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>asf</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>asf</code></span>
+</td><td><span>IN/OUT The file in question. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A buffer containing the URL, or <a href="aslayer_General.htm#NULL"><code>NULL</code></a> if it could not be determined. On all file systems, the path will be URL-escaped. On the default file system, encoding will be platform-encoded. On Unicode and browser file systems, encoding will be UTF8. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASFileHardFlush"><strong><span style="color:grey;">ASFileHardFlush</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1968</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Causes a hard flush on a file, which means that the file is flushed to the physical destination. For example, if a WebDAV-based file is opened, <a href="aslayer_ASFile.htm#ASFileFlush" title=" Flushes any buffered data to a file.">ASFileFlush</a>() only flushes changes to the local cached version of the file. This method would flush changes all the way to the WebDAV server. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASFile.htm#ASFileFlush" title=" Flushes any buffered data to a file.">ASFileFlush</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASException.htm#ASErrorCode" title=" An error code value for use in ASFile and ASFileSys methods and callbacks."><code>ASErrorCode</code></a> <code>ASFileHardFlush(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>aFile</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aFile</code></span>
+</td><td><span>The file that is flushed. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><code>0</code> if the operation succeeded,<code>-1</code> if there was an error. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASFileHasOutstandingMReads"><strong><span style="color:grey;">ASFileHasOutstandingMReads</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:2358</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Determines whether there are any outstanding multi-byte range requests for a file. A document can have outstanding <code>mreads</code> if it was opened in a browser, Acrobat requested some byte ranges, and the byte ranges have not yet arrived. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ASFileHasOutstandingMReads(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>fN</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fN</code></span>
+</td><td><span>The file in question. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the file has outstanding <code>mreads</code>, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASFileIsSame"><strong><span style="color:grey;">ASFileIsSame</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1672</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Performs a comparison between the file and path to determine if they represent the same file. This method will return <a href="aslayer_General.htm#false"><code>false</code></a> if the file was not opened through the <code>fileSys</code> file system. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method is not guaranteed to work on all file systems. </p>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ASFileIsSame(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>fN</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>pathName</code><code>,</code> <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fN</code></span>
+</td><td><span>IN/OUT The file in question. </span>
+</td></tr>
+<tr><td><span><code>pathName</code></span>
+</td><td><span>IN/OUT The <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> in question. </span>
+</td></tr>
+<tr><td><span><code>fileSys</code></span>
+</td><td><span>IN/OUT The file system from which the path was obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#false"><code>false</code></a> if the comparison fails, <a href="aslayer_General.htm#true"><code>true</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASFileMReadRequest"><strong><span style="color:grey;">ASFileMReadRequest</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1763</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Initiates a byte range request for a given file, if the file is in the browser. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASFile.htm#ASFileHasOutstandingMReads" title=" Determines whether there are any outstanding multi-byte range requests for a file.">ASFileHasOutstandingMReads</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASFileMReadRequest(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>fN</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>*</code><code>blockPairs</code><code>,</code> <a href="aslayer_General.htm#ASTCount"><code>ASTCount</code></a> <code>nBlockPairs</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fN</code></span>
+</td><td><span>The file for which you wish to make read requests. </span>
+</td></tr>
+<tr><td><span><code>blockPairs</code></span>
+</td><td><span>The array of <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> pairs. The first <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> in the pair is the offset into the file to read, and the second <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> is the length of the range to request. </span>
+</td></tr>
+<tr><td><span><code>nBlockPairs</code></span>
+</td><td><span>The number of block pairs to request. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ASFileOpenWithVirtualEOF"><strong><span style="color:grey;">ASFileOpenWithVirtualEOF</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:2891</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span><a href="aslayer_ASFile.htm#ASFileOpenWithVirtualEOF" title=" ASFileOpenWithVirtualEOF attempts to create a second ASFile instance to a file that is already open.">ASFileOpenWithVirtualEOF</a> attempts to create a second <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> instance to a file that is already open. Both the current instance fN and the new instance must be read only. The new instance shall set a virtual end of file. This virtual EOF and no effect on the first instance or on the physical file. It only effect the <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> calls where newFile is passed in has the file. Each instance maintains it's own file position marker. The original instance of the file should be close after all other instances have been closed. This routine does not raise, but returns an error code. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>ASFileOpenWithVirtualEOF(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>fN</code><code>,</code> <a href="aslayer_ASFile.htm#ASFilePos64" title=" The absolute position within a file."><code>ASFilePos64</code></a> <code>virtualEOF</code><code>,</code> <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>*</code><code>newFile</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fN</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> to base the new file on </span>
+</td></tr>
+<tr><td><span><code>virtualEOF</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The new EOF. </span>
+</td></tr>
+<tr><td><span><code>newFile</code></span>
+</td><td><span><a href="pdslayer_General.htm#OUT">OUT</a> the new <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>Error code if the newFile could not be created. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASFilePushData"><strong><span style="color:grey;">ASFilePushData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1149</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Sends data from a file system implementation to an <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a>. The data may be for a multi-read request call, or may be unsolicited.<br/>
+<p>This method can only be called from within a file system implementation. It must not be called by clients of the <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a>, such as a caller that acquired the file with <a href="aslayer_ASFileSys.htm#ASFileSysOpenFile" title=" Attempts to open a file in the specified file system, in the specified read/write/create mode.">ASFileSysOpenFile</a>().<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileRead" title=" Reads data from a file, beginning at the current seek position."><code>ASFileRead</code></a>
+<a href="aslayer_ASFile.htm#ASFileWrite" title=" Writes data to a file, beginning at the current seek position."><code>ASFileWrite</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASFilePushData(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>aFile</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>p</code><code>,</code> <a href="aslayer_ASFile.htm#ASTFilePos"><code>ASTFilePos</code></a> <code>offset</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>length</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aFile</code></span>
+</td><td><span>IN/OUT The file to which data is sent. </span>
+</td></tr>
+<tr><td><span><code>p</code></span>
+</td><td><span>IN/OUT The data being pushed. </span>
+</td></tr>
+<tr><td><span><code>offset</code></span>
+</td><td><span>IN/OUT A byte offset into the file at which the data should be written. </span>
+</td></tr>
+<tr><td><span><code>length</code></span>
+</td><td><span>IN/OUT The number of bytes held in the buffer. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#fileErrGeneral" title=" A file error has occurred."><code>fileErrGeneral</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASFileRead"><strong><span style="color:grey;">ASFileRead</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:940</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Reads data from a file, beginning at the current seek position. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileSetPos" title=" Seeks to the specified position in a file."><code>ASFileSetPos</code></a>
+<a href="aslayer_ASFile.htm#ASFileWrite" title=" Writes data to a file, beginning at the current seek position."><code>ASFileWrite</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>ASFileRead(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>aFile</code><code>,</code> <code>char</code> <code>*</code><code>p</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>count</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aFile</code></span>
+</td><td><span>IN/OUT The file from which data is read. </span>
+</td></tr>
+<tr><td><span><code>p</code></span>
+</td><td><span>IN/OUT (Filled by the method) A buffer into which data is written. The buffer must be able to hold at least <code>count</code> bytes. </span>
+</td></tr>
+<tr><td><span><code>count</code></span>
+</td><td><span>IN/OUT The number of bytes to read. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of bytes actually read from the file. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#fileErrBytesNotReady" title=" The bytes are not ready."><code>fileErrBytesNotReady</code></a></td><td><a href="pdfllayer_General.htm#fileErrGeneral" title=" A file error has occurred."><code>fileErrGeneral</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#fileErrIO" title=" A file I/O error has occurred."><code>fileErrIO</code></a></td><td><a href="pdfllayer_General.htm#fileErrIOTimeout" title=" A file I/O error has occurred."><code>fileErrIOTimeout</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#fileErrUserRequestedStop" title=" The user requested a stop."><code>fileErrUserRequestedStop</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="ASFileRegisterFileSys"><strong><span style="color:grey;">ASFileRegisterFileSys</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1167</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Allows an implementor to provide a file system for use by external clients. An external client can locate the file system using <a href="aslayer_ASFile.htm#ASFileGetFileSysByName" title=" Gets the file system that was registered with the specified name.">ASFileGetFileSysByName</a>(). <code>fileSys</code> provides its name via the <a href="aslayer_ASFileSys.htm#ASFileSysGetFileSysNameProc" title=" A callback for ASFileSysRec that gets this file system's name.">ASFileSysGetFileSysNameProc</a>() callback. This method returns <a href="aslayer_General.htm#false"><code>false</code></a> if a file system with the same name is already registered. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileGetFileSysByName" title=" Gets the file system that was registered with the specified name."><code>ASFileGetFileSysByName</code></a>
+<a href="aslayer_ASFile.htm#ASFileUnregisterFileSys" title=" Allows a fileSys to be unregistered."><code>ASFileUnregisterFileSys</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ASFileRegisterFileSys(</code><a href="aslayer_ASExtension.htm#ASExtension" title=" An opaque pointer to an object that identifies a specific loaded plug-in."><code>ASExtension</code></a> <code>extension</code><code>,</code> <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>extension</code></span>
+</td><td><span>IN/OUT The gExtensionID of the plug-in registering the <code>fileSys</code>. </span>
+</td></tr>
+<tr><td><span><code>fileSys</code></span>
+</td><td><span>IN/OUT The <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system.">ASFileSys</a> being registered. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if <code>fileSys</code> is successfully registered, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASFileReopen"><strong><span style="color:grey;">ASFileReopen</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:842</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Attempts to reopen a file using the specified read/write mode. On some platforms, this may result in the file being closed and then reopened, and some error conditions may render the file invalid. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The file mode and return types changed in 0x00060000. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileClose" title=" Closes the specified file."><code>ASFileClose</code></a>
+<a href="aslayer_ASFileSys.htm#ASFileSysOpenFile" title=" Attempts to open a file in the specified file system, in the specified read/write/create mode."><code>ASFileSysOpenFile</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASException.htm#ASErrorCode" title=" An error code value for use in ASFile and ASFileSys methods and callbacks."><code>ASErrorCode</code></a> <code>ASFileReopen(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>aFile</code><code>,</code> <a href="aslayer_ASFileSys.htm#ASFileMode" title=" File access modes used to specify how a file can be used when it is open."><code>ASFileMode</code></a> <code>mode</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aFile</code></span>
+</td><td><span>The file to reopen. </span>
+</td></tr>
+<tr><td><span><code>mode</code></span>
+</td><td><span>An open-mode value as specified for <a href="aslayer_ASFileSys.htm#ASFileMode" title=" File access modes used to specify how a file can be used when it is open.">ASFileMode</a>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><code>0</code> if the operation was successful; some file system or platform-dependent error code is returned otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASFileSetEOF"><strong><span style="color:grey;">ASFileSetEOF</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:908</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Changes the size of a file. The new size may by larger or smaller than the original size. Since this method does not return any values, the status can be assessed by examining the error code in the HANDLER clause. This method may raise file system or platform-specific exceptions. This call only works when the desired file size is less than 2 GB. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileCanSetEOF" title=" Checks if ASFileSetEOF() can be done for this file with a specified new file size."><code>ASFileCanSetEOF</code></a>
+<a href="aslayer_ASFile.htm#ASFileGetEOF" title=" Gets the current size of a file."><code>ASFileGetEOF</code></a>
+<a href="aslayer_ASFile.htm#ASFileGetPos" title=" Gets the current seek position in a file."><code>ASFileGetPos</code></a>
+<a href="aslayer_ASFile.htm#ASFileSetEOF64" title=" Changes the size of a file."><code>ASFileSetEOF64</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASFileSetEOF(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>aFile</code><code>,</code> <a href="aslayer_ASFile.htm#ASTFilePos"><code>ASTFilePos</code></a> <code>newFileSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aFile</code></span>
+</td><td><span>The file whose size is changed. </span>
+</td></tr>
+<tr><td><span><code>newFileSize</code></span>
+</td><td><span>The new size of file. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#fileErrIO" title=" A file I/O error has occurred."><code>fileErrIO</code></a></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span>asGenErrMethodNotImplemented</span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span>asFileErrGeneral</span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASFileSetEOF64"><strong><span style="color:grey;">ASFileSetEOF64</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:2619</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Changes the size of a file. The new size may by larger or smaller than the original size. This method may raise file system or platform-specific exceptions. This call will work with files over 2 GB in length. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileGetEOF64" title=" Gets the current size of a file."><code>ASFileGetEOF64</code></a>
+<a href="aslayer_ASFile.htm#ASFileGetPos" title=" Gets the current seek position in a file."><code>ASFileGetPos</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASFileSetEOF64(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>aFile</code><code>,</code> <a href="aslayer_ASFile.htm#ASFilePos64" title=" The absolute position within a file."><code>ASFilePos64</code></a> <code>newFileSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aFile</code></span>
+</td><td><span>IN/OUT The file whose size is changed. </span>
+</td></tr>
+<tr><td><span><code>newFileSize</code></span>
+</td><td><span>IN/OUT The new size of the file. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#fileErrIO" title=" A file I/O error has occurred."><code>fileErrIO</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASFileSetMode"><strong><span style="color:grey;">ASFileSetMode</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1447</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets or sets the mode flags for a file. Pass <code>0</code> for <code>modeValue</code> and <code>modeMask</code> to simply get the current mode flags. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This operation is primarily intended for slow file systems such as the Internet, where there can potentially be an appreciable wait between requesting and retrieving bytes. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileRead" title=" Reads data from a file, beginning at the current seek position."><code>ASFileRead</code></a>
+<a href="aslayer_ASFileSys.htm#ASFileSysOpenFile" title=" Attempts to open a file in the specified file system, in the specified read/write/create mode."><code>ASFileSysOpenFile</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASFlagBits" title=" A flag-bits value."><code>ASFlagBits</code></a> <code>ASFileSetMode(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>fN</code><code>,</code> <a href="aslayer_General.htm#ASFlagBits" title=" A flag-bits value."><code>ASFlagBits</code></a> <code>modeValue</code><code>,</code> <a href="aslayer_General.htm#ASFlagBits" title=" A flag-bits value."><code>ASFlagBits</code></a> <code>modeMask</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>fN</code></span>
+</td><td><span>The file for which to get or set the mode. </span>
+</td></tr>
+<tr><td><span><code>modeValue</code></span>
+</td><td><span>The mode flag values to get or set, which are described in <a href="aslayer_ASFileSys.htm#ASFileMode" title=" File access modes used to specify how a file can be used when it is open.">ASFileMode</a> Flags. </span>
+</td></tr>
+<tr><td><span><code>modeMask</code></span>
+</td><td><span>The mask for the mode flags to get or set. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The previous value of the mode, or <code>0</code> if the file system does not support this operation. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASFileSetPos"><strong><span style="color:grey;">ASFileSetPos</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:874</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Seeks to the specified position in a file. This is the position at which the next read or write will begin. This call only works when the desired file position is less than 2 GB. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileGetPos" title=" Gets the current seek position in a file."><code>ASFileGetPos</code></a>
+<a href="aslayer_ASFile.htm#ASFileRead" title=" Reads data from a file, beginning at the current seek position."><code>ASFileRead</code></a>
+<a href="aslayer_ASFile.htm#ASFileSetPos64" title=" Seeks to the specified position in a file."><code>ASFileSetPos64</code></a>
+<a href="aslayer_ASFile.htm#ASFileWrite" title=" Writes data to a file, beginning at the current seek position."><code>ASFileWrite</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASFileSetPos(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>aFile</code><code>,</code> <a href="aslayer_ASFile.htm#ASTFilePos"><code>ASTFilePos</code></a> <code>pos</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aFile</code></span>
+</td><td><span>IN/OUT The file in which to seek. </span>
+</td></tr>
+<tr><td><span><code>pos</code></span>
+</td><td><span>IN/OUT The position to seek. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#fileErrIO" title=" A file I/O error has occurred."><code>fileErrIO</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASFileSetPos64"><strong><span style="color:grey;">ASFileSetPos64</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:2590</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Seeks to the specified position in a file. This is the position at which the next read or write will begin. This call will work with files over 2 GB in length. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileGetPos64" title=" Gets the current seek position in a file."><code>ASFileGetPos64</code></a>
+<a href="aslayer_ASFile.htm#ASFileRead" title=" Reads data from a file, beginning at the current seek position."><code>ASFileRead</code></a>
+<a href="aslayer_ASFile.htm#ASFileWrite" title=" Writes data to a file, beginning at the current seek position."><code>ASFileWrite</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASFileSetPos64(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>aFile</code><code>,</code> <a href="aslayer_ASFile.htm#ASFilePos64" title=" The absolute position within a file."><code>ASFilePos64</code></a> <code>pos</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aFile</code></span>
+</td><td><span>IN/OUT The file in which to seek. </span>
+</td></tr>
+<tr><td><span><code>pos</code></span>
+</td><td><span>IN/OUT The position to seek. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#fileErrIO" title=" A file I/O error has occurred."><code>fileErrIO</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASFileStmRdOpen"><strong><span style="color:grey;">ASFileStmRdOpen</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1018</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a read-only <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a> from a file. The stream supports seek operations. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileStmWrOpen" title=" Creates a writable ASStm from a file."><code>ASFileStmWrOpen</code></a>
+<a href="aslayer_ASFileSys.htm#ASFileSysOpenFile" title=" Attempts to open a file in the specified file system, in the specified read/write/create mode."><code>ASFileSysOpenFile</code></a>
+<a href="aslayer_ASStm.htm#ASMemStmRdOpen" title=" Creates a read-only ASStm from a memory-resident buffer."><code>ASMemStmRdOpen</code></a>
+<a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure."><code>ASProcStmRdOpenEx</code></a>
+<a href="aslayer_ASStm.htm#ASStmClose" title=" Closes the specified stream."><code>ASStmClose</code></a>
+<a href="aslayer_ASStm.htm#ASStmRead" title=" Reads data from stm into memory."><code>ASStmRead</code></a>
+<a href="coslayer_CosStream.htm#CosNewStream" title=" Creates a new Cos stream, using data from an existing ASStm."><code>CosNewStream</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>ASFileStmRdOpen(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>afile</code><code>,</code> <a href="aslayer_ASStm.htm#ASSmallBufferSize" title=" May not be larger than int16."><code>ASSmallBufferSize</code></a> <code>bufSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>afile</code></span>
+</td><td><span>The open file to associate with the stream. The file must have been opened previously using <a href="aslayer_ASFileSys.htm#ASFileSysOpenFile" title=" Attempts to open a file in the specified file system, in the specified read/write/create mode.">ASFileSysOpenFile</a>(). Each open file has a unique <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a>. The <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> value has meaning only to the common <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> implementation and bears no relationship to platform-specific file objects. </span>
+</td></tr>
+<tr><td><span><code>bufSize</code></span>
+</td><td><span>The length in bytes of the data buffer. If <code>bufSize</code> is <code>0</code>, the default buffer size (currently 4 K) will be used. The default is generally sufficient. A larger buffer size should be used only when data in the file will be accessed in chunks larger than the default buffer. Although <code>bufSize</code> is passed as an <a href="aslayer_General.htm#ASUns16" title=" 2-byte unsigned short numeric value.">ASUns16</a>, it is treated internally as an <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value.">ASInt16</a>. As a result, buffer sizes above 32 K are not permitted. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a>. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASFileStmWrOpen"><strong><span style="color:grey;">ASFileStmWrOpen</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1501</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates a writable <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a> from a file. The stream supports seek operations. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileStmRdOpen" title=" Creates a read-only ASStm from a file."><code>ASFileStmRdOpen</code></a>
+<a href="aslayer_ASFileSys.htm#ASFileSysOpenFile" title=" Attempts to open a file in the specified file system, in the specified read/write/create mode."><code>ASFileSysOpenFile</code></a>
+<a href="aslayer_ASStm.htm#ASMemStmRdOpen" title=" Creates a read-only ASStm from a memory-resident buffer."><code>ASMemStmRdOpen</code></a>
+<a href="aslayer_ASStm.htm#ASProcStmRdOpenEx" title=" Extends ASProcStmRdOpen() and creates a read-only ASStm from an arbitrary data-producing procedure."><code>ASProcStmRdOpenEx</code></a>
+<a href="aslayer_ASStm.htm#ASProcStmWrOpen" title=" Creates an ASStm from an arbitrary data-producing procedure."><code>ASProcStmWrOpen</code></a>
+<a href="aslayer_ASStm.htm#ASStmClose" title=" Closes the specified stream."><code>ASStmClose</code></a>
+<a href="aslayer_ASStm.htm#ASStmRead" title=" Reads data from stm into memory."><code>ASStmRead</code></a>
+<a href="aslayer_ASStm.htm#ASStmWrite" title=" Writes data from a memory buffer into an ASStm."><code>ASStmWrite</code></a>
+<a href="coslayer_CosStream.htm#CosNewStream" title=" Creates a new Cos stream, using data from an existing ASStm."><code>CosNewStream</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h)."><code>ASStm</code></a> <code>ASFileStmWrOpen(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>afile</code><code>,</code> <a href="aslayer_ASStm.htm#ASSmallBufferSize" title=" May not be larger than int16."><code>ASSmallBufferSize</code></a> <code>bufSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>afile</code></span>
+</td><td><span>The open file to associate with the stream. The file must have been opened previously using <a href="aslayer_ASFileSys.htm#ASFileSysOpenFile" title=" Attempts to open a file in the specified file system, in the specified read/write/create mode.">ASFileSysOpenFile</a>(). Each open file has a unique <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a>. The <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> value has meaning only to the common <a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> implementation and bears no relationship to platform-specific file objects. </span>
+</td></tr>
+<tr><td><span><code>bufSize</code></span>
+</td><td><span>The length in bytes of a data buffer. If <code>bufSize</code> is <code>0</code>, the default buffer size (currently 4kB) is used. The default is generally sufficient. A larger buffer size should be used only when data in the file will be accessed in chunks larger than the default buffer. Although <code>bufSize</code> is passed as an <a href="aslayer_General.htm#ASUns16" title=" 2-byte unsigned short numeric value.">ASUns16</a>, it is treated internally as an <a href="aslayer_General.htm#ASInt16" title=" 2-byte signed short numeric value.">ASInt16</a>. As a result, buffer sizes above 32 K are not permitted. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created <a href="aslayer_ASStm.htm#ASStmRec" title=" A stream object definition (see ASStream.h).">ASStm</a>. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#genErrNoMemory" title=" Out of memory."><code>genErrNoMemory</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="ASFileUnregisterFileSys"><strong><span style="color:grey;">ASFileUnregisterFileSys</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:1128</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Allows a <code>fileSys</code> to be unregistered. In general, a <code>fileSys</code> is only unregistered by the extension that registered it. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASFile.htm#ASFileRegisterFileSys" title=" Allows an implementor to provide a file system for use by external clients.">ASFileRegisterFileSys</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ASFileUnregisterFileSys(</code><a href="aslayer_ASExtension.htm#ASExtension" title=" An opaque pointer to an object that identifies a specific loaded plug-in."><code>ASExtension</code></a> <code>extension</code><code>,</code> <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>extension</code></span>
+</td><td><span>IN/OUT The gExtensionID of the plug-in un-registering <code>fileSys</code>. </span>
+</td></tr>
+<tr><td><span><code>fileSys</code></span>
+</td><td><span>IN/OUT The <a href="aslayer_ASFileSys.htm#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system.">ASFileSys</a> to un-register. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if <code>fileSys</code> successfully unregistered, <a href="aslayer_General.htm#false"><code>false</code></a> if there are any open files that were opened through <code>fileSys</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASFileWrite"><strong><span style="color:grey;">ASFileWrite</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:956</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Writes data to a file, beginning at the current seek position. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFile.htm#ASFileRead" title=" Reads data from a file, beginning at the current seek position."><code>ASFileRead</code></a>
+<a href="aslayer_ASFile.htm#ASFileSetPos" title=" Seeks to the specified position in a file."><code>ASFileSetPos</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>ASFileWrite(</code><a href="aslayer_ASFile.htm#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>aFile</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>p</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>count</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aFile</code></span>
+</td><td><span>IN/OUT The file to which data is written. </span>
+</td></tr>
+<tr><td><span><code>p</code></span>
+</td><td><span>IN/OUT A buffer holding the data that is to be written. The buffer must be able to hold at least <code>count</code> bytes. </span>
+</td></tr>
+<tr><td><span><code>count</code></span>
+</td><td><span>IN/OUT The number of bytes to write. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of bytes actually written to the file. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#fileErrIO" title=" A file I/O error has occurred."><code>fileErrIO</code></a></td><td><a href="pdfllayer_General.htm#fileErrWrite" title=" A file write error has occurred."><code>fileErrWrite</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+
+</div>
+</body></html>

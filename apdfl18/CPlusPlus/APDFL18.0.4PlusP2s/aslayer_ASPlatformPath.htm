@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+Acro Support Layer: ASPlatformPath</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Acro Support Layer: ASPlatformPath</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>ASPlatformPath Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#ASPlatformPath">ASPlatformPath</a></dt><dd> -  An ASPlatformPath and associated platform path types.</dd>
+<dt><a href="#CFURLRefRec_Ptr">CFURLRefRec_Ptr</a></dt><dd> - </dd>
+<dt><a href="#CFURLRefRec_Ptr">CFURLRefRec_Ptr</a></dt><dd> - </dd>
+<dt><a href="#Cstring_Ptr">Cstring_Ptr</a></dt><dd> -  A UNIX or Windows platform-specific path value.</dd>
+<dt><a href="#FSRefWithCFStringRefRec_Ptr">FSRefWithCFStringRefRec_Ptr</a></dt><dd> - </dd>
+<dt><a href="#FSRefWithCFStringRefRec_Ptr">FSRefWithCFStringRefRec_Ptr</a></dt><dd> - </dd>
+<dt><a href="#FSRef_Ptr">FSRef_Ptr</a></dt><dd> -  A pointer to a Mac OS platform-specific FSRef.</dd>
+<dt><a href="#FSRef_Ptr">FSRef_Ptr</a></dt><dd> - </dd>
+<dt><a href="#FSSpec_Ptr">FSSpec_Ptr</a></dt><dd> -  A pointer to a Mac OS platform-specific FSSpec.</dd>
+<dt><a href="#FSSpec_Ptr">FSSpec_Ptr</a></dt><dd> - </dd>
+<dt><a href="#POSIXPath_Ptr">POSIXPath_Ptr</a></dt><dd> -  A C string containing a POSIX path (UTF-8 encoding).</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASPlatformPath"><strong><span style="color:grey;">ASPlatformPath</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:2063</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>An <a href="aslayer_ASPlatformPath.htm#ASPlatformPath" title=" An ASPlatformPath and associated platform path types.">ASPlatformPath</a> and associated platform path types. This is an opaque object used to retrieve a platform path object. <a href="aslayer_ASFileSys.htm#ASFileSysAcquirePlatformPath" title=" Returns a platform-specific file system representation of the specified path, according to the specified type, wrapped in an allocated ASPlatformPath object.">ASFileSysAcquirePlatformPath</a>() allocates and initializes this object. <a href="aslayer_ASPlatformPath.htm#ASPlatformPath" title=" An ASPlatformPath and associated platform path types."><code>ASPlatformPath</code></a> <code>*</code> calls are used to access its contents. To discard this object, call <a href="aslayer_ASFileSys.htm#ASFileSysReleasePlatformPath" title=" Releases the specified platform path object.">ASFileSysReleasePlatformPath</a>(). </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_ASPlatformPath</code> <code>*</code><code>ASPlatformPath</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASFileSys.htm#ASFileSysAcquirePlatformPath" title=" Returns a platform-specific file system representation of the specified path, according to the specified type, wrapped in an allocated ASPlatformPath object."><code>ASFileSysAcquirePlatformPath</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysAcquirePlatformPathProc" title=" A callback for ASFileSysRec that acquires a platform-specific file system representation of the specified path, according to the specified type, wrapped in an allocated ASPlatformPath object."><code>ASFileSysAcquirePlatformPathProc</code></a></td></tr>
+<tr><td><a href="aslayer_ASFileSys.htm#ASFileSysReleasePlatformPath" title=" Releases the specified platform path object."><code>ASFileSysReleasePlatformPath</code></a></td><td><a href="aslayer_ASFileSys.htm#ASFileSysReleasePlatformPathProc" title=" A callback for ASFileSysRec that releases the specified platform path object when the client is done with it."><code>ASFileSysReleasePlatformPathProc</code></a></td></tr>
+<tr><td><a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetCFURLRefRecPtr" title=" Gets a platform path object in the form of a CFURLRef for the Mac OS, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath()."><code>ASPlatformPathGetCFURLRefRecPtr</code></a></td><td><a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetCstringPtr" title=" Gets a platform path object in the form of a C string for Windows or UNIX, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath()."><code>ASPlatformPathGetCstringPtr</code></a></td></tr>
+<tr><td><a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetFSRefPtr" title=" Gets a platform path object in the form of an FSRef for the Mac OS, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath()."><code>ASPlatformPathGetFSRefPtr</code></a></td><td><a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetFSRefWithCFStringRefRecPtr" title=" Gets a platform path object in the form of an FSRef and CFStringRef for Mac OS, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath()."><code>ASPlatformPathGetFSRefWithCFStringRefRecPtr</code></a></td></tr>
+<tr><td><a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetFSSpecPtr" title=" This method was deprecated in Acrobat 9.0. Use ASPlatformPathGetFSRefPtr(), ASPlatformPathGetFSRefWithCFStringRefRecPtr(), ASPlatformPathGetCFURLRefRecPtr(), or ASPlatformPathGetPOSIXPathPtr() instead."><code>ASPlatformPathGetFSSpecPtr</code></a></td><td><a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetPOSIXPathPtr" title=" Gets a platform path object in the form of a POSIX path C string, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath()."><code>ASPlatformPathGetPOSIXPathPtr</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="CFURLRefRec_Ptr"><strong><span style="color:grey;">CFURLRefRec_Ptr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:2113</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_ASPlatformPath.htm#_t_CFURLRefRec" title=" A structure containing the equivalent of a Mac OS platform-specific CFURLRef."><code>CFURLRefRec</code></a> <code>*</code><code>CFURLRefRec_Ptr</code><code>;</code> </code>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">CFURLRefRec_Ptr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:2127</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_ASPlatformPath.htm#_t_CFURLRefRecPlacebo"><code>CFURLRefRecPlacebo</code></a> <code>*</code><code>CFURLRefRec_Ptr</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetCFURLRefRecPtr" title=" Gets a platform path object in the form of a CFURLRef for the Mac OS, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath()."><code>ASPlatformPathGetCFURLRefRecPtr</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="Cstring_Ptr"><strong><span style="color:grey;">Cstring_Ptr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:2068</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A UNIX or Windows platform-specific path value. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>char</code> <code>*</code><code>Cstring_Ptr</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetCstringPtr" title=" Gets a platform path object in the form of a C string for Windows or UNIX, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath()."><code>ASPlatformPathGetCstringPtr</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="FSRefWithCFStringRefRec_Ptr"><strong><span style="color:grey;">FSRefWithCFStringRefRec_Ptr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:2101</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_ASPlatformPath.htm#_t_FSRefWithCFStringRefRec" title=" A structure containing the equivalent of two Mac OS platform-specific types: a pointer to an FSRef and a CFStringRef."><code>FSRefWithCFStringRefRec</code></a> <code>*</code><code>FSRefWithCFStringRefRec_Ptr</code><code>;</code> </code>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">FSRefWithCFStringRefRec_Ptr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:2123</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_ASPlatformPath.htm#_t_FSRefWithCFStringRefRecPlacebo"><code>FSRefWithCFStringRefRecPlacebo</code></a> <code>*</code><code>FSRefWithCFStringRefRec_Ptr</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetFSRefWithCFStringRefRecPtr" title=" Gets a platform path object in the form of an FSRef and CFStringRef for Mac OS, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath()."><code>ASPlatformPathGetFSRefWithCFStringRefRecPtr</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="FSRef_Ptr"><strong><span style="color:grey;">FSRef_Ptr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:2086</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A pointer to a Mac OS platform-specific FSRef. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetFSRefPtr" title=" Gets a platform path object in the form of an FSRef for the Mac OS, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath().">ASPlatformPathGetFSRefPtr</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>FSRef</code> <code>*</code><code>FSRef_Ptr</code><code>;</code> </code>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">FSRef_Ptr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:2118</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>FSRefPlacebo</code> <code>*</code><code>FSRef_Ptr</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetFSRefPtr" title=" Gets a platform path object in the form of an FSRef for the Mac OS, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath()."><code>ASPlatformPathGetFSRefPtr</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="FSSpec_Ptr"><strong><span style="color:grey;">FSSpec_Ptr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:2080</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A pointer to a Mac OS platform-specific FSSpec. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetFSSpecPtr" title=" This method was deprecated in Acrobat 9.0. Use ASPlatformPathGetFSRefPtr(), ASPlatformPathGetFSRefWithCFStringRefRecPtr(), ASPlatformPathGetCFURLRefRecPtr(), or ASPlatformPathGetPOSIXPathPtr() instead.">ASPlatformPathGetFSSpecPtr</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>FSSpec</code> <code>*</code><code>FSSpec_Ptr</code><code>;</code> </code>
+</section>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">FSSpec_Ptr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:2117</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>FSSpecPlacebo</code> <code>*</code><code>FSSpec_Ptr</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetFSSpecPtr" title=" This method was deprecated in Acrobat 9.0. Use ASPlatformPathGetFSRefPtr(), ASPlatformPathGetFSRefWithCFStringRefRecPtr(), ASPlatformPathGetCFURLRefRecPtr(), or ASPlatformPathGetPOSIXPathPtr() instead."><code>ASPlatformPathGetFSSpecPtr</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="POSIXPath_Ptr"><strong><span style="color:grey;">POSIXPath_Ptr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:2072</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>A C string containing a POSIX path (UTF-8 encoding). </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>char</code> <code>*</code><code>POSIXPath_Ptr</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetPOSIXPathPtr" title=" Gets a platform path object in the form of a POSIX path C string, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath()."><code>ASPlatformPathGetPOSIXPathPtr</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>ASPlatformPath Structures</h2></header>
+<nav><dl>
+<dt><a href="#_t_CFURLRefRec">_t_CFURLRefRec</a></dt><dd> -  A structure containing the equivalent of a Mac OS platform-specific CFURLRef.</dd>
+<dt><a href="#_t_CFURLRefRecPlacebo">_t_CFURLRefRecPlacebo</a></dt><dd> - </dd>
+<dt><a href="#_t_FSRefWithCFStringRefRec">_t_FSRefWithCFStringRefRec</a></dt><dd> -  A structure containing the equivalent of two Mac OS platform-specific types: a pointer to an FSRef and a CFStringRef.</dd>
+<dt><a href="#_t_FSRefWithCFStringRefRecPlacebo">_t_FSRefWithCFStringRefRecPlacebo</a></dt><dd> - </dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="_t_CFURLRefRec"><strong><span style="color:grey;">_t_CFURLRefRec</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:2107</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A structure containing the equivalent of a Mac OS platform-specific CFURLRef. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetCFURLRefRecPtr" title=" Gets a platform path object in the form of a CFURLRef for the Mac OS, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath().">ASPlatformPathGetCFURLRefRecPtr</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_CFURLRefRec {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><code>const</code> <code>struct</code> <code>__CFURL</code> <code>*</code><code>url</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><code id="CFURLRefRec"><code>}</code> <a href="aslayer_ASPlatformPath.htm#_t_CFURLRefRec" title=" A structure containing the equivalent of a Mac OS platform-specific CFURLRef."><code>CFURLRefRec</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="_t_CFURLRefRecPlacebo"><strong><span style="color:grey;">_t_CFURLRefRecPlacebo</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:2124</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_CFURLRefRecPlacebo {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><code>const</code> <code>struct</code> <code>__CFURLPlacebo</code> <code>*</code><code>url</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><code id="CFURLRefRecPlacebo"><code>}</code> <a href="aslayer_ASPlatformPath.htm#_t_CFURLRefRecPlacebo"><code>CFURLRefRecPlacebo</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="_t_FSRefWithCFStringRefRec"><strong><span style="color:grey;">_t_FSRefWithCFStringRefRec</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:2093</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>A structure containing the equivalent of two Mac OS platform-specific types: a pointer to an FSRef and a CFStringRef. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetFSRefWithCFStringRefRecPtr" title=" Gets a platform path object in the form of an FSRef and CFStringRef for Mac OS, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath().">ASPlatformPathGetFSRefWithCFStringRefRecPtr</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_FSRefWithCFStringRefRec {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><code>struct</code> <code>FSRef</code> <code>*</code><code>ref</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><code>const</code> <code>struct</code> <code>__CFString</code> <code>*</code><code>str</code><code>;</code> </div>
+</td><td><span>Definition of a CFStringRef. </span>
+</td></tr>
+<tr><td><code id="FSRefWithCFStringRefRec"><code>}</code> <a href="aslayer_ASPlatformPath.htm#_t_FSRefWithCFStringRefRec" title=" A structure containing the equivalent of two Mac OS platform-specific types: a pointer to an FSRef and a CFStringRef."><code>FSRefWithCFStringRefRec</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="_t_FSRefWithCFStringRefRecPlacebo"><strong><span style="color:grey;">_t_FSRefWithCFStringRefRecPlacebo</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASExpT.h:2119</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_FSRefWithCFStringRefRecPlacebo {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><code>struct</code> <code>FSRefPlacebo</code> <code>*</code><code>ref</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><code>const</code> <code>struct</code> <code>__CFStringPlacebo</code> <code>*</code><code>str</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><code id="FSRefWithCFStringRefRecPlacebo"><code>}</code> <a href="aslayer_ASPlatformPath.htm#_t_FSRefWithCFStringRefRecPlacebo"><code>FSRefWithCFStringRefRecPlacebo</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+</section>
+<section id="Functions">
+<header><h2>ASPlatformPath Functions</h2></header>
+<nav><dl>
+<dt><a href="#ASPathFromPlatformPath">ASPathFromPlatformPath</a></dt><dd> -  This method was deprecated in Acrobat 5.0. Use ASFileSysCreatePathName() instead.</dd>
+<dt><a href="#ASPlatformPathGetCFURLRefRecPtr">ASPlatformPathGetCFURLRefRecPtr</a></dt><dd> -  Gets a platform path object in the form of a CFURLRef for the Mac OS, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath().</dd>
+<dt><a href="#ASPlatformPathGetCstringPtr">ASPlatformPathGetCstringPtr</a></dt><dd> -  Gets a platform path object in the form of a C string for Windows or UNIX, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath().</dd>
+<dt><a href="#ASPlatformPathGetFSRefPtr">ASPlatformPathGetFSRefPtr</a></dt><dd> -  Gets a platform path object in the form of an FSRef for the Mac OS, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath().</dd>
+<dt><a href="#ASPlatformPathGetFSRefWithCFStringRefRecPtr">ASPlatformPathGetFSRefWithCFStringRefRecPtr</a></dt><dd> -  Gets a platform path object in the form of an FSRef and CFStringRef for Mac OS, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath().</dd>
+<dt><a href="#ASPlatformPathGetFSSpecPtr">ASPlatformPathGetFSSpecPtr</a></dt><dd> -  This method was deprecated in Acrobat 9.0. Use ASPlatformPathGetFSRefPtr(), ASPlatformPathGetFSRefWithCFStringRefRecPtr(), ASPlatformPathGetCFURLRefRecPtr(), or ASPlatformPathGetPOSIXPathPtr() instead.</dd>
+<dt><a href="#ASPlatformPathGetPOSIXPathPtr">ASPlatformPathGetPOSIXPathPtr</a></dt><dd> -  Gets a platform path object in the form of a POSIX path C string, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath().</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASPathFromPlatformPath"><strong><span style="color:grey;">ASPathFromPlatformPath</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:649</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>This method was <span style="color:red;">deprecated</span> in Acrobat 5.0. Use <a href="aslayer_ASFileSys.htm#ASFileSysCreatePathName" title=" Creates an ASPathName based on the input type and pathSpec.">ASFileSysCreatePathName</a>() instead.<br/>
+<p>It converts a platform-specific path name to an <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a>. It can create an <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> from a file path where the file does not already exist. It works for Windows UNC path names as well. It is the caller's responsibility to release the returned <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a>.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="aslayer_ASFileSys.htm#ASFileSysReleasePath" title=" Decrements the internal reference count for the path name and disposes of the path name (but not the file itself) if the reference count is zero.">ASFileSysReleasePath</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFileSys.htm#ASPathName"><code>ASPathName</code></a> <code>ASPathFromPlatformPath(</code><code>void</code> <code>*</code><code>platformPath</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>platformPath</code></span>
+</td><td><span>A pointer to a platform-specific path name. On Windows and UNIX, it is a <a href="aslayer_General.htm#NULL"><code>NULL</code></a>-terminated string containing the full path name with the appropriate path separators for each platform. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The <a href="aslayer_ASFileSys.htm#ASPathName">ASPathName</a> corresponding to <code>platformPath</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASPlatformPathGetCFURLRefRecPtr"><strong><span style="color:grey;">ASPlatformPathGetCFURLRefRecPtr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:2288</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets a platform path object in the form of a CFURLRef for the Mac OS, if the <a href="aslayer_ASPlatformPath.htm#ASPlatformPath" title=" An ASPlatformPath and associated platform path types.">ASPlatformPath</a> object was acquired with this type in the <code>platformPathType</code> parameter of <a href="aslayer_ASFileSys.htm#ASFileSysAcquirePlatformPath" title=" Returns a platform-specific file system representation of the specified path, according to the specified type, wrapped in an allocated ASPlatformPath object.">ASFileSysAcquirePlatformPath</a>(). </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> Do not release the returned value, or any member data of an <a href="aslayer_ASPlatformPath.htm#ASPlatformPath" title=" An ASPlatformPath and associated platform path types.">ASPlatformPath</a> directly; use <a href="aslayer_ASFileSys.htm#ASFileSysReleasePlatformPath" title=" Releases the specified platform path object.">ASFileSysReleasePlatformPath</a>() when finished with the object. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFileSys.htm#ASFileSysAcquirePlatformPath" title=" Returns a platform-specific file system representation of the specified path, according to the specified type, wrapped in an allocated ASPlatformPath object."><code>ASFileSysAcquirePlatformPath</code></a>
+<a href="aslayer_ASFileSys.htm#ASFileSysReleasePlatformPath" title=" Releases the specified platform path object."><code>ASFileSysReleasePlatformPath</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASPlatformPath.htm#CFURLRefRec_Ptr"><code>CFURLRefRec_Ptr</code></a> <code>ASPlatformPathGetCFURLRefRecPtr(</code><a href="aslayer_ASPlatformPath.htm#ASPlatformPath" title=" An ASPlatformPath and associated platform path types."><code>ASPlatformPath</code></a> <code>path</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>path</code></span>
+</td><td><span>The platform path. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A pointer to a structure containing a CFURLRef. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASPlatformPathGetCstringPtr"><strong><span style="color:grey;">ASPlatformPathGetCstringPtr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:2217</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets a platform path object in the form of a C string for Windows or UNIX, if the <a href="aslayer_ASPlatformPath.htm#ASPlatformPath" title=" An ASPlatformPath and associated platform path types.">ASPlatformPath</a> object was acquired with this type in the <code>platformPathType</code> parameter of <a href="aslayer_ASFileSys.htm#ASFileSysAcquirePlatformPath" title=" Returns a platform-specific file system representation of the specified path, according to the specified type, wrapped in an allocated ASPlatformPath object.">ASFileSysAcquirePlatformPath</a>(). </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> Applications should use this as a read-only pointer; modifying the returned buffer can corrupt the <a href="aslayer_ASPlatformPath.htm#ASPlatformPath" title=" An ASPlatformPath and associated platform path types.">ASPlatformPath</a>. Do not free the pointer. </p>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> Do not release the returned value, or any member data of an <a href="aslayer_ASPlatformPath.htm#ASPlatformPath" title=" An ASPlatformPath and associated platform path types.">ASPlatformPath</a> directly; use <a href="aslayer_ASFileSys.htm#ASFileSysReleasePlatformPath" title=" Releases the specified platform path object.">ASFileSysReleasePlatformPath</a>() when finished with the object. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFileSys.htm#ASFileSysAcquirePlatformPath" title=" Returns a platform-specific file system representation of the specified path, according to the specified type, wrapped in an allocated ASPlatformPath object."><code>ASFileSysAcquirePlatformPath</code></a>
+<a href="aslayer_ASFileSys.htm#ASFileSysReleasePlatformPath" title=" Releases the specified platform path object."><code>ASFileSysReleasePlatformPath</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASPlatformPath.htm#Cstring_Ptr" title=" A UNIX or Windows platform-specific path value."><code>Cstring_Ptr</code></a> <code>ASPlatformPathGetCstringPtr(</code><a href="aslayer_ASPlatformPath.htm#ASPlatformPath" title=" An ASPlatformPath and associated platform path types."><code>ASPlatformPath</code></a> <code>path</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>path</code></span>
+</td><td><span>The platform path. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A pointer to a C string of a platform-specific path. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASPlatformPathGetFSRefPtr"><strong><span style="color:grey;">ASPlatformPathGetFSRefPtr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:2255</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets a platform path object in the form of an FSRef for the Mac OS, if the <a href="aslayer_ASPlatformPath.htm#ASPlatformPath" title=" An ASPlatformPath and associated platform path types.">ASPlatformPath</a> object was acquired with this type in the <code>platformPathType</code> parameter of <a href="aslayer_ASFileSys.htm#ASFileSysAcquirePlatformPath" title=" Returns a platform-specific file system representation of the specified path, according to the specified type, wrapped in an allocated ASPlatformPath object.">ASFileSysAcquirePlatformPath</a>(). </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> Do not release the returned value, or any member data of an <a href="aslayer_ASPlatformPath.htm#ASPlatformPath" title=" An ASPlatformPath and associated platform path types.">ASPlatformPath</a> directly; use <a href="aslayer_ASFileSys.htm#ASFileSysReleasePlatformPath" title=" Releases the specified platform path object.">ASFileSysReleasePlatformPath</a>() when finished with the object. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFileSys.htm#ASFileSysAcquirePlatformPath" title=" Returns a platform-specific file system representation of the specified path, according to the specified type, wrapped in an allocated ASPlatformPath object."><code>ASFileSysAcquirePlatformPath</code></a>
+<a href="aslayer_ASFileSys.htm#ASFileSysReleasePlatformPath" title=" Releases the specified platform path object."><code>ASFileSysReleasePlatformPath</code></a>
+<a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetFSRefWithCFStringRefRecPtr" title=" Gets a platform path object in the form of an FSRef and CFStringRef for Mac OS, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath()."><code>ASPlatformPathGetFSRefWithCFStringRefRecPtr</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASPlatformPath.htm#FSRef_Ptr"><code>FSRef_Ptr</code></a> <code>ASPlatformPathGetFSRefPtr(</code><a href="aslayer_ASPlatformPath.htm#ASPlatformPath" title=" An ASPlatformPath and associated platform path types."><code>ASPlatformPath</code></a> <code>path</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>path</code></span>
+</td><td><span>The platform path. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A pointer to an FSRef. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASPlatformPathGetFSRefWithCFStringRefRecPtr"><strong><span style="color:grey;">ASPlatformPathGetFSRefWithCFStringRefRecPtr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:2273</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets a platform path object in the form of an FSRef and CFStringRef for Mac OS, if the <a href="aslayer_ASPlatformPath.htm#ASPlatformPath" title=" An ASPlatformPath and associated platform path types.">ASPlatformPath</a> object was acquired with this type in the <code>platformPathType</code> parameter of <a href="aslayer_ASFileSys.htm#ASFileSysAcquirePlatformPath" title=" Returns a platform-specific file system representation of the specified path, according to the specified type, wrapped in an allocated ASPlatformPath object.">ASFileSysAcquirePlatformPath</a>(). </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> Do not release the returned value, or any member data of an <a href="aslayer_ASPlatformPath.htm#ASPlatformPath" title=" An ASPlatformPath and associated platform path types.">ASPlatformPath</a> directly; use <a href="aslayer_ASFileSys.htm#ASFileSysReleasePlatformPath" title=" Releases the specified platform path object.">ASFileSysReleasePlatformPath</a>() when finished with the object. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFileSys.htm#ASFileSysAcquirePlatformPath" title=" Returns a platform-specific file system representation of the specified path, according to the specified type, wrapped in an allocated ASPlatformPath object."><code>ASFileSysAcquirePlatformPath</code></a>
+<a href="aslayer_ASFileSys.htm#ASFileSysReleasePlatformPath" title=" Releases the specified platform path object."><code>ASFileSysReleasePlatformPath</code></a>
+<a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetFSRefPtr" title=" Gets a platform path object in the form of an FSRef for the Mac OS, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath()."><code>ASPlatformPathGetFSRefPtr</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASPlatformPath.htm#FSRefWithCFStringRefRec_Ptr"><code>FSRefWithCFStringRefRec_Ptr</code></a> <code>ASPlatformPathGetFSRefWithCFStringRefRecPtr(</code><a href="aslayer_ASPlatformPath.htm#ASPlatformPath" title=" An ASPlatformPath and associated platform path types."><code>ASPlatformPath</code></a> <code>path</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>path</code></span>
+</td><td><span>The platform path. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A pointer to a structure containing an FSRef and a CFStringRef. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASPlatformPathGetFSSpecPtr"><strong><span style="color:grey;">ASPlatformPathGetFSSpecPtr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:2238</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>This method was <span style="color:red;">deprecated</span> in Acrobat 9.0. Use <a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetFSRefPtr" title=" Gets a platform path object in the form of an FSRef for the Mac OS, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath().">ASPlatformPathGetFSRefPtr</a>(), <a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetFSRefWithCFStringRefRecPtr" title=" Gets a platform path object in the form of an FSRef and CFStringRef for Mac OS, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath().">ASPlatformPathGetFSRefWithCFStringRefRecPtr</a>(), <a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetCFURLRefRecPtr" title=" Gets a platform path object in the form of a CFURLRef for the Mac OS, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath().">ASPlatformPathGetCFURLRefRecPtr</a>(), or <a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetPOSIXPathPtr" title=" Gets a platform path object in the form of a POSIX path C string, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath().">ASPlatformPathGetPOSIXPathPtr</a>() instead. Gets a platform path object in the form of an FSSpec for the Mac OS, if the <a href="aslayer_ASPlatformPath.htm#ASPlatformPath" title=" An ASPlatformPath and associated platform path types.">ASPlatformPath</a> object was acquired with this type in the <code>platformPathType</code> parameter of <a href="aslayer_ASFileSys.htm#ASFileSysAcquirePlatformPath" title=" Returns a platform-specific file system representation of the specified path, according to the specified type, wrapped in an allocated ASPlatformPath object.">ASFileSysAcquirePlatformPath</a>(). </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> Do not release the returned value, or any member data of an <a href="aslayer_ASPlatformPath.htm#ASPlatformPath" title=" An ASPlatformPath and associated platform path types.">ASPlatformPath</a> directly; use <a href="aslayer_ASFileSys.htm#ASFileSysReleasePlatformPath" title=" Releases the specified platform path object.">ASFileSysReleasePlatformPath</a>() when finished with the object. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFileSys.htm#ASFileSysAcquirePlatformPath" title=" Returns a platform-specific file system representation of the specified path, according to the specified type, wrapped in an allocated ASPlatformPath object."><code>ASFileSysAcquirePlatformPath</code></a>
+<a href="aslayer_ASFileSys.htm#ASFileSysReleasePlatformPath" title=" Releases the specified platform path object."><code>ASFileSysReleasePlatformPath</code></a>
+<a href="aslayer_ASPlatformPath.htm#ASPlatformPathGetFSRefPtr" title=" Gets a platform path object in the form of an FSRef for the Mac OS, if the ASPlatformPath object was acquired with this type in the platformPathType parameter of ASFileSysAcquirePlatformPath()."><code>ASPlatformPathGetFSRefPtr</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASPlatformPath.htm#FSSpec_Ptr"><code>FSSpec_Ptr</code></a> <code>ASPlatformPathGetFSSpecPtr(</code><a href="aslayer_ASPlatformPath.htm#ASPlatformPath" title=" An ASPlatformPath and associated platform path types."><code>ASPlatformPath</code></a> <code>path</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>path</code></span>
+</td><td><span>The platform path. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A pointer to an FSSpec. </span>
+</section>
+<section><div class="infoRow"><h3 id="ASPlatformPathGetPOSIXPathPtr"><strong><span style="color:grey;">ASPlatformPathGetPOSIXPathPtr</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> ASProcs.h:2304</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets a platform path object in the form of a POSIX path C string, if the <a href="aslayer_ASPlatformPath.htm#ASPlatformPath" title=" An ASPlatformPath and associated platform path types.">ASPlatformPath</a> object was acquired with this type in the <code>platformPathType</code> parameter of <a href="aslayer_ASFileSys.htm#ASFileSysAcquirePlatformPath" title=" Returns a platform-specific file system representation of the specified path, according to the specified type, wrapped in an allocated ASPlatformPath object.">ASFileSysAcquirePlatformPath</a>(). </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> Do not release the returned value, or any member data of an <a href="aslayer_ASPlatformPath.htm#ASPlatformPath" title=" An ASPlatformPath and associated platform path types.">ASPlatformPath</a> directly; use <a href="aslayer_ASFileSys.htm#ASFileSysReleasePlatformPath" title=" Releases the specified platform path object.">ASFileSysReleasePlatformPath</a>() when finished with the object. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFileSys.htm#ASFileSysAcquirePlatformPath" title=" Returns a platform-specific file system representation of the specified path, according to the specified type, wrapped in an allocated ASPlatformPath object."><code>ASFileSysAcquirePlatformPath</code></a>
+<a href="aslayer_ASFileSys.htm#ASFileSysReleasePlatformPath" title=" Releases the specified platform path object."><code>ASFileSysReleasePlatformPath</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASPlatformPath.htm#POSIXPath_Ptr" title=" A C string containing a POSIX path (UTF-8 encoding)."><code>POSIXPath_Ptr</code></a> <code>ASPlatformPathGetPOSIXPathPtr(</code><a href="aslayer_ASPlatformPath.htm#ASPlatformPath" title=" An ASPlatformPath and associated platform path types."><code>ASPlatformPath</code></a> <code>path</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>path</code></span>
+</td><td><span>The platform path. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>A pointer to a POSIX path (UTF-8 encoding) as a C string. </span>
+</section>
+</section>
+
+</div>
+</body></html>

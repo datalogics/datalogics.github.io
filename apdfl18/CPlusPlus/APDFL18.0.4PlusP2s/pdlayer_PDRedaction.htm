@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PD Layer: PDRedaction</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PD Layer: PDRedaction</h5>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Structures">
+<header><h2>PDRedaction Structures</h2></header>
+<nav><dl>
+<dt><a href="#_t_PDRedactParams">_t_PDRedactParams</a></dt><dd> -  Parameters used to represent the properties for a redaction mark.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="_t_PDRedactParams"><strong><span style="color:grey;">_t_PDRedactParams</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:6622</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Parameters used to represent the properties for a redaction mark. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDRedactParams {</code> </code>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>size</code><code>;</code> </div>
+</td><td><span>The size of the data structure. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>pageNum</code><code>;</code> </div>
+</td><td><span>The page number where this redaction mark is found. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#_t_ASFixedQuad" title=" A quadrilateral represented by four fixed points (one at each corner)."><code>ASFixedQuad</code></a> <code>*</code><code>redactQuads</code><code>;</code> </div>
+</td><td><span>An array of <a href="aslayer_ASFixed.htm#_t_ASFixedQuad" title=" A quadrilateral represented by four fixed points (one at each corner)."><code>ASFixedQuad</code></a> objects representing the regions on the page to be redacted. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>numQuads</code><code>;</code> </div>
+</td><td><span>The length of the array specified by <code>redactQuad</code>. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_General.htm#_t_PDColorValueRec" title=" A data structure representing a color."><code>PDColorValueRec</code></a> <code>*</code><code>colorVal</code><code>;</code> </div>
+</td><td><span>The color of the redaction mark. This color is also used as the fill color when generating the replacement form for this redaction mark. The replacement form is the content that will be placed on the page when this mark is applied and the underlying content is removed. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>overlayText</code><code>;</code> </div>
+</td><td><span>The overlay text to be used when generating the replacement form for this redaction mark. The replacement form is the content that will be placed on the page when this mark is applied and the underlying content is removed. If this field is <a href="aslayer_General.htm#NULL">NULL</a>, or an empty "ASText", then no text will be generated. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_General.htm#PDHorizAlign"><code>PDHorizAlign</code></a> <code>horizAlign</code><code>;</code> </div>
+</td><td><span>The horizontal alignment to be used for the overlay text when generating the replacement form for this redaction mark. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_General.htm#_t_PDColorValueRec" title=" A data structure representing a color."><code>PDColorValueRec</code></a> <code>*</code><code>fillColor</code><code>;</code> </div>
+</td><td><span>Allow specification of a color and opacity to be used in the "normal" or unredacted appearance as an overlay for the interior of the redaction area. The color specified in colorVal will be used as the border color for the "normal" appearance. If this field is <a href="aslayer_General.htm#NULL">NULL</a>, then no fill will be placed in the "normal" appearance. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>fillOpacity</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_General.htm#_t_PDColorValueRec" title=" A data structure representing a color."><code>PDColorValueRec</code></a> <code>*</code><code>borderColor</code><code>;</code> </div>
+</td><td><span>Allow a specification of the border color If this field is <a href="aslayer_General.htm#NULL">NULL</a>, and there is a fillColor, no borders wil be drawn in the normal appearance. If there is also no fillColor, then the colorVal, will be used as the border color. If that is also omitted, the border will be drawn in black. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_General.htm#_t_PDColorValueRec" title=" A data structure representing a color."><code>PDColorValueRec</code></a> <code>*</code><code>textColor</code><code>;</code> </div>
+</td><td><span>Allow specification of the text color in the redacted appearance If this field is <a href="aslayer_General.htm#NULL">NULL</a>, and there is text to be drawn, it will be drawn in black. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASFixed.htm#ASFixed" title=" The ASFixed type is a 32-bit quantity representing a rational number with the high (low on little-endian machines) 16 bits representing the number's mantissa and the low (high on little-endian machines) 16 bits representing the fractional part."><code>ASFixed</code></a> <code>textSize</code><code>;</code> </div>
+</td><td><span>Allow Specification of the text size in the redacted appearance If this field is zero, it will be presumed to be 10.0. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file."><code>PDEFont</code></a> <code>textFont</code><code>;</code> </div>
+</td><td><span>Allow specification of the text font in the redacted appearance If a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> is specified, it will be used. If a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> is not specified, and a textFontName is specified, a <a href="pdelayer_PDEFont.htm#PDEFont" title=" A reference to a font used on a page in a PDF file.">PDEFont</a> will be constructed using that font name, and inserted as an embedded, subset font for this annotation. If neither are specified, a base14 form of the font "Helvetica" will be created and used for this annotation (If text is present). </span>
+</td></tr>
+<tr><td><div class="structMember"><code>char</code> <code>*</code><code>textFontName</code><code>;</code> </div>
+</td><td><span></span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>repeat</code><code>;</code> </div>
+</td><td><span>Allow specification that the text is to be repeated to fill the redaction area. If this value is <a href="aslayer_General.htm#false">false</a>, a single copy of the text will be drawn within the redacted appearance. If it is <a href="aslayer_General.htm#true">true</a>, the text will be repeated as needed, both horiziontally and vertically, to fill the redacted area. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>scaleToFit</code><code>;</code> </div>
+</td><td><span>Allow specification that the text is to be scaled down to fit the redaction area If this field is <a href="aslayer_General.htm#false">false</a>, and repeat is also <a href="aslayer_General.htm#false">false</a>, one copy of the text will be drawn within the redacted area. If this text exceeds the size of the redacted area, it will be allowed to overflow.<br/>
+<p>If this field is <a href="aslayer_General.htm#true">true</a>, and the text exceeds either the height or width of the redacted area, the text will be scaled without distortion to fit into the redacted area. Note that if the repeat flag is also <a href="aslayer_General.htm#true">true</a>, this may result in reduced size text, which is repeated in one dimension, if the dimensions are very different in extent. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>title</code><code>;</code> </div>
+</td><td><span>Specify the name of the redaction popup. </span>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>note</code><code>;</code> </div>
+</td><td><span>Specify the content of the popup note associated with this annotion. </span>
+</td></tr>
+<tr><td><code id="PDRedactParamsRec"><code>}</code> <a href="pdlayer_PDRedaction.htm#_t_PDRedactParams" title=" Parameters used to represent the properties for a redaction mark."><code>PDRedactParamsRec</code></a><code>,</code> <code>*</code><a href="pdlayer_PDRedaction.htm#_t_PDRedactParams" title=" Parameters used to represent the properties for a redaction mark."><code>PDRedactParams</code></a><code>;</code> </code>
+</td><td><span></span>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDDoc.htm#PDDocCreateRedaction" title=" Creates a redaction mark on a given page."><code>PDDocCreateRedaction</code></a></td><td><a href="pdlayer_PDRedaction.htm#PDRedactionGetProps" title=" Retrieves a set of properties for a given redaction mark."><code>PDRedactionGetProps</code></a></td></tr>
+<tr><td><a href="pdlayer_PDRedaction.htm#PDRedactionSetProps" title=" Assigns a set of properties to a given redaction mark."><code>PDRedactionSetProps</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDRedaction Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDRedactionGetProps">PDRedactionGetProps</a></dt><dd> -  Retrieves a set of properties for a given redaction mark.</dd>
+<dt><a href="#PDRedactionSetProps">PDRedactionSetProps</a></dt><dd> -  Assigns a set of properties to a given redaction mark.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDRedactionGetProps"><strong><span style="color:grey;">PDRedactionGetProps</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:11441</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Retrieves a set of properties for a given redaction mark. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDDoc.htm#PDDocApplyRedactions" title=" Applies a set of redaction marks to the document, permanently removing the affected document content and the marks themselves."><code>PDDocApplyRedactions</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocCreateRedaction" title=" Creates a redaction mark on a given page."><code>PDDocCreateRedaction</code></a>
+<a href="pdlayer_PDRedaction.htm#PDRedactionSetProps" title=" Assigns a set of properties to a given redaction mark."><code>PDRedactionSetProps</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDRedactionGetProps(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>redactionAnnot</code><code>,</code> <a href="pdlayer_PDRedaction.htm#_t_PDRedactParams" title=" Parameters used to represent the properties for a redaction mark."><code>PDRedactParams</code></a> <code>redactionProps</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>redactionAnnot</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The redaction mark whose properties are to be returned. </span>
+</td></tr>
+<tr><td><span><code>redactionProps</code></span>
+</td><td><span><a href="pdslayer_General.htm#OUT">OUT</a> The set of properties to be filled by this method. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the properties were successfully returned, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdErrBadAnnotation" title=" Invalid annotation object."><code>pdErrBadAnnotation</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDRedactionSetProps"><strong><span style="color:grey;">PDRedactionSetProps</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:11452</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Assigns a set of properties to a given redaction mark. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDDoc.htm#PDDocApplyRedactions" title=" Applies a set of redaction marks to the document, permanently removing the affected document content and the marks themselves."><code>PDDocApplyRedactions</code></a>
+<a href="pdlayer_PDDoc.htm#PDDocCreateRedaction" title=" Creates a redaction mark on a given page."><code>PDDocCreateRedaction</code></a>
+<a href="pdlayer_PDRedaction.htm#PDRedactionGetProps" title=" Retrieves a set of properties for a given redaction mark."><code>PDRedactionGetProps</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDRedactionSetProps(</code><a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file."><code>PDAnnot</code></a> <code>redactionAnnot</code><code>,</code> <a href="pdlayer_PDRedaction.htm#_t_PDRedactParams" title=" Parameters used to represent the properties for a redaction mark."><code>PDRedactParams</code></a> <code>redactionProps</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>redactionAnnot</code></span>
+</td><td><span>IN/OUT The redaction mark whose properties are to be assigned. </span>
+</td></tr>
+<tr><td><span><code>redactionProps</code></span>
+</td><td><span><a href="pdslayer_General.htm#IN">IN</a> The set of properties to be assigned by this method. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the properties were successfully assigned, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdErrBadAnnotation" title=" Invalid annotation object."><code>pdErrBadAnnotation</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+</section>
+
+</div>
+</body></html>

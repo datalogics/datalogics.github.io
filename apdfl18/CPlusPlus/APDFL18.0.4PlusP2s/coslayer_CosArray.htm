@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+COS Layer: CosArray</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>COS Layer: CosArray</h5>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Functions">
+<header><h2>CosArray Functions</h2></header>
+<nav><dl>
+<dt><a href="#CosArrayGet">CosArrayGet</a></dt><dd> -  Gets the specified element from an array.</dd>
+<dt><a href="#CosArrayInsert">CosArrayInsert</a></dt><dd> -  Inserts an object into an array.</dd>
+<dt><a href="#CosArrayIsWeakReference">CosArrayIsWeakReference</a></dt><dd> -  Return the state of a weak reference in an array.</dd>
+<dt><a href="#CosArrayLength">CosArrayLength</a></dt><dd> -  Gets the number of elements in array.</dd>
+<dt><a href="#CosArrayPut">CosArrayPut</a></dt><dd> -  Puts the specified object into the specified location in an array.</dd>
+<dt><a href="#CosArrayRemove">CosArrayRemove</a></dt><dd> -  Finds the first element, if any, equal to the specified object and removes it from the array.</dd>
+<dt><a href="#CosArrayRemoveNth">CosArrayRemoveNth</a></dt><dd> -  Checks whether the position is within the array bounds, removes it from the array, moves each subsequent element to the slot with the next smaller index, and decrements the array's length by 1.</dd>
+<dt><a href="#CosArraySetWeakReference">CosArraySetWeakReference</a></dt><dd> -  Establishes or removes a weak reference from an array.</dd>
+<dt><a href="#CosNewArray">CosNewArray</a></dt><dd> -  Creates and returns a new array Cos object.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="CosArrayGet"><strong><span style="color:grey;">CosArrayGet</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:767</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the specified element from an array. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="coslayer_CosArray.htm#CosArrayInsert" title=" Inserts an object into an array."><code>CosArrayInsert</code></a>
+<a href="coslayer_CosArray.htm#CosArrayLength" title=" Gets the number of elements in array."><code>CosArrayLength</code></a>
+<a href="coslayer_CosArray.htm#CosArrayPut" title=" Puts the specified object into the specified location in an array."><code>CosArrayPut</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>CosArrayGet(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>array</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>index</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>array</code></span>
+</td><td><span>The array from which an element is obtained. </span>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The array element to obtain. The first element in an array has an index of zero. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The Cos object occupying the <code>index</code> element of <code>array</code>. It returns a <a href="aslayer_General.htm#NULL"><code>NULL</code></a> Cos object if <code>index</code> is outside the array bounds. </span>
+</section>
+<section><div class="infoRow"><h3 id="CosArrayInsert"><strong><span style="color:grey;">CosArrayInsert</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:818</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>
+<p>Inserts an object into an array.<br/></p>
+
+<p>
+<p>An exception is raised if the object to insert is a direct object that is already contained in another object, or if the object to insert belongs to another document.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="coslayer_CosArray.htm#CosArrayGet" title=" Gets the specified element from an array."><code>CosArrayGet</code></a>
+<a href="coslayer_CosArray.htm#CosArrayLength" title=" Gets the number of elements in array."><code>CosArrayLength</code></a>
+<a href="coslayer_CosArray.htm#CosArrayRemove" title=" Finds the first element, if any, equal to the specified object and removes it from the array."><code>CosArrayRemove</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>CosArrayInsert(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>array</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>pos</code><code>,</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>obj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>array</code></span>
+</td><td><span>The array into which the object is inserted. </span>
+</td></tr>
+<tr><td><span><code>pos</code></span>
+</td><td><div><p>The location in the array to insert the object. The object is inserted before the specified location. The first element in an array has a pos of zero. If <code>pos</code> <code>>=</code> <a href="coslayer_CosArray.htm#CosArrayLength" title=" Gets the number of elements in array."><code>CosArrayLength</code></a><code>(array)</code>, <code>obj</code> is added at the end of the array. The length of the array always increases by <code>1</code>.<br/>
+<p>It is not safe to call <a href="coslayer_CosArray.htm#CosArrayInsert" title=" Inserts an object into an array."><code>CosArrayInsert</code></a><code>()</code> during a call to <a href="coslayer_CosObj.htm#CosObjEnum" title=" Enumerates the elements of a Cos object by calling a user-supplied procedure for each component of the object."><code>CosObjEnum</code></a><code>()</code> on that same array (for example, from within the callback procedure).<br/></p>
+</div>
+</td></tr>
+<tr><td><span><code>obj</code></span>
+</td><td><span>The object to insert. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="CosArrayIsWeakReference"><strong><span style="color:grey;">CosArrayIsWeakReference</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:2018</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Return the state of a weak reference in an array. See <a href="coslayer_CosDict.htm#CosDictIsWeakReference" title=" Gets the state of a weak reference."><code>CosDictIsWeakReference</code></a><code>()</code> for details. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>CosArrayIsWeakReference(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>array</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>n</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>array</code></span>
+</td><td><span>An array. </span>
+</td></tr>
+<tr><td><span><code>n</code></span>
+</td><td><span>The index of an item in the array. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>Returns the value of the <code>isWeak</code> parameter in the most recent call to <a href="coslayer_CosArray.htm#CosArraySetWeakReference" title=" Establishes or removes a weak reference from an array."><code>CosArraySetWeakReference</code></a><code>()</code> with these parameters, or <a href="aslayer_General.htm#false"><code>false</code></a> if there has been no such call. </span>
+</section>
+<section><div class="infoRow"><h3 id="CosArrayLength"><strong><span style="color:grey;">CosArrayLength</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:846</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Gets the number of elements in <code>array</code>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>CosArrayLength(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>array</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>array</code></span>
+</td><td><span>IN/OUT The array for which the number of elements is determined. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of elements in <code>array</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="CosArrayPut"><strong><span style="color:grey;">CosArrayPut</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:793</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>
+<p>Puts the specified object into the specified location in an array. The array is extended as much as necessary and <a href="aslayer_General.htm#NULL"><code>NULL</code></a> objects are stored in empty slots. It sets the <a href="pdlayer_PDDoc.htm#PDDocNeedsSave" title=" The document has been modified and needs to be saved."><code>PDDocNeedsSave</code></a> flag (see <a href="pdlayer_PDDoc.htm#PDDocSetFlags" title=" Sets information about the document's file and its state."><code>PDDocSetFlags</code></a>) flag of the <code>array</code> object's <a href="coslayer_CosDoc.htm#CosDoc">CosDoc</a> if <code>array</code> is indirect or is a direct object with an indirect composite object at the root of its container chain.<br/></p>
+
+<p>
+<p>It is not safe to call <a href="coslayer_CosArray.htm#CosArrayPut" title=" Puts the specified object into the specified location in an array."><code>CosArrayPut</code></a><code>()</code> during a call to <a href="coslayer_CosObj.htm#CosObjEnum" title=" Enumerates the elements of a Cos object by calling a user-supplied procedure for each component of the object."><code>CosObjEnum</code></a><code>()</code> on that same array (for example, from within the callback procedure), if doing so would extend the length of the array.<br/></p>
+
+<p>
+<p>An exception is raised if the object to insert is a direct object that is already contained in another object, or if the object to insert belongs to another document.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="coslayer_CosArray.htm#CosArrayGet" title=" Gets the specified element from an array."><code>CosArrayGet</code></a>
+<a href="coslayer_CosArray.htm#CosArrayInsert" title=" Inserts an object into an array."><code>CosArrayInsert</code></a>
+<a href="coslayer_CosArray.htm#CosArrayLength" title=" Gets the number of elements in array."><code>CosArrayLength</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>CosArrayPut(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>array</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>index</code><code>,</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>obj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>array</code></span>
+</td><td><span>The array in which <code>obj</code> is stored. </span>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The location in <code>array</code> to store <code>obj</code>. The first element of an array has an index of zero. </span>
+</td></tr>
+<tr><td><span><code>obj</code></span>
+</td><td><span>The Cos object to insert into <code>array</code>. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="CosArrayRemove"><strong><span style="color:grey;">CosArrayRemove</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:838</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>
+<p>Finds the first element, if any, equal to the specified object and removes it from the array. <a href="coslayer_CosObj.htm#CosObjEqual" title=" Tests whether two Cos objects are equal."><code>CosObjEqual</code></a><code>()</code> is used to determine whether an array element is equal to the specified object.<br/></p>
+
+<p>
+<p>The array is compressed after removing the element. The compression is accomplished by moving each element following the deleted element to the slot with the next smaller index and decrementing the array's length by <code>1</code>.<br/></p>
+
+<p>
+<p>It is not safe to call <a href="coslayer_CosArray.htm#CosArrayRemove" title=" Finds the first element, if any, equal to the specified object and removes it from the array."><code>CosArrayRemove</code></a><code>()</code> during a call to <a href="coslayer_CosObj.htm#CosObjEnum" title=" Enumerates the elements of a Cos object by calling a user-supplied procedure for each component of the object."><code>CosObjEnum</code></a><code>()</code> on that same dictionary (for example, from within the callback procedure).<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="coslayer_CosArray.htm#CosArrayInsert" title=" Inserts an object into an array.">CosArrayInsert</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>CosArrayRemove(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>array</code><code>,</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>obj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>array</code></span>
+</td><td><span>The array from which <code>obj</code> is removed. </span>
+</td></tr>
+<tr><td><span><code>obj</code></span>
+</td><td><span>The object to remove. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="CosArrayRemoveNth"><strong><span style="color:grey;">CosArrayRemoveNth</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:1292</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Checks whether the position is within the array bounds, removes it from the array, moves each subsequent element to the slot with the next smaller index, and decrements the array's length by <code>1</code>. It sets the <code>dirty</code> flag of the <code>array</code> object's <a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="coslayer_CosArray.htm#CosArrayRemove" title=" Finds the first element, if any, equal to the specified object and removes it from the array.">CosArrayRemove</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>CosArrayRemoveNth(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>array</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>pos</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>array</code></span>
+</td><td><span>IN/OUT The <a href="coslayer_General.htm#CosArray" title=" An array object."><code>CosArray</code></a> from which to remove the member. </span>
+</td></tr>
+<tr><td><span><code>pos</code></span>
+</td><td><span>IN/OUT The index for the array member to remove. Array indices start at <code>0</code>. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="CosArraySetWeakReference"><strong><span style="color:grey;">CosArraySetWeakReference</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:2008</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Establishes or removes a weak reference from an array. For a description of weak references, see <a href="coslayer_CosDict.htm#CosDictSetWeakReference" title=" Weak and strong references."><code>CosDictSetWeakReference</code></a><code>()</code>. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>CosArraySetWeakReference(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>array</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>n</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>isWeak</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>array</code></span>
+</td><td><span>An array. </span>
+</td></tr>
+<tr><td><span><code>n</code></span>
+</td><td><span>The index of the element that is the weak reference. Note that the weak reference <em>travels</em> with the element; that is, if an item is marked as a weak reference, and an item is subsequently inserted before that item, the weak reference applies to the same element as it did previously. </span>
+</td></tr>
+<tr><td><span><code>isWeak</code></span>
+</td><td><span>Sets a weak reference for an array. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="CosNewArray"><strong><span style="color:grey;">CosNewArray</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> CosProcs.h:243</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Creates and returns a new array Cos object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="coslayer_CosArray.htm#CosArrayGet" title=" Gets the specified element from an array."><code>CosArrayGet</code></a>
+<a href="coslayer_CosArray.htm#CosArrayInsert" title=" Inserts an object into an array."><code>CosArrayInsert</code></a>
+<a href="coslayer_CosArray.htm#CosArrayLength" title=" Gets the number of elements in array."><code>CosArrayLength</code></a>
+<a href="coslayer_CosArray.htm#CosArrayPut" title=" Puts the specified object into the specified location in an array."><code>CosArrayPut</code></a>
+<a href="coslayer_CosArray.htm#CosArrayRemove" title=" Finds the first element, if any, equal to the specified object and removes it from the array."><code>CosArrayRemove</code></a>
+<a href="coslayer_CosObj.htm#CosObjDestroy" title=" Destroys a Cos object."><code>CosObjDestroy</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>CosNewArray(</code><a href="coslayer_CosDoc.htm#CosDoc"><code>CosDoc</code></a> <code>dP</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>indirect</code><code>,</code> <a href="aslayer_General.htm#ASTArraySize"><code>ASTArraySize</code></a> <code>nElements</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>dP</code></span>
+</td><td><span>The document in which the array is used. </span>
+</td></tr>
+<tr><td><span><code>indirect</code></span>
+</td><td><span>If <a href="aslayer_General.htm#true"><code>true</code></a>, it creates the array as an indirect Cos object, and sets the document's <a href="pdlayer_PDDoc.htm#PDDocNeedsSave" title=" The document has been modified and needs to be saved."><code>PDDocNeedsSave</code></a> flag (see <a href="pdlayer_PDDoc.htm#PDDocSetFlags" title=" Sets information about the document's file and its state."><code>PDDocSetFlags</code></a>). If <a href="aslayer_General.htm#false"><code>false</code></a>, it creates the array as a direct object. </span>
+</td></tr>
+<tr><td><span><code>nElements</code></span>
+</td><td><span>The number of elements that will be in the array. <code>nElements</code> is only a hint; Cos arrays grow dynamically as needed. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The newly created array Cos object. </span>
+</section>
+</section>
+
+</div>
+</body></html>

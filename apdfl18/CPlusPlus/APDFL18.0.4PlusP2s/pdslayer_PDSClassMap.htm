@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PDSEdit Layer: PDSClassMap</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDSEdit Layer: PDSClassMap</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>PDSClassMap Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDSClassMap">PDSClassMap</a></dt><dd> -  Associates class identifiers, which are names, with objects of type PDSAttrObj.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDSClassMap"><strong><span style="color:grey;">PDSClassMap</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSExpT.h:131</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Associates class identifiers, which are names, with objects of type <a href="pdslayer_PDSAttrObj.htm#PDSAttrObj" title=" Represents PDF logical structure attribute objects, which are dictionaries containing application-specific data that can be attached to PDSElement objects.">PDSAttrObj</a>. Structural elements maintain a list of names identifying classes to which they belong. The associated attributes are thus shared by all structural elements belonging to a given class. There is one class map per document, associated with the <a href="pdslayer_PDSTreeRoot.htm#PDSTreeRoot" title=" The root of the structure tree, which is a central repository for information related to a PDF document's logical structure.">PDSTreeRoot</a>. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The write functions in the <code>PDSEdit</code> API are not available in Adobe Reader. </p>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>PDSClassMap</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdslayer_PDSClassMap.htm#PDSClassMapAddAttrObj" title=" Adds the specified attribute object to the specified PDSClassMap for the given class name."><code>PDSClassMapAddAttrObj</code></a></td><td><a href="pdslayer_PDSClassMap.htm#PDSClassMapGetAttrObj" title=" Gets the attribute object associated with the specified class name at an index in the class."><code>PDSClassMapGetAttrObj</code></a></td></tr>
+<tr><td><a href="pdslayer_PDSClassMap.htm#PDSClassMapGetNumAttrObjs" title=" Gets the number of attribute objects associated with a class name."><code>PDSClassMapGetNumAttrObjs</code></a></td><td><a href="pdslayer_PDSClassMap.htm#PDSClassMapRemoveAttrObj" title=" Removes the specified attribute object from the specified PDSClassMap."><code>PDSClassMapRemoveAttrObj</code></a></td></tr>
+<tr><td><a href="pdslayer_PDSClassMap.htm#PDSClassMapRemoveClass" title=" Removes the specified class from the specified PDSClassMap, if it exists."><code>PDSClassMapRemoveClass</code></a></td><td><a href="pdslayer_PDSTreeRoot.htm#PDSTreeRootCreateClassMap" title=" Creates a PDSClassMap in the specified tree root."><code>PDSTreeRootCreateClassMap</code></a></td></tr>
+<tr><td><a href="pdslayer_PDSTreeRoot.htm#PDSTreeRootGetClassMap" title=" Gets the PDSClassMap object for the specified structure tree root."><code>PDSTreeRootGetClassMap</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDSClassMap Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDSClassMapAddAttrObj">PDSClassMapAddAttrObj</a></dt><dd> -  Adds the specified attribute object to the specified PDSClassMap for the given class name.</dd>
+<dt><a href="#PDSClassMapGetAttrObj">PDSClassMapGetAttrObj</a></dt><dd> -  Gets the attribute object associated with the specified class name at an index in the class.</dd>
+<dt><a href="#PDSClassMapGetNumAttrObjs">PDSClassMapGetNumAttrObjs</a></dt><dd> -  Gets the number of attribute objects associated with a class name.</dd>
+<dt><a href="#PDSClassMapRemoveAttrObj">PDSClassMapRemoveAttrObj</a></dt><dd> -  Removes the specified attribute object from the specified PDSClassMap.</dd>
+<dt><a href="#PDSClassMapRemoveClass">PDSClassMapRemoveClass</a></dt><dd> -  Removes the specified class from the specified PDSClassMap, if it exists.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDSClassMapAddAttrObj"><strong><span style="color:grey;">PDSClassMapAddAttrObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSWriteProcs.h:647</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Adds the specified attribute object to the specified <a href="pdslayer_PDSClassMap.htm#PDSClassMap" title=" Associates class identifiers, which are names, with objects of type PDSAttrObj.">PDSClassMap</a> for the given class name. If the attribute object is already present, it is not added a second time. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdslayer_PDSClassMap.htm#PDSClassMapGetAttrObj" title=" Gets the attribute object associated with the specified class name at an index in the class."><code>PDSClassMapGetAttrObj</code></a>
+<a href="pdslayer_PDSClassMap.htm#PDSClassMapRemoveAttrObj" title=" Removes the specified attribute object from the specified PDSClassMap."><code>PDSClassMapRemoveAttrObj</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDSClassMapAddAttrObj(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdslayer_PDSClassMap.htm#PDSClassMap" title=" Associates class identifiers, which are names, with objects of type PDSAttrObj."><code>PDSClassMap</code></a> <code>classMap</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>classAtom</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdslayer_PDSAttrObj.htm#PDSAttrObj" title=" Represents PDF logical structure attribute objects, which are dictionaries containing application-specific data that can be attached to PDSElement objects."><code>PDSAttrObj</code></a> <code>attrObj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>classMap</code></span>
+</td><td><span>The <a href="pdslayer_PDSClassMap.htm#PDSClassMap" title=" Associates class identifiers, which are names, with objects of type PDSAttrObj.">PDSClassMap</a> to which the specified attribute object is added. </span>
+</td></tr>
+<tr><td><span><code>classAtom</code></span>
+</td><td><span>The <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> representing the class name. </span>
+</td></tr>
+<tr><td><span><code>attrObj</code></span>
+</td><td><span>The attribute object to add to the class in <code>classAtom</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdsErrBadPDF" title=" An incorrect structure was found in the PDF file."><code>pdsErrBadPDF</code></a></span>
+</td><td><span>is raised if an error is found in the PDF file. </span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDSClassMapGetAttrObj"><strong><span style="color:grey;">PDSClassMapGetAttrObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSReadProcs.h:569</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the attribute object associated with the specified class name at an index in the class.<br/>
+<p>If there is only one object and index is zero, that object is retrieved.<br/></p>
+
+<p>
+<p>This may throw various exceptions.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdslayer_PDSClassMap.htm#PDSClassMapAddAttrObj" title=" Adds the specified attribute object to the specified PDSClassMap for the given class name."><code>PDSClassMapAddAttrObj</code></a>
+<a href="pdslayer_PDSClassMap.htm#PDSClassMapGetNumAttrObjs" title=" Gets the number of attribute objects associated with a class name."><code>PDSClassMapGetNumAttrObjs</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDSClassMapGetAttrObj(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdslayer_PDSClassMap.htm#PDSClassMap" title=" Associates class identifiers, which are names, with objects of type PDSAttrObj."><code>PDSClassMap</code></a> <code>classMap</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>classAtom</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="pdslayer_PDSAttrObj.htm#PDSAttrObj" title=" Represents PDF logical structure attribute objects, which are dictionaries containing application-specific data that can be attached to PDSElement objects."><code>PDSAttrObj</code></a> <code>*</code><code>attrObj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>classMap</code></span>
+</td><td><span>The <a href="pdslayer_PDSClassMap.htm#PDSClassMap" title=" Associates class identifiers, which are names, with objects of type PDSAttrObj.">PDSClassMap</a>. </span>
+</td></tr>
+<tr><td><span><code>classAtom</code></span>
+</td><td><span>The <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> of a class name for which an associated attribute objects is found. </span>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The index of the desired attribute object in the class. </span>
+</td></tr>
+<tr><td><span><code>attrObj</code></span>
+</td><td><span>(Filled by the method) The attribute object at <code>index</code>. Set it to <a href="coslayer_General.htm#CosNull" title=" A NULL object or an invalid object.">CosNull</a> if there is no attribute object at the specified location. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDSClassMapGetNumAttrObjs"><strong><span style="color:grey;">PDSClassMapGetNumAttrObjs</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSReadProcs.h:547</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the number of attribute objects associated with a class name.<br/>
+<p>This may throw various exceptions.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdslayer_PDSClassMap.htm#PDSClassMapGetAttrObj" title=" Gets the attribute object associated with the specified class name at an index in the class.">PDSClassMapGetAttrObj</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDSClassMapGetNumAttrObjs(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdslayer_PDSClassMap.htm#PDSClassMap" title=" Associates class identifiers, which are names, with objects of type PDSAttrObj."><code>PDSClassMap</code></a> <code>classMap</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>classAtom</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>classMap</code></span>
+</td><td><span>IN/OUT The <a href="pdslayer_PDSClassMap.htm#PDSClassMap" title=" Associates class identifiers, which are names, with objects of type PDSAttrObj.">PDSClassMap</a>. </span>
+</td></tr>
+<tr><td><span><code>classAtom</code></span>
+</td><td><span>IN/OUT The <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> of a class name for which the number of associated attribute objects is found. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of attribute objects associated with the class in <code>classAtom</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDSClassMapRemoveAttrObj"><strong><span style="color:grey;">PDSClassMapRemoveAttrObj</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSWriteProcs.h:677</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Removes the specified attribute object from the specified <a href="pdslayer_PDSClassMap.htm#PDSClassMap" title=" Associates class identifiers, which are names, with objects of type PDSAttrObj.">PDSClassMap</a>. If classAtom is <a href="aslayer_ASAtom.htm#ASAtomNull">ASAtomNull</a>, it removes all occurrences of <code>attrObj</code> in the entire <code>classMap</code>. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdslayer_PDSClassMap.htm#PDSClassMapAddAttrObj" title=" Adds the specified attribute object to the specified PDSClassMap for the given class name."><code>PDSClassMapAddAttrObj</code></a>
+<a href="pdslayer_PDSClassMap.htm#PDSClassMapRemoveClass" title=" Removes the specified class from the specified PDSClassMap, if it exists."><code>PDSClassMapRemoveClass</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDSClassMapRemoveAttrObj(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdslayer_PDSClassMap.htm#PDSClassMap" title=" Associates class identifiers, which are names, with objects of type PDSAttrObj."><code>PDSClassMap</code></a> <code>classMap</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>classAtom</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdslayer_PDSAttrObj.htm#PDSAttrObj" title=" Represents PDF logical structure attribute objects, which are dictionaries containing application-specific data that can be attached to PDSElement objects."><code>PDSAttrObj</code></a> <code>attrObj</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>classMap</code></span>
+</td><td><span>The <a href="pdslayer_PDSClassMap.htm#PDSClassMap" title=" Associates class identifiers, which are names, with objects of type PDSAttrObj.">PDSClassMap</a> from which the specified attribute object is removed. </span>
+</td></tr>
+<tr><td><span><code>classAtom</code></span>
+</td><td><span>The <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> of a class name for which the associated attribute object is found. </span>
+</td></tr>
+<tr><td><span><code>attrObj</code></span>
+</td><td><span>The attribute object to remove from <code>classMap</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdsErrBadPDF" title=" An incorrect structure was found in the PDF file."><code>pdsErrBadPDF</code></a></span>
+</td><td><span>is raised if an error is found in the PDF file. </span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDSClassMapRemoveClass"><strong><span style="color:grey;">PDSClassMapRemoveClass</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDSWriteProcs.h:661</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Removes the specified class from the specified <a href="pdslayer_PDSClassMap.htm#PDSClassMap" title=" Associates class identifiers, which are names, with objects of type PDSAttrObj.">PDSClassMap</a>, if it exists.<br/>
+<p>This may raise various exceptions.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdslayer_PDSClassMap.htm#PDSClassMapRemoveAttrObj" title=" Removes the specified attribute object from the specified PDSClassMap.">PDSClassMapRemoveAttrObj</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDSClassMapRemoveClass(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdslayer_PDSClassMap.htm#PDSClassMap" title=" Associates class identifiers, which are names, with objects of type PDSAttrObj."><code>PDSClassMap</code></a> <code>classMap</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASAtom.htm#ASAtom"><code>ASAtom</code></a> <code>classAtom</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>classMap</code></span>
+</td><td><span>IN/OUT The <a href="pdslayer_PDSClassMap.htm#PDSClassMap" title=" Associates class identifiers, which are names, with objects of type PDSAttrObj.">PDSClassMap</a> from which a class is removed. </span>
+</td></tr>
+<tr><td><span><code>classAtom</code></span>
+</td><td><span>IN/OUT The <a href="aslayer_ASAtom.htm#ASAtom">ASAtom</a> representing the class to remove from <code>classMap</code>. </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

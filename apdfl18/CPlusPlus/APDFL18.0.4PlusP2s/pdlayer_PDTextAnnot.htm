@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PD Layer: PDTextAnnot</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PD Layer: PDTextAnnot</h5>
+<li><a href="#Definitions">Definitions</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Definitions">
+<header><h2>PDTextAnnot Definitions</h2></header>
+<nav><dl>
+<dt><a href="#CastToPDTextAnnot">CastToPDTextAnnot</a></dt><dd> -  Casts a link annotation or a generic annotation to a text annotation.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="CastToPDTextAnnot"><strong><span style="color:grey;">CastToPDTextAnnot</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:416</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Casts a link annotation or a generic annotation to a text annotation. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDAnnot.htm#CastToPDAnnot" title=" Casts a link annotation or a text annotation to a generic annotation."><code>CastToPDAnnot</code></a>
+<a href="pdlayer_PDLinkAnnot.htm#CastToPDLinkAnnot" title=" Casts a generic annotation or a text annotation to a link annotation."><code>CastToPDLinkAnnot</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define CastToPDTextAnnot</code> <code>(</code> <code>a</code> <code>)</code> <code>*</code><code>(</code> <a href="pdlayer_PDTextAnnot.htm#PDTextAnnot" title=" A PDF text annotation on a page in a PDF file."><code>PDTextAnnot</code></a> <code>*</code><code>)</code> <code>&amp;</code><code>(</code> <code>a</code> <code>)</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>a</code></span>
+</td><td><span>The link annotation or generic annotation to cast. </span>
+</td></tr></Table>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>PDTextAnnot Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDTextAnnot">PDTextAnnot</a></dt><dd> -  A PDF text annotation on a page in a PDF file.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDTextAnnot"><strong><span style="color:grey;">PDTextAnnot</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:324</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>A PDF text annotation on a page in a PDF file. You can use any <a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file.">PDAnnot</a> method on a <a href="pdlayer_PDTextAnnot.htm#PDTextAnnot" title=" A PDF text annotation on a page in a PDF file.">PDTextAnnot</a>.<br/>
+<p>Applications can:<br/></p>
+
+<UL><li> Get and set attributes including the rectangle, textual contents, and whether the annotation is open.<br/><li> Create new text annotations, and delete or move existing ones using <a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file.">PDAnnot</a> methods.<br/><li> Manipulate the behavior of text annotations by modifying the Text Annotation Handler.<br/></UL>
+
+<p>
+<p>To obtain a PDF text annotation, use any of the <a href="pdlayer_PDAnnot.htm#PDAnnot" title=" An annotation on a page in a PDF file.">PDAnnot</a> calls, followed by <a href="pdlayer_PDTextAnnot.htm#CastToPDTextAnnot" title=" Casts a link annotation or a generic annotation to a text annotation.">CastToPDTextAnnot</a>(). The annotation passed to <a href="pdlayer_PDTextAnnot.htm#CastToPDTextAnnot" title=" Casts a link annotation or a generic annotation to a text annotation.">CastToPDTextAnnot</a>() must be a text annotation; it will not convert other annotation types into text annotations.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDTextAnnot.htm#CastToPDTextAnnot" title=" Casts a link annotation or a generic annotation to a text annotation."><code>CastToPDTextAnnot</code></a>
+<a href="pdlayer_PDPage.htm#PDPageRemoveAnnot" title=" Removes an annotation from the specified page."><code>PDPageRemoveAnnot</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.htm#OPAQUE_64_BITS"><code>OPAQUE_64_BITS</code></a> <code>PDTextAnnot</code><code>;</code> </code>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDTextAnnot.htm#PDTextAnnotGetContents" title=" Gets the text of a text annotation."><code>PDTextAnnotGetContents</code></a></td><td><a href="pdlayer_PDTextAnnot.htm#PDTextAnnotGetContentsASText" title=" Gets the text of a text annotation as an ASText object."><code>PDTextAnnotGetContentsASText</code></a></td></tr>
+<tr><td><a href="pdlayer_PDTextAnnot.htm#PDTextAnnotIsOpen" title=" Tests whether a text annotation is open."><code>PDTextAnnotIsOpen</code></a></td><td><a href="pdlayer_PDTextAnnot.htm#PDTextAnnotSetContents" title=" Sets the text of a text annotation."><code>PDTextAnnotSetContents</code></a></td></tr>
+<tr><td><a href="pdlayer_PDTextAnnot.htm#PDTextAnnotSetContentsASText" title=" Sets the text of a text annotation."><code>PDTextAnnotSetContentsASText</code></a></td><td><a href="pdlayer_PDTextAnnot.htm#PDTextAnnotSetOpen" title=" Opens or closes a text annotation."><code>PDTextAnnotSetOpen</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDTextAnnot Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDTextAnnotGetContents">PDTextAnnotGetContents</a></dt><dd> -  Gets the text of a text annotation.</dd>
+<dt><a href="#PDTextAnnotGetContentsASText">PDTextAnnotGetContentsASText</a></dt><dd> -  Gets the text of a text annotation as an ASText object.</dd>
+<dt><a href="#PDTextAnnotIsOpen">PDTextAnnotIsOpen</a></dt><dd> -  Tests whether a text annotation is open.</dd>
+<dt><a href="#PDTextAnnotSetContents">PDTextAnnotSetContents</a></dt><dd> -  Sets the text of a text annotation.</dd>
+<dt><a href="#PDTextAnnotSetContentsASText">PDTextAnnotSetContentsASText</a></dt><dd> -  Sets the text of a text annotation.</dd>
+<dt><a href="#PDTextAnnotSetOpen">PDTextAnnotSetOpen</a></dt><dd> -  Opens or closes a text annotation.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDTextAnnotGetContents"><strong><span style="color:grey;">PDTextAnnotGetContents</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:560</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the text of a text annotation. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This text is stored in either <a href="pdlayer_PDFont.htm#PDFDocEncoding" title=" PDFDocEncoding, see Annex D, "Character Sets and Encodings," page 651.">PDFDocEncoding</a> or in Unicode. If it is stored in Unicode, a valid Byte Order Mark must be present. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDTextAnnot.htm#PDTextAnnotSetContents" title=" Sets the text of a text annotation."><code>PDTextAnnotSetContents</code></a>
+<a href="pdlayer_PDFont.htm#PDXlateToPDFDocEnc" title=" Translates a string from host encoding to PDFDocEncoding."><code>PDXlateToPDFDocEnc</code></a>
+<a href="pdlayer_PDFont.htm#PDXlateToPDFDocEncEx" title=" Translates a string from host encoding to PDFDocEncoding or Unicode."><code>PDXlateToPDFDocEncEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDTextAnnotGetContents(</code><a href="pdlayer_PDTextAnnot.htm#PDTextAnnot" title=" A PDF text annotation on a page in a PDF file."><code>PDTextAnnot</code></a> <code>aTextAnnot</code><code>,</code> <code>char</code> <code>*</code><code>buffer</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>bufSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aTextAnnot</code></span>
+</td><td><span>The text annotation whose text is obtained. </span>
+</td></tr>
+<tr><td><span><code>buffer</code></span>
+</td><td><span>(Filled by the method) A buffer into which the text is placed. If the text is encoded using <a href="pdlayer_PDFont.htm#PDFDocEncoding" title=" PDFDocEncoding, see Annex D, "Character Sets and Encodings," page 651."><code>PDFDocEncoding</code></a>, it can be converted to a platform's native encoding using <a href="pdlayer_PDFont.htm#PDXlateToHost" title=" Translates a string from PDFDocEncoding to host encoding.">PDXlateToHost</a>() or <a href="pdlayer_PDFont.htm#PDXlateToHostEx" title=" Translates a string from Unicode or PDFDocEncoding to host encoding.">PDXlateToHostEx</a>(). </span>
+</td></tr>
+<tr><td><span><code>bufSize</code></span>
+</td><td><span>The maximum number of characters that <code>buffer</code> can hold. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>The number of characters written into <code>buffer</code>. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDTextAnnotGetContentsASText"><strong><span style="color:grey;">PDTextAnnotGetContentsASText</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:10985</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the text of a text annotation as an <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDTextAnnot.htm#PDTextAnnotGetContents" title=" Gets the text of a text annotation."><code>PDTextAnnotGetContents</code></a>
+<a href="pdlayer_PDTextAnnot.htm#PDTextAnnotSetContents" title=" Sets the text of a text annotation."><code>PDTextAnnotSetContents</code></a>
+<a href="pdlayer_PDTextAnnot.htm#PDTextAnnotSetContentsASText" title=" Sets the text of a text annotation."><code>PDTextAnnotSetContentsASText</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDTextAnnotGetContentsASText(</code><a href="pdlayer_PDTextAnnot.htm#PDTextAnnot" title=" A PDF text annotation on a page in a PDF file."><code>PDTextAnnot</code></a> <code>aTextAnnot</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>contents</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aTextAnnot</code></span>
+</td><td><span>The text annotation whose text is obtained. </span>
+</td></tr>
+<tr><td><span><code>contents</code></span>
+</td><td><span>(Filled by the method) The text object containing the contents. The client must pass a valid <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object title. The routine does not allocate it. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDTextAnnotIsOpen"><strong><span style="color:grey;">PDTextAnnotIsOpen</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:600</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Tests whether a text annotation is open. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method cannot always correctly determine a text annotation's open state. For the current version of Acrobat, text and other annotations have an associated Popup annotation which maintains the open state of the popup window; the method works correctly when you pass it the popup annotation itself. You can use Cos-level routines to find the Popup entry in the annotation dictionary, which is itself a dictionary containing an Open entry. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDTextAnnot.htm#PDTextAnnotSetOpen" title=" Opens or closes a text annotation.">PDTextAnnotSetOpen</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDTextAnnotIsOpen(</code><a href="pdlayer_PDTextAnnot.htm#PDTextAnnot" title=" A PDF text annotation on a page in a PDF file."><code>PDTextAnnot</code></a> <code>aTextAnnot</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aTextAnnot</code></span>
+</td><td><span>The text annotation whose open/closed state is obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if the annotation is open, <a href="aslayer_General.htm#false"><code>false</code></a> otherwise. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDTextAnnotSetContents"><strong><span style="color:grey;">PDTextAnnotSetContents</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:581</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the text of a text annotation. This method also sets the modification date of the annotation to the current date and time. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The text must be encoded using <a href="pdlayer_PDFont.htm#PDFDocEncoding" title=" PDFDocEncoding, see Annex D, "Character Sets and Encodings," page 651."><code>PDFDocEncoding</code></a> or Unicode. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDTextAnnot.htm#PDTextAnnotGetContents" title=" Gets the text of a text annotation."><code>PDTextAnnotGetContents</code></a>
+<a href="pdlayer_PDFont.htm#PDXlateToPDFDocEnc" title=" Translates a string from host encoding to PDFDocEncoding."><code>PDXlateToPDFDocEnc</code></a>
+<a href="pdlayer_PDFont.htm#PDXlateToPDFDocEncEx" title=" Translates a string from host encoding to PDFDocEncoding or Unicode."><code>PDXlateToPDFDocEncEx</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDTextAnnotSetContents(</code><a href="pdlayer_PDTextAnnot.htm#PDTextAnnot" title=" A PDF text annotation on a page in a PDF file."><code>PDTextAnnot</code></a> <code>aTextAnnot</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>str</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>nBytes</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aTextAnnot</code></span>
+</td><td><span>The text annotation whose text is set. </span>
+</td></tr>
+<tr><td><span><code>str</code></span>
+</td><td><span>A string containing the new text. The string must be encoded using <a href="pdlayer_PDFont.htm#PDFDocEncoding" title=" PDFDocEncoding, see Annex D, "Character Sets and Encodings," page 651."><code>PDFDocEncoding</code></a> or Unicode. The strings in a platform's native encoding can be converted to <a href="pdlayer_PDFont.htm#PDFDocEncoding" title=" PDFDocEncoding, see Annex D, "Character Sets and Encodings," page 651."><code>PDFDocEncoding</code></a> using <a href="pdlayer_PDFont.htm#PDXlateToPDFDocEnc" title=" Translates a string from host encoding to PDFDocEncoding.">PDXlateToPDFDocEnc</a>() or <a href="pdlayer_PDFont.htm#PDXlateToPDFDocEncEx" title=" Translates a string from host encoding to PDFDocEncoding or Unicode.">PDXlateToPDFDocEncEx</a>(). </span>
+</td></tr>
+<tr><td><span><code>nBytes</code></span>
+</td><td><span>The number of characters in <code>str</code>. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDTextAnnotSetContentsASText"><strong><span style="color:grey;">PDTextAnnotSetContentsASText</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:10999</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the text of a text annotation. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_PDTextAnnot.htm#PDTextAnnotGetContents" title=" Gets the text of a text annotation."><code>PDTextAnnotGetContents</code></a>
+<a href="pdlayer_PDTextAnnot.htm#PDTextAnnotGetContentsASText" title=" Gets the text of a text annotation as an ASText object."><code>PDTextAnnotGetContentsASText</code></a>
+<a href="pdlayer_PDTextAnnot.htm#PDTextAnnotSetContents" title=" Sets the text of a text annotation."><code>PDTextAnnotSetContents</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDTextAnnotSetContentsASText(</code><a href="pdlayer_PDTextAnnot.htm#PDTextAnnot" title=" A PDF text annotation on a page in a PDF file."><code>PDTextAnnot</code></a> <code>aTextAnnot</code><code>,</code> <code>const</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>contents</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aTextAnnot</code></span>
+</td><td><span>The text annotation whose text is set. </span>
+</td></tr>
+<tr><td><span><code>contents</code></span>
+</td><td><span>The text object containing the new text. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDTextAnnotSetOpen"><strong><span style="color:grey;">PDTextAnnotSetOpen</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:620</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Opens or closes a text annotation. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method cannot always correctly set a text annotation's open state. For the current version of Acrobat, text and other annotations have an associated Popup annotation which maintains the open state of the popup window; the method works correctly when you pass it the popup annotation itself. You can use Cos-level routines to find the Popup entry in the annotation dictionary, which is itself a dictionary containing an Open entry. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_PDTextAnnot.htm#PDTextAnnotIsOpen" title=" Tests whether a text annotation is open.">PDTextAnnotIsOpen</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDTextAnnotSetOpen(</code><a href="pdlayer_PDTextAnnot.htm#PDTextAnnot" title=" A PDF text annotation on a page in a PDF file."><code>PDTextAnnot</code></a> <code>aTextAnnot</code><code>,</code> <a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>isOpen</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>aTextAnnot</code></span>
+</td><td><span>The annotation to open or close. </span>
+</td></tr>
+<tr><td><span><code>isOpen</code></span>
+</td><td><span><a href="aslayer_General.htm#true"><code>true</code></a> if the annotation is opened, <a href="aslayer_General.htm#false"><code>false</code></a> if the annotation is closed. </span>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body></html>

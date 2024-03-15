@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/x-icon" href="art/DLicon.png">
+<meta charset="UTF-8">
+<title>
+PD Layer: Metadata</title>
+</head>
+<body>
+<div>
+<a href="index.htm"><img src="art/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0pt;"></a>
+</div>
+<div class="fullTOC"><iframe src="TOC.htm"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PD Layer: Metadata</h5>
+<li><a href="#CallbackSignatures">Callback Signatures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="CallbackSignatures">
+<header><h2>Metadata Callback Signatures</h2></header>
+<nav><dl>
+<dt><a href="#CosDictXAPMetadataDidChangeProc">CosDictXAPMetadataDidChangeProc</a></dt><dd> -  Receives the notification that the XMP metadata describing an object represented by a Cos dictionary or stream has changed.</dd>
+<dt><a href="#PDDocXAPMetadataDidChangeProc">PDDocXAPMetadataDidChangeProc</a></dt><dd> -  Receives the notification that the XMP metadata describing a document as a whole has changed.</dd>
+<dt><a href="#PDEContainerXAPMetadataDidChangeProc">PDEContainerXAPMetadataDidChangeProc</a></dt><dd> -  Receives the notification that the XMP metadata describing a marked content sequence has changed.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="CosDictXAPMetadataDidChangeProc"><strong><span style="color:grey;">CosDictXAPMetadataDidChangeProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDMetadataExpT.h:67</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Receives the notification that the XMP metadata describing an object represented by a Cos dictionary or stream has changed. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>CosDictXAPMetadataDidChangeProc(</code><a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>dict</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>newMetadata</code><code>,</code> <code>void</code> <code>*</code><code>data</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>dict</code></span>
+</td><td><span>The Cos dictionary or stream representing an object whose describing XMP metadata has changed. </span>
+</td></tr>
+<tr><td><span><code>newMetadata</code></span>
+</td><td><span>A serialized representation of the new describing XMP metadata You do not own this. </span>
+</td></tr>
+<tr><td><span><code>data</code></span>
+</td><td><span>Notification data provided at notification registration time. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDDocXAPMetadataDidChangeProc"><strong><span style="color:grey;">PDDocXAPMetadataDidChangeProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDMetadataExpT.h:55</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Receives the notification that the XMP metadata describing a document as a whole has changed. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDDocXAPMetadataDidChangeProc(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>newMetadata</code><code>,</code> <code>void</code> <code>*</code><code>data</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document.">PDDoc</a> whose describing XMP metadata has changed. </span>
+</td></tr>
+<tr><td><span><code>newMetadata</code></span>
+</td><td><span>A serialized representation of the new describing XMP metadata. You do not own this. </span>
+</td></tr>
+<tr><td><span><code>data</code></span>
+</td><td><span>Notification data provided at notification registration time. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDEContainerXAPMetadataDidChangeProc"><strong><span style="color:grey;">PDEContainerXAPMetadataDidChangeProc</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDMetadataExpT.h:80</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<span>Receives the notification that the XMP metadata describing a marked content sequence has changed. </span>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEContainerXAPMetadataDidChangeProc(</code><a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file."><code>PDEContainer</code></a> <code>container</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>newMetadata</code><code>,</code> <code>void</code> <code>*</code><code>data</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>container</code></span>
+</td><td><span>The <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file.">PDEContainer</a> representing a marked content sequence whose describing XMP metadata has changed. </span>
+</td></tr>
+<tr><td><span><code>newMetadata</code></span>
+</td><td><span>A serialized representation of the new describing XMP metadata You do not own this. </span>
+</td></tr>
+<tr><td><span><code>data</code></span>
+</td><td><span>Notification data provided at notification registration time. </span>
+</td></tr></Table>
+</section>
+</section>
+<section id="Functions">
+<header><h2>Metadata Functions</h2></header>
+<nav><dl>
+<dt><a href="#CosDictGetXAPMetadata">CosDictGetXAPMetadata</a></dt><dd> -  Gets the XMP metadata associated with a Cos dictionary or stream.</dd>
+<dt><a href="#CosDictSetXAPMetadata">CosDictSetXAPMetadata</a></dt><dd> -  Sets the XMP metadata associated with a Cos dictionary or stream.</dd>
+<dt><a href="#PDDocCountXAPMetadataArrayItems">PDDocCountXAPMetadataArrayItems</a></dt><dd> -  Returns the number of array items in a property array associated with a PDDoc.</dd>
+<dt><a href="#PDDocGetInfo">PDDocGetInfo</a></dt><dd> -  Gets the value of a key in a document's Info dictionary, or the value of this same key in the XMP metadata, whichever is later.</dd>
+<dt><a href="#PDDocGetInfoASText">PDDocGetInfoASText</a></dt><dd> -  Gets the value of a key in a document's Info dictionary, or the value of this same key in the XMP metadata, whichever is latest as an ASText object.</dd>
+<dt><a href="#PDDocGetMergedXAPKeywords">PDDocGetMergedXAPKeywords</a></dt><dd> -  Yields an ASText containing a semicolon-separated list of fields.</dd>
+<dt><a href="#PDDocGetXAPMetadata">PDDocGetXAPMetadata</a></dt><dd> -  Gets the XMP metadata associated with a document.</dd>
+<dt><a href="#PDDocGetXAPMetadataArrayItem">PDDocGetXAPMetadataArrayItem</a></dt><dd> -  Gets the value of an XMP metadata array item, associated with a document, based on an index.</dd>
+<dt><a href="#PDDocGetXAPMetadataProperty">PDDocGetXAPMetadataProperty</a></dt><dd> -  Gets the value of an XMP metadata property associated with a document.</dd>
+<dt><a href="#PDDocMergeXAPKeywords">PDDocMergeXAPKeywords</a></dt><dd> -  Causes a string produced as by PDDocGetMergedXAPKeywords() to be stored as the new value of the pdf:Keywords property, and the former value of the pdf:Keywords property to be stored as an item in the xmp:Keywords bag of keyword items.</dd>
+<dt><a href="#PDDocSetInfo">PDDocSetInfo</a></dt><dd> -  Sets the value of a key in a document's Info dictionary.</dd>
+<dt><a href="#PDDocSetInfoAsASText">PDDocSetInfoAsASText</a></dt><dd> -  Sets the value of a key in a document's Info dictionary.</dd>
+<dt><a href="#PDDocSetXAPMetadata">PDDocSetXAPMetadata</a></dt><dd> -  Sets the XMP metadata associated with a document.</dd>
+<dt><a href="#PDDocSetXAPMetadataArrayItem">PDDocSetXAPMetadataArrayItem</a></dt><dd> -  Sets the value of an XMP metadata array item, associated with a document, based on an index.</dd>
+<dt><a href="#PDDocSetXAPMetadataProperty">PDDocSetXAPMetadataProperty</a></dt><dd> -  Sets the value of an XMP metadata property associated with a document.</dd>
+<dt><a href="#PDEContainerGetXAPMetadata">PDEContainerGetXAPMetadata</a></dt><dd> -  Gets the XMP metadata associated with a PDEContainer.</dd>
+<dt><a href="#PDEContainerSetXAPMetadata">PDEContainerSetXAPMetadata</a></dt><dd> -  Sets the XMP metadata associated with a PDEContainer.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="CosDictGetXAPMetadata"><strong><span style="color:grey;">CosDictGetXAPMetadata</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDMetadataProcs.h:223</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the XMP metadata associated with a Cos dictionary or stream. If there is XMP metadata, it is returned as an <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> in the output parameter <code>metadataASText</code>. The <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> returned becomes the property of the client, which is free to alter or destroy it. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The term <em>XAP</em> refers to an early internal code name for Adobe's Extensible Metadata Platform (XMP). For more information on this protocol, see the Adobe XMP specification. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_Metadata.htm#CosDictSetXAPMetadata" title=" Sets the XMP metadata associated with a Cos dictionary or stream.">CosDictSetXAPMetadata</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>CosDictGetXAPMetadata(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>obj</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>*</code><code>metadataASText</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>obj</code></span>
+</td><td><span>A dictionary or stream <a href="coslayer_CosObj.htm#CosObj">CosObj</a>. </span>
+</td></tr>
+<tr><td><span><code>metadataASText</code></span>
+</td><td><span>(Filled by the method) The <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object from which the XMP metadata will be obtained. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> if <code>obj</code> has associated XMP metadata, <a href="aslayer_General.htm#false"><code>false</code></a> if it does not. It also returns <a href="aslayer_General.htm#false"><code>false</code></a> if <code>obj</code> is not a dictionary or stream. It returns <a href="aslayer_General.htm#true"><code>true</code></a> exactly when the Cos object <code>obj</code> has XMP metadata. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#ErrSysPDModel" title=" Global PD errors."><code>ErrSysPDModel</code></a></td><td><a href="pdfllayer_General.htm#pdMetadataErrCouldntCreateMetaXAP" title=" An internal representation of the XAP metadata could not be created."><code>pdMetadataErrCouldntCreateMetaXAP</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="CosDictSetXAPMetadata"><strong><span style="color:grey;">CosDictSetXAPMetadata</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDMetadataProcs.h:259</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Sets the XMP metadata associated with a Cos dictionary or stream. It replaces the XMP metadata associated with the Cos object obj with the XMP metadata stored in <code>metadataASText</code>.<br/>
+<p>The contents of <code>metadataASText</code> must be well-formed XML and Resource Description Format (RDF), as defined by the W3C (see http://www.w3.org/RDF), that also forms valid XMP. CosDictSetXAPMetadtata() will not destroy <code>metadataASText</code> or alter its text.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> CosDictSetXAPMetadtata() will raise an exception if the user does not have permission to change the document. </p>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The term <em>XAP</em> refers to an early internal code name for Adobe's Extensible Metadata Platform (XMP). For more information on this protocol, see the Adobe XMP specification. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_Metadata.htm#CosDictGetXAPMetadata" title=" Gets the XMP metadata associated with a Cos dictionary or stream.">CosDictGetXAPMetadata</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>CosDictSetXAPMetadata(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="coslayer_CosObj.htm#CosObj"><code>CosObj</code></a> <code>obj</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>metadataASText</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>obj</code></span>
+</td><td><span>The dictionary or stream Cos object whose associated XMP metadata is to be set. </span>
+</td></tr>
+<tr><td><span><code>metadataASText</code></span>
+</td><td><span>The <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object containing the metadata to be associated with <code>obj</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#ErrSysPDModel" title=" Global PD errors."><code>ErrSysPDModel</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDDocCountXAPMetadataArrayItems"><strong><span style="color:grey;">PDDocCountXAPMetadataArrayItems</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDMetadataProcs.h:529</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Returns the number of array items in a property array associated with a <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document.">PDDoc</a>. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> XMP properties can have an XML substructure; this method can only set a value for simple textual properties. </p>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The term <em>XAP</em> refers to an early internal code name for Adobe's Extensible Metadata Platform (XMP). For more information on this protocol, see the Adobe XMP specification. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_Metadata.htm#PDDocGetXAPMetadata" title=" Gets the XMP metadata associated with a document."><code>PDDocGetXAPMetadata</code></a>
+<a href="pdlayer_Metadata.htm#PDDocGetXAPMetadataProperty" title=" Gets the value of an XMP metadata property associated with a document."><code>PDDocGetXAPMetadataProperty</code></a>
+<a href="pdlayer_Metadata.htm#PDDocSetXAPMetadata" title=" Sets the XMP metadata associated with a document."><code>PDDocSetXAPMetadata</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDDocCountXAPMetadataArrayItems(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>namespaceName</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>path</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document containing the metadata. </span>
+</td></tr>
+<tr><td><span><code>namespaceName</code></span>
+</td><td><span>The XML namespace URI for the schema in which the property is to be found. </span>
+</td></tr>
+<tr><td><span><code>path</code></span>
+</td><td><span>The name of the simple property to be modified. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>An <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value.">ASInt32</a> which is the number of array items in the property array. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdMetadataErrCouldntCreateMetaXAP" title=" An internal representation of the XAP metadata could not be created."><code>pdMetadataErrCouldntCreateMetaXAP</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDDocGetInfo"><strong><span style="color:grey;">PDDocGetInfo</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:2223</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the value of a key in a document's Info dictionary, or the value of this same key in the XMP metadata, whichever is later. However, it is preferable to use <a href="pdlayer_Metadata.htm#PDDocGetXAPMetadataProperty" title=" Gets the value of an XMP metadata property associated with a document.">PDDocGetXAPMetadataProperty</a>(), because it also allows accessing XMP properties that are not duplicated in the Info dictionary.<br/>
+<p>See the description of the Document Information Dictionary in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 14.3.3, page 549.<br/></p>
+
+<p>
+<p>You can find this document on the web store of the International Standards Organization (ISO).<br/>
+<p>All values in the Info dictionary should be strings; other data types such as numbers and booleans should not be used as values in the Info dictionary.<br/></p>
+
+<p>
+<p>Users may define their own Info dictionary entries. In this case, it is strongly recommended that the key have the developer's prefix assigned by the Adobe Solutions Network.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This text is stored in either <a href="pdlayer_PDFont.htm#PDFDocEncoding" title=" PDFDocEncoding, see Annex D, "Character Sets and Encodings," page 651.">PDFDocEncoding</a> or in Unicode. If it is stored in Unicode, a valid Byte Order Mark must be present. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_Metadata.htm#PDDocGetXAPMetadataProperty" title=" Gets the value of an XMP metadata property associated with a document."><code>PDDocGetXAPMetadataProperty</code></a>
+<a href="pdlayer_Metadata.htm#PDDocSetInfo" title=" Sets the value of a key in a document's Info dictionary."><code>PDDocSetInfo</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDDocGetInfo(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>infoKey</code><code>,</code> <code>char</code> <code>*</code><code>buffer</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>bufSize</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>doc</code></span>
+</td><td><span>The document whose Info dictionary key is obtained. </span>
+</td></tr>
+<tr><td><span><code>infoKey</code></span>
+</td><td><span>The name of the Info dictionary key whose value is obtained. </span>
+</td></tr>
+<tr><td><span><code>buffer</code></span>
+</td><td><span>(Filled by the method) The buffer containing the value associated with <code>infoKey</code>. If <code>buffer</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, the method will just return the number of bytes required. </span>
+</td></tr>
+<tr><td><span><code>bufSize</code></span>
+</td><td><span>The maximum number of bytes that can be written into <code>buffer</code>. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>If <code>buffer</code> is <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, it returns the number of bytes in the specified key's value. If <code>buffer</code> is not <a href="aslayer_General.htm#NULL"><code>NULL</code></a>, it returns the number of bytes copied into <code>buffer</code>, excluding the terminating <a href="aslayer_General.htm#NULL"><code>NULL</code></a>. You must pass at least the <code>length</code> <code>+</code> <code>1</code> as the buffer size since the routine adds a <code>'\\0'</code> terminator to the data, even though the data is not a C string (it can contain embedded <code>'\\0'</code> values). </span>
+</section>
+<section><div class="infoRow"><h3 id="PDDocGetInfoASText"><strong><span style="color:grey;">PDDocGetInfoASText</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:11018</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the value of a key in a document's Info dictionary, or the value of this same key in the XMP metadata, whichever is latest as an <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_Metadata.htm#PDDocGetInfo" title=" Gets the value of a key in a document's Info dictionary, or the value of this same key in the XMP metadata, whichever is later."><code>PDDocGetInfo</code></a>
+<a href="pdlayer_Metadata.htm#PDDocGetXAPMetadataProperty" title=" Gets the value of an XMP metadata property associated with a document."><code>PDDocGetXAPMetadataProperty</code></a>
+<a href="pdlayer_Metadata.htm#PDDocSetInfo" title=" Sets the value of a key in a document's Info dictionary."><code>PDDocSetInfo</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDDocGetInfoASText(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <code>const</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>key</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>value</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>doc</code></span>
+</td><td><span>The document whose Info dictionary key is obtained. </span>
+</td></tr>
+<tr><td><span><code>key</code></span>
+</td><td><span>The name of the Info dictionary key whose value is obtained. </span>
+</td></tr>
+<tr><td><span><code>value</code></span>
+</td><td><span>(Filled by the method) The text object containing the value associated with <code>key</code>. The client must pass a valid <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object value. The routine does not allocate it. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDDocGetMergedXAPKeywords"><strong><span style="color:grey;">PDDocGetMergedXAPKeywords</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDMetadataProcs.h:420</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Yields an <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> containing a semicolon-separated list of fields. The first such field is the entire contents of the <code>pdf:Keywords</code> property of the document XMP; the remaining fields are the contents of successive items in the <code>xmp:Keywords</code> bag of keyword items.<br/>
+<p>The document's metadata is not modified as a result of this call.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The term <em>XAP</em> refers to an early internal code name for Adobe's Extensible Metadata Platform (XMP). For more information on this protocol, see the Adobe XMP specification. </p>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>PDDocGetMergedXAPKeywords(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document containing the metadata from which to extract the merged list of keywords. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>An <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> containing the textual representation of the merged list of keywords. The <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> returned becomes the sole property of the caller. </span>
+</section>
+<section><div class="infoRow"><h3 id="PDDocGetXAPMetadata"><strong><span style="color:grey;">PDDocGetXAPMetadata</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDMetadataProcs.h:139</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the XMP metadata associated with a document. It returns an <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> whose text is the XML text of the XMP metadata associated with the document <code>pdDoc</code>. The <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> becomes the property of the client, which is free to alter or destroy it.<br/>
+<p>The XMP metadata returned always represents all the properties in the <code>pdDoc</code> object's Info dictionary, and can also contain properties not present in the Info dictionary. This call is preferred to <a href="pdlayer_Metadata.htm#PDDocGetInfo" title=" Gets the value of a key in a document's Info dictionary, or the value of this same key in the XMP metadata, whichever is later.">PDDocGetInfo</a>(), which only returns properties that are in the Info dictionary (although the older function is supported for compatibility).<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The term <em>XAP</em> refers to an early internal code name for Adobe's Extensible Metadata Platform (XMP). For more information on this protocol, see the Adobe XMP specification. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_Metadata.htm#PDDocGetXAPMetadataProperty" title=" Gets the value of an XMP metadata property associated with a document."><code>PDDocGetXAPMetadataProperty</code></a>
+<a href="pdlayer_Metadata.htm#PDDocSetXAPMetadata" title=" Sets the XMP metadata associated with a document."><code>PDDocSetXAPMetadata</code></a>
+<a href="pdlayer_Metadata.htm#PDDocSetXAPMetadataProperty" title=" Sets the value of an XMP metadata property associated with a document."><code>PDDocSetXAPMetadataProperty</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>PDDocGetXAPMetadata(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document containing the metadata. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>An <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object containing the XMP metadata associated with the document pdDoc. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdMetadataErrCouldntCreateMetaXAP" title=" An internal representation of the XAP metadata could not be created."><code>pdMetadataErrCouldntCreateMetaXAP</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDDocGetXAPMetadataArrayItem"><strong><span style="color:grey;">PDDocGetXAPMetadataArrayItem</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDMetadataProcs.h:477</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the value of an XMP metadata array item, associated with a document, based on an index. It returns an <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object containing the XML text of the value of the specified property in the XMP metadata array associated with the document <code>pdDoc</code>. The <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object becomes the property of the client, which is free to alter or destroy it. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> XMP properties can have an XML substructure; this method can only retrieve values from simple textual properties. </p>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The term <em>XAP</em> refers to an early internal code name for Adobe's Extensible Metadata Platform (XMP). For more information on this protocol, see the Adobe XMP specification. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_Metadata.htm#PDDocGetXAPMetadata" title=" Gets the XMP metadata associated with a document."><code>PDDocGetXAPMetadata</code></a>
+<a href="pdlayer_Metadata.htm#PDDocSetXAPMetadata" title=" Sets the XMP metadata associated with a document."><code>PDDocSetXAPMetadata</code></a>
+<a href="pdlayer_Metadata.htm#PDDocSetXAPMetadataProperty" title=" Sets the value of an XMP metadata property associated with a document."><code>PDDocSetXAPMetadataProperty</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>PDDocGetXAPMetadataArrayItem(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>namespaceName</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>path</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document containing the metadata. </span>
+</td></tr>
+<tr><td><span><code>namespaceName</code></span>
+</td><td><span>The XML namespace URI for the schema in which the property is to be found. </span>
+</td></tr>
+<tr><td><span><code>path</code></span>
+</td><td><span>The name of the desired simple property. </span>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The index in the metadata property array associated with the property. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>An <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object containing the XML text of the value of the specified property in the XMP metadata associated with the document <code>pdDoc</code>, or an empty <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object if no such property is found. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdMetadataErrCouldntCreateMetaXAP" title=" An internal representation of the XAP metadata could not be created."><code>pdMetadataErrCouldntCreateMetaXAP</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDDocGetXAPMetadataProperty"><strong><span style="color:grey;">PDDocGetXAPMetadataProperty</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDMetadataProcs.h:367</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Gets the value of an XMP metadata property associated with a document. It returns an <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> whose text is the XML text of the value of the specified property in the XMP metadata associated with the document <code>pdDoc</code>. The <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> becomes the property of the client, which is free to alter or destroy it.<br/>
+<p>The XMP metadata can represent all properties in the <code>pdDoc</code> object's Info dictionary, as well as other properties. This call is preferred to <a href="pdlayer_Metadata.htm#PDDocGetInfo" title=" Gets the value of a key in a document's Info dictionary, or the value of this same key in the XMP metadata, whichever is later.">PDDocGetInfo</a>(), which only allows access to properties that are in the Info dictionary (although the latter is supported for compatibility).<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The term <em>XAP</em> refers to an early internal code name for Adobe's Extensible Metadata Platform (XMP). For more information on this protocol, see the Adobe XMP specification. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_Metadata.htm#PDDocGetXAPMetadata" title=" Gets the XMP metadata associated with a document."><code>PDDocGetXAPMetadata</code></a>
+<a href="pdlayer_Metadata.htm#PDDocSetXAPMetadata" title=" Sets the XMP metadata associated with a document."><code>PDDocSetXAPMetadata</code></a>
+<a href="pdlayer_Metadata.htm#PDDocSetXAPMetadataProperty" title=" Sets the value of an XMP metadata property associated with a document."><code>PDDocSetXAPMetadataProperty</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>PDDocGetXAPMetadataProperty(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>namespaceName</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>path</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document containing the metadata. </span>
+</td></tr>
+<tr><td><span><code>namespaceName</code></span>
+</td><td><span>The XML namespace URI for the schema in which the property is to be found. </span>
+</td></tr>
+<tr><td><span><code>path</code></span>
+</td><td><span>The name of the desired simple property. Note that XMP properties can have an XML substructure; this method can only retrieve values from simple textual properties. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span>An <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object containing the XML text of the value of the specified property in the XMP metadata associated with the document <code>pdDoc</code>, or an empty <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> if no such property is found. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdMetadataErrCouldntCreateMetaXAP" title=" An internal representation of the XAP metadata could not be created."><code>pdMetadataErrCouldntCreateMetaXAP</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDDocMergeXAPKeywords"><strong><span style="color:grey;">PDDocMergeXAPKeywords</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDMetadataProcs.h:441</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Causes a string produced as by <a href="pdlayer_Metadata.htm#PDDocGetMergedXAPKeywords" title=" Yields an ASText containing a semicolon-separated list of fields.">PDDocGetMergedXAPKeywords</a>() to be stored as the new value of the <code>pdf:Keywords</code> property, and the former value of the <code>pdf:Keywords</code> property to be stored as an item in the <code>xmp:Keywords</code> bag of keyword items.<br/>
+<p>The algorithm used to compute merged keywords lists detects the case in which the keywords lists have already been merged and makes no changes to the XMP metadata in this case.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The term <em>XAP</em> refers to an early internal code name for Adobe's Extensible Metadata Platform (XMP). For more information on this protocol, see the Adobe XMP specification. </p>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDDocMergeXAPKeywords(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document containing the metadata that is to be modified to make the <code>pdf:Keywords</code> and <code>xmp:Keywords</code> properties conform. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDDocSetInfo"><strong><span style="color:grey;">PDDocSetInfo</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:2258</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Sets the value of a key in a document's Info dictionary. However, it is preferable to use <a href="pdlayer_Metadata.htm#PDDocSetXAPMetadataProperty" title=" Sets the value of an XMP metadata property associated with a document.">PDDocSetXAPMetadataProperty</a>(), because it also allows accessing XMP properties that are not duplicated in the Info dictionary.<br/>
+<p>See the description of the Document Information Dictionary in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 14.3.3, page 549.<br/></p>
+
+<p>
+<p>You can find this document on the web store of the International Standards Organization (ISO).<br/>
+<p>All values in the Info dictionary should be strings; other data types such as numbers and Boolean values should not be used as values in the Info dictionary. If an Info dictionary key is specified that is not currently in the Info dictionary, it is added to the dictionary.<br/></p>
+
+<p>
+<p>Users may define their own Info dictionary entries. In this case, it is strongly recommended that the key have the developer's prefix assigned by the Adobe Developers Association.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This text is stored in either <a href="pdlayer_PDFont.htm#PDFDocEncoding" title=" PDFDocEncoding, see Annex D, "Character Sets and Encodings," page 651.">PDFDocEncoding</a> or in Unicode. If it is stored in Unicode, a valid Byte Order Mark must be present. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_Metadata.htm#PDDocGetInfo" title=" Gets the value of a key in a document's Info dictionary, or the value of this same key in the XMP metadata, whichever is later."><code>PDDocGetInfo</code></a>
+<a href="pdlayer_Metadata.htm#PDDocSetXAPMetadataProperty" title=" Sets the value of an XMP metadata property associated with a document."><code>PDDocSetXAPMetadataProperty</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDDocSetInfo(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>infoKey</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>buffer</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>nBytes</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>doc</code></span>
+</td><td><span>The document whose Info dictionary key is set. </span>
+</td></tr>
+<tr><td><span><code>infoKey</code></span>
+</td><td><span>The name of the Info dictionary key whose value is set. </span>
+</td></tr>
+<tr><td><span><code>buffer</code></span>
+</td><td><span>The buffer containing the value to associate with <code>infoKey</code>. </span>
+</td></tr>
+<tr><td><span><code>nBytes</code></span>
+</td><td><span>The number of bytes in <code>buffer</code>. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDDocSetInfoAsASText"><strong><span style="color:grey;">PDDocSetInfoAsASText</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:11034</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the value of a key in a document's Info dictionary. </span>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_Metadata.htm#PDDocGetInfo" title=" Gets the value of a key in a document's Info dictionary, or the value of this same key in the XMP metadata, whichever is later."><code>PDDocGetInfo</code></a>
+<a href="pdlayer_Metadata.htm#PDDocGetInfoASText" title=" Gets the value of a key in a document's Info dictionary, or the value of this same key in the XMP metadata, whichever is latest as an ASText object."><code>PDDocGetInfoASText</code></a>
+<a href="pdlayer_Metadata.htm#PDDocSetInfo" title=" Sets the value of a key in a document's Info dictionary."><code>PDDocSetInfo</code></a>
+<a href="pdlayer_Metadata.htm#PDDocSetXAPMetadataProperty" title=" Sets the value of an XMP metadata property associated with a document."><code>PDDocSetXAPMetadataProperty</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDDocSetInfoAsASText(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <code>const</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>infoKey</code><code>,</code> <code>const</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>value</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>doc</code></span>
+</td><td><span>The document whose Info dictionary key is set. </span>
+</td></tr>
+<tr><td><span><code>infoKey</code></span>
+</td><td><span>The name of the Info dictionary key whose value is set. </span>
+</td></tr>
+<tr><td><span><code>value</code></span>
+</td><td><span>The text object containing the value to associate with <code>infoKey</code>. </span>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDDocSetXAPMetadata"><strong><span style="color:grey;">PDDocSetXAPMetadata</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDMetadataProcs.h:188</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Sets the XMP metadata associated with a document. It replaces the XMP metadata associated with the document <code>pdDoc</code> with the XMP metadata stored in <code>metadataASText</code>.<br/>
+<p>The contents of <code>metadataASText</code> must be well-formed XML and Resource Description Format (RDF), as defined by the W3C (see http://www.w3.org/RDF), that also forms valid XMP. If <code>metadataASText</code> is ill-formed, an error is raised.<br/></p>
+
+<p>
+<p>The call does not destroy <code>metadataASText</code> or alter its text. This method copies the textual information it needs, so subsequent alteration or destruction of <code>metadataASText</code> does not affect the document XMP metadata.<br/></p>
+
+<p>
+<p>Calling <a href="pdlayer_Metadata.htm#PDDocSetXAPMetadata" title=" Sets the XMP metadata associated with a document.">PDDocSetXAPMetadata</a>() changes the contents of the <code>pdDoc</code> object's Info dictionary to reflect the values of corresponding metadata properties represented in <code>metadataASText</code>. The XMP metadata can also contain properties that are not reflected in the Info dictionary.<br/></p>
+</div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> This method raises an exception if the user does not have permission to change the document. </p>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> If you use this method to set metadata that does not respect the requirement that aliased metadata items (such as <code>pdf:Title</code> and <code>xap:Title</code>) be equal, then the mechanism that maintains this equality when you set metadata via <a href="pdlayer_Metadata.htm#PDDocSetInfo" title=" Sets the value of a key in a document's Info dictionary.">PDDocSetInfo</a>() is disabled. </p>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The term <em>XAP</em> refers to an early internal code name for Adobe's Extensible Metadata Platform (XMP). For more information on this protocol, see the Adobe XMP specification. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_Metadata.htm#PDDocGetXAPMetadata" title=" Gets the XMP metadata associated with a document."><code>PDDocGetXAPMetadata</code></a>
+<a href="pdlayer_Metadata.htm#PDDocSetInfo" title=" Sets the value of a key in a document's Info dictionary."><code>PDDocSetInfo</code></a>
+<a href="pdlayer_Metadata.htm#PDDocSetXAPMetadataProperty" title=" Sets the value of an XMP metadata property associated with a document."><code>PDDocSetXAPMetadataProperty</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDDocSetXAPMetadata(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>metadataASText</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document whose metadata is to be set. </span>
+</td></tr>
+<tr><td><span><code>metadataASText</code></span>
+</td><td><span>An <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object containing the metadata to be stored in the document. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#ErrSysPDModel" title=" Global PD errors."><code>ErrSysPDModel</code></a></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_General.htm#pdMetadataErrCouldntCreateMetaXAP" title=" An internal representation of the XAP metadata could not be created."><code>pdMetadataErrCouldntCreateMetaXAP</code></a></span>
+</td><td><span></span>
+</td></tr>
+<tr><td><span><a href="pdfllayer_General.htm#pdErrOpNotPermitted" title=" This operation is not permitted."><code>pdErrOpNotPermitted</code></a></span>
+</td><td><span>is raised if <code>pdDoc</code> is not writable. </span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDDocSetXAPMetadataArrayItem"><strong><span style="color:grey;">PDDocSetXAPMetadataArrayItem</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDMetadataProcs.h:505</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the value of an XMP metadata array item, associated with a document, based on an index. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> XMP properties can have an XML substructure; this method can only set a value for simple textual properties. </p>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The term <em>XAP</em> refers to an early internal code name for Adobe's Extensible Metadata Platform (XMP). For more information on this protocol, see the Adobe XMP specification. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_Metadata.htm#PDDocGetXAPMetadata" title=" Gets the XMP metadata associated with a document."><code>PDDocGetXAPMetadata</code></a>
+<a href="pdlayer_Metadata.htm#PDDocGetXAPMetadataProperty" title=" Gets the value of an XMP metadata property associated with a document."><code>PDDocGetXAPMetadataProperty</code></a>
+<a href="pdlayer_Metadata.htm#PDDocSetXAPMetadata" title=" Sets the XMP metadata associated with a document."><code>PDDocSetXAPMetadata</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDDocSetXAPMetadataArrayItem(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>namespaceName</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>namespacePrefix</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>path</code><code>,</code> <a href="aslayer_General.htm#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>newValue</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document containing the metadata. </span>
+</td></tr>
+<tr><td><span><code>namespaceName</code></span>
+</td><td><span>The XML namespace URI for the schema in which the property is to be found. </span>
+</td></tr>
+<tr><td><span><code>namespacePrefix</code></span>
+</td><td><span>A brief string to be used as an abbreviation when creating the XML representation of the property. This string must not be empty. </span>
+</td></tr>
+<tr><td><span><code>path</code></span>
+</td><td><span>The name of the simple property to be modified. </span>
+</td></tr>
+<tr><td><span><code>index</code></span>
+</td><td><span>The index in the metadata property array associated with the property. </span>
+</td></tr>
+<tr><td><span><code>newValue</code></span>
+</td><td><span>The new XML text value for the property. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdMetadataErrCouldntCreateMetaXAP" title=" An internal representation of the XAP metadata could not be created."><code>pdMetadataErrCouldntCreateMetaXAP</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDDocSetXAPMetadataProperty"><strong><span style="color:grey;">PDDocSetXAPMetadataProperty</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDMetadataProcs.h:398</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the value of an XMP metadata property associated with a document. The XMP metadata represents all the properties in <code>pdDoc</code> object's Info dictionary, and can also contain properties that are not in the Info dictionary. This call is preferred to <a href="pdlayer_Metadata.htm#PDDocSetInfo" title=" Sets the value of a key in a document's Info dictionary.">PDDocSetInfo</a>(), which only allows access to properties that are in the Info dictionary (although the older function is supported for compatibility). </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> XMP properties can have an XML substructure; this method can only set a value for simple textual properties. </p>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The term <em>XAP</em> refers to an early internal code name for Adobe's Extensible Metadata Platform (XMP). For more information on this protocol, see the Adobe XMP specification. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="pdlayer_Metadata.htm#PDDocGetXAPMetadata" title=" Gets the XMP metadata associated with a document."><code>PDDocGetXAPMetadata</code></a>
+<a href="pdlayer_Metadata.htm#PDDocGetXAPMetadataProperty" title=" Gets the value of an XMP metadata property associated with a document."><code>PDDocGetXAPMetadataProperty</code></a>
+<a href="pdlayer_Metadata.htm#PDDocSetXAPMetadata" title=" Sets the XMP metadata associated with a document."><code>PDDocSetXAPMetadata</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDDocSetXAPMetadataProperty(</code><a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>namespaceName</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>namespacePrefix</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>path</code><code>,</code> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>newValue</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document containing the metadata. </span>
+</td></tr>
+<tr><td><span><code>namespaceName</code></span>
+</td><td><span>The XML namespace URI for the schema in which the property is to be found. </span>
+</td></tr>
+<tr><td><span><code>namespacePrefix</code></span>
+</td><td><span>A brief string to be used as an abbreviation when creating the XML representation of the property. This string must not be empty. </span>
+</td></tr>
+<tr><td><span><code>path</code></span>
+</td><td><span>The name of the simple property to be modified. </span>
+</td></tr>
+<tr><td><span><code>newValue</code></span>
+</td><td><span>The new XML text value for the property. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><span><a href="pdfllayer_General.htm#pdMetadataErrCouldntCreateMetaXAP" title=" An internal representation of the XAP metadata could not be created."><code>pdMetadataErrCouldntCreateMetaXAP</code></a></span>
+</td><td><span></span>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEContainerGetXAPMetadata"><strong><span style="color:grey;">PDEContainerGetXAPMetadata</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDMetadataProcs.h:302</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Gets the XMP metadata associated with a <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file.">PDEContainer</a>. If there is XMP metadata, it is returned as an <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> in the output parameter <code>metadataASText</code>. The <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> returned becomes the property of the client, which is free to alter or destroy it. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The term <em>XAP</em> refers to an early internal code name for Adobe's Extensible Metadata Platform (XMP). For more information on this protocol, see the Adobe XMP specification. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_Metadata.htm#PDEContainerSetXAPMetadata" title=" Sets the XMP metadata associated with a PDEContainer.">PDEContainerSetXAPMetadata</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.htm#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDEContainerGetXAPMetadata(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file."><code>PDEContainer</code></a> <code>pdeContainer</code><code>,</code> <a href="pdslayer_General.htm#OUT"><code>OUT</code></a> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>*</code><code>metadataASText</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeContainer</code></span>
+</td><td><span>The container whose metadata is retrieved. </span>
+</td></tr>
+<tr><td><span><code>metadataASText</code></span>
+</td><td><span>(Filled by the method) If there is XMP metadata, it is returned as an <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object in this parameter. The <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text.">ASText</a> object returned becomes the property of the client, which is free to alter or destroy it. </span>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<span><a href="aslayer_General.htm#true"><code>true</code></a> exactly when the <code>pdeContainer</code> has XMP metadata. </span>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#ErrSysPDModel" title=" Global PD errors."><code>ErrSysPDModel</code></a></td><td><a href="pdfllayer_General.htm#cosErrInvalidObj" title=" The desired operation cannot be performed on this object."><code>cosErrInvalidObj</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#pdMetadataErrCouldntCreateMetaXAP" title=" An internal representation of the XAP metadata could not be created."><code>pdMetadataErrCouldntCreateMetaXAP</code></a></td><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEContainerSetXAPMetadata"><strong><span style="color:grey;">PDEContainerSetXAPMetadata</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDMetadataProcs.h:328</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<span>Sets the XMP metadata associated with a <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file.">PDEContainer</a>. Replaces the XMP metadata associated with <code>pdeContainer</code> with the XMP metadata stored in <code>metadataASText</code>. The contents of <code>metadataASText</code> must be well-formed XML and Resource Description Format (RDF), as defined by the W3C (see http://www.w3.org/RDF), that also forms valid XMP. PDEContainerSetXAPMetadtata() will not destroy <code>metadataASText</code> or alter its text. </span>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The term <em>XAP</em> refers to an early internal code name for Adobe's Extensible Metadata Platform (XMP). For more information on this protocol, see the Adobe XMP specification. </p>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<span><a href="pdlayer_Metadata.htm#PDEContainerGetXAPMetadata" title=" Gets the XMP metadata associated with a PDEContainer.">PDEContainerGetXAPMetadata</a> </span>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEContainerSetXAPMetadata(</code><a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdelayer_PDEContainer.htm#PDEContainer" title=" A group of PDEElement objects on a page in a PDF file."><code>PDEContainer</code></a> <code>pdeContainer</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="pdlayer_PDDoc.htm#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>pdDoc</code><code>,</code> <a href="pdslayer_General.htm#IN"><code>IN</code></a> <a href="aslayer_ASText.htm#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>metadataASText</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><span><code>pdeContainer</code></span>
+</td><td><span>The container whose metadata is set. </span>
+</td></tr>
+<tr><td><span><code>pdDoc</code></span>
+</td><td><span>The document containing <code>pdeContainer</code>. </span>
+</td></tr>
+<tr><td><span><code>metadataASText</code></span>
+</td><td><span>Well-formed XML and RDF that also forms valid XMP. </span>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.htm#ErrSysPDModel" title=" Global PD errors."><code>ErrSysPDModel</code></a></td><td><a href="pdfllayer_General.htm#cosErrInvalidObj" title=" The desired operation cannot be performed on this object."><code>cosErrInvalidObj</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.htm#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><span></span>
+</td></tr></table>
+</nav>
+</section>
+</section>
+
+</div>
+</body></html>
