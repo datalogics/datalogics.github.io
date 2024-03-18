@@ -1,0 +1,504 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library .NET Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-csharp-dotnet-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://www.nuget.org/packages/Adobe.PDF.Library.LM.NET" id="pkglink"><img id="pkg-download-img" alt="Nuget Trial Download" src="https://img.shields.io/nuget/dt/Adobe.PDF.Library.LM.NET?color=blue&label=APDFL%20.NET%20Free%20Trial&logo=NuGet&style=plastic"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context-members.html">List of all members</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#properties">Properties</a>  </div>
+  <div class="headertitle">
+<div class="title">Datalogics.PDFL.OptionalContentContext Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p> 
+ <a href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a6d91d1ea795f7250de73a629eb5b7753"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html">OptionalContentContext</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html#a6d91d1ea795f7250de73a629eb5b7753">Clone</a> ()</td></tr>
+<tr class="separator:a6d91d1ea795f7250de73a629eb5b7753"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95305655714ce348cfe0fa363ee6184a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html#a95305655714ce348cfe0fa363ee6184a">Dispose</a> ()</td></tr>
+<tr class="separator:a95305655714ce348cfe0fa363ee6184a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a431a45b27f0a6569e0c33d58447cd3b4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html#a431a45b27f0a6569e0c33d58447cd3b4">Dispose</a> (bool disposing)</td></tr>
+<tr class="separator:a431a45b27f0a6569e0c33d58447cd3b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac70d4c0684b38f8263c46cf583b7ac2b"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html#ac70d4c0684b38f8263c46cf583b7ac2b">Equals</a> (object obj)</td></tr>
+<tr class="separator:ac70d4c0684b38f8263c46cf583b7ac2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f3584360e385cbcf006b4259911d13c"><td class="memItemLeft" align="right" valign="top">System.Collections.Generic.IList&lt; System.Boolean &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html#a7f3584360e385cbcf006b4259911d13c">GetOCGStates</a> (System.Collections.Generic.IList&lt; <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a> &gt; ocgs)</td></tr>
+<tr class="separator:a7f3584360e385cbcf006b4259911d13c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d5bfd3b25a2c94349fcaa07fbc07d4c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html#a2d5bfd3b25a2c94349fcaa07fbc07d4c">GetStateOfOCG</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a> ocg)</td></tr>
+<tr class="separator:a2d5bfd3b25a2c94349fcaa07fbc07d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2deffbef0bdc8fa5698c9a989b553524"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html#a2deffbef0bdc8fa5698c9a989b553524">OptionalContentContext</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html">Document</a> document)</td></tr>
+<tr class="separator:a2deffbef0bdc8fa5698c9a989b553524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04c6c4485d3067e1b27d2e82b99c2ff2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html#a04c6c4485d3067e1b27d2e82b99c2ff2">SetOCGStates</a> (System.Collections.Generic.IList&lt; <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a> &gt; ocgs, System.Collections.Generic.IList&lt; System.Boolean &gt; newStates)</td></tr>
+<tr class="separator:a04c6c4485d3067e1b27d2e82b99c2ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46055da12707c6564eba8c8e8f16a3e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html#a46055da12707c6564eba8c8e8f16a3e3">SetStateOfOCG</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a> ocg, bool newValue)</td></tr>
+<tr class="separator:a46055da12707c6564eba8c8e8f16a3e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbebd9bd1d6afe94086fa3852b24d99a"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html#afbebd9bd1d6afe94086fa3852b24d99a">ToString</a> ()</td></tr>
+<tr class="separator:afbebd9bd1d6afe94086fa3852b24d99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:ade06dae07ed1937e1eef598cdeabb33b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a069340b9767924ed1314def7979adee7">OptionalContentDrawingPolicy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html#ade06dae07ed1937e1eef598cdeabb33b">DrawOptionalContent</a><code> [get, set]</code></td></tr>
+<tr class="separator:ade06dae07ed1937e1eef598cdeabb33b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Defines the context for optional content in a PDF. </p>
+<p>An Optional Content Context is a status object that defines the context for optional content within a document.</p>
+<p>The context tracks the On/Off status for Optional Content Groups (layers) within a document. It contains flags that control whether to display content that is marked as optional. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2deffbef0bdc8fa5698c9a989b553524"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2deffbef0bdc8fa5698c9a989b553524">&#9670;&nbsp;</a></span>OptionalContentContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.OptionalContentContext.OptionalContentContext </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html">Document</a>&#160;</td>
+          <td class="paramname"><em>document</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Creates a context object that represents an optional-content state of the document, using the current state as the initial state for each group (OCG), as determined by the document's optional-content configuration.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">document</td><td>The document for which to create a context.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6d91d1ea795f7250de73a629eb5b7753"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d91d1ea795f7250de73a629eb5b7753">&#9670;&nbsp;</a></span>Clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html">OptionalContentContext</a> Datalogics.PDFL.OptionalContentContext.Clone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Makes a copy of the optional content context.</p>
+<dl class="section return"><dt>Returns</dt><dd>A copy of the original optional content context.</dd></dl>
+
+</div>
+</div>
+<a id="a95305655714ce348cfe0fa363ee6184a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95305655714ce348cfe0fa363ee6184a">&#9670;&nbsp;</a></span>Dispose() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.OptionalContentContext.Dispose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a431a45b27f0a6569e0c33d58447cd3b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a431a45b27f0a6569e0c33d58447cd3b4">&#9670;&nbsp;</a></span>Dispose() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Datalogics.PDFL.OptionalContentContext.Dispose </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>disposing</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac70d4c0684b38f8263c46cf583b7ac2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac70d4c0684b38f8263c46cf583b7ac2b">&#9670;&nbsp;</a></span>Equals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override bool Datalogics.PDFL.OptionalContentContext.Equals </td>
+          <td>(</td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7f3584360e385cbcf006b4259911d13c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f3584360e385cbcf006b4259911d13c">&#9670;&nbsp;</a></span>GetOCGStates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">System.Collections.Generic.IList&lt;System.Boolean&gt; Datalogics.PDFL.OptionalContentContext.GetOCGStates </td>
+          <td>(</td>
+          <td class="paramtype">System.Collections.Generic.IList&lt; <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a> &gt;&#160;</td>
+          <td class="paramname"><em>ocgs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the ON-OFF states for the given optional-content groups (OCGs) in the given optional-content context.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ocgs</td><td>A list of optional-content groups whose states are obtained.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An array of OCG states corresponding to the array of OCGs, true for ON and false for OFF.</dd></dl>
+
+</div>
+</div>
+<a id="a2d5bfd3b25a2c94349fcaa07fbc07d4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d5bfd3b25a2c94349fcaa07fbc07d4c">&#9670;&nbsp;</a></span>GetStateOfOCG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.OptionalContentContext.GetStateOfOCG </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a>&#160;</td>
+          <td class="paramname"><em>ocg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the ON-OFF state for the given optional content group (OCG) in this optional content context.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ocg</td><td>The optional content group whose state will be retrieved.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a04c6c4485d3067e1b27d2e82b99c2ff2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04c6c4485d3067e1b27d2e82b99c2ff2">&#9670;&nbsp;</a></span>SetOCGStates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.OptionalContentContext.SetOCGStates </td>
+          <td>(</td>
+          <td class="paramtype">System.Collections.Generic.IList&lt; <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a> &gt;&#160;</td>
+          <td class="paramname"><em>ocgs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">System.Collections.Generic.IList&lt; System.Boolean &gt;&#160;</td>
+          <td class="paramname"><em>newStates</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the ON-OFF states for the given optional-content groups (OCGs) in the given optional-content context. The newStates vector must be large enough to hold as many Boolean values as there are OCGs.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ocgs</td><td>A list of optional-content groups.</td></tr>
+    <tr><td class="paramname">newStates</td><td>A list of new OCG states corresponding to the list of OCGs, true for ON and false for OFF. The list must contain as many states as there are non-NULL OCGs in the pdocgs list.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a46055da12707c6564eba8c8e8f16a3e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46055da12707c6564eba8c8e8f16a3e3">&#9670;&nbsp;</a></span>SetStateOfOCG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.OptionalContentContext.SetStateOfOCG </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a>&#160;</td>
+          <td class="paramname"><em>ocg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>newValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the ON-OFF state for the given optional content group (OCG) in this optional content context.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ocg</td><td>The optional content group whose state will be set. </td></tr>
+    <tr><td class="paramname">newValue</td><td>The new ON-OFF state for the optional content group.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afbebd9bd1d6afe94086fa3852b24d99a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbebd9bd1d6afe94086fa3852b24d99a">&#9670;&nbsp;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override string Datalogics.PDFL.OptionalContentContext.ToString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="ade06dae07ed1937e1eef598cdeabb33b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade06dae07ed1937e1eef598cdeabb33b">&#9670;&nbsp;</a></span>DrawOptionalContent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a069340b9767924ed1314def7979adee7">OptionalContentDrawingPolicy</a> Datalogics.PDFL.OptionalContentContext.DrawOptionalContent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the drawing policy for the optional content in this optional content context.</p>
+<dl class="section return"><dt>Returns</dt><dd>The drawing policy for optional content in this optional content context.</dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another verion?</label>
+      <iframe id="ver" src="../../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>

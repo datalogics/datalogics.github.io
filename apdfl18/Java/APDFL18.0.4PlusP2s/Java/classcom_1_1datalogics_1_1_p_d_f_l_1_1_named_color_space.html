@@ -1,0 +1,705 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classcom_1_1datalogics_1_1_p_d_f_l_1_1_named_color_space.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_named_color_space-members.html">List of all members</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">com.datalogics.PDFL.NamedColorSpace Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ae07b9995bd2277e925ed4e5aa8e30779"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_named_color_space.html#ae07b9995bd2277e925ed4e5aa8e30779">delete</a> ()</td></tr>
+<tr class="separator:ae07b9995bd2277e925ed4e5aa8e30779"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76dd645d09417413b4a0f98071aaddf3"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_named_color_space.html#a76dd645d09417413b4a0f98071aaddf3">equals</a> (Object rhs)</td></tr>
+<tr class="separator:a76dd645d09417413b4a0f98071aaddf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5dab964afb49bf6ec8b4b8edba0cb12"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html#aa5dab964afb49bf6ec8b4b8edba0cb12">getName</a> ()</td></tr>
+<tr class="separator:aa5dab964afb49bf6ec8b4b8edba0cb12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a847316c5cb286f6865bb46027df3c52d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html#a847316c5cb286f6865bb46027df3c52d">getNumComponents</a> ()</td></tr>
+<tr class="separator:a847316c5cb286f6865bb46027df3c52d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25fe716fc90b8f6f2d1f59bd3c28a60b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html#a25fe716fc90b8f6f2d1f59bd3c28a60b">getPDFObject</a> ()</td></tr>
+<tr class="separator:a25fe716fc90b8f6f2d1f59bd3c28a60b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada85cef74f1402eec3090629dfd086af"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html#ada85cef74f1402eec3090629dfd086af">toString</a> ()</td></tr>
+<tr class="separator:ada85cef74f1402eec3090629dfd086af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a7d11658ee5893319b1c4f739542291e8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_named_color_space.html">NamedColorSpace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_named_color_space.html#a7d11658ee5893319b1c4f739542291e8">makeDeviceRGBA</a> ()</td></tr>
+<tr class="separator:a7d11658ee5893319b1c4f739542291e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a56d3989e2f0b46a13baad7ac5afe118e"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html#a56d3989e2f0b46a13baad7ac5afe118e">DEVICE_CMYK</a></td></tr>
+<tr class="separator:a56d3989e2f0b46a13baad7ac5afe118e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a9838e6668cebff8185325171571741"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html#a4a9838e6668cebff8185325171571741">DEVICE_GRAY</a></td></tr>
+<tr class="separator:a4a9838e6668cebff8185325171571741"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a402b1dacae757b2544e3e14457822f4a"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html#a402b1dacae757b2544e3e14457822f4a">DEVICE_RGB</a></td></tr>
+<tr class="separator:a402b1dacae757b2544e3e14457822f4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c72d92b28c4187a9474fbe8db1338f2"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html#a9c72d92b28c4187a9474fbe8db1338f2">DEVICE_RGBA</a></td></tr>
+<tr class="separator:a9c72d92b28c4187a9474fbe8db1338f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d831743d91df2a73f66f047373afde6"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html#a8d831743d91df2a73f66f047373afde6">LAB</a></td></tr>
+<tr class="separator:a8d831743d91df2a73f66f047373afde6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc80d8eb7876f5ab657d68c80330cb27"><td class="memItemLeft" align="right" valign="top">static final <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html#acc80d8eb7876f5ab657d68c80330cb27">LAB_A</a></td></tr>
+<tr class="separator:acc80d8eb7876f5ab657d68c80330cb27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a054f2cfcc98d8659113992773153acdd"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html#a054f2cfcc98d8659113992773153acdd">delete</a> (Boolean disposing)</td></tr>
+<tr class="separator:a054f2cfcc98d8659113992773153acdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a964d09fc7796333dbe4b03b2c4304a50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_named_color_space.html#a964d09fc7796333dbe4b03b2c4304a50">finalize</a> ()</td></tr>
+<tr class="separator:a964d09fc7796333dbe4b03b2c4304a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ddc0236df97ceaffa2cd4c9a196c213"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_named_color_space.html#a0ddc0236df97ceaffa2cd4c9a196c213">NamedColorSpace</a> (long cPtr, boolean cMemoryOwn)</td></tr>
+<tr class="separator:a0ddc0236df97ceaffa2cd4c9a196c213"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a3f7c3905f654c98f0cb9941017fd668c"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html#a3f7c3905f654c98f0cb9941017fd668c">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a> obj)</td></tr>
+<tr class="separator:a3f7c3905f654c98f0cb9941017fd668c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd8bb3cb34308bb13ee0db45e64b16fe"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_named_color_space.html#afd8bb3cb34308bb13ee0db45e64b16fe">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_named_color_space.html">NamedColorSpace</a> obj)</td></tr>
+<tr class="separator:afd8bb3cb34308bb13ee0db45e64b16fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class used to define the color space in use. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a0ddc0236df97ceaffa2cd4c9a196c213"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ddc0236df97ceaffa2cd4c9a196c213">&#9670;&nbsp;</a></span>NamedColorSpace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.NamedColorSpace.NamedColorSpace </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>cPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>cMemoryOwn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae07b9995bd2277e925ed4e5aa8e30779"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae07b9995bd2277e925ed4e5aa8e30779">&#9670;&nbsp;</a></span>delete() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.NamedColorSpace.delete </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html#a1bcbd51e69c3d65b6d0f5bf6f0d8260c">com.datalogics.PDFL.ColorSpace</a>.</p>
+
+</div>
+</div>
+<a id="a054f2cfcc98d8659113992773153acdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a054f2cfcc98d8659113992773153acdd">&#9670;&nbsp;</a></span>delete() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.ColorSpace.delete </td>
+          <td>(</td>
+          <td class="paramtype">Boolean&#160;</td>
+          <td class="paramname"><em>disposing</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_color_space.html#a53012f373365a834e6fe47a5ead8f948">com.datalogics.PDFL.SeparationColorSpace</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_lab_color_space.html#afd61f4d4bf9c94bad29396dfeb49b495">com.datalogics.PDFL.LabColorSpace</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_indexed_color_space.html#a7c96e4b1e2f33b791df9d0d08aa01d4d">com.datalogics.PDFL.IndexedColorSpace</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_i_c_c_based_color_space.html#ab963a46aae490190f0c3461327609e5a">com.datalogics.PDFL.ICCBasedColorSpace</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_device_n_color_space.html#a47cfbe82674b692332949b0fa2249c4b">com.datalogics.PDFL.DeviceNColorSpace</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#afcda04b02b9ee121cbaded7c93d62278">com.datalogics.PDFL.CalRGBColorSpace</a>, and <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_gray_color_space.html#a07e6b2eeeda89c21cfc853b2da853e4d">com.datalogics.PDFL.CalGrayColorSpace</a>.</p>
+
+</div>
+</div>
+<a id="a76dd645d09417413b4a0f98071aaddf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76dd645d09417413b4a0f98071aaddf3">&#9670;&nbsp;</a></span>equals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.NamedColorSpace.equals </td>
+          <td>(</td>
+          <td class="paramtype">Object&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html#a9e34d1bb0acdd44e93d883c42ed9abe7">com.datalogics.PDFL.ColorSpace</a>.</p>
+
+</div>
+</div>
+<a id="a964d09fc7796333dbe4b03b2c4304a50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a964d09fc7796333dbe4b03b2c4304a50">&#9670;&nbsp;</a></span>finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.NamedColorSpace.finalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html#aed5a1fbf17ed93b36e4a52f3791438d3">com.datalogics.PDFL.ColorSpace</a>.</p>
+
+</div>
+</div>
+<a id="a3f7c3905f654c98f0cb9941017fd668c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f7c3905f654c98f0cb9941017fd668c">&#9670;&nbsp;</a></span>getCPtr() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static long com.datalogics.PDFL.ColorSpace.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a>&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html#aa3ac2d15ac39cf76df4e4e953a62ae66">com.datalogics.PDFL.Image.Image()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a065bd3f71c18be04ded520ac5a6032d3">com.datalogics.PDFL.PageImageParams.PageImageParams()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_separation_color_space.html#ad7f249450d8664071dcf87213a1c9e3d">com.datalogics.PDFL.SeparationColorSpace.SeparationColorSpace()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_i_c_c_based_color_space.html#af6970f7dda870a032d49d61c93404c71">com.datalogics.PDFL.ICCBasedColorSpace.setAlternate()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_params.html#a2ab67fa6a34525bb103761e1f3331bc8">com.datalogics.PDFL.DrawParams.setColorSpace()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_shading_pattern.html#adb1d3b6f88be611f553b59c0f7f5af4e">com.datalogics.PDFL.ShadingPattern.setColorSpace()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html#abd2981d2a4a18c1c248fe6f264b6f47f">com.datalogics.PDFL.Content.setDefaultColorSpace()</a>, and <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#ad17f18a7b14b0a5111b9c2e517728767">com.datalogics.PDFL.PageImageParams.setImageColorSpace()</a>.</p>
+
+</div>
+</div>
+<a id="afd8bb3cb34308bb13ee0db45e64b16fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd8bb3cb34308bb13ee0db45e64b16fe">&#9670;&nbsp;</a></span>getCPtr() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static long com.datalogics.PDFL.NamedColorSpace.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_named_color_space.html">NamedColorSpace</a>&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa5dab964afb49bf6ec8b4b8edba0cb12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5dab964afb49bf6ec8b4b8edba0cb12">&#9670;&nbsp;</a></span>getName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.datalogics.PDFL.ColorSpace.getName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The name of the color space. A named color space may be named something like DeviceRGB. More complicated color spaces may have a name like Indexed or ICCBased. </p>
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#a8fb2020ea70890107a242534fd438e49">com.datalogics.PDFL.Page.makeBufferedImage()</a>.</p>
+
+</div>
+</div>
+<a id="a847316c5cb286f6865bb46027df3c52d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a847316c5cb286f6865bb46027df3c52d">&#9670;&nbsp;</a></span>getNumComponents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int com.datalogics.PDFL.ColorSpace.getNumComponents </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The number of components in the color space. </p>
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#a8fb2020ea70890107a242534fd438e49">com.datalogics.PDFL.Page.makeBufferedImage()</a>.</p>
+
+</div>
+</div>
+<a id="a25fe716fc90b8f6f2d1f59bd3c28a60b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25fe716fc90b8f6f2d1f59bd3c28a60b">&#9670;&nbsp;</a></span>getPDFObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a> com.datalogics.PDFL.ColorSpace.getPDFObject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get the PDFObject associated with the color space. This may be a PDFName, PDFDict, PDFStream, or PDFArray. </p>
+<dl class="section return"><dt>Returns</dt><dd>The PDFObject associated with the color space. </dd></dl>
+
+</div>
+</div>
+<a id="a7d11658ee5893319b1c4f739542291e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d11658ee5893319b1c4f739542291e8">&#9670;&nbsp;</a></span>makeDeviceRGBA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_named_color_space.html">NamedColorSpace</a> com.datalogics.PDFL.NamedColorSpace.makeDeviceRGBA </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ada85cef74f1402eec3090629dfd086af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada85cef74f1402eec3090629dfd086af">&#9670;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.datalogics.PDFL.ColorSpace.toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Convert a colorSpace to a string. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a56d3989e2f0b46a13baad7ac5afe118e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56d3989e2f0b46a13baad7ac5afe118e">&#9670;&nbsp;</a></span>DEVICE_CMYK</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a> com.datalogics.PDFL.ColorSpace.DEVICE_CMYK</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4a9838e6668cebff8185325171571741"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a9838e6668cebff8185325171571741">&#9670;&nbsp;</a></span>DEVICE_GRAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a> com.datalogics.PDFL.ColorSpace.DEVICE_GRAY</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a402b1dacae757b2544e3e14457822f4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a402b1dacae757b2544e3e14457822f4a">&#9670;&nbsp;</a></span>DEVICE_RGB</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a> com.datalogics.PDFL.ColorSpace.DEVICE_RGB</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c72d92b28c4187a9474fbe8db1338f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c72d92b28c4187a9474fbe8db1338f2">&#9670;&nbsp;</a></span>DEVICE_RGBA</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a> com.datalogics.PDFL.ColorSpace.DEVICE_RGBA</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8d831743d91df2a73f66f047373afde6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d831743d91df2a73f66f047373afde6">&#9670;&nbsp;</a></span>LAB</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a> com.datalogics.PDFL.ColorSpace.LAB</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acc80d8eb7876f5ab657d68c80330cb27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc80d8eb7876f5ab657d68c80330cb27">&#9670;&nbsp;</a></span>LAB_A</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a> com.datalogics.PDFL.ColorSpace.LAB_A</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another verion?</label>
+      <iframe id="ver" src="../../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>

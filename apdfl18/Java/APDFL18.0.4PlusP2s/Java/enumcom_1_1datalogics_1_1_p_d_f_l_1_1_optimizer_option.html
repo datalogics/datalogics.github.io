@@ -1,0 +1,881 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option-members.html">List of all members</a> &#124;
+<a href="#pub-attribs">Public Attributes</a>  </div>
+  <div class="headertitle">
+<div class="title">com.datalogics.PDFL.OptimizerOption Enum Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ac88443f150d6ddcb88519395f2f9be59"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#ac88443f150d6ddcb88519395f2f9be59">COMPRESS_DOCUMENT_STRUCTURE</a></td></tr>
+<tr class="separator:ac88443f150d6ddcb88519395f2f9be59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ff22258ce27eb3ca2bbe2cafb150fb6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a3ff22258ce27eb3ca2bbe2cafb150fb6">COMPRESS_STREAMS</a></td></tr>
+<tr class="separator:a3ff22258ce27eb3ca2bbe2cafb150fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af85aa614195d7bc08b9d9f43b7cefce2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#af85aa614195d7bc08b9d9f43b7cefce2">DISCARD_ACROFORMS</a></td></tr>
+<tr class="separator:af85aa614195d7bc08b9d9f43b7cefce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a521ccf4309c22400bb20bb4f63a08873"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a521ccf4309c22400bb20bb4f63a08873">DISCARD_ALTERNATE_IMAGES</a></td></tr>
+<tr class="separator:a521ccf4309c22400bb20bb4f63a08873"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3213e0b81c6e98c94912fe7077ae7000"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a3213e0b81c6e98c94912fe7077ae7000">DISCARD_ANNOTATIONS</a></td></tr>
+<tr class="separator:a3213e0b81c6e98c94912fe7077ae7000"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17db97ad0e4f0267bbfaa26011688201"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a17db97ad0e4f0267bbfaa26011688201">DISCARD_ASCIIFILTERS</a></td></tr>
+<tr class="separator:a17db97ad0e4f0267bbfaa26011688201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb710fe36a8713dc7ef81a81c69bbba0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#adb710fe36a8713dc7ef81a81c69bbba0">DISCARD_BOOKMARKS</a></td></tr>
+<tr class="separator:adb710fe36a8713dc7ef81a81c69bbba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58b452607f549e9547814a1d79f084dd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a58b452607f549e9547814a1d79f084dd">DISCARD_COMMENTS</a></td></tr>
+<tr class="separator:a58b452607f549e9547814a1d79f084dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dcb51c964b1a91a59ed75cca5d08aba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a0dcb51c964b1a91a59ed75cca5d08aba">DISCARD_DOCUMENT_INFO</a></td></tr>
+<tr class="separator:a0dcb51c964b1a91a59ed75cca5d08aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eba7de652801fa4df258ebdbef5e49a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a1eba7de652801fa4df258ebdbef5e49a">DISCARD_DUPLICATE_FORMS</a></td></tr>
+<tr class="separator:a1eba7de652801fa4df258ebdbef5e49a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a643bc4f3a0eff351c28b6e72b366e667"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a643bc4f3a0eff351c28b6e72b366e667">DISCARD_FILE_ATTACHMENTS</a></td></tr>
+<tr class="separator:a643bc4f3a0eff351c28b6e72b366e667"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50b6e78cc550323f7fb53330a5751c33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a50b6e78cc550323f7fb53330a5751c33">DISCARD_JAVA_SCRIPT_ACTIONS</a></td></tr>
+<tr class="separator:a50b6e78cc550323f7fb53330a5751c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b6c5b84d934b2e69200dada597ea04d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a0b6c5b84d934b2e69200dada597ea04d">DISCARD_METADATA</a></td></tr>
+<tr class="separator:a0b6c5b84d934b2e69200dada597ea04d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f2cfceac67c42869e1efb7d41b9d50e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a3f2cfceac67c42869e1efb7d41b9d50e">DISCARD_NAME_TRESS</a></td></tr>
+<tr class="separator:a3f2cfceac67c42869e1efb7d41b9d50e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a858a34da25872eea553d7146df16285b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a858a34da25872eea553d7146df16285b">DISCARD_OUTPUT_INTENT</a></td></tr>
+<tr class="separator:a858a34da25872eea553d7146df16285b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31dedb4110ae79199e04bd4904ec662f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a31dedb4110ae79199e04bd4904ec662f">DISCARD_PAGE_LABELS</a></td></tr>
+<tr class="separator:a31dedb4110ae79199e04bd4904ec662f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7d3feec8372d4925c87997896e84a2b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#aa7d3feec8372d4925c87997896e84a2b">DISCARD_PIECE_DATA</a></td></tr>
+<tr class="separator:aa7d3feec8372d4925c87997896e84a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63b8228d32f7cb53c8fa9fc44a2b9447"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a63b8228d32f7cb53c8fa9fc44a2b9447">DISCARD_STRUCTURE_TREES</a></td></tr>
+<tr class="separator:a63b8228d32f7cb53c8fa9fc44a2b9447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a398a4f3bf60bef66cbc6fbaa35a9c913"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a398a4f3bf60bef66cbc6fbaa35a9c913">DISCARD_THUMBNAILS</a></td></tr>
+<tr class="separator:a398a4f3bf60bef66cbc6fbaa35a9c913"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af635a03aa2dbe33f85a8daae92707de2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#af635a03aa2dbe33f85a8daae92707de2">DISCARD_UNUSED_FONTS</a></td></tr>
+<tr class="separator:af635a03aa2dbe33f85a8daae92707de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ed280175c7f32802c6910c7d45ba5b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a2ed280175c7f32802c6910c7d45ba5b3">DISCARD_UNUSED_FORMS</a></td></tr>
+<tr class="separator:a2ed280175c7f32802c6910c7d45ba5b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6987958eccd51b8fc09c3c8dc43c8086"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a6987958eccd51b8fc09c3c8dc43c8086">DISCARD_UNUSED_IMAGES</a></td></tr>
+<tr class="separator:a6987958eccd51b8fc09c3c8dc43c8086"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6831253016b17e572e972c0ca5ab6813"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a6831253016b17e572e972c0ca5ab6813">DISCARD_XMPPADDING</a></td></tr>
+<tr class="separator:a6831253016b17e572e972c0ca5ab6813"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed7ac813c8f1f11cd7e508c9752b3a20"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#aed7ac813c8f1f11cd7e508c9752b3a20">DOWN_CONVERT_16_TO_8BPC_IMAGES</a></td></tr>
+<tr class="separator:aed7ac813c8f1f11cd7e508c9752b3a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84d1730873e6f41174c039d2264ecf5c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a84d1730873e6f41174c039d2264ecf5c">DOWNSAMPLE_BW</a></td></tr>
+<tr class="separator:a84d1730873e6f41174c039d2264ecf5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a149ee2a4a95358683209b4de116806ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a149ee2a4a95358683209b4de116806ff">DOWNSAMPLE_COLOR</a></td></tr>
+<tr class="separator:a149ee2a4a95358683209b4de116806ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1025f7f6567ce52b790dddb882cd0f6d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a1025f7f6567ce52b790dddb882cd0f6d">DOWNSAMPLE_GRAY</a></td></tr>
+<tr class="separator:a1025f7f6567ce52b790dddb882cd0f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e83e2bca1729b857186c165f19a14b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a7e83e2bca1729b857186c165f19a14b1">FLATTEN_OPTIONAL_CONTENT</a></td></tr>
+<tr class="separator:a7e83e2bca1729b857186c165f19a14b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacba3bfecbf607d8201ace4b5bc55505"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#aacba3bfecbf607d8201ace4b5bc55505">LINEARIZE</a></td></tr>
+<tr class="separator:aacba3bfecbf607d8201ace4b5bc55505"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a146b96996971e7f4900017dfe95e9121"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a146b96996971e7f4900017dfe95e9121">MERGE_DUPLICATE_FONTS</a></td></tr>
+<tr class="separator:a146b96996971e7f4900017dfe95e9121"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7760bb0abbf166b0de55b56f3cecd2a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#ac7760bb0abbf166b0de55b56f3cecd2a">OPTIMIZE_CONTENT_STREAMS</a></td></tr>
+<tr class="separator:ac7760bb0abbf166b0de55b56f3cecd2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8330c0cd191e8b7fdc9cf14495847515"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a8330c0cd191e8b7fdc9cf14495847515">RE_SUBSET_ALL_SUBSET_FONTS</a></td></tr>
+<tr class="separator:a8330c0cd191e8b7fdc9cf14495847515"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd5b9caa37066d02f635b72a1a8e6251"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#abd5b9caa37066d02f635b72a1a8e6251">RECOMPRESS_BW</a></td></tr>
+<tr class="separator:abd5b9caa37066d02f635b72a1a8e6251"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ba4cd3a6a2ffbb7b6b9902d61107899"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a2ba4cd3a6a2ffbb7b6b9902d61107899">RECOMPRESS_COLOR</a></td></tr>
+<tr class="separator:a2ba4cd3a6a2ffbb7b6b9902d61107899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d1bffd59f4cc2209d8495a1058a8ef4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a1d1bffd59f4cc2209d8495a1058a8ef4">RECOMPRESS_GRAY</a></td></tr>
+<tr class="separator:a1d1bffd59f4cc2209d8495a1058a8ef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a68a897ae700d5f7ba1c5367d1e4d17"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a2a68a897ae700d5f7ba1c5367d1e4d17">RECOMPRESS_ONLY_IF_SMALLER</a></td></tr>
+<tr class="separator:a2a68a897ae700d5f7ba1c5367d1e4d17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a129a4e4c8e44a3cb39a606277167817d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a129a4e4c8e44a3cb39a606277167817d">REMOVE_ALL_BASE_14_FONTS</a></td></tr>
+<tr class="separator:a129a4e4c8e44a3cb39a606277167817d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a974d3f385edcefcae6d0fa1037d5deba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a974d3f385edcefcae6d0fa1037d5deba">REMOVE_ALL_EMBEDDED_FONTS</a></td></tr>
+<tr class="separator:a974d3f385edcefcae6d0fa1037d5deba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37ecdd1fa2c100eb5df8104fbbc52ae7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#a37ecdd1fa2c100eb5df8104fbbc52ae7">REPLACE_LZW</a></td></tr>
+<tr class="separator:a37ecdd1fa2c100eb5df8104fbbc52ae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa7666ccff19cc29a02e0abd7df702d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optimizer_option.html#afa7666ccff19cc29a02e0abd7df702d8">SUBSET_ALL_EMBEDDED_FONTS</a></td></tr>
+<tr class="separator:afa7666ccff19cc29a02e0abd7df702d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Select the optimization option to be set or obtained. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="ac88443f150d6ddcb88519395f2f9be59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac88443f150d6ddcb88519395f2f9be59">&#9670;&nbsp;</a></span>COMPRESS_DOCUMENT_STRUCTURE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.COMPRESS_DOCUMENT_STRUCTURE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, compress the actual PDF object stream. This should not be used for documents which must be rendered on older PDF rendering engines. Default is ON. </p>
+
+</div>
+</div>
+<a id="a3ff22258ce27eb3ca2bbe2cafb150fb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ff22258ce27eb3ca2bbe2cafb150fb6">&#9670;&nbsp;</a></span>COMPRESS_STREAMS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.COMPRESS_STREAMS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, any streams (of more than 20 bytes length) which are not compressed will be compressed using Flate. Default is ON. </p>
+
+</div>
+</div>
+<a id="af85aa614195d7bc08b9d9f43b7cefce2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af85aa614195d7bc08b9d9f43b7cefce2">&#9670;&nbsp;</a></span>DISCARD_ACROFORMS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DISCARD_ACROFORMS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, All acroform structures will be removed from the document. NOTE: Filled in fields, if any, will be left in the document. So the content of those fields will continue to display. Default is ON. </p>
+
+</div>
+</div>
+<a id="a521ccf4309c22400bb20bb4f63a08873"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a521ccf4309c22400bb20bb4f63a08873">&#9670;&nbsp;</a></span>DISCARD_ALTERNATE_IMAGES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DISCARD_ALTERNATE_IMAGES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, any Alternate Images defined for a given image (Images in different resolutions than the base image) will be discarded. Default is ON. </p>
+
+</div>
+</div>
+<a id="a3213e0b81c6e98c94912fe7077ae7000"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3213e0b81c6e98c94912fe7077ae7000">&#9670;&nbsp;</a></span>DISCARD_ANNOTATIONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DISCARD_ANNOTATIONS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, remove all annotations, of all types, from all pages. This may result in visible loss of information in the rendered pages. Default is OFF. </p>
+
+</div>
+</div>
+<a id="a17db97ad0e4f0267bbfaa26011688201"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17db97ad0e4f0267bbfaa26011688201">&#9670;&nbsp;</a></span>DISCARD_ASCIIFILTERS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DISCARD_ASCIIFILTERS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, remove the ASCIIHex and ASCII85 filters from any streams that use these as their final filters. These have historically been used to render data safe in a 7 bit data channel, or for debugging purposes Default is ON. </p>
+
+</div>
+</div>
+<a id="adb710fe36a8713dc7ef81a81c69bbba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb710fe36a8713dc7ef81a81c69bbba0">&#9670;&nbsp;</a></span>DISCARD_BOOKMARKS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DISCARD_BOOKMARKS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, all bookmarks will be removed from the document. Note that this information cannot be reconstructed. Default is OFF. </p>
+
+</div>
+</div>
+<a id="a58b452607f549e9547814a1d79f084dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58b452607f549e9547814a1d79f084dd">&#9670;&nbsp;</a></span>DISCARD_COMMENTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DISCARD_COMMENTS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, remove all annotations which are commentary to the content (All "Markup" annotations). Default is OFF. </p>
+
+</div>
+</div>
+<a id="a0dcb51c964b1a91a59ed75cca5d08aba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dcb51c964b1a91a59ed75cca5d08aba">&#9670;&nbsp;</a></span>DISCARD_DOCUMENT_INFO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DISCARD_DOCUMENT_INFO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, any Document Information, beyond the basic information supplied by APDFL, will be discarded. Note that this will also remove that information from the document level Metadata. Default is OFF. </p>
+
+</div>
+</div>
+<a id="a1eba7de652801fa4df258ebdbef5e49a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eba7de652801fa4df258ebdbef5e49a">&#9670;&nbsp;</a></span>DISCARD_DUPLICATE_FORMS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DISCARD_DUPLICATE_FORMS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, locate and remove duplicate copies of forms, using a single copy for all references to that form. Default is ON. </p>
+
+</div>
+</div>
+<a id="a643bc4f3a0eff351c28b6e72b366e667"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a643bc4f3a0eff351c28b6e72b366e667">&#9670;&nbsp;</a></span>DISCARD_FILE_ATTACHMENTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DISCARD_FILE_ATTACHMENTS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, remove any document embedded in the PDF Document. Default is ON. </p>
+
+</div>
+</div>
+<a id="a50b6e78cc550323f7fb53330a5751c33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50b6e78cc550323f7fb53330a5751c33">&#9670;&nbsp;</a></span>DISCARD_JAVA_SCRIPT_ACTIONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DISCARD_JAVA_SCRIPT_ACTIONS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, remove all JavaScript actions in the document. Default is OFF. </p>
+
+</div>
+</div>
+<a id="a0b6c5b84d934b2e69200dada597ea04d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b6c5b84d934b2e69200dada597ea04d">&#9670;&nbsp;</a></span>DISCARD_METADATA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DISCARD_METADATA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, any Metadata embedded in the document (Except for the document level Metadata) will be removed. Default is OFF. </p>
+
+</div>
+</div>
+<a id="a3f2cfceac67c42869e1efb7d41b9d50e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f2cfceac67c42869e1efb7d41b9d50e">&#9670;&nbsp;</a></span>DISCARD_NAME_TRESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DISCARD_NAME_TRESS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, discard any NameTrees in the document. This may cause issues with links within the document. Default is ON. </p>
+
+</div>
+</div>
+<a id="a858a34da25872eea553d7146df16285b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a858a34da25872eea553d7146df16285b">&#9670;&nbsp;</a></span>DISCARD_OUTPUT_INTENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DISCARD_OUTPUT_INTENT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, any OutputIntent structures in the document, along with their associated color profiles, will be removed. This may cause color shifting, when rendering the document. Default is OFF. </p>
+
+</div>
+</div>
+<a id="a31dedb4110ae79199e04bd4904ec662f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31dedb4110ae79199e04bd4904ec662f">&#9670;&nbsp;</a></span>DISCARD_PAGE_LABELS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DISCARD_PAGE_LABELS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, discard any Page Label Trees embedded in the document This may cause a difference in the display and selection of pages in some viewers. Default is ON. </p>
+
+</div>
+</div>
+<a id="aa7d3feec8372d4925c87997896e84a2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7d3feec8372d4925c87997896e84a2b">&#9670;&nbsp;</a></span>DISCARD_PIECE_DATA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DISCARD_PIECE_DATA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, remove any user supplied private PieceData embedded in the document. This will never effect appearance, but may limit the use of special processing by the application that provided this data. Default is ON. </p>
+
+</div>
+</div>
+<a id="a63b8228d32f7cb53c8fa9fc44a2b9447"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63b8228d32f7cb53c8fa9fc44a2b9447">&#9670;&nbsp;</a></span>DISCARD_STRUCTURE_TREES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DISCARD_STRUCTURE_TREES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, discard any structure trees in the document. Default is OFF. </p>
+
+</div>
+</div>
+<a id="a398a4f3bf60bef66cbc6fbaa35a9c913"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a398a4f3bf60bef66cbc6fbaa35a9c913">&#9670;&nbsp;</a></span>DISCARD_THUMBNAILS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DISCARD_THUMBNAILS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, any thumbnails embedded in the document will be removed. Default is ON. </p>
+
+</div>
+</div>
+<a id="af635a03aa2dbe33f85a8daae92707de2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af635a03aa2dbe33f85a8daae92707de2">&#9670;&nbsp;</a></span>DISCARD_UNUSED_FONTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DISCARD_UNUSED_FONTS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, remove any Fonts which are included in the document, but never used in the document. Default is ON. </p>
+
+</div>
+</div>
+<a id="a2ed280175c7f32802c6910c7d45ba5b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ed280175c7f32802c6910c7d45ba5b3">&#9670;&nbsp;</a></span>DISCARD_UNUSED_FORMS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DISCARD_UNUSED_FORMS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, remove any Forms XObjects which are included in the document, but never displayed in the document. Default is ON. </p>
+
+</div>
+</div>
+<a id="a6987958eccd51b8fc09c3c8dc43c8086"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6987958eccd51b8fc09c3c8dc43c8086">&#9670;&nbsp;</a></span>DISCARD_UNUSED_IMAGES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DISCARD_UNUSED_IMAGES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, remove any Image XObjects which are included in the document, but never displayed in the document. Default is ON. </p>
+
+</div>
+</div>
+<a id="a6831253016b17e572e972c0ca5ab6813"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6831253016b17e572e972c0ca5ab6813">&#9670;&nbsp;</a></span>DISCARD_XMPPADDING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DISCARD_XMPPADDING</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, remove from the XMP Metadata any padding areas, left to allow the XMP data to be updated. Default is ON. </p>
+
+</div>
+</div>
+<a id="aed7ac813c8f1f11cd7e508c9752b3a20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed7ac813c8f1f11cd7e508c9752b3a20">&#9670;&nbsp;</a></span>DOWN_CONVERT_16_TO_8BPC_IMAGES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DOWN_CONVERT_16_TO_8BPC_IMAGES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, down-converts all 16 Bits Per Component images to 8 Bits Per Component. Default is ON. </p>
+
+</div>
+</div>
+<a id="a84d1730873e6f41174c039d2264ecf5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84d1730873e6f41174c039d2264ecf5c">&#9670;&nbsp;</a></span>DOWNSAMPLE_BW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DOWNSAMPLE_BW</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, Downsample all Black and White images above MAX DPI to ResetTo DPI. Default is ON. </p>
+
+</div>
+</div>
+<a id="a149ee2a4a95358683209b4de116806ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a149ee2a4a95358683209b4de116806ff">&#9670;&nbsp;</a></span>DOWNSAMPLE_COLOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DOWNSAMPLE_COLOR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, Downsample all color images above MAX DPI to ResetTo DPI. Default is ON. </p>
+
+</div>
+</div>
+<a id="a1025f7f6567ce52b790dddb882cd0f6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1025f7f6567ce52b790dddb882cd0f6d">&#9670;&nbsp;</a></span>DOWNSAMPLE_GRAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.DOWNSAMPLE_GRAY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, Downsample all gray scale images above MAX DPI to ResetTo DPI. Default is ON. </p>
+
+</div>
+</div>
+<a id="a7e83e2bca1729b857186c165f19a14b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e83e2bca1729b857186c165f19a14b1">&#9670;&nbsp;</a></span>FLATTEN_OPTIONAL_CONTENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.FLATTEN_OPTIONAL_CONTENT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, Optional Content in the document is Flattened. Default is OFF. </p>
+
+</div>
+</div>
+<a id="aacba3bfecbf607d8201ace4b5bc55505"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacba3bfecbf607d8201ace4b5bc55505">&#9670;&nbsp;</a></span>LINEARIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.LINEARIZE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, create the optimized document as Linearized (Optimized for Web Access). Default is OFF. </p>
+
+</div>
+</div>
+<a id="a146b96996971e7f4900017dfe95e9121"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a146b96996971e7f4900017dfe95e9121">&#9670;&nbsp;</a></span>MERGE_DUPLICATE_FONTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.MERGE_DUPLICATE_FONTS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, the document will be searched for mutliple copies of the same font. These will then be combined into a single font. Default is ON. </p>
+
+</div>
+</div>
+<a id="ac7760bb0abbf166b0de55b56f3cecd2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7760bb0abbf166b0de55b56f3cecd2a">&#9670;&nbsp;</a></span>OPTIMIZE_CONTENT_STREAMS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.OPTIMIZE_CONTENT_STREAMS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, attempt to find common segments of code at the start of page content, and share a single copy of such common code. Default is ON. </p>
+
+</div>
+</div>
+<a id="a8330c0cd191e8b7fdc9cf14495847515"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8330c0cd191e8b7fdc9cf14495847515">&#9670;&nbsp;</a></span>RE_SUBSET_ALL_SUBSET_FONTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.RE_SUBSET_ALL_SUBSET_FONTS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, any fonts which are subset embedded, will be replaced with a newly subset font. This will generally only happen if the document has been edited since it was created, or the document contains only a subset of the page that it originally contained. NOTE: This can only REMOVE glyphs from the subset font. It cannot add glyphs that were not present int he original subset. Default is ON. </p>
+
+</div>
+</div>
+<a id="abd5b9caa37066d02f635b72a1a8e6251"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd5b9caa37066d02f635b72a1a8e6251">&#9670;&nbsp;</a></span>RECOMPRESS_BW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.RECOMPRESS_BW</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, recompress all Black and White images which are compressed by a different scheme than one select by RecompressTo to RecompressTo. Default is ON. </p>
+
+</div>
+</div>
+<a id="a2ba4cd3a6a2ffbb7b6b9902d61107899"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ba4cd3a6a2ffbb7b6b9902d61107899">&#9670;&nbsp;</a></span>RECOMPRESS_COLOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.RECOMPRESS_COLOR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, recompress all color images which are compressed by a different scheme than one select by RecompressTo to RecompressTo. Default is ON. </p>
+
+</div>
+</div>
+<a id="a1d1bffd59f4cc2209d8495a1058a8ef4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d1bffd59f4cc2209d8495a1058a8ef4">&#9670;&nbsp;</a></span>RECOMPRESS_GRAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.RECOMPRESS_GRAY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, recompress all gray scale images which are compressed by a different scheme than one select by RecompressTo to RecompressTo. Default is ON. </p>
+
+</div>
+</div>
+<a id="a2a68a897ae700d5f7ba1c5367d1e4d17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a68a897ae700d5f7ba1c5367d1e4d17">&#9670;&nbsp;</a></span>RECOMPRESS_ONLY_IF_SMALLER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.RECOMPRESS_ONLY_IF_SMALLER</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>In all of the above Downsample and Recompress operations, if this option is ON, replace the image ONLY if the resultant compressed image is smaller than the original. Default is ON. </p>
+
+</div>
+</div>
+<a id="a129a4e4c8e44a3cb39a606277167817d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a129a4e4c8e44a3cb39a606277167817d">&#9670;&nbsp;</a></span>REMOVE_ALL_BASE_14_FONTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.REMOVE_ALL_BASE_14_FONTS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This will remove any embedded base 14 fonts. Generally, it is safe to remove these fonts, as any platform that supports PDF should have locally available copies of them. However, there is still some risk that the embedded fonts are not identical to the actual base14 fonts, and hence may render differently. Default is OFF. </p>
+
+</div>
+</div>
+<a id="a974d3f385edcefcae6d0fa1037d5deba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a974d3f385edcefcae6d0fa1037d5deba">&#9670;&nbsp;</a></span>REMOVE_ALL_EMBEDDED_FONTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.REMOVE_ALL_EMBEDDED_FONTS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, all embedded fonts will be removed. If this is done, the document can only be viewed on platforms which contain all of the fonts required. Generally, you would want to do this only in very tightly controlled circumstances. Default is OFF. </p>
+
+</div>
+</div>
+<a id="a37ecdd1fa2c100eb5df8104fbbc52ae7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37ecdd1fa2c100eb5df8104fbbc52ae7">&#9670;&nbsp;</a></span>REPLACE_LZW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.REPLACE_LZW</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, any LZW Compressed streams will be recompressed using Flate. Default is ON. </p>
+
+</div>
+</div>
+<a id="afa7666ccff19cc29a02e0abd7df702d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa7666ccff19cc29a02e0abd7df702d8">&#9670;&nbsp;</a></span>SUBSET_ALL_EMBEDDED_FONTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptimizerOption.SUBSET_ALL_EMBEDDED_FONTS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When this option is ON, any fonts which are embedded, but not subset, will be replaced with subset fonts. This can save considerable space in a document, but does so at the risk of preventing future edits to the document. Default is ON. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another verion?</label>
+      <iframe id="ver" src="../../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>

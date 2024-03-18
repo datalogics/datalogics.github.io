@@ -1,0 +1,1193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path-members.html">List of all members</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">com.datalogics.PDFL.Path Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a6b96d2193488c62eb22f69f0ddfa78cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#a6b96d2193488c62eb22f69f0ddfa78cb">addCurve</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> Point1, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> Point2, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> Point3)</td></tr>
+<tr class="separator:a6b96d2193488c62eb22f69f0ddfa78cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ff6c0dd24f24ed361e54221f716dea4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#a5ff6c0dd24f24ed361e54221f716dea4">addCurveV</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> Point1, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> Point2)</td></tr>
+<tr class="separator:a5ff6c0dd24f24ed361e54221f716dea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62cb5cc552c3326ead6d82cd480e4255"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#a62cb5cc552c3326ead6d82cd480e4255">addCurveY</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> Point1, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> Point2)</td></tr>
+<tr class="separator:a62cb5cc552c3326ead6d82cd480e4255"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab51379d677298f250b42d8b5c207b31a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#ab51379d677298f250b42d8b5c207b31a">addLine</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>)</td></tr>
+<tr class="separator:ab51379d677298f250b42d8b5c207b31a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2b926a7fdabb59a627a82a26f58c7e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#ac2b926a7fdabb59a627a82a26f58c7e9">addRect</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>, double Width, double Height)</td></tr>
+<tr class="separator:ac2b926a7fdabb59a627a82a26f58c7e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a137441c0f8a15cdb90058338303507ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html">Path</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#a137441c0f8a15cdb90058338303507ce">clone</a> ()</td></tr>
+<tr class="separator:a137441c0f8a15cdb90058338303507ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb8007d62e9aec14c538e824a5e210d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html">Path</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#acb8007d62e9aec14c538e824a5e210d2">clone</a> (java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_element_clone_flags.html">ElementCloneFlags</a> &gt; cloneFlags)</td></tr>
+<tr class="separator:acb8007d62e9aec14c538e824a5e210d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ea47469ad5bc88dcfc65ca819ea4d3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#a7ea47469ad5bc88dcfc65ca819ea4d3c">closePath</a> ()</td></tr>
+<tr class="separator:a7ea47469ad5bc88dcfc65ca819ea4d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adda0da3e1cb84f000ecb9e697318fad6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html">Path</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#adda0da3e1cb84f000ecb9e697318fad6">colorConvert</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a> document, <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_profile.html">ColorProfile</a> prof, <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_render_intent.html">RenderIntent</a> intent, boolean embed)</td></tr>
+<tr class="separator:adda0da3e1cb84f000ecb9e697318fad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb3ecfba258b0b4fbee70e6ef87dc60c"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#acb3ecfba258b0b4fbee70e6ef87dc60c">delete</a> ()</td></tr>
+<tr class="separator:acb3ecfba258b0b4fbee70e6ef87dc60c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae355bd6ed68d9deebff59c03523190c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#ae355bd6ed68d9deebff59c03523190c9">getBoundingBox</a> ()</td></tr>
+<tr class="separator:ae355bd6ed68d9deebff59c03523190c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97accb896872fa192e3d0b76fe8cec62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html">Clip</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a97accb896872fa192e3d0b76fe8cec62">getClip</a> ()</td></tr>
+<tr class="separator:a97accb896872fa192e3d0b76fe8cec62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a537c477645889835fdc66b25a6f3aba7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_graphic_state.html">GraphicState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#a537c477645889835fdc66b25a6f3aba7">getGraphicState</a> ()</td></tr>
+<tr class="separator:a537c477645889835fdc66b25a6f3aba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5351ee3176b673773a6d86c5116023fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a5351ee3176b673773a6d86c5116023fe">getMatrix</a> ()</td></tr>
+<tr class="separator:a5351ee3176b673773a6d86c5116023fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e6e7feb809e390f2790fc6e1938f3e8"><td class="memItemLeft" align="right" valign="top">java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_path_paint_op_flags.html">PathPaintOpFlags</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#a7e6e7feb809e390f2790fc6e1938f3e8">getPaintOp</a> ()</td></tr>
+<tr class="separator:a7e6e7feb809e390f2790fc6e1938f3e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4b49b489799435580461dd7ab0847f1"><td class="memItemLeft" align="right" valign="top">java.util.List&lt; <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_segment.html">Segment</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#ae4b49b489799435580461dd7ab0847f1">getSegments</a> ()</td></tr>
+<tr class="separator:ae4b49b489799435580461dd7ab0847f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fc8a2f15d4d0268e0e90b9d2b88368a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#a0fc8a2f15d4d0268e0e90b9d2b88368a">moveTo</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>)</td></tr>
+<tr class="separator:a0fc8a2f15d4d0268e0e90b9d2b88368a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb1e45d47a7eb32e658b5a031c7a1014"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#adb1e45d47a7eb32e658b5a031c7a1014">Path</a> ()</td></tr>
+<tr class="separator:adb1e45d47a7eb32e658b5a031c7a1014"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa2e01889e0cda54671ecc6ecfd8a01f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#aaa2e01889e0cda54671ecc6ecfd8a01f">Path</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_graphic_state.html">GraphicState</a> graphicState)</td></tr>
+<tr class="separator:aaa2e01889e0cda54671ecc6ecfd8a01f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18e35d241cef53d1306e215d40c5543b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a18e35d241cef53d1306e215d40c5543b">rotate</a> (double theta)</td></tr>
+<tr class="separator:a18e35d241cef53d1306e215d40c5543b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6fdbf1e92c9a2b0ad72f3a3c8c79aef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#af6fdbf1e92c9a2b0ad72f3a3c8c79aef">scale</a> (double sx, double sy)</td></tr>
+<tr class="separator:af6fdbf1e92c9a2b0ad72f3a3c8c79aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78d1dc631176e2fcbbb4f76f2c25cdd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a78d1dc631176e2fcbbb4f76f2c25cdd0">setClip</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html">Clip</a> clip)</td></tr>
+<tr class="separator:a78d1dc631176e2fcbbb4f76f2c25cdd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b4ec12b882ae3405bd813eb352f2c6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#a3b4ec12b882ae3405bd813eb352f2c6c">setGraphicState</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_graphic_state.html">GraphicState</a> gstate)</td></tr>
+<tr class="separator:a3b4ec12b882ae3405bd813eb352f2c6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a417520d327ced87abe28d6c9dbe2382b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a417520d327ced87abe28d6c9dbe2382b">setMatrix</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> matrix)</td></tr>
+<tr class="separator:a417520d327ced87abe28d6c9dbe2382b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65da9ce3493c01053c3817ad2c68dc3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#a65da9ce3493c01053c3817ad2c68dc3f">setPaintOp</a> (java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_path_paint_op_flags.html">PathPaintOpFlags</a> &gt; paintops)</td></tr>
+<tr class="separator:a65da9ce3493c01053c3817ad2c68dc3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6292a24241434710d30b055ef5eaacba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#a6292a24241434710d30b055ef5eaacba">setSegments</a> (java.util.List&lt; <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_segment.html">Segment</a> &gt; segments)</td></tr>
+<tr class="separator:a6292a24241434710d30b055ef5eaacba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22d4ed5c1a9bebaab64263221319e336"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a22d4ed5c1a9bebaab64263221319e336">translate</a> (double tx, double ty)</td></tr>
+<tr class="separator:a22d4ed5c1a9bebaab64263221319e336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a3526f2771bf46db028b79af3259edd4c"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#a3526f2771bf46db028b79af3259edd4c">delete</a> (Boolean disposing)</td></tr>
+<tr class="separator:a3526f2771bf46db028b79af3259edd4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f15614fdf9305572edc24c277b53d0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#a2f15614fdf9305572edc24c277b53d0e">finalize</a> ()</td></tr>
+<tr class="separator:a2f15614fdf9305572edc24c277b53d0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c0c94a8be6e1911d9e95ba8e6817c3b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#a9c0c94a8be6e1911d9e95ba8e6817c3b">Path</a> (long cPtr, boolean cMemoryOwn)</td></tr>
+<tr class="separator:a9c0c94a8be6e1911d9e95ba8e6817c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a861d73f98ab05cfe69f82f1d6b5e21e5"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a861d73f98ab05cfe69f82f1d6b5e21e5">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html">Element</a> obj)</td></tr>
+<tr class="separator:a861d73f98ab05cfe69f82f1d6b5e21e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc313c5a65b5d9b1d5bd69bbcc46e76a"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#afc313c5a65b5d9b1d5bd69bbcc46e76a">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html">Path</a> obj)</td></tr>
+<tr class="separator:afc313c5a65b5d9b1d5bd69bbcc46e76a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A path in a PDF file defines shapes. Paths in PDF files are used to draw lines, define filled areas, and define boundaries for clipping graphics. A path is composed of straight and curved line segments. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9c0c94a8be6e1911d9e95ba8e6817c3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c0c94a8be6e1911d9e95ba8e6817c3b">&#9670;&nbsp;</a></span>Path() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Path.Path </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>cPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>cMemoryOwn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adb1e45d47a7eb32e658b5a031c7a1014"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb1e45d47a7eb32e658b5a031c7a1014">&#9670;&nbsp;</a></span>Path() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Path.Path </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a path. </p>
+
+</div>
+</div>
+<a id="aaa2e01889e0cda54671ecc6ecfd8a01f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa2e01889e0cda54671ecc6ecfd8a01f">&#9670;&nbsp;</a></span>Path() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Path.Path </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_graphic_state.html">GraphicState</a>&#160;</td>
+          <td class="paramname"><em>graphicState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a path with a given graphic state. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">graphicState</td><td>the initial graphic state for the path </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6b96d2193488c62eb22f69f0ddfa78cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b96d2193488c62eb22f69f0ddfa78cb">&#9670;&nbsp;</a></span>addCurve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Path.addCurve </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>&#160;</td>
+          <td class="paramname"><em>Point1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>&#160;</td>
+          <td class="paramname"><em>Point2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>&#160;</td>
+          <td class="paramname"><em>Point3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds a Bezier curve from the current path using the first two points specified as Bezier control points ending at the third point. The new current point is then set to the third point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Point1</td><td>first Bezier control point </td></tr>
+    <tr><td class="paramname">Point2</td><td>second Bezier control point </td></tr>
+    <tr><td class="paramname">Point3</td><td>the ending Point of the Bezier curve which will also be the current point of the current path. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5ff6c0dd24f24ed361e54221f716dea4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ff6c0dd24f24ed361e54221f716dea4">&#9670;&nbsp;</a></span>addCurveV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Path.addCurveV </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>&#160;</td>
+          <td class="paramname"><em>Point1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>&#160;</td>
+          <td class="paramname"><em>Point2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds a Bezier curve from the current path. This extends from the current path to the point Point2 using the current point and the first point specified as Bezier control points ending at the second point. The new current point is then set to the second point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Point1</td><td>first Bezier control point </td></tr>
+    <tr><td class="paramname">Point2</td><td>the ending Point of the Bezier curve which will also be the new current point of the path. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a62cb5cc552c3326ead6d82cd480e4255"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62cb5cc552c3326ead6d82cd480e4255">&#9670;&nbsp;</a></span>addCurveY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Path.addCurveY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>&#160;</td>
+          <td class="paramname"><em>Point1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>&#160;</td>
+          <td class="paramname"><em>Point2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds a Bezier curve from the current path. This extends from the current path to the point Point2 using the two points specified as Bezier control points ending at the second point. The new current point is then set to the second point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Point1</td><td>first Bezier control point </td></tr>
+    <tr><td class="paramname">Point2</td><td>second Bezier control point and the ending Point of the Bezier curve which will also be the new current point of the path. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab51379d677298f250b42d8b5c207b31a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab51379d677298f250b42d8b5c207b31a">&#9670;&nbsp;</a></span>addLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Path.addLine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>&#160;</td>
+          <td class="paramname"><em>Point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds a line to the current path from the current path position. The given point becomes the new current position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Point</td><td>the coordinates of the endpoint of the new line. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac2b926a7fdabb59a627a82a26f58c7e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2b926a7fdabb59a627a82a26f58c7e9">&#9670;&nbsp;</a></span>addRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Path.addRect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>&#160;</td>
+          <td class="paramname"><em>Point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds a rectangle to the current path with the lower left corner at the give point, and with the width and height specified. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Point</td><td>the coordinates of the lower left corner of the new rectangle. </td></tr>
+    <tr><td class="paramname">Width</td><td>the width of the new rectangle. </td></tr>
+    <tr><td class="paramname">Height</td><td>the height of the new rectangle. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a137441c0f8a15cdb90058338303507ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a137441c0f8a15cdb90058338303507ce">&#9670;&nbsp;</a></span>clone() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html">Path</a> com.datalogics.PDFL.Path.clone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Makes a copy of the path. </p>
+<p>Make a copy of an path to obtain a new path that has a distinct set of attributes. </p>
+<dl class="section return"><dt>Returns</dt><dd>The copied path. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#af6c55cf47bb9a28072ac895ab0b2873d">com.datalogics.PDFL.Element</a>.</p>
+
+</div>
+</div>
+<a id="acb8007d62e9aec14c538e824a5e210d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb8007d62e9aec14c538e824a5e210d2">&#9670;&nbsp;</a></span>clone() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html">Path</a> com.datalogics.PDFL.Path.clone </td>
+          <td>(</td>
+          <td class="paramtype">java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_element_clone_flags.html">ElementCloneFlags</a> &gt;&#160;</td>
+          <td class="paramname"><em>cloneFlags</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Makes a copy of the path. </p>
+<p>Make a copy of an path to obtain a new path that has a distinct set of attributes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloneFlags</td><td>Flags that modify the cloning operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The copied path. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a2c8db0575b8f2354ea938f836891a32a">com.datalogics.PDFL.Element</a>.</p>
+
+</div>
+</div>
+<a id="a7ea47469ad5bc88dcfc65ca819ea4d3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ea47469ad5bc88dcfc65ca819ea4d3c">&#9670;&nbsp;</a></span>closePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Path.closePath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Closes the current subpath. </p>
+
+</div>
+</div>
+<a id="adda0da3e1cb84f000ecb9e697318fad6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adda0da3e1cb84f000ecb9e697318fad6">&#9670;&nbsp;</a></span>colorConvert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html">Path</a> com.datalogics.PDFL.Path.colorConvert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a>&#160;</td>
+          <td class="paramname"><em>document</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_profile.html">ColorProfile</a>&#160;</td>
+          <td class="paramname"><em>prof</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_render_intent.html">RenderIntent</a>&#160;</td>
+          <td class="paramname"><em>intent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>embed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Applies the specified ICC ColorProfile to the Path </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">document</td><td>The document the element belongs to. </td></tr>
+    <tr><td class="paramname">prof</td><td>The ICC ColorProfile to be applied. </td></tr>
+    <tr><td class="paramname">intent</td><td>The ICC Rendering Intent for the ColorProfile </td></tr>
+    <tr><td class="paramname">embed</td><td>If true, embed the color space and make the object calibrated. If it is false and the target profile is CMYK, RGB, or Gray, the colors space of the resulting object, after conversion, will be DeviceCMYK, DeviceRGB, or DeviceGray, respectively. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new Path with the applied ICC ColorProfile. </dd></dl>
+
+</div>
+</div>
+<a id="acb3ecfba258b0b4fbee70e6ef87dc60c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb3ecfba258b0b4fbee70e6ef87dc60c">&#9670;&nbsp;</a></span>delete() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.Path.delete </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a8afc1124db761b2077004ba387df0326">com.datalogics.PDFL.Element</a>.</p>
+
+</div>
+</div>
+<a id="a3526f2771bf46db028b79af3259edd4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3526f2771bf46db028b79af3259edd4c">&#9670;&nbsp;</a></span>delete() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.Path.delete </td>
+          <td>(</td>
+          <td class="paramtype">Boolean&#160;</td>
+          <td class="paramname"><em>disposing</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#ad1c2482b575b7a8112df5f52fb559a84">com.datalogics.PDFL.Element</a>.</p>
+
+</div>
+</div>
+<a id="a2f15614fdf9305572edc24c277b53d0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f15614fdf9305572edc24c277b53d0e">&#9670;&nbsp;</a></span>finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Path.finalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#ab5642d16085224eca829ace3ad075e6f">com.datalogics.PDFL.Element</a>.</p>
+
+</div>
+</div>
+<a id="ae355bd6ed68d9deebff59c03523190c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae355bd6ed68d9deebff59c03523190c9">&#9670;&nbsp;</a></span>getBoundingBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a> com.datalogics.PDFL.Element.getBoundingBox </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The bounding box for this element. </p>
+<p>The bounding box is a rectangle that is guaranteed to encompass the element, but it is not guaranteed to be the smallest box that could contain the element. For example, if the element is a Path that contains an arc, the bounding box encompasses the bezier control points, and not just the curve itself. </p>
+<dl class="section return"><dt>Returns</dt><dd>The bounding box for this element. The coordinates of the bounding box are specified in user space coordinates, relative to the element's Content. Note that user space coordinates correspond to unrotated pages; any rotation specified in the page dictionary is not taken into account. </dd></dl>
+
+</div>
+</div>
+<a id="a97accb896872fa192e3d0b76fe8cec62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97accb896872fa192e3d0b76fe8cec62">&#9670;&nbsp;</a></span>getClip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html">Clip</a> com.datalogics.PDFL.Element.getClip </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the current Clip for an Element. </p>
+<dl class="section return"><dt>Returns</dt><dd>- The current Clip for this Element. </dd></dl>
+
+</div>
+</div>
+<a id="a861d73f98ab05cfe69f82f1d6b5e21e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a861d73f98ab05cfe69f82f1d6b5e21e5">&#9670;&nbsp;</a></span>getCPtr() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static long com.datalogics.PDFL.Element.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html">Element</a>&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html#a844fd0e5692b58d2443ac20223193399">com.datalogics.PDFL.Clip.addElement()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html#afba3f35911043f67e3bf68f58f0b5c11">com.datalogics.PDFL.Content.addElement()</a>, and <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html#aa044b1e7b8e5484d21615d71fec8b51b">com.datalogics.PDFL.Content.Content()</a>.</p>
+
+</div>
+</div>
+<a id="afc313c5a65b5d9b1d5bd69bbcc46e76a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc313c5a65b5d9b1d5bd69bbcc46e76a">&#9670;&nbsp;</a></span>getCPtr() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static long com.datalogics.PDFL.Path.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html">Path</a>&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a537c477645889835fdc66b25a6f3aba7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a537c477645889835fdc66b25a6f3aba7">&#9670;&nbsp;</a></span>getGraphicState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_graphic_state.html">GraphicState</a> com.datalogics.PDFL.Path.getGraphicState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the graphic state of the current path. </p>
+<p>May return null if this element does not have a GraphicState. </p>
+
+</div>
+</div>
+<a id="a5351ee3176b673773a6d86c5116023fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5351ee3176b673773a6d86c5116023fe">&#9670;&nbsp;</a></span>getMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> com.datalogics.PDFL.Element.getMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The transformation matrix for the element. </p>
+
+</div>
+</div>
+<a id="a7e6e7feb809e390f2790fc6e1938f3e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e6e7feb809e390f2790fc6e1938f3e8">&#9670;&nbsp;</a></span>getPaintOp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">java.util.EnumSet&lt;<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_path_paint_op_flags.html">PathPaintOpFlags</a>&gt; com.datalogics.PDFL.Path.getPaintOp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the fill and stroke attributes of a path. </p>
+<dl class="section return"><dt>Returns</dt><dd>the PathPaintOpFlags flags describing the fill and stroke attributes. </dd></dl>
+
+</div>
+</div>
+<a id="ae4b49b489799435580461dd7ab0847f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4b49b489799435580461dd7ab0847f1">&#9670;&nbsp;</a></span>getSegments()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">java.util.List&lt;<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_segment.html">Segment</a>&gt; com.datalogics.PDFL.Path.getSegments </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the segments of the path. </p>
+<p>Returns a list of Segment objects, one for each segment in the path. </p>
+
+</div>
+</div>
+<a id="a0fc8a2f15d4d0268e0e90b9d2b88368a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fc8a2f15d4d0268e0e90b9d2b88368a">&#9670;&nbsp;</a></span>moveTo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Path.moveTo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>&#160;</td>
+          <td class="paramname"><em>Point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Moves the current point of the path to the given point.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Point</td><td>the coordinates of the new current point. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a18e35d241cef53d1306e215d40c5543b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18e35d241cef53d1306e215d40c5543b">&#9670;&nbsp;</a></span>rotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Element.rotate </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>theta</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Rotate an element by T degrees counterclockwise units using the matrix [ cos T sin T -sin T cos T 0 0 ]. </p>
+
+<p>Reimplemented in <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html#a70d4a627d96d5c4f90eaf0a877c80654">com.datalogics.PDFL.Image</a>.</p>
+
+</div>
+</div>
+<a id="af6fdbf1e92c9a2b0ad72f3a3c8c79aef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6fdbf1e92c9a2b0ad72f3a3c8c79aef">&#9670;&nbsp;</a></span>scale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Element.scale </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>sx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>sy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Scale an element by (sx,sy) units using the matrix [ sx 0 0 sy 0 0 ]. </p>
+
+</div>
+</div>
+<a id="a78d1dc631176e2fcbbb4f76f2c25cdd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78d1dc631176e2fcbbb4f76f2c25cdd0">&#9670;&nbsp;</a></span>setClip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Element.setClip </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html">Clip</a>&#160;</td>
+          <td class="paramname"><em>clip</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the current Clip for an Element. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clip</td><td>The clip to set as the current clip for this element. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3b4ec12b882ae3405bd813eb352f2c6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b4ec12b882ae3405bd813eb352f2c6c">&#9670;&nbsp;</a></span>setGraphicState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Path.setGraphicState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_graphic_state.html">GraphicState</a>&#160;</td>
+          <td class="paramname"><em>gstate</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the Graphic State of the current path.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gstate</td><td>the new/updated Graphic State for the path. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a417520d327ced87abe28d6c9dbe2382b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a417520d327ced87abe28d6c9dbe2382b">&#9670;&nbsp;</a></span>setMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Element.setMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a>&#160;</td>
+          <td class="paramname"><em>matrix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Set the transformation matrix for the element.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">matrix</td><td>the transformation matrix for the element. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a65da9ce3493c01053c3817ad2c68dc3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65da9ce3493c01053c3817ad2c68dc3f">&#9670;&nbsp;</a></span>setPaintOp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Path.setPaintOp </td>
+          <td>(</td>
+          <td class="paramtype">java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_path_paint_op_flags.html">PathPaintOpFlags</a> &gt;&#160;</td>
+          <td class="paramname"><em>paintops</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the fill and stroke attributes of a path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paintops</td><td>the flags describing the fill and stroke attributes. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6292a24241434710d30b055ef5eaacba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6292a24241434710d30b055ef5eaacba">&#9670;&nbsp;</a></span>setSegments()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Path.setSegments </td>
+          <td>(</td>
+          <td class="paramtype">java.util.List&lt; <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_segment.html">Segment</a> &gt;&#160;</td>
+          <td class="paramname"><em>segments</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the segments of the path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">segments</td><td>The segments in the path. This list must have at least one element. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a22d4ed5c1a9bebaab64263221319e336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22d4ed5c1a9bebaab64263221319e336">&#9670;&nbsp;</a></span>translate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Element.translate </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ty</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Translate an element by (tx,ty) units using the matrix [ 1 0 0 1 tx ty ]. </p>
+
+<p>Reimplemented in <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html#a7d9f9f8687328d8d62dcddc1799619ed">com.datalogics.PDFL.Image</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another verion?</label>
+      <iframe id="ver" src="../../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>

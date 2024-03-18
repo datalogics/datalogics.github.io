@@ -1,0 +1,644 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library .NET Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-csharp-dotnet-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://www.nuget.org/packages/Adobe.PDF.Library.LM.NET" id="pkglink"><img id="pkg-download-img" alt="Nuget Trial Download" src="https://img.shields.io/nuget/dt/Adobe.PDF.Library.LM.NET?color=blue&label=APDFL%20.NET%20Free%20Trial&logo=NuGet&style=plastic"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state-members.html">List of all members</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#properties">Properties</a>  </div>
+  <div class="headertitle">
+<div class="title">Datalogics.PDFL.ExtendedGraphicState Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p> 
+ <a href="class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a63afa3266cf2dea75116754c5a88beb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#a63afa3266cf2dea75116754c5a88beb9">Dispose</a> ()</td></tr>
+<tr class="separator:a63afa3266cf2dea75116754c5a88beb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afac4478d0ec97546815f28ac55a13182"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#afac4478d0ec97546815f28ac55a13182">Dispose</a> (bool disposing)</td></tr>
+<tr class="separator:afac4478d0ec97546815f28ac55a13182"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b0a771625fc6c84dd61eda990166785"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#a8b0a771625fc6c84dd61eda990166785">ExtendedGraphicState</a> ()</td></tr>
+<tr class="separator:a8b0a771625fc6c84dd61eda990166785"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a4fb6cda0d192ff90023ac11fb295a787"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#a4fb6cda0d192ff90023ac11fb295a787">AlphaIsShape</a><code> [get, set]</code></td></tr>
+<tr class="separator:a4fb6cda0d192ff90023ac11fb295a787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29eb891c192482a24859fe82f0d82fcd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#a29eb891c192482a24859fe82f0d82fcd">ApplyAutoStroke</a><code> [get, set]</code></td></tr>
+<tr class="separator:a29eb891c192482a24859fe82f0d82fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8242cad201533e73894d871d0f89db7b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#a8242cad201533e73894d871d0f89db7b">ApplyOverprintForOtherThanStroking</a><code> [get, set]</code></td></tr>
+<tr class="separator:a8242cad201533e73894d871d0f89db7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33eee318f6d7868d6ab9aa9ed686e8c2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#a33eee318f6d7868d6ab9aa9ed686e8c2">ApplyOverprintForStroking</a><code> [get, set]</code></td></tr>
+<tr class="separator:a33eee318f6d7868d6ab9aa9ed686e8c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae46d18daa1ef72fa4d9b1117f22cd044"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html">Function</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#ae46d18daa1ef72fa4d9b1117f22cd044">BlackGeneration</a><code> [get, set]</code></td></tr>
+<tr class="separator:ae46d18daa1ef72fa4d9b1117f22cd044"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1f9a5a16aac78701dd673a42f18875d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a4af994216aeba6c496a2ec5374df7fad">BlendMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#ae1f9a5a16aac78701dd673a42f18875d">BlendMode</a><code> [get, set]</code></td></tr>
+<tr class="separator:ae1f9a5a16aac78701dd673a42f18875d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9d64faf5feaeba42fa5adcb5dab93f1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#ae9d64faf5feaeba42fa5adcb5dab93f1">OpacityForOtherThanStroking</a><code> [get, set]</code></td></tr>
+<tr class="separator:ae9d64faf5feaeba42fa5adcb5dab93f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b4281e6b0fcfdb210c61d812d5aa228"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#a4b4281e6b0fcfdb210c61d812d5aa228">OpacityForStroking</a><code> [get, set]</code></td></tr>
+<tr class="separator:a4b4281e6b0fcfdb210c61d812d5aa228"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c0218444d69a6aa796232af35bd6a8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#aadb11ffb9b77f10cf1c89edae641248b">OverprintMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#a6c0218444d69a6aa796232af35bd6a8e">OverprintMode</a><code> [get, set]</code></td></tr>
+<tr class="separator:a6c0218444d69a6aa796232af35bd6a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46f73817d518c11905289ff2ea601fc9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#a46f73817d518c11905289ff2ea601fc9">PDFDict</a><code> [get]</code></td></tr>
+<tr class="separator:a46f73817d518c11905289ff2ea601fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac8d59a8f1b50caf39771b2457deda46"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#aac8d59a8f1b50caf39771b2457deda46">SmoothnessTolerance</a><code> [get, set]</code></td></tr>
+<tr class="separator:aac8d59a8f1b50caf39771b2457deda46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a527256bcaf4f81ea4fb6ce5d7e3d3ad7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#a527256bcaf4f81ea4fb6ce5d7e3d3ad7">TextKnockout</a><code> [get, set]</code></td></tr>
+<tr class="separator:a527256bcaf4f81ea4fb6ce5d7e3d3ad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ec09461d3eaf910ed7476ebd39e445e"><td class="memItemLeft" align="right" valign="top">System.Collections.Generic.IList&lt; <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html">Function</a> &gt;?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#a5ec09461d3eaf910ed7476ebd39e445e">TransferFunction</a><code> [get, set]</code></td></tr>
+<tr class="separator:a5ec09461d3eaf910ed7476ebd39e445e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02c4dc68fa652bf045575f4730d07457"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html">Function</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#a02c4dc68fa652bf045575f4730d07457">UndercolorRemoval</a><code> [get, set]</code></td></tr>
+<tr class="separator:a02c4dc68fa652bf045575f4730d07457"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The extended graphic state, to supplement original graphic state. </p>
+<p>The Graphics State is an internal data structure in a PDF file that holds the parameters that describe graphics within that file. These parameters define how individual graphics are presented on the page, including layers and transparencies.</p>
+<p>The Extended Graphic State was introduced to expand the original Graphics State data structure, providing space to define and store more data objects within a PDF. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a8b0a771625fc6c84dd61eda990166785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b0a771625fc6c84dd61eda990166785">&#9670;&nbsp;</a></span>ExtendedGraphicState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.ExtendedGraphicState.ExtendedGraphicState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a new default ExtendedGraphicState for the document in which this ExtendedGraphicState will be used. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a63afa3266cf2dea75116754c5a88beb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63afa3266cf2dea75116754c5a88beb9">&#9670;&nbsp;</a></span>Dispose() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.ExtendedGraphicState.Dispose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afac4478d0ec97546815f28ac55a13182"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afac4478d0ec97546815f28ac55a13182">&#9670;&nbsp;</a></span>Dispose() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Datalogics.PDFL.ExtendedGraphicState.Dispose </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>disposing</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a4fb6cda0d192ff90023ac11fb295a787"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fb6cda0d192ff90023ac11fb295a787">&#9670;&nbsp;</a></span>AlphaIsShape</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.ExtendedGraphicState.AlphaIsShape</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns if the alpha is to be interpreted as a shape or opacity mask. </p>
+<dl class="section return"><dt>Returns</dt><dd>alphaIsShape - if set true, interpret sources of alpha as shape, else interpret as opacity mask. </dd></dl>
+
+</div>
+</div>
+<a id="a29eb891c192482a24859fe82f0d82fcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29eb891c192482a24859fe82f0d82fcd">&#9670;&nbsp;</a></span>ApplyAutoStroke</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.ExtendedGraphicState.ApplyAutoStroke</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns whether stroke adjustment is enabled in the graphics state. </p>
+<dl class="section return"><dt>Returns</dt><dd>applyAutoStrokeAdjustment - whether it is enabled, true or false. </dd></dl>
+
+</div>
+</div>
+<a id="a8242cad201533e73894d871d0f89db7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8242cad201533e73894d871d0f89db7b">&#9670;&nbsp;</a></span>ApplyOverprintForOtherThanStroking</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.ExtendedGraphicState.ApplyOverprintForOtherThanStroking</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Specifies if overprint is enabled for operations other than stroking. </p>
+<dl class="section return"><dt>Returns</dt><dd>applyOverprintForOtherThanStroking </dd></dl>
+
+</div>
+</div>
+<a id="a33eee318f6d7868d6ab9aa9ed686e8c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33eee318f6d7868d6ab9aa9ed686e8c2">&#9670;&nbsp;</a></span>ApplyOverprintForStroking</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.ExtendedGraphicState.ApplyOverprintForStroking</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Specifies if overprint is enabled for stroke operations. </p>
+<dl class="section return"><dt>Returns</dt><dd>applyOverprintForStroking </dd></dl>
+
+</div>
+</div>
+<a id="ae46d18daa1ef72fa4d9b1117f22cd044"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae46d18daa1ef72fa4d9b1117f22cd044">&#9670;&nbsp;</a></span>BlackGeneration</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html">Function</a> Datalogics.PDFL.ExtendedGraphicState.BlackGeneration</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the black generation function. </p>
+<dl class="section return"><dt>Returns</dt><dd>function - the black generation function. </dd></dl>
+
+</div>
+</div>
+<a id="ae1f9a5a16aac78701dd673a42f18875d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1f9a5a16aac78701dd673a42f18875d">&#9670;&nbsp;</a></span>BlendMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a4af994216aeba6c496a2ec5374df7fad">BlendMode</a> Datalogics.PDFL.ExtendedGraphicState.BlendMode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns the blend mode for the color composite for each object painted. </p>
+<dl class="section return"><dt>Returns</dt><dd>blendMode - the blend mode used in object painting. </dd></dl>
+
+</div>
+</div>
+<a id="ae9d64faf5feaeba42fa5adcb5dab93f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9d64faf5feaeba42fa5adcb5dab93f1">&#9670;&nbsp;</a></span>OpacityForOtherThanStroking</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.ExtendedGraphicState.OpacityForOtherThanStroking</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the opacity value for other-than-stroke operations. </p>
+<dl class="section return"><dt>Returns</dt><dd>opacity, a value between 0.0 and 1.0. </dd></dl>
+
+</div>
+</div>
+<a id="a4b4281e6b0fcfdb210c61d812d5aa228"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b4281e6b0fcfdb210c61d812d5aa228">&#9670;&nbsp;</a></span>OpacityForStroking</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.ExtendedGraphicState.OpacityForStroking</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the opacity value for stroke operations. </p>
+<dl class="section return"><dt>Returns</dt><dd>opacity, a value between 0.0 and 1.0. </dd></dl>
+
+</div>
+</div>
+<a id="a6c0218444d69a6aa796232af35bd6a8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c0218444d69a6aa796232af35bd6a8e">&#9670;&nbsp;</a></span>OverprintMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#aadb11ffb9b77f10cf1c89edae641248b">OverprintMode</a> Datalogics.PDFL.ExtendedGraphicState.OverprintMode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Specifies the overprint mode - specifying whether a color component value of 0 in a DeviceCMYK color space should erase that component or leave it unchanged when overprinting. </p>
+<dl class="section return"><dt>Returns</dt><dd>overprintMode - the mode setting. </dd></dl>
+
+</div>
+</div>
+<a id="a46f73817d518c11905289ff2ea601fc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46f73817d518c11905289ff2ea601fc9">&#9670;&nbsp;</a></span>PDFDict</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a> Datalogics.PDFL.ExtendedGraphicState.PDFDict</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get the dictionary associated with the extended graphic state.</p>
+<dl class="section return"><dt>Returns</dt><dd>The dictionary associated with the extended graphic state.</dd></dl>
+
+</div>
+</div>
+<a id="aac8d59a8f1b50caf39771b2457deda46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac8d59a8f1b50caf39771b2457deda46">&#9670;&nbsp;</a></span>SmoothnessTolerance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.ExtendedGraphicState.SmoothnessTolerance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the smoothness tolerance, the quality of smooth shading. </p>
+<dl class="section return"><dt>Returns</dt><dd>tolerance, a value between 0.0 and 1.0. </dd></dl>
+
+</div>
+</div>
+<a id="a527256bcaf4f81ea4fb6ce5d7e3d3ad7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a527256bcaf4f81ea4fb6ce5d7e3d3ad7">&#9670;&nbsp;</a></span>TextKnockout</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.ExtendedGraphicState.TextKnockout</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns whether text knockout is enabled in the graphics state. </p>
+<dl class="section return"><dt>Returns</dt><dd>enabled - if true, text knockout is enabled. </dd></dl>
+
+</div>
+</div>
+<a id="a5ec09461d3eaf910ed7476ebd39e445e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ec09461d3eaf910ed7476ebd39e445e">&#9670;&nbsp;</a></span>TransferFunction</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">System.Collections.Generic.IList&lt;<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html">Function</a>&gt;? Datalogics.PDFL.ExtendedGraphicState.TransferFunction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the transfer function. </p>
+<dl class="section return"><dt>Returns</dt><dd>function - the transfer function. </dd></dl>
+
+</div>
+</div>
+<a id="a02c4dc68fa652bf045575f4730d07457"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02c4dc68fa652bf045575f4730d07457">&#9670;&nbsp;</a></span>UndercolorRemoval</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html">Function</a> Datalogics.PDFL.ExtendedGraphicState.UndercolorRemoval</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the undercolor removal function. </p>
+<dl class="section return"><dt>Returns</dt><dd>function - the undercolor removal function. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another verion?</label>
+      <iframe id="ver" src="../../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>
