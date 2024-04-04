@@ -1,0 +1,27 @@
+var classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real =
+[
+    [ "PDFReal", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#ac427203349efd91cd52f11c2445fdadf", null ],
+    [ "PDFReal", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#a2df3be2893735714f5ce1d5029b6678f", null ],
+    [ "PDFReal", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#af860c5a5af37de72fa72c4ed09d043ba", null ],
+    [ "clone", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#adc48c48c9cbfad3cb085a7528c66213f", null ],
+    [ "clone", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#a0759ed8272bd54d451ca4c417c47e575", null ],
+    [ "clone", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#a8da3873ba1e812dfe3b0cad1d5e9354a", null ],
+    [ "clone", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#a3f49a31d497f4de664fa73ce40bb22d9", null ],
+    [ "clone", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#a84b16a797a320ebc0d85be3885bd9583", null ],
+    [ "compareTo", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#a7355bc3b1fd4b345190931bdc8139c17", null ],
+    [ "delete", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#a2935c23188e91bde41459b27fdaa9208", null ],
+    [ "delete", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#ad30474eeace19e93ef29df5fc809a277", null ],
+    [ "destroy", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#a0d7750edc31d1bcdbf3e98d1507c50ea", null ],
+    [ "enumPDFObjects", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#a07ee547b32039a55140ccc8ed3889236", null ],
+    [ "equals", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#a19060591a6ec213bec6530347a9b296f", null ],
+    [ "finalize", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#af622cab92d362ce6d2a8ce1e05f3ab84", null ],
+    [ "getCPtr", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#a859e213d4f676472cfb6b9fbf9653375", null ],
+    [ "getCPtr", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#a51bfe5a949e7bf8e0062a1349f0b971e", null ],
+    [ "getDocument", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#abcbe9ec872f22e4ac699afdcb134f1ac", null ],
+    [ "getGeneration", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#a9f34d3d44e10eae34e6ad6b7ee2b0c5c", null ],
+    [ "getID", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#a7e992832b9f5a3d39ab9c600a7ebe48e", null ],
+    [ "getIndirect", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#af1d2f2190bac8dc24615502b67ca1a41", null ],
+    [ "getPDFHashValue", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#ac8a31ffdc4ecaeb692ec175b9687b134", null ],
+    [ "getValue", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#a46009b8ceb1e2c64d7ccd68000da0c92", null ],
+    [ "toString", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#aec3e0e2e40197cb10156dd8ef3007b8c", null ]
+];
