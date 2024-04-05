@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+    <html lang="en-US">
+        <head>
+            <link rel="stylesheet" href="resources/css/pageStyles.css">
+            <link rel="icon" type="image/x-icon" href="resources/img/DLicon.png">
+            <meta charset="UTF-8">
+            <title>
+PDFL Library Layer: ASFileSys
+            </title>
+        </head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+        </script>
+        <body><div>
+<a href="index.html"><img src="resources/img/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0px; left: 0px;"></a>
+</div>
+<div class="verSelect" style="position: fixed; z-index: 2; top: 41px; left: 0px;"><iframe id="ver" src="../ver.html" style=" height: 45px; border-width: 0px;"></iframe></div>
+<div class="fullTOC"><iframe src="TOC.html"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDFL Library Layer: ASFileSys</h5>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Functions">
+<header><h2>ASFileSys Functions</h2></header>
+<nav><dl>
+<dt><a href="#ASFileSysGetDefaultTempPath">ASFileSysGetDefaultTempPath</a></dt><dd> -  Gets the default temporary path that was set by ASFileSysSetDefaultTempPath().</dd>
+<dt><a href="#ASFileSysSetDefaultTempPath">ASFileSysSetDefaultTempPath</a></dt><dd> -  Sets the default temporary path for the specified file system to the specified path name.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ASFileSysGetDefaultTempPath"><strong><span style="color:grey;">ASFileSysGetDefaultTempPath</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:153</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div>Gets the default temporary path that was set by <a href="pdfllayer_ASFileSys.html#ASFileSysSetDefaultTempPath" title=" Sets the default temporary path for the specified file system to the specified path name.">ASFileSysSetDefaultTempPath</a>(). </div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<div><a href="pdfllayer_ASFileSys.html#ASFileSysSetDefaultTempPath" title=" Sets the default temporary path for the specified file system to the specified path name.">ASFileSysSetDefaultTempPath</a> </div>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASFileSys.html#ASPathName"><code>ASPathName</code></a> <code>ASFileSysGetDefaultTempPath(</code><a href="aslayer_ASFileSys.html#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>fileSys</code></div>
+</td><td><div>The file system in which the ASPathname is set. </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>The <a href="aslayer_ASFileSys.html#ASPathName">ASPathName</a> if the operation was successful, <a href="aslayer_General.html#NULL"><code>NULL</code></a> otherwise. </div>
+</section>
+<section><div class="infoRow"><h3 id="ASFileSysSetDefaultTempPath"><strong><span style="color:grey;">ASFileSysSetDefaultTempPath</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:143</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>Sets the default temporary path for the specified file system to the specified path name. The method copies the passed <code>pathname</code> object on success; the client is responsible for releasing the object when it is no longer needed, using <a href="aslayer_ASFileSys.html#ASFileSysReleasePath" title=" Decrements the internal reference count for the path name and disposes of the path name (but not the file itself) if the reference count is zero.">ASFileSysReleasePath</a>().<br/>
+<p>Pass a pathname of <a href="aslayer_General.html#NULL"><code>NULL</code></a> to reset the default temporary path to the file system default.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<div><a href="pdfllayer_ASFileSys.html#ASFileSysGetDefaultTempPath" title=" Gets the default temporary path that was set by ASFileSysSetDefaultTempPath().">ASFileSysGetDefaultTempPath</a> </div>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ASFileSysSetDefaultTempPath(</code><a href="aslayer_ASFileSys.html#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>,</code> <a href="aslayer_ASFileSys.html#ASPathName"><code>ASPathName</code></a> <code>pathName</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>fileSys</code></div>
+</td><td><div>(May be <a href="aslayer_General.html#NULL"><code>NULL</code></a>) The file system in which to set the default temporary path. </div>
+</td></tr>
+<tr><td><div><code>pathName</code></div>
+</td><td><div>The path name for the new default temporary path, or <a href="aslayer_General.html#NULL"><code>NULL</code></a> to reset to the file system default. </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div><a href="aslayer_General.html#false"><code>false</code></a> if the path provided is not writable, <a href="aslayer_General.html#true"><code>true</code></a> otherwise. </div>
+</section>
+</section>
+
+</div>
+</body>
+    <script>
+        currVer = window.location.pathname.split("/").slice(-2)[0]
+        document.getElementById("ver").src +=  "?=" + currVer 
+    </script>
+    </html>
