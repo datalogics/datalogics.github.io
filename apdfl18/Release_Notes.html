@@ -24,6 +24,55 @@
    
 	<div class="entry-content"><p>This page lists updates, fixes, changes and enhancements made to the Adobe PDF Library v18 provided by Datalogics.</p>
 
+<p><strong>APDFL v18.0.4PlusP2u</strong> (April 11, 2024)</p>
+<p>New Features:</p>
+<ul type="disc">
+<li>Add support for creating a QR Barcode (C++, Java, .NET, .NETFramework); 
+<ul type="disc">
+<li>PDPageAddQRBarcode</li>
+</ul>
+<li>Add support for Image Import / Export (C++); 
+<ul type="disc">
+<li>DLCreatePDEImageFromFile</li>
+<li>DLExportPDEImage</li>
+<li>DLPDEImageTranslate</li>
+<li>DLPDEImageScale</li>
+<li>DLPDEImageRotate</li>
+<li>DLPDEImageGetWidth</li>
+<li>DLPDEImageGetHeight</li>
+<li>DLPDEImageGetExportParams</li>
+<li>DLPDEImageGetSoftMask</li>
+<li>DLPDEImageSetSoftMask</li>
+<li>DLColorConvertPDEImage</li>
+<li>DLPDEImageGetIntent</li>
+<li>DLPDEImageSetIntent</li>
+<li>DLPDEImageGetCompression</li>
+<li>DLCreateResampledPDEImage</li>
+</ul>
+<li>Updates expat open source component to version 2.6.2.</li>
+<li>With this release, the Java and .NET Interfaces version has been increased to 18.0.4.34.</li>
+<li>With this release, the Nuget package version has been increased to 18.34.0.</li>
+<li>With this release, the Maven package version has been increased to 18.34.0.</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul type="disc">
+<li>SF#45214 – Corrects an issue where a TextMatch's Quad coordinates would all be 0 for a space character when using PDDocTextFinderAcquireMatchList().</li>
+<li>SF#45378 – The enumeration value kASTimePDF now interprets a date format lacking a time zone as being GMT.</li>
+<li>SF#45923 – This corrects a problem where rendering a document with very large values could result in some content not being drawn.</li>
+<li>SF#45966 – The PDWordGetNthCharStyle() now returns NULL if the index parameter exceeds the number of style transitions.</li>
+<li>SF#46147 – This corrects a problem where Optimizing a document when using the in-memory filesystem could cause the ASFile representation to be prematurely released.</li>
+<li>SF#46154 – Corrects a problem where PDEPathSetDataEx() wouldn't work as expected.</li>
+<li>SF#46156 – Corrects an issue where Optimizing a document could result in a Pattern being mistakenly discarded when in use on the Page.</li>
+<li>SF#46165 – This corrects a crash that could occur converting a document to PDF/A when encountering a problematic TrueType font.</li>
+<li>SF#46170 – Corrects a small memory leak when using the method ASFileOpenWithVirtualEOF().</li>
+<li>SF#46182 – Corrects a problem where merging documents containing Signature Fields with shared field names could cause merging of fields to go awry.</li>
+<li>SF#46189 – Corrects a problem where applying a Redaction could result in an Image's Indexed colorspace becoming invalid. Corrects a problem where applying a Redaction could cause non-adjacent images to be removed.</li>
+<li>SF#46206 – Improves rendering of Type 3 font glyphs with invalidly specified d1 values.</li>
+<li>SF#46210 – Corrects a color shift that could occur rendering a document to the DeviceCMYK colorspace when specifying the kPDPageIsPrinting flag.</li>
+<li>SF#46235 – Corrects a problem where the Flattener maxPageFlatteningTime member of the PDFlattenRec structure wasn't working as expected.</li>
+<li>SF#46240 - Improves the performance of the GetImage() method of the Page class for the .NET and Java interfaces.</li>
+</ul>
+<p>&nbsp;</p>
 <p><strong>APDFL v18.0.4PlusP2r</strong> (February 21, 2024)</p>
 <p>New Features:</p>
 <ul type="disc">
