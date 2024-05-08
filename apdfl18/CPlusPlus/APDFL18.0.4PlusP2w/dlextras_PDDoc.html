@@ -12,8 +12,8 @@ Additional functionality from Datalogics: PDDoc
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+Â Â           function gtag(){dataLayer.push(arguments);}
+Â Â           gtag('js', new Date());Â Â gtag('config', 'G-L4MQFNK7VK');
         </script>
         <body><div>
 <a href="index.html"><img src="resources/img/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0px; left: 0px;"></a>
@@ -502,12 +502,54 @@ Additional functionality from Datalogics: PDDoc
 <section id="Structures">
 <header><h2>PDDoc Structures</h2></header>
 <nav><dl>
+<dt><a href="#OptimizedFont">OptimizedFont</a></dt><dd> -  Structure representing an Optimized Font.</dd>
 <dt><a href="#OptimizedImage">OptimizedImage</a></dt><dd> -  Structure representing an Optimized Image.</dd>
 <dt><a href="#PDDocTextFinderMatchList">PDDocTextFinderMatchList</a></dt><dd> -  Structure containing the matches.</dd>
 <dt><a href="#PDDocTextFinderMatchQuadRec">PDDocTextFinderMatchQuadRec</a></dt><dd> -  Structure representing a matched phrase bounding quad and the page it was located on.</dd>
 <dt><a href="#PDDocTextFinderMatchRec">PDDocTextFinderMatchRec</a></dt><dd> -  Structure representing the matched phrase and the array of quads that make up the phrase.</dd>
 <dt><a href="#PDFOptimizerReport">PDFOptimizerReport</a></dt><dd> -  Structure representing data reported from the optimization process.</dd>
 </dl></nav>
+<section><div class="infoRow"><h3 id="OptimizedFont"><strong><span style="color:grey;">OptimizedFont</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:294</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Structure representing an Optimized Font. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct OptimizedFont {</code> </code>
+</td><td><div></div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.html#ASAtom"><code>ASAtom</code></a> <code>name</code><code>;</code> </div>
+</td><td><div>The name of the Font. </div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>previousSizeInBytes</code><code>;</code> </div>
+</td><td><div>The size of the Embedded Font file in bytes prior to Optimization. </div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>currentSizeInBytes</code><code>;</code> </div>
+</td><td><div>The size of the Embedded Font file in bytes after Optimization. </div>
+</td></tr>
+<tr><td><div class="structMember"><a href="coslayer_CosObj.html#CosObj"><code>CosObj</code></a> <code>fontObj</code><code>;</code> </div>
+</td><td><div>The Font object. </div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>reSubset</code><code>;</code> </div>
+</td><td><div>This font was re-subset during Optimization. </div>
+</td></tr>
+<tr><td><code id="OptimizedFontRec"><code>}</code> <a href="dlextras_PDDoc.html#OptimizedFont" title=" Structure representing an Optimized Font."><code>OptimizedFontRec</code></a><code>,</code> <code>*</code><a href="dlextras_PDDoc.html#OptimizedFont" title=" Structure representing an Optimized Font."><code>OptimizedFont</code></a><code>;</code> </code>
+</td><td><div></div>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDDoc.html#PDFOptimizerReport" title=" Structure representing data reported from the optimization process."><code>PDFOptimizerReport</code></a></td><td><div></div>
+</td></tr></table>
+</nav>
+</section>
 <section><div class="infoRow"><h3 id="OptimizedImage"><strong><span style="color:grey;">OptimizedImage</span></strong></h3>
 
 <div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:278</div>
@@ -690,7 +732,7 @@ Additional functionality from Datalogics: PDDoc
 <tr><td><div class="structMember"><a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>monochromeImagesCount</code><code>;</code> </div>
 </td><td><div>The number of Monochrome Images Optimized in the document. </div>
 </td></tr>
-<tr><td><div class="structMember"><a href="dlextras_General.html#OptimizedFont" title=" Structure representing an Optimized Font."><code>OptimizedFont</code></a> <code>*</code><code>*</code><code>fonts</code><code>;</code> </div>
+<tr><td><div class="structMember"><a href="dlextras_PDDoc.html#OptimizedFont" title=" Structure representing an Optimized Font."><code>OptimizedFont</code></a> <code>*</code><code>*</code><code>fonts</code><code>;</code> </div>
 </td><td><div>The Fonts Optimized in the document. </div>
 </td></tr>
 <tr><td><div class="structMember"><a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>fontCount</code><code>;</code> </div>
