@@ -12,8 +12,8 @@ Additional functionality from Datalogics: PDDoc
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
-Â Â           function gtag(){dataLayer.push(arguments);}
-Â Â           gtag('js', new Date());Â Â gtag('config', 'G-L4MQFNK7VK');
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
         </script>
         <body><div>
 <a href="index.html"><img src="resources/img/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0px; left: 0px;"></a>
@@ -64,7 +64,7 @@ Additional functionality from Datalogics: PDDoc
 
 <H4><strong>Used By</strong></H4>
 
-<nav><table><tr><td><a href="dlextras_PDDoc.html#PDDocExportAcroFormsData" title=" Export the AcroForms data."><code>PDDocExportAcroFormsData</code></a></td><td><div></div>
+<nav><table><tr><td><a href="formsextension_PDDoc.html#PDDocExportAcroFormsData" title=" Export the AcroForms data."><code>PDDocExportAcroFormsData</code></a></td><td><div></div>
 </td></tr></table>
 </nav>
 </section>
@@ -92,7 +92,7 @@ Additional functionality from Datalogics: PDDoc
 
 <H4><strong>Used By</strong></H4>
 
-<nav><table><tr><td><a href="dlextras_PDDoc.html#PDDocImportAcroFormsData" title=" Import the AcroForms data."><code>PDDocImportAcroFormsData</code></a></td><td><div></div>
+<nav><table><tr><td><a href="formsextension_PDDoc.html#PDDocImportAcroFormsData" title=" Import the AcroForms data."><code>PDDocImportAcroFormsData</code></a></td><td><div></div>
 </td></tr></table>
 </nav>
 </section>
@@ -142,7 +142,7 @@ Additional functionality from Datalogics: PDDoc
 
 <H4><strong>Used By</strong></H4>
 
-<nav><table><tr><td><a href="dlextras_PDDoc.html#PDDocGetFormsType" title=" Returns the document's Forms Type."><code>PDDocGetFormsType</code></a></td><td><div></div>
+<nav><table><tr><td><a href="formsextension_PDDoc.html#PDDocGetFormsType" title=" Returns the document's Forms Type."><code>PDDocGetFormsType</code></a></td><td><div></div>
 </td></tr></table>
 </nav>
 </section>
@@ -429,7 +429,7 @@ Additional functionality from Datalogics: PDDoc
 
 <H4><strong>Used By</strong></H4>
 
-<nav><table><tr><td><a href="dlextras_PDDoc.html#PDDocExportXFAFormsData" title=" Export the XFA Forms data."><code>PDDocExportXFAFormsData</code></a></td><td><div></div>
+<nav><table><tr><td><a href="formsextension_PDDoc.html#PDDocExportXFAFormsData" title=" Export the XFA Forms data."><code>PDDocExportXFAFormsData</code></a></td><td><div></div>
 </td></tr></table>
 </nav>
 </section>
@@ -502,11 +502,56 @@ Additional functionality from Datalogics: PDDoc
 <section id="Structures">
 <header><h2>PDDoc Structures</h2></header>
 <nav><dl>
+<dt><a href="#OptimizedImage">OptimizedImage</a></dt><dd> -  Structure representing an Optimized Image.</dd>
 <dt><a href="#PDDocTextFinderMatchList">PDDocTextFinderMatchList</a></dt><dd> -  Structure containing the matches.</dd>
 <dt><a href="#PDDocTextFinderMatchQuadRec">PDDocTextFinderMatchQuadRec</a></dt><dd> -  Structure representing a matched phrase bounding quad and the page it was located on.</dd>
 <dt><a href="#PDDocTextFinderMatchRec">PDDocTextFinderMatchRec</a></dt><dd> -  Structure representing the matched phrase and the array of quads that make up the phrase.</dd>
 <dt><a href="#PDFOptimizerReport">PDFOptimizerReport</a></dt><dd> -  Structure representing data reported from the optimization process.</dd>
 </dl></nav>
+<section><div class="infoRow"><h3 id="OptimizedImage"><strong><span style="color:grey;">OptimizedImage</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:278</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Structure representing an Optimized Image. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct OptimizedImage {</code> </code>
+</td><td><div></div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>previousDPI</code><code>;</code> </div>
+</td><td><div>The DPI of the Image prior to Optimization. </div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>currentDPI</code><code>;</code> </div>
+</td><td><div>The DPI of the Image after Optimization, this may be unchanged from the value prior to Optimization if downsampling was not used. </div>
+</td></tr>
+<tr><td><div class="structMember"><a href="dlextras_General.html#PDFOptimizerCompressionType" title=" types of compression for PDFOptimizer"><code>PDFOptimizerCompressionType</code></a> <code>previousCompression</code><code>;</code> </div>
+</td><td><div>The compression of the Image prior to Optimization. </div>
+</td></tr>
+<tr><td><div class="structMember"><a href="dlextras_General.html#PDFOptimizerCompressionType" title=" types of compression for PDFOptimizer"><code>PDFOptimizerCompressionType</code></a> <code>currentCompression</code><code>;</code> </div>
+</td><td><div>The compression of the Image prior to Optimization. </div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>previousSizeInBytes</code><code>;</code> </div>
+</td><td><div>The size of the Image in bytes prior to Optimization. </div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>currentSizeInBytes</code><code>;</code> </div>
+</td><td><div>The size of the Image in bytes after Optimization. </div>
+</td></tr>
+<tr><td><code id="OptimizedImageRec"><code>}</code> <a href="dlextras_PDDoc.html#OptimizedImage" title=" Structure representing an Optimized Image."><code>OptimizedImageRec</code></a><code>,</code> <code>*</code><a href="dlextras_PDDoc.html#OptimizedImage" title=" Structure representing an Optimized Image."><code>OptimizedImage</code></a><code>;</code> </code>
+</td><td><div></div>
+</td></tr></table>
+</div>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDDoc.html#PDFOptimizerReport" title=" Structure representing data reported from the optimization process."><code>PDFOptimizerReport</code></a></td><td><div></div>
+</td></tr></table>
+</nav>
+</section>
 <section><div class="infoRow"><h3 id="PDDocTextFinderMatchList"><strong><span style="color:grey;">PDDocTextFinderMatchList</span></strong></h3>
 
 <div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:412</div>
@@ -627,19 +672,19 @@ Additional functionality from Datalogics: PDDoc
 <tr><td><div class="structMember"><a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>size</code><code>;</code> </div>
 </td><td><div>Size of the structure. </div>
 </td></tr>
-<tr><td><div class="structMember"><a href="dlextras_General.html#OptimizedImage" title=" Structure representing an Optimized Image."><code>OptimizedImage</code></a> <code>*</code><code>*</code><code>colorImages</code><code>;</code> </div>
+<tr><td><div class="structMember"><a href="dlextras_PDDoc.html#OptimizedImage" title=" Structure representing an Optimized Image."><code>OptimizedImage</code></a> <code>*</code><code>*</code><code>colorImages</code><code>;</code> </div>
 </td><td><div>The Color Images Optimized in the document. </div>
 </td></tr>
 <tr><td><div class="structMember"><a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>colorImagesCount</code><code>;</code> </div>
 </td><td><div>The number of Color Images Optimized in the document. </div>
 </td></tr>
-<tr><td><div class="structMember"><a href="dlextras_General.html#OptimizedImage" title=" Structure representing an Optimized Image."><code>OptimizedImage</code></a> <code>*</code><code>*</code><code>grayImages</code><code>;</code> </div>
+<tr><td><div class="structMember"><a href="dlextras_PDDoc.html#OptimizedImage" title=" Structure representing an Optimized Image."><code>OptimizedImage</code></a> <code>*</code><code>*</code><code>grayImages</code><code>;</code> </div>
 </td><td><div>The Gray Images Optimized in the document. </div>
 </td></tr>
 <tr><td><div class="structMember"><a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>grayImagesCount</code><code>;</code> </div>
 </td><td><div>The number of Gray Images Optimized in the document. </div>
 </td></tr>
-<tr><td><div class="structMember"><a href="dlextras_General.html#OptimizedImage" title=" Structure representing an Optimized Image."><code>OptimizedImage</code></a> <code>*</code><code>*</code><code>monochromeImages</code><code>;</code> </div>
+<tr><td><div class="structMember"><a href="dlextras_PDDoc.html#OptimizedImage" title=" Structure representing an Optimized Image."><code>OptimizedImage</code></a> <code>*</code><code>*</code><code>monochromeImages</code><code>;</code> </div>
 </td><td><div>The Monochrome Images Optimized in the document. </div>
 </td></tr>
 <tr><td><div class="structMember"><a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>monochromeImagesCount</code><code>;</code> </div>
@@ -744,22 +789,10 @@ Additional functionality from Datalogics: PDDoc
 <section id="Functions">
 <header><h2>PDDoc Functions</h2></header>
 <nav><dl>
-<dt><a href="#PDDocConvertXFAFieldsToAcroFormFields">PDDocConvertXFAFieldsToAcroFormFields</a></dt><dd> -  Convert a XFA document into a document with only AcroForms.</dd>
 <dt><a href="#PDDocDeletePagesEx">PDDocDeletePagesEx</a></dt><dd> -  Deletes the specified pages.</dd>
 <dt><a href="#PDDocEmbedFonts">PDDocEmbedFonts</a></dt><dd> -  Routine to embed unembedded fonts in a document.</dd>
 <dt><a href="#PDDocEmbedFontsFromFontArray">PDDocEmbedFontsFromFontArray</a></dt><dd> -  Routine to embed fonts in a document.</dd>
-<dt><a href="#PDDocExportAcroFormsData">PDDocExportAcroFormsData</a></dt><dd> -  Export the AcroForms data.</dd>
-<dt><a href="#PDDocExportXFAFormsData">PDDocExportXFAFormsData</a></dt><dd> -  Export the XFA Forms data.</dd>
-<dt><a href="#PDDocFlattenAcroFormFields">PDDocFlattenAcroFormFields</a></dt><dd> -  Flatten an AcroForms document.</dd>
-<dt><a href="#PDDocFlattenNonFormAnnotations">PDDocFlattenNonFormAnnotations</a></dt><dd> -  Flatten a Non-Form (no AcroForm, no XFA) document's Annotations.</dd>
-<dt><a href="#PDDocFlattenXFAFields">PDDocFlattenXFAFields</a></dt><dd> -  Flatten a XFA Document (Static or Dynamic).</dd>
-<dt><a href="#PDDocFlattenXFAFieldsAsIfPrinted">PDDocFlattenXFAFieldsAsIfPrinted</a></dt><dd> -  Flatten a XFA Document (Static or Dynamic) as if printed.</dd>
-<dt><a href="#PDDocGetFormsType">PDDocGetFormsType</a></dt><dd> -  Returns the document's Forms Type.</dd>
 <dt><a href="#PDDocHasSignature">PDDocHasSignature</a></dt><dd> -  Determines if the document contains a digital signature.</dd>
-<dt><a href="#PDDocImportAcroFormsData">PDDocImportAcroFormsData</a></dt><dd> -  Import the AcroForms data.</dd>
-<dt><a href="#PDDocImportXFAFormsData">PDDocImportXFAFormsData</a></dt><dd> -  Import the XFA Forms data.</dd>
-<dt><a href="#PDDocIsDynamicXFA">PDDocIsDynamicXFA</a></dt><dd> -  Check if document is Dynamic XFA</dd>
-<dt><a href="#PDDocIsStaticXFA">PDDocIsStaticXFA</a></dt><dd> -  Check if document is Static XFA</dd>
 <dt><a href="#PDDocOptimizeDefaultParams">PDDocOptimizeDefaultParams</a></dt><dd> -  This will create a set of optimization parameters, set to the default values.</dd>
 <dt><a href="#PDDocOptimizeGetImageRecompress">PDDocOptimizeGetImageRecompress</a></dt><dd> -  This will return the values set for one of the three cases of Image Recompression and Downsampling.</dd>
 <dt><a href="#PDDocOptimizeGetObjectCompression">PDDocOptimizeGetObjectCompression</a></dt><dd> -  This will get the type of compression used for objects.</dd>
@@ -775,29 +808,6 @@ Additional functionality from Datalogics: PDDoc
 <dt><a href="#PDDocumentOptimize">PDDocumentOptimize</a></dt><dd> -  This function is used to create an optimized document.</dd>
 <dt><a href="#PDDocumentOptimizeWithReport">PDDocumentOptimizeWithReport</a></dt><dd> -  This facility is used to create an optimized copy of the original document.</dd>
 </dl></nav>
-<section><div class="infoRow"><h3 id="PDDocConvertXFAFieldsToAcroFormFields"><strong><span style="color:grey;">PDDocConvertXFAFieldsToAcroFormFields</span></strong></h3>
-
-<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1218</div>
-</div>
-
-<div><H4><strong>Description</strong></H4>
-
-<div>Convert a XFA document into a document with only AcroForms. XFA content is not widely supported by PDF processors, converting this content transforms XFA fields into AcroForm fields which are more widely supported by PDF processors. All XFA fields are removed. </div>
-</div>
-
-<H4><strong>Syntax</strong></H4>
-
-<code><code>void</code> <code>PDDocConvertXFAFieldsToAcroFormFields(</code><a href="pdlayer_PDDoc.html#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <a href="aslayer_General.html#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>*</code><code>pagesConverted</code><code>);</code> </code>
-
-<H4><strong>Parameters</strong></H4>
-
-<Table class="paramsTable"><tr><td><div><code>doc</code></div>
-</td><td><div>IN/OUT The PDF document object. </div>
-</td></tr>
-<tr><td><div><code>pagesConverted</code></div>
-</td><td><div><a href="pdslayer_General.html#OUT">OUT</a> The number of output pages created in the converted document. </div>
-</td></tr></Table>
-</section>
 <section><div class="infoRow"><h3 id="PDDocDeletePagesEx"><strong><span style="color:grey;">PDDocDeletePagesEx</span></strong></h3>
 
 <div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:858</div>
@@ -923,181 +933,6 @@ Additional functionality from Datalogics: PDDoc
 </td><td><div>Pointer to a record containing a Progress Monitor, Cancel procedure, and report procedure. The procedures in the progress monitor are called to indicate the progress of the routine. The cancel procedure is called periodically to allow the client to cancel the routine. If the cancel procedure returns <a href="aslayer_General.html#false">false</a> then the routine is canceled. The report procedure will be called to report errors or warnings while embedding the fonts. For each font that cannot be embedded, the report procedure will be called. </div>
 </td></tr></Table>
 </section>
-<section><div class="infoRow"><h3 id="PDDocExportAcroFormsData"><strong><span style="color:grey;">PDDocExportAcroFormsData</span></strong></h3>
-
-<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1257</div>
-</div>
-
-<div><H4><strong>Description</strong></H4>
-
-<div>Export the AcroForms data. AcroForms data is exported to a format that can later be imported into another AcroForms document. </div>
-</div>
-
-<H4><strong>Syntax</strong></H4>
-
-<code><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDDocExportAcroFormsData(</code><a href="pdlayer_PDDoc.html#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <a href="aslayer_ASFileSys.html#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>,</code> <a href="aslayer_ASFileSys.html#ASPathName"><code>ASPathName</code></a> <code>pathName</code><code>,</code> <a href="dlextras_PDDoc.html#AcroFormExportType" title=" AcroForm Export Data type options."><code>AcroFormExportType</code></a> <code>acroFormExportType</code><code>);</code> </code>
-
-<H4><strong>Parameters</strong></H4>
-
-<Table class="paramsTable"><tr><td><div><code>doc</code></div>
-</td><td><div><a href="pdslayer_General.html#IN">IN</a> The PDF document object. </div>
-</td></tr>
-<tr><td><div><code>fileSys</code></div>
-</td><td><div><a href="pdslayer_General.html#IN">IN</a> The file system to write the data to (May be <a href="aslayer_General.html#NULL">NULL</a>, in which case the default file system will be used) </div>
-</td></tr>
-<tr><td><div><code>pathName</code></div>
-</td><td><div><a href="pdslayer_General.html#OUT">OUT</a> The path on disk of the file the AcroForms data is exported to. </div>
-</td></tr>
-<tr><td><div><code>acroFormExportType</code></div>
-</td><td><div><a href="pdslayer_General.html#IN">IN</a> The format type the AcroForm data should be exported to. The supported types are XFDF, FDF, and XML. </div>
-</td></tr></Table>
-
-<H4><strong>Returns</strong></H4>
-
-<div>if True, the exporting succeeded. </div>
-</section>
-<section><div class="infoRow"><h3 id="PDDocExportXFAFormsData"><strong><span style="color:grey;">PDDocExportXFAFormsData</span></strong></h3>
-
-<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1231</div>
-</div>
-
-<div><H4><strong>Description</strong></H4>
-
-<div>Export the XFA Forms data. XFA forms data is exported to a format that can later be imported into another XFA document. </div>
-</div>
-
-<H4><strong>Syntax</strong></H4>
-
-<code><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDDocExportXFAFormsData(</code><a href="pdlayer_PDDoc.html#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <a href="aslayer_ASFileSys.html#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>,</code> <a href="aslayer_ASFileSys.html#ASPathName"><code>ASPathName</code></a> <code>pathName</code><code>,</code> <a href="dlextras_PDDoc.html#XFAFormExportType" title=" XFA Form Export Data type options."><code>XFAFormExportType</code></a> <code>exportType</code><code>);</code> </code>
-
-<H4><strong>Parameters</strong></H4>
-
-<Table class="paramsTable"><tr><td><div><code>doc</code></div>
-</td><td><div><a href="pdslayer_General.html#IN">IN</a> The PDF document object. </div>
-</td></tr>
-<tr><td><div><code>fileSys</code></div>
-</td><td><div><a href="pdslayer_General.html#IN">IN</a> The file system to write the document to (May be <a href="aslayer_General.html#NULL">NULL</a>, in which case the default file system will be used) </div>
-</td></tr>
-<tr><td><div><code>pathName</code></div>
-</td><td><div><a href="pdslayer_General.html#OUT">OUT</a> The path on disk of the file the XFA form data is exported to. </div>
-</td></tr>
-<tr><td><div><code>exportType</code></div>
-</td><td><div><a href="pdslayer_General.html#IN">IN</a> The format type the XFA data should be exported to. The supported types are XDP, XML, and XFD. </div>
-</td></tr></Table>
-
-<H4><strong>Returns</strong></H4>
-
-<div>if True, the exporting succeeded. </div>
-</section>
-<section><div class="infoRow"><h3 id="PDDocFlattenAcroFormFields"><strong><span style="color:grey;">PDDocFlattenAcroFormFields</span></strong></h3>
-
-<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1207</div>
-</div>
-
-<div><H4><strong>Description</strong></H4>
-
-<div>Flatten an AcroForms document. Interactive AcroForm fields are flattened into static PDF page content. All AcroForm fields are removed. </div>
-</div>
-
-<H4><strong>Syntax</strong></H4>
-
-<code><code>void</code> <code>PDDocFlattenAcroFormFields(</code><a href="pdlayer_PDDoc.html#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>);</code> </code>
-
-<H4><strong>Parameters</strong></H4>
-
-<Table class="paramsTable"><tr><td><div><code>IN/OUT</code></div>
-</td><td><div>doc The PDF document object. </div>
-</td></tr></Table>
-</section>
-<section><div class="infoRow"><h3 id="PDDocFlattenNonFormAnnotations"><strong><span style="color:grey;">PDDocFlattenNonFormAnnotations</span></strong></h3>
-
-<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1312</div>
-</div>
-
-<div><H4><strong>Description</strong></H4>
-
-<div>Flatten a Non-Form (no AcroForm, no XFA) document's Annotations. Annotations are flattened into static PDF page content. </div>
-</div>
-
-<H4><strong>Syntax</strong></H4>
-
-<code><code>void</code> <code>PDDocFlattenNonFormAnnotations(</code><a href="pdlayer_PDDoc.html#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>);</code> </code>
-
-<H4><strong>Parameters</strong></H4>
-
-<Table class="paramsTable"><tr><td><div><code>doc</code></div>
-</td><td><div>IN/OUT The PDF document object. </div>
-</td></tr></Table>
-</section>
-<section><div class="infoRow"><h3 id="PDDocFlattenXFAFields"><strong><span style="color:grey;">PDDocFlattenXFAFields</span></strong></h3>
-
-<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1200</div>
-</div>
-
-<div><H4><strong>Description</strong></H4>
-
-<div>Flatten a XFA Document (Static or Dynamic). XFA content is not widely supported by PDF processors. Flattening this content transforms into static PDF page content that is part of typical PDF files that can easily be understood by PDF processors. All XFA fields are removed. </div>
-</div>
-
-<H4><strong>Syntax</strong></H4>
-
-<code><code>void</code> <code>PDDocFlattenXFAFields(</code><a href="pdlayer_PDDoc.html#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <a href="aslayer_General.html#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>*</code><code>pagesOutput</code><code>);</code> </code>
-
-<H4><strong>Parameters</strong></H4>
-
-<Table class="paramsTable"><tr><td><div><code>doc</code></div>
-</td><td><div>IN/OUT The PDF document object. </div>
-</td></tr>
-<tr><td><div><code>OUT</code></div>
-</td><td><div>pagesOutput The number of output pages created in the flattened document. </div>
-</td></tr></Table>
-</section>
-<section><div class="infoRow"><h3 id="PDDocFlattenXFAFieldsAsIfPrinted"><strong><span style="color:grey;">PDDocFlattenXFAFieldsAsIfPrinted</span></strong></h3>
-
-<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1303</div>
-</div>
-
-<div><H4><strong>Description</strong></H4>
-
-<div>Flatten a XFA Document (Static or Dynamic) as if printed. XFA content is not widely supported by PDF processors. Flattening this content transforms into static PDF page content that is part of typical PDF files that can easily be understood by PDF processors. All XFA fields are removed. The Flattened appearance will take into consideration how the document's appearance should appear when printed. </div>
-</div>
-
-<H4><strong>Syntax</strong></H4>
-
-<code><code>void</code> <code>PDDocFlattenXFAFieldsAsIfPrinted(</code><a href="pdlayer_PDDoc.html#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <a href="aslayer_General.html#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>*</code><code>pagesOutput</code><code>);</code> </code>
-
-<H4><strong>Parameters</strong></H4>
-
-<Table class="paramsTable"><tr><td><div><code>doc</code></div>
-</td><td><div>IN/OUT The PDF document object. </div>
-</td></tr>
-<tr><td><div><code>pagesOutput</code></div>
-</td><td><div><a href="pdslayer_General.html#OUT">OUT</a> The number of output pages created in the flattened document. </div>
-</td></tr></Table>
-</section>
-<section><div class="infoRow"><h3 id="PDDocGetFormsType"><strong><span style="color:grey;">PDDocGetFormsType</span></strong></h3>
-
-<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1321</div>
-</div>
-
-<div><H4><strong>Description</strong></H4>
-
-<div>Returns the document's Forms Type. This method is more versatile than the related <a href="dlextras_PDDoc.html#PDDocIsDynamicXFA" title=" Check if document is Dynamic XFA">PDDocIsDynamicXFA</a>() and <a href="dlextras_PDDoc.html#PDDocIsStaticXFA" title=" Check if document is Static XFA">PDDocIsStaticXFA</a>() methods. </div>
-</div>
-
-<H4><strong>Syntax</strong></H4>
-
-<code><code>void</code> <code>PDDocGetFormsType(</code><a href="pdlayer_PDDoc.html#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <a href="dlextras_PDDoc.html#PDDocFormsType" title=" Document Forms Type options."><code>PDDocFormsType</code></a> <code>*</code><code>formsType</code><code>);</code> </code>
-
-<H4><strong>Parameters</strong></H4>
-
-<Table class="paramsTable"><tr><td><div><code>doc</code></div>
-</td><td><div><a href="pdslayer_General.html#IN">IN</a> The PDF document object. </div>
-</td></tr>
-<tr><td><div><code>formsType</code></div>
-</td><td><div><a href="pdslayer_General.html#OUT">OUT</a> The type of forms the document contains. </div>
-</td></tr></Table>
-</section>
 <section><div class="infoRow"><h3 id="PDDocHasSignature"><strong><span style="color:grey;">PDDocHasSignature</span></strong></h3>
 
 <div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:758</div>
@@ -1121,117 +956,6 @@ Additional functionality from Datalogics: PDDoc
 <H4><strong>Returns</strong></H4>
 
 <div>If the document has a digital signature. </div>
-</section>
-<section><div class="infoRow"><h3 id="PDDocImportAcroFormsData"><strong><span style="color:grey;">PDDocImportAcroFormsData</span></strong></h3>
-
-<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1271</div>
-</div>
-
-<div><H4><strong>Description</strong></H4>
-
-<div>Import the AcroForms data. AcroForms data is imported from a supported format into the AcroForms document so its existing fields can be populated for example. </div>
-</div>
-
-<H4><strong>Syntax</strong></H4>
-
-<code><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDDocImportAcroFormsData(</code><a href="pdlayer_PDDoc.html#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <a href="aslayer_ASFileSys.html#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>,</code> <a href="aslayer_ASFileSys.html#ASPathName"><code>ASPathName</code></a> <code>pathName</code><code>,</code> <a href="dlextras_PDDoc.html#AcroFormImportType" title=" AcroForm Import Data type options."><code>AcroFormImportType</code></a> <code>acroFormImportType</code><code>);</code> </code>
-
-<H4><strong>Parameters</strong></H4>
-
-<Table class="paramsTable"><tr><td><div><code>doc</code></div>
-</td><td><div>IN/OUT The PDF document object. </div>
-</td></tr>
-<tr><td><div><code>fileSys</code></div>
-</td><td><div><a href="pdslayer_General.html#IN">IN</a> The file system to import the data from (May be <a href="aslayer_General.html#NULL">NULL</a>, in which case the default file system will be used) </div>
-</td></tr>
-<tr><td><div><code>pathName</code></div>
-</td><td><div><a href="pdslayer_General.html#IN">IN</a> The path on disk of the AcroFormsdata file to be imported. </div>
-</td></tr>
-<tr><td><div><code>acroFormImportType</code></div>
-</td><td><div><a href="pdslayer_General.html#IN">IN</a> The format type the data type should be imported to. The supported types are XFDF, FDF, and XML. </div>
-</td></tr></Table>
-
-<H4><strong>Returns</strong></H4>
-
-<div>if True, the importing succeeded. </div>
-</section>
-<section><div class="infoRow"><h3 id="PDDocImportXFAFormsData"><strong><span style="color:grey;">PDDocImportXFAFormsData</span></strong></h3>
-
-<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1244</div>
-</div>
-
-<div><H4><strong>Description</strong></H4>
-
-<div>Import the XFA Forms data. XFA forms data is imported from a supported format into the XFA document so its existing fields can be populated for example. </div>
-</div>
-
-<H4><strong>Syntax</strong></H4>
-
-<code><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDDocImportXFAFormsData(</code><a href="pdlayer_PDDoc.html#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <a href="aslayer_ASFileSys.html#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>,</code> <a href="aslayer_ASFileSys.html#ASPathName"><code>ASPathName</code></a> <code>pathName</code><code>);</code> </code>
-
-<H4><strong>Parameters</strong></H4>
-
-<Table class="paramsTable"><tr><td><div><code>doc</code></div>
-</td><td><div>IN/OUT The PDF document object. </div>
-</td></tr>
-<tr><td><div><code>fileSys</code></div>
-</td><td><div><a href="pdslayer_General.html#IN">IN</a> The file system to import the document from (May be <a href="aslayer_General.html#NULL">NULL</a>, in which case the default file system will be used) </div>
-</td></tr>
-<tr><td><div><code>pathName</code></div>
-</td><td><div><a href="pdslayer_General.html#IN">IN</a> The path on disk of the XFA form data file to be imported. The supported types are XDP, XML, and XFD. </div>
-</td></tr></Table>
-
-<H4><strong>Returns</strong></H4>
-
-<div>if True, the importing succeeded. </div>
-</section>
-<section><div class="infoRow"><h3 id="PDDocIsDynamicXFA"><strong><span style="color:grey;">PDDocIsDynamicXFA</span></strong></h3>
-
-<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1281</div>
-</div>
-
-<div><H4><strong>Description</strong></H4>
-
-<div>Check if document is Dynamic XFA </div>
-</div>
-
-<H4><strong>Syntax</strong></H4>
-
-<code><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDDocIsDynamicXFA(</code><a href="pdlayer_PDDoc.html#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>);</code> </code>
-
-<H4><strong>Parameters</strong></H4>
-
-<Table class="paramsTable"><tr><td><div><code>doc</code></div>
-</td><td><div><a href="pdslayer_General.html#IN">IN</a> The PDF document object. </div>
-</td></tr></Table>
-
-<H4><strong>Returns</strong></H4>
-
-<div>if True, the document is Dynamic XFA. </div>
-</section>
-<section><div class="infoRow"><h3 id="PDDocIsStaticXFA"><strong><span style="color:grey;">PDDocIsStaticXFA</span></strong></h3>
-
-<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1290</div>
-</div>
-
-<div><H4><strong>Description</strong></H4>
-
-<div>Check if document is Static XFA </div>
-</div>
-
-<H4><strong>Syntax</strong></H4>
-
-<code><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDDocIsStaticXFA(</code><a href="pdlayer_PDDoc.html#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>);</code> </code>
-
-<H4><strong>Parameters</strong></H4>
-
-<Table class="paramsTable"><tr><td><div><code>doc</code></div>
-</td><td><div><a href="pdslayer_General.html#IN">IN</a> The PDF document object. </div>
-</td></tr></Table>
-
-<H4><strong>Returns</strong></H4>
-
-<div>if True, the document is Static XFA. </div>
 </section>
 <section><div class="infoRow"><h3 id="PDDocOptimizeDefaultParams"><strong><span style="color:grey;">PDDocOptimizeDefaultParams</span></strong></h3>
 
