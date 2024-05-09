@@ -25,7 +25,6 @@ PD Layer: PDWord
 <li><a href="#Definitions">Definitions</a></li>
 <li><a href="#Typedefs">Typedefs</a></li>
 <li><a href="#CallbackSignatures">Callback Signatures</a></li>
-<li><a href="#Structures">Structures</a></li>
 <li><a href="#Functions">Functions</a></li>
 </ul></nav>
 <section id="Definitions">
@@ -642,7 +641,6 @@ PD Layer: PDWord
 <header><h2>PDWord Typedefs</h2></header>
 <nav><dl>
 <dt><a href="#PDWord">PDWord</a></dt><dd> -  A word in a PDF file.</dd>
-<dt><a href="#PDWordFinder">PDWordFinder</a></dt><dd> -  Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document.</dd>
 </dl></nav>
 <section><div class="infoRow"><h3 id="PDWord"><strong><span style="color:grey;">PDWord</span></strong></h3>
 
@@ -690,60 +688,12 @@ PD Layer: PDWord
 </td></tr></table>
 </nav>
 </section>
-<section><div class="infoRow"><h3 id="PDWordFinder"><strong><span style="color:grey;">PDWordFinder</span></strong></h3>
-
-<div class="headerRef"><strong>Header:</strong> PDExpT.h:3243</div>
-</div>
-
-<div><H4><strong>Description</strong></H4>
-
-<div>Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document. </div>
-</div>
-
-<H4><strong>Syntax</strong></H4>
-
-<code><code>typedef</code> <code>struct</code> <code>_t_PDWordFinder</code> <code>*</code><code>PDWordFinder</code><code>;</code> </code>
-
-<H4><strong>Returned From</strong></H4>
-
-<nav><table><tr><td><a href="pdlayer_PDDoc.html#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file."><code>PDDocCreateWordFinder</code></a></td><td><a href="pdlayer_PDDoc.html#PDDocCreateWordFinderEx" title=" This is a version 6.0 replacement for PDDocCreateWordFinder() and PDDocCreateWordFinderUCS() that adds configurable word-breaking behavior."><code>PDDocCreateWordFinderEx</code></a></td></tr>
-<tr><td><a href="pdlayer_PDDoc.html#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file."><code>PDDocCreateWordFinderUCS</code></a></td><td><a href="pdlayer_PDDoc.html#PDDocGetWordFinder" title=" Gets the word finder associated with a document."><code>PDDocGetWordFinder</code></a></td></tr></table>
-</nav>
-
-<H4><strong>Used By</strong></H4>
-
-<nav><table><tr><td><a href="pdlayer_PDWordFinder.html#PDWordFinderAcquireVisibleWordList" title=" Finds all words on the specified page that are visible in the given optional-content context and returns one or more tables containing the words."><code>PDWordFinderAcquireVisibleWordList</code></a></td><td><a href="pdlayer_PDWordFinder.html#PDWordFinderAcquireWordList" title=" Finds all words on the specified page and returns one or more tables containing the words."><code>PDWordFinderAcquireWordList</code></a></td></tr>
-<tr><td><a href="pdlayer_PDWordFinder.html#PDWordFinderDestroy" title=" Destroys a word finder."><code>PDWordFinderDestroy</code></a></td><td><a href="pdlayer_PDWordFinder.html#PDWordFinderEnumVisibleWords" title=" Extracts visible words, one at a time, from the specified page or the entire document."><code>PDWordFinderEnumVisibleWords</code></a></td></tr>
-<tr><td><a href="pdlayer_PDWordFinder.html#PDWordFinderEnumWords" title=" Extracts words, one at a time, from the specified page or the entire document."><code>PDWordFinderEnumWords</code></a></td><td><a href="pdlayer_PDWordFinder.html#PDWordFinderEnumWordsStr" title=" Constructs a PDWord list from a Unicode string, and calls a user-supplied procedure once for each word found."><code>PDWordFinderEnumWordsStr</code></a></td></tr>
-<tr><td><a href="pdlayer_PDWordFinder.html#PDWordFinderGetLatestAlgVersion" title=" Gets the version number of the specified word finder, or the version number of the latest word finder algorithm."><code>PDWordFinderGetLatestAlgVersion</code></a></td><td><a href="pdlayer_PDWord.html#PDWordFinderGetNthWord" title=" Gets the nth word in the word list obtained using PDWordFinderAcquireWordList()."><code>PDWordFinderGetNthWord</code></a></td></tr>
-<tr><td><a href="pdlayer_PDWordFinder.html#PDWordFinderReleaseWordList" title=" Releases the word list for a given page."><code>PDWordFinderReleaseWordList</code></a></td><td><a href="pdlayer_PDWord.html#PDWordGetNthCharStyle" title=" Returns a PDStyle object for the nth style in a word."><code>PDWordGetNthCharStyle</code></a></td></tr>
-<tr><td><a href="pdlayer_PDWord.html#PDWordProc" title=" A callback for PDWordFinderEnumWords."><code>PDWordProc</code></a></td><td><div></div>
-</td></tr></table>
-</nav>
-</section>
 </section>
 <section id="CallbackSignatures">
 <header><h2>PDWord Callback Signatures</h2></header>
 <nav><dl>
-<dt><a href="#PDWordFinderCtrlProc">PDWordFinderCtrlProc</a></dt><dd> -  This is passed to PDWordFinderSetCtrlProc().</dd>
 <dt><a href="#PDWordProc">PDWordProc</a></dt><dd> -  A callback for PDWordFinderEnumWords.</dd>
 </dl></nav>
-<section><div class="infoRow"><h3 id="PDWordFinderCtrlProc"><strong><span style="color:grey;">PDWordFinderCtrlProc</span></strong></h3>
-
-<div class="headerRef"><strong>Header:</strong> PDExpT.h:3784</div>
-</div>
-
-<div><H4><strong>Description</strong></H4>
-
-<div><p>This is passed to PDWordFinderSetCtrlProc().<br/>
-<p>This is the callback function called by Word Finder when its page enumeration process takes longer than the specified time (in seconds). Return <a href="aslayer_General.html#true"><code>true</code></a> to continue the enumeration process, or <a href="aslayer_General.html#false"><code>false</code></a> to stop. <code>startTime</code> is the value that was set by <a href="aslayer_ASTimeSpan.html#ASGetSecs" title=" Returns the number of seconds elapsed since midnight, January 1, 1970, coordinated universal time, up to the current time.">ASGetSecs</a>() when the Word Finder started processing the current page.<br/></p>
-</div>
-</div>
-
-<H4><strong>Syntax</strong></H4>
-
-<code><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDWordFinderCtrlProc(</code><a href="aslayer_General.html#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>startTime</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
-</section>
 <section><div class="infoRow"><h3 id="PDWordProc"><strong><span style="color:grey;">PDWordProc</span></strong></h3>
 
 <div class="headerRef"><strong>Header:</strong> PDExpT.h:3270</div>
@@ -756,7 +706,7 @@ PD Layer: PDWord
 
 <H4><strong>Syntax</strong></H4>
 
-<code><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDWordProc(</code><a href="pdlayer_PDWord.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>wObj</code><code>,</code> <a href="pdlayer_PDWord.html#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>wInfo</code><code>,</code> <a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>pgNum</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+<code><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDWordProc(</code><a href="pdlayer_PDWordFinder.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>wObj</code><code>,</code> <a href="pdlayer_PDWord.html#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>wInfo</code><code>,</code> <a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>pgNum</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
 
 <H4><strong>Parameters</strong></H4>
 
@@ -782,115 +732,6 @@ PD Layer: PDWord
 <nav><table><tr><td><a href="pdlayer_PDWordFinder.html#PDWordFinderEnumVisibleWords" title=" Extracts visible words, one at a time, from the specified page or the entire document."><code>PDWordFinderEnumVisibleWords</code></a></td><td><a href="pdlayer_PDWordFinder.html#PDWordFinderEnumWords" title=" Extracts words, one at a time, from the specified page or the entire document."><code>PDWordFinderEnumWords</code></a></td></tr>
 <tr><td><a href="pdlayer_PDWordFinder.html#PDWordFinderEnumWordsStr" title=" Constructs a PDWord list from a Unicode string, and calls a user-supplied procedure once for each word found."><code>PDWordFinderEnumWordsStr</code></a></td><td><div></div>
 </td></tr></table>
-</nav>
-</section>
-</section>
-<section id="Structures">
-<header><h2>PDWord Structures</h2></header>
-<nav><dl>
-<dt><a href="#_t_PDWordFinderConfig">_t_PDWordFinderConfig</a></dt><dd> -  A word finder configuration that customizes the way the extraction is performed.</dd>
-</dl></nav>
-<section><div class="infoRow"><h3 id="_t_PDWordFinderConfig"><strong><span style="color:grey;">_t_PDWordFinderConfig</span></strong></h3>
-
-<div class="headerRef"><strong>Header:</strong> PDExpT.h:3547</div>
-</div>
-
-<div><H4><strong>Description</strong></H4>
-
-<div>A word finder configuration that customizes the way the extraction is performed. In the default configuration, all options are <a href="aslayer_General.html#false"><code>false</code></a>. </div>
-</div>
-
-<H4><strong>Syntax</strong></H4>
-
-<div><table><tr><td><code><code>struct _t_PDWordFinderConfig {</code> </code>
-</td><td><div></div>
-</td></tr>
-<tr><td><div class="structMember"><a href="aslayer_General.html#ASSize_t"><code>ASSize_t</code></a> <code>recSize</code><code>;</code> </div>
-</td><td><div>This is always <code>sizeof(PDWordFinderConfigRec)</code>. </div>
-</td></tr>
-<tr><td><div class="structMember"><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>disableTaggedPDF</code><code>;</code> </div>
-</td><td><div>When <a href="aslayer_General.html#true"><code>true</code></a>, it disables tagged PDF support and treats the document as non-tagged PDF. Use this to keep the word finder in legacy mode when it is created with the latest algorithm version (WF_LATEST_VERSION). </div>
-</td></tr>
-<tr><td><div class="structMember"><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>noXYSort</code><code>;</code> </div>
-</td><td><div>When <a href="aslayer_General.html#true"><code>true</code></a>, it disables generating an XY-ordered word list. This option replaces the sort order flags in the older version of the word finder creation command (PDDocCreateWordFinder()). Setting this option is equivalent to omitting the <a href="pdlayer_PDWord.html#WXE_XY_SORT"><code>WXE_XY_SORT</code></a> flag. </div>
-</td></tr>
-<tr><td><div class="structMember"><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>preserveSpaces</code><code>;</code> </div>
-</td><td><div>When <a href="aslayer_General.html#true"><code>true</code></a>, the word finder preserves space characters during word breaking. Otherwise, spaces are removed from output text. When <a href="aslayer_General.html#false"><code>false</code></a> (the default), you can add spaces later by considering the word attribute flag <a href="pdlayer_PDWord.html#WXE_ADJACENT_TO_SPACE" title=" The character following the end of the word is a space (either an explicit space character encoded in a string, or one that appears implicitly because the drawing point was moved)."><code>WXE_ADJACENT_TO_SPACE</code></a>, but there is no way to restore the exact number of consecutive space characters. </div>
-</td></tr>
-<tr><td><div class="structMember"><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>noLigatureExp</code><code>;</code> </div>
-</td><td><div><p>
-<p>When <a href="aslayer_General.html#true"><code>true</code></a>, and the font has a ToUnicode table, it disables the expansion of ligatures using the default ligatures. The default ligatures are:<br/></p>
-
-<UL><li> fi<br/><li> ff<br/><li> fl<br/><li> ffi<br/><li> ffl<br/><li> st<br/><li> oe<br/><li> OE<br/></UL>
-
-<p>
-<p>When <code>noLigatureExp</code> is <a href="aslayer_General.html#true"><code>true</code></a> and the font does not have a ToUnicode table, the ligature is expanded based on whether there is a representation of the ligature in the defined <code>codePage</code>. If there is no representation, the ligature is expanded; otherwise, the ligature is not expanded.<br/></p>
-</div>
-</td></tr>
-<tr><td><div class="structMember"><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>noEncodingGuess</code><code>;</code> </div>
-</td><td><div>When <a href="aslayer_General.html#true"><code>true</code></a>, it disables guessing encoding of fonts that have unknown or custom encoding when there is no ToUnicode table. Inappropriate encoding conversions can cause the word finder to mistakenly recognize non-Roman single-byte fonts as Standard Roman encoding fonts and extract the text in an unusable format. When this option is selected, the word finder avoids such unreliable encoding conversions and tries to provide the original characters without any encoding conversion for a client with its own encoding handling. Use the <a href="pdlayer_PDWord.html#PDWordGetCharEncFlags" title=" Gets the WordFinder Character Encoding Flags for each character in a word, which specify how reliably the word finder identified the character encoding.">PDWordGetCharEncFlags</a>() method to detect such characters. </div>
-</td></tr>
-<tr><td><div class="structMember"><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>unknownToStdEnc</code><code>;</code> </div>
-</td><td><div>When <a href="aslayer_General.html#true"><code>true</code></a>, it assumes any font with unknown or custom encoding to be Standard Roman. This option overrides the <code>noEncodingGuess</code> option. </div>
-</td></tr>
-<tr><td><div class="structMember"><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ignoreCharGaps</code><code>;</code> </div>
-</td><td><div>When <a href="aslayer_General.html#true"><code>true</code></a>, it disables converting large character gaps to space characters, so that the word finder reports a character space only when a space character appears in the original PDF content. This option has no effect on tagged PDF. </div>
-</td></tr>
-<tr><td><div class="structMember"><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ignoreLineGaps</code><code>;</code> </div>
-</td><td><div>When <a href="aslayer_General.html#true"><code>true</code></a>, it disables treating vertical movements as line breaks, so that the word finder determines a line break only when a line break character or special tag information appears in the original PDF content. This option has no effect on tagged PDF. </div>
-</td></tr>
-<tr><td><div class="structMember"><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>noAnnots</code><code>;</code> </div>
-</td><td><div>When <a href="aslayer_General.html#true"><code>true</code></a>, it disables extracting text from text annotations. Normally, the word finder extracts text from the normal appearances of text annotations that are inside the page crop box. </div>
-</td></tr>
-<tr><td><div class="structMember"><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>noHyphenDetection</code><code>;</code> </div>
-</td><td><div>When <a href="aslayer_General.html#true"><code>true</code></a>, it disables finding and removing soft hyphens in non-tagged PDF, so that the word finder trusts hard hyphens as non-soft hyphens. This option has no effect on tagged PDF files. Normally, the word finder does not differentiate between soft and hard hyphen characters in non-tagged PDF files, because these are often misused. </div>
-</td></tr>
-<tr><td><div class="structMember"><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>trustNBSpace</code><code>;</code> </div>
-</td><td><div>When <a href="aslayer_General.html#true"><code>true</code></a>, it disables treating non-breaking space characters as regular space characters in non-tagged PDF files, so that the word finder preserves the space without breaking the word. This option has no effect on tagged PDF files. Normally, the word finder does not differentiate between breaking and non-breaking space characters in non-tagged PDF files, because these are often misused. </div>
-</td></tr>
-<tr><td><div class="structMember"><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>noExtCharOffset</code><code>;</code> </div>
-</td><td><div>When <a href="aslayer_General.html#true"><code>true</code></a>, it disables generating extended character offset information to improve text extraction performance. The extended character offset information is necessary to determine exact character offset for character-by-character text selection. The beginning character offset of each word is always available regardless of this option, and can be used for word-by-word text selection with reasonable accuracy. When a client has no need for the detailed character offset information, it can use this option to improve the text extraction efficiency. There is a minor difference in the text extraction performance, and less memory is needed for the extracted word list. </div>
-</td></tr>
-<tr><td><div class="structMember"><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>noStyleInfo</code><code>;</code> </div>
-</td><td><div>When <a href="aslayer_General.html#true"><code>true</code></a>, it disables generating character style information to improve text extraction performance and memory efficiency. When you select this option, you cannot use <a href="pdlayer_PDWord.html#PDWordGetNthCharStyle" title=" Returns a PDStyle object for the nth style in a word.">PDWordGetNthCharStyle</a>() and <a href="pdlayer_PDWord.html#PDWordGetStyleTransition" title=" Gets the locations of style transitions in a word.">PDWordGetStyleTransition</a>() with the output of the word finder. </div>
-</td></tr>
-<tr><td><div class="structMember"><code>const</code> <a href="aslayer_General.html#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>*</code><code>decomposeTbl</code><code>;</code> </div>
-</td><td><div>A custom UTF-16 decomposition table. This table can be used to expand Unicode ligatures not included in the default ligature list. Each decomposition record contains a UTF-16 character code (either a 16-bit or 32-bit surrogate), a replacement UTF16 string, and the delimiter <code>0x0000</code>. </div>
-</td></tr>
-<tr><td><div class="structMember"><a href="aslayer_General.html#ASSize_t"><code>ASSize_t</code></a> <code>decomposeTblSize</code><code>;</code> </div>
-</td><td><div>The size of the <code>decomposeTbl</code> in bytes. </div>
-</td></tr>
-<tr><td><div class="structMember"><code>const</code> <a href="aslayer_General.html#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>*</code><code>charTypeTbl</code><code>;</code> </div>
-</td><td><div>A custom character type table to enhance word breaking quality. Each character type record contains a region start value, a region end value, and a character type flag as defined in PDExpT.h. A character code is in UTF-16, and is either a 16-bit or a 32-bit surrogate. </div>
-</td></tr>
-<tr><td><div class="structMember"><a href="aslayer_General.html#ASSize_t"><code>ASSize_t</code></a> <code>charTypeTblSize</code><code>;</code> </div>
-</td><td><div>The size of the <code>charTypeTbl</code> in bytes. </div>
-</td></tr>
-<tr><td><div class="structMember"><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>preserveRedundantChars</code><code>;</code> </div>
-</td><td><div><p>When <a href="aslayer_General.html#true"><code>true</code></a>, it disables detecting and removing redundant characters. Some PDF pages have the same text drawn multiple times on the same spot to get a special visual effect. Normally, those redundant characters are removed from the word finder output.<br/>
-<p>Since this option may leave extra characters with overlapping bounding boxes, using it together with the <code>disableCharReordering</code> option is recommended for more consistent text extraction results.<br/></p>
-</div>
-</td></tr>
-<tr><td><div class="structMember"><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>disableCharReordering</code><code>;</code> </div>
-</td><td><div>When <a href="aslayer_General.html#true"><code>true</code></a>, it disables reconstructing the character orders, and the word finding algorithm is applied to the characters in the drawing order. By default, word finder reorders characters on a single line by the relative horizontal character locations. Most of the time, the character reordering feature improves the text extraction quality. However, on a PDF page with heavily overlapped character bounding boxes, the outcome becomes somewhat unpredictable. In such case, disabling the character reordering ( <code>disableCharReordering</code> <code>=</code> <a href="aslayer_General.html#true"><code>true</code></a>) may produce a more static result. </div>
-</td></tr>
-<tr><td><div class="structMember"><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>noSkewedQuads</code><code>;</code> </div>
-</td><td><div>When <a href="aslayer_General.html#true"><code>true</code></a>, it disables the creation of a quad per character for skewed words, words with a horizontally-aligned, but non-rectangular, bounding region. Each skewed word will, instead, be associated with a single rectangular, bounding region. </div>
-</td></tr>
-<tr><td><div class="structMember"><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>noTextRenderMode3</code><code>;</code> </div>
-</td><td><div>When <a href="aslayer_General.html#true"><code>true</code></a>, it disables extracting text with Text Rendering mode Tr = 3 ("Neither fill nor stroke text (invisible).") Normally, the word finder extracts such text as any other. </div>
-</td></tr>
-<tr><td><div class="structMember"><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>preciseQuad</code><code>;</code> </div>
-</td><td><div></div>
-</td></tr>
-<tr><td><code id="PDWordFinderConfigRec"><code>}</code> <a href="pdlayer_PDWord.html#_t_PDWordFinderConfig" title=" A word finder configuration that customizes the way the extraction is performed."><code>PDWordFinderConfigRec</code></a><code>,</code> <code>*</code><a href="pdlayer_PDWord.html#_t_PDWordFinderConfig" title=" A word finder configuration that customizes the way the extraction is performed."><code>PDWordFinderConfig</code></a><code>;</code> </code>
-</td><td><div></div>
-</td></tr></table>
-</div>
-
-<H4><strong>Used By</strong></H4>
-
-<nav><table><tr><td><a href="pdlayer_PDDoc.html#PDDocCreateWordFinderEx" title=" This is a version 6.0 replacement for PDDocCreateWordFinder() and PDDocCreateWordFinderUCS() that adds configurable word-breaking behavior."><code>PDDocCreateWordFinderEx</code></a></td><td><a href="dlextras_PDDocTextFinder.html#PDDocTextFinderCreate" title=" Creates a document text finder that is used to extract words or phrases that match regular expressions from a PDF file based on words extracted using a given word finder configuration."><code>PDDocTextFinderCreate</code></a></td></tr></table>
 </nav>
 </section>
 </section>
@@ -930,7 +771,7 @@ PD Layer: PDWord
 
 <div><div><H4><strong>Description</strong></H4>
 
-<div>Creates a text selection object for a given page that includes all words in a word list, as returned from a <a href="pdlayer_PDWord.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> method. The text selection can then be set as the current selection using AVDocSetSelection(). </div>
+<div>Creates a text selection object for a given page that includes all words in a word list, as returned from a <a href="pdlayer_PDWordFinder.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> method. The text selection can then be set as the current selection using AVDocSetSelection(). </div>
 
 <p class="note"><strong><span style="color:red;">Note:</span></strong> For consistent text selection behavior, avoid using other <a href="pdlayer_PDTextSelect.html#PDTextSelect" title=" A pointer to a PDTextSelect struct.">PDTextSelect</a> creation methods which depend on the word finder versions and word offsets. These include <a href="pdlayer_PDTextSelect.html#PDTextSelectCreatePageHiliteEx" title=" Adds the WFVersion parameter to PDTextSelectCreatePageHilite().">PDTextSelectCreatePageHiliteEx</a>(), <a href="pdlayer_PDTextSelect.html#PDTextSelectCreateRanges" title=" Creates a text selection from one or more ranges.">PDTextSelectCreateRanges</a>(), <a href="pdlayer_PDTextSelect.html#PDTextSelectCreateRangesEx" title=" Adds the WFVersion parameter to PDTextSelectCreateRanges().">PDTextSelectCreateRangesEx</a>(), <a href="pdlayer_PDTextSelect.html#PDTextSelectCreateWordHilite" title=" Creates a text selection from a list of highlights specified as word offsets from the start of the page.">PDTextSelectCreateWordHilite</a>(), and <a href="pdlayer_PDTextSelect.html#PDTextSelectCreateWordHiliteEx" title=" Adds the WFVersion parameter to PDTextSelectCreateWordHilite().">PDTextSelectCreateWordHiliteEx</a>(). </p>
 </div>
@@ -1081,7 +922,7 @@ PD Layer: PDWord
 
 <H4><strong>Syntax</strong></H4>
 
-<code><a href="pdlayer_PDWord.html#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>PDWordFinderGetNthWord(</code><a href="pdlayer_PDWord.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>wObj</code><code>,</code> <a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>nTh</code><code>);</code> </code>
+<code><a href="pdlayer_PDWord.html#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>PDWordFinderGetNthWord(</code><a href="pdlayer_PDWordFinder.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>wObj</code><code>,</code> <a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>nTh</code><code>);</code> </code>
 
 <H4><strong>Parameters</strong></H4>
 
@@ -1495,7 +1336,7 @@ PD Layer: PDWord
 
 <H4><strong>Syntax</strong></H4>
 
-<code><a href="pdlayer_PDStyle.html#PDStyle" title=" Provides access to information about the fonts, font sizes, and colors used in a PDWord."><code>PDStyle</code></a> <code>PDWordGetNthCharStyle(</code><a href="pdlayer_PDWord.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>wObj</code><code>,</code> <a href="pdlayer_PDWord.html#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>,</code> <a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>dex</code><code>);</code> </code>
+<code><a href="pdlayer_PDStyle.html#PDStyle" title=" Provides access to information about the fonts, font sizes, and colors used in a PDWord."><code>PDStyle</code></a> <code>PDWordGetNthCharStyle(</code><a href="pdlayer_PDWordFinder.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>wObj</code><code>,</code> <a href="pdlayer_PDWord.html#PDWord" title=" A word in a PDF file."><code>PDWord</code></a> <code>word</code><code>,</code> <a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>dex</code><code>);</code> </code>
 
 <H4><strong>Parameters</strong></H4>
 
@@ -1661,7 +1502,7 @@ PD Layer: PDWord
 </td><td><div>The word whose string is obtained. </div>
 </td></tr>
 <tr><td><div><code>str</code></div>
-</td><td><div>(Filled by the method) The string. The encoding of the string is the encoding used by the <a href="pdlayer_PDWord.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> that supplied the <a href="pdlayer_PDWord.html#PDWord" title=" A word in a PDF file.">PDWord</a>. For instance, if <a href="pdlayer_PDDoc.html#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file.">PDDocCreateWordFinderUCS</a>() is used to create the word finder, <a href="pdlayer_PDWord.html#PDWordGetString" title=" This method gets a word's text.">PDWordGetString</a>() returns only Unicode. There is no way to detect Unicode strings returned by <a href="pdlayer_PDWord.html#PDWordGetString" title=" This method gets a word's text.">PDWordGetString</a>(), since there is no UCS header ( <code>FEFF</code>) added to each string returned. </div>
+</td><td><div>(Filled by the method) The string. The encoding of the string is the encoding used by the <a href="pdlayer_PDWordFinder.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> that supplied the <a href="pdlayer_PDWord.html#PDWord" title=" A word in a PDF file.">PDWord</a>. For instance, if <a href="pdlayer_PDDoc.html#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file.">PDDocCreateWordFinderUCS</a>() is used to create the word finder, <a href="pdlayer_PDWord.html#PDWordGetString" title=" This method gets a word's text.">PDWordGetString</a>() returns only Unicode. There is no way to detect Unicode strings returned by <a href="pdlayer_PDWord.html#PDWordGetString" title=" This method gets a word's text.">PDWordGetString</a>(), since there is no UCS header ( <code>FEFF</code>) added to each string returned. </div>
 </td></tr>
 <tr><td><div><code>len</code></div>
 </td><td><div>The length of <code>str</code> in bytes. Up to <code>len</code> characters of word will be copied into <code>str</code>. If <code>str</code> is long enough, it will be <a href="aslayer_General.html#NULL"><code>NULL</code></a>-terminated. </div>

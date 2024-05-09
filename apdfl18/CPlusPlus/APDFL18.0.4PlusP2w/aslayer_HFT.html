@@ -92,7 +92,6 @@ Acro Support Layer: HFT
 <dt><a href="#HFT">HFT</a></dt><dd> - </dd>
 <dt><a href="#HFTData">HFTData</a></dt><dd> - </dd>
 <dt><a href="#HFTEntry">HFTEntry</a></dt><dd> -  An HFTEntry may be cast to a pointer to a function whose prototype must be provided by the HFT's description file.</dd>
-<dt><a href="#HFTServer">HFTServer</a></dt><dd> -  Each HFT is serviced by an HFT server.</dd>
 <dt><a href="#Selector">Selector</a></dt><dd> -  Uniquely identifies an entry within an HFT.</dd>
 </dl></nav>
 <section><div class="infoRow"><h3 id="ASVersion"><strong><span style="color:grey;">ASVersion</span></strong></h3>
@@ -198,34 +197,6 @@ Acro Support Layer: HFT
 </td></tr></table>
 </nav>
 </section>
-<section><div class="infoRow"><h3 id="HFTServer"><strong><span style="color:grey;">HFTServer</span></strong></h3>
-
-<div class="headerRef"><strong>Header:</strong> ASExpT.h:586</div>
-</div>
-
-<div><H4><strong>Description</strong></H4>
-
-<div>Each <a href="aslayer_HFT.html#HFT">HFT</a> is serviced by an <a href="aslayer_HFT.html#HFT">HFT</a> server. The <a href="aslayer_HFT.html#HFT">HFT</a> server is responsible for handling requests to obtain or destroy its <a href="aslayer_HFT.html#HFT">HFT</a>. An <a href="aslayer_HFT.html#HFTServer" title=" Each HFT is serviced by an HFT server."><code>HFTServer</code></a> is an object that manages several versions of an <a href="aslayer_HFT.html#HFT">HFT</a> for different clients which may have been compiled with different versions of the HFT's API. </div>
-</div>
-
-<H4><strong>Syntax</strong></H4>
-
-<code><code>typedef</code> <code>struct</code> <code>_t_HFTServer</code> <code>*</code><code>HFTServer</code><code>;</code> </code>
-
-<H4><strong>Returned From</strong></H4>
-
-<nav><table><tr><td><a href="aslayer_HFTServer.html#HFTServerNew" title=" Creates a new Host Function Table (HFT) server."><code>HFTServerNew</code></a></td><td><div></div>
-</td></tr></table>
-</nav>
-
-<H4><strong>Used By</strong></H4>
-
-<nav><table><tr><td><a href="aslayer_HFT.html#HFTNew" title=" Obsolete."><code>HFTNew</code></a></td><td><a href="aslayer_HFT.html#HFTNewEx" title=" Extends HFTNew() with version information in Acrobat 6."><code>HFTNewEx</code></a></td></tr>
-<tr><td><a href="aslayer_HFTServer.html#HFTServerDestroy" title=" Destroys an HFT server."><code>HFTServerDestroy</code></a></td><td><a href="aslayer_HFTServer.html#HFTServerDestroyProc" title=" A callback for an HFT server."><code>HFTServerDestroyProc</code></a></td></tr>
-<tr><td><a href="aslayer_HFT.html#HFTServerProvideHFTProc" title=" A callback for an HFT server."><code>HFTServerProvideHFTProc</code></a></td><td><div></div>
-</td></tr></table>
-</nav>
-</section>
 <section><div class="infoRow"><h3 id="Selector"><strong><span style="color:grey;">Selector</span></strong></h3>
 
 <div class="headerRef"><strong>Header:</strong> CoreExpT.h:150</div>
@@ -266,7 +237,7 @@ Acro Support Layer: HFT
 
 <H4><strong>Syntax</strong></H4>
 
-<code><a href="aslayer_HFT.html#HFT"><code>HFT</code></a> <code>HFTServerProvideHFTProc(</code><a href="aslayer_HFT.html#HFTServer" title=" Each HFT is serviced by an HFT server."><code>HFTServer</code></a> <code>hftServer</code><code>,</code> <a href="aslayer_HFT.html#ASVersion" title=" An HFT version number."><code>ASVersion</code></a> <code>version</code><code>,</code> <code>void</code> <code>*</code><code>rock</code><code>);</code> </code>
+<code><a href="aslayer_HFT.html#HFT"><code>HFT</code></a> <code>HFTServerProvideHFTProc(</code><a href="aslayer_HFTServer.html#HFTServer" title=" Each HFT is serviced by an HFT server."><code>HFTServer</code></a> <code>hftServer</code><code>,</code> <a href="aslayer_HFT.html#ASVersion" title=" An HFT version number."><code>ASVersion</code></a> <code>version</code><code>,</code> <code>void</code> <code>*</code><code>rock</code><code>);</code> </code>
 
 <H4><strong>Parameters</strong></H4>
 
@@ -485,7 +456,7 @@ Acro Support Layer: HFT
 
 <H4><strong>Syntax</strong></H4>
 
-<code><a href="aslayer_HFT.html#HFT"><code>HFT</code></a> <code>HFTNew(</code><a href="aslayer_HFT.html#HFTServer" title=" Each HFT is serviced by an HFT server."><code>HFTServer</code></a> <code>hftServer</code><code>,</code> <a href="aslayer_General.html#ASTCount"><code>ASTCount</code></a> <code>numSelectors</code><code>);</code> </code>
+<code><a href="aslayer_HFT.html#HFT"><code>HFT</code></a> <code>HFTNew(</code><a href="aslayer_HFTServer.html#HFTServer" title=" Each HFT is serviced by an HFT server."><code>HFTServer</code></a> <code>hftServer</code><code>,</code> <a href="aslayer_General.html#ASTCount"><code>ASTCount</code></a> <code>numSelectors</code><code>);</code> </code>
 
 <H4><strong>Parameters</strong></H4>
 
@@ -519,7 +490,7 @@ Acro Support Layer: HFT
 
 <H4><strong>Syntax</strong></H4>
 
-<code><a href="aslayer_HFT.html#HFT"><code>HFT</code></a> <code>HFTNewEx(</code><a href="aslayer_HFT.html#HFTServer" title=" Each HFT is serviced by an HFT server."><code>HFTServer</code></a> <code>hftServer</code><code>,</code> <a href="aslayer_HFT.html#HFTData"><code>HFTData</code></a> <code>data</code><code>);</code> </code>
+<code><a href="aslayer_HFT.html#HFT"><code>HFT</code></a> <code>HFTNewEx(</code><a href="aslayer_HFTServer.html#HFTServer" title=" Each HFT is serviced by an HFT server."><code>HFTServer</code></a> <code>hftServer</code><code>,</code> <a href="aslayer_HFT.html#HFTData"><code>HFTData</code></a> <code>data</code><code>);</code> </code>
 
 <H4><strong>Parameters</strong></H4>
 
