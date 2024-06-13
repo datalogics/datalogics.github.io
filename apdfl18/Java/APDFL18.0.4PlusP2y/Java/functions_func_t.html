@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('functions_func_t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="contents">
+&#160;
+
+<h3><a id="index_t"></a>- t -</h3><ul>
+<li>terminate()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_library.html#aeaaf6425d37b9e4d6946a49b92e17f69">com.datalogics.PDFL.Library</a>
+</li>
+<li>Text()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text.html#aa248a32a9e0b130a1e622d52fbdb04cd">com.datalogics.PDFL.Text</a>
+</li>
+<li>TextMarkupAnnotation()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_markup_annotation.html#ab86d94ce57914e9cf040a5b80aa089de">com.datalogics.PDFL.TextMarkupAnnotation</a>
+</li>
+<li>TextRun()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_run.html#aba49bea034936aebae8aa297fe8ade94">com.datalogics.PDFL.TextRun</a>
+</li>
+<li>TextState()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html#aefe5c6f7bb97bec868e82b92abe68f54">com.datalogics.PDFL.TextState</a>
+</li>
+<li>toRect()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_quad.html#a8f0d6237952cc1dd36a291af66fe1723">com.datalogics.PDFL.Quad</a>
+</li>
+<li>toString()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_action.html#aaba56c3c5963a05efa041ba3495ee8a1">com.datalogics.PDFL.Action</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_annotation.html#aec4ecf5541b4ecc7224b0c416808c1f6">com.datalogics.PDFL.Annotation</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_axial_shading_pattern.html#ab1c9c3e97ac7414b207a5318ea429d0c">com.datalogics.PDFL.AxialShadingPattern</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_bookmark.html#a79c93bcb0a9b5aab4a440d0876e6df24">com.datalogics.PDFL.Bookmark</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html#a7c1bee8bdb4613c4e7f8285fbf8c21f9">com.datalogics.PDFL.Clip</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_close_path.html#a209a6b77c0eb7c99a94dcae9d007f5f2">com.datalogics.PDFL.ClosePath</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color.html#abbb19a4d465add3e88022f5b8161850a">com.datalogics.PDFL.Color</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html#ada85cef74f1402eec3090629dfd086af">com.datalogics.PDFL.ColorSpace</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html#a1f633462bef14ec7894c22c25cd4ad0e">com.datalogics.PDFL.Content</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_curve_to.html#a5a2167cd80fb9ba62e899b0a2d68665b">com.datalogics.PDFL.CurveTo</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_curve_to_v.html#ab13b1585873c33e581401e3a6c8a5125">com.datalogics.PDFL.CurveToV</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_curve_to_y.html#a2af6b2049550bb91c288cb773b82d9d2">com.datalogics.PDFL.CurveToY</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_exponential_function.html#aa5d9d106a746f839545a7877d18ccecc">com.datalogics.PDFL.ExponentialFunction</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_file_specification.html#a1c47fa87c4a4a192f974715a6e245954">com.datalogics.PDFL.FileSpecification</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_function.html#a683a98c96a45272b3ac53a10e1b566f3">com.datalogics.PDFL.Function</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_line_to.html#a239ef7fcb2eb28753f35d46da9a026ab">com.datalogics.PDFL.LineTo</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#a473ab90872f5a4d2653dcce21fe4556d">com.datalogics.PDFL.Matrix</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_move_to.html#ad707d4eb1ef275621005918cf5e9c597">com.datalogics.PDFL.MoveTo</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_named_function.html#ab97f21a098cc3ddbb457ef849bba2b92">com.datalogics.PDFL.NamedFunction</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_context.html#ab1435a742e929dc8a9dd3a5eac0a574d">com.datalogics.PDFL.OptionalContentContext</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_group.html#ab44ea62d4d9c3df4ec32aba751e7cad2">com.datalogics.PDFL.OptionalContentGroup</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict.html#adc6b629ad3bd641f9eb21063dbb67153">com.datalogics.PDFL.OptionalContentMembershipDict</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label.html#a4e60efa0aab5c3a7f88bd0b0c60bb2d3">com.datalogics.PDFL.PageLabel</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_pattern.html#ae987ae3c5b0dde95354cc0ab17997113">com.datalogics.PDFL.Pattern</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_array.html#a41aeb524885bc60cb4bc13b6f6d57653">com.datalogics.PDFL.PDFArray</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_boolean.html#a6a53a8a6501c91e7d9c1940f0a556fe0">com.datalogics.PDFL.PDFBoolean</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html#a53ae3cff77b66cdc76c74cb5ebd5d49e">com.datalogics.PDFL.PDFDict</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_integer.html#af010bd45a4d3f740cb82c3c91d66e81c">com.datalogics.PDFL.PDFInteger</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_name.html#a4b15813de70e4034e69b8613ae0131a5">com.datalogics.PDFL.PDFName</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#a726a503429acda60aee31be1fd30bc46">com.datalogics.PDFL.PDFObject</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#aec3e0e2e40197cb10156dd8ef3007b8c">com.datalogics.PDFL.PDFReal</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_stream.html#aa0180d6309051060ab15bee234592287">com.datalogics.PDFL.PDFStream</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_string.html#a1400d701b0a0496886cd1a1916e7abd2">com.datalogics.PDFL.PDFString</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html#a737ef9223c9ea7ac0d136dabe7e19d56">com.datalogics.PDFL.Point</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_post_script_calculator_function.html#a742e7250e357690eaf68880e9b01d643">com.datalogics.PDFL.PostScriptCalculatorFunction</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_quad.html#a1639edce7fb5a733e289958d0abb200d">com.datalogics.PDFL.Quad</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a04586487c5ff23f8271af5245bbd236d">com.datalogics.PDFL.Rect</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect_segment.html#a2ffcd7586b1631ed30b0ba92fd4c8f3f">com.datalogics.PDFL.RectSegment</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_remote_destination.html#a7d88bf731b7a4f42ee7d2cc51f5ffc77">com.datalogics.PDFL.RemoteDestination</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_segment.html#a44098e602cf6ffdcf048b2f7c853d3af">com.datalogics.PDFL.Segment</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_shading_pattern.html#a5c640294ea98fae760015eccde12efd6">com.datalogics.PDFL.ShadingPattern</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_style.html#adbb6ac11e0ba8b97e9b4e0ee2297c4c2">com.datalogics.PDFL.Style</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_style_transition.html#a923aa4504ee7ea0305c5b5328d9b35eb">com.datalogics.PDFL.StyleTransition</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_view_destination.html#ae0f40f86e06a5c95a557ef925ef431aa">com.datalogics.PDFL.ViewDestination</a>
+</li>
+<li>transform()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html#aac371e2da56d4b4a64c7374c0f84b642">com.datalogics.PDFL.Point</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_quad.html#a285f8556819e46edff38ace4e62ca2fe">com.datalogics.PDFL.Quad</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a3fb5f2ba222759d44322b39db7ee1429">com.datalogics.PDFL.Rect</a>
+</li>
+<li>translate()
+: <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a22d4ed5c1a9bebaab64263221319e336">com.datalogics.PDFL.Element</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html#a7d9f9f8687328d8d62dcddc1799619ed">com.datalogics.PDFL.Image</a>
+, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html#a7293cfeb19c08560b1c63a2f9ab9484b">com.datalogics.PDFL.Matrix</a>
+</li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>
