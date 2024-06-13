@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">com.datalogics.PDFL.Document Member List</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>This is the complete list of members for <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ab25fd75b729cbd7d4a0cd9fe009d63b5">ALL_PAGES</a></td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#aec2281b3e234f8629bb82078b31e3d77">applyRedactions</a>(Redaction redact)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#abd210531627b04e5919752db72b56027">applyRedactions</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a12b85932af0a81e9598509d73911f66f">BEFORE_FIRST_PAGE</a></td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ae14cc72eef9bee2030b4c520fbb632df">cloneAsPDFADocument</a>(PDFAConvertType type, PDFAConvertParams parms)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a3cdb9bd9eaeecf03b56a1bc250f1b682">cloneAsPDFXDocument</a>(PDFXConvertType type, PDFXConvertParams parms)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a673626bed37c2615661180fec9e1cca0">close</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a3c0e10c6c7a7223c4212516076b69a40">collectNamesOfTree</a>(PDFArray namesArray, java.util.List&lt; FileAttachment &gt; attachments)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a0b2b7c501235a0f0b3d4e03722c51b47">colorConvertPages</a>(ColorConvertParams params)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a7b8066bbbd510a96a3b8d9cb5db9cf6d">convertToExcel</a>(String inputPDFFileFilePath, String outputOfficeFilePath)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ab3f202fad3233f8cbc611bed13fb251c">convertToPowerPoint</a>(String inputPDFFileFilePath, String outputOfficeFilePath)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#af94fe0de359b18559c6e2f5814699db4">convertToWord</a>(String inputPDFFileFilePath, String outputOfficeFilePath)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#af7765987e7177cc0fb9eee7ff5ad71d1">convertXFAFieldsToAcroFormFields</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a1a7acdfb7241a34f9571a065d33a9e55">countXMPMetadataArrayItems</a>(String namespaceName, String path)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#afce417621d89b5361ca3e942e81cadb4">createCollection</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a6db085d153b1ffa906a3b89b809a7708">createNameTree</a>(String nameTreeName)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a02057a65725aa5227876ad6f1f68082b">createPage</a>(int afterPageNum, Rect mediaBox)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a7fdc2e56a4b4ab54f6b55a2f2b9b699b">delete</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ae54cb3787dd6986a87e9451b9bdd7706">delete</a>(Boolean disposing)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#af46bce188d30e279f024228e5395a938">deletePages</a>(int firstPage, int lastPage)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ad1e328c2ec325f3d7eea8ac3e16d86ab">deletePages</a>(int firstPage, int lastPage, java.util.EnumSet&lt; PageDeleteFlags &gt; deleteFlags)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a44b1337de7b74eb7dafc3cde8af21681">Document</a>(long cPtr, boolean cMemoryOwn)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a4142f79b85464c8efeb04a7365f3f9e8">Document</a>(javax.imageio.stream.ImageInputStream stream)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a8c88c315290972142891ac923f6d62c2">Document</a>(StreamFile sf, boolean ignore)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a6d425a35bc38a3cbd0299f232657821c">Document</a>(javax.imageio.stream.ImageInputStream stream, String password, PermissionRequestOperation perms, boolean doRepair)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a65cf2723d67f7ff3137f5b3668ce7727">Document</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a499986883b09987d5f16e4112730edac">Document</a>(String fileName)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a87bb50291bcf3b9f8a3a7527ff5fea9c">Document</a>(String fileName, String password, PermissionRequestOperation perms, boolean doRepair)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#abcd954537a9c92206a9481ec0297713d">Document</a>(String XPSFilename, XPSConvertParams ConversionParams)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a0ac79494bcb176a9d3aa4c917d0d7866">Document</a>(JavaStreamFile file)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a8202d124299cdea6fbedd9ac49c43d06">Document</a>(JavaStreamFile file, String password, PermissionRequestOperation perms, boolean doRepair)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ab524652cfc7fca648e6c738db678c9c7">embedFonts</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a763db680ba40a68732b492cd730dd788">embedFonts</a>(java.util.EnumSet&lt; EmbedFlags &gt; flags)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a7102a10f6cb04374fd830582a41504ad">embedFonts</a>(java.util.EnumSet&lt; EmbedFlags &gt; flags, ProgressMonitor progressMonitor, CancelProc cancelProc, ReportProc reportProc)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a59b28054be5a72b3eff22bc0f650a4ab">embedFonts</a>(java.util.List&lt; Font &gt; fonts)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#adb1c5c4c44816bf6b8314bfe9777951b">embedFonts</a>(java.util.List&lt; Font &gt; fonts, java.util.EnumSet&lt; EmbedFlags &gt; flags)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a7da4a8ab39bb8ce3fb101cd91f61ffce">embedFonts</a>(java.util.List&lt; Font &gt; fonts, java.util.EnumSet&lt; EmbedFlags &gt; flags, ProgressMonitor progressMonitor, CancelProc cancelProc, ReportProc reportProc)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a93dda3364879ca07497330517dbab8b5">embedOCRFonts</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ae9b92692dc47737b0ccf6e2e869d28af">enumIndirectPDFObjects</a>(PDFObjectEnumProc enumProc)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a7eaaae212026090ef7ee8991e3dba607">exportAcroFormsData</a>(String fileName, AcroFormExportType exportType)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#aadcfbedcba48ce638a3737b4a0ca305c">exportAsPostScript</a>(PrintUserParams userParams, String path)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ae5d8005dd7ba2740c3d8c1a0386693fc">exportAsPostScript</a>(PrintUserParams userParams, PrintCancelProc printCancelProc, String path)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#aa91e6a93d85406842f2d1d44960de70b">exportAsPostScript</a>(PrintUserParams userParams, PrintCancelProc printCancelProc, PrintProgressProc printProgressProc, String path)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#abe1a112774e7e83d3c4b7f9bc997e427">exportXFAFormsData</a>(String fileName, XFAFormExportType exportType)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ae331aca41d4f3f6b220a5fc783f05717">finalize</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a2ad83609aee908110d16b829e4d0a1b7">findBookmark</a>(String title, int maxDepth)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ae104aaaed195f36068d246d00fa63bfd">findBookmark</a>(String title)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a673f9d6d62e007bef0206d693c141d5f">findLabelForPageNum</a>(int pageIndex)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#aa0e1a19ff63dbe183c569c2feed20089">findPageNumForLabel</a>(String label)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a5218e04be4d227836634c0db2bab60ca">findPDFObjectByID</a>(int ID)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#aa3144ce2a99096863a5061a3acc67a26">flattenAcroFormFields</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a999eb46f5db88b66dc2e9504631e95e1">flattenNonFormAnnotations</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a89b5c37a814ffd7edb62d58f0fc20f9f">flattenOptionalContent</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ac6d5fb98aebec8c5270e052a1dfe80d4">flattenOptionalContent</a>(OptionalContentContext occ)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a550663e54e8dc0225be8dd9140198040">flattenTransparency</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a2bad9fef68813187bc3851fa793cd003">flattenTransparency</a>(FlattenTransparencyParams params)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a2785c1ecf9fd326e6119cad4fd7d4b96">flattenTransparency</a>(FlattenTransparencyParams params, int firstPage, int lastPage)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ac2792470103e5b350bf0fa37ce0a6174">flattenXFAFormFields</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ac809cc6911a250fa9eb1f42dc571f40a">flattenXFAFormFieldsAsIfPrinted</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#aeb198e864834d09ee8222ad9abf441e1">getAttachments</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#abf23a20dae09c9278f28581c451dae42">getAuthor</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a7a18a812ce61c826493a1cd85a6137eb">getBaseURI</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#aff6191694daac3cd441e74ddbf747efb">getBookmarkRoot</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ac0d30df039598b3c810adb5274b907d5">getCollection</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a4ea7eb5a1396b0d67687d90471b9f4a6">getCompressionLevel</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a28b3467111f31feba04e459c49fd7682">getCPtr</a>(Document obj)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a782143968d4da4b7a64664a1269c9c9f">getCreator</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ad7d5b4430126930dc4b9b9d96a5f12f9">getDefaultOptionalContentConfig</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ae683eb5378501fb7711e9b4932137bce">getDeleteOnClose</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#aa207d7700030ca3a63b83345825e5077">getFileName</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#affad48ccbc06a2b1aad34b0934af66b2">getFonts</a>(int firstPage, int lastPage)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a6bfab47120a9d143999f17bd25299ff9">getFormsType</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a24dbce80e046e57871eebf094e5f34f2">getHasSignature</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a791eeae3aba8715353bd41834074cf9f">getInfo</a>(String infoname)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a17a0be5d969d73e70a7b64588f972c96">getInfoDict</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a7f7b9c0b1824f08e488c025436ff55a6">getInstanceID</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a87c586af9b33f7c9266a80d21aecf877">getIsEmbedded</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ae71e6d74cb43ec80f8168fae8359c68b">getIsLinearized</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a893cd296e7062fe3ebf645741c0c7dee">getIsModified</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#abe0a9f67de6f48e5a74ced9df9b7b9e0">getIsOptimized</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a5faf8e09ade7f306d7b2df8e87651a60">getIsPxDF</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a0ab8da1bce97553c5730aa96d978869d">getKeywords</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a847509fc86c6a8eedc816c9ef59ae8f2">getLoadedFonts</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a25167b35a460422ce11dd7bc9f113619">getMajorVersion</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a5a5e336baa7a0c99fb444dfe59bb4cc3">getMajorVersionIsNewerThanCurrentLibrary</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ad4756548795bf76c1cb5693c9be44d80">getMergedXMPKeywords</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a6714b9b4b3be607cb9f2f8c64b5bc0f1">getMinorVersion</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a71385965693c3c3bf57ea7927b60a1d3">getMinorVersionIsNewerThanCurrentLibrary</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a1c62850a488abe6075c611bd8851920b">getNameTree</a>(String nameTreeName)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a28c37cb5c7f449353abdc35066acb6d6">getNeedsSave</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a0872bb710c866c67978049221ecc642a">getNumPages</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ac8b2bc74d4d4b8d31d2d973cbee2378c">getOptionalContentConfigs</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ad85d5d055a271cd6dd6eb46d6ba01884">getOptionalContentContext</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a98cd604e5b6e12ee417d9c97a4e3fb13">getOptionalContentGroups</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a5f3e10d7d396dd489abd842be3ef1781">getPage</a>(int pageNumber)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a0201435cf07249c3f387c4987409b783">getPageLabels</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a58f7bebaf77f1adf8cac74200b91dba0">getPageMode</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a0eab6e209421e3143197417a0327f9a9">getPermanentID</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a00b9eef6521ed6c04d86fb565c9640e9">getPermissionFlags</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#aa108f764c602410d9e021a6e8891e44a">getProducer</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#afb6ab0ec86f4b708fda2898e9821f71b">getRequiresFullSave</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a0be91024d9aca0f27bb71a4187184932">getRolledBackDocuments</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a659ac3229a9e33b906fca566f16dd9e5">getRoot</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a5d1de6937edab07315c06860aa132e9d">getSubject</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a1accf77dc2937f5e7cea3afdfb355604">getSuppressErrors</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a56a1d4a8b450bddcdbe8097f1d6dd335">getTitle</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a5d52e8be498c78ea70a604ebcef71f99">getVersionIsOlderThanCurrentLibrary</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a134cd0329846298343c1f11636692599">getVersionString</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a96488778f24e4b3802a46dab47b58769">getWasRepaired</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a2c42bb444582e7751f98684b88f0c516">getXMPMetadata</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a009aca1452011ab61b066b8091122365">getXMPMetadataArrayItem</a>(String namespaceName, String path, int index)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#abee31e43dcc04eb0c64cdbc687142317">getXMPMetadataProperty</a>(String namespaceName, String path)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a1abb39950d430257203a830db55184c6">importAcroFormsData</a>(String fileName, AcroFormImportType importType)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#acc6fd8813681348d457877638e14a10f">importXFAFormsData</a>(String fileName)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a0338ab2553702c2c2602c097bc0c2ab0">insertPages</a>(int mergeAfterThisPage, Document doc2, int startPage, int numPages, java.util.EnumSet&lt; PageInsertFlags &gt; insertFlags)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#acc955cd5bc295a986a79737e46b013d7">insertPages</a>(int mergeAfterThisPage, Document doc2, int startPage, int numPages, java.util.EnumSet&lt; PageInsertFlags &gt; insertFlags, ProgressMonitor progressMonitor, CancelProc cancelProc)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a63e4f1cec9817d8e820cf3c9d627c92a">isDynamicXFA</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a54da029da5f42c78751758675f584f56">isStaticXFA</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a8863667c15c9238c5b6531884290720d">LAST_PAGE</a></td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ad7fbc1f65adcadb5283cc5c842367c26">lookForKidsInNameTree</a>(PDFDict nameTree, java.util.List&lt; FileAttachment &gt; attachments)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ac4fb49bd81e9ad2deddd2f0ba52ee3e1">mergeXMPKeywords</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a9736a7fa6126515d0871681cdb9c8a4f">movePage</a>(int moveToAfterThisPage, int pageToMove)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a96eb765248f59c1f1fb65cb2832677b0">permRequest</a>(String password, PermissionRequestOperation perms)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a015d4104e58bd41ba6eb77a518dd0db5">permRequest</a>(PermissionRequestOperation requestedperm)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#aae0948ab06fe5b2966833fab58aeb865">print</a>(PrintUserParams userParams)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a5fe82cbfd6619ca8bd6621fbf28c1823">print</a>(PrintUserParams userParams, PrintCancelProc printCancelProc)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#aaacf3a1c9f816b8756e608a8059a25d9">print</a>(PrintUserParams userParams, PrintCancelProc printCancelProc, PrintProgressProc printProgressProc)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ad5ca2119671b8791766aa871f472515b">printToFile</a>(PrintUserParams userParams, String path)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a9586eab420c5329d4c02b54e2d2b627c">printToFile</a>(PrintUserParams userParams, PrintCancelProc printCancelProc, String path)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a2bab7d1a982f43682d21ff385bcbc9da">printToFile</a>(PrintUserParams userParams, PrintCancelProc printCancelProc, PrintProgressProc printProgressProc, String path)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a1e49ef6a475d5fb2288c7d2a51f67c4c">removeCollection</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#afcc8da877483a9c45b8fa33bee49a5c9">removeDuplicateOCG</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ace5e4ba542a78848bb2230318bc26566">removeNameTree</a>(String nameTreeName)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a3fcaade756b54ef22e0e690a1c882556">removeOCG</a>(OptionalContentGroup ocg)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a28fb976ecad7da42561744739aeaefa8">replacePages</a>(int startPage, Document doc2, int startPageDoc2, int numPages, boolean mergeTextAnnots)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a4a5bb36789854df4dd8243f6dd7979a3">save</a>(java.util.EnumSet&lt; SaveFlags &gt; saveFlags, javax.imageio.stream.ImageOutputStream stream)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a0f5fff1fbbab570eae17666f8d689de5">save</a>(java.util.EnumSet&lt; SaveFlags &gt; saveFlags, javax.imageio.stream.ImageOutputStream stream, ProgressMonitor progressMonitor, CancelProc cancelProc)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ad32c7f209d3f8ab94ec88e68a3f9527f">save</a>(java.util.EnumSet&lt; SaveFlags &gt; saveFlags, String newPath)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a1c9d76a7d8a83e9745cc2001eb3014b3">save</a>(java.util.EnumSet&lt; SaveFlags &gt; saveFlags, String newPath, ProgressMonitor progressMonitor, CancelProc cancelProc)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a69b5d8110e6439bd274e487135da855a">save</a>(java.util.EnumSet&lt; SaveFlags &gt; saveFlags)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a3c40bf3262eaccb3c4c5f08391716562">save</a>(java.util.EnumSet&lt; SaveFlags &gt; saveFlags, ProgressMonitor progressMonitor, CancelProc cancelProc)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#af3f4563f4e4433b94daa4f0f7dff0225">save</a>(java.util.EnumSet&lt; SaveFlags &gt; saveFlags, JavaStreamFile dest, ProgressMonitor progressMonitor, CancelProc cancelProc)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a0a74a4c45f7a8ea3be1c44ad4db5d97e">save</a>(java.util.EnumSet&lt; SaveFlags &gt; saveFlags, JavaStreamFile dest)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a7016db848f1cb99ca7ec08bec0f045b6">secure</a>(java.util.EnumSet&lt; PermissionFlags &gt; permissions, String ownerPassword, String userPassword)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#aef6faf85a5a5049aee2abec021ff41d9">secure</a>(java.util.EnumSet&lt; PermissionFlags &gt; permissions, String ownerPassword, String userPassword, EncryptionType encryptionType)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a7ee21aab917718f80d31422a80995fdc">secure</a>(java.util.EnumSet&lt; PermissionFlags &gt; permissions, String ownerPassword, String userPassword, EncryptionType encryptionType, boolean encryptMetadata)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a2948b131d19b82fc6fccd4b49bb86366">setAuthor</a>(String authorvalue)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ac4634ae042f1fb92fb89f363f146f2b9">setBaseURI</a>(String URIvalue)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a8ec49c407b8f27725a5738aa015ec0b8">setCreator</a>(String creatorvalue)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a6d2ed8fe5437f2e146248248d4a06ce1">setDeleteOnClose</a>(boolean value)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a353f6454f04ae8fb7a78e205039112bb">setInfo</a>(String infoname, String infovalue)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ab6223d79d124be0f81b994a76eab6379">setIsEmbedded</a>(boolean value)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a44fb4b8d2396f66dcafb2b8afb9ee085">setIsOptimized</a>(boolean value)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a8744119fdd65430b67bc4baba7b9d787">setKeywords</a>(String keywordsvalue)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#af13ced9b83092f2ae8418b139fe35279">setMajorVersion</a>(short majorVersion)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a26dbe738a08ea5a770c20e74a65d97ea">setMinorVersion</a>(short minorVersion)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a1ed61c7886d31ad5bfcc5977dfb5495b">setNeedsSave</a>(boolean value)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ad100e3080ee3404457587cd3b9eb3e3f">setPageLabels</a>(java.util.List&lt; PageLabel &gt; arg0)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a5ad6b35c9ee7c50913e96c2fc036efc5">setPageMode</a>(PageMode pagemode)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a64e721deeeb5248c57533f9488333eb4">setProducer</a>(String producervalue)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a186695fddf1bf3ee2add5c1789520dad">setRequiresFullSave</a>(boolean value)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a70e77331affbf27743f389a1636cad8b">setSubject</a>(String subjectvalue)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a06b2e4a2c15f40c333e80897f65343c6">setSuppressErrors</a>(boolean value)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#ab41a22f104e1a2cd725039085824dc8a">setTitle</a>(String titlevalue)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a5aae759b82273f8e79d151ea335e15e9">setXMPMetadata</a>(String metadata)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#af464f1640b2c328eaf1bb934dc8f3198">setXMPMetadataArrayItem</a>(String namespaceName, String namespacePrefix, String path, int index, String newValue)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a9d3c379910ae15d748be067b7946888a">setXMPMetadataProperty</a>(String namespaceName, String namespacePrefix, String path, String newValue)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a13a8cde257eecd4984cf9839a2cdd6ed">unsecure</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#abcd8987eda82ec8cbd1483dcc2483285">watermark</a>(Page page, WatermarkParams watermarkParams)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a09b216d47bbb92d885861321a8a50da1">watermark</a>(WatermarkTextParams watermarkTextParams, WatermarkParams watermarkParams)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">com.datalogics.PDFL.Document</a></td><td class="entry"></td></tr>
+</table></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>
