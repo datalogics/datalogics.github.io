@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+    <html lang="en-US">
+        <head>
+            <link rel="stylesheet" href="resources/css/pageStyles.css">
+            <link rel="icon" type="image/x-icon" href="resources/img/DLicon.png">
+            <meta charset="UTF-8">
+            <title>
+Additional functionality from Datalogics: PDEImage
+            </title>
+        </head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+        </script>
+        <body><div>
+<a href="index.html"><img src="resources/img/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0px; left: 0px;"></a>
+</div>
+<div class="verSelect" style="position: fixed; z-index: 2; top: 41px; left: 0px;"><iframe id="ver" src="../ver.html" style=" height: 45px; border-width: 0px;"></iframe></div>
+<div class="fullTOC"><iframe src="TOC.html"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Additional functionality from Datalogics: PDEImage</h5>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Functions">
+<header><h2>PDEImage Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDEImageGetColorValue">PDEImageGetColorValue</a></dt><dd> -  Gets an image's Color Value.</dd>
+<dt><a href="#PDEImageRemoveIndexedColor">PDEImageRemoveIndexedColor</a></dt><dd> -  If the image input uses an indexed color space, a new image will be created from it.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEImageGetColorValue"><strong><span style="color:grey;">PDEImageGetColorValue</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:3224</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Gets an image's Color Value.<br/>
+<p>This call is valid only for a <a href="pdelayer_PDEImage.html#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a> which is an Image Mask<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEImageGetColorValue(</code><a href="pdslayer_General.html#IN"><code>IN</code></a> <a href="pdelayer_PDEImage.html#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>,</code> <a href="pdslayer_General.html#IN"><code>IN</code></a> <a href="pdelayer_General.html#_t_PDEColorValue" title=" A structure describing a color value."><code>PDEColorValueP</code></a> <code>color</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>image</code></div>
+</td><td><div>IN/OUT The image whose data is obtained. </div>
+</td></tr>
+<tr><td><div><code>colorValue</code></div>
+</td><td><div>IN/OUT The image data. </div>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<nav><table><tr><td><a href="pdfllayer_General.html#genErrBadParm" title=" Bad parameter."><code>genErrBadParm</code></a></td><td><a href="pdfllayer_General.html#peErrUnknownPDEColorSpace" title=" Unknown PDEColorSpace value."><code>peErrUnknownPDEColorSpace</code></a></td></tr>
+<tr><td><a href="pdfllayer_General.html#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></td><td><div></div>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDEImageRemoveIndexedColor"><strong><span style="color:grey;">PDEImageRemoveIndexedColor</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:750</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>If the image input uses an indexed color space, a new image will be created from it. The new image will use the base color space. If the image is not using an indexed color model, the original image will be incremented and returned. </div>
+
+<p class="note"><strong><span style="color:red;">Note:</span></strong> The image returned must be released when no longer needed. </p>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEImage.html#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>PDEImageRemoveIndexedColor(</code><a href="pdelayer_PDEImage.html#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>image</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>image</code></div>
+</td><td><div>The Indexed image <code>inP</code>. </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>The new image or the original image. </div>
+</section>
+</section>
+
+</div>
+</body>
+    <script>
+        currVer = window.location.pathname.split("/").slice(-2)[0]
+        document.getElementById("ver").src +=  "?=" + currVer 
+    </script>
+    </html>
