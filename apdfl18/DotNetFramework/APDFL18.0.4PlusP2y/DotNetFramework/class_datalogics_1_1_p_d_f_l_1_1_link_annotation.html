@@ -1,0 +1,999 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library .NET Framework Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-csharp-dotnet-framework-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://www.nuget.org/packages/Adobe.PDF.Library.LM.NETFramework" id="pkglink"><img id="pkg-download-img" alt="Nuget Trial Download" src="https://img.shields.io/nuget/dt/Adobe.PDF.Library.LM.NETFramework?color=blue&label=APDFL%20.NET%20Framework%20Free%20Trial&logo=NuGet&style=plastic"/></a>
+        </p>
+      </div></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation-members.html">List of all members</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#properties">Properties</a>  </div>
+  <div class="headertitle">
+<div class="title">Datalogics.PDFL.LinkAnnotation Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p> 
+ <a href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aba3f1a2a2c8c7ba6830e0a2fde960189"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html">LinkAnnotation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html#aba3f1a2a2c8c7ba6830e0a2fde960189">CopyTo</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_page.html">Page</a> destination)</td></tr>
+<tr class="separator:aba3f1a2a2c8c7ba6830e0a2fde960189"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72f93285f74d5c0b045b7712eb8af1df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html">LinkAnnotation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html#a72f93285f74d5c0b045b7712eb8af1df">CopyTo</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_page.html">Page</a> destination, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> centerPoint)</td></tr>
+<tr class="separator:a72f93285f74d5c0b045b7712eb8af1df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c0efaf850bd9272241d30afdca5fecf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_annotation.html#a8c0efaf850bd9272241d30afdca5fecf">Dispose</a> ()</td></tr>
+<tr class="separator:a8c0efaf850bd9272241d30afdca5fecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf67fa220c79f5b3ff68466e368bf54a"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html#abf67fa220c79f5b3ff68466e368bf54a">Dispose</a> (bool disposing)</td></tr>
+<tr class="separator:abf67fa220c79f5b3ff68466e368bf54a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67e0aac5fa61687cf20f5859eb602b98"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_annotation.html#a67e0aac5fa61687cf20f5859eb602b98">Equals</a> (object obj)</td></tr>
+<tr class="separator:a67e0aac5fa61687cf20f5859eb602b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ba90ec0d3b4edea16ec2a514e904e90"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_form.html">Form</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html#a6ba90ec0d3b4edea16ec2a514e904e90">GenerateAppearance</a> ()</td></tr>
+<tr class="separator:a6ba90ec0d3b4edea16ec2a514e904e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad93dac0f7def10b29aaac1f3c36afe86"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_annotation.html#ad93dac0f7def10b29aaac1f3c36afe86">HasRichTextData</a> ()</td></tr>
+<tr class="separator:ad93dac0f7def10b29aaac1f3c36afe86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80bc5013338f212e7dbdfbf028b6e827"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_annotation.html#a80bc5013338f212e7dbdfbf028b6e827">IsCurrentlyVisible</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html">OptionalContentContext</a> occ)</td></tr>
+<tr class="separator:a80bc5013338f212e7dbdfbf028b6e827"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40eea6d190bdd25b27310b86d13d86c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html#a40eea6d190bdd25b27310b86d13d86c4">LinkAnnotation</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_page.html">Page</a> page, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a> initialRect)</td></tr>
+<tr class="separator:a40eea6d190bdd25b27310b86d13d86c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fcd4cc26bd0ad3b68a7718d5c4429fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html#a7fcd4cc26bd0ad3b68a7718d5c4429fe">LinkAnnotation</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_page.html">Page</a> page, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a> initialRect, int addAfter)</td></tr>
+<tr class="separator:a7fcd4cc26bd0ad3b68a7718d5c4429fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25b50e9e7fd46c7efc30036bbacc68ff"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_annotation.html#a25b50e9e7fd46c7efc30036bbacc68ff">ToString</a> ()</td></tr>
+<tr class="separator:a25b50e9e7fd46c7efc30036bbacc68ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a6a63d22fa1d10b3eeadb188cd9270546"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_action.html">Action</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html#a6a63d22fa1d10b3eeadb188cd9270546">Action</a><code> [get, set]</code></td></tr>
+<tr class="separator:a6a63d22fa1d10b3eeadb188cd9270546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5b5a21cfef103f09263a01aa9f1c4d4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_annotation.html#af5b5a21cfef103f09263a01aa9f1c4d4">AnnotationFeatureLevel</a><code> [get, set]</code></td></tr>
+<tr class="separator:af5b5a21cfef103f09263a01aa9f1c4d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59b1e03777d01386e984a1a36b902259"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html#a59b1e03777d01386e984a1a36b902259">BorderStyle</a><code> [get, set]</code></td></tr>
+<tr class="separator:a59b1e03777d01386e984a1a36b902259"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81c9273e43f5e4353195e87ff690f196"><td class="memItemLeft" align="right" valign="top">System.Collections.Generic.IList&lt; System.Double &gt;?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html#a81c9273e43f5e4353195e87ff690f196">BorderStyleDashPattern</a><code> [get, set]</code></td></tr>
+<tr class="separator:a81c9273e43f5e4353195e87ff690f196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04afbd763304c461ba10abadf63df148"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html#a04afbd763304c461ba10abadf63df148">BorderStyleWidth</a><code> [get, set]</code></td></tr>
+<tr class="separator:a04afbd763304c461ba10abadf63df148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c3b36af3a32e258cb1420676ae61f40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color.html">Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_annotation.html#a7c3b36af3a32e258cb1420676ae61f40">Color</a><code> [get, set]</code></td></tr>
+<tr class="separator:a7c3b36af3a32e258cb1420676ae61f40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d0e06227712a5300f51accec746ec96"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_annotation.html#a0d0e06227712a5300f51accec746ec96">Contents</a><code> [get, set]</code></td></tr>
+<tr class="separator:a0d0e06227712a5300f51accec746ec96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21bafe71d82d56bfc6bdf275e75c4583"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_view_destination.html">ViewDestination</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html#a21bafe71d82d56bfc6bdf275e75c4583">Destination</a><code> [get, set]</code></td></tr>
+<tr class="separator:a21bafe71d82d56bfc6bdf275e75c4583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac27ea4c6da68897806d3b950d7210b4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a6e26ca4b1fbde86af8a2f0a3bdbeb0bf">AnnotationFlags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_annotation.html#ac27ea4c6da68897806d3b950d7210b4d">Flags</a><code> [get, set]</code></td></tr>
+<tr class="separator:ac27ea4c6da68897806d3b950d7210b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1abc293075f8dd4b92ebe1cffc718c47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a5813ddbeacfeb81c6d8e81385c6a66a2">HighlightStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html#a1abc293075f8dd4b92ebe1cffc718c47">Highlight</a><code> [get, set]</code></td></tr>
+<tr class="separator:a1abc293075f8dd4b92ebe1cffc718c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5de2638ceb6f6cab6c53feb143fc5ccf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color.html">Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_annotation.html#a5de2638ceb6f6cab6c53feb143fc5ccf">InteriorColor</a><code> [get, set]</code></td></tr>
+<tr class="separator:a5de2638ceb6f6cab6c53feb143fc5ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9902d34fc1bed6d830782a5cf827019e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_form.html">Form</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_annotation.html#a9902d34fc1bed6d830782a5cf827019e">NormalAppearance</a><code> [get, set]</code></td></tr>
+<tr class="separator:a9902d34fc1bed6d830782a5cf827019e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed6a6c0268e0cc71deed139f8fd4d4a7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_annotation.html#aed6a6c0268e0cc71deed139f8fd4d4a7">Opacity</a><code> [get, set]</code></td></tr>
+<tr class="separator:aed6a6c0268e0cc71deed139f8fd4d4a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f81a22062ba9b3e530641741d04aefc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict.html">OptionalContentMembershipDict</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_annotation.html#a5f81a22062ba9b3e530641741d04aefc">OptionalContentMembershipDict</a><code> [get, set]</code></td></tr>
+<tr class="separator:a5f81a22062ba9b3e530641741d04aefc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c5063a66a88c6372d374b0f7e90d873"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_annotation.html#a2c5063a66a88c6372d374b0f7e90d873">PDFDict</a><code> [get]</code></td></tr>
+<tr class="separator:a2c5063a66a88c6372d374b0f7e90d873"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbec91b60e74bdf7e4f6acfe0284f05a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_annotation.html#afbec91b60e74bdf7e4f6acfe0284f05a">Rect</a><code> [get, set]</code></td></tr>
+<tr class="separator:afbec91b60e74bdf7e4f6acfe0284f05a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b15cd28362b21dad736aa1a6a2a0c7e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_annotation.html#a0b15cd28362b21dad736aa1a6a2a0c7e">Subtype</a><code> [get]</code></td></tr>
+<tr class="separator:a0b15cd28362b21dad736aa1a6a2a0c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65f57e40f15476fe2088c3f896420171"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_annotation.html#a65f57e40f15476fe2088c3f896420171">Title</a><code> [get, set]</code></td></tr>
+<tr class="separator:a65f57e40f15476fe2088c3f896420171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A link annotation, which features an embedded hyperlink. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a40eea6d190bdd25b27310b86d13d86c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40eea6d190bdd25b27310b86d13d86c4">&#9670;&nbsp;</a></span>LinkAnnotation() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.LinkAnnotation.LinkAnnotation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_page.html">Page</a>&#160;</td>
+          <td class="paramname"><em>page</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a>&#160;</td>
+          <td class="paramname"><em>initialRect</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a new LinkAnnotation at the end of a page's annotation array. To create a LinkAnnotation and place it elsewhere in the page's annotation array, use the version of the constructor that takes an array position.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">page</td><td>The page to which the LinkAnnotation is added. </td></tr>
+    <tr><td class="paramname">initialRect</td><td>A rectangle specifying the annotation's bounds, specified in user space coordinates.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7fcd4cc26bd0ad3b68a7718d5c4429fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fcd4cc26bd0ad3b68a7718d5c4429fe">&#9670;&nbsp;</a></span>LinkAnnotation() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.LinkAnnotation.LinkAnnotation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_page.html">Page</a>&#160;</td>
+          <td class="paramname"><em>page</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a>&#160;</td>
+          <td class="paramname"><em>initialRect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>addAfter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a new LinkAnnotation at a specific index in the page's annotation array.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">page</td><td>The page to which the annotation is added. </td></tr>
+    <tr><td class="paramname">initialRect</td><td>A rectangle specifying the annotation's bounds, specified in user space coordinates. </td></tr>
+    <tr><td class="paramname">addAfter</td><td>Where to add the annotation in the page's annotation array. To add the annotation to the end of the array, pass a value of -2 or use the alternate version of this constructor that does not take an index (this is generally what you should do unless you have a need to place the annotation at a special location in the array). Passing a value of -1 adds the annotation to the beginning of the array. Passing other negative values produces undefined results.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aba3f1a2a2c8c7ba6830e0a2fde960189"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba3f1a2a2c8c7ba6830e0a2fde960189">&#9670;&nbsp;</a></span>CopyTo() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html">LinkAnnotation</a> Datalogics.PDFL.LinkAnnotation.CopyTo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_page.html">Page</a>&#160;</td>
+          <td class="paramname"><em>destination</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Copy a LinkAnnotation to the specified page. The annotation will be centered on the page. To center the annotation at a specific point, use the version of this method that accepts a Point.</p>
+<p>This creates a copy of the original LinkAnnotation and puts the copy in the destination page's annotation dictionary. Structural content information associated with the source annotation will not be present in the copy. An exception will be thrown if the annotation cannot be copied to the specified page.</p>
+<p>Note: If copying LinkAnnotations between pages in different documents, the source annotation may have a ViewDestination that's invalid in the destiantion document or an Action referring to a ViewDestination that's invalid in the destination document. In these cases, an exception will be thrown.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">destination</td><td>the page to copy the annotation to. The page may be in the same document as the source annotation or in a different document.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the annotation created on the destination page.</dd></dl>
+
+</div>
+</div>
+<a id="a72f93285f74d5c0b045b7712eb8af1df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72f93285f74d5c0b045b7712eb8af1df">&#9670;&nbsp;</a></span>CopyTo() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html">LinkAnnotation</a> Datalogics.PDFL.LinkAnnotation.CopyTo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_page.html">Page</a>&#160;</td>
+          <td class="paramname"><em>destination</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>&#160;</td>
+          <td class="paramname"><em>centerPoint</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Copy a LinkAnnotation to the specified page and center the annotation on the specified point.</p>
+<p>This creates a copy of the original LinkAnnotation and puts the copy in the destination page's annotation dictionary. Structural content information associated with the source annotation will not be present in the copy. An exception will be thrown if the annotation cannot be copied to the specified page.</p>
+<p>Note: If copying LinkAnnotations between pages in different documents, the source annotation may have a ViewDestination that's invalid in the destiantion document or an Action referring to a ViewDestination that's invalid in the destination document. In these cases, an exception will be thrown.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">destination</td><td>the page to copy the annotation to. The page may be in the same document as the source annotation or in a different document. </td></tr>
+    <tr><td class="paramname">centerPoint</td><td>the point to center the annotation on.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the annotation created on the destination page.</dd></dl>
+
+</div>
+</div>
+<a id="a8c0efaf850bd9272241d30afdca5fecf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c0efaf850bd9272241d30afdca5fecf">&#9670;&nbsp;</a></span>Dispose() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Annotation.Dispose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abf67fa220c79f5b3ff68466e368bf54a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf67fa220c79f5b3ff68466e368bf54a">&#9670;&nbsp;</a></span>Dispose() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void Datalogics.PDFL.LinkAnnotation.Dispose </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>disposing</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_annotation.html#afeea7d1928ebf1079636977d16e29ce4">Datalogics.PDFL.Annotation</a>.</p>
+
+</div>
+</div>
+<a id="a67e0aac5fa61687cf20f5859eb602b98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67e0aac5fa61687cf20f5859eb602b98">&#9670;&nbsp;</a></span>Equals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override bool Datalogics.PDFL.Annotation.Equals </td>
+          <td>(</td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ba90ec0d3b4edea16ec2a514e904e90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ba90ec0d3b4edea16ec2a514e904e90">&#9670;&nbsp;</a></span>GenerateAppearance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_form.html">Form</a> Datalogics.PDFL.LinkAnnotation.GenerateAppearance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Generate a new appearance stream with the current annotation properties.</p>
+<p>The resulting Form can then be used to set the annotation's appearance, such as by calling SetNormalAppearance. </p>
+
+<p>Reimplemented from <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_annotation.html#a7876aa2972d3c743d433bbabcb21edf1">Datalogics.PDFL.Annotation</a>.</p>
+
+</div>
+</div>
+<a id="ad93dac0f7def10b29aaac1f3c36afe86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad93dac0f7def10b29aaac1f3c36afe86">&#9670;&nbsp;</a></span>HasRichTextData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.Annotation.HasRichTextData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Checks the annotation for Rich Text String content (PDFReference 1.7 Section 8.6.2). Annotations that contain Rich Text String content and do not have a normal appearance set will not be visible when rendering the page. </p>
+
+</div>
+</div>
+<a id="a80bc5013338f212e7dbdfbf028b6e827"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80bc5013338f212e7dbdfbf028b6e827">&#9670;&nbsp;</a></span>IsCurrentlyVisible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.Annotation.IsCurrentlyVisible </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html">OptionalContentContext</a>&#160;</td>
+          <td class="paramname"><em>occ</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Tests whether an annotation is visible in a given optional content context, considering the current ON-OFF states of the optional-content groups in the optional-content dictionary (OCMD) and the dictionary's visibility policy.</p>
+<p>If the annotation occurs more than once within the content, this method only checks the visibility of the first occurrence of the annotation.</p>
+<p>This method determines visibility without considering the visbility of the Content object that the annotation belongs to. To determine the visibility of an annotation while taking the Content's visibility into consideration, use the alternate version of this method.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if the annotation is currently visible.</dd></dl>
+
+</div>
+</div>
+<a id="a25b50e9e7fd46c7efc30036bbacc68ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25b50e9e7fd46c7efc30036bbacc68ff">&#9670;&nbsp;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override string Datalogics.PDFL.Annotation.ToString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a6a63d22fa1d10b3eeadb188cd9270546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a63d22fa1d10b3eeadb188cd9270546">&#9670;&nbsp;</a></span>Action</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_action.html">Action</a> Datalogics.PDFL.LinkAnnotation.Action</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af5b5a21cfef103f09263a01aa9f1c4d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5b5a21cfef103f09263a01aa9f1c4d4">&#9670;&nbsp;</a></span>AnnotationFeatureLevel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.Annotation.AnnotationFeatureLevel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a59b1e03777d01386e984a1a36b902259"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59b1e03777d01386e984a1a36b902259">&#9670;&nbsp;</a></span>BorderStyle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Datalogics.PDFL.LinkAnnotation.BorderStyle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a81c9273e43f5e4353195e87ff690f196"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81c9273e43f5e4353195e87ff690f196">&#9670;&nbsp;</a></span>BorderStyleDashPattern</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">System.Collections.Generic.IList&lt;System.Double&gt;? Datalogics.PDFL.LinkAnnotation.BorderStyleDashPattern</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a04afbd763304c461ba10abadf63df148"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04afbd763304c461ba10abadf63df148">&#9670;&nbsp;</a></span>BorderStyleWidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.LinkAnnotation.BorderStyleWidth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7c3b36af3a32e258cb1420676ae61f40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c3b36af3a32e258cb1420676ae61f40">&#9670;&nbsp;</a></span>Color</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color.html">Color</a> Datalogics.PDFL.Annotation.Color</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0d0e06227712a5300f51accec746ec96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d0e06227712a5300f51accec746ec96">&#9670;&nbsp;</a></span>Contents</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Datalogics.PDFL.Annotation.Contents</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21bafe71d82d56bfc6bdf275e75c4583"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21bafe71d82d56bfc6bdf275e75c4583">&#9670;&nbsp;</a></span>Destination</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_view_destination.html">ViewDestination</a> Datalogics.PDFL.LinkAnnotation.Destination</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac27ea4c6da68897806d3b950d7210b4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac27ea4c6da68897806d3b950d7210b4d">&#9670;&nbsp;</a></span>Flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a6e26ca4b1fbde86af8a2f0a3bdbeb0bf">AnnotationFlags</a> Datalogics.PDFL.Annotation.Flags</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1abc293075f8dd4b92ebe1cffc718c47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1abc293075f8dd4b92ebe1cffc718c47">&#9670;&nbsp;</a></span>Highlight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a5813ddbeacfeb81c6d8e81385c6a66a2">HighlightStyle</a> Datalogics.PDFL.LinkAnnotation.Highlight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5de2638ceb6f6cab6c53feb143fc5ccf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5de2638ceb6f6cab6c53feb143fc5ccf">&#9670;&nbsp;</a></span>InteriorColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color.html">Color</a> Datalogics.PDFL.Annotation.InteriorColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9902d34fc1bed6d830782a5cf827019e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9902d34fc1bed6d830782a5cf827019e">&#9670;&nbsp;</a></span>NormalAppearance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_form.html">Form</a> Datalogics.PDFL.Annotation.NormalAppearance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aed6a6c0268e0cc71deed139f8fd4d4a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed6a6c0268e0cc71deed139f8fd4d4a7">&#9670;&nbsp;</a></span>Opacity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Datalogics.PDFL.Annotation.Opacity</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5f81a22062ba9b3e530641741d04aefc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f81a22062ba9b3e530641741d04aefc">&#9670;&nbsp;</a></span>OptionalContentMembershipDict</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict.html">OptionalContentMembershipDict</a> Datalogics.PDFL.Annotation.OptionalContentMembershipDict</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2c5063a66a88c6372d374b0f7e90d873"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c5063a66a88c6372d374b0f7e90d873">&#9670;&nbsp;</a></span>PDFDict</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a> Datalogics.PDFL.Annotation.PDFDict</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afbec91b60e74bdf7e4f6acfe0284f05a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbec91b60e74bdf7e4f6acfe0284f05a">&#9670;&nbsp;</a></span>Rect</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a> Datalogics.PDFL.Annotation.Rect</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0b15cd28362b21dad736aa1a6a2a0c7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b15cd28362b21dad736aa1a6a2a0c7e">&#9670;&nbsp;</a></span>Subtype</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Datalogics.PDFL.Annotation.Subtype</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a65f57e40f15476fe2088c3f896420171"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65f57e40f15476fe2088c3f896420171">&#9670;&nbsp;</a></span>Title</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Datalogics.PDFL.Annotation.Title</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>

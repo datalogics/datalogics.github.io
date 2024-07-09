@@ -1,0 +1,687 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library .NET Framework Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-csharp-dotnet-framework-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://www.nuget.org/packages/Adobe.PDF.Library.LM.NETFramework" id="pkglink"><img id="pkg-download-img" alt="Nuget Trial Download" src="https://img.shields.io/nuget/dt/Adobe.PDF.Library.LM.NETFramework?color=blue&label=APDFL%20.NET%20Framework%20Free%20Trial&logo=NuGet&style=plastic"/></a>
+        </p>
+      </div></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_datalogics_1_1_p_d_f_l_1_1_content.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="class_datalogics_1_1_p_d_f_l_1_1_content-members.html">List of all members</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#properties">Properties</a>  </div>
+  <div class="headertitle">
+<div class="title">Datalogics.PDFL.Content Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p> 
+ <a href="class_datalogics_1_1_p_d_f_l_1_1_content.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:acf94fab2ab1e977eac2efa64abbdc245"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_content.html#acf94fab2ab1e977eac2efa64abbdc245">AddElement</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_element.html">Element</a> NewElem)</td></tr>
+<tr class="separator:acf94fab2ab1e977eac2efa64abbdc245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0735211b254979a182851d52d34fe4ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_content.html#a0735211b254979a182851d52d34fe4ae">AddElement</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_element.html">Element</a> NewElem, int addAfterIndex)</td></tr>
+<tr class="separator:a0735211b254979a182851d52d34fe4ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2386b4f393e06bd6e11201a273a89ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_content.html#ad2386b4f393e06bd6e11201a273a89ed">AddPage</a> (int insertAfterIndex, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html">Document</a> containerDoc, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_page.html">Page</a> srcPage, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> dstMatrix, System.Collections.Generic.IList&lt; System.String &gt; annotTypes, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#af4a25c5cb9953a8c4f11b421a0a59efa">AddPageFlags</a> flags, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a> bbox)</td></tr>
+<tr class="separator:ad2386b4f393e06bd6e11201a273a89ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d5ddff411fa9beea6349c2e35fb0927"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_content.html#a7d5ddff411fa9beea6349c2e35fb0927">Content</a> ()</td></tr>
+<tr class="separator:a7d5ddff411fa9beea6349c2e35fb0927"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8307b09f71f5b5ef60c52d01dcc69100"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_content.html#a8307b09f71f5b5ef60c52d01dcc69100">Content</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_element.html">Element</a> firstElem)</td></tr>
+<tr class="separator:a8307b09f71f5b5ef60c52d01dcc69100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21db7ec2a7101c008f79b14caf74902c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_content.html#a21db7ec2a7101c008f79b14caf74902c">Dispose</a> ()</td></tr>
+<tr class="separator:a21db7ec2a7101c008f79b14caf74902c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7da0dc7f9121da0ddd07b3c921e18b40"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_content.html#a7da0dc7f9121da0ddd07b3c921e18b40">Dispose</a> (bool disposing)</td></tr>
+<tr class="separator:a7da0dc7f9121da0ddd07b3c921e18b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fe2ee2ce6a86658583c8caa58d3860c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_content.html#a7fe2ee2ce6a86658583c8caa58d3860c">FlattenOptionalContent</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html">OptionalContentContext</a> occ)</td></tr>
+<tr class="separator:a7fe2ee2ce6a86658583c8caa58d3860c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4afc4b1503bd0868e0dc8e4ee720e10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_content.html#ac4afc4b1503bd0868e0dc8e4ee720e10">GetDefaultColorSpace</a> (string name)</td></tr>
+<tr class="separator:ac4afc4b1503bd0868e0dc8e4ee720e10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a103281b18bde0b687074521abfc617a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_element.html">Element</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_content.html#a103281b18bde0b687074521abfc617a1">GetElement</a> (int index)</td></tr>
+<tr class="separator:a103281b18bde0b687074521abfc617a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace5c274dd03f09fd1057ff106f0caad3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_content.html#ace5c274dd03f09fd1057ff106f0caad3">RemoveElement</a> (int index)</td></tr>
+<tr class="separator:ace5c274dd03f09fd1057ff106f0caad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac62fff06dc9b31700e1d8c6e23bd9cce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_content.html#ac62fff06dc9b31700e1d8c6e23bd9cce">SetDefaultColorSpace</a> (string name, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a> colorSpace)</td></tr>
+<tr class="separator:ac62fff06dc9b31700e1d8c6e23bd9cce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8a3eac788f7ffcad72d8c02fffb96ff"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_content.html#ad8a3eac788f7ffcad72d8c02fffb96ff">ToString</a> ()</td></tr>
+<tr class="separator:ad8a3eac788f7ffcad72d8c02fffb96ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a54af26123445cf05289da133c8e53a67"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_content.html#a54af26123445cf05289da133c8e53a67">BeforeFirst</a></td></tr>
+<tr class="separator:a54af26123445cf05289da133c8e53a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:af774aa0da29302ed4e785ef78b9ca0cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_content.html#af774aa0da29302ed4e785ef78b9ca0cd">BoundingBox</a><code> [get]</code></td></tr>
+<tr class="separator:af774aa0da29302ed4e785ef78b9ca0cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70d6ffeac5d4b7491579d3c604bfb2e9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_content.html#a70d6ffeac5d4b7491579d3c604bfb2e9">NumElements</a><code> [get]</code></td></tr>
+<tr class="separator:a70d6ffeac5d4b7491579d3c604bfb2e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class that represents the collection of elements on a PDF page. </p>
+<p>A content object represents a collection of elements that make up a page in a PDF file. A content object is more convenient to use than directly parsing or working with a page content stream. This is because a page can include a large collection of individual stream objects. Working with a content object, you can avoid focusing on this level of detail. The content converts individual stream items to a structured form, making it unnecessary to parse the individual syntax for each one. A content object can be associated with a large amount of unmanaged memory in APDFL and should be deleted when the object is no longer in use.</p>
+<p>The index associated with Content is 0-based, so 0 is the first element. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a7d5ddff411fa9beea6349c2e35fb0927"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d5ddff411fa9beea6349c2e35fb0927">&#9670;&nbsp;</a></span>Content() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.Content.Content </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create content</p>
+
+</div>
+</div>
+<a id="a8307b09f71f5b5ef60c52d01dcc69100"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8307b09f71f5b5ef60c52d01dcc69100">&#9670;&nbsp;</a></span>Content() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.Content.Content </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_element.html">Element</a>&#160;</td>
+          <td class="paramname"><em>firstElem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create content with a first Element. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">firstElem</td><td>The Element which is to be added to the beginning of the new Content object.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="acf94fab2ab1e977eac2efa64abbdc245"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf94fab2ab1e977eac2efa64abbdc245">&#9670;&nbsp;</a></span>AddElement() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Content.AddElement </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_element.html">Element</a>&#160;</td>
+          <td class="paramname"><em>NewElem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds an existing Element at the end of the content object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">NewElem</td><td>The Element which is to be added to the end of the existing Content object.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0735211b254979a182851d52d34fe4ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0735211b254979a182851d52d34fe4ae">&#9670;&nbsp;</a></span>AddElement() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Content.AddElement </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_element.html">Element</a>&#160;</td>
+          <td class="paramname"><em>NewElem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>addAfterIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds an existing Element at the given index of the content object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">NewElem</td><td>The Element which is to be added to the end of the existing Content object. </td></tr>
+    <tr><td class="paramname">addAfterIndex</td><td>The position after which to insert the new Element, the index is 0-based so 0 is the first element. To insert a new element as the first element use the Content.BeforeFirst constant.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad2386b4f393e06bd6e11201a273a89ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2386b4f393e06bd6e11201a273a89ed">&#9670;&nbsp;</a></span>AddPage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Content.AddPage </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>insertAfterIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html">Document</a>&#160;</td>
+          <td class="paramname"><em>containerDoc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_page.html">Page</a>&#160;</td>
+          <td class="paramname"><em>srcPage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a>&#160;</td>
+          <td class="paramname"><em>dstMatrix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">System.Collections.Generic.IList&lt; System.String &gt;&#160;</td>
+          <td class="paramname"><em>annotTypes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#af4a25c5cb9953a8c4f11b421a0a59efa">AddPageFlags</a>&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a>&#160;</td>
+          <td class="paramname"><em>bbox</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds the specfied Page to the Content as a Form. It adds a reference to the Xobject form at the indicated index in the Content; the index may be less than 0, which indicates the object is to be appended to the content. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">insertAfterIndex</td><td>The index indicates the location after which the specified element is to be added. The index should be BeforeFirst to add to the beginning of the display list. </td></tr>
+    <tr><td class="paramname">containerDoc</td><td>The Document in which the page is contained. </td></tr>
+    <tr><td class="paramname">srcPage</td><td>The page that will be inserted at insertAfterIndex in theContent. </td></tr>
+    <tr><td class="paramname">dstMatrix</td><td>(May be NULL) The matrix applied to the default matrix of the Page that is inserted into the Document. </td></tr>
+    <tr><td class="paramname">annotTypes</td><td>If the page contains annotations, the annotTypes list is used to determine which annotation types are pumped into the page contents of the CosDoc. </td></tr>
+    <tr><td class="paramname">flags</td><td>(May be 0) AllAnnotations specifies all annotation types. If this is not set, then the annotTypes list will be consulted. </td></tr>
+    <tr><td class="paramname">bbox</td><td>(May be NULL) specifies the destination BBox for the page being inserted. If it is NULL, the new page's media box is used.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a21db7ec2a7101c008f79b14caf74902c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21db7ec2a7101c008f79b14caf74902c">&#9670;&nbsp;</a></span>Dispose() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Content.Dispose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7da0dc7f9121da0ddd07b3c921e18b40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7da0dc7f9121da0ddd07b3c921e18b40">&#9670;&nbsp;</a></span>Dispose() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Datalogics.PDFL.Content.Dispose </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>disposing</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7fe2ee2ce6a86658583c8caa58d3860c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fe2ee2ce6a86658583c8caa58d3860c">&#9670;&nbsp;</a></span>FlattenOptionalContent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.Content.FlattenOptionalContent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html">OptionalContentContext</a>&#160;</td>
+          <td class="paramname"><em>occ</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Flattens optional content within this Content object.</p>
+<p>Removes elements that are not visible in the given optional content context and removes optional content information from any visible elements.</p>
+<p>The optional content information formerly associated with this Content object will NOT be deleted from the document, as it is possible that content elsewhere in the document may be using the information.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">occ</td><td>The optional content context in which content is checked for visibility.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the content was successfully flattened, false otherwise.</dd></dl>
+
+</div>
+</div>
+<a id="ac4afc4b1503bd0868e0dc8e4ee720e10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4afc4b1503bd0868e0dc8e4ee720e10">&#9670;&nbsp;</a></span>GetDefaultColorSpace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a> Datalogics.PDFL.Content.GetDefaultColorSpace </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get a default color space from a Content object.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the color space to get. It must be one of DefaultRGB, DefaultCMYK, or DefaultGray.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The color space used as the default. May return null if no default is set.</dd></dl>
+
+</div>
+</div>
+<a id="a103281b18bde0b687074521abfc617a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a103281b18bde0b687074521abfc617a1">&#9670;&nbsp;</a></span>GetElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_element.html">Element</a> Datalogics.PDFL.Content.GetElement </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the element specified by index.</p>
+
+</div>
+</div>
+<a id="ace5c274dd03f09fd1057ff106f0caad3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace5c274dd03f09fd1057ff106f0caad3">&#9670;&nbsp;</a></span>RemoveElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Content.RemoveElement </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Removes the Element at the specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The position at which to remove the Element</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac62fff06dc9b31700e1d8c6e23bd9cce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac62fff06dc9b31700e1d8c6e23bd9cce">&#9670;&nbsp;</a></span>SetDefaultColorSpace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Content.SetDefaultColorSpace </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a>&#160;</td>
+          <td class="paramname"><em>colorSpace</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set a default color space from a Content object.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the color space to set. It must be one of DefaultRGB, DefaultCMYK, or DefaultGray. </td></tr>
+    <tr><td class="paramname">colorSpace</td><td>The color space to set. It may not be a Lab, Indexed or Pattern color space.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad8a3eac788f7ffcad72d8c02fffb96ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8a3eac788f7ffcad72d8c02fffb96ff">&#9670;&nbsp;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override string Datalogics.PDFL.Content.ToString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a54af26123445cf05289da133c8e53a67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54af26123445cf05289da133c8e53a67">&#9670;&nbsp;</a></span>BeforeFirst</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int Datalogics.PDFL.Content.BeforeFirst</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Position for inserting an element before the first element. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="af774aa0da29302ed4e785ef78b9ca0cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af774aa0da29302ed4e785ef78b9ca0cd">&#9670;&nbsp;</a></span>BoundingBox</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a> Datalogics.PDFL.Content.BoundingBox</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a70d6ffeac5d4b7491579d3c604bfb2e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70d6ffeac5d4b7491579d3c604bfb2e9">&#9670;&nbsp;</a></span>NumElements</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Datalogics.PDFL.Content.NumElements</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>
