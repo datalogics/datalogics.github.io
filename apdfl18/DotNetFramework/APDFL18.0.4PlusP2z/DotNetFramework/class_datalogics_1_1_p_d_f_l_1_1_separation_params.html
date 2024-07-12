@@ -1,0 +1,788 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library .NET Framework Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-csharp-dotnet-framework-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://www.nuget.org/packages/Adobe.PDF.Library.LM.NETFramework" id="pkglink"><img id="pkg-download-img" alt="Nuget Trial Download" src="https://img.shields.io/nuget/dt/Adobe.PDF.Library.LM.NETFramework?color=blue&label=APDFL%20.NET%20Framework%20Free%20Trial&logo=NuGet&style=plastic"/></a>
+        </p>
+      </div></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_datalogics_1_1_p_d_f_l_1_1_separation_params.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="class_datalogics_1_1_p_d_f_l_1_1_separation_params-members.html">List of all members</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#properties">Properties</a>  </div>
+  <div class="headertitle">
+<div class="title">Datalogics.PDFL.SeparationParams Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p> 
+ <a href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ace966a0c9f422671cd2bb2e17dea2b04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#ace966a0c9f422671cd2bb2e17dea2b04">Dispose</a> ()</td></tr>
+<tr class="separator:ace966a0c9f422671cd2bb2e17dea2b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a00d63ad61bb9e23e97e7237641e796"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a3a00d63ad61bb9e23e97e7237641e796">Dispose</a> (bool disposing)</td></tr>
+<tr class="separator:a3a00d63ad61bb9e23e97e7237641e796"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae36945e182b2c71b91225577d6f8e58f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#ae36945e182b2c71b91225577d6f8e58f">SeparationParams</a> (System.Collections.Generic.IList&lt; <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_plate.html">SeparationPlate</a> &gt; plates)</td></tr>
+<tr class="separator:ae36945e182b2c71b91225577d6f8e58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:aa32732421c48f347753be914f60e8ddd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#aa32732421c48f347753be914f60e8ddd">ApplyOCGPrintOverrides</a><code> [get, set]</code></td></tr>
+<tr class="separator:aa32732421c48f347753be914f60e8ddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a195b78d43a3386609da766116441c453"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a195b78d43a3386609da766116441c453">BinaryChannelAvailable</a><code> [get, set]</code></td></tr>
+<tr class="separator:a195b78d43a3386609da766116441c453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77de825826f730951de96ee1880b770c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a77de825826f730951de96ee1880b770c">ConvertToProcessUsingOPP</a><code> [get, set]</code></td></tr>
+<tr class="separator:a77de825826f730951de96ee1880b770c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0366310bb8cb58ebfce424d94ab9fcf4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a0366310bb8cb58ebfce424d94ab9fcf4">ConvertTrueTypeToType42</a><code> [get, set]</code></td></tr>
+<tr class="separator:a0366310bb8cb58ebfce424d94ab9fcf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9d1df258b6d942f7cb35542a267155b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#ab9d1df258b6d942f7cb35542a267155b">DestinationProfileString</a><code> [get, set]</code></td></tr>
+<tr class="separator:ab9d1df258b6d942f7cb35542a267155b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa58dc1203f4b3395add8614845863a2d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#aa58dc1203f4b3395add8614845863a2d">EmitAnnotations</a><code> [get, set]</code></td></tr>
+<tr class="separator:aa58dc1203f4b3395add8614845863a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa642bdd2a5568bbd98a479c80908c08"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a35e66fe395572b27763ac495d4f28ed8">SeparationFontOptions</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#afa642bdd2a5568bbd98a479c80908c08">EmitFontOption</a><code> [get, set]</code></td></tr>
+<tr class="separator:afa642bdd2a5568bbd98a479c80908c08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2726d48db1494a8df480b3c271d7d82"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#af2726d48db1494a8df480b3c271d7d82">EmitHalftones</a><code> [get, set]</code></td></tr>
+<tr class="separator:af2726d48db1494a8df480b3c271d7d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa87bece3e542e22c3b2ea627c507b856"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#aa87bece3e542e22c3b2ea627c507b856">EmitSeparableImagesOnly</a><code> [get, set]</code></td></tr>
+<tr class="separator:aa87bece3e542e22c3b2ea627c507b856"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04f0507f354d6150a6b3335fbb3e6db2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a04f0507f354d6150a6b3335fbb3e6db2">EmitTransferFunctions</a><code> [get, set]</code></td></tr>
+<tr class="separator:a04f0507f354d6150a6b3335fbb3e6db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a435b87946b624497cf89676c04b70bec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a435b87946b624497cf89676c04b70bec">InvertPlates</a><code> [get, set]</code></td></tr>
+<tr class="separator:a435b87946b624497cf89676c04b70bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab9868eabb85c3b7d9b08f0ec737b041"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2a572c9549dbb2b650d8133670c6e475">MirrorOptions</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#aab9868eabb85c3b7d9b08f0ec737b041">MirrorPrint</a><code> [get, set]</code></td></tr>
+<tr class="separator:aab9868eabb85c3b7d9b08f0ec737b041"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08387631b0ed16e2d074bd39552ffbd8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html">OptionalContentContext</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a08387631b0ed16e2d074bd39552ffbd8">OCContext</a><code> [get, set]</code></td></tr>
+<tr class="separator:a08387631b0ed16e2d074bd39552ffbd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e123a224557e0d621f8c611e062eb44"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#aed8ff078d4bfdba0fd3b7a5ff7114f7d">PageMarkFlags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a7e123a224557e0d621f8c611e062eb44">PageMarksToEmit</a><code> [get, set]</code></td></tr>
+<tr class="separator:a7e123a224557e0d621f8c611e062eb44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b37f86abfb0124be82630849b8e56a2"><td class="memItemLeft" align="right" valign="top">System.Collections.Generic.IList&lt; <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_plate.html">SeparationPlate</a> &gt;?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a1b37f86abfb0124be82630849b8e56a2">Plates</a><code> [get, set]</code></td></tr>
+<tr class="separator:a1b37f86abfb0124be82630849b8e56a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1ea2748cefc7c6e2769a3e098962b66"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#aa1ea2748cefc7c6e2769a3e098962b66">PostScriptLevel</a><code> [get, set]</code></td></tr>
+<tr class="separator:aa1ea2748cefc7c6e2769a3e098962b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37f490d98829ae83eedc2cf09b9355d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a37f490d98829ae83eedc2cf09b9355d8">PrinterHasFarEastFonts</a><code> [get, set]</code></td></tr>
+<tr class="separator:a37f490d98829ae83eedc2cf09b9355d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d287c2ccdad5a5e2ef27c10903cf894"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a2d287c2ccdad5a5e2ef27c10903cf894">SuppressCJKSubstitution</a><code> [get, set]</code></td></tr>
+<tr class="separator:a2d287c2ccdad5a5e2ef27c10903cf894"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96b9a0b3fa22edf5a5a1cb6bb0219227"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a96b9a0b3fa22edf5a5a1cb6bb0219227">TransparencyLevel</a><code> [get, set]</code></td></tr>
+<tr class="separator:a96b9a0b3fa22edf5a5a1cb6bb0219227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a142f2f285dc346aa3428bf6dc460c92a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a142f2f285dc346aa3428bf6dc460c92a">UseCMYKWorkingColorSpace</a><code> [get, set]</code></td></tr>
+<tr class="separator:a142f2f285dc346aa3428bf6dc460c92a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a064fc7adabfb491f3c475b74c76eef3e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a064fc7adabfb491f3c475b74c76eef3e">UseWesternStylePageMarks</a><code> [get, set]</code></td></tr>
+<tr class="separator:a064fc7adabfb491f3c475b74c76eef3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Holds parameters for making color separations. Used with PostScript. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae36945e182b2c71b91225577d6f8e58f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae36945e182b2c71b91225577d6f8e58f">&#9670;&nbsp;</a></span>SeparationParams()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.SeparationParams.SeparationParams </td>
+          <td>(</td>
+          <td class="paramtype">System.Collections.Generic.IList&lt; <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_plate.html">SeparationPlate</a> &gt;&#160;</td>
+          <td class="paramname"><em>plates</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set up default parameters for making separations.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">plates</td><td>The plates to use for making separations. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ace966a0c9f422671cd2bb2e17dea2b04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace966a0c9f422671cd2bb2e17dea2b04">&#9670;&nbsp;</a></span>Dispose() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.SeparationParams.Dispose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3a00d63ad61bb9e23e97e7237641e796"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a00d63ad61bb9e23e97e7237641e796">&#9670;&nbsp;</a></span>Dispose() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Datalogics.PDFL.SeparationParams.Dispose </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>disposing</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="aa32732421c48f347753be914f60e8ddd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa32732421c48f347753be914f60e8ddd">&#9670;&nbsp;</a></span>ApplyOCGPrintOverrides</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.SeparationParams.ApplyOCGPrintOverrides</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a195b78d43a3386609da766116441c453"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a195b78d43a3386609da766116441c453">&#9670;&nbsp;</a></span>BinaryChannelAvailable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.SeparationParams.BinaryChannelAvailable</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a77de825826f730951de96ee1880b770c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77de825826f730951de96ee1880b770c">&#9670;&nbsp;</a></span>ConvertToProcessUsingOPP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.SeparationParams.ConvertToProcessUsingOPP</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0366310bb8cb58ebfce424d94ab9fcf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0366310bb8cb58ebfce424d94ab9fcf4">&#9670;&nbsp;</a></span>ConvertTrueTypeToType42</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.SeparationParams.ConvertTrueTypeToType42</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab9d1df258b6d942f7cb35542a267155b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9d1df258b6d942f7cb35542a267155b">&#9670;&nbsp;</a></span>DestinationProfileString</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Datalogics.PDFL.SeparationParams.DestinationProfileString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa58dc1203f4b3395add8614845863a2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa58dc1203f4b3395add8614845863a2d">&#9670;&nbsp;</a></span>EmitAnnotations</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.SeparationParams.EmitAnnotations</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afa642bdd2a5568bbd98a479c80908c08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa642bdd2a5568bbd98a479c80908c08">&#9670;&nbsp;</a></span>EmitFontOption</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a35e66fe395572b27763ac495d4f28ed8">SeparationFontOptions</a> Datalogics.PDFL.SeparationParams.EmitFontOption</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af2726d48db1494a8df480b3c271d7d82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2726d48db1494a8df480b3c271d7d82">&#9670;&nbsp;</a></span>EmitHalftones</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.SeparationParams.EmitHalftones</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa87bece3e542e22c3b2ea627c507b856"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa87bece3e542e22c3b2ea627c507b856">&#9670;&nbsp;</a></span>EmitSeparableImagesOnly</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.SeparationParams.EmitSeparableImagesOnly</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a04f0507f354d6150a6b3335fbb3e6db2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04f0507f354d6150a6b3335fbb3e6db2">&#9670;&nbsp;</a></span>EmitTransferFunctions</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.SeparationParams.EmitTransferFunctions</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a435b87946b624497cf89676c04b70bec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a435b87946b624497cf89676c04b70bec">&#9670;&nbsp;</a></span>InvertPlates</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.SeparationParams.InvertPlates</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aab9868eabb85c3b7d9b08f0ec737b041"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab9868eabb85c3b7d9b08f0ec737b041">&#9670;&nbsp;</a></span>MirrorPrint</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2a572c9549dbb2b650d8133670c6e475">MirrorOptions</a> Datalogics.PDFL.SeparationParams.MirrorPrint</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a08387631b0ed16e2d074bd39552ffbd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08387631b0ed16e2d074bd39552ffbd8">&#9670;&nbsp;</a></span>OCContext</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html">OptionalContentContext</a> Datalogics.PDFL.SeparationParams.OCContext</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7e123a224557e0d621f8c611e062eb44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e123a224557e0d621f8c611e062eb44">&#9670;&nbsp;</a></span>PageMarksToEmit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#aed8ff078d4bfdba0fd3b7a5ff7114f7d">PageMarkFlags</a> Datalogics.PDFL.SeparationParams.PageMarksToEmit</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1b37f86abfb0124be82630849b8e56a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b37f86abfb0124be82630849b8e56a2">&#9670;&nbsp;</a></span>Plates</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">System.Collections.Generic.IList&lt;<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_plate.html">SeparationPlate</a>&gt;? Datalogics.PDFL.SeparationParams.Plates</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa1ea2748cefc7c6e2769a3e098962b66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1ea2748cefc7c6e2769a3e098962b66">&#9670;&nbsp;</a></span>PostScriptLevel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Datalogics.PDFL.SeparationParams.PostScriptLevel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a37f490d98829ae83eedc2cf09b9355d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37f490d98829ae83eedc2cf09b9355d8">&#9670;&nbsp;</a></span>PrinterHasFarEastFonts</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.SeparationParams.PrinterHasFarEastFonts</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2d287c2ccdad5a5e2ef27c10903cf894"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d287c2ccdad5a5e2ef27c10903cf894">&#9670;&nbsp;</a></span>SuppressCJKSubstitution</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.SeparationParams.SuppressCJKSubstitution</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a96b9a0b3fa22edf5a5a1cb6bb0219227"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96b9a0b3fa22edf5a5a1cb6bb0219227">&#9670;&nbsp;</a></span>TransparencyLevel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Datalogics.PDFL.SeparationParams.TransparencyLevel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a142f2f285dc346aa3428bf6dc460c92a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a142f2f285dc346aa3428bf6dc460c92a">&#9670;&nbsp;</a></span>UseCMYKWorkingColorSpace</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.SeparationParams.UseCMYKWorkingColorSpace</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a064fc7adabfb491f3c475b74c76eef3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a064fc7adabfb491f3c475b74c76eef3e">&#9670;&nbsp;</a></span>UseWesternStylePageMarks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.SeparationParams.UseWesternStylePageMarks</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>
