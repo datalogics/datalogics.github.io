@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">com.datalogics.PDFL.FlattenTransparencyParams Member List</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>This is the complete list of members for <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a741b6a069750e5e8ce338ffa73c5a23c">delete</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a57db57c66999298c8a1fbf28ff434ff2">delete</a>(Boolean disposing)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#ab114f4185b242fda391e63c019d5fc1d">finalize</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a86721bf6a632085bf5552bf00b80bc92">FlattenTransparencyParams</a>(long cPtr, boolean cMemoryOwn)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a7327f4df23021dc0e5b05cff027f778a">FlattenTransparencyParams</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#af92073e1f90240825f6b9b1e925f37dc">FlattenTransparencyParams</a>(boolean UseTextOutlines, boolean ConvertStrokesToOutlines, boolean ClipComplexRegions, int InternalDPI, int ExternalDPI, boolean PreserveOverprint, int Quality)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a6a04c69880e8be407211ce027cf72d39">getClipComplexRegions</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a701562c505a28868c272ba7bd098e19c">getColorCompressionScheme</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a9c99ae405f87f920106a870d28cc774a">getColorImageQuality</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a0844063d423c9b3e3b9c9ed14ee72fd2">getConvertStrokesToOutlines</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#aa3206067cf0dc9e4d9cb33393d347c7f">getCPtr</a>(FlattenTransparencyParams obj)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a277b6cbd2378d9e7a31a90548474072c">getExternalDPI</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a38f80060d31501a0cb97b7d45f4bc485">getGrayCompressionScheme</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a5650bce2dbb3049a3fb04ccc4ac29cc7">getGrayImageQuality</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a72406bc0e9c04436fb57806cf3a6b527">getInternalDPI</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a2c111d1116dd0ade24879e04de90721a">getMaxPageFlatteningTime</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#ae8c45a7e4f4bc137628ac43597bda44e">getMonoCompressionScheme</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a0526ba12b0722311af180e791ff24daf">getPreserveOverprint</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#ad7586017c9a72658a2e3daa510457361">getProfileDescription</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#acf9ae93dd594973abaa10aeb9e688fab">getQuality</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a5bbacc953eb086c98556361b0ad43e6c">getUseTextOutlines</a>()</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#aef7cfc0365dfb865dcdb1d63e6ac3c5e">setClipComplexRegions</a>(boolean theSetting)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#acd41bd5d7e835618f39971918b46b3f2">setColorCompressionScheme</a>(FlattenerColorCompression theScheme)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a5be65c459b6b4143009e3d92c8c344fc">setColorImageQuality</a>(FlattenerQualitySetting theQuality)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a9ab8d5cffe21406606fde05332ac0c96">setConvertStrokesToOutlines</a>(boolean theSetting)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a1db047c763bb7616f82eaba5ac6a5fc4">setExternalDPI</a>(int theExternalDPI)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#ac155bc98845bff733fec756acaae9072">setGrayCompressionScheme</a>(FlattenerGrayCompression theScheme)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a553a7bb149fd489524649e918d4db0d5">setGrayImageQuality</a>(FlattenerQualitySetting theQuality)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a2c0accc1f4b499d322433855dc2381a4">setInternalDPI</a>(int theInternalDPI)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a5d7fbb310499af65f6e3e8856d50642f">setMaxPageFlatteningTime</a>(int theTime)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#ac5f69d139b211bca5173cec08e8a9ed8">setMonoCompressionScheme</a>(FlattenerMonoCompression theScheme)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#aef6cf8d40ab5c42a364ea2b2f325b3ec">setPreserveOverprint</a>(boolean theSetting)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a610b53b4122f71750e9ead17906a37a6">setProfileDescription</a>(String descript)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a92a8aeac6c966947d3e1f1032a140bed">setQuality</a>(int theQuality)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a6a855819881509900356d28929363123">setUseTextOutlines</a>(boolean theSetting)</td><td class="entry"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html">com.datalogics.PDFL.FlattenTransparencyParams</a></td><td class="entry"></td></tr>
+</table></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>

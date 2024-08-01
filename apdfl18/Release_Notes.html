@@ -24,6 +24,204 @@
    
 	<div class="entry-content"><p>This page lists updates, fixes, changes and enhancements made to the Adobe PDF Library v18 provided by Datalogics.</p>
 
+<p><strong>APDFL v18.0.4PlusP2z</strong> (July 10, 2024)</p>
+<p>New Features:</p>
+<ul type="disc">
+<li>Forms Extension add-on now available for Linux arm64.</li>
+<li>With this release, the Nuget package version has been increased to 18.38.0.</li>
+<li>With this release, the Maven package version has been increased to 18.38.0.</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul type="disc">
+<li>SF#45890 - Corrects a problem where Encrypting a document with its Catalog specified in an Object stream on saving would result in a PDF that couldn't be opened by PDFL.</li>
+<li>SF#46305 - Corrects a problem where Type 3 glyphs with color information would be improperly drawn on the page in some cases.</li>
+<li>SF#46308 - Corrects a problem with page rendering when encountering an Isolated Transparency Group in some cases.</li>
+<li>SF#46330 - Corrects an issue with Optional Content during PDF/A-2 or later conversion.</li>
+<li>SF#46334 - Correct an issue with DLExportPDEImage() on big endian platforms for BMP.</li>
+<li>SF#46338 - Improves Transparency Flattening when dealing with problematic Type 3 font glyphs to not rely on fallback page rasterization in some cases.</li>
+<li>SF#46349 - Corrects a crash that could occur attempting to render a PDF page with a corrupt JBIG2 compressed image.</li>
+<li>SF#46354 - Corrects a problem rendering text using a CFF font that has a minor issue.</li>
+<li>SF#46357 - Corrects a problem where a Text Field shared across pages of a XFA document could result in a placement issue on the latter page in Forms Extension.</li>
+<li>SF#46358 - Corrects an issue where the formatting of an Integer field could be lost when Flattening a XFA document using Forms Extension.</li>
+<li>SF#46359 - Corrects a problem Flattening a XFA document with incorrect text appearing in the output using Forms Extension.</li>
+<li>SF#46360 - Corrects an issue where the formatting of a field could be lost when Flattening a XFA document using Forms Extension.</li>
+<li>SF#46361 - Corrects a problem where numeric fields could disappear when Flattened using Forms Extension.</li>
+<li>SF#46363 - Corrects a problem where large numeric fields could become 0 when the document was Flattened using Forms Extension.</li>
+<li>SF#46377 - Corrects a problem Flattening XFA documents that would occur for Unicode text on Linux using Forms Extension.</li>
+<li>SF#46395 - Corrects an issue that could occur when saving a Document to memory more than once using the .NET or Java interfaces.</li>
+<li>SF#46396 - Corrects a crash that could occur during color conversion when encountering a problematic Pattern colorspace. Also corrects an exception that could occur during optimization when encountering a problematic Pattern colorspace.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>APDFL v18.0.4PlusP2x</strong> (June 03, 2024)</p>
+<p>New Features:</p>
+<ul type="disc">
+<li>With this release, the Nuget package version has been increased to 18.36.0.</li>
+<li>With this release, the Maven package version has been increased to 18.36.0.</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul type="disc">
+<li>SF#46204 - Corrects a Stackoverflow Exception that could occur when encountering an invalid Form Field during Page Insertion.</li>
+<li>SF#46278 - Corrects a problem where getting the Name property of the Font object could result in an exception for invalid Font names when using the .NET or Java interfaces.</li>
+<li>SF#46292 - Improves performance creating an instance of the Image class from a PNG image using the .NET and Java interfaces.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>APDFL v18.0.4PlusP2w</strong> (May 07, 2024)</p>
+<p>New Features:</p>
+<ul type="disc">
+<li>Forms Extension add-on now available for Windows x64 and Linux x86_64.</li>
+<li>Updates libpng open source component to version 1.6.43.</li>
+<li>With this release, the Nuget package version has been increased to 18.35.0.</li>
+<li>With this release, the Maven package version has been increased to 18.35.0.</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul type="disc">
+<li>SF#45922 - Corrects an issue where the WordFinder could return incorrect results for some documents.</li>
+<li>SF#46162 - Corrects a crash that could occur converting a document with a problematic JPXDecode filtered image to PDF/A-2 or later.</li>
+<li>SF#46216 - Improves handling of being able to open corrupt PDF documents when the repair flag is used.</li>
+<li>SF#46225 - Corrects a problem where FreeText Annotations could be dropped during PDF/A conversion unexpectedly.</li>
+<li>SF#46251 - Corrects an issue where PDF/X-3:2003 conversion would not be a v1.4 document.</li>
+<li>SF#46261 - Corrects a crash that could occur in the PDFOptimizer when encountering a ICC Profile that was invalid.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>APDFL v18.0.4PlusP2u</strong> (April 11, 2024)</p>
+<p>New Features:</p>
+<ul type="disc">
+<li>Add support for creating a QR Barcode (C++, Java, .NET, .NETFramework); 
+<ul type="disc">
+<li>PDPageAddQRBarcode</li>
+</ul>
+<li>Add support for Image Import / Export (C++); 
+<ul type="disc">
+<li>DLCreatePDEImageFromFile</li>
+<li>DLExportPDEImage</li>
+<li>DLPDEImageTranslate</li>
+<li>DLPDEImageScale</li>
+<li>DLPDEImageRotate</li>
+<li>DLPDEImageGetWidth</li>
+<li>DLPDEImageGetHeight</li>
+<li>DLPDEImageGetExportParams</li>
+<li>DLPDEImageGetSoftMask</li>
+<li>DLPDEImageSetSoftMask</li>
+<li>DLColorConvertPDEImage</li>
+<li>DLPDEImageGetIntent</li>
+<li>DLPDEImageSetIntent</li>
+<li>DLPDEImageGetCompression</li>
+<li>DLCreateResampledPDEImage</li>
+</ul>
+<li>Updates expat open source component to version 2.6.2.</li>
+<li>With this release, the Java and .NET Interfaces version has been increased to 18.0.4.34.</li>
+<li>With this release, the Nuget package version has been increased to 18.34.0.</li>
+<li>With this release, the Maven package version has been increased to 18.34.0.</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul type="disc">
+<li>SF#45214 – Corrects an issue where a TextMatch's Quad coordinates would all be 0 for a space character when using PDDocTextFinderAcquireMatchList().</li>
+<li>SF#45378 – The enumeration value kASTimePDF now interprets a date format lacking a time zone as being GMT.</li>
+<li>SF#45923 – This corrects a problem where rendering a document with very large values could result in some content not being drawn.</li>
+<li>SF#45966 – The PDWordGetNthCharStyle() now returns NULL if the index parameter exceeds the number of style transitions.</li>
+<li>SF#46147 – This corrects a problem where Optimizing a document when using the in-memory filesystem could cause the ASFile representation to be prematurely released.</li>
+<li>SF#46154 – Corrects a problem where PDEPathSetDataEx() wouldn't work as expected.</li>
+<li>SF#46156 – Corrects an issue where Optimizing a document could result in a Pattern being mistakenly discarded when in use on the Page.</li>
+<li>SF#46165 – This corrects a crash that could occur converting a document to PDF/A when encountering a problematic TrueType font.</li>
+<li>SF#46170 – Corrects a small memory leak when using the method ASFileOpenWithVirtualEOF().</li>
+<li>SF#46182 – Corrects a problem where merging documents containing Signature Fields with shared field names could cause merging of fields to go awry.</li>
+<li>SF#46189 – Corrects a problem where applying a Redaction could result in an Image's Indexed colorspace becoming invalid. Corrects a problem where applying a Redaction could cause non-adjacent images to be removed.</li>
+<li>SF#46206 – Improves rendering of Type 3 font glyphs with invalidly specified d1 values.</li>
+<li>SF#46210 – Corrects a color shift that could occur rendering a document to the DeviceCMYK colorspace when specifying the kPDPageIsPrinting flag.</li>
+<li>SF#46235 – Corrects a problem where the Flattener maxPageFlatteningTime member of the PDFlattenRec structure wasn't working as expected.</li>
+<li>SF#46240 - Improves the performance of the GetImage() method of the Page class for the .NET and Java interfaces.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>APDFL v18.0.4PlusP2r</strong> (February 21, 2024)</p>
+<p>New Features:</p>
+<ul type="disc">
+<li>Updates .NET Framework nuget package to support x86.</li>
+<li>Updates libtiff open source component to version 4.6.0.</li>
+<li>Updates libpng open source component to version 1.6.42.</li>
+<li>Updates zlib open source component to version 1.3.1.</li>
+<li>Updates expat open source component to version 2.6.0.</li>
+<li>With this release, the Java and .NET Interfaces version has been increased to 18.0.4.32.</li>
+<li>With this release, the Nuget package version has been increased to 18.32.0.</li>
+<li>With this release, the Maven package version has been increased to 18.32.0.</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul type="disc">
+<li>SF#44841 – Corrects an issue where updating Page Content could cause a Marked Content sequence nested within a Text Block to be emitted in the wrong order.</li>
+<li>SF#45834 – Corrects a problem where an error could occur rendering a PDF page with a very large JPEG-compressed image.</li>
+<li>SF#45890 - Corrects an issue where Encrypting a PDF with structural tags and then saving it would cause its size to inflate.</li>
+<li>SF#46085 – Corrects a problem when saving a Document using the RemoveASCIIFilters option would cause an image with an ASCII filter to become corrupt.</li>
+<li>SF#46111 – Corrects an issue where attempting to retrieve data from a JPG image stream on a PDF page could raise an exception unexpectedly.</li>
+<li>SF#46115 - Corrects an issue with the Flattener option permitType3Fonts, where the /ToUnicode mapping could have inconsistencies.</li>
+<li>SF#46123 - Updates RenderPage sample to consider page groups.</li>
+<li>SF#46149 - Corrects an issue where Encrypting a document and then attempting to do a Full Save would result in a confusing exception using the .NET or Java interfaces.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>APDFL v18.0.4PlusP2p</strong> (January 24, 2024)</p>
+<p>New Features:</p>
+<ul type="disc">
+<li>With this release, the Java and .NET Interfaces version has been increased to 18.0.4.31.</li>
+<li>With this release, the Nuget package version has been increased to 18.31.0.</li>
+<li>With this release, the Maven package version has been increased to 18.31.0.</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul type="disc">
+<li>SF#46039 – Improves downsampling of images during optimization that were problematic to downsample previously.</li>
+<li>SF#46061 – Corrects an issue in which an intermittent crash could occur on macOS in a multithreaded scenario rasterizing a complicated path.</li>
+<li>SF#46071 – Corrects an issue in which a crash could occur when rendering a complicated path at certain resolutions.</li>
+<li>SF#46106 – Changes the enumeration value kPDFProcessorConvertToPDFX42008 to kPDFProcessorConvertToPDFX42010 in the C/C++ interface; 
+<ul type="disc">
+<li>Adds a new member ignoreColorConversion to the PDFProcessorPDFXConvertParamsRec structure of the C/C++ interface which should be used when no colors need to be changed to achieve compliance.</li>
+<li>Corrects an issue in which conversion of a document with Optional Content did not persist to the output when targeting PDF/X-4 or PDF/X-6.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>APDFL v18.0.4PlusP2m</strong> (December 26, 2023)</p>
+<p>New Features:</p>
+<ul type="disc">
+<li>The System.Drawing.Common Nuget package dependency has been completely removed from the .NET library, any public APIs using members from that namespace have been removed.
+<ul type="disc">
+<li>SkiaSharp is already used and shown in our sample code to facilitate drawing to a bitmap. The System.Drawing.Common package only worked on Windows and is not suitable for .NET applications which are cross-platform https://learn.microsoft.com/en-us/dotnet/core/compatibility/core-libraries/6.0/system-drawing-common-windows-only.</li>
+<li>The .NET Framework library however continues to use System.Drawing.dll and should be used if you need to render to a System.Drawing.Bitmap.</li>
+</ul>
+<li>With this release, the Java and .NET Interfaces version has been increased to 18.0.4.30.</li>
+<li>With this release, the Nuget package version has been increased to 18.30.0</li>
+<li>With this release, the Maven package version has been increased to 18.30.0.</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul type="disc">
+<li>SF#45799 – Corrects an issue in which glyphs could become .notdef glyphs when subsetting a Type 1 font. </li>
+<li>SF#45878 – Corrects an issue in which rendering a very large image on a PDF page could result in missing content.</li>
+<li>SF#45914 – Improves rendering for a Soft Mask with an incorrectly specified Backdrop color to be more forgiving.</li>
+<li>SF#45940 – Corrects an issue in which creation of a font's /ToUnicode CMap entry could contain invalid syntax for the Destination Code.</li>
+<li>SF#45957 – Improves the preservation of Text Extractability after Flattening a document when the permitType3Fonts option is used in the C/C++ interface.</li>
+<li>SF#45987 – Improves font lookup on the OS.</li>
+<li>SF#46036 – Renames some members of the CircleAnnotation, LinkAnnotation, and SquareAnnotation classes of the .NET and Java interfaces so as to be less misleading; Width is now BorderStyleWidth, Style is now BorderStyle, DashPattern is now BorderStyleDashPattern.</li>
+<li>SF#46040 – Corrects an issue in which using the DrawContents() overload of the .NET and Java interfaces that support a List of SeparationColorSpaces could result in scrambled output.</li>
+<li>SF#46064 – Corrects an issue in which using the DrawContents() overload of the .NET and Java interfaces that support a List of SeparationColorSpaces could result in scrambled output.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>APDFL v18.0.4PlusP2k</strong> (November 28, 2023)</p>
+<p>New Features:</p>
+<ul type="disc">
+<li>Adds suppport for PDF/A-4 conversion to the C/C++ interface.</li>
+<li>Adds support for PDF/A-4 conversion to the .NET and Java interfaces.</li>
+<li>With this release, the Java and .NET Interfaces version has been increased to 18.0.4.29.</li>
+<li>With this release, the Nuget package version has been increased to 18.29.0</li>
+<li>With this release, the Maven package version has been increased to 18.29.0.</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul type="disc">
+<li>SF#45872 – The static APDFLVersion member of the Library class of the .NET and Java interfaces now returns a value, as in legacy versions of APDFL; The static DLEVersion member of the Library class of the .NET and Java interfaces now returns a value, as in legacy versions of APDFL.</li>
+<li>SF#45924 – Corrects an issue in which the .ppi plugin libraries did not have their version information set on Windows.</li>
+<li>SF#45956 – Changes the default values of an instance of the FlattenTransparencyParams class of the .NET and Java interfaces to yield a better result.</li>
+<li>SF#45962 – Corrects an issue in which opening a PDF over 4GB from memory in the .NET or Java interfaces results in an error.</li>
+<li>SF#45967 – Corrects an issue in which a crash could occur when Flattening a PDF Page with an atypical path.</li>
+<li>SF#45973 – Adds a new member ignoreOverprint to the PDFlattenRec structure in the C/C++ interface. When set to true, only Pages with Transparency features will be Flattened; When false Pages with Transparency or Overprint will be Flattened (legacy behavior).</li>
+<li>SF#45986 – Improves performance when adding an existing Page's Content into another Page's Content as a Form that could occur for some documents with a complicated structure.</li>
+<li>SF#45988 – Corrects an issue in which Flattening a document with the permitType3Fonts option could drop some glyphs because of an internal error.</li>
+<li>SF#45993 – Optimizes code in internal APIs to increase vector graphics performance in certain situations.</li>
+<li>SF#45998 – Corrects an issue in which converting a document to PDF/A-1b could result in a document that wasn't compliant. </li>
+</ul>
+<p>&nbsp;</p>
 <p><strong>APDFL v18.0.4PlusP2f</strong> (October 16, 2023)</p>
 <p>New Features:</p>
 <ul type="disc">

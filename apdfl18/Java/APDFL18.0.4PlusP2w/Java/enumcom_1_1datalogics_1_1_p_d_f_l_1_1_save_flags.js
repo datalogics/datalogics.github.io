@@ -1,0 +1,28 @@
+var enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags =
+[
+    [ "FlagsToInt", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a7182732e5543cea4c41ce1d1bc3a4699", null ],
+    [ "IntToFlags", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a5e8907a7306b457e04b9b29b8b870970", null ],
+    [ "ADD_FLATE", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#ab5eeeb1e01f19c24fb4fec6d835661f7", null ],
+    [ "AUTO_SAVE", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a2be42f87b727993b0d83a552a5df542b", null ],
+    [ "CLOSE_AFTER_SAVE", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a257e567aac5394ff9f1ca1f2f0b12751", null ],
+    [ "COLLECT_GARBAGE", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#ae296a94a9aecd2d6c0b4af5221ce39be", null ],
+    [ "COMPRESS_STRUCTURE_ONLY", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a345ddc55cc3dad7a764a686a2b9d5202", null ],
+    [ "COMPRESSED", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a47d16650043e71f4fc6f68684ef5c0c0", null ],
+    [ "COPY", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a2a1c470e5b2ea5f87f14e7b8f1a48255", null ],
+    [ "DO_NOT_CREATE_TO_UNICODE_WIDTHS", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#aa441b79b8cd3bbb01eb4437ebe35ba21", null ],
+    [ "ENSURE_7BIT_ASCII", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a46140dc0253bc422f7d3753e300953dd", null ],
+    [ "FULL", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a20b75fc2aa558403fa8b716bf1436053", null ],
+    [ "INCREMENTAL", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#aad8a0f6ff6f5b1262ca745bb877f75ac", null ],
+    [ "KEEP_MOD_DATE", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a6a51a8f9c690b318a1c06815a37e42a3", null ],
+    [ "LINEARIZED", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a2e361dff7c396838fe49b3d5b161e0e4", null ],
+    [ "OPTIMIZE_CONTENT_STREAMS", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#aaa1c7722279ce7a756992db1d8018d68", null ],
+    [ "OPTIMIZE_FONTS", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a101685acb3e3295865b2daa8699a4781", null ],
+    [ "OPTIMIZE_MARKED_JBIG_2DICTIONARIES", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a3081eba7b48359a4e127a4039c30e86b", null ],
+    [ "OPTIMIZE_XOBJECTS", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a60e9a4eca1adbc039b58c44c4cfaf72b", null ],
+    [ "REMOVE_ASCIIFILTERS", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#af0a6cffb812e9aa3bb02e2f704c12130", null ],
+    [ "REPLACE_LZW", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a4e3f5dff18d2ccf39b0925dcf30528ae", null ],
+    [ "SAVE_LINEARIZED_NO_OPTIMIZE_FONTS", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a826b95d7303593ac0faa1ee00f08b842", null ],
+    [ "SAVE_ORIGINAL_METADATA", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a6e3cc3ca0714e28a4b1fd2eb314e2514", null ],
+    [ "UNCOMPRESSED", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#aebfce6f005c663bf08469a66ba896ab3", null ],
+    [ "XMPPACKET_READ_ONLY_NO_PADDING", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_save_flags.html#a3fe16215073210ba420e2c84300d5309", null ]
+];
