@@ -18,7 +18,7 @@ function goToPage(ver) {
 } 
 
 function changeResult(lang) {
-var verDict = ['APDFL18.0.4PlusP2z', 'APDFL18.0.4PlusP2x', 'APDFL18.0.4PlusP2w', 'APDFL18.0.4PlusP2u', 'APDFL18.0.4PlusP2s', 'APDFL18.0.4PlusP2r', 'APDFL18.0.4PlusP2p', 'APDFL18.0.4PlusP2m', 'APDFL18.0.4PlusP2k', 'APDFL18.0.4PlusP2f', 'APDFL18.0.4PlusP2c', 'APDFL18.0.4PlusP2b', 'APDFL18.0.4PlusP2a', 'APDFL18.0.4PlusP1z', 'APDFL18.0.4PlusP1y', 'APDFL18.0.4PlusP1u', 'APDFL18.0.4PlusP1s']
+var verDict = ['APDFL18.0.4PlusP2z', 'APDFL18.0.4PlusP2x', 'APDFL18.0.4PlusP2w']
     selct = document.getElementById("verDrop")
     selct.textContent = ''
     selct.appendChild(new Option("-"))
@@ -50,4 +50,3 @@ window.onclick = function(event) {
         }
     }
 }
-    
