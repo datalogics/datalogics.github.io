@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+    <html lang="en-US">
+        <head>
+            <link rel="stylesheet" href="resources/css/pageStyles.css">
+            <link rel="icon" type="image/x-icon" href="resources/img/DLicon.png">
+            <meta charset="UTF-8">
+            <title>
+PDF Edit Layer: PDEPlace
+            </title>
+        </head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+        </script>
+        <body><div>
+<a href="index.html"><img src="resources/img/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0px; left: 0px;"></a>
+</div>
+<div class="verSelect" style="position: fixed; z-index: 2; top: 41px; left: 0px;"><iframe id="ver" src="../ver.html" style=" height: 45px; border-width: 0px;"></iframe></div>
+<div class="fullTOC"><iframe src="TOC.html"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PDF Edit Layer: PDEPlace</h5>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Typedefs">
+<header><h2>PDEPlace Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDEPlace">PDEPlace</a></dt><dd> -  A PDEElement that marks a place on a page in a PDF file.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEPlace"><strong><span style="color:grey;">PDEPlace</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEExpT.h:232</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>A <a href="pdelayer_PDEElement.html#PDEElement" title=" The base class for elements of a page display list (PDEContent) and for clip objects.">PDEElement</a> that marks a place on a page in a PDF file. In a PDF file, a place is represented by the MP or DP Marked Content operators.<br/>
+<p>Marked content is useful for adding structure information to a PDF file. For instance, a drawing program may want to mark a point with information, such as the start of a path of a certain type. Marked content provides a way to retain this information in the PDF file. A DP operator functions the same as the MP operator and, in addition, allows a property list dictionary to be associated with a place.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<div><a href="pdelayer_PDEObject.html#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a> </div>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <code>struct</code> <code>_t_PDEPlace</code> <code>*</code><code>PDEPlace</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEPlace.html#PDEPlaceCreate" title=" Creates a place object."><code>PDEPlaceCreate</code></a></td><td><div></div>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdelayer_PDEPlace.html#PDEPlaceGetDict" title=" Gets the Marked Content dictionary for a PDEPlace."><code>PDEPlaceGetDict</code></a></td><td><a href="pdelayer_PDEPlace.html#PDEPlaceGetMCTag" title=" Gets the Marked Content tag for a PDEPlace."><code>PDEPlaceGetMCTag</code></a></td></tr>
+<tr><td><a href="pdelayer_PDEPlace.html#PDEPlaceSetDict" title=" Sets the Marked Content dictionary for a PDEPlace."><code>PDEPlaceSetDict</code></a></td><td><a href="pdelayer_PDEPlace.html#PDEPlaceSetMCTag" title=" Sets the Marked Content tag for a PDEPlace."><code>PDEPlaceSetMCTag</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDEPlace Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDEPlaceCreate">PDEPlaceCreate</a></dt><dd> -  Creates a place object.</dd>
+<dt><a href="#PDEPlaceGetDict">PDEPlaceGetDict</a></dt><dd> -  Gets the Marked Content dictionary for a PDEPlace.</dd>
+<dt><a href="#PDEPlaceGetMCTag">PDEPlaceGetMCTag</a></dt><dd> -  Gets the Marked Content tag for a PDEPlace.</dd>
+<dt><a href="#PDEPlaceSetDict">PDEPlaceSetDict</a></dt><dd> -  Sets the Marked Content dictionary for a PDEPlace.</dd>
+<dt><a href="#PDEPlaceSetMCTag">PDEPlaceSetMCTag</a></dt><dd> -  Sets the Marked Content tag for a PDEPlace.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDEPlaceCreate"><strong><span style="color:grey;">PDEPlaceCreate</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1133</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div><p>Creates a place object.<br/>
+<p>Call <a href="pdelayer_PDEObject.html#PDERelease" title=" Decrements the reference count for the object.">PDERelease</a>() to dispose of the returned place object when finished with it.<br/></p>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEPlace.html#PDEPlace" title=" A PDEElement that marks a place on a page in a PDF file."><code>PDEPlace</code></a> <code>PDEPlaceCreate(</code><a href="pdslayer_General.html#IN"><code>IN</code></a> <a href="aslayer_ASAtom.html#ASAtom"><code>ASAtom</code></a> <code>mcTag</code><code>,</code> <a href="pdslayer_General.html#IN"><code>IN</code></a> <a href="coslayer_CosObj.html#CosObj"><code>CosObj</code></a> <code>*</code><code>cosObjP</code><code>,</code> <a href="pdslayer_General.html#IN"><code>IN</code></a> <a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>isInline</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>mcTag</code></div>
+</td><td><div>IN/OUT The tag name for the place. It must not contain any white space characters (for example, spaces or tabs). </div>
+</td></tr>
+<tr><td><div><code>cosObjP</code></div>
+</td><td><div>IN/OUT An optional Marked Content dictionary associated with the place. </div>
+</td></tr>
+<tr><td><div><code>isInline</code></div>
+</td><td><div>If <a href="aslayer_General.html#true"><code>true</code></a>, it emits the place's dictionary into the content stream inline. If <a href="aslayer_General.html#false"><code>false</code></a>, then the dictionary is emitted outside of the content stream and referenced by name. See the Property Lists section of the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 14.6.2, page 554. You can find this document on the web store of the International Standards Organization (ISO). </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>The place object. </div>
+</section>
+<section><div class="infoRow"><h3 id="PDEPlaceGetDict"><strong><span style="color:grey;">PDEPlaceGetDict</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1398</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div>Gets the Marked Content dictionary for a <a href="pdelayer_PDEPlace.html#PDEPlace" title=" A PDEElement that marks a place on a page in a PDF file.">PDEPlace</a>. </div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<div><a href="pdelayer_PDEPlace.html#PDEPlaceSetDict" title=" Sets the Marked Content dictionary for a PDEPlace.">PDEPlaceSetDict</a> </div>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDEPlaceGetDict(</code><a href="pdslayer_General.html#IN"><code>IN</code></a> <a href="pdelayer_PDEPlace.html#PDEPlace" title=" A PDEElement that marks a place on a page in a PDF file."><code>PDEPlace</code></a> <code>pdePlace</code><code>,</code> <a href="pdslayer_General.html#OUT"><code>OUT</code></a> <a href="coslayer_CosObj.html#CosObj"><code>CosObj</code></a> <code>*</code><code>placeDictP</code><code>,</code> <a href="pdslayer_General.html#OUT"><code>OUT</code></a> <a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>*</code><code>isInline</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>pdePlace</code></div>
+</td><td><div>IN/OUT The place whose Marked Content dictionary is obtained. </div>
+</td></tr>
+<tr><td><div><code>placeDictP</code></div>
+</td><td><div>IN/OUT (Filled by the method) A pointer to the Marked Content dictionary; may be <a href="aslayer_General.html#NULL"><code>NULL</code></a>. </div>
+</td></tr>
+<tr><td><div><code>isInline</code></div>
+</td><td><div>IN/OUT (Filled by the method) If <a href="aslayer_General.html#true"><code>true</code></a>, the Marked Content dictionary is inline; may be <a href="aslayer_General.html#NULL"><code>NULL</code></a>. </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div><a href="aslayer_General.html#true"><code>true</code></a> if dictionary is obtained, <a href="aslayer_General.html#false"><code>false</code></a> if no dictionary is present. </div>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><div><a href="pdfllayer_General.html#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></div>
+</td><td><div></div>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEPlaceGetMCTag"><strong><span style="color:grey;">PDEPlaceGetMCTag</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PERProcs.h:1381</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div>Gets the Marked Content tag for a <a href="pdelayer_PDEPlace.html#PDEPlace" title=" A PDEElement that marks a place on a page in a PDF file.">PDEPlace</a>. </div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<div><a href="pdelayer_PDEPlace.html#PDEPlaceSetMCTag" title=" Sets the Marked Content tag for a PDEPlace.">PDEPlaceSetMCTag</a> </div>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_ASAtom.html#ASAtom"><code>ASAtom</code></a> <code>PDEPlaceGetMCTag(</code><a href="pdslayer_General.html#IN"><code>IN</code></a> <a href="pdelayer_PDEPlace.html#PDEPlace" title=" A PDEElement that marks a place on a page in a PDF file."><code>PDEPlace</code></a> <code>pdePlace</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>pdePlace</code></div>
+</td><td><div>IN/OUT The place whose Marked Content tag is obtained. </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>A tag for <code>pdePlace</code>. </div>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><div><a href="pdfllayer_General.html#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></div>
+</td><td><div></div>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEPlaceSetDict"><strong><span style="color:grey;">PDEPlaceSetDict</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1168</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div>Sets the Marked Content dictionary for a <a href="pdelayer_PDEPlace.html#PDEPlace" title=" A PDEElement that marks a place on a page in a PDF file.">PDEPlace</a>. The dictionary can be emitted inline or referenced from the <code>\\Properties</code> key in the <code>\\Resources</code> dictionary of the containing stream. </div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<div><a href="pdelayer_PDEPlace.html#PDEPlaceGetDict" title=" Gets the Marked Content dictionary for a PDEPlace.">PDEPlaceGetDict</a> </div>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEPlaceSetDict(</code><a href="pdslayer_General.html#IN"><code>IN</code></a> <a href="pdelayer_PDEPlace.html#PDEPlace" title=" A PDEElement that marks a place on a page in a PDF file."><code>PDEPlace</code></a> <code>pdePlace</code><code>,</code> <a href="pdslayer_General.html#IN"><code>IN</code></a> <a href="coslayer_CosObj.html#CosObj"><code>CosObj</code></a> <code>*</code><code>placeDictP</code><code>,</code> <a href="pdslayer_General.html#IN"><code>IN</code></a> <a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>isInline</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>pdePlace</code></div>
+</td><td><div>IN/OUT The place whose Marked Content dictionary is set. </div>
+</td></tr>
+<tr><td><div><code>placeDictP</code></div>
+</td><td><div>IN/OUT The Marked Content dictionary for <code>pdePlace</code>. </div>
+</td></tr>
+<tr><td><div><code>isInline</code></div>
+</td><td><div>If <a href="aslayer_General.html#true"><code>true</code></a>, it emits the place's dictionary into the content stream inline. If <a href="aslayer_General.html#false"><code>false</code></a>, then the dictionary is emitted outside of the content stream and referenced by name. See the Property Lists section of the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 14.6.2, page 554. You can find this document on the web store of the International Standards Organization (ISO). </div>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><div><a href="pdfllayer_General.html#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></div>
+</td><td><div></div>
+</td></tr></table>
+</div>
+</section>
+<section><div class="infoRow"><h3 id="PDEPlaceSetMCTag"><strong><span style="color:grey;">PDEPlaceSetMCTag</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PEWProcs.h:1145</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div>Sets the Marked Content tag for a <a href="pdelayer_PDEPlace.html#PDEPlace" title=" A PDEElement that marks a place on a page in a PDF file.">PDEPlace</a>. </div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<div><a href="pdelayer_PDEPlace.html#PDEPlaceGetMCTag" title=" Gets the Marked Content tag for a PDEPlace.">PDEPlaceGetMCTag</a> </div>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDEPlaceSetMCTag(</code><a href="pdslayer_General.html#IN"><code>IN</code></a> <a href="pdelayer_PDEPlace.html#PDEPlace" title=" A PDEElement that marks a place on a page in a PDF file."><code>PDEPlace</code></a> <code>pdePlace</code><code>,</code> <a href="pdslayer_General.html#IN"><code>IN</code></a> <a href="aslayer_ASAtom.html#ASAtom"><code>ASAtom</code></a> <code>mcTag</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>pdePlace</code></div>
+</td><td><div>IN/OUT The place whose Marked Content tag is set. </div>
+</td></tr>
+<tr><td><div><code>mcTag</code></div>
+</td><td><div>IN/OUT The tag for <code>pdePlace</code>. </div>
+</td></tr></Table>
+
+<H4><strong>Exceptions</strong></H4>
+
+<div><table><tr><td><div><a href="pdfllayer_General.html#peErrWrongPDEObjectType" title=" Incorrect PDEObject type."><code>peErrWrongPDEObjectType</code></a></div>
+</td><td><div></div>
+</td></tr></table>
+</div>
+</section>
+</section>
+
+</div>
+</body>
+    <script>
+        currVer = window.location.pathname.split("/").slice(-2)[0]
+        document.getElementById("ver").src +=  "?=" + currVer 
+    </script>
+    </html>
