@@ -24,6 +24,34 @@
    
 	<div class="entry-content"><p>This page lists updates, fixes, changes and enhancements made to the Adobe PDF Library v18 provided by Datalogics.</p>
 
+<p><strong>APDFL v18.0.5PlusP1b</strong> (September 16, 2024)</p>
+<p>New Features:</p>
+<ul type="disc">
+<li>Added C++ SDK Support for Windows ARM64.</li>
+<li>Added C++ Image APIs: 
+<ul type="disc">
+<li>DLCreatePDEImagesFromTIFF() to create PDEImage's from a multipage TIFF</li>
+<li>DLExportPDEImagesToTIFF() to create a multipage TIFF from multiple PDEImages</li>
+<li>DLGetImageType() to get the image type</li>
+<li>DLCreatePDEImageFromASFile() to create a PDEImage from an ASFile</li>
+<li>DLCreatePDEImagesFromASFile() to create PDEImages's from an ASFile</li>
+</ul>
+<li>The imaging (BMP, GIF, JPEG, PNG, TIFF) import and export functionality of PDFL has been improved overall.</li>
+<li>The Translate() method of the Image class (of the .NET and Java interfaces) now expects parameter values that are the intuitive location of the Content on the Page.  Previously the expected values weren't intuitive for the end user.</li>
+<li>With this release, the Nuget package version has been increased to 18.40.0 and 18.40.1.</li>
+<li>With this release, the Maven package version has been increased to 18.40.0.</li>
+<li>With this release, the OCR NuGet packages version have been updated to 1.0.2.</li>
+</ul>
+<p>Problem Corrections:</p>
+<ul type="disc">
+<li>SF#45573 – Corrects a problem where Flattening Transparency for Patterns could sometimes not work correctly.</li>
+<li>SF#46367 – Corrects a problem where Flattening Transparency for Patterns could sometimes not work correctly.</li>
+<li>SF#46506 – Corrects a problem with converting to PDF/A part 2 or later could result in duplicated Optional Content entries being shown in PDF viewers.</li>
+<li>SF#46480 – Corrects a Stack Overflow that could occur rendering a PDF document that suffered from Circular Form Recursion.</li>
+<li>SF#46507 –  Corrects a crash that could occur saving a PDF image as a PNG when some aspect of it was problematic, a proper error is now raised or the image is processed successfully.</li>
+<li>SF#46518 – Improves support for opening a corrupt document to attempt to rebuild it when possible.</li>
+</ul>
+<p>&nbsp;</p>			
 <p><strong>APDFL v18.0.5PlusP1a</strong> (August 15, 2024)</p>
 <p>New Features:</p>
 <ul type="disc">
