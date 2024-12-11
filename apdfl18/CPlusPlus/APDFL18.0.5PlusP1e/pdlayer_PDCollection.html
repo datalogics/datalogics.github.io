@@ -1,0 +1,598 @@
+
+<!DOCTYPE html>
+    <html lang="en-US">
+        <head>
+            <link rel="stylesheet" href="resources/css/pageStyles.css">
+            <link rel="icon" type="image/x-icon" href="resources/img/DLicon.png">
+            <meta charset="UTF-8">
+            <title>
+PD Layer: PDCollection
+            </title>
+        </head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+        </script>
+        <body><div>
+<a href="index.html"><img src="resources/img/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0px; left: 0px;"></a>
+</div>
+<div class="verSelect" style="position: fixed; z-index: 2; top: 41px; left: 0px;"><iframe id="ver" src="../ver.html" style=" height: 45px; border-width: 0px;"></iframe></div>
+<div class="fullTOC"><iframe src="TOC.html"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>PD Layer: PDCollection</h5>
+<li><a href="#Enumerations">Enumerations</a></li>
+<li><a href="#Typedefs">Typedefs</a></li>
+<li><a href="#Structures">Structures</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Enumerations">
+<header><h2>PDCollection Enumerations</h2></header>
+<nav><dl>
+<dt><a href="#PDCollectionSplitTypes">PDCollectionSplitTypes</a></dt><dd> -  Collection split types.</dd>
+<dt><a href="#PDCollectionViewTypes">PDCollectionViewTypes</a></dt><dd> -  Collection view types.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDCollectionSplitTypes"><strong><span style="color:grey;">PDCollectionSplitTypes</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:7023</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Collection split types. 
+<p>Value options for <a href="pdlayer_PDCollection.html#PDCollectionSplitType" title=" Collection split types."><code>PDCollectionSplitType.</code></a> </div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><div class="enumEntry" id="kCollectionSplitDefault"><code>kCollectionSplitDefault</code><code>=</code><code>0x2000</code></div>
+</td><td><div>Default split based on view. </div>
+</td></tr>
+<tr><td><div class="enumEntry" id="kCollectionSplitHorizontal"><code>kCollectionSplitHorizontal</code></div>
+</td><td><div>Split vertical. </div>
+</td></tr>
+<tr><td><div class="enumEntry" id="kCollectionSplitVertical"><code>kCollectionSplitVertical</code></div>
+</td><td><div>Split horizontal. </div>
+</td></tr>
+<tr><td><div class="enumEntry" id="kCollectionSplitNone"><code>kCollectionSplitNone</code></div>
+</td><td><div>No split; show the navigator. </div>
+</td></tr>
+<tr><td><div class="enumEntry" id="kCollectionSplitPreview"><code>kCollectionSplitPreview</code></div>
+</td><td><div>No split; show the preview. </div>
+</td></tr></table>
+</section>
+<section><div class="infoRow"><h3 id="PDCollectionViewTypes"><strong><span style="color:grey;">PDCollectionViewTypes</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:7012</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Collection view types. 
+<p>Value options for <a href="pdlayer_PDCollection.html#PDCollectionViewType" title=" Collection view types."><code>PDCollectionViewType.</code></a> </div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><div class="enumEntry" id="kCollectionViewTile"><code>kCollectionViewTile</code><code>=</code><code>0x1000</code></div>
+</td><td><div>Tile navigator. </div>
+</td></tr>
+<tr><td><div class="enumEntry" id="kCollectionViewDetails"><code>kCollectionViewDetails</code></div>
+</td><td><div>Details navigator. </div>
+</td></tr>
+<tr><td><div class="enumEntry" id="kCollectionViewCustom"><code>kCollectionViewCustom</code></div>
+</td><td><div>Custom navigator. </div>
+</td></tr></table>
+</section>
+</section>
+<section id="Typedefs">
+<header><h2>PDCollection Typedefs</h2></header>
+<nav><dl>
+<dt><a href="#PDCollection">PDCollection</a></dt><dd> -  A PDCollection represents a collection dictionary in a PDF file.</dd>
+<dt><a href="#PDCollectionSplitType">PDCollectionSplitType</a></dt><dd> -  Collection split types.</dd>
+<dt><a href="#PDCollectionViewType">PDCollectionViewType</a></dt><dd> -  Collection view types.</dd>
+<dt><a href="#PDNavigator">PDNavigator</a></dt><dd> -  Opaque object representing a collection navigator dictionary.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDCollection"><strong><span style="color:grey;">PDCollection</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:7000</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>
+<p>A <a href="pdlayer_PDCollection.html#PDCollection" title=" A PDCollection represents a collection dictionary in a PDF file."><code>PDCollection</code></a> represents a collection dictionary in a PDF file.<br/></p>
+
+<p>
+<p>Collection view types and split types are unusual. A straight mapping of the View key and the Split key would result in the key/value of <code>/View/H</code> being part of the view type enumeration, but that would result in ambiguity when setting View to H and Split to N ( <code>/View/H</code> maps to "preview" in Acrobat 8, but <code>/Split/N</code> is documented to map to "no split, show navigator" in Acrobat 9. Because of this, and the fact that <code>/View/H</code> is really interpreted as a kind of split rather than a style of navigator, Preview was moved to the split type enumeration in the API. This interacts with the underlying file as follows: when a <code>/View/H</code> value is read it is mapped to "Tile" and "Preview" for the navigator style and split position. When the Tile/Preview combination is written out, it is recorded back to <code>/View/H</code> for consistency with Acrobat 8.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<div><a href="pdlayer_PDDoc.html#PDDocDeleteCollection" title=" Removes a collection dictionary from a document.">PDDocDeleteCollection</a> </div>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.html#OPAQUE_64_BITS"><code>OPAQUE_64_BITS</code></a> <code>PDCollection</code><code>;</code> </code>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDDoc.html#PDDocCreatePDCollection" title=" Creates a collection in a document."><code>PDDocCreatePDCollection</code></a></td><td><a href="pdlayer_PDDoc.html#PDDocGetPDCollection" title=" Gets the collection object in a document."><code>PDDocGetPDCollection</code></a></td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDCollection.html#PDCollectionCreateFolder" title=" Creates a new folder."><code>PDCollectionCreateFolder</code></a></td><td><a href="pdlayer_PDCollection.html#PDCollectionGetFolder" title=" Gets an existing folder."><code>PDCollectionGetFolder</code></a></td></tr>
+<tr><td><a href="pdlayer_PDCollection.html#PDCollectionGetInitialStyle" title=" Gets the initial style dictionary for the collection."><code>PDCollectionGetInitialStyle</code></a></td><td><a href="pdlayer_PDCollection.html#PDCollectionGetSortOrder" title=" Gets the contents of the collection sort dictionary."><code>PDCollectionGetSortOrder</code></a></td></tr>
+<tr><td><a href="pdlayer_PDCollection.html#PDCollectionGetViewData" title=" Gets the view data for the collection."><code>PDCollectionGetViewData</code></a></td><td><a href="pdlayer_PDCollection.html#PDCollectionIsValid" title=" Determines if a collection is valid."><code>PDCollectionIsValid</code></a></td></tr>
+<tr><td><a href="pdlayer_PDCollection.html#PDCollectionRemoveFolder" title=" Removes a folder and its descendant folders and associated file attachments."><code>PDCollectionRemoveFolder</code></a></td><td><a href="pdlayer_PDCollection.html#PDCollectionRemoveInitialStyle" title=" Removes the initial style dictionary from a collect, if present"><code>PDCollectionRemoveInitialStyle</code></a></td></tr>
+<tr><td><a href="pdlayer_PDCollectionSchema.html#PDCollectionSchemaAcquire" title=" Acquires the PDCollectionSchema object for a collection."><code>PDCollectionSchemaAcquire</code></a></td><td><a href="pdlayer_PDCollection.html#PDCollectionSetInitialStyle" title=" Sets the initial style dictionary for the collection."><code>PDCollectionSetInitialStyle</code></a></td></tr>
+<tr><td><a href="pdlayer_PDCollection.html#PDCollectionSetSortOrder" title=" Set the contents of the collection sort dictionary."><code>PDCollectionSetSortOrder</code></a></td><td><a href="pdlayer_PDCollection.html#PDCollectionSetViewData" title=" Set the view data for the collection."><code>PDCollectionSetViewData</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDCollectionSplitType"><strong><span style="color:grey;">PDCollectionSplitType</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:7035</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Collection split types. 
+<p>For value options see <a href="pdlayer_PDCollection.html#PDCollectionSplitTypes" title=" Collection split types."><code>PDCollectionSplitTypes.</code></a> </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.html#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>PDCollectionSplitType</code><code>;</code> </code>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDCollection.html#_t_PDCollectionViewDataRec" title=" Collection view data record."><code>_t_PDCollectionViewDataRec</code></a></td><td><div></div>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDCollectionViewType"><strong><span style="color:grey;">PDCollectionViewType</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:7020</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Collection view types. 
+<p>For value options see <a href="pdlayer_PDCollection.html#PDCollectionViewTypes" title=" Collection view types."><code>PDCollectionViewTypes.</code></a> </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.html#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>PDCollectionViewType</code><code>;</code> </code>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDCollection.html#_t_PDCollectionViewDataRec" title=" Collection view data record."><code>_t_PDCollectionViewDataRec</code></a></td><td><div></div>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="PDNavigator"><strong><span style="color:grey;">PDNavigator</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:7009</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Opaque object representing a collection navigator dictionary. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>typedef</code> <a href="aslayer_General.html#OPAQUE_64_BITS"><code>OPAQUE_64_BITS</code></a> <code>PDNavigator</code><code>;</code> </code>
+
+<H4><strong>Used In</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDCollection.html#_t_PDCollectionViewDataRec" title=" Collection view data record."><code>_t_PDCollectionViewDataRec</code></a></td><td><div></div>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Structures">
+<header><h2>PDCollection Structures</h2></header>
+<nav><dl>
+<dt><a href="#_t_PDCollectionField">_t_PDCollectionField</a></dt><dd> -  A structure corresponding to a field in the collection schema.</dd>
+<dt><a href="#_t_PDCollectionViewDataRec">_t_PDCollectionViewDataRec</a></dt><dd> -  Collection view data record.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="_t_PDCollectionField"><strong><span style="color:grey;">_t_PDCollectionField</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:7068</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>A structure corresponding to a field in the collection schema. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDCollectionField {</code> </code>
+</td><td><div></div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.html#ASSize_t"><code>ASSize_t</code></a> <code>size</code><code>;</code> </div>
+</td><td><div>The size of the <a href="pdlayer_PDCollection.html#_t_PDCollectionField" title=" A structure corresponding to a field in the collection schema."><code>PDCollectionFieldRec</code></a>. </div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.html#ASAtom"><code>ASAtom</code></a> <code>fieldName</code><code>;</code> </div>
+</td><td><div>The ID of the field. </div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>index</code><code>;</code> </div>
+</td><td><div>The 0-based index of the field in the <a href="pdlayer_PDCollectionSchema.html#PDCollectionSchema" title=" An opaque pointer to a collection schema object."><code>PDCollectionSchema</code></a>. </div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASAtom.html#ASAtom"><code>ASAtom</code></a> <code>subtype</code><code>;</code> </div>
+</td><td><div>The subtype of the field. For example <code>/N</code> represents a number and <code>/S</code> represents a string. </div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_ASText.html#ASText" title=" An opaque object holding encoded text."><code>ASText</code></a> <code>fieldText</code><code>;</code> </div>
+</td><td><div>The name to use in the user interface. </div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>visible</code><code>;</code> </div>
+</td><td><div>Default visibility. </div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>canEdit</code><code>;</code> </div>
+</td><td><div></div>
+</td></tr>
+<tr><td><code id="PDCollectionFieldRec"><code>}</code> <a href="pdlayer_PDCollection.html#_t_PDCollectionField" title=" A structure corresponding to a field in the collection schema."><code>PDCollectionFieldRec</code></a><code>;</code> </code>
+</td><td><div></div>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDCollectionSchema.html#PDCollectionSchemaGetField" title=" Gets a field by name or position."><code>PDCollectionSchemaGetField</code></a></td><td><a href="pdlayer_PDCollectionSchema.html#PDCollectionSchemaSetField" title=" Sets a field with new values."><code>PDCollectionSchemaSetField</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="_t_PDCollectionViewDataRec"><strong><span style="color:grey;">_t_PDCollectionViewDataRec</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDExpT.h:7038</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Collection view data record. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<div><table><tr><td><code><code>struct _t_PDCollectionViewDataRec {</code> </code>
+</td><td><div></div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.html#ASSize_t"><code>ASSize_t</code></a> <code>size</code><code>;</code> </div>
+</td><td><div>The size of the <a href="pdlayer_PDCollection.html#_t_PDCollectionViewDataRec" title=" Collection view data record."><code>PDCollectionViewDataRec</code></a>. </div>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDCollection.html#PDCollectionViewType" title=" Collection view types."><code>PDCollectionViewType</code></a> <code>view</code><code>;</code> </div>
+</td><td><div>The view type of the collection. </div>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDCollection.html#PDNavigator" title=" Opaque object representing a collection navigator dictionary."><code>PDNavigator</code></a> <code>navigator</code><code>;</code> </div>
+</td><td><div>The navigator to use with the collection. This is ignored if <code>view</code> <code>!=</code> <code>custom</code>. </div>
+</td></tr>
+<tr><td><div class="structMember"><a href="pdlayer_PDCollection.html#PDCollectionSplitType" title=" Collection split types."><code>PDCollectionSplitType</code></a> <code>split</code><code>;</code> </div>
+</td><td><div>The split type of the collection. </div>
+</td></tr>
+<tr><td><div class="structMember"><a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>splitPos</code><code>;</code> </div>
+</td><td><div>A percentage from <code>0-100</code>. It is ignored if the position is not a split view. If the position is a split view,<code>-1</code> indicates an application-defined position. </div>
+</td></tr>
+<tr><td><code id="PDCollectionViewDataRec"><code>}</code> <a href="pdlayer_PDCollection.html#_t_PDCollectionViewDataRec" title=" Collection view data record."><code>PDCollectionViewDataRec</code></a><code>;</code> </code>
+</td><td><div></div>
+</td></tr></table>
+</div>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="pdlayer_PDCollection.html#PDCollectionGetViewData" title=" Gets the view data for the collection."><code>PDCollectionGetViewData</code></a></td><td><a href="pdlayer_PDCollection.html#PDCollectionSetViewData" title=" Set the view data for the collection."><code>PDCollectionSetViewData</code></a></td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>PDCollection Functions</h2></header>
+<nav><dl>
+<dt><a href="#PDCollectionCreateFolder">PDCollectionCreateFolder</a></dt><dd> -  Creates a new folder.</dd>
+<dt><a href="#PDCollectionGetFolder">PDCollectionGetFolder</a></dt><dd> -  Gets an existing folder.</dd>
+<dt><a href="#PDCollectionGetInitialStyle">PDCollectionGetInitialStyle</a></dt><dd> -  Gets the initial style dictionary for the collection.</dd>
+<dt><a href="#PDCollectionGetSortOrder">PDCollectionGetSortOrder</a></dt><dd> -  Gets the contents of the collection sort dictionary.</dd>
+<dt><a href="#PDCollectionGetViewData">PDCollectionGetViewData</a></dt><dd> -  Gets the view data for the collection.</dd>
+<dt><a href="#PDCollectionIsValid">PDCollectionIsValid</a></dt><dd> -  Determines if a collection is valid.</dd>
+<dt><a href="#PDCollectionRemoveFolder">PDCollectionRemoveFolder</a></dt><dd> -  Removes a folder and its descendant folders and associated file attachments.</dd>
+<dt><a href="#PDCollectionRemoveInitialStyle">PDCollectionRemoveInitialStyle</a></dt><dd> -  Removes the initial style dictionary from a collect, if present</dd>
+<dt><a href="#PDCollectionSetInitialStyle">PDCollectionSetInitialStyle</a></dt><dd> -  Sets the initial style dictionary for the collection.</dd>
+<dt><a href="#PDCollectionSetSortOrder">PDCollectionSetSortOrder</a></dt><dd> -  Set the contents of the collection sort dictionary.</dd>
+<dt><a href="#PDCollectionSetViewData">PDCollectionSetViewData</a></dt><dd> -  Set the view data for the collection.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="PDCollectionCreateFolder"><strong><span style="color:grey;">PDCollectionCreateFolder</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:12477</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Creates a new folder. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDFolder.html#PDFolder" title=" An opaque object representing a collection folder dictionary."><code>PDFolder</code></a> <code>PDCollectionCreateFolder(</code><a href="pdlayer_PDCollection.html#PDCollection" title=" A PDCollection represents a collection dictionary in a PDF file."><code>PDCollection</code></a> <code>collection</code><code>,</code> <a href="aslayer_ASText.html#ASConstText" title=" An opaque object holding constant encoded text."><code>ASConstText</code></a> <code>path</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>collection</code></div>
+</td><td><div>The collection that will be associated with the new folder. </div>
+</td></tr>
+<tr><td><div><code>path</code></div>
+</td><td><div><p>The path and name of the folder. The path syntax for folders takes the form <code>[parent/]folder</code>, where the mandatory <code>parent/</code> section may be repeated as necessary to provide a complete path to the new folder. The path is always interpreted as being relative to the root level of the folder hierarchy. Paths that specify simply a new folder name are located in the root folder. The character set for folder names is limited. Folders may not contain any of the characters in the set<br/>
+<p><code>/</code> <code>\</code><code>:</code> <code>?</code> <code>*</code> <code>&quot;</code> <code>&lt;</code> <code>&gt;</code> <code>|</code><br/></p>
+
+<div>
+<p>and may not end with a<code>.</code> (period). Please note that a folder name cannot consist entirely of spaces. To specify the root folder itself, assign a value of <code>"/"</code>.</div>
+</div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>The new folder object. </div>
+</section>
+<section><div class="infoRow"><h3 id="PDCollectionGetFolder"><strong><span style="color:grey;">PDCollectionGetFolder</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:12495</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Gets an existing folder. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdlayer_PDFolder.html#PDFolder" title=" An opaque object representing a collection folder dictionary."><code>PDFolder</code></a> <code>PDCollectionGetFolder(</code><a href="pdlayer_PDCollection.html#PDCollection" title=" A PDCollection represents a collection dictionary in a PDF file."><code>PDCollection</code></a> <code>collection</code><code>,</code> <a href="aslayer_ASText.html#ASConstText" title=" An opaque object holding constant encoded text."><code>ASConstText</code></a> <code>path</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>collection</code></div>
+</td><td><div>The collection associated with the folder to be obtained. </div>
+</td></tr>
+<tr><td><div><code>path</code></div>
+</td><td><div>The path to the folder. To specify the root folder itself, assign a value of <code>"/"</code>. The path syntax for folders takes the form <code>[parent/]folder</code>, where the mandatory <code>parent/</code> section may be repeated as necessary to provide a complete path to the new folder. </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>The specified folder. If the folder does not exist, the returned folder is invalid. </div>
+</section>
+<section><div class="infoRow"><h3 id="PDCollectionGetInitialStyle"><strong><span style="color:grey;">PDCollectionGetInitialStyle</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:12508</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Gets the initial style dictionary for the collection. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDCollectionGetInitialStyle(</code><a href="pdlayer_PDCollection.html#PDCollection" title=" A PDCollection represents a collection dictionary in a PDF file."><code>PDCollection</code></a> <code>collection</code><code>,</code> <a href="aslayer_ASCab.html#ASCab" title=" ASCab objects ( cabinets ) can be used to store arbitrary key/value pairs."><code>ASCab</code></a> <code>style</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>collection</code></div>
+</td><td><div>The collection object. </div>
+</td></tr>
+<tr><td><div><code>style</code></div>
+</td><td><div>Dictionary to set </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div><a href="aslayer_General.html#true">true</a> if the dictionary is present, if <a href="aslayer_General.html#false">false</a> the passed cabinet is unchanged </div>
+</section>
+<section><div class="infoRow"><h3 id="PDCollectionGetSortOrder"><strong><span style="color:grey;">PDCollectionGetSortOrder</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:12386</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Gets the contents of the collection sort dictionary. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.html#ASArraySize" title=" An array size value for use in callback procedures."><code>ASArraySize</code></a> <code>PDCollectionGetSortOrder(</code><a href="pdlayer_PDCollection.html#PDCollection" title=" A PDCollection represents a collection dictionary in a PDF file."><code>PDCollection</code></a> <code>collection</code><code>,</code> <a href="pdlayer_PDCollectionSchema.html#_t_PDCollectionSchemaSortPair" title=" The name of a field in a collection sort dictionary, and its associated value for ascending."><code>PDCollectionSchemaSortPairRec</code></a> <code>*</code><code>pairs</code><code>,</code> <a href="aslayer_General.html#ASArraySize" title=" An array size value for use in callback procedures."><code>ASArraySize</code></a> <code>arrayLen</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>collection</code></div>
+</td><td><div>The collection object. </div>
+</td></tr>
+<tr><td><div><code>pairs</code></div>
+</td><td><div>The array of pairs. It may be <a href="aslayer_General.html#NULL"><code>NULL</code></a>. </div>
+</td></tr>
+<tr><td><div><code>arrayLen</code></div>
+</td><td><div>The length of the pairs array. </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>If <code>pairs</code> is <a href="aslayer_General.html#NULL"><code>NULL</code></a>, the number of items in the collection sort dictionary is returned; otherwise, the number of items stored in the <code>pairs</code> array is returned. </div>
+</section>
+<section><div class="infoRow"><h3 id="PDCollectionGetViewData"><strong><span style="color:grey;">PDCollectionGetViewData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:12401</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Gets the view data for the collection. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDCollectionGetViewData(</code><a href="pdlayer_PDCollection.html#PDCollection" title=" A PDCollection represents a collection dictionary in a PDF file."><code>PDCollection</code></a> <code>collection</code><code>,</code> <a href="pdlayer_PDCollection.html#_t_PDCollectionViewDataRec" title=" Collection view data record."><code>PDCollectionViewDataRec</code></a> <code>*</code><code>data</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>collection</code></div>
+</td><td><div>The collection object. </div>
+</td></tr>
+<tr><td><div><code>data</code></div>
+</td><td><div>The collection view data. </div>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDCollectionIsValid"><strong><span style="color:grey;">PDCollectionIsValid</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:12359</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Determines if a collection is valid. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDCollectionIsValid(</code><a href="pdlayer_PDCollection.html#PDCollection" title=" A PDCollection represents a collection dictionary in a PDF file."><code>PDCollection</code></a> <code>collection</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>collection</code></div>
+</td><td><div>The collection </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div><a href="aslayer_General.html#true"><code>true</code></a> if the collection is valid, <a href="aslayer_General.html#false"><code>false</code></a> otherwise. </div>
+</section>
+<section><div class="infoRow"><h3 id="PDCollectionRemoveFolder"><strong><span style="color:grey;">PDCollectionRemoveFolder</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:12485</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Removes a folder and its descendant folders and associated file attachments. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDCollectionRemoveFolder(</code><a href="pdlayer_PDCollection.html#PDCollection" title=" A PDCollection represents a collection dictionary in a PDF file."><code>PDCollection</code></a> <code>collection</code><code>,</code> <a href="aslayer_ASText.html#ASConstText" title=" An opaque object holding constant encoded text."><code>ASConstText</code></a> <code>path</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>collection</code></div>
+</td><td><div>The collection associated with the folder that will be removed. </div>
+</td></tr>
+<tr><td><div><code>path</code></div>
+</td><td><div>The path to the folder. </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div><code>0</code> if the folder hierarchy was successfully removed; otherwise an error code identifying the failure condition is returned. </div>
+</section>
+<section><div class="infoRow"><h3 id="PDCollectionRemoveInitialStyle"><strong><span style="color:grey;">PDCollectionRemoveInitialStyle</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:12513</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Removes the initial style dictionary from a collect, if present </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDCollectionRemoveInitialStyle(</code><a href="pdlayer_PDCollection.html#PDCollection" title=" A PDCollection represents a collection dictionary in a PDF file."><code>PDCollection</code></a> <code>collection</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>collection</code></div>
+</td><td><div>The collection object. </div>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDCollectionSetInitialStyle"><strong><span style="color:grey;">PDCollectionSetInitialStyle</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:12501</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Sets the initial style dictionary for the collection. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDCollectionSetInitialStyle(</code><a href="pdlayer_PDCollection.html#PDCollection" title=" A PDCollection represents a collection dictionary in a PDF file."><code>PDCollection</code></a> <code>collection</code><code>,</code> <a href="aslayer_ASCab.html#ASConstCab"><code>ASConstCab</code></a> <code>style</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>collection</code></div>
+</td><td><div>The collection object. </div>
+</td></tr>
+<tr><td><div><code>style</code></div>
+</td><td><div>Dictionary to fill </div>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDCollectionSetSortOrder"><strong><span style="color:grey;">PDCollectionSetSortOrder</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:12394</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Set the contents of the collection sort dictionary. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDCollectionSetSortOrder(</code><a href="pdlayer_PDCollection.html#PDCollection" title=" A PDCollection represents a collection dictionary in a PDF file."><code>PDCollection</code></a> <code>collection</code><code>,</code> <code>const</code> <a href="pdlayer_PDCollectionSchema.html#_t_PDCollectionSchemaSortPair" title=" The name of a field in a collection sort dictionary, and its associated value for ascending."><code>PDCollectionSchemaSortPairRec</code></a> <code>*</code><code>pairs</code><code>,</code> <a href="aslayer_General.html#ASArraySize" title=" An array size value for use in callback procedures."><code>ASArraySize</code></a> <code>arrayLen</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>collection</code></div>
+</td><td><div>The collection object. </div>
+</td></tr>
+<tr><td><div><code>pairs</code></div>
+</td><td><div>The array of pairs. If it is <a href="aslayer_General.html#NULL"><code>NULL</code></a>, the collection sort dictionary is removed. </div>
+</td></tr>
+<tr><td><div><code>arrayLen</code></div>
+</td><td><div>The length of the <code>pairs</code> array. </div>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDCollectionSetViewData"><strong><span style="color:grey;">PDCollectionSetViewData</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDProcs.h:12407</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Set the view data for the collection. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDCollectionSetViewData(</code><a href="pdlayer_PDCollection.html#PDCollection" title=" A PDCollection represents a collection dictionary in a PDF file."><code>PDCollection</code></a> <code>collection</code><code>,</code> <code>const</code> <a href="pdlayer_PDCollection.html#_t_PDCollectionViewDataRec" title=" Collection view data record."><code>PDCollectionViewDataRec</code></a> <code>*</code><code>data</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>collection</code></div>
+</td><td><div>The collection object. </div>
+</td></tr>
+<tr><td><div><code>data</code></div>
+</td><td><div>The collection view data. </div>
+</td></tr></Table>
+</section>
+</section>
+
+</div>
+</body>
+    <script>
+        currVer = window.location.pathname.split("/").slice(-2)[0]
+        document.getElementById("ver").src +=  "?=" + currVer 
+    </script>
+    </html>
