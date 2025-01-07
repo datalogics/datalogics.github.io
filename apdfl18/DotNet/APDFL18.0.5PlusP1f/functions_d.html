@@ -1,0 +1,485 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library .NET Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-csharp-dotnet-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://www.nuget.org/packages/Adobe.PDF.Library.LM.NET" id="pkglink"><img id="pkg-download-img" alt="Nuget Trial Download" src="https://img.shields.io/nuget/dt/Adobe.PDF.Library.LM.NET?color=blue&label=APDFL%20.NET%20Free%20Trial&logo=NuGet&style=plastic"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('functions_d.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="contents">
+<div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
+
+<h3><a id="index_d"></a>- d -</h3><ul>
+<li>D
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_matrix.html#a887f1d59aa27a7646e0e16636bfc7f43">Datalogics.PDFL.Matrix</a>
+</li>
+<li>DashPattern
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_graphic_state.html#acc9fc9d87d2fc7fe6ef26cf42dfd0e2d">Datalogics.PDFL.GraphicState</a>
+</li>
+<li>Data
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_image.html#ae8468b97ac2a205fdf9fac507a559400">Datalogics.PDFL.Image</a>
+</li>
+<li>Default
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html#a2810d95aa501badb77008240b37a36f8">Datalogics.PDFL.Function</a>
+</li>
+<li>DefaultAppearance
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_free_text_annotation.html#af6372947996320ca30c4169fb498d059">Datalogics.PDFL.FreeTextAnnotation</a>
+</li>
+<li>DefaultCMYK
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color_convert_params.html#ac7099b165f14940b98812f916879c37b">Datalogics.PDFL.ColorConvertParams</a>
+</li>
+<li>DefaultGray
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color_convert_params.html#aa194b98bb788d9e162d73b55475ac032">Datalogics.PDFL.ColorConvertParams</a>
+</li>
+<li>DefaultOptionalContentConfig
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html#ac050ceaec5bcf82b0cde11a4ae0802b1">Datalogics.PDFL.Document</a>
+</li>
+<li>DefaultRGB
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color_convert_params.html#ae61a19d33b042c6da64713b81a364251">Datalogics.PDFL.ColorConvertParams</a>
+</li>
+<li>DefaultTempPath
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_library.html#ac1ca50c734508d1b2355d6e24541766c">Datalogics.PDFL.Library</a>
+</li>
+<li>DefaultTempStore
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_library.html#a091b72e7c662aa066850a924c47bd98c">Datalogics.PDFL.Library</a>
+</li>
+<li>DefaultTempStoreMemLimit
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_library.html#a283108842ece7e90225a6fcf6c797b06">Datalogics.PDFL.Library</a>
+</li>
+<li>DeleteOnClose
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html#a4549ba5fe228ed3c01b6e8458c384502">Datalogics.PDFL.Document</a>
+</li>
+<li>DeletePages()
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html#a8ffc81aa6889b79fe3da1b4bd0d94396">Datalogics.PDFL.Document</a>
+</li>
+<li>Density
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_ink.html#ac4c886fe71aa0a53b1e677f99cbe22ee">Datalogics.PDFL.Ink</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a373361b6623e950099245c49dec3e74d">Datalogics.PDFL.SeparationPlate</a>
+</li>
+<li>Descent
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#ae09f53313c6d26b5de49790dd01b2fb6">Datalogics.PDFL.Font</a>
+</li>
+<li>Destination
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_go_to_action.html#a77e03598b05ba9158620581645ec8610">Datalogics.PDFL.GoToAction</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html#a21bafe71d82d56bfc6bdf275e75c4583">Datalogics.PDFL.LinkAnnotation</a>
+</li>
+<li>DestinationProfileString
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#ab9d1df258b6d942f7cb35542a267155b">Datalogics.PDFL.SeparationParams</a>
+</li>
+<li>DestRect
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_draw_params.html#a5a11c2878f877efbdc1688eff052fbef">Datalogics.PDFL.DrawParams</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_remote_destination.html#a9cc5ad70552a61250b2a614f8759de18">Datalogics.PDFL.RemoteDestination</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_view_destination.html#a87cfcb0b764430748f6397c61c00b337">Datalogics.PDFL.ViewDestination</a>
+</li>
+<li>Destroy()
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_bookmark.html#af0846587225f683adffd3a4e8cbc58bf">Datalogics.PDFL.Bookmark</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#a9d7e99cb87e83f1d6d890faf9afa8d2a">Datalogics.PDFL.PDFObject</a>
+</li>
+<li>DeviceCMYK
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color_space.html#aff571fc1b0f93cd9620061cab4037173">Datalogics.PDFL.ColorSpace</a>
+</li>
+<li>DeviceGray
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color_space.html#a49cfb4e6a8cdae38c316296663909310">Datalogics.PDFL.ColorSpace</a>
+</li>
+<li>DeviceName
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_print_user_params.html#ab7d86285aa9c490c411325d65a8a2084">Datalogics.PDFL.PrintUserParams</a>
+</li>
+<li>DeviceNColorSpace()
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_device_n_color_space.html#a642bbde1ab8cdadd69f281a308cd8f4e">Datalogics.PDFL.DeviceNColorSpace</a>
+</li>
+<li>DeviceRGB
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color_space.html#a8765a91511904503c725d9a5b05bd6ae">Datalogics.PDFL.ColorSpace</a>
+</li>
+<li>DeviceRGBA
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color_space.html#a7ef851b71529d7b7a8a2b472358c9650">Datalogics.PDFL.ColorSpace</a>
+</li>
+<li>Dict
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_stream.html#a292370f0fbc91f414a09fd29c42277f9">Datalogics.PDFL.PDFStream</a>
+</li>
+<li>DidWarningsOccurDuringImport
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_image.html#ad4d878bf43b658ff763617d08dbdcc86">Datalogics.PDFL.Image</a>
+</li>
+<li>DisableAlphaChannelGeneration
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_image_save_params.html#a740585e704d0c5fd0d23914ebddc3a51">Datalogics.PDFL.ImageSaveParams</a>
+</li>
+<li>DisableCharReordering
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_word_finder_config.html#a705486364ecd6c96afbf6be5b39d9500">Datalogics.PDFL.WordFinderConfig</a>
+</li>
+<li>DisableFlattening
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_print_params.html#a9b72bc8a5442d4d2f0e08d1b1b2cefbf">Datalogics.PDFL.PrintParams</a>
+</li>
+<li>DisableTaggedPDF
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_word_finder_config.html#abf8f0e98fb0025aeae71b6a2ee05c2e8">Datalogics.PDFL.WordFinderConfig</a>
+</li>
+<li>Dispose()
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_action.html#acc7b6c331f3c8dc496bba80fbc0d0231">Datalogics.PDFL.Action</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_annotation.html#a8c0efaf850bd9272241d30afdca5fecf">Datalogics.PDFL.Annotation</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_axial_shading_pattern.html#aff7fc76fa13ae9d0dde6ea100be67e78">Datalogics.PDFL.AxialShadingPattern</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_bookmark.html#a51c19add913f2fdf8275846d46a5dcdb">Datalogics.PDFL.Bookmark</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_cal_gray_color_space.html#ac4a97cf9435738405ff46933ee04875e">Datalogics.PDFL.CalGrayColorSpace</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#a0294c32996022af7ba8abd618329376b">Datalogics.PDFL.CalRGBColorSpace</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_cancel_proc.html#a76c82532a36c757b73ae72be91ef1118">Datalogics.PDFL.CancelProc</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_circle_annotation.html#a52e511b20d2c443afa9913f09419bad3">Datalogics.PDFL.CircleAnnotation</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_clip.html#aeb7df47dcddc19a0ad419a11fef51147">Datalogics.PDFL.Clip</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_close_path.html#abffb3a587f88a2390dd02e1ee022ba97">Datalogics.PDFL.ClosePath</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_collection.html#ac8cf7fe94d1343f8f01412f8eb9ea2fe">Datalogics.PDFL.Collection</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_collection_schema.html#a3adfb31dc3fc40e253a3ec7c08a4e73b">Datalogics.PDFL.CollectionSchema</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_collection_schema_field.html#ae27a14cf6f3cb32c822fa2aca5e75be2">Datalogics.PDFL.CollectionSchemaField</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_collection_sort_item.html#a7694757ae5d153e8ab04a65ee529fea9">Datalogics.PDFL.CollectionSortItem</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color.html#a3d6c077b70751318e50011c3fd083c9f">Datalogics.PDFL.Color</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color_convert_actions.html#afb007024baa71d15ae97f234d6bee149">Datalogics.PDFL.ColorConvertActions</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color_convert_params.html#abfff1fc5c14c647e79646683070ac9a5">Datalogics.PDFL.ColorConvertParams</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color_space.html#aebb806decdc899a6f5fa31aec5667ac8">Datalogics.PDFL.ColorSpace</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_color_value_converter.html#a738b71dab340d2d1eebf4aa52c8c1a72">Datalogics.PDFL.ColorValueConverter</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_container.html#aa936806100f6fd10ee14b9dd59d4a7fd">Datalogics.PDFL.Container</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_content.html#a21db7ec2a7101c008f79b14caf74902c">Datalogics.PDFL.Content</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_curve_to.html#a627caf0f248070246df5d4fb382b1e5b">Datalogics.PDFL.CurveTo</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_curve_to_v.html#a94ebfcc7156303f9c037265b97fb065f">Datalogics.PDFL.CurveToV</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_curve_to_y.html#afb45d3093609d0b7b41d52c708f9843c">Datalogics.PDFL.CurveToY</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_device_n_color_space.html#a7e4647e2d17533ff0fb6003accfa86af">Datalogics.PDFL.DeviceNColorSpace</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_doc_text_finder.html#a20b5d6599c1adba0c4e171bfc6a7ff82">Datalogics.PDFL.DocTextFinder</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_doc_text_finder_match.html#a5ef8e516023f2f835bcb478682de7139">Datalogics.PDFL.DocTextFinderMatch</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_doc_text_finder_quad_info.html#af20f34b2eda78ba2dbee40d8a9324d19">Datalogics.PDFL.DocTextFinderQuadInfo</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html#a6b2d55a9d4e25a0647c409d28d997c3a">Datalogics.PDFL.Document</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_draw_params.html#aa86453485eb2748a5fcad05522cb4231">Datalogics.PDFL.DrawParams</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_element.html#aac97ffd66e9328f0a621ce862bcf3f2a">Datalogics.PDFL.Element</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_encoding_info.html#aeeab3606e32acfef792b37192b9c97a7">Datalogics.PDFL.EncodingInfo</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_exponential_function.html#aa6d399f24e9c50e50a74ce765ed06edb">Datalogics.PDFL.ExponentialFunction</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#a63afa3266cf2dea75116754c5a88beb9">Datalogics.PDFL.ExtendedGraphicState</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_file_attachment.html#a4beaac2994adb4ad2a9a30ccf8ce5a11">Datalogics.PDFL.FileAttachment</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_file_specification.html#abcde850545f1d60ea3b332e06e29d802">Datalogics.PDFL.FileSpecification</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#a73e4375bcae06c7d8a2580971d5c8d78">Datalogics.PDFL.FlattenTransparencyParams</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_font.html#a7bff203902fd4412315474b6bac4363a">Datalogics.PDFL.Font</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_form.html#a691d4bd8c5cedce688761b55b65ad06a">Datalogics.PDFL.Form</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_forms_extension_version_rec.html#add4d1d07f6822d977c435af614619d24">Datalogics.PDFL.FormsExtensionVersionRec</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_free_text_annotation.html#a22f8d7e3baf45e3e9d4bd89b3b000c96">Datalogics.PDFL.FreeTextAnnotation</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html#a95a1fa6f3eb1533cd24adf35e1b07faa">Datalogics.PDFL.Function</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_go_to_action.html#ad40416c1296a5337c4f2339b5023587d">Datalogics.PDFL.GoToAction</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_graphic_state.html#a700cb49f771c38a30d2900679026757c">Datalogics.PDFL.GraphicState</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_group.html#abec6c8356a1e84156ff9b63e2352a184">Datalogics.PDFL.Group</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_highlight_annotation.html#aadae0541d85eff381c36738b75156cb1">Datalogics.PDFL.HighlightAnnotation</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_i_c_c_based_color_space.html#a2cb0485c9ab3a8587576382549f892b0">Datalogics.PDFL.ICCBasedColorSpace</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_image.html#a27cab6529fd8f58a8bb84da31452bbd5">Datalogics.PDFL.Image</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_image_collection.html#a9c73997ed8a5f969441c4788b60b7ff2">Datalogics.PDFL.ImageCollection</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_image_data.html#a3fc27b62e9b6d02ec8d5840383d2e405">Datalogics.PDFL.ImageData</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_image_save_params.html#a48456664d6def492b17579fb9e2a4084">Datalogics.PDFL.ImageSaveParams</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_indexed_color_space.html#ae5db5424994b6f6e1e6a3374e815f169">Datalogics.PDFL.IndexedColorSpace</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_ink.html#a4f9a0783fc9919faa50a02e8df26a2d8">Datalogics.PDFL.Ink</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_ink_annotation.html#ae226288bd27957795f9335aa177330aa">Datalogics.PDFL.InkAnnotation</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_lab_color_space.html#a08acf9ae34ef69f7b48ef24b880ffbac">Datalogics.PDFL.LabColorSpace</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_language_setting.html#a1ae7bf27950f636a87a6e3749be40d77">Datalogics.PDFL.LanguageSetting</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_launch_action.html#a075033c55439cda81d3796fa9ddc8f54">Datalogics.PDFL.LaunchAction</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_library.html#a385a1ae60552a5a7c64cf7225ea1b198">Datalogics.PDFL.Library</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_line_annotation.html#aea9d4f1555fc03c4e6f2b796d99e2295">Datalogics.PDFL.LineAnnotation</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_line_to.html#a1634af3bfabdf8fffde11f2d68ae6e5d">Datalogics.PDFL.LineTo</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_link_annotation.html#abf67fa220c79f5b3ff68466e368bf54a">Datalogics.PDFL.LinkAnnotation</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_log_params.html#aa66e41404c6859fe5df04937ca0095e8">Datalogics.PDFL.LogParams</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_matrix.html#a9418312d7986f98c5caf50e0818f087f">Datalogics.PDFL.Matrix</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_move_to.html#aad017d649d06310a2f6af0833bca4ce9">Datalogics.PDFL.MoveTo</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_named_color_space.html#a4e8f90858b01997c92f362227a7265b2">Datalogics.PDFL.NamedColorSpace</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_named_function.html#a2163a55437a4186da8bb0c622df5b4a8">Datalogics.PDFL.NamedFunction</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_name_tree.html#ae85302dec968df76fb6554f204285c1d">Datalogics.PDFL.NameTree</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_number_tree.html#af2f76885c843f9fa83f71c287c29512a">Datalogics.PDFL.NumberTree</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_o_c_r_engine.html#a3e2663dfca9eeb584a88984be207eb3f">Datalogics.PDFL.OCREngine</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_o_c_r_params.html#ac368b0f87a78c7a81d191a17dfda5537">Datalogics.PDFL.OCRParams</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_config.html#a55e7714e0721ec094b59841444c47fa3">Datalogics.PDFL.OptionalContentConfig</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html#a95305655714ce348cfe0fa363ee6184a">Datalogics.PDFL.OptionalContentContext</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_group.html#a4b2fa553b59be11233870ce6e3759ab8">Datalogics.PDFL.OptionalContentGroup</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict.html#a108d22dc140d0ad2134bff5fc5e01e8d">Datalogics.PDFL.OptionalContentMembershipDict</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_order_array.html#aee733f15232429bb0d86cbc61d17d5d4">Datalogics.PDFL.OptionalContentOrderArray</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_order_leaf.html#ad719388e8247d6c4465f9b39254af434">Datalogics.PDFL.OptionalContentOrderLeaf</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_order_node.html#a481e4af1fc98d04a5c36ba9223659db0">Datalogics.PDFL.OptionalContentOrderNode</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_page.html#ae5a1e946c4206eba13eaf261dd459ed1">Datalogics.PDFL.Page</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a038c4ede5f50349a2a9c87bd43c22584">Datalogics.PDFL.PageImageParams</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_page_label.html#ac75719527aad233494c0f777ad448d6d">Datalogics.PDFL.PageLabel</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_page_range.html#ad9f7a786d8d9db4a812534646e63c0f5">Datalogics.PDFL.PageRange</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_paper_source.html#a32e255b33bb652ca537c9d2dba918f8d">Datalogics.PDFL.PaperSource</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_path.html#a9537753033148fcbddc14d851156b913">Datalogics.PDFL.Path</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_pattern.html#a2459b246a8a186d892d4fd570fae0f47">Datalogics.PDFL.Pattern</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_a_convert_params.html#aad12e884db0f6fa9a1266019adb5ad5e">Datalogics.PDFL.PDFAConvertParams</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_array.html#a5d96a42534849445f775e8fb62a3a69b">Datalogics.PDFL.PDFArray</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_boolean.html#a965f03280bcbb0e203817c48366f4093">Datalogics.PDFL.PDFBoolean</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html#a1782b9f6db222d1d26d810feb28d5276">Datalogics.PDFL.PDFDict</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_integer.html#a95e1ddff4f7e0eaa54ba514fc64eeee3">Datalogics.PDFL.PDFInteger</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_name.html#abfc71ab06663cab749507992372b7ed7">Datalogics.PDFL.PDFName</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#ab376b21a84f69b84d0dd27b025d0fe31">Datalogics.PDFL.PDFObject</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_object_enum_proc.html#add265a1c21b1a2fd50168bcc21c5e345">Datalogics.PDFL.PDFObjectEnumProc</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_optimizer.html#a2e5a986805f5262b0ef656d9b6b5951b">Datalogics.PDFL.PDFOptimizer</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_real.html#a91a511d43ad68e8b046b1af894549279">Datalogics.PDFL.PDFReal</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_stream.html#ad988d5d8cdd100ccd191225b7bd4b817">Datalogics.PDFL.PDFStream</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_string.html#a82dd9d339eb54987aab274486406a97c">Datalogics.PDFL.PDFString</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_x_convert_params.html#acb7e18d3fe26d0b1586f412700d607be">Datalogics.PDFL.PDFXConvertParams</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html#afd0265bbe67378949aee5542f320c3c2">Datalogics.PDFL.Point</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_polygon_annotation.html#ad494782f97aa57d420e8285415a07d9f">Datalogics.PDFL.PolygonAnnotation</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_poly_line_annotation.html#a4221523545e589df8f0e9ea384bc3597">Datalogics.PDFL.PolyLineAnnotation</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_post_script.html#a093d969bb59b6521829d47f37adc9df9">Datalogics.PDFL.PostScript</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_post_script_calculator_function.html#a3b8c5f788e17ca9cd6d8c8e35ae62334">Datalogics.PDFL.PostScriptCalculatorFunction</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_print_cancel_proc.html#a1ecd493c6eedb685f2ecacf1f16833b4">Datalogics.PDFL.PrintCancelProc</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_print_params.html#ae10089b1bc57b4a50440dbee0ff9ab98">Datalogics.PDFL.PrintParams</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_print_progress_proc.html#a078eb5049a4a4952d9255ee230cd997b">Datalogics.PDFL.PrintProgressProc</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_print_user_params.html#af35737882119979c9eeb5e13e54a71d3">Datalogics.PDFL.PrintUserParams</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_progress_monitor.html#aff15a2ebad5255126878050e7c221e90">Datalogics.PDFL.ProgressMonitor</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_quad.html#a8b09b3d28aee47023d657ee62b958c16">Datalogics.PDFL.Quad</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_rect.html#a72976f7a2b8d96cb6617d59f95b9154d">Datalogics.PDFL.Rect</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_rect_segment.html#a9ece469e9fffb11a67c6522b79dfe041">Datalogics.PDFL.RectSegment</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_redaction.html#aac2e0fca59d16484671d742140330598">Datalogics.PDFL.Redaction</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_remote_destination.html#a36bfb63a6a99be237d3d8d6a51a4a3de">Datalogics.PDFL.RemoteDestination</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_remote_go_to_action.html#ae29169dfeedabd58c289f3ef70ca32e5">Datalogics.PDFL.RemoteGoToAction</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_render_progress_proc.html#a0b2ff1607c9ce9ab8294f90dbba9456d">Datalogics.PDFL.RenderProgressProc</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_report_proc.html#a482c3033312d96f64dd9818946ad449f">Datalogics.PDFL.ReportProc</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_rolled_back_document.html#a7b7a3593ba4e1c2973589b0ec6f9b373">Datalogics.PDFL.RolledBackDocument</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_segment.html#ac778ac706487bcb9d237e77adb819898">Datalogics.PDFL.Segment</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_color_space.html#a7617ca75d1aefa7b6713fd426207325a">Datalogics.PDFL.SeparationColorSpace</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#ace966a0c9f422671cd2bb2e17dea2b04">Datalogics.PDFL.SeparationParams</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_separation_plate.html#a77d9e874bb146b096d78f5e3150e4581">Datalogics.PDFL.SeparationPlate</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_shading.html#ad63f2e88912a20cd8c5fb881a35065c7">Datalogics.PDFL.Shading</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_shading_pattern.html#a0a4153ca999c1e8e83547072a73b4568">Datalogics.PDFL.ShadingPattern</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_square_annotation.html#aa4c5d5d5a4e5eb663e5e892f5ef1182e">Datalogics.PDFL.SquareAnnotation</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_style.html#ac976bfbeada9f53539b1a3d8a7cc7654">Datalogics.PDFL.Style</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_style_transition.html#aece897cf129be01f28e7cdc035372a64">Datalogics.PDFL.StyleTransition</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_text.html#a62c3addecf5a8e9eed284848ca2b32f5">Datalogics.PDFL.Text</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_text_markup_annotation.html#a5d90feb7e10b131dde06553f99ad744d">Datalogics.PDFL.TextMarkupAnnotation</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_text_run.html#a2cd14573a0c847bb206ba44a8205e129">Datalogics.PDFL.TextRun</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_text_state.html#ab2bc0d1e6ad1d47f046231d0c9a6da14">Datalogics.PDFL.TextState</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_underline_annotation.html#a5e4b60a751f5d7cbdc515a9ec005ec3d">Datalogics.PDFL.UnderlineAnnotation</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_u_r_i_action.html#a887489b198c27b4168510fe90a15f23f">Datalogics.PDFL.URIAction</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_view_destination.html#a077ee2ac65b64f6906ed62bd1f409aa2">Datalogics.PDFL.ViewDestination</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_watermark_params.html#afa427057adeabb520f8f860f077c014f">Datalogics.PDFL.WatermarkParams</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_watermark_text_params.html#a89a02aba55e94cfd19cfcf8abecf0337">Datalogics.PDFL.WatermarkTextParams</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_word.html#a99fc6deae117e305aa7d2380d2d93b0b">Datalogics.PDFL.Word</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_word_finder.html#ac21c8f3cfcc1e9e4bdcb972b80410503">Datalogics.PDFL.WordFinder</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_word_finder_config.html#ad5de89ab401723ae196f4db4bf86bad4">Datalogics.PDFL.WordFinderConfig</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_word_proc.html#a22d252782ba244885e22d406bec818fd">Datalogics.PDFL.WordProc</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_x_p_s_convert_params.html#a7c1663fe0e99e62f56b31b9f88abdd9b">Datalogics.PDFL.XPSConvertParams</a>
+</li>
+<li>DistanceTransform()
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html#ac13d3c762a12abff916fc657d0b81498">Datalogics.PDFL.Point</a>
+</li>
+<li>DLEVersion
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_library.html#a43242cb78fb59869ea6919498e1b42b4">Datalogics.PDFL.Library</a>
+</li>
+<li>DocTextFinder()
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_doc_text_finder.html#a10b8a42a411d988733687ea055373fce">Datalogics.PDFL.DocTextFinder</a>
+</li>
+<li>DocTextFinderQuadInfo()
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_doc_text_finder_quad_info.html#a9cad388fe1a95444bcd5166a52693f20">Datalogics.PDFL.DocTextFinderQuadInfo</a>
+</li>
+<li>Document()
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html#af3a7b65316c57ad25a87d0f7ea09cc19">Datalogics.PDFL.Document</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#a4ebd403f914eb2b24fddb7c0ac2920a9">Datalogics.PDFL.PDFObject</a>
+</li>
+<li>Domain
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_axial_shading_pattern.html#a2d35d7efa65108d20edf6f718d846a1d">Datalogics.PDFL.AxialShadingPattern</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_function.html#a2ba0e5429e98d9fa76a34ee554dde97a">Datalogics.PDFL.Function</a>
+</li>
+<li>DoOPP
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_print_params.html#a10c8ac999375fc58493085bbceb78312">Datalogics.PDFL.PrintParams</a>
+, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_print_user_params.html#aa8cea1fe91bb7910900f294120a409ff">Datalogics.PDFL.PrintUserParams</a>
+</li>
+<li>DoProofing
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_print_params.html#aedcfa86c4d0edb591e68b55368acd9d4">Datalogics.PDFL.PrintParams</a>
+</li>
+<li>DoTiling
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_print_params.html#ad73ed7aa651dcdc5153172767cf0b472">Datalogics.PDFL.PrintParams</a>
+</li>
+<li>DrawBorder
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_redaction.html#af8f5d2b02372a661f4683e8f258ea432">Datalogics.PDFL.Redaction</a>
+</li>
+<li>DrawContents()
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_page.html#af9e6a47f597f27ea3775b842f13effb0">Datalogics.PDFL.Page</a>
+</li>
+<li>DrawContentsToSKBitmap()
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_page.html#aca34e9adaeb7b49480429235f9cf375b">Datalogics.PDFL.Page</a>
+</li>
+<li>DrawOptionalContent
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_optional_content_context.html#ade06dae07ed1937e1eef598cdeabb33b">Datalogics.PDFL.OptionalContentContext</a>
+</li>
+<li>DrawParams()
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_draw_params.html#a2f052ad4c5a5ce1d68576d5deb56d377">Datalogics.PDFL.DrawParams</a>
+</li>
+<li>DriverName
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_print_user_params.html#a1d7e9719e91515f114c6dae882e43a0c">Datalogics.PDFL.PrintUserParams</a>
+</li>
+<li>Duplex
+: <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_print_params.html#a576cc38c3bdfe13243ac27b9e44d1085">Datalogics.PDFL.PrintParams</a>
+</li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>
