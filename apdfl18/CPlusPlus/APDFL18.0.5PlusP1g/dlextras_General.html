@@ -1,0 +1,593 @@
+
+<!DOCTYPE html>
+    <html lang="en-US">
+        <head>
+            <link rel="stylesheet" href="resources/css/pageStyles.css">
+            <link rel="icon" type="image/x-icon" href="resources/img/DLicon.png">
+            <meta charset="UTF-8">
+            <title>
+Additional functionality from Datalogics: General
+            </title>
+        </head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+        </script>
+        <body><div>
+<a href="index.html"><img src="resources/img/DL-Full-Logo-LightBG-Blue.svg" alt="DL Logo" style="height: 66px; border-bottom: 1px solid black; padding-bottom: 5px; width: auto; background: #ffffff; position: fixed; z-index: 1; top: 0px; left: 0px;"></a>
+</div>
+<div class="verSelect" style="position: fixed; z-index: 2; top: 41px; left: 0px;"><iframe id="ver" src="../ver.html" style=" height: 45px; border-width: 0px;"></iframe></div>
+<div class="fullTOC"><iframe src="TOC.html"></iframe></div>
+<div class="objDoc"><nav><ul>
+<h5>Additional functionality from Datalogics: General</h5>
+<li><a href="#Definitions">Definitions</a></li>
+<li><a href="#Enumerations">Enumerations</a></li>
+<li><a href="#Functions">Functions</a></li>
+</ul></nav>
+<section id="Definitions">
+<header><h2>General Definitions</h2></header>
+<nav><dl>
+<dt><a href="#FOUR_CHAR_CODE">FOUR_CHAR_CODE</a></dt><dd> - </dd>
+</dl></nav>
+<section><div class="infoRow"><h3><strong><span style="color:grey;">FOUR_CHAR_CODE</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:16</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>#define FOUR_CHAR_CODE</code> <code>(</code> <code>x</code> <code>)</code><code>(</code> <code>x</code> <code>)</code> </code>
+</section>
+</section>
+<section id="Enumerations">
+<header><h2>General Enumerations</h2></header>
+<nav><dl>
+<dt><a href="#AC_OptionCode">AC_OptionCode</a></dt><dd> -  Datalogics-specific flags for the Acro Color Layer.</dd>
+<dt><a href="#DLImageExportType">DLImageExportType</a></dt><dd> -  Export Image Types.</dd>
+<dt><a href="#FontRescanFlags">FontRescanFlags</a></dt><dd> -  flags for rescanning font directories for additional fonts after Library initialization.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="AC_OptionCode"><strong><span style="color:grey;">AC_OptionCode</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:22</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Datalogics-specific flags for the Acro Color Layer. </div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><div class="enumEntry" id="AC_Option_BlackPointCompensation"><code>AC_Option_BlackPointCompensation</code><code>=</code><code>FOUR_CHAR_CODE</code><code>(</code><code>'kptc'</code><code>)</code></div>
+</td><td><div>Controls whether to adjust for differences in black points when converting colors between color spaces. If enabled the full dynamic range of the source space is mapped into the full dynamic range of the destination space. If disabled, the dynamic range of the source space is simulated in the destination space (which can result in blocked or gray shadows) This option is ignored if the rendering intent for the transformation is <a href="acrocolor_acrocolor.html#AC_AbsColorimetric" title=" Tries to maintain color accuracy at the expense of preserving relationships between colors.">AC_AbsColorimetric</a>. Default is 0 (zero). </div>
+</td></tr>
+<tr><td><div class="enumEntry" id="AC_Option_Dither8"><code>AC_Option_Dither8</code><code>=</code><code>FOUR_CHAR_CODE</code><code>(</code><code>'dth8'</code><code>)</code></div>
+</td><td><div>Dither transformations to 8 bit color spaces. This may be ignored by optimized transforms. This option is used by AC_ApplyTransform. Default is 0 (zero). </div>
+</td></tr>
+<tr><td><div class="enumEntry" id="AC_OptionCode_MaxEnum"><code>AC_OptionCode_MaxEnum</code><code>=</code><code>0xFFFFFFFFL</code></div>
+</td><td><div></div>
+</td></tr></table>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_General.html#ACGetOption" title=" Returns the current value for the given AC_OptionCode."><code>ACGetOption</code></a></td><td><a href="dlextras_General.html#ACSetOption" title=" Sets the current value for the option specified by the supplied AC_OptionCode."><code>ACSetOption</code></a></td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="DLImageExportType"><strong><span style="color:grey;">DLImageExportType</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:432</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Export Image Types. </div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><div class="enumEntry" id="ExportType_Invalid"><code>ExportType_Invalid</code></div>
+</td><td><div>Used for error handeling </div>
+</td></tr>
+<tr><td><div class="enumEntry" id="ExportType_TIF"><code>ExportType_TIF</code></div>
+</td><td><div>Tagged Image File Format </div>
+</td></tr>
+<tr><td><div class="enumEntry" id="ExportType_JPEG"><code>ExportType_JPEG</code></div>
+</td><td><div>Joint Photographic Experts Group </div>
+</td></tr>
+<tr><td><div class="enumEntry" id="ExportType_BMP"><code>ExportType_BMP</code></div>
+</td><td><div>Microsoft Windows Bitmap </div>
+</td></tr>
+<tr><td><div class="enumEntry" id="ExportType_PNG"><code>ExportType_PNG</code></div>
+</td><td><div>Portable Network Graphic </div>
+</td></tr>
+<tr><td><div class="enumEntry" id="ExportType_GIF"><code>ExportType_GIF</code></div>
+</td><td><div>Graphics Interchange Format </div>
+</td></tr></table>
+
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_General.html#DLGetImageType" title=" Gets the image file type (TIFF, JPEG, BMP, PNG, GIF)."><code>DLGetImageType</code></a></td><td><div></div>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_PDEImage.html#DLExportPDEImage" title=" Exports a PDEImage from a document to a specified image type TIFF, JPEG, BMP, PNG, GIF the specified file path."><code>DLExportPDEImage</code></a></td><td><div></div>
+</td></tr></table>
+</nav>
+</section>
+<section><div class="infoRow"><h3 id="FontRescanFlags"><strong><span style="color:grey;">FontRescanFlags</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasExpT.h:73</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>flags for rescanning font directories for additional fonts after Library initialization. </div>
+</div>
+
+<H4><strong>Enum Constants</strong></H4>
+
+<table class="enumTable"><tr><td><div class="enumEntry" id="FontRescan_Files"><code>FontRescan_Files</code><code>=</code><code>1</code></div>
+</td><td><div>This will rescan just the fields defined in dirList, plus those added with <a href="dlextras_General.html#PDFLAddFontDirectories" title=" This call allows Adobe PDF Library to rescan for fonts without re-initializing.">PDFLAddFontDirectories</a>. </div>
+</td></tr>
+<tr><td><div class="enumEntry" id="FontRescan_System"><code>FontRescan_System</code><code>=</code><code>2</code></div>
+</td><td><div>This will rescan the system directories. </div>
+</td></tr>
+<tr><td><div class="enumEntry" id="FontRescan_All"><code>FontRescan_All</code><code>=</code><code>3</code></div>
+</td><td><div>This, or an "or" of the previous two, will rescan both. </div>
+</td></tr></table>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="dlextras_General.html#PDFLRescanFontDirectories" title=" This call allows Adobe PDF Library to rescan for fonts without re-initializing."><code>PDFLRescanFontDirectories</code></a></td><td><div></div>
+</td></tr></table>
+</nav>
+</section>
+</section>
+<section id="Functions">
+<header><h2>General Functions</h2></header>
+<nav><dl>
+<dt><a href="#ACGetOption">ACGetOption</a></dt><dd> -  Returns the current value for the given AC_OptionCode.</dd>
+<dt><a href="#ACSetOption">ACSetOption</a></dt><dd> -  Sets the current value for the option specified by the supplied AC_OptionCode.</dd>
+<dt><a href="#ASSetDefaultFileSys">ASSetDefaultFileSys</a></dt><dd> -  Sets the default file system implementation for a platform.</dd>
+<dt><a href="#ConvertPDFToExcel">ConvertPDFToExcel</a></dt><dd> -  Converts a PDF file from the specified file path to a Microsoft Excel document (.xlsx)</dd>
+<dt><a href="#ConvertPDFToPowerPoint">ConvertPDFToPowerPoint</a></dt><dd> -  Converts a PDF file from the specified file path to a Microsoft Powerpoint document (.pptx)</dd>
+<dt><a href="#ConvertPDFToWord">ConvertPDFToWord</a></dt><dd> -  Converts a PDF file from the specified file path to a Microsoft Word document (.docx)</dd>
+<dt><a href="#DLCreatePDEImageFromASFile">DLCreatePDEImageFromASFile</a></dt><dd> -  Imports an image file (TIFF, JPEG, BMP, PNG, GIF) from the specified ASFile to a PDEImage.</dd>
+<dt><a href="#DLCreatePDEImagesFromASFile">DLCreatePDEImagesFromASFile</a></dt><dd> -  Imports a multipage TIFF from the specified ASFile to a collection of PDEImage's.</dd>
+<dt><a href="#DLCreatePDEImagesFromTIFF">DLCreatePDEImagesFromTIFF</a></dt><dd> -  Imports a multipage TIFF from the specified file path to a collection of PDEImage's.</dd>
+<dt><a href="#DLEnableLicensedBehavior">DLEnableLicensedBehavior</a></dt><dd> - </dd>
+<dt><a href="#DLExportImageToNChannelTIFF">DLExportImageToNChannelTIFF</a></dt><dd> -  For Internal Use only.</dd>
+<dt><a href="#DLExportPDEImagesToTIFF">DLExportPDEImagesToTIFF</a></dt><dd> -  Exports a collection of PDEImage's to a multipage TIFF at the specified file path.</dd>
+<dt><a href="#DLGetImageType">DLGetImageType</a></dt><dd> -  Gets the image file type (TIFF, JPEG, BMP, PNG, GIF).</dd>
+<dt><a href="#PDFLAddFontDirectories">PDFLAddFontDirectories</a></dt><dd> -  This call allows Adobe PDF Library to rescan for fonts without re-initializing.</dd>
+<dt><a href="#PDFLReinit">PDFLReinit</a></dt><dd> -  Warm reinitialization of the Adobe PDF Library.</dd>
+<dt><a href="#PDFLRescanFontDirectories">PDFLRescanFontDirectories</a></dt><dd> -  This call allows Adobe PDF Library to rescan for fonts without re-initializing.</dd>
+</dl></nav>
+<section><div class="infoRow"><h3 id="ACGetOption"><strong><span style="color:grey;">ACGetOption</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:129</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div>Returns the current value for the given <a href="dlextras_General.html#AC_OptionCode" title=" Datalogics-specific flags for the Acro Color Layer.">AC_OptionCode</a>. This call controls the behavior of colorspace conversions and manipulations carried out via AC-layer calls; it does not impact other Adobe PDF Library color behaviors. </div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<div><a href="dlextras_General.html#ACSetOption" title=" Sets the current value for the option specified by the supplied AC_OptionCode.">ACSetOption</a> </div>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="acrocolor_acrocolor.html#AC_Error" title=" Error codes returned by AcroColor functions."><code>AC_Error</code></a> <code>ACGetOption(</code><a href="dlextras_General.html#AC_OptionCode" title=" Datalogics-specific flags for the Acro Color Layer."><code>AC_OptionCode</code></a> <code>code</code><code>,</code> <a href="aslayer_General.html#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>*</code><code>value</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>code</code></div>
+</td><td><div><a href="dlextras_General.html#AC_Option_BlackPointCompensation" title=" Controls whether to adjust for differences in black points when converting colors between color spaces.">AC_Option_BlackPointCompensation</a> indicates whether the Acrobat Color Engine will carry out black point compensation when converting between colorspaces with different black points. </div>
+</td></tr>
+<tr><td><div><code>value</code></div>
+</td><td><div><a href="dlextras_General.html#AC_Option_BlackPointCompensation" title=" Controls whether to adjust for differences in black points when converting colors between color spaces.">AC_Option_BlackPointCompensation</a> flag value to be retrieved (Filled by the method) </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>Indicates if an error occurred. </div>
+</section>
+<section><div class="infoRow"><h3 id="ACSetOption"><strong><span style="color:grey;">ACSetOption</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:140</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div>Sets the current value for the option specified by the supplied <a href="dlextras_General.html#AC_OptionCode" title=" Datalogics-specific flags for the Acro Color Layer.">AC_OptionCode</a>. This call controls the behavior of colorspace conversions and manipulations carried out via AC-layer calls; it does not impact other Adobe PDF Library color behaviors. </div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<div><a href="dlextras_General.html#ACGetOption" title=" Returns the current value for the given AC_OptionCode.">ACGetOption</a> </div>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="acrocolor_acrocolor.html#AC_Error" title=" Error codes returned by AcroColor functions."><code>AC_Error</code></a> <code>ACSetOption(</code><a href="dlextras_General.html#AC_OptionCode" title=" Datalogics-specific flags for the Acro Color Layer."><code>AC_OptionCode</code></a> <code>code</code><code>,</code> <a href="aslayer_General.html#ASUns32" title=" 4-byte unsigned long numeric value."><code>ASUns32</code></a> <code>value</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>The</code></div>
+</td><td><div>option code. </div>
+</td></tr>
+<tr><td><div><code>value</code></div>
+</td><td><div>The flag value to be set. </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>Indicates if an error occurred. </div>
+</section>
+<section><div class="infoRow"><h3 id="ASSetDefaultFileSys"><strong><span style="color:grey;">ASSetDefaultFileSys</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:19</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div>Sets the default file system implementation for a platform. Added by Datalogics. </div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<a href="aslayer_ASFileSys.html#ASGetDefaultFileSys" title=" Gets the default standard file system implementation for a platform."><code>ASGetDefaultFileSys</code></a>
+<a href="aslayer_ASFileSys.html#ASGetRamFileSys" title=" Gets the in-memory file system implementation for a platform."><code>ASGetRamFileSys</code></a>
+<a href="aslayer_ASFileSys.html#ASGetTempFileSys" title=" Gets the temporary file system implementation for a platform."><code>ASGetTempFileSys</code></a></div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>ASSetDefaultFileSys(</code><a href="aslayer_ASFileSys.html#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>fileSys</code></div>
+</td><td><div>Alternate file system to be used </div>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="ConvertPDFToExcel"><strong><span style="color:grey;">ConvertPDFToExcel</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1049</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Converts a PDF file from the specified file path to a Microsoft Excel document (.xlsx) at the specified file path. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ConvertPDFToExcel(</code><a href="aslayer_ASFileSys.html#ASPathName"><code>ASPathName</code></a> <code>inputPath</code><code>,</code> <a href="aslayer_ASFileSys.html#ASPathName"><code>ASPathName</code></a> <code>outputPath</code><code>,</code> <a href="aslayer_ASFileSys.html#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>inputPath</code></div>
+</td><td><div>The input path of the PDF document. </div>
+</td></tr>
+<tr><td><div><code>outputPath</code></div>
+</td><td><div>The output path of the Office document. </div>
+</td></tr>
+<tr><td><div><code>fileSys</code></div>
+</td><td><div>The File System in use. </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>if True, the Conversion was successful. </div>
+</section>
+<section><div class="infoRow"><h3 id="ConvertPDFToPowerPoint"><strong><span style="color:grey;">ConvertPDFToPowerPoint</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1060</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Converts a PDF file from the specified file path to a Microsoft Powerpoint document (.pptx) at the specified file path. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ConvertPDFToPowerPoint(</code><a href="aslayer_ASFileSys.html#ASPathName"><code>ASPathName</code></a> <code>inputPath</code><code>,</code> <a href="aslayer_ASFileSys.html#ASPathName"><code>ASPathName</code></a> <code>outputPath</code><code>,</code> <a href="aslayer_ASFileSys.html#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>inputPath</code></div>
+</td><td><div>The input path of the PDF document. </div>
+</td></tr>
+<tr><td><div><code>outputPath</code></div>
+</td><td><div>The output path of the Office document. </div>
+</td></tr>
+<tr><td><div><code>fileSys</code></div>
+</td><td><div>The File System in use. </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>if True, the Conversion was successful. </div>
+</section>
+<section><div class="infoRow"><h3 id="ConvertPDFToWord"><strong><span style="color:grey;">ConvertPDFToWord</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1038</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Converts a PDF file from the specified file path to a Microsoft Word document (.docx) at the specified file path. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>ConvertPDFToWord(</code><a href="aslayer_ASFileSys.html#ASPathName"><code>ASPathName</code></a> <code>inputPath</code><code>,</code> <a href="aslayer_ASFileSys.html#ASPathName"><code>ASPathName</code></a> <code>outputPath</code><code>,</code> <a href="aslayer_ASFileSys.html#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>inputPath</code></div>
+</td><td><div>The input path of the PDF document. </div>
+</td></tr>
+<tr><td><div><code>outputPath</code></div>
+</td><td><div>The output path of the Office document. </div>
+</td></tr>
+<tr><td><div><code>fileSys</code></div>
+</td><td><div>The File System in use. </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>if True, the Conversion was successful. </div>
+</section>
+<section><div class="infoRow"><h3 id="DLCreatePDEImageFromASFile"><strong><span style="color:grey;">DLCreatePDEImageFromASFile</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1460</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Imports an image file (TIFF, JPEG, BMP, PNG, GIF) from the specified <a href="aslayer_ASFile.html#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> to a <a href="pdelayer_PDEImage.html#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a>. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEImage.html#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>DLCreatePDEImageFromASFile(</code><a href="aslayer_ASFile.html#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>file</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>file</code></div>
+</td><td><div>The <a href="aslayer_ASFile.html#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> representing the file. </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>A <a href="pdelayer_PDEImage.html#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a> object created from the input image. </div>
+</section>
+<section><div class="infoRow"><h3 id="DLCreatePDEImagesFromASFile"><strong><span style="color:grey;">DLCreatePDEImagesFromASFile</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1469</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Imports a multipage TIFF from the specified <a href="aslayer_ASFile.html#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> to a collection of PDEImage's. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEImage.html#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>*</code><code>DLCreatePDEImagesFromASFile(</code><a href="aslayer_ASFile.html#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>file</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>file</code></div>
+</td><td><div>The <a href="aslayer_ASFile.html#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> representing the file. </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>A pointer to a null-terminated array of PDEImage's created from the input TIFF image. </div>
+</section>
+<section><div class="infoRow"><h3 id="DLCreatePDEImagesFromTIFF"><strong><span style="color:grey;">DLCreatePDEImagesFromTIFF</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1433</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Imports a multipage TIFF from the specified file path to a collection of PDEImage's. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="pdelayer_PDEImage.html#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>*</code><code>DLCreatePDEImagesFromTIFF(</code><a href="aslayer_ASFileSys.html#ASPathName"><code>ASPathName</code></a> <code>imageInputPath</code><code>,</code> <a href="aslayer_ASFileSys.html#_t_ASFileSysRec" title=" A data structure containing callbacks that implement a file system."><code>ASFileSys</code></a> <code>fileSys</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>imageInputPath</code></div>
+</td><td><div>The input path of the TIFF. </div>
+</td></tr>
+<tr><td><div><code>fileSys</code></div>
+</td><td><div>The File System in use. </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>A pointer to a null-terminated array of PDEImage's created from the input TIFF image. </div>
+</section>
+<section><div class="infoRow"><h3 id="DLEnableLicensedBehavior"><strong><span style="color:grey;">DLEnableLicensedBehavior</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:21</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>DLEnableLicensedBehavior(</code><code>const</code> <code>char</code> <code>*</code><code>keyVal</code><code>,</code> <code>const</code> <code>char</code> <code>*</code><code>additionalInfo</code><code>);</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="DLExportImageToNChannelTIFF"><strong><span style="color:grey;">DLExportImageToNChannelTIFF</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1474</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>For Internal Use only. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>DLExportImageToNChannelTIFF(</code><code>char</code> <code>*</code><code>buffer</code><code>,</code> <code>size_t</code> <code>bufferSize</code><code>,</code> <a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>width</code><code>,</code> <a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>height</code><code>,</code> <a href="aslayer_ASFileSys.html#ASPathName"><code>ASPathName</code></a> <code>outputPath</code><code>,</code> <a href="dlextras_PDEImage.html#DLPDEImageExportParams" title=" Structure containing additional image export parameters that can be set by the user."><code>DLPDEImageExportParams</code></a> <code>exportParams</code><code>,</code> <a href="pdlayer_PDPage.html#_t_PDPageInkRec" title=" Represents an ink used on a page."><code>PDPageInk</code></a> <code>inks</code><code>);</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="DLExportPDEImagesToTIFF"><strong><span style="color:grey;">DLExportPDEImagesToTIFF</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1442</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Exports a collection of PDEImage's to a multipage TIFF at the specified file path. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>DLExportPDEImagesToTIFF(</code><a href="pdelayer_PDEImage.html#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image."><code>PDEImage</code></a> <code>*</code><code>images</code><code>,</code> <a href="aslayer_ASFileSys.html#ASPathName"><code>ASPathName</code></a> <code>outputPath</code><code>,</code> <a href="dlextras_PDEImage.html#DLPDEImageExportParams" title=" Structure containing additional image export parameters that can be set by the user."><code>DLPDEImageExportParams</code></a> <code>exportParams</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>image</code></div>
+</td><td><div>A null-terminated array of PDEImage's of interest. </div>
+</td></tr>
+<tr><td><div><code>outputPath</code></div>
+</td><td><div>The output path of the TIFF file. </div>
+</td></tr>
+<tr><td><div><code>exportParams</code></div>
+</td><td><div>The <a href="dlextras_PDEImage.html#DLPDEImageExportParams" title=" Structure containing additional image export parameters that can be set by the user.">DLPDEImageExportParams</a> structure. </div>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="DLGetImageType"><strong><span style="color:grey;">DLGetImageType</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:1451</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Gets the image file type (TIFF, JPEG, BMP, PNG, GIF). </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="dlextras_General.html#DLImageExportType" title=" Export Image Types."><code>DLImageExportType</code></a> <code>DLGetImageType(</code><a href="aslayer_ASFile.html#ASFile" title=" An opaque representation of a particular open file."><code>ASFile</code></a> <code>file</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>file</code></div>
+</td><td><div>The <a href="aslayer_ASFile.html#ASFile" title=" An opaque representation of a particular open file.">ASFile</a> representing the file. </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>A <a href="dlextras_General.html#DLImageExportType" title=" Export Image Types.">DLImageExportType</a> value representing the file type. </div>
+</section>
+<section><div class="infoRow"><h3 id="PDFLAddFontDirectories"><strong><span style="color:grey;">PDFLAddFontDirectories</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:457</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>This call allows Adobe PDF Library to rescan for fonts without re-initializing. This will allow an operating Library process to detect and update new font directories and resources after startup, without requiring a restart and re-initialization.<br/>
+<p>This will add one or more directories, and the fonts within them, to the set of all directories containing fonts (those specified in the DirList string arrays of resource locations).<br/></p>
+
+<p>
+<p>This call should be followed by a call to <a href="dlextras_General.html#PDFLRescanFontDirectories" title=" This call allows Adobe PDF Library to rescan for fonts without re-initializing.">PDFLRescanFontDirectories</a> after all new font directories have been loaded.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<div><a href="dlextras_General.html#PDFLRescanFontDirectories" title=" This call allows Adobe PDF Library to rescan for fonts without re-initializing.">PDFLRescanFontDirectories</a> </div>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDFLAddFontDirectories(</code><a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>pathCount</code><code>,</code> <a href="aslayer_ASFileSys.html#ASPathName"><code>ASPathName</code></a> <code>*</code><code>paths</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>pathCount</code></div>
+</td><td><div>Number of new paths to be added. </div>
+</td></tr>
+<tr><td><div><code>paths</code></div>
+</td><td><div>Paths to new resource locations to be added. </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>Indicates if fonts directories were changed. </div>
+</section>
+<section><div class="infoRow"><h3 id="PDFLReinit"><strong><span style="color:grey;">PDFLReinit</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> PDFLProcs.h:692</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Warm reinitialization of the Adobe PDF Library. Call this method if you closed all documents and other PD/PDE/Cos objects. Releases memory used for cached data. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDFLReinit(</code><code>void</code><code>);</code> </code>
+</section>
+<section><div class="infoRow"><h3 id="PDFLRescanFontDirectories"><strong><span style="color:grey;">PDFLRescanFontDirectories</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> DLExtrasProcs.h:443</div>
+</div>
+
+<div><div><H4><strong>Description</strong></H4>
+
+<div><p>This call allows Adobe PDF Library to rescan for fonts without re-initializing. This will allow an operating Library process to detect and update new font directories and resources after startup, without requiring a restart and re-initialization.<br/>
+<p>This call can, depending on flag settings, force a rescan of font resource areas defined in your dirList array, a rescan of those residing in the System folder, or both. To add new font resources to your dirList array, use the <a href="dlextras_General.html#PDFLAddFontDirectories" title=" This call allows Adobe PDF Library to rescan for fonts without re-initializing.">PDFLAddFontDirectories</a> call.<br/></p>
+</div>
+</div>
+
+<div class="relatedMethods"><H4><strong>Related Methods</strong></H4>
+
+<div><a href="dlextras_General.html#PDFLAddFontDirectories" title=" This call allows Adobe PDF Library to rescan for fonts without re-initializing.">PDFLAddFontDirectories</a> </div>
+</div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>PDFLRescanFontDirectories(</code><a href="dlextras_General.html#FontRescanFlags" title=" flags for rescanning font directories for additional fonts after Library initialization."><code>FontRescanFlags</code></a> <code>flags</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>flags</code></div>
+</td><td><div>Flags controlling rescan process. </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>Indicates if fonts directories were changed. </div>
+</section>
+</section>
+
+</div>
+</body>
+    <script>
+        currVer = window.location.pathname.split("/").slice(-2)[0]
+        document.getElementById("ver").src +=  "?=" + currVer 
+    </script>
+    </html>
