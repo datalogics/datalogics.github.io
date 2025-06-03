@@ -1,0 +1,963 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect-members.html">List of all members</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">com.datalogics.PDFL.Rect Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a06b75f387789b55f16d7c798bf30ecb9"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a06b75f387789b55f16d7c798bf30ecb9">delete</a> ()</td></tr>
+<tr class="separator:a06b75f387789b55f16d7c798bf30ecb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afde922e00a1c12ca129e5e8127e0d3f9"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#afde922e00a1c12ca129e5e8127e0d3f9">equals</a> (Object rhs)</td></tr>
+<tr class="separator:afde922e00a1c12ca129e5e8127e0d3f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ab904118fb8f7788e505882e378a7b3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a8ab904118fb8f7788e505882e378a7b3">getBottom</a> ()</td></tr>
+<tr class="separator:a8ab904118fb8f7788e505882e378a7b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a339d69d37c8c0090e0043ecf6f9d9e2b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a339d69d37c8c0090e0043ecf6f9d9e2b">getHeight</a> ()</td></tr>
+<tr class="separator:a339d69d37c8c0090e0043ecf6f9d9e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a863729b2442f7665fbc5425667c7f728"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a863729b2442f7665fbc5425667c7f728">getLeft</a> ()</td></tr>
+<tr class="separator:a863729b2442f7665fbc5425667c7f728"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c6fa6bf270056075bc7feb2fcbb9321"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a5c6fa6bf270056075bc7feb2fcbb9321">getLLx</a> ()</td></tr>
+<tr class="separator:a5c6fa6bf270056075bc7feb2fcbb9321"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9d0b16683e911f57b579404cd26246d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#aa9d0b16683e911f57b579404cd26246d">getLLy</a> ()</td></tr>
+<tr class="separator:aa9d0b16683e911f57b579404cd26246d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf350eed96a5f5ac667e0755ac224e28"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#adf350eed96a5f5ac667e0755ac224e28">getRight</a> ()</td></tr>
+<tr class="separator:adf350eed96a5f5ac667e0755ac224e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59d00d2534d96a50b2602203977aac70"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a59d00d2534d96a50b2602203977aac70">getTop</a> ()</td></tr>
+<tr class="separator:a59d00d2534d96a50b2602203977aac70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5198dfd13533f7e36e905a9887b08672"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a5198dfd13533f7e36e905a9887b08672">getURx</a> ()</td></tr>
+<tr class="separator:a5198dfd13533f7e36e905a9887b08672"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa810aa75ad6c8cc1cfee4d6bdaab407a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#aa810aa75ad6c8cc1cfee4d6bdaab407a">getURy</a> ()</td></tr>
+<tr class="separator:aa810aa75ad6c8cc1cfee4d6bdaab407a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a250ec85ae3772f2e5a96bb8a8ffe4aa9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a250ec85ae3772f2e5a96bb8a8ffe4aa9">getWidth</a> ()</td></tr>
+<tr class="separator:a250ec85ae3772f2e5a96bb8a8ffe4aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ecbb08330607f478c778282a22e0f7d"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a6ecbb08330607f478c778282a22e0f7d">inRect</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a> r2)</td></tr>
+<tr class="separator:a6ecbb08330607f478c778282a22e0f7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a4854a6b50ce98a91c0dcce245c586c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a6a4854a6b50ce98a91c0dcce245c586c">intersect</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a> r2)</td></tr>
+<tr class="separator:a6a4854a6b50ce98a91c0dcce245c586c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d0b8bd8a571665d8328a0339413e9b0"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a7d0b8bd8a571665d8328a0339413e9b0">isEmpty</a> ()</td></tr>
+<tr class="separator:a7d0b8bd8a571665d8328a0339413e9b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68464c2d8570100f99dbbeff2b5a84fc"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a68464c2d8570100f99dbbeff2b5a84fc">overlaps</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a> r2)</td></tr>
+<tr class="separator:a68464c2d8570100f99dbbeff2b5a84fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c0d7eaad60b18cf861b0d847648e13f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a8c0d7eaad60b18cf861b0d847648e13f">Rect</a> ()</td></tr>
+<tr class="separator:a8c0d7eaad60b18cf861b0d847648e13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45a3ec971bb0d15ddcc9c202ea83457c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a45a3ec971bb0d15ddcc9c202ea83457c">Rect</a> (double nLLx, double nLLy, double nURx, double nURy)</td></tr>
+<tr class="separator:a45a3ec971bb0d15ddcc9c202ea83457c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab01647ccaf2e8e335dff3e8900244815"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#ab01647ccaf2e8e335dff3e8900244815">Rect</a> (java.awt.geom.Rectangle2D r)</td></tr>
+<tr class="separator:ab01647ccaf2e8e335dff3e8900244815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb84046ed2ec5090c16772d95bda4a17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#abb84046ed2ec5090c16772d95bda4a17">setBottom</a> (double bottom)</td></tr>
+<tr class="separator:abb84046ed2ec5090c16772d95bda4a17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a928cc6963f779af6845066163846c9fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a928cc6963f779af6845066163846c9fa">setLeft</a> (double left)</td></tr>
+<tr class="separator:a928cc6963f779af6845066163846c9fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c1358f945bff1ef6fbcb450885ea4d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a6c1358f945bff1ef6fbcb450885ea4d1">setLLx</a> (double value)</td></tr>
+<tr class="separator:a6c1358f945bff1ef6fbcb450885ea4d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07af8be87e25202bcef6fd1f4b63ff37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a07af8be87e25202bcef6fd1f4b63ff37">setLLy</a> (double value)</td></tr>
+<tr class="separator:a07af8be87e25202bcef6fd1f4b63ff37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf9b8cb2bce415d0830c5bb9d7624dbb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#aaf9b8cb2bce415d0830c5bb9d7624dbb">setRight</a> (double right)</td></tr>
+<tr class="separator:aaf9b8cb2bce415d0830c5bb9d7624dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab064deaafd776c77b2e8676dc71dd5ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#ab064deaafd776c77b2e8676dc71dd5ed">setTop</a> (double top)</td></tr>
+<tr class="separator:ab064deaafd776c77b2e8676dc71dd5ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc7d8b6584cb2b8fd9e8a285fe405e5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#adc7d8b6584cb2b8fd9e8a285fe405e5a">setURx</a> (double value)</td></tr>
+<tr class="separator:adc7d8b6584cb2b8fd9e8a285fe405e5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac69c0ce290a4be7af4c5d960e90e560b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#ac69c0ce290a4be7af4c5d960e90e560b">setURy</a> (double value)</td></tr>
+<tr class="separator:ac69c0ce290a4be7af4c5d960e90e560b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04586487c5ff23f8271af5245bbd236d"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a04586487c5ff23f8271af5245bbd236d">toString</a> ()</td></tr>
+<tr class="separator:a04586487c5ff23f8271af5245bbd236d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fb5f2ba222759d44322b39db7ee1429"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a3fb5f2ba222759d44322b39db7ee1429">transform</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> arg0)</td></tr>
+<tr class="separator:a3fb5f2ba222759d44322b39db7ee1429"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:ade56871b80b326928a926bb80a80d54e"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#ade56871b80b326928a926bb80a80d54e">delete</a> (Boolean disposing)</td></tr>
+<tr class="separator:ade56871b80b326928a926bb80a80d54e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec27b2e0756e95445ca164a0aec5c01e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#aec27b2e0756e95445ca164a0aec5c01e">finalize</a> ()</td></tr>
+<tr class="separator:aec27b2e0756e95445ca164a0aec5c01e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68bd2a8e76ab63046db0b48abc13989b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a68bd2a8e76ab63046db0b48abc13989b">Rect</a> (long cPtr, boolean cMemoryOwn)</td></tr>
+<tr class="separator:a68bd2a8e76ab63046db0b48abc13989b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a59d994040ccd4febb9e3bff94836d195"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a59d994040ccd4febb9e3bff94836d195">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a> obj)</td></tr>
+<tr class="separator:a59d994040ccd4febb9e3bff94836d195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A rect holds four coordinates for a rectangle. The coordinates for a rectangle include left, top, right, bottom. Width () and height () defines the rectangle's width and height. LLx and LLy defines lower left corner, and URx and URy defines the upper right corner. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a68bd2a8e76ab63046db0b48abc13989b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68bd2a8e76ab63046db0b48abc13989b">&#9670;&nbsp;</a></span>Rect() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Rect.Rect </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>cPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>cMemoryOwn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab01647ccaf2e8e335dff3e8900244815"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab01647ccaf2e8e335dff3e8900244815">&#9670;&nbsp;</a></span>Rect() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Rect.Rect </td>
+          <td>(</td>
+          <td class="paramtype">java.awt.geom.Rectangle2D&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a Rect from a java.awt rectangle type</p>
+<p>Note that the coordinate systems are inverted for PDFL. Smaller X/Y values are assigned to the lower left coordinate.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>a rectangle </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8c0d7eaad60b18cf861b0d847648e13f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c0d7eaad60b18cf861b0d847648e13f">&#9670;&nbsp;</a></span>Rect() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Rect.Rect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a rectangle with all values zero. </p>
+
+</div>
+</div>
+<a id="a45a3ec971bb0d15ddcc9c202ea83457c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45a3ec971bb0d15ddcc9c202ea83457c">&#9670;&nbsp;</a></span>Rect() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Rect.Rect </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>nLLx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>nLLy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>nURx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>nURy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a Rect. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nLLx</td><td>the X coordinate of the lower left corner of the rectangle </td></tr>
+    <tr><td class="paramname">nLLy</td><td>the Y coordinate of the lower left corner of the rectangle </td></tr>
+    <tr><td class="paramname">nURx</td><td>the X coordinate of the upper right corner of the rectangle </td></tr>
+    <tr><td class="paramname">nURy</td><td>the Y coordinate of the upper right corner of the rectangle </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a06b75f387789b55f16d7c798bf30ecb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06b75f387789b55f16d7c798bf30ecb9">&#9670;&nbsp;</a></span>delete() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.Rect.delete </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ade56871b80b326928a926bb80a80d54e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade56871b80b326928a926bb80a80d54e">&#9670;&nbsp;</a></span>delete() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.Rect.delete </td>
+          <td>(</td>
+          <td class="paramtype">Boolean&#160;</td>
+          <td class="paramname"><em>disposing</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afde922e00a1c12ca129e5e8127e0d3f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afde922e00a1c12ca129e5e8127e0d3f9">&#9670;&nbsp;</a></span>equals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.Rect.equals </td>
+          <td>(</td>
+          <td class="paramtype">Object&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aec27b2e0756e95445ca164a0aec5c01e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec27b2e0756e95445ca164a0aec5c01e">&#9670;&nbsp;</a></span>finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Rect.finalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ab904118fb8f7788e505882e378a7b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ab904118fb8f7788e505882e378a7b3">&#9670;&nbsp;</a></span>getBottom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.Rect.getBottom </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>the Y coordinate of the lower left corner of the rectangle. </p>
+
+</div>
+</div>
+<a id="a59d994040ccd4febb9e3bff94836d195"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59d994040ccd4febb9e3bff94836d195">&#9670;&nbsp;</a></span>getCPtr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static long com.datalogics.PDFL.Rect.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a>&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#af7ac6e369b266556486b799ac2817994">com.datalogics.PDFL.Page.addNewAnnotation()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html#ac5bea8c5eb7e2acb5aa8caac9db45e68">com.datalogics.PDFL.Content.addPage()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_annotation.html#a6d7cb30dd868dde8604bed926cd91090">com.datalogics.PDFL.Annotation.Annotation()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_circle_annotation.html#ab38afaddcf190e8975e9b00a11c14c1c">com.datalogics.PDFL.CircleAnnotation.CircleAnnotation()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#a55031a444d0a0c01419e4f40346e5e01">com.datalogics.PDFL.Page.createAnnotation()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a02057a65725aa5227876ad6f1f68082b">com.datalogics.PDFL.Document.createPage()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_free_text_annotation.html#aeb7e527b20b69b347b223c7ef105cf17">com.datalogics.PDFL.FreeTextAnnotation.FreeTextAnnotation()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#a5da1d00cfc2809aa7f734f973b1fdf8f">com.datalogics.PDFL.Page.getImage()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#aa1b674d2f89ceeb902fe7d1a102e767b">com.datalogics.PDFL.Page.getImageSeparations()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#ad393a6df06ca7c23bd225d3586a25413">com.datalogics.PDFL.Page.getOutputPreviewImage()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_ink_annotation.html#a4f1a1ffddc461e85ea52588a0761a5e0">com.datalogics.PDFL.InkAnnotation.InkAnnotation()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a6ecbb08330607f478c778282a22e0f7d">com.datalogics.PDFL.Rect.inRect()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a6a4854a6b50ce98a91c0dcce245c586c">com.datalogics.PDFL.Rect.intersect()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_line_annotation.html#adbab29407501295d222901a3b9aef625">com.datalogics.PDFL.LineAnnotation.LineAnnotation()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_link_annotation.html#a2df86a0450e3e22db5d22d16c067171e">com.datalogics.PDFL.LinkAnnotation.LinkAnnotation()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html#a68464c2d8570100f99dbbeff2b5a84fc">com.datalogics.PDFL.Rect.overlaps()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#a44a21e8037e300ebd677860c9d57a3b9">com.datalogics.PDFL.Page.Page()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text.html#a5cda7c8f82f13be63468615aca996e94">com.datalogics.PDFL.Text.rectIntersectsCharacter()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text.html#abd0de6780248c660af0725cface648fe">com.datalogics.PDFL.Text.rectIntersectsTextRun()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_remote_destination.html#af0e6a307b7579a237cd1e2475b461176">com.datalogics.PDFL.RemoteDestination.RemoteDestination()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#ab5072d225f4d0cfb06d5a40a006ac9b3">com.datalogics.PDFL.Page.setArtBox()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#af8adead25c647e648b35cc90a0fec178">com.datalogics.PDFL.Page.setBleedBox()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_shading_pattern.html#a95d5bfb6e3a5cc60dfe55f61499d7c14">com.datalogics.PDFL.ShadingPattern.setBoundingBox()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_print_params.html#a68dbf9dc1efaa2f332f0af00e3d412e0">com.datalogics.PDFL.PrintParams.setBoundingBox()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#a0d128a34f88620d76957331bec3930db">com.datalogics.PDFL.Page.setCropBox()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_remote_destination.html#a0b7205fb6171b2a11a54eeaf9799c36c">com.datalogics.PDFL.RemoteDestination.setDestRect()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_params.html#a08be16e92ab26be90610b80dd09ec482">com.datalogics.PDFL.DrawParams.setDestRect()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_view_destination.html#a8723e5014809d999f45d21fe16c49504">com.datalogics.PDFL.ViewDestination.setDestRect()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#a9d4f7d8b0ad0d3876796bd88926614af">com.datalogics.PDFL.Page.setMediaBox()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_annotation.html#a631b3e91ae367416eb212af562408e4d">com.datalogics.PDFL.Annotation.setRect()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_sign_doc.html#a7830393881675f918da978f449b26823">com.datalogics.PDFL.SignDoc.setSignatureBoxRectangle()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#ac108352e990ede602806deca4555939c">com.datalogics.PDFL.Page.setTrimBox()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_params.html#a943a01ddb3f7f58490a721a4712a4360">com.datalogics.PDFL.DrawParams.setUpdateRect()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_square_annotation.html#a75407e44b5a2f98ceb678b0345c3ce8d">com.datalogics.PDFL.SquareAnnotation.SquareAnnotation()</a>, and <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_view_destination.html#a4081fcdff89c959eedeba54ebbb4c930">com.datalogics.PDFL.ViewDestination.ViewDestination()</a>.</p>
+
+</div>
+</div>
+<a id="a339d69d37c8c0090e0043ecf6f9d9e2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a339d69d37c8c0090e0043ecf6f9d9e2b">&#9670;&nbsp;</a></span>getHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.Rect.getHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The height of the Rect. </p>
+
+</div>
+</div>
+<a id="a863729b2442f7665fbc5425667c7f728"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a863729b2442f7665fbc5425667c7f728">&#9670;&nbsp;</a></span>getLeft()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.Rect.getLeft </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>the X coordinate of the lower left corner of the rectangle. </p>
+
+</div>
+</div>
+<a id="a5c6fa6bf270056075bc7feb2fcbb9321"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c6fa6bf270056075bc7feb2fcbb9321">&#9670;&nbsp;</a></span>getLLx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.Rect.getLLx </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>the X coordinate of the lower left corner of the rectangle. </p>
+
+</div>
+</div>
+<a id="aa9d0b16683e911f57b579404cd26246d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9d0b16683e911f57b579404cd26246d">&#9670;&nbsp;</a></span>getLLy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.Rect.getLLy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>the Y coordinate of the lower left corner of the rectangle. </p>
+
+</div>
+</div>
+<a id="adf350eed96a5f5ac667e0755ac224e28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf350eed96a5f5ac667e0755ac224e28">&#9670;&nbsp;</a></span>getRight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.Rect.getRight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>the X coordinate of the upper right corner of the rectangle. </p>
+
+</div>
+</div>
+<a id="a59d00d2534d96a50b2602203977aac70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59d00d2534d96a50b2602203977aac70">&#9670;&nbsp;</a></span>getTop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.Rect.getTop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>the Y coordinate of the upper right corner of the rectangle. </p>
+
+</div>
+</div>
+<a id="a5198dfd13533f7e36e905a9887b08672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5198dfd13533f7e36e905a9887b08672">&#9670;&nbsp;</a></span>getURx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.Rect.getURx </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>the X coordinate of the upper right corner of the rectangle. </p>
+
+</div>
+</div>
+<a id="aa810aa75ad6c8cc1cfee4d6bdaab407a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa810aa75ad6c8cc1cfee4d6bdaab407a">&#9670;&nbsp;</a></span>getURy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.Rect.getURy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>the Y coordinate of the upper right corner of the rectangle. </p>
+
+</div>
+</div>
+<a id="a250ec85ae3772f2e5a96bb8a8ffe4aa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a250ec85ae3772f2e5a96bb8a8ffe4aa9">&#9670;&nbsp;</a></span>getWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.Rect.getWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The width of the Rect. </p>
+
+</div>
+</div>
+<a id="a6ecbb08330607f478c778282a22e0f7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ecbb08330607f478c778282a22e0f7d">&#9670;&nbsp;</a></span>inRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.Rect.inRect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a>&#160;</td>
+          <td class="paramname"><em>r2</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check if this rectangle is inside the parameter rectangle. </p>
+
+</div>
+</div>
+<a id="a6a4854a6b50ce98a91c0dcce245c586c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a4854a6b50ce98a91c0dcce245c586c">&#9670;&nbsp;</a></span>intersect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a> com.datalogics.PDFL.Rect.intersect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a>&#160;</td>
+          <td class="paramname"><em>r2</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Obtain the intersection of this rectangle and another rectangle. </p>
+
+</div>
+</div>
+<a id="a7d0b8bd8a571665d8328a0339413e9b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d0b8bd8a571665d8328a0339413e9b0">&#9670;&nbsp;</a></span>isEmpty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.Rect.isEmpty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check if this rectangle is empty. </p>
+
+</div>
+</div>
+<a id="a68464c2d8570100f99dbbeff2b5a84fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68464c2d8570100f99dbbeff2b5a84fc">&#9670;&nbsp;</a></span>overlaps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.Rect.overlaps </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a>&#160;</td>
+          <td class="paramname"><em>r2</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check if two rectangles overlap. </p>
+
+</div>
+</div>
+<a id="abb84046ed2ec5090c16772d95bda4a17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb84046ed2ec5090c16772d95bda4a17">&#9670;&nbsp;</a></span>setBottom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Rect.setBottom </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>bottom</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>the Y coordinate of the lower left corner of the rectangle. </p>
+
+</div>
+</div>
+<a id="a928cc6963f779af6845066163846c9fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a928cc6963f779af6845066163846c9fa">&#9670;&nbsp;</a></span>setLeft()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Rect.setLeft </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>left</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>the X coordinate of the lower left corner of the rectangle. </p>
+
+</div>
+</div>
+<a id="a6c1358f945bff1ef6fbcb450885ea4d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c1358f945bff1ef6fbcb450885ea4d1">&#9670;&nbsp;</a></span>setLLx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Rect.setLLx </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>the X coordinate of the lower left corner of the rectangle. </p>
+
+</div>
+</div>
+<a id="a07af8be87e25202bcef6fd1f4b63ff37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07af8be87e25202bcef6fd1f4b63ff37">&#9670;&nbsp;</a></span>setLLy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Rect.setLLy </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>the Y coordinate of the lower left corner of the rectangle. </p>
+
+</div>
+</div>
+<a id="aaf9b8cb2bce415d0830c5bb9d7624dbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf9b8cb2bce415d0830c5bb9d7624dbb">&#9670;&nbsp;</a></span>setRight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Rect.setRight </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>right</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>the X coordinate of the upper right corner of the rectangle. </p>
+
+</div>
+</div>
+<a id="ab064deaafd776c77b2e8676dc71dd5ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab064deaafd776c77b2e8676dc71dd5ed">&#9670;&nbsp;</a></span>setTop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Rect.setTop </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>top</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>the Y coordinate of the upper right corner of the rectangle. </p>
+
+</div>
+</div>
+<a id="adc7d8b6584cb2b8fd9e8a285fe405e5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc7d8b6584cb2b8fd9e8a285fe405e5a">&#9670;&nbsp;</a></span>setURx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Rect.setURx </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>the X coordinate of the upper right corner of the rectangle. </p>
+
+</div>
+</div>
+<a id="ac69c0ce290a4be7af4c5d960e90e560b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac69c0ce290a4be7af4c5d960e90e560b">&#9670;&nbsp;</a></span>setURy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Rect.setURy </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>the Y coordinate of the upper right corner of the rectangle. </p>
+
+</div>
+</div>
+<a id="a04586487c5ff23f8271af5245bbd236d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04586487c5ff23f8271af5245bbd236d">&#9670;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.datalogics.PDFL.Rect.toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3fb5f2ba222759d44322b39db7ee1429"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fb5f2ba222759d44322b39db7ee1429">&#9670;&nbsp;</a></span>transform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a> com.datalogics.PDFL.Rect.transform </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a>&#160;</td>
+          <td class="paramname"><em>arg0</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Transform the coordinates of the rectangle by the given Matrix Object. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>
