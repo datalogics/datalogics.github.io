@@ -1,0 +1,654 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state-members.html">List of all members</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">com.datalogics.PDFL.TextState Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:afff679b36cf335866a4aad7f954e099e"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html#afff679b36cf335866a4aad7f954e099e">delete</a> ()</td></tr>
+<tr class="separator:afff679b36cf335866a4aad7f954e099e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d647b10e5db8744b24d0d03fd45cb6e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html#a2d647b10e5db8744b24d0d03fd45cb6e">getCharacterSpacing</a> ()</td></tr>
+<tr class="separator:a2d647b10e5db8744b24d0d03fd45cb6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaee10ccfe3c705e25da840a64279fb51"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html#aaee10ccfe3c705e25da840a64279fb51">getFontSize</a> ()</td></tr>
+<tr class="separator:aaee10ccfe3c705e25da840a64279fb51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98a3d328949d246b2124d5c52db72001"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html#a98a3d328949d246b2124d5c52db72001">getHScale</a> ()</td></tr>
+<tr class="separator:a98a3d328949d246b2124d5c52db72001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3d5f7f3911d28302e0b1ca6c70583ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_text_render_mode.html">TextRenderMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html#ab3d5f7f3911d28302e0b1ca6c70583ea">getRenderMode</a> ()</td></tr>
+<tr class="separator:ab3d5f7f3911d28302e0b1ca6c70583ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ecd59777dcabbc10ee3e4321d868b0a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html#a8ecd59777dcabbc10ee3e4321d868b0a">getTextRise</a> ()</td></tr>
+<tr class="separator:a8ecd59777dcabbc10ee3e4321d868b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf50aa69091d200c63a6b17baf018dd0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html#aaf50aa69091d200c63a6b17baf018dd0">getWordSpacing</a> ()</td></tr>
+<tr class="separator:aaf50aa69091d200c63a6b17baf018dd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeff37f74efcacd13d2dae7eebca72396"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html#aeff37f74efcacd13d2dae7eebca72396">setCharacterSpacing</a> (double Tc)</td></tr>
+<tr class="separator:aeff37f74efcacd13d2dae7eebca72396"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fb695dc19732aefd9524ff8619e8d5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html#a1fb695dc19732aefd9524ff8619e8d5c">setFontSize</a> (double Tf)</td></tr>
+<tr class="separator:a1fb695dc19732aefd9524ff8619e8d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a689d4d6346b90b78fe243c5eadb42069"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html#a689d4d6346b90b78fe243c5eadb42069">setHScale</a> (double Tz)</td></tr>
+<tr class="separator:a689d4d6346b90b78fe243c5eadb42069"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d4f8997ec06b3bb07b677b4280fe156"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html#a1d4f8997ec06b3bb07b677b4280fe156">setRenderMode</a> (<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_text_render_mode.html">TextRenderMode</a> Tr)</td></tr>
+<tr class="separator:a1d4f8997ec06b3bb07b677b4280fe156"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a384912eb01c827768d63ae4037393b66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html#a384912eb01c827768d63ae4037393b66">setTextRise</a> (double Ts)</td></tr>
+<tr class="separator:a384912eb01c827768d63ae4037393b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab90c61047b546c5af7751bd4d10992d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html#ab90c61047b546c5af7751bd4d10992d6">setWordSpacing</a> (double Tw)</td></tr>
+<tr class="separator:ab90c61047b546c5af7751bd4d10992d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6119fc79b51884c4e7686f862e71c50"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html#ad6119fc79b51884c4e7686f862e71c50">TextState</a> ()</td></tr>
+<tr class="separator:ad6119fc79b51884c4e7686f862e71c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:afdf51a3e62d29c3e488b570e655da092"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html#afdf51a3e62d29c3e488b570e655da092">delete</a> (Boolean disposing)</td></tr>
+<tr class="separator:afdf51a3e62d29c3e488b570e655da092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09568b9e8d9e346eaaa4fe96e13e8c58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html#a09568b9e8d9e346eaaa4fe96e13e8c58">finalize</a> ()</td></tr>
+<tr class="separator:a09568b9e8d9e346eaaa4fe96e13e8c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefe5c6f7bb97bec868e82b92abe68f54"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html#aefe5c6f7bb97bec868e82b92abe68f54">TextState</a> (long cPtr, boolean cMemoryOwn)</td></tr>
+<tr class="separator:aefe5c6f7bb97bec868e82b92abe68f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:af88473baf1d5e45499d016016ed951ed"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html#af88473baf1d5e45499d016016ed951ed">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html">TextState</a> obj)</td></tr>
+<tr class="separator:af88473baf1d5e45499d016016ed951ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The text state includes parameters that affect text. These parameters include character and word spacing, font, font size, and horizontal scale. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aefe5c6f7bb97bec868e82b92abe68f54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefe5c6f7bb97bec868e82b92abe68f54">&#9670;&nbsp;</a></span>TextState() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.TextState.TextState </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>cPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>cMemoryOwn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad6119fc79b51884c4e7686f862e71c50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6119fc79b51884c4e7686f862e71c50">&#9670;&nbsp;</a></span>TextState() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.TextState.TextState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a default text state </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="afff679b36cf335866a4aad7f954e099e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afff679b36cf335866a4aad7f954e099e">&#9670;&nbsp;</a></span>delete() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.TextState.delete </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afdf51a3e62d29c3e488b570e655da092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdf51a3e62d29c3e488b570e655da092">&#9670;&nbsp;</a></span>delete() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.TextState.delete </td>
+          <td>(</td>
+          <td class="paramtype">Boolean&#160;</td>
+          <td class="paramname"><em>disposing</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a09568b9e8d9e346eaaa4fe96e13e8c58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09568b9e8d9e346eaaa4fe96e13e8c58">&#9670;&nbsp;</a></span>finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.TextState.finalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2d647b10e5db8744b24d0d03fd45cb6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d647b10e5db8744b24d0d03fd45cb6e">&#9670;&nbsp;</a></span>getCharacterSpacing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.TextState.getCharacterSpacing </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The current character spacing (corresponding to the Tc operator), in unscaled text space units. </p>
+
+</div>
+</div>
+<a id="af88473baf1d5e45499d016016ed951ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af88473baf1d5e45499d016016ed951ed">&#9670;&nbsp;</a></span>getCPtr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static long com.datalogics.PDFL.TextState.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html">TextState</a>&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text.html#a13cf818313cb87009639098508e41533">com.datalogics.PDFL.Text.addGlyphs()</a>, and <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_run.html#ad28edb437de19330f34c09617e0ac855">com.datalogics.PDFL.TextRun.TextRun()</a>.</p>
+
+</div>
+</div>
+<a id="aaee10ccfe3c705e25da840a64279fb51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaee10ccfe3c705e25da840a64279fb51">&#9670;&nbsp;</a></span>getFontSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.TextState.getFontSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The current font size (corresponding to the Tf operator). </p>
+
+</div>
+</div>
+<a id="a98a3d328949d246b2124d5c52db72001"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98a3d328949d246b2124d5c52db72001">&#9670;&nbsp;</a></span>getHScale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.TextState.getHScale </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The current horizontal scaling (corresponding to the Tz operator), as a percentage of the normal glyph width. Default is 100. </p>
+
+</div>
+</div>
+<a id="ab3d5f7f3911d28302e0b1ca6c70583ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3d5f7f3911d28302e0b1ca6c70583ea">&#9670;&nbsp;</a></span>getRenderMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_text_render_mode.html">TextRenderMode</a> com.datalogics.PDFL.TextState.getRenderMode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The current text rendering mode (corresponding to the Tr operator). </p>
+
+</div>
+</div>
+<a id="a8ecd59777dcabbc10ee3e4321d868b0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ecd59777dcabbc10ee3e4321d868b0a">&#9670;&nbsp;</a></span>getTextRise()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.TextState.getTextRise </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The current text rise (corresponding to the Ts operator), in unscaled text space units. </p>
+
+</div>
+</div>
+<a id="aaf50aa69091d200c63a6b17baf018dd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf50aa69091d200c63a6b17baf018dd0">&#9670;&nbsp;</a></span>getWordSpacing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.TextState.getWordSpacing </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The current word spacing (corresponding to the Tw operator), in unscaled text space units. </p>
+
+</div>
+</div>
+<a id="aeff37f74efcacd13d2dae7eebca72396"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeff37f74efcacd13d2dae7eebca72396">&#9670;&nbsp;</a></span>setCharacterSpacing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.TextState.setCharacterSpacing </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Tc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The current character spacing (corresponding to the Tc operator), in unscaled text space units. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Tc</td><td>the new/updated character spacing </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1fb695dc19732aefd9524ff8619e8d5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fb695dc19732aefd9524ff8619e8d5c">&#9670;&nbsp;</a></span>setFontSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.TextState.setFontSize </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Tf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The current font size (corresponding to the Tf operator).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Tf</td><td>the new/updated font size </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a689d4d6346b90b78fe243c5eadb42069"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a689d4d6346b90b78fe243c5eadb42069">&#9670;&nbsp;</a></span>setHScale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.TextState.setHScale </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Tz</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The current horizontal scaling (corresponding to the Tz operator), as a percentage of the normal glyph width. Default is 100. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Tz</td><td>the new/updated horizontal scaling </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1d4f8997ec06b3bb07b677b4280fe156"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d4f8997ec06b3bb07b677b4280fe156">&#9670;&nbsp;</a></span>setRenderMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.TextState.setRenderMode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_text_render_mode.html">TextRenderMode</a>&#160;</td>
+          <td class="paramname"><em>Tr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The current text rendering mode (corresponding to the Tr operator). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Tr</td><td>the new/updated text rendering mode </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a384912eb01c827768d63ae4037393b66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a384912eb01c827768d63ae4037393b66">&#9670;&nbsp;</a></span>setTextRise()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.TextState.setTextRise </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Ts</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The current text rise (corresponding to the Ts operator), in unscaled text space units.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Ts</td><td>the new/updated text rise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab90c61047b546c5af7751bd4d10992d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab90c61047b546c5af7751bd4d10992d6">&#9670;&nbsp;</a></span>setWordSpacing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.TextState.setWordSpacing </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Tw</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The current word spacing (corresponding to the Tw operator), in unscaled text space units. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Tw</td><td>the new/updated character spacing </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>
