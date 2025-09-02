@@ -1,0 +1,506 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode-members.html">List of all members</a> &#124;
+<a href="#pub-attribs">Public Attributes</a>  </div>
+  <div class="headertitle">
+<div class="title">com.datalogics.PDFL.BlendMode Enum Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ae16e5da68e7c074d3348c27e2dd1b27e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#ae16e5da68e7c074d3348c27e2dd1b27e">COLOR</a></td></tr>
+<tr class="separator:ae16e5da68e7c074d3348c27e2dd1b27e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46fc3e7ca2508540e13e3ef8d2730357"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#a46fc3e7ca2508540e13e3ef8d2730357">COLOR_BURN</a></td></tr>
+<tr class="separator:a46fc3e7ca2508540e13e3ef8d2730357"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a707a43d4975ac465ee28cf5749aa07d3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#a707a43d4975ac465ee28cf5749aa07d3">COLOR_DODGE</a></td></tr>
+<tr class="separator:a707a43d4975ac465ee28cf5749aa07d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacdcd232a2249b1979e481e784c2c4e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#aacdcd232a2249b1979e481e784c2c4e4">COMPATIBLE</a></td></tr>
+<tr class="separator:aacdcd232a2249b1979e481e784c2c4e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03e19029abeddd20a24ca1bbffd3aef2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#a03e19029abeddd20a24ca1bbffd3aef2">DARKEN</a></td></tr>
+<tr class="separator:a03e19029abeddd20a24ca1bbffd3aef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50038aa518e362e5839cc644a228f49e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#a50038aa518e362e5839cc644a228f49e">DIFFERENCE</a></td></tr>
+<tr class="separator:a50038aa518e362e5839cc644a228f49e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad83d0bfa5f0e85a79d1eb1cd89ca644d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#ad83d0bfa5f0e85a79d1eb1cd89ca644d">EXCLUSION</a></td></tr>
+<tr class="separator:ad83d0bfa5f0e85a79d1eb1cd89ca644d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f90737d79e35854b8092e286c629994"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#a9f90737d79e35854b8092e286c629994">HARD_LIGHT</a></td></tr>
+<tr class="separator:a9f90737d79e35854b8092e286c629994"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a802a41b4e9bb1f419958f6a269de523d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#a802a41b4e9bb1f419958f6a269de523d">HUE</a></td></tr>
+<tr class="separator:a802a41b4e9bb1f419958f6a269de523d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad433565012b7d9a7c4ab154f0bbc5197"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#ad433565012b7d9a7c4ab154f0bbc5197">LIGHTEN</a></td></tr>
+<tr class="separator:ad433565012b7d9a7c4ab154f0bbc5197"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a659ce7f69df23cb6998b93950c115d5b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#a659ce7f69df23cb6998b93950c115d5b">LUMINOSITY</a></td></tr>
+<tr class="separator:a659ce7f69df23cb6998b93950c115d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2bc2248f5715777f20a9b965955baef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#ad2bc2248f5715777f20a9b965955baef">MULTIPLY</a></td></tr>
+<tr class="separator:ad2bc2248f5715777f20a9b965955baef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9de76e6b78eb4116e56d5f29e418f335"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#a9de76e6b78eb4116e56d5f29e418f335">NORMAL</a></td></tr>
+<tr class="separator:a9de76e6b78eb4116e56d5f29e418f335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07fa919507491f0a7c7aeffd00e1b788"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#a07fa919507491f0a7c7aeffd00e1b788">OVERLAY</a></td></tr>
+<tr class="separator:a07fa919507491f0a7c7aeffd00e1b788"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abea7041a9b715b61a83ce075506cdd6a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#abea7041a9b715b61a83ce075506cdd6a">SATURATION</a></td></tr>
+<tr class="separator:abea7041a9b715b61a83ce075506cdd6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28059a34ce68941220fc983e1fd498b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#a28059a34ce68941220fc983e1fd498b6">SCREEN</a></td></tr>
+<tr class="separator:a28059a34ce68941220fc983e1fd498b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf9ddde9570159908db71cc98795e3d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#acf9ddde9570159908db71cc98795e3d9">SOFT_LIGHT</a></td></tr>
+<tr class="separator:acf9ddde9570159908db71cc98795e3d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27d31bfb4e0eb43d5bdc23980c21de80"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_blend_mode.html#a27d31bfb4e0eb43d5bdc23980c21de80">UNKNOWN</a></td></tr>
+<tr class="separator:a27d31bfb4e0eb43d5bdc23980c21de80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The blend mode used for painting objects. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="ae16e5da68e7c074d3348c27e2dd1b27e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae16e5da68e7c074d3348c27e2dd1b27e">&#9670;&nbsp;</a></span>COLOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.BlendMode.COLOR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Creates a color with the hue and saturation of the source color and the luminosity of the backdrop color. </p>
+
+</div>
+</div>
+<a id="a46fc3e7ca2508540e13e3ef8d2730357"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46fc3e7ca2508540e13e3ef8d2730357">&#9670;&nbsp;</a></span>COLOR_BURN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.BlendMode.COLOR_BURN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Darken the backdrop color to reflect the source color. </p>
+
+</div>
+</div>
+<a id="a707a43d4975ac465ee28cf5749aa07d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a707a43d4975ac465ee28cf5749aa07d3">&#9670;&nbsp;</a></span>COLOR_DODGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.BlendMode.COLOR_DODGE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Brighten the backdrop color to reflect the source color. </p>
+
+</div>
+</div>
+<a id="aacdcd232a2249b1979e481e784c2c4e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacdcd232a2249b1979e481e784c2c4e4">&#9670;&nbsp;</a></span>COMPATIBLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.BlendMode.COMPATIBLE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>No longer needed but still recognized; equivalent to the Normal blend mode. </p>
+
+</div>
+</div>
+<a id="a03e19029abeddd20a24ca1bbffd3aef2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03e19029abeddd20a24ca1bbffd3aef2">&#9670;&nbsp;</a></span>DARKEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.BlendMode.DARKEN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Selects the darker of the backdrop or source colors. </p>
+
+</div>
+</div>
+<a id="a50038aa518e362e5839cc644a228f49e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50038aa518e362e5839cc644a228f49e">&#9670;&nbsp;</a></span>DIFFERENCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.BlendMode.DIFFERENCE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Subtracts the darker of the two constituent colors from the lighter color. </p>
+
+</div>
+</div>
+<a id="ad83d0bfa5f0e85a79d1eb1cd89ca644d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad83d0bfa5f0e85a79d1eb1cd89ca644d">&#9670;&nbsp;</a></span>EXCLUSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.BlendMode.EXCLUSION</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Similar to the Difference mode, but lower in contrast. </p>
+
+</div>
+</div>
+<a id="a9f90737d79e35854b8092e286c629994"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f90737d79e35854b8092e286c629994">&#9670;&nbsp;</a></span>HARD_LIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.BlendMode.HARD_LIGHT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Multiplies or screens the colors, depending on the source color value. </p>
+
+</div>
+</div>
+<a id="a802a41b4e9bb1f419958f6a269de523d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a802a41b4e9bb1f419958f6a269de523d">&#9670;&nbsp;</a></span>HUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.BlendMode.HUE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Creates a color with the hue of the source color and the saturation and luminosity of the background color. </p>
+
+</div>
+</div>
+<a id="ad433565012b7d9a7c4ab154f0bbc5197"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad433565012b7d9a7c4ab154f0bbc5197">&#9670;&nbsp;</a></span>LIGHTEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.BlendMode.LIGHTEN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Selects the lighter of the backdrop or source colors. </p>
+
+</div>
+</div>
+<a id="a659ce7f69df23cb6998b93950c115d5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a659ce7f69df23cb6998b93950c115d5b">&#9670;&nbsp;</a></span>LUMINOSITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.BlendMode.LUMINOSITY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Creates a color with the luminosity of the source color and the hue and saturation of the backdrop color. </p>
+
+</div>
+</div>
+<a id="ad2bc2248f5715777f20a9b965955baef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2bc2248f5715777f20a9b965955baef">&#9670;&nbsp;</a></span>MULTIPLY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.BlendMode.MULTIPLY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Multiplies the source color and the backdrop color. This means that the color will always be at least as dark as the constituent colors. If either the source object or the backdrop is black, the color will be black. </p>
+
+</div>
+</div>
+<a id="a9de76e6b78eb4116e56d5f29e418f335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9de76e6b78eb4116e56d5f29e418f335">&#9670;&nbsp;</a></span>NORMAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.BlendMode.NORMAL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Selects the source color, or the color in the graphics object, and ignores the backdrop. </p>
+
+</div>
+</div>
+<a id="a07fa919507491f0a7c7aeffd00e1b788"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07fa919507491f0a7c7aeffd00e1b788">&#9670;&nbsp;</a></span>OVERLAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.BlendMode.OVERLAY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Multiplies or screens the colors, depending on the backdrop color value. Source colors overlay the backdrop while preserving highlights and shadows. The backdrop color is mixed with the source color to reflect the lightness or darkness of the backdrop. </p>
+
+</div>
+</div>
+<a id="abea7041a9b715b61a83ce075506cdd6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abea7041a9b715b61a83ce075506cdd6a">&#9670;&nbsp;</a></span>SATURATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.BlendMode.SATURATION</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Creates a color with the saturation of the source color and the hue and luminosity of the backdrop color. </p>
+
+</div>
+</div>
+<a id="a28059a34ce68941220fc983e1fd498b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28059a34ce68941220fc983e1fd498b6">&#9670;&nbsp;</a></span>SCREEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.BlendMode.SCREEN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Multiplies the complements of the source color and the backdrop, and then complements the result. The result is always as light as either of the constituent colors. </p>
+
+</div>
+</div>
+<a id="acf9ddde9570159908db71cc98795e3d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf9ddde9570159908db71cc98795e3d9">&#9670;&nbsp;</a></span>SOFT_LIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.BlendMode.SOFT_LIGHT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Darkens or lightens the colors, depending on the source color value. </p>
+
+</div>
+</div>
+<a id="a27d31bfb4e0eb43d5bdc23980c21de80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27d31bfb4e0eb43d5bdc23980c21de80">&#9670;&nbsp;</a></span>UNKNOWN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.BlendMode.UNKNOWN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>
