@@ -1,0 +1,1056 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params-members.html">List of all members</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">com.datalogics.PDFL.PageImageParams Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a8f4e823850839ff7ce7feb25fdaf6c0c"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a8f4e823850839ff7ce7feb25fdaf6c0c">delete</a> ()</td></tr>
+<tr class="separator:a8f4e823850839ff7ce7feb25fdaf6c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78b2dd5c5e6c364458256737adda8f30"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a78b2dd5c5e6c364458256737adda8f30">getBlackPointCompensation</a> ()</td></tr>
+<tr class="separator:a78b2dd5c5e6c364458256737adda8f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d558e2f635170517f603563e7436d95"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a4d558e2f635170517f603563e7436d95">getBypassCopyPerm</a> ()</td></tr>
+<tr class="separator:a4d558e2f635170517f603563e7436d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1534b81108ebee3f5cda2df3a61825fe"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a1534b81108ebee3f5cda2df3a61825fe">getCalibrateDeviceSpacesWhenPrinting</a> ()</td></tr>
+<tr class="separator:a1534b81108ebee3f5cda2df3a61825fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad35e8e560affe0e333197bfe77c3f753"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#ad35e8e560affe0e333197bfe77c3f753">getHorizontalResolution</a> ()</td></tr>
+<tr class="separator:ad35e8e560affe0e333197bfe77c3f753"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b365c060b3516e751a12f253d0dce0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_profile.html">ColorProfile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a3b365c060b3516e751a12f253d0dce0d">getICCProfile</a> ()</td></tr>
+<tr class="separator:a3b365c060b3516e751a12f253d0dce0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96ffdbb1571e1e63ea3f95b5eb0b9f17"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a96ffdbb1571e1e63ea3f95b5eb0b9f17">getICCProfileCustomPath</a> ()</td></tr>
+<tr class="separator:a96ffdbb1571e1e63ea3f95b5eb0b9f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abece40b0986f46f5a9e486e61c98d3c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#abece40b0986f46f5a9e486e61c98d3c5">getImageColorSpace</a> ()</td></tr>
+<tr class="separator:abece40b0986f46f5a9e486e61c98d3c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab42f1cc90601b4e38109935081af90a9"><td class="memItemLeft" align="right" valign="top">java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html">DrawFlags</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#ab42f1cc90601b4e38109935081af90a9">getPageDrawFlags</a> ()</td></tr>
+<tr class="separator:ab42f1cc90601b4e38109935081af90a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f1e8fd5b12209bbf1c151508f430a2b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a3f1e8fd5b12209bbf1c151508f430a2b">getPixelHeight</a> ()</td></tr>
+<tr class="separator:a3f1e8fd5b12209bbf1c151508f430a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8639610f8fa65cc0c7b055da0e5f09ce"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a8639610f8fa65cc0c7b055da0e5f09ce">getPixelWidth</a> ()</td></tr>
+<tr class="separator:a8639610f8fa65cc0c7b055da0e5f09ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f0856b065b692627e215fe33a8e2861"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_render_intent.html">RenderIntent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a1f0856b065b692627e215fe33a8e2861">getRenderIntent</a> ()</td></tr>
+<tr class="separator:a1f0856b065b692627e215fe33a8e2861"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5949f3473b47a9f5b6562a4b98d47237"><td class="memItemLeft" align="right" valign="top">java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_smooth_flags.html">SmoothFlags</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a5949f3473b47a9f5b6562a4b98d47237">getSmoothing</a> ()</td></tr>
+<tr class="separator:a5949f3473b47a9f5b6562a4b98d47237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa288adf34fc0955cea1b82d9388bbb4b"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#aa288adf34fc0955cea1b82d9388bbb4b">getThinLineHeuristics</a> ()</td></tr>
+<tr class="separator:aa288adf34fc0955cea1b82d9388bbb4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c7da5097ef1d37d067e98fc91da8ffc"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a8c7da5097ef1d37d067e98fc91da8ffc">getUseDeviceNForImageSeparations</a> ()</td></tr>
+<tr class="separator:a8c7da5097ef1d37d067e98fc91da8ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a133247e967950d7cb92601050499932e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a133247e967950d7cb92601050499932e">getVerticalResolution</a> ()</td></tr>
+<tr class="separator:a133247e967950d7cb92601050499932e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae93f5c4bab80b6e92592d6d5659ca0e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#ae93f5c4bab80b6e92592d6d5659ca0e6">PageImageParams</a> ()</td></tr>
+<tr class="separator:ae93f5c4bab80b6e92592d6d5659ca0e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a065bd3f71c18be04ded520ac5a6032d3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a065bd3f71c18be04ded520ac5a6032d3">PageImageParams</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a> <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a>, java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_smooth_flags.html">SmoothFlags</a> &gt; Smoothing, int PixelWidth, int PixelHeight, double HorizontalResolution, double VerticalResolution, java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html">DrawFlags</a> &gt; PageDrawFlags)</td></tr>
+<tr class="separator:a065bd3f71c18be04ded520ac5a6032d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace28ffd8531bbc57eb00f9d04bdd668a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#ace28ffd8531bbc57eb00f9d04bdd668a">setBlackPointCompensation</a> (boolean arg0)</td></tr>
+<tr class="separator:ace28ffd8531bbc57eb00f9d04bdd668a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a556486fb198b5f1f3635daca753d6cb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a556486fb198b5f1f3635daca753d6cb9">setBypassCopyPerm</a> (boolean value)</td></tr>
+<tr class="separator:a556486fb198b5f1f3635daca753d6cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9879ec16f7e50882af48930900eb723f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a9879ec16f7e50882af48930900eb723f">setCalibrateDeviceSpacesWhenPrinting</a> (boolean value)</td></tr>
+<tr class="separator:a9879ec16f7e50882af48930900eb723f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a768a6d5ea61b4020f832c662e330736d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a768a6d5ea61b4020f832c662e330736d">setHorizontalResolution</a> (double arg0)</td></tr>
+<tr class="separator:a768a6d5ea61b4020f832c662e330736d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab54fbc8ddfef7f7c10a00ccd7a22e538"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#ab54fbc8ddfef7f7c10a00ccd7a22e538">setICCProfile</a> (<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_profile.html">ColorProfile</a> colorProfile)</td></tr>
+<tr class="separator:ab54fbc8ddfef7f7c10a00ccd7a22e538"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21e16ee1dfdb99eecdeea0b985fdc7e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a21e16ee1dfdb99eecdeea0b985fdc7e3">setICCProfileCustomPath</a> (String colorProfilePath)</td></tr>
+<tr class="separator:a21e16ee1dfdb99eecdeea0b985fdc7e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad17f18a7b14b0a5111b9c2e517728767"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#ad17f18a7b14b0a5111b9c2e517728767">setImageColorSpace</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a> cs)</td></tr>
+<tr class="separator:ad17f18a7b14b0a5111b9c2e517728767"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5072fb37333f5a3524e0de403c81853c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a5072fb37333f5a3524e0de403c81853c">setPageDrawFlags</a> (java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html">DrawFlags</a> &gt; arg0)</td></tr>
+<tr class="separator:a5072fb37333f5a3524e0de403c81853c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65d4b2444dbece3c33ce997cd7d5c1dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a65d4b2444dbece3c33ce997cd7d5c1dd">setPixelHeight</a> (int arg0)</td></tr>
+<tr class="separator:a65d4b2444dbece3c33ce997cd7d5c1dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a951ad701c7bb27a8b1b7bdf6a0708e5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a951ad701c7bb27a8b1b7bdf6a0708e5f">setPixelWidth</a> (int arg0)</td></tr>
+<tr class="separator:a951ad701c7bb27a8b1b7bdf6a0708e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eeb9e6a167382f6b2c229b946249fbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a7eeb9e6a167382f6b2c229b946249fbc">setRenderIntent</a> (<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_render_intent.html">RenderIntent</a> arg0)</td></tr>
+<tr class="separator:a7eeb9e6a167382f6b2c229b946249fbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8882664045f93fd867520f65869fc90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#ae8882664045f93fd867520f65869fc90">setSmoothing</a> (java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_smooth_flags.html">SmoothFlags</a> &gt; smoothflag)</td></tr>
+<tr class="separator:ae8882664045f93fd867520f65869fc90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9a92f996133bd07e61d982135dc7abf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#ac9a92f996133bd07e61d982135dc7abf">setThinLineHeuristics</a> (boolean arg0)</td></tr>
+<tr class="separator:ac9a92f996133bd07e61d982135dc7abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a100c4fa29423b90741ef2f87cdaa9bff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a100c4fa29423b90741ef2f87cdaa9bff">setUseDeviceNForImageSeparations</a> (boolean value)</td></tr>
+<tr class="separator:a100c4fa29423b90741ef2f87cdaa9bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0c134c529e58715c075b3f0229339f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#ac0c134c529e58715c075b3f0229339f7">setVerticalResolution</a> (double arg0)</td></tr>
+<tr class="separator:ac0c134c529e58715c075b3f0229339f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:ad8ed2456c2e49b1fe390389142ee73a7"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#ad8ed2456c2e49b1fe390389142ee73a7">delete</a> (Boolean disposing)</td></tr>
+<tr class="separator:ad8ed2456c2e49b1fe390389142ee73a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9e8ce03702674e843ed00cb5d286802"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#ac9e8ce03702674e843ed00cb5d286802">finalize</a> ()</td></tr>
+<tr class="separator:ac9e8ce03702674e843ed00cb5d286802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0b597b6ecd72fc1b144abe85425989e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#af0b597b6ecd72fc1b144abe85425989e">PageImageParams</a> (long cPtr, boolean cMemoryOwn)</td></tr>
+<tr class="separator:af0b597b6ecd72fc1b144abe85425989e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a22881358bd5498723c5007e8782cb93e"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html#a22881358bd5498723c5007e8782cb93e">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html">PageImageParams</a> obj)</td></tr>
+<tr class="separator:a22881358bd5498723c5007e8782cb93e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Used to manage converting a PDF page to an image. The Page Image Parameters are a set of parameters used to control converting a PDF page to an image, such as a PNG, JPG, or BMP. The parameters include pixel height &amp; width, color space, resolution, so on. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af0b597b6ecd72fc1b144abe85425989e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0b597b6ecd72fc1b144abe85425989e">&#9670;&nbsp;</a></span>PageImageParams() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PageImageParams.PageImageParams </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>cPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>cMemoryOwn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae93f5c4bab80b6e92592d6d5659ca0e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae93f5c4bab80b6e92592d6d5659ca0e6">&#9670;&nbsp;</a></span>PageImageParams() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PageImageParams.PageImageParams </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a065bd3f71c18be04ded520ac5a6032d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a065bd3f71c18be04ded520ac5a6032d3">&#9670;&nbsp;</a></span>PageImageParams() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PageImageParams.PageImageParams </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a>&#160;</td>
+          <td class="paramname"><em>ColorSpace</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_smooth_flags.html">SmoothFlags</a> &gt;&#160;</td>
+          <td class="paramname"><em>Smoothing</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>PixelWidth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>PixelHeight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>HorizontalResolution</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>VerticalResolution</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html">DrawFlags</a> &gt;&#160;</td>
+          <td class="paramname"><em>PageDrawFlags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set up the parameters for rendering a PDF page to an image. Horizontal and Vertical Resolution have to be either both zero or both non-zero. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ColorSpace</td><td>The desired color space for the image, DEVICERGB, DEVICECMYK or DEVICEGRAY only. </td></tr>
+    <tr><td class="paramname">Smoothing</td><td>Indicates what parts of PDF Page (text, image, art, none) are to be smoothed in rendering to an image. Note these flags can be or'd together </td></tr>
+    <tr><td class="paramname">PixelWidth</td><td>The desired witdth in pixels of the output image. </td></tr>
+    <tr><td class="paramname">PixelHeight</td><td>The desired height in pixels of the output image. </td></tr>
+    <tr><td class="paramname">HorizontalResolution</td><td>The desired horizontal resolution in pixels/inch of the output image. If you pass in 0.0, 300.0 dpi is used. </td></tr>
+    <tr><td class="paramname">VerticalResolution</td><td>The desired vertical resolution in pixels/inch of the output image. If you pass in 0.0, 300.0 dpi is used. </td></tr>
+    <tr><td class="paramname">PageDrawFlags</td><td>An OR of the flags from DrawFlags which control how the PDF page is to be drawn. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8f4e823850839ff7ce7feb25fdaf6c0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f4e823850839ff7ce7feb25fdaf6c0c">&#9670;&nbsp;</a></span>delete() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.PageImageParams.delete </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad8ed2456c2e49b1fe390389142ee73a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8ed2456c2e49b1fe390389142ee73a7">&#9670;&nbsp;</a></span>delete() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.PageImageParams.delete </td>
+          <td>(</td>
+          <td class="paramtype">Boolean&#160;</td>
+          <td class="paramname"><em>disposing</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac9e8ce03702674e843ed00cb5d286802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9e8ce03702674e843ed00cb5d286802">&#9670;&nbsp;</a></span>finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PageImageParams.finalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a78b2dd5c5e6c364458256737adda8f30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78b2dd5c5e6c364458256737adda8f30">&#9670;&nbsp;</a></span>getBlackPointCompensation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.PageImageParams.getBlackPointCompensation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The BlackPointCompensation desired (default is true if not explicitly set) </p>
+
+</div>
+</div>
+<a id="a4d558e2f635170517f603563e7436d95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d558e2f635170517f603563e7436d95">&#9670;&nbsp;</a></span>getBypassCopyPerm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.PageImageParams.getBypassCopyPerm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The BypassCopyPerm allows to bypass copy permitions.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if this option is turned on. </dd></dl>
+
+</div>
+</div>
+<a id="a1534b81108ebee3f5cda2df3a61825fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1534b81108ebee3f5cda2df3a61825fe">&#9670;&nbsp;</a></span>getCalibrateDeviceSpacesWhenPrinting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.PageImageParams.getCalibrateDeviceSpacesWhenPrinting </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets if Device spaces should be treated as calibrated to the associated working profile (when true), otherwise it treats them as uncalibrated (when false) when printing.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if this option is turned on. </dd></dl>
+
+</div>
+</div>
+<a id="a22881358bd5498723c5007e8782cb93e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22881358bd5498723c5007e8782cb93e">&#9670;&nbsp;</a></span>getCPtr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static long com.datalogics.PDFL.PageImageParams.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_image_params.html">PageImageParams</a>&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#a5da1d00cfc2809aa7f734f973b1fdf8f">com.datalogics.PDFL.Page.getImage()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#aa1b674d2f89ceeb902fe7d1a102e767b">com.datalogics.PDFL.Page.getImageSeparations()</a>, and <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#ad393a6df06ca7c23bd225d3586a25413">com.datalogics.PDFL.Page.getOutputPreviewImage()</a>.</p>
+
+</div>
+</div>
+<a id="ad35e8e560affe0e333197bfe77c3f753"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad35e8e560affe0e333197bfe77c3f753">&#9670;&nbsp;</a></span>getHorizontalResolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.PageImageParams.getHorizontalResolution </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The desired horizontal resolution in pixels/inch of the output image. </p>
+
+</div>
+</div>
+<a id="a3b365c060b3516e751a12f253d0dce0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b365c060b3516e751a12f253d0dce0d">&#9670;&nbsp;</a></span>getICCProfile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_profile.html">ColorProfile</a> com.datalogics.PDFL.PageImageParams.getICCProfile </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the ICC Profile of the colorspace to be used for rendering from a known value. </p>
+<p>NOTE: The ICCProfileCustomPath must not be set for this property to be used. The profile must be compatible with the ColorSpace property value, which can't be set to ICCBased either. </p>
+
+</div>
+</div>
+<a id="a96ffdbb1571e1e63ea3f95b5eb0b9f17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96ffdbb1571e1e63ea3f95b5eb0b9f17">&#9670;&nbsp;</a></span>getICCProfileCustomPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.datalogics.PDFL.PageImageParams.getICCProfileCustomPath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the ICC Profile of the colorspace to be used for rendering from a custom file path. </p>
+<p>NOTE: The ICCProfile is ignored when this property is a non-empty string. The profile must be compatible with the ColorSpace property value, which can't be set to ICCBased either. </p>
+
+</div>
+</div>
+<a id="abece40b0986f46f5a9e486e61c98d3c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abece40b0986f46f5a9e486e61c98d3c5">&#9670;&nbsp;</a></span>getImageColorSpace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a> com.datalogics.PDFL.PageImageParams.getImageColorSpace </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The ColorSpace used in exporting a PDF page to an image </p>
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#a8fb2020ea70890107a242534fd438e49">com.datalogics.PDFL.Page.makeBufferedImage()</a>.</p>
+
+</div>
+</div>
+<a id="ab42f1cc90601b4e38109935081af90a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab42f1cc90601b4e38109935081af90a9">&#9670;&nbsp;</a></span>getPageDrawFlags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">java.util.EnumSet&lt;<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html">DrawFlags</a>&gt; com.datalogics.PDFL.PageImageParams.getPageDrawFlags </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>the DrawFlags used or rendering a PDF page to an image. </p>
+
+</div>
+</div>
+<a id="a3f1e8fd5b12209bbf1c151508f430a2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f1e8fd5b12209bbf1c151508f430a2b">&#9670;&nbsp;</a></span>getPixelHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int com.datalogics.PDFL.PageImageParams.getPixelHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The height in pixels of the image to be created from a PDF page. </p>
+
+</div>
+</div>
+<a id="a8639610f8fa65cc0c7b055da0e5f09ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8639610f8fa65cc0c7b055da0e5f09ce">&#9670;&nbsp;</a></span>getPixelWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int com.datalogics.PDFL.PageImageParams.getPixelWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The width in pixels of the image to be created from a PDF page. </p>
+
+</div>
+</div>
+<a id="a1f0856b065b692627e215fe33a8e2861"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f0856b065b692627e215fe33a8e2861">&#9670;&nbsp;</a></span>getRenderIntent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_render_intent.html">RenderIntent</a> com.datalogics.PDFL.PageImageParams.getRenderIntent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The RenderIntent used to specify color translation for colors outside gamut of the color profile used. </p>
+
+</div>
+</div>
+<a id="a5949f3473b47a9f5b6562a4b98d47237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5949f3473b47a9f5b6562a4b98d47237">&#9670;&nbsp;</a></span>getSmoothing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">java.util.EnumSet&lt;<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_smooth_flags.html">SmoothFlags</a>&gt; com.datalogics.PDFL.PageImageParams.getSmoothing </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The SmoothFlags used in exporting a PDF page to an image </p>
+
+</div>
+</div>
+<a id="aa288adf34fc0955cea1b82d9388bbb4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa288adf34fc0955cea1b82d9388bbb4b">&#9670;&nbsp;</a></span>getThinLineHeuristics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.PageImageParams.getThinLineHeuristics </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The ThinLineHeuristics used to determine whether thin lines will be fattened non-linearly or the stroke adjust will be applied to thin rectangles. return true if thin line heuristics are applied, false otherwise. </p>
+
+</div>
+</div>
+<a id="a8c7da5097ef1d37d067e98fc91da8ffc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c7da5097ef1d37d067e98fc91da8ffc">&#9670;&nbsp;</a></span>getUseDeviceNForImageSeparations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.PageImageParams.getUseDeviceNForImageSeparations </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the UseDeviceNForImageSeparations setting, which indicates when the GetImageSeparations() method is called if a DeviceN colorspace will be used for rasterization.When false, if only Process colorants are provided to GetImageSeparations() then it's rendered using DeviceCMYK.When true, then it's rendered using DeviceN.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if this option is turned on. NOTE: This member is only applicable when calling the GetImageSeparations() method, only when Colorants used are only Process. </dd></dl>
+
+</div>
+</div>
+<a id="a133247e967950d7cb92601050499932e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a133247e967950d7cb92601050499932e">&#9670;&nbsp;</a></span>getVerticalResolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.PageImageParams.getVerticalResolution </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The desired vertical resolution in pixels/inch of the output image. </p>
+
+</div>
+</div>
+<a id="ace28ffd8531bbc57eb00f9d04bdd668a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace28ffd8531bbc57eb00f9d04bdd668a">&#9670;&nbsp;</a></span>setBlackPointCompensation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PageImageParams.setBlackPointCompensation </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>arg0</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a556486fb198b5f1f3635daca753d6cb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a556486fb198b5f1f3635daca753d6cb9">&#9670;&nbsp;</a></span>setBypassCopyPerm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PageImageParams.setBypassCopyPerm </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9879ec16f7e50882af48930900eb723f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9879ec16f7e50882af48930900eb723f">&#9670;&nbsp;</a></span>setCalibrateDeviceSpacesWhenPrinting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PageImageParams.setCalibrateDeviceSpacesWhenPrinting </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a768a6d5ea61b4020f832c662e330736d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a768a6d5ea61b4020f832c662e330736d">&#9670;&nbsp;</a></span>setHorizontalResolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PageImageParams.setHorizontalResolution </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>arg0</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab54fbc8ddfef7f7c10a00ccd7a22e538"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab54fbc8ddfef7f7c10a00ccd7a22e538">&#9670;&nbsp;</a></span>setICCProfile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PageImageParams.setICCProfile </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_profile.html">ColorProfile</a>&#160;</td>
+          <td class="paramname"><em>colorProfile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the ICC Profile of the colorspace to be used for rendering to a known value. </p>
+<p>NOTE: The ICCProfileCustomPath must not be set for this property to be used. The profile must be compatible with the ColorSpace property value, which can't be set to ICCBased either. </p>
+
+</div>
+</div>
+<a id="a21e16ee1dfdb99eecdeea0b985fdc7e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21e16ee1dfdb99eecdeea0b985fdc7e3">&#9670;&nbsp;</a></span>setICCProfileCustomPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PageImageParams.setICCProfileCustomPath </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>colorProfilePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the ICC Profile of the colorspace to be used for rendering from a custom file path. </p>
+<p>NOTE: The ICCProfile is ignored when this property is a non-empty string. The profile must be compatible with the ColorSpace property value, which can't be set to ICCBased either. </p>
+
+</div>
+</div>
+<a id="ad17f18a7b14b0a5111b9c2e517728767"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad17f18a7b14b0a5111b9c2e517728767">&#9670;&nbsp;</a></span>setImageColorSpace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PageImageParams.setImageColorSpace </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a>&#160;</td>
+          <td class="paramname"><em>cs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5072fb37333f5a3524e0de403c81853c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5072fb37333f5a3524e0de403c81853c">&#9670;&nbsp;</a></span>setPageDrawFlags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PageImageParams.setPageDrawFlags </td>
+          <td>(</td>
+          <td class="paramtype">java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html">DrawFlags</a> &gt;&#160;</td>
+          <td class="paramname"><em>arg0</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a65d4b2444dbece3c33ce997cd7d5c1dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65d4b2444dbece3c33ce997cd7d5c1dd">&#9670;&nbsp;</a></span>setPixelHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PageImageParams.setPixelHeight </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>arg0</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a951ad701c7bb27a8b1b7bdf6a0708e5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a951ad701c7bb27a8b1b7bdf6a0708e5f">&#9670;&nbsp;</a></span>setPixelWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PageImageParams.setPixelWidth </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>arg0</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7eeb9e6a167382f6b2c229b946249fbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eeb9e6a167382f6b2c229b946249fbc">&#9670;&nbsp;</a></span>setRenderIntent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PageImageParams.setRenderIntent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_render_intent.html">RenderIntent</a>&#160;</td>
+          <td class="paramname"><em>arg0</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae8882664045f93fd867520f65869fc90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8882664045f93fd867520f65869fc90">&#9670;&nbsp;</a></span>setSmoothing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PageImageParams.setSmoothing </td>
+          <td>(</td>
+          <td class="paramtype">java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_smooth_flags.html">SmoothFlags</a> &gt;&#160;</td>
+          <td class="paramname"><em>smoothflag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac9a92f996133bd07e61d982135dc7abf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9a92f996133bd07e61d982135dc7abf">&#9670;&nbsp;</a></span>setThinLineHeuristics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PageImageParams.setThinLineHeuristics </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>arg0</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a100c4fa29423b90741ef2f87cdaa9bff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a100c4fa29423b90741ef2f87cdaa9bff">&#9670;&nbsp;</a></span>setUseDeviceNForImageSeparations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PageImageParams.setUseDeviceNForImageSeparations </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the UseDeviceNForImageSeparations setting, which indicates when GetImageSeparations() is called if a DeviceN colorspace will be used for rasterization.When false, if only Process colorants are provided to GetImageSeparations() then it's rendered using DeviceCMYK.When true, then it's rendered using DeviceN.NOTE: This member is only applicable when calling the GetImageSeparations() method, only when Colorants used are only Process. </p>
+
+</div>
+</div>
+<a id="ac0c134c529e58715c075b3f0229339f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0c134c529e58715c075b3f0229339f7">&#9670;&nbsp;</a></span>setVerticalResolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PageImageParams.setVerticalResolution </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>arg0</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>

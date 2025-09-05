@@ -1,0 +1,648 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label-members.html">List of all members</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">com.datalogics.PDFL.PageLabel Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:afb77deb001a8af2ee8f96912209c97b3"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label.html#afb77deb001a8af2ee8f96912209c97b3">delete</a> ()</td></tr>
+<tr class="separator:afb77deb001a8af2ee8f96912209c97b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c457fc6821d12696d9f37051a856bad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label.html#a5c457fc6821d12696d9f37051a856bad">getEndPageIndex</a> ()</td></tr>
+<tr class="separator:a5c457fc6821d12696d9f37051a856bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeb7df877cf003ddc470ebe409a79424"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label.html#aeeb7df877cf003ddc470ebe409a79424">getFirstNumberInRange</a> ()</td></tr>
+<tr class="separator:aeeb7df877cf003ddc470ebe409a79424"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a406f04c3a5c817dd0f0ca0927fe7686a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_number_style.html">NumberStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label.html#a406f04c3a5c817dd0f0ca0927fe7686a">getNumberStyle</a> ()</td></tr>
+<tr class="separator:a406f04c3a5c817dd0f0ca0927fe7686a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff6e688dcc3a01163456472534456ced"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label.html#aff6e688dcc3a01163456472534456ced">getPrefix</a> ()</td></tr>
+<tr class="separator:aff6e688dcc3a01163456472534456ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f4b97e3f53c5978fda6ade86e9c0840"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label.html#a5f4b97e3f53c5978fda6ade86e9c0840">getStartPageIndex</a> ()</td></tr>
+<tr class="separator:a5f4b97e3f53c5978fda6ade86e9c0840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9972216bdca4a7e0d2c0be52280aa5c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label.html#aa9972216bdca4a7e0d2c0be52280aa5c">PageLabel</a> (int start, <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_number_style.html">NumberStyle</a> ns)</td></tr>
+<tr class="separator:aa9972216bdca4a7e0d2c0be52280aa5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a781a372f4027a22232362724b83c8d4e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label.html#a781a372f4027a22232362724b83c8d4e">PageLabel</a> (int start, <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_number_style.html">NumberStyle</a> ns, String p, int first)</td></tr>
+<tr class="separator:a781a372f4027a22232362724b83c8d4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93bbcef410854ebbe7df51d4c0b7a6a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label.html#a93bbcef410854ebbe7df51d4c0b7a6a8">setFirstNumberInRange</a> (int arg0)</td></tr>
+<tr class="separator:a93bbcef410854ebbe7df51d4c0b7a6a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93c191ad93349d1e9c6c8851d41a3316"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label.html#a93c191ad93349d1e9c6c8851d41a3316">setNumberStyle</a> (<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_number_style.html">NumberStyle</a> arg0)</td></tr>
+<tr class="separator:a93c191ad93349d1e9c6c8851d41a3316"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee2e036151f5fe6168cd87acc39ccc54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label.html#aee2e036151f5fe6168cd87acc39ccc54">setPrefix</a> (String arg0)</td></tr>
+<tr class="separator:aee2e036151f5fe6168cd87acc39ccc54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3668dc58e3dbf153c4d91f7c2e2d6c81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label.html#a3668dc58e3dbf153c4d91f7c2e2d6c81">setStartPageIndex</a> (int ndx)</td></tr>
+<tr class="separator:a3668dc58e3dbf153c4d91f7c2e2d6c81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e60efa0aab5c3a7f88bd0b0c60bb2d3"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label.html#a4e60efa0aab5c3a7f88bd0b0c60bb2d3">toString</a> ()</td></tr>
+<tr class="separator:a4e60efa0aab5c3a7f88bd0b0c60bb2d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a7fb1a12e48865ea6ae94e979da687386"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label.html#a7fb1a12e48865ea6ae94e979da687386">delete</a> (Boolean disposing)</td></tr>
+<tr class="separator:a7fb1a12e48865ea6ae94e979da687386"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99d7017cd7e677028f26b90af4c127ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label.html#a99d7017cd7e677028f26b90af4c127ac">finalize</a> ()</td></tr>
+<tr class="separator:a99d7017cd7e677028f26b90af4c127ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09a351d643ac5de27b83c0ea50370971"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label.html#a09a351d643ac5de27b83c0ea50370971">PageLabel</a> (long cPtr, boolean cMemoryOwn)</td></tr>
+<tr class="separator:a09a351d643ac5de27b83c0ea50370971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a50f0345f6d8145a2594c80bff046d36c"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label.html#a50f0345f6d8145a2594c80bff046d36c">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label.html">PageLabel</a> obj)</td></tr>
+<tr class="separator:a50f0345f6d8145a2594c80bff046d36c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Describes numbering labels for a range of pages. PageLabel describes how to construct a label string for a range of pages. It contains information on number style, any prefixes, and a starting position within the document. </p>
+<p>Note that a single PageLabel describes the label string for several pages all pages up until the first page covered by the next PageLabel, or the end of the document. </p>
+<p>Also note that if a Document has any PageLabels, there must be one that starts at page index 0. This will be automatically created if the user does not supply one. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a09a351d643ac5de27b83c0ea50370971"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09a351d643ac5de27b83c0ea50370971">&#9670;&nbsp;</a></span>PageLabel() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PageLabel.PageLabel </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>cPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>cMemoryOwn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a781a372f4027a22232362724b83c8d4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a781a372f4027a22232362724b83c8d4e">&#9670;&nbsp;</a></span>PageLabel() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PageLabel.PageLabel </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_number_style.html">NumberStyle</a>&#160;</td>
+          <td class="paramname"><em>ns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>first</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Public constructor </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>Starting page index in the Document for this range </td></tr>
+    <tr><td class="paramname">ns</td><td>Numbering style for this range </td></tr>
+    <tr><td class="paramname">p</td><td>Prefix string for this range </td></tr>
+    <tr><td class="paramname">first</td><td>First number appearing on a page in this range </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa9972216bdca4a7e0d2c0be52280aa5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9972216bdca4a7e0d2c0be52280aa5c">&#9670;&nbsp;</a></span>PageLabel() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PageLabel.PageLabel </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_number_style.html">NumberStyle</a>&#160;</td>
+          <td class="paramname"><em>ns</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Convenience constructor creates a range with no prefix starting with number 1.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>Starting page index in the Document for this range </td></tr>
+    <tr><td class="paramname">ns</td><td>Numbering style for this range </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="afb77deb001a8af2ee8f96912209c97b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb77deb001a8af2ee8f96912209c97b3">&#9670;&nbsp;</a></span>delete() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.PageLabel.delete </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a0201435cf07249c3f387c4987409b783">com.datalogics.PDFL.Document.getPageLabels()</a>.</p>
+
+</div>
+</div>
+<a id="a7fb1a12e48865ea6ae94e979da687386"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fb1a12e48865ea6ae94e979da687386">&#9670;&nbsp;</a></span>delete() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.PageLabel.delete </td>
+          <td>(</td>
+          <td class="paramtype">Boolean&#160;</td>
+          <td class="paramname"><em>disposing</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a99d7017cd7e677028f26b90af4c127ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99d7017cd7e677028f26b90af4c127ac">&#9670;&nbsp;</a></span>finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PageLabel.finalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a50f0345f6d8145a2594c80bff046d36c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50f0345f6d8145a2594c80bff046d36c">&#9670;&nbsp;</a></span>getCPtr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static long com.datalogics.PDFL.PageLabel.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_page_label.html">PageLabel</a>&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5c457fc6821d12696d9f37051a856bad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c457fc6821d12696d9f37051a856bad">&#9670;&nbsp;</a></span>getEndPageIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int com.datalogics.PDFL.PageLabel.getEndPageIndex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The end index for the page label range </p>
+<p>You cannot set the end index for a range; you must change the start index for the following range. A value of -1 means the end index for this PageLabel is unknown. </p>
+
+</div>
+</div>
+<a id="aeeb7df877cf003ddc470ebe409a79424"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeeb7df877cf003ddc470ebe409a79424">&#9670;&nbsp;</a></span>getFirstNumberInRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int com.datalogics.PDFL.PageLabel.getFirstNumberInRange </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The first number used in the page label range. Must be greater than or equal to 1. </p>
+
+</div>
+</div>
+<a id="a406f04c3a5c817dd0f0ca0927fe7686a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a406f04c3a5c817dd0f0ca0927fe7686a">&#9670;&nbsp;</a></span>getNumberStyle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_number_style.html">NumberStyle</a> com.datalogics.PDFL.PageLabel.getNumberStyle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The numbering style for the page label range </p>
+
+</div>
+</div>
+<a id="aff6e688dcc3a01163456472534456ced"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff6e688dcc3a01163456472534456ced">&#9670;&nbsp;</a></span>getPrefix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.datalogics.PDFL.PageLabel.getPrefix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The prefix string for the page label range </p>
+
+</div>
+</div>
+<a id="a5f4b97e3f53c5978fda6ade86e9c0840"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f4b97e3f53c5978fda6ade86e9c0840">&#9670;&nbsp;</a></span>getStartPageIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int com.datalogics.PDFL.PageLabel.getStartPageIndex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The start index for the page label range </p>
+
+</div>
+</div>
+<a id="a93bbcef410854ebbe7df51d4c0b7a6a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93bbcef410854ebbe7df51d4c0b7a6a8">&#9670;&nbsp;</a></span>setFirstNumberInRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PageLabel.setFirstNumberInRange </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>arg0</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The first number used in the page label range </p>
+
+</div>
+</div>
+<a id="a93c191ad93349d1e9c6c8851d41a3316"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93c191ad93349d1e9c6c8851d41a3316">&#9670;&nbsp;</a></span>setNumberStyle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PageLabel.setNumberStyle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_number_style.html">NumberStyle</a>&#160;</td>
+          <td class="paramname"><em>arg0</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The numbering style for the page label range </p>
+
+</div>
+</div>
+<a id="aee2e036151f5fe6168cd87acc39ccc54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee2e036151f5fe6168cd87acc39ccc54">&#9670;&nbsp;</a></span>setPrefix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PageLabel.setPrefix </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>arg0</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The prefix string for the page label range </p>
+
+</div>
+</div>
+<a id="a3668dc58e3dbf153c4d91f7c2e2d6c81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3668dc58e3dbf153c4d91f7c2e2d6c81">&#9670;&nbsp;</a></span>setStartPageIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PageLabel.setStartPageIndex </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ndx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The start index for the page label range </p>
+
+</div>
+</div>
+<a id="a4e60efa0aab5c3a7f88bd0b0c60bb2d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e60efa0aab5c3a7f88bd0b0c60bb2d3">&#9670;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.datalogics.PDFL.PageLabel.toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>
