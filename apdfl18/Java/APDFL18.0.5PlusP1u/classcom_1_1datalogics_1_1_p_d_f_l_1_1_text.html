@@ -1,0 +1,1367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classcom_1_1datalogics_1_1_p_d_f_l_1_1_text.html','','classcom_1_1datalogics_1_1_p_d_f_l_1_1_text-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">com.datalogics.PDFL.Text Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a13cf818313cb87009639098508e41533" id="r_a13cf818313cb87009639098508e41533"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13cf818313cb87009639098508e41533">addGlyphs</a> (java.util.List&lt; java.lang.Character &gt; glyphIDs, java.util.List&lt; java.lang.Character &gt; uniText, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_font.html">Font</a> font, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_graphic_state.html">GraphicState</a> gState, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html">TextState</a> state, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> matrix, java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_text_flags.html">TextFlags</a> &gt; flags)</td></tr>
+<tr class="memitem:ab0a253910ac05bae6fa12103c67f0918" id="r_ab0a253910ac05bae6fa12103c67f0918"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0a253910ac05bae6fa12103c67f0918">addGlyphs</a> (java.util.List&lt; java.lang.Character &gt; glyphIDs, java.util.List&lt; java.lang.Character &gt; uniText, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_font.html">Font</a> font, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_graphic_state.html">GraphicState</a> gState, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html">TextState</a> state, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> matrix, java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_text_flags.html">TextFlags</a> &gt; flags, int index)</td></tr>
+<tr class="memitem:ac714f58b8a9bea9c6df6d70d0159dd8e" id="r_ac714f58b8a9bea9c6df6d70d0159dd8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac714f58b8a9bea9c6df6d70d0159dd8e">addRun</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_run.html">TextRun</a> run)</td></tr>
+<tr class="memitem:acf062901530733f16c48a2c6b40dc8d3" id="r_acf062901530733f16c48a2c6b40dc8d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf062901530733f16c48a2c6b40dc8d3">addRun</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_run.html">TextRun</a> run, int index)</td></tr>
+<tr class="memitem:ac6e3af0192f692195469f1987e24b34b" id="r_ac6e3af0192f692195469f1987e24b34b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6e3af0192f692195469f1987e24b34b">changeMatrixForTextRun</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> newMatrix, int textRunIndex)</td></tr>
+<tr class="memitem:a413505b6b95cff6e125e6f492e595a6c" id="r_a413505b6b95cff6e125e6f492e595a6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a413505b6b95cff6e125e6f492e595a6c">changeTextMatrixForTextRun</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> newMatrix, int textRunIndex)</td></tr>
+<tr class="memitem:a4ad139a54053209a9a00d4a3d99de4ae" id="r_a4ad139a54053209a9a00d4a3d99de4ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text.html">Text</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ad139a54053209a9a00d4a3d99de4ae">clone</a> ()</td></tr>
+<tr class="memitem:aed133840c726318cb6e26de5af7bc7af" id="r_aed133840c726318cb6e26de5af7bc7af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text.html">Text</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed133840c726318cb6e26de5af7bc7af">clone</a> (java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_element_clone_flags.html">ElementCloneFlags</a> &gt; cloneFlags)</td></tr>
+<tr class="memitem:adcdc59eaf8124d41236f24ed7f9263d4" id="r_adcdc59eaf8124d41236f24ed7f9263d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text.html">Text</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcdc59eaf8124d41236f24ed7f9263d4">colorConvert</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a> document, <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_profile.html">ColorProfile</a> prof, <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_render_intent.html">RenderIntent</a> intent, boolean embed)</td></tr>
+<tr class="memitem:a9725d63564991fb3c9e65984d5ff6375" id="r_a9725d63564991fb3c9e65984d5ff6375"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9725d63564991fb3c9e65984d5ff6375">delete</a> ()</td></tr>
+<tr class="memitem:a53bbb957e18abd93a05a09bd201e22fe" id="r_a53bbb957e18abd93a05a09bd201e22fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53bbb957e18abd93a05a09bd201e22fe">findTextRunIndexForCharacter</a> (int characterIndex)</td></tr>
+<tr class="memitem:aad9648549a025fe01991133ba146d5c7" id="r_aad9648549a025fe01991133ba146d5c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad9648549a025fe01991133ba146d5c7">getAdvanceForCharacter</a> (int characterIndex)</td></tr>
+<tr class="memitem:abd3f1f72bd37a9a158d15c80d63b3665" id="r_abd3f1f72bd37a9a158d15c80d63b3665"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd3f1f72bd37a9a158d15c80d63b3665">getAdvanceForTextRun</a> (int textRunIndex)</td></tr>
+<tr class="memitem:ae355bd6ed68d9deebff59c03523190c9" id="r_ae355bd6ed68d9deebff59c03523190c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#ae355bd6ed68d9deebff59c03523190c9">getBoundingBox</a> ()</td></tr>
+<tr class="memitem:a9135a3365db1790ee41965a3ac1529de" id="r_a9135a3365db1790ee41965a3ac1529de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9135a3365db1790ee41965a3ac1529de">getBoundingBoxForCharacter</a> (int characterIndex)</td></tr>
+<tr class="memitem:a97accb896872fa192e3d0b76fe8cec62" id="r_a97accb896872fa192e3d0b76fe8cec62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html">Clip</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a97accb896872fa192e3d0b76fe8cec62">getClip</a> ()</td></tr>
+<tr class="memitem:a5351ee3176b673773a6d86c5116023fe" id="r_a5351ee3176b673773a6d86c5116023fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a5351ee3176b673773a6d86c5116023fe">getMatrix</a> ()</td></tr>
+<tr class="memitem:a74e468ecd8b68f9b680fc7b7c6b5528e" id="r_a74e468ecd8b68f9b680fc7b7c6b5528e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74e468ecd8b68f9b680fc7b7c6b5528e">getNumberOfCharacters</a> ()</td></tr>
+<tr class="memitem:a38cf83bf48371256880089efe373c906" id="r_a38cf83bf48371256880089efe373c906"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38cf83bf48371256880089efe373c906">getNumberOfRuns</a> ()</td></tr>
+<tr class="memitem:a90fd672092227f53c32fe7309a188ed6" id="r_a90fd672092227f53c32fe7309a188ed6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_run.html">TextRun</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90fd672092227f53c32fe7309a188ed6">getRun</a> (int index)</td></tr>
+<tr class="memitem:a23a32b591a3052ea5f1f7bcd344e682e" id="r_a23a32b591a3052ea5f1f7bcd344e682e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23a32b591a3052ea5f1f7bcd344e682e">getTextMatrixForCharacter</a> (int characterIndex)</td></tr>
+<tr class="memitem:a65deee7cba6310bfd5d28f33a6648217" id="r_a65deee7cba6310bfd5d28f33a6648217"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65deee7cba6310bfd5d28f33a6648217">getTextMatrixForTextRun</a> (int textRunIndex)</td></tr>
+<tr class="memitem:a00aacc55e54bb781b7df5fc99a87c303" id="r_a00aacc55e54bb781b7df5fc99a87c303"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00aacc55e54bb781b7df5fc99a87c303">pointIntersectsCharacter</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> p, int index)</td></tr>
+<tr class="memitem:a4bdba62efbba7fb810d1af86c92eae42" id="r_a4bdba62efbba7fb810d1af86c92eae42"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4bdba62efbba7fb810d1af86c92eae42">pointIntersectsTextRun</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> p, int index)</td></tr>
+<tr class="memitem:a5cda7c8f82f13be63468615aca996e94" id="r_a5cda7c8f82f13be63468615aca996e94"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cda7c8f82f13be63468615aca996e94">rectIntersectsCharacter</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a> r, int index)</td></tr>
+<tr class="memitem:abd0de6780248c660af0725cface648fe" id="r_abd0de6780248c660af0725cface648fe"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd0de6780248c660af0725cface648fe">rectIntersectsTextRun</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a> r, int index)</td></tr>
+<tr class="memitem:acca0c6baad975b6db0e8ebd67c3330f8" id="r_acca0c6baad975b6db0e8ebd67c3330f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acca0c6baad975b6db0e8ebd67c3330f8">removeRuns</a> (int index, int count)</td></tr>
+<tr class="memitem:a18e35d241cef53d1306e215d40c5543b" id="r_a18e35d241cef53d1306e215d40c5543b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a18e35d241cef53d1306e215d40c5543b">rotate</a> (double theta)</td></tr>
+<tr class="memitem:af6fdbf1e92c9a2b0ad72f3a3c8c79aef" id="r_af6fdbf1e92c9a2b0ad72f3a3c8c79aef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#af6fdbf1e92c9a2b0ad72f3a3c8c79aef">scale</a> (double sx, double sy)</td></tr>
+<tr class="memitem:a78d1dc631176e2fcbbb4f76f2c25cdd0" id="r_a78d1dc631176e2fcbbb4f76f2c25cdd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a78d1dc631176e2fcbbb4f76f2c25cdd0">setClip</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html">Clip</a> clip)</td></tr>
+<tr class="memitem:a417520d327ced87abe28d6c9dbe2382b" id="r_a417520d327ced87abe28d6c9dbe2382b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a417520d327ced87abe28d6c9dbe2382b">setMatrix</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> matrix)</td></tr>
+<tr class="memitem:a05c5cc1e056ed38a638d0f8b8a07562c" id="r_a05c5cc1e056ed38a638d0f8b8a07562c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05c5cc1e056ed38a638d0f8b8a07562c">splitTextRunAtCharacter</a> (int splitLocation)</td></tr>
+<tr class="memitem:a04b440c8ebee42d08efd65ea66f1518d" id="r_a04b440c8ebee42d08efd65ea66f1518d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04b440c8ebee42d08efd65ea66f1518d">Text</a> ()</td></tr>
+<tr class="memitem:a22d4ed5c1a9bebaab64263221319e336" id="r_a22d4ed5c1a9bebaab64263221319e336"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a22d4ed5c1a9bebaab64263221319e336">translate</a> (double tx, double ty)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a53a86fc26e33aca9a1d0fc6f1a16b91d" id="r_a53a86fc26e33aca9a1d0fc6f1a16b91d"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53a86fc26e33aca9a1d0fc6f1a16b91d">delete</a> (Boolean disposing)</td></tr>
+<tr class="memitem:adecf0d8eb2745764c8357c69eb89d1e1" id="r_adecf0d8eb2745764c8357c69eb89d1e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adecf0d8eb2745764c8357c69eb89d1e1">finalize</a> ()</td></tr>
+<tr class="memitem:aa248a32a9e0b130a1e622d52fbdb04cd" id="r_aa248a32a9e0b130a1e622d52fbdb04cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa248a32a9e0b130a1e622d52fbdb04cd">Text</a> (long cPtr, boolean cMemoryOwn)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a861d73f98ab05cfe69f82f1d6b5e21e5" id="r_a861d73f98ab05cfe69f82f1d6b5e21e5"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a861d73f98ab05cfe69f82f1d6b5e21e5">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html">Element</a> obj)</td></tr>
+<tr class="memitem:a634c362f44005bdea49bf8fd030ef7d8" id="r_a634c362f44005bdea49bf8fd030ef7d8"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a634c362f44005bdea49bf8fd030ef7d8">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text.html">Text</a> obj)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A container that represents a series of text elements and characters. A Text object is container that represents both a series of TextRun elements and a series of text characters. Operations can be performed on individual TextRuns within a Text or on individual characters within a Text by specifying the index of the individual TextRun or character. All indices start at 0. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa248a32a9e0b130a1e622d52fbdb04cd" name="aa248a32a9e0b130a1e622d52fbdb04cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa248a32a9e0b130a1e622d52fbdb04cd">&#9670;&#160;</a></span>Text() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Text.Text </td>
+          <td>(</td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>cPtr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>cMemoryOwn</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="#a4ad139a54053209a9a00d4a3d99de4ae">clone()</a>, <a class="el" href="#aed133840c726318cb6e26de5af7bc7af">clone()</a>, <a class="el" href="#adcdc59eaf8124d41236f24ed7f9263d4">colorConvert()</a>, and <a class="el" href="#a634c362f44005bdea49bf8fd030ef7d8">getCPtr()</a>.</p>
+
+</div>
+</div>
+<a id="a04b440c8ebee42d08efd65ea66f1518d" name="a04b440c8ebee42d08efd65ea66f1518d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04b440c8ebee42d08efd65ea66f1518d">&#9670;&#160;</a></span>Text() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Text.Text </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a13cf818313cb87009639098508e41533" name="a13cf818313cb87009639098508e41533"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13cf818313cb87009639098508e41533">&#9670;&#160;</a></span>addGlyphs() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Text.addGlyphs </td>
+          <td>(</td>
+          <td class="paramtype">java.util.List&lt; java.lang.Character &gt;</td>          <td class="paramname"><span class="paramname"><em>glyphIDs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">java.util.List&lt; java.lang.Character &gt;</td>          <td class="paramname"><span class="paramname"><em>uniText</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_font.html">Font</a></td>          <td class="paramname"><span class="paramname"><em>font</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_graphic_state.html">GraphicState</a></td>          <td class="paramname"><span class="paramname"><em>gState</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html">TextState</a></td>          <td class="paramname"><span class="paramname"><em>state</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a></td>          <td class="paramname"><span class="paramname"><em>matrix</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_text_flags.html">TextFlags</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds Unicode text to a Text object </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">glyphIDs</td><td>Glyphs IDs in the specified font for adding to the page's content </td></tr>
+    <tr><td class="paramname">uniText</td><td>Unicode codes for the specified glyph IDs </td></tr>
+    <tr><td class="paramname">font</td><td>Font for wich GlyphIDs were specified </td></tr>
+    <tr><td class="paramname">gState</td><td>The GraphicsState for Text element </td></tr>
+    <tr><td class="paramname">state</td><td>TextState flags </td></tr>
+    <tr><td class="paramname">matrix</td><td>matrix for the Text element </td></tr>
+    <tr><td class="paramname">flags</td><td>TextFlags that specifies what kind of text to add </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab0a253910ac05bae6fa12103c67f0918" name="ab0a253910ac05bae6fa12103c67f0918"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0a253910ac05bae6fa12103c67f0918">&#9670;&#160;</a></span>addGlyphs() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Text.addGlyphs </td>
+          <td>(</td>
+          <td class="paramtype">java.util.List&lt; java.lang.Character &gt;</td>          <td class="paramname"><span class="paramname"><em>glyphIDs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">java.util.List&lt; java.lang.Character &gt;</td>          <td class="paramname"><span class="paramname"><em>uniText</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_font.html">Font</a></td>          <td class="paramname"><span class="paramname"><em>font</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_graphic_state.html">GraphicState</a></td>          <td class="paramname"><span class="paramname"><em>gState</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_state.html">TextState</a></td>          <td class="paramname"><span class="paramname"><em>state</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a></td>          <td class="paramname"><span class="paramname"><em>matrix</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_text_flags.html">TextFlags</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>flags</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds Unicode text to a Text object </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">glyphIDs</td><td>Glyphs IDs in the specified font to add to the page's content </td></tr>
+    <tr><td class="paramname">uniText</td><td>Unicode codes for the specified glyph IDs </td></tr>
+    <tr><td class="paramname">font</td><td>Font for wich GlyphIDs were specified </td></tr>
+    <tr><td class="paramname">gState</td><td>The GraphicsState for Text element </td></tr>
+    <tr><td class="paramname">state</td><td>TextState flags </td></tr>
+    <tr><td class="paramname">matrix</td><td>matrix for the Text element </td></tr>
+    <tr><td class="paramname">flags</td><td>TextFlags that specifies what kind of text to add </td></tr>
+    <tr><td class="paramname">index</td><td>The index after which to add the character or text run. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac714f58b8a9bea9c6df6d70d0159dd8e" name="ac714f58b8a9bea9c6df6d70d0159dd8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac714f58b8a9bea9c6df6d70d0159dd8e">&#9670;&#160;</a></span>addRun() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Text.addRun </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_run.html">TextRun</a></td>          <td class="paramname"><span class="paramname"><em>run</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds a TextRun to the end of this text element. </p>
+
+</div>
+</div>
+<a id="acf062901530733f16c48a2c6b40dc8d3" name="acf062901530733f16c48a2c6b40dc8d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf062901530733f16c48a2c6b40dc8d3">&#9670;&#160;</a></span>addRun() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Text.addRun </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_run.html">TextRun</a></td>          <td class="paramname"><span class="paramname"><em>run</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds a TextRun at the specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">run</td><td>TextRun to be added </td></tr>
+    <tr><td class="paramname">index</td><td>Index, where TextRun should be placed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac6e3af0192f692195469f1987e24b34b" name="ac6e3af0192f692195469f1987e24b34b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6e3af0192f692195469f1987e24b34b">&#9670;&#160;</a></span>changeMatrixForTextRun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Text.changeMatrixForTextRun </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a></td>          <td class="paramname"><span class="paramname"><em>newMatrix</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>textRunIndex</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Changes the transformation matrix from user space to the current text space for the specified TextRun. Unlike ChangeTextMatrixForTextRun(), this function does not change fontSize, hScale, and textRise in the textState of PDEText. The H and V values of the matrix indicate the origin of the first character. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newMatrix</td><td>The new transformation matrix to use for the TextRun. </td></tr>
+    <tr><td class="paramname">textRunIndex</td><td>The index of a TextRun, relative to the Text object (the first TextRun in the Text object is at index 0). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a413505b6b95cff6e125e6f492e595a6c" name="a413505b6b95cff6e125e6f492e595a6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a413505b6b95cff6e125e6f492e595a6c">&#9670;&#160;</a></span>changeTextMatrixForTextRun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Text.changeTextMatrixForTextRun </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a></td>          <td class="paramname"><span class="paramname"><em>newMatrix</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>textRunIndex</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Changes the transformation matrix from user space to the current text space for the specified TextRun. The H and V values of the matrix indicate the origin of the first character. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newMatrix</td><td>The new transformation matrix to use for the TextRun. </td></tr>
+    <tr><td class="paramname">textRunIndex</td><td>The index of a TextRun, relative to the Text object (the first TextRun in the Text object is at index 0). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4ad139a54053209a9a00d4a3d99de4ae" name="a4ad139a54053209a9a00d4a3d99de4ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ad139a54053209a9a00d4a3d99de4ae">&#9670;&#160;</a></span>clone() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text.html">Text</a> com.datalogics.PDFL.Text.clone </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Makes a copy of the text. </p>
+<p>Make a copy of an text to obtain a new text that has a distinct set of attributes. </p>
+<dl class="section return"><dt>Returns</dt><dd>The copied text. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#af6c55cf47bb9a28072ac895ab0b2873d">com.datalogics.PDFL.Element</a>.</p>
+
+</div>
+</div>
+<a id="aed133840c726318cb6e26de5af7bc7af" name="aed133840c726318cb6e26de5af7bc7af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed133840c726318cb6e26de5af7bc7af">&#9670;&#160;</a></span>clone() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text.html">Text</a> com.datalogics.PDFL.Text.clone </td>
+          <td>(</td>
+          <td class="paramtype">java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_element_clone_flags.html">ElementCloneFlags</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>cloneFlags</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Makes a copy of the text. </p>
+<p>Make a copy of an text to obtain a new text that has a distinct set of attributes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloneFlags</td><td>Flags that modify the cloning operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The copied text. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a2c8db0575b8f2354ea938f836891a32a">com.datalogics.PDFL.Element</a>.</p>
+
+</div>
+</div>
+<a id="adcdc59eaf8124d41236f24ed7f9263d4" name="adcdc59eaf8124d41236f24ed7f9263d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcdc59eaf8124d41236f24ed7f9263d4">&#9670;&#160;</a></span>colorConvert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text.html">Text</a> com.datalogics.PDFL.Text.colorConvert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a></td>          <td class="paramname"><span class="paramname"><em>document</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_profile.html">ColorProfile</a></td>          <td class="paramname"><span class="paramname"><em>prof</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_render_intent.html">RenderIntent</a></td>          <td class="paramname"><span class="paramname"><em>intent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>embed</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Applies the specified ICC ColorProfile to the Text object </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">document</td><td>The document the element belongs to. </td></tr>
+    <tr><td class="paramname">prof</td><td>The ICC ColorProfile to be applied. </td></tr>
+    <tr><td class="paramname">intent</td><td>The ICC Rendering Intent for the ColorProfile </td></tr>
+    <tr><td class="paramname">embed</td><td>If true, embed the color space and make the object calibrated. If it is false and the target profile is CMYK, RGB, or Gray, the colors space of the resulting object, after conversion, will be DeviceCMYK, DeviceRGB, or DeviceGray, respectively. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new Text object with the applied ICC ColorProfile. </dd></dl>
+
+</div>
+</div>
+<a id="a9725d63564991fb3c9e65984d5ff6375" name="a9725d63564991fb3c9e65984d5ff6375"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9725d63564991fb3c9e65984d5ff6375">&#9670;&#160;</a></span>delete() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.Text.delete </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a8afc1124db761b2077004ba387df0326">com.datalogics.PDFL.Element</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#a9725d63564991fb3c9e65984d5ff6375">delete()</a>, and <a class="el" href="#adecf0d8eb2745764c8357c69eb89d1e1">finalize()</a>.</p>
+
+</div>
+</div>
+<a id="a53a86fc26e33aca9a1d0fc6f1a16b91d" name="a53a86fc26e33aca9a1d0fc6f1a16b91d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53a86fc26e33aca9a1d0fc6f1a16b91d">&#9670;&#160;</a></span>delete() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.Text.delete </td>
+          <td>(</td>
+          <td class="paramtype">Boolean</td>          <td class="paramname"><span class="paramname"><em>disposing</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#ad1c2482b575b7a8112df5f52fb559a84">com.datalogics.PDFL.Element</a>.</p>
+
+</div>
+</div>
+<a id="adecf0d8eb2745764c8357c69eb89d1e1" name="adecf0d8eb2745764c8357c69eb89d1e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adecf0d8eb2745764c8357c69eb89d1e1">&#9670;&#160;</a></span>finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Text.finalize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#ab5642d16085224eca829ace3ad075e6f">com.datalogics.PDFL.Element</a>.</p>
+
+</div>
+</div>
+<a id="a53bbb957e18abd93a05a09bd201e22fe" name="a53bbb957e18abd93a05a09bd201e22fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53bbb957e18abd93a05a09bd201e22fe">&#9670;&#160;</a></span>findTextRunIndexForCharacter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int com.datalogics.PDFL.Text.findTextRunIndexForCharacter </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>characterIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Finds the index of the TextRun that contains the nth character in a Text object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">characterIndex</td><td>The index of a character, relative to the Text object (the first character in the Text object is at index 0). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The index of the TextRun that contains the character specified by characterIndex. </dd></dl>
+
+</div>
+</div>
+<a id="aad9648549a025fe01991133ba146d5c7" name="aad9648549a025fe01991133ba146d5c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad9648549a025fe01991133ba146d5c7">&#9670;&#160;</a></span>getAdvanceForCharacter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> com.datalogics.PDFL.Text.getAdvanceForCharacter </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>characterIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the advance width of a character, in user space. The advance width is the amount by which the current point advances when the character is drawn. </p>
+<p>Advance width may be horizontal or vertical, depending on the writing style. Thus, the return value has both a horizontal and a vertical component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">characterIndex</td><td>The index of a character, relative to the Text object (the first character in the Text object is at index 0). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A value specifying both the horizontal and vertical components of the advance width of a character in user space. </dd></dl>
+
+</div>
+</div>
+<a id="abd3f1f72bd37a9a158d15c80d63b3665" name="abd3f1f72bd37a9a158d15c80d63b3665"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd3f1f72bd37a9a158d15c80d63b3665">&#9670;&#160;</a></span>getAdvanceForTextRun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> com.datalogics.PDFL.Text.getAdvanceForTextRun </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>textRunIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the advance width of a TextRun, in user space. The advance width is the amount by which the current point advances when the TextRun is drawn. </p>
+<p>Advance width may be horizontal or vertical, depending on the writing style. Thus, the return value has both a horizontal and a vertical component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">textRunIndex</td><td>The index of a TextRun, relative to the Text object (the first TextRun in the Text object is at index 0). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A value specifying both the horizontal and vertical components of the advance width of a TextRun in user space. </dd></dl>
+
+</div>
+</div>
+<a id="ae355bd6ed68d9deebff59c03523190c9" name="ae355bd6ed68d9deebff59c03523190c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae355bd6ed68d9deebff59c03523190c9">&#9670;&#160;</a></span>getBoundingBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a> com.datalogics.PDFL.Element.getBoundingBox </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The bounding box for this element. </p>
+<p>The bounding box is a rectangle that is guaranteed to encompass the element, but it is not guaranteed to be the smallest box that could contain the element. For example, if the element is a Path that contains an arc, the bounding box encompasses the bezier control points, and not just the curve itself. </p>
+<dl class="section return"><dt>Returns</dt><dd>The bounding box for this element. The coordinates of the bounding box are specified in user space coordinates, relative to the element's Content. Note that user space coordinates correspond to unrotated pages; any rotation specified in the page dictionary is not taken into account. </dd></dl>
+
+</div>
+</div>
+<a id="a9135a3365db1790ee41965a3ac1529de" name="a9135a3365db1790ee41965a3ac1529de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9135a3365db1790ee41965a3ac1529de">&#9670;&#160;</a></span>getBoundingBoxForCharacter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a> com.datalogics.PDFL.Text.getBoundingBoxForCharacter </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>characterIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The bounding box for a character in this text element. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">characterIndex</td><td>The index of a character, relative to the Text object (the first character in the Text object is at index 0) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A Rect specifying the bounding box for the character. </dd></dl>
+
+</div>
+</div>
+<a id="a97accb896872fa192e3d0b76fe8cec62" name="a97accb896872fa192e3d0b76fe8cec62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97accb896872fa192e3d0b76fe8cec62">&#9670;&#160;</a></span>getClip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html">Clip</a> com.datalogics.PDFL.Element.getClip </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the current Clip for an Element. </p>
+<dl class="section return"><dt>Returns</dt><dd>- The current Clip for this Element. </dd></dl>
+
+</div>
+</div>
+<a id="a861d73f98ab05cfe69f82f1d6b5e21e5" name="a861d73f98ab05cfe69f82f1d6b5e21e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a861d73f98ab05cfe69f82f1d6b5e21e5">&#9670;&#160;</a></span>getCPtr() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long com.datalogics.PDFL.Element.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html">Element</a></td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel protected">protected</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html#ae4ec59218d64f1c621ebf9f11122695d">com.datalogics.PDFL.Clip.addElement()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html#a844fd0e5692b58d2443ac20223193399">com.datalogics.PDFL.Clip.addElement()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html#afba3f35911043f67e3bf68f58f0b5c11">com.datalogics.PDFL.Content.addElement()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html#a250d99991700931477142c2e8d547995">com.datalogics.PDFL.Content.addElement()</a>, and <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html#aa044b1e7b8e5484d21615d71fec8b51b">com.datalogics.PDFL.Content.Content()</a>.</p>
+
+</div>
+</div>
+<a id="a634c362f44005bdea49bf8fd030ef7d8" name="a634c362f44005bdea49bf8fd030ef7d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a634c362f44005bdea49bf8fd030ef7d8">&#9670;&#160;</a></span>getCPtr() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long com.datalogics.PDFL.Text.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text.html">Text</a></td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5351ee3176b673773a6d86c5116023fe" name="a5351ee3176b673773a6d86c5116023fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5351ee3176b673773a6d86c5116023fe">&#9670;&#160;</a></span>getMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> com.datalogics.PDFL.Element.getMatrix </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The transformation matrix for the element. </p>
+
+</div>
+</div>
+<a id="a74e468ecd8b68f9b680fc7b7c6b5528e" name="a74e468ecd8b68f9b680fc7b7c6b5528e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74e468ecd8b68f9b680fc7b7c6b5528e">&#9670;&#160;</a></span>getNumberOfCharacters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int com.datalogics.PDFL.Text.getNumberOfCharacters </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The number of characters in this text element. </p>
+
+</div>
+</div>
+<a id="a38cf83bf48371256880089efe373c906" name="a38cf83bf48371256880089efe373c906"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38cf83bf48371256880089efe373c906">&#9670;&#160;</a></span>getNumberOfRuns()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int com.datalogics.PDFL.Text.getNumberOfRuns </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The number of text runs in this text element. </p>
+
+</div>
+</div>
+<a id="a90fd672092227f53c32fe7309a188ed6" name="a90fd672092227f53c32fe7309a188ed6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90fd672092227f53c32fe7309a188ed6">&#9670;&#160;</a></span>getRun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_text_run.html">TextRun</a> com.datalogics.PDFL.Text.getRun </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Obtains the TextRun at the specified index. </p>
+
+</div>
+</div>
+<a id="a23a32b591a3052ea5f1f7bcd344e682e" name="a23a32b591a3052ea5f1f7bcd344e682e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23a32b591a3052ea5f1f7bcd344e682e">&#9670;&#160;</a></span>getTextMatrixForCharacter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> com.datalogics.PDFL.Text.getTextMatrixForCharacter </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>characterIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the transformation matrix from user space to the current text space for the specified character. The H and V values of the matrix indicate the origin of the first character. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">characterIndex</td><td>The index of a character, relative to the Text object (the first character in the Text object is at index 0). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The transformation matrix for the character specified by characterIndex. </dd></dl>
+
+</div>
+</div>
+<a id="a65deee7cba6310bfd5d28f33a6648217" name="a65deee7cba6310bfd5d28f33a6648217"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65deee7cba6310bfd5d28f33a6648217">&#9670;&#160;</a></span>getTextMatrixForTextRun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> com.datalogics.PDFL.Text.getTextMatrixForTextRun </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>textRunIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the transformation matrix from user space to the current text space for the specified TextRun. The H and V values of the matrix indicate the origin of the first character. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">textRunIndex</td><td>The index of a TextRun, relative to the Text object (the first TextRun in the Text object is at index 0). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The transformation matrix for the TextRun specified by TextRunIndex. </dd></dl>
+
+</div>
+</div>
+<a id="a00aacc55e54bb781b7df5fc99a87c303" name="a00aacc55e54bb781b7df5fc99a87c303"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00aacc55e54bb781b7df5fc99a87c303">&#9670;&#160;</a></span>pointIntersectsCharacter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.Text.pointIntersectsCharacter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a></td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tests whether a point is on a specified character within this Text object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The point to test, in user space coordinates. </td></tr>
+    <tr><td class="paramname">index</td><td>The index of the character. The first character in the Text has an index of 0. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the point is on the character, false if the point is not on the character. </dd></dl>
+
+</div>
+</div>
+<a id="a4bdba62efbba7fb810d1af86c92eae42" name="a4bdba62efbba7fb810d1af86c92eae42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bdba62efbba7fb810d1af86c92eae42">&#9670;&#160;</a></span>pointIntersectsTextRun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.Text.pointIntersectsTextRun </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a></td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tests whether a point is on a specified TextRun within this Text object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The point to test, in user space coordinates. </td></tr>
+    <tr><td class="paramname">index</td><td>The index of the TextRun. The first TextRun in the Text has an index of 0. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the point is on the TextRun, false if the point is not on the TextRun. </dd></dl>
+
+</div>
+</div>
+<a id="a5cda7c8f82f13be63468615aca996e94" name="a5cda7c8f82f13be63468615aca996e94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cda7c8f82f13be63468615aca996e94">&#9670;&#160;</a></span>rectIntersectsCharacter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.Text.rectIntersectsCharacter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a></td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tests whether any part of a rectangle is on a specified character within this Text object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>The rect to test, in user space coordinates. </td></tr>
+    <tr><td class="paramname">index</td><td>The index of the character. The first character in the Text has an index of 0. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if any part of the rectangle is on the character, false if no part of the rectangle is on the character. </dd></dl>
+
+</div>
+</div>
+<a id="abd0de6780248c660af0725cface648fe" name="abd0de6780248c660af0725cface648fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd0de6780248c660af0725cface648fe">&#9670;&#160;</a></span>rectIntersectsTextRun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.Text.rectIntersectsTextRun </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a></td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tests whether any part of a rectangle is on a specified TextRun within this Text object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>The rect to test, in user space coordinates. </td></tr>
+    <tr><td class="paramname">index</td><td>The index of the TextRun. The first TextRun in the Text has an index of 0. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if any part of the rectangle is on the TextRun, false if no part of the rectangle is on the TextRun. </dd></dl>
+
+</div>
+</div>
+<a id="acca0c6baad975b6db0e8ebd67c3330f8" name="acca0c6baad975b6db0e8ebd67c3330f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acca0c6baad975b6db0e8ebd67c3330f8">&#9670;&#160;</a></span>removeRuns()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Text.removeRuns </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Removes a count of TextRuns, starting from index </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Start position of range to delete </td></tr>
+    <tr><td class="paramname">count</td><td>Count of TextRuns to delete </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a18e35d241cef53d1306e215d40c5543b" name="a18e35d241cef53d1306e215d40c5543b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18e35d241cef53d1306e215d40c5543b">&#9670;&#160;</a></span>rotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Element.rotate </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>theta</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Rotate an element by T degrees counterclockwise units using the matrix [ cos T sin T -sin T cos T 0 0 ]. </p>
+
+<p>Reimplemented in <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html#a70d4a627d96d5c4f90eaf0a877c80654">com.datalogics.PDFL.Image</a>.</p>
+
+</div>
+</div>
+<a id="af6fdbf1e92c9a2b0ad72f3a3c8c79aef" name="af6fdbf1e92c9a2b0ad72f3a3c8c79aef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6fdbf1e92c9a2b0ad72f3a3c8c79aef">&#9670;&#160;</a></span>scale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Element.scale </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>sx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>sy</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Scale an element by (sx,sy) units using the matrix [ sx 0 0 sy 0 0 ]. </p>
+
+</div>
+</div>
+<a id="a78d1dc631176e2fcbbb4f76f2c25cdd0" name="a78d1dc631176e2fcbbb4f76f2c25cdd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78d1dc631176e2fcbbb4f76f2c25cdd0">&#9670;&#160;</a></span>setClip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Element.setClip </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html">Clip</a></td>          <td class="paramname"><span class="paramname"><em>clip</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the current Clip for an Element. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clip</td><td>The clip to set as the current clip for this element. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a417520d327ced87abe28d6c9dbe2382b" name="a417520d327ced87abe28d6c9dbe2382b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a417520d327ced87abe28d6c9dbe2382b">&#9670;&#160;</a></span>setMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Element.setMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a></td>          <td class="paramname"><span class="paramname"><em>matrix</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Set the transformation matrix for the element.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">matrix</td><td>the transformation matrix for the element. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a05c5cc1e056ed38a638d0f8b8a07562c" name="a05c5cc1e056ed38a638d0f8b8a07562c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05c5cc1e056ed38a638d0f8b8a07562c">&#9670;&#160;</a></span>splitTextRunAtCharacter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Text.splitTextRunAtCharacter </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>splitLocation</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Splits the TextRun containing the character at the specified location into two contiguous TextRuns. The character at the specified index will be part of the first TextRun. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">splitLocation</td><td>The split location, relative to the Text object. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a22d4ed5c1a9bebaab64263221319e336" name="a22d4ed5c1a9bebaab64263221319e336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22d4ed5c1a9bebaab64263221319e336">&#9670;&#160;</a></span>translate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Element.translate </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>tx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>ty</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Translate an element by (tx,ty) units using the matrix [ 1 0 0 1 tx ty ]. </p>
+
+<p>Reimplemented in <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html#a7d9f9f8687328d8d62dcddc1799619ed">com.datalogics.PDFL.Image</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>
