@@ -1,0 +1,26 @@
+var enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags =
+[
+    [ "FlagsToInt", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#ae0df8f414e75c23844d96a0d4fa82fea", null ],
+    [ "IntToFlags", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#ac19a72d35d98961b208df13bfc4fe438", null ],
+    [ "ADJACENT_TO_SPACE", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#ad5aed32df37aabb291bff9bce38a0599", null ],
+    [ "ENCODING_WARNING", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#ab662f191124f57a74902ec30d51ecf90", null ],
+    [ "EXT_CHAR_OFFSETS", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#a7a7b8710bc3cee3b72289661d05e50a3", null ],
+    [ "FRONT_TAB", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#ab453435b07fd358516bf5aeb61ca545f", null ],
+    [ "HAS_DIGIT", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#a834667c39eede1db7962ed954191baf1", null ],
+    [ "HAS_HYPHEN", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#a1355753fcde15ddad4d817a52a7a8cfc", null ],
+    [ "HAS_LEADING_PUNCTUATION", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#a55e315ab09b7d8bc498e262ffd9ddce3", null ],
+    [ "HAS_LETTER", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#a2fb1d7120750bb9bc70a85c2b2dce650", null ],
+    [ "HAS_LIGATURE", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#a06f3b793d6cc1b0ce43c91d4078a4025", null ],
+    [ "HAS_NONALPHANUM", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#ad96fecf17ee5cea9090938e438119709", null ],
+    [ "HAS_PUNCTUATION", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#a9a582759e54f78c8e0297b842445a842", null ],
+    [ "HAS_SOFT_HYPHEN", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#a381dd296cff2fc782eff4ca3a76cefcc", null ],
+    [ "HAS_TRAILING_PUNCTUATION", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#afa55277fba466ce3a4dde4b42badfe92", null ],
+    [ "HAS_UNMAPPED_CHARACTERS", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#a1e598b03192dbbbe62af57158c1cd0c0", null ],
+    [ "HAS_UPPERCASE", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#aeb22af908e5bdca29f94b019734bab62", null ],
+    [ "LAST_WORD_ON_LINE", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#ac09e08a581f0c07b5581420b35d87929", null ],
+    [ "REVERSE_DIRECTION", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#acd858e77cd4097b4a3c434c57d7b0ac7", null ],
+    [ "ROTATED", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#a6f0add331522ab36704423f4d76f4aa1", null ],
+    [ "VERTICAL_FLOW", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#af05f0c40300bf85f070ad952bcf916c7", null ],
+    [ "WORD_BREAK", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#aa7a9481157a2bd2e83ef8617c7d5e86c", null ],
+    [ "WORD_IS_UNICODE", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_word_attribute_flags.html#a102ad23eee8cab8888bc19f5633ca9ed", null ]
+];
