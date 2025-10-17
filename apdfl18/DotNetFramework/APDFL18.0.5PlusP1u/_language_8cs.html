@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library .NET Framework Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-csharp-dotnet-framework-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://www.nuget.org/packages/Adobe.PDF.Library.LM.NETFramework" id="pkglink"><img id="pkg-download-img" alt="Nuget Trial Download" src="https://img.shields.io/nuget/dt/Adobe.PDF.Library.LM.NETFramework?color=blue&label=APDFL%20.NET%20Framework%20Free%20Trial&logo=NuGet&style=plastic"/></a>
+        </p>
+      </div></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_language_8cs.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Language.cs File Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:Datalogics" id="r_Datalogics"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_datalogics.html">Datalogics</a></td></tr>
+<tr class="memitem:Datalogics_2EPDFL" id="r_Datalogics_2EPDFL"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html">Datalogics.PDFL</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a2b6ae7fbc3bcde62944d9e086ad7d0e7" id="r_a2b6ae7fbc3bcde62944d9e086ad7d0e7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7">Datalogics.PDFL.Language</a> { <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a78463a384a5aa4fad5fa73e2f506ecfc">Datalogics.PDFL.English</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a68bf367e228f45ba83cb8831a5ee6447">Datalogics.PDFL.Dutch</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7aad225f707802ba118c22987186dd38e8">Datalogics.PDFL.French</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a86bc3115eb4e9873ac96904a4a68e19e">Datalogics.PDFL.German</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a4be8e06d27bca7e1828f2fa9a49ca985">Datalogics.PDFL.Italian</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a30e32c7c4cf434e9c75e60c14c442541">Datalogics.PDFL.Portuguese</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7acb5480c32e71778852b08ae1e8712775">Datalogics.PDFL.Spanish</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7acaba7894ecbe0b3632c148a457bccd8f">Datalogics.PDFL.ChineseTraditional</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7aa47714e5923624a7cb1afcd41e482beb">Datalogics.PDFL.ChineseSimplified</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7af32ced6a9ba164c4b3c047fd1d7c882e">Datalogics.PDFL.Japanese</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ad0bdb3cde477d82e766da05ebda50ccb">Datalogics.PDFL.Korean</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a170d296d4201ee1af7a8867e9b0ca3a7">Datalogics.PDFL.Afrikaans</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a2822b8f5aac2191afe534140a6629eea">Datalogics.PDFL.Amharic</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a7e832a2236372b3ac5e030c551d90bab">Datalogics.PDFL.Assamese</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a9f3356b27d0a76cb5f0ceea9e80a6e72">Datalogics.PDFL.Azerbaijani</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ac8f938be95c9ceed206c24600491c230">Datalogics.PDFL.AzerbaijaniCyrillic</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a0a6de4460095f398e8a45ed512a7538f">Datalogics.PDFL.Belarusian</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7aa56dcb8443c25f8e14b47b8ff1748331">Datalogics.PDFL.Bengali</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7aa441f933e0026f55ccff38b534f98a53">Datalogics.PDFL.Tibetan</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a9dea74f01b9e3ee9ebd867ad7b2d2d18">Datalogics.PDFL.Bosnian</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7aeb2f428f5c2030a6f8e14ac7e8dd1eca">Datalogics.PDFL.Breton</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a60bb3bcc6ff535428a38f76f1059b2d2">Datalogics.PDFL.Bulgarian</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a900a14b115614d9d4d1c47f1d3a3251b">Datalogics.PDFL.Catalan</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a5834ac15d37ae7d48a5183fd5d5020ab">Datalogics.PDFL.Cebuano</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a83ff4480cdf2900ae83bf30d95774d76">Datalogics.PDFL.Czech</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a3d8cdfa057a87c191caa67b1677e376c">Datalogics.PDFL.Cherokee</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7abbb0fa49b525c4264f4ad7a06adc3e07">Datalogics.PDFL.Welsh</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a7bc6f150ce738db3d21cbe0b75aea027">Datalogics.PDFL.Danish</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a876e6d639039d334791c2733f23f0aea">Datalogics.PDFL.DanishFraktur</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a6bf09989b4d3fc435fe14794368f31e5">Datalogics.PDFL.Dzongkha</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a0aafa497807d5ac9b509656bd13b5283">Datalogics.PDFL.Greek</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a7644ad4fee862346bacc54a83942e2af">Datalogics.PDFL.EnglishMiddle</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a8981940c0815701fe27adcb03f31a44c">Datalogics.PDFL.Esperanto</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a1f363a5e0861b00eff7617a6227aec34">Datalogics.PDFL.MathEquationDetection</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a28916fc3da67a5190b2b98a7f309857f">Datalogics.PDFL.Estonian</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7aa8a890709b5828879edc68e65a938695">Datalogics.PDFL.Basque</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a9ae099fd082267fa2f2f85664a4f74dc">Datalogics.PDFL.Finnish</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a010a7933d64ca7d1b83f1ce0fb5c4887">Datalogics.PDFL.GermanFraktur</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a9cba88c80fdcffbbb63957afacd39983">Datalogics.PDFL.FrenchMiddle</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a2cfce796f4703d560ae1c3a1b3fb7e74">Datalogics.PDFL.Irish</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a516a623325ded756f29f124618baabbc">Datalogics.PDFL.Galician</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ab5ede8b7e110cc0c77540d3be727b5fe">Datalogics.PDFL.GreekAncient</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ad1a59333c7e56205fed9bda9da34b201">Datalogics.PDFL.Gujarati</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ada2d3f72de149d2e0030b9bfcb75acd6">Datalogics.PDFL.Haitian</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a45c3171ef193c74b402f407fba9d955b">Datalogics.PDFL.Hindi</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a0c1be09bad2acaa2fa315b88abda8a32">Datalogics.PDFL.Croatian</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a7b86112ec6401fd8f06ab5251d1a68fe">Datalogics.PDFL.Hungarian</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a3be898f3f28c2fbaed9d525c453615b4">Datalogics.PDFL.Inuktitut</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7acc1c9b57607b4439578b68074a5e2d80">Datalogics.PDFL.Indonesian</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a4c545ca25c8a34a533be19e7a1c44a79">Datalogics.PDFL.Icelandic</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a009e9958dbe2f3649ec4fe783d8bf3b9">Datalogics.PDFL.ItalianOld</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a7d94af6dccead2736bd1d456ba3c750a">Datalogics.PDFL.Javanese</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a6b511fdce48a74274a35e3365e36230c">Datalogics.PDFL.Kannada</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7aadc0753d37641ed117f7b999a0ae79a0">Datalogics.PDFL.Georgian</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a3b173f40732ddc75759c76ef0c6f4e22">Datalogics.PDFL.GeorgianOld</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ad05ae627fcc808e7df1ee341c3d5cbc2">Datalogics.PDFL.Kazakh</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ac20f3bf72447740530a72acac97a108c">Datalogics.PDFL.CentralKhmer</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a712a3d4ac894f0e98dd8febc5e17ab97">Datalogics.PDFL.Kyrgyz</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ae0558c929e98740221136c75dd89f2b6">Datalogics.PDFL.Kurmanji</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ad8fd56d3ba0672de0f6625bfb1b4ca7b">Datalogics.PDFL.Lao</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a7280578e6a45fd916ed9431425289c9e">Datalogics.PDFL.Latin</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a76ad0358e45dd4087c0a26bbf4c160e3">Datalogics.PDFL.Latvian</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a04f605836f660d879bf3fb2b3643d16b">Datalogics.PDFL.Lithuanian</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ac0b9b1fdf1a21bf34ba8467790496b0e">Datalogics.PDFL.Luxembourgish</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7af9b5a275bc456b62ad13e4a537f62a3b">Datalogics.PDFL.Malayalam</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a529b1c6eafff3f34bcda64708f72586d">Datalogics.PDFL.Marathi</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ac1e1b1f8bdaab4b0fc183e147887e0e1">Datalogics.PDFL.Macedonian</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a4d0c1117e593a084406068a55ab227b9">Datalogics.PDFL.Maltese</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a28c84f05dbc521ffa52220ce03b16356">Datalogics.PDFL.Mongolian</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a9c751c711ebc5775246f80308ef4d56e">Datalogics.PDFL.Maori</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7afc179207920005b7dca85323ceacf5eb">Datalogics.PDFL.Malay</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ac98e06a00f05511df3d6f2cfd610cb70">Datalogics.PDFL.Burmese</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a2f53f077d39632f0b325d5eabfc8798b">Datalogics.PDFL.Nepali</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ada550ca06bcacbd30b7c6ed32c864c70">Datalogics.PDFL.Norwegian</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a68a4c100e7b114ab9509c585e7bed39c">Datalogics.PDFL.Occitan</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7aaa1fbe577ecc29ca7b970d4151dfe682">Datalogics.PDFL.Oriya</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a6b6159600e0d713c37c3cdf22d94995d">Datalogics.PDFL.OrientationAndScriptDetection</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a7d457c8039e16cb411694c384f381684">Datalogics.PDFL.Panjabi</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ac730389bc8d99e59c867766babdd48b5">Datalogics.PDFL.Polish</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a7644701ba4a49efc8d457334dd1480cf">Datalogics.PDFL.Pashto</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a050dc5fb2cedf3eef3310a88820ecaa0">Datalogics.PDFL.Quechua</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7aefa7394ecaa7fc7076a9da13a77236b8">Datalogics.PDFL.Romanian</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7adeba6920e70615401385fe1fb5a379ec">Datalogics.PDFL.Russian</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a4037f77713990c867a3c53066fbc4dd0">Datalogics.PDFL.Sanskrit</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a2a3354e2d50ec4bf80ba1fbcd253506e">Datalogics.PDFL.Sinhala</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a9accc467b159e7ce158e53209c0cde2a">Datalogics.PDFL.Slovak</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ab8c7bbcc0b85f1880280c12dddeba7b1">Datalogics.PDFL.SlovakFraktur</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a6e9970eac6ca16e34a8eac50070c49ce">Datalogics.PDFL.Slovenian</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a902395516c97af964ecb77497b354da5">Datalogics.PDFL.SpanishOld</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7aa716b6a3e8cf5994165d64d712db61d8">Datalogics.PDFL.Albanian</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a055301c56abc82dd3a81ea3810ad0599">Datalogics.PDFL.Serbian</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ab24349dcabd4e63302c57f06f4864ffa">Datalogics.PDFL.SerbianLatin</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a3f43ba0705bf771ea5d74a7a2e8b40c0">Datalogics.PDFL.Sundanese</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a9af95fb4ee44dce25961e7251072625b">Datalogics.PDFL.Swahili</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a41171a0fcd362ce98b5f0f11398713b6">Datalogics.PDFL.Swedish</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7af0670813020969b39ff8d85744b40400">Datalogics.PDFL.Tamil</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a4c86bbde578e3648fa0b12aea66fc5f6">Datalogics.PDFL.Tatar</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a15b88a88e6cf16a4462c1562fdcb0c19">Datalogics.PDFL.Telugu</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a944c84bfafb071ea7f357c4f23cddf53">Datalogics.PDFL.Tajik</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7afee973126d42389ac96082e9ca6961fa">Datalogics.PDFL.Tagalog</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a43ddc789bcea4177a14791f6c9a03b28">Datalogics.PDFL.Thai</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7adea54a29be92f8749275fae518b01457">Datalogics.PDFL.Tigrinya</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7add5cb49bc56af9d53f9f9e1e5b425ab0">Datalogics.PDFL.Tonga</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ac1612bbdebfa45467e8ab814e08daff1">Datalogics.PDFL.Turkish</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7abfd53933a237c0a8fcaf96f998036ff6">Datalogics.PDFL.Uyghur</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ae78a6fc14ad64f7a78386b20568ce95b">Datalogics.PDFL.Ukrainian</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7aca20f547f2f65dbf6d23b0395419dd43">Datalogics.PDFL.Uzbek</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a5b049dcf3fabbdf7d4b15678bf8b3075">Datalogics.PDFL.UzbekCyrillic</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a7b80fae85640c16cdb0261bef0c27636">Datalogics.PDFL.Vietnamese</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a6d49a35951ace13a6294548e5137157f">Datalogics.PDFL.Yiddish</a>
+, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ace9ff4c0410d35afbc2206ab23c8759d">Datalogics.PDFL.Yoruba</a>
+<br />
+ }</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>
