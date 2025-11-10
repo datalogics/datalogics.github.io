@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['fareastfont_0',['FarEastFont',['../enumcom_1_1datalogics_1_1_p_d_f_l_1_1_far_east_font.html',1,'com::datalogics::PDFL']]],
+  ['fileattachment_1',['FileAttachment',['../classcom_1_1datalogics_1_1_p_d_f_l_1_1_file_attachment.html',1,'com::datalogics::PDFL']]],
+  ['filespecification_2',['FileSpecification',['../classcom_1_1datalogics_1_1_p_d_f_l_1_1_file_specification.html',1,'com::datalogics::PDFL']]],
+  ['flattenercolorcompression_3',['FlattenerColorCompression',['../enumcom_1_1datalogics_1_1_p_d_f_l_1_1_flattener_color_compression.html',1,'com::datalogics::PDFL']]],
+  ['flattenergraycompression_4',['FlattenerGrayCompression',['../enumcom_1_1datalogics_1_1_p_d_f_l_1_1_flattener_gray_compression.html',1,'com::datalogics::PDFL']]],
+  ['flattenermonocompression_5',['FlattenerMonoCompression',['../enumcom_1_1datalogics_1_1_p_d_f_l_1_1_flattener_mono_compression.html',1,'com::datalogics::PDFL']]],
+  ['flattenerqualitysetting_6',['FlattenerQualitySetting',['../enumcom_1_1datalogics_1_1_p_d_f_l_1_1_flattener_quality_setting.html',1,'com::datalogics::PDFL']]],
+  ['flattentransparencyparams_7',['FlattenTransparencyParams',['../classcom_1_1datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html',1,'com::datalogics::PDFL']]],
+  ['font_8',['Font',['../classcom_1_1datalogics_1_1_p_d_f_l_1_1_font.html',1,'com::datalogics::PDFL']]],
+  ['fontcreateflags_9',['FontCreateFlags',['../enumcom_1_1datalogics_1_1_p_d_f_l_1_1_font_create_flags.html',1,'com::datalogics::PDFL']]],
+  ['fontflags_10',['FontFlags',['../enumcom_1_1datalogics_1_1_p_d_f_l_1_1_font_flags.html',1,'com::datalogics::PDFL']]],
+  ['fontrescanflags_11',['FontRescanFlags',['../enumcom_1_1datalogics_1_1_p_d_f_l_1_1_font_rescan_flags.html',1,'com::datalogics::PDFL']]],
+  ['form_12',['Form',['../classcom_1_1datalogics_1_1_p_d_f_l_1_1_form.html',1,'com::datalogics::PDFL']]],
+  ['formsextensionversionrec_13',['FormsExtensionVersionRec',['../classcom_1_1datalogics_1_1_p_d_f_l_1_1_forms_extension_version_rec.html',1,'com::datalogics::PDFL']]],
+  ['freetextannotation_14',['FreeTextAnnotation',['../classcom_1_1datalogics_1_1_p_d_f_l_1_1_free_text_annotation.html',1,'com::datalogics::PDFL']]],
+  ['function_15',['Function',['../classcom_1_1datalogics_1_1_p_d_f_l_1_1_function.html',1,'com::datalogics::PDFL']]]
+];
