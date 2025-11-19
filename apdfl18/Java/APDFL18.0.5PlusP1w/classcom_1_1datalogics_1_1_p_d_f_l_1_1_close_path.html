@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classcom_1_1datalogics_1_1_p_d_f_l_1_1_close_path.html','','classcom_1_1datalogics_1_1_p_d_f_l_1_1_close_path-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">com.datalogics.PDFL.ClosePath Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a91536255bad0fcb905a14d47261b7f39" id="r_a91536255bad0fcb905a14d47261b7f39"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91536255bad0fcb905a14d47261b7f39">ClosePath</a> ()</td></tr>
+<tr class="memitem:aff61c7472aeb923691ad5c32d3d78cea" id="r_aff61c7472aeb923691ad5c32d3d78cea"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff61c7472aeb923691ad5c32d3d78cea">delete</a> ()</td></tr>
+<tr class="memitem:a209a6b77c0eb7c99a94dcae9d007f5f2" id="r_a209a6b77c0eb7c99a94dcae9d007f5f2"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a209a6b77c0eb7c99a94dcae9d007f5f2">toString</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a5767376e9455a47897719f6bf728519e" id="r_a5767376e9455a47897719f6bf728519e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5767376e9455a47897719f6bf728519e">ClosePath</a> (long cPtr, boolean cMemoryOwn)</td></tr>
+<tr class="memitem:acf61a0ef5bd12378438d7f2b80656900" id="r_acf61a0ef5bd12378438d7f2b80656900"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf61a0ef5bd12378438d7f2b80656900">delete</a> (Boolean disposing)</td></tr>
+<tr class="memitem:a90a03df4c5edb05ba275ae53cc6b972d" id="r_a90a03df4c5edb05ba275ae53cc6b972d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90a03df4c5edb05ba275ae53cc6b972d">finalize</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a61604e4e0608b6ee3294189687ac38db" id="r_a61604e4e0608b6ee3294189687ac38db"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61604e4e0608b6ee3294189687ac38db">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_close_path.html">ClosePath</a> obj)</td></tr>
+<tr class="memitem:a6d2fa78d13a8a0a260032f77573cf640" id="r_a6d2fa78d13a8a0a260032f77573cf640"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_segment.html#a6d2fa78d13a8a0a260032f77573cf640">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_segment.html">Segment</a> obj)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>An operator that completes a vector shape, drawing a line from the first point to the last point. A path is a series of commands that define the boundary of a vector shape. The ClosePath command draws a line from the current location back to its starting point, effectively closing a box or parabolic shape on a page. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a5767376e9455a47897719f6bf728519e" name="a5767376e9455a47897719f6bf728519e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5767376e9455a47897719f6bf728519e">&#9670;&#160;</a></span>ClosePath() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.ClosePath.ClosePath </td>
+          <td>(</td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>cPtr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>cMemoryOwn</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="#a61604e4e0608b6ee3294189687ac38db">getCPtr()</a>.</p>
+
+</div>
+</div>
+<a id="a91536255bad0fcb905a14d47261b7f39" name="a91536255bad0fcb905a14d47261b7f39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91536255bad0fcb905a14d47261b7f39">&#9670;&#160;</a></span>ClosePath() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.ClosePath.ClosePath </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Close the current subpath by appending a straight line segment from the current point to the starting point of the subpath. If the current subpath is already closed, ClosePath does nothing. </p>
+<p>This segment terminates the current subpath. Appending another segment to the current path begins a new subpath, even if the new segment begins at the endpoint reached by the ClosePath operation. </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="aff61c7472aeb923691ad5c32d3d78cea" name="aff61c7472aeb923691ad5c32d3d78cea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff61c7472aeb923691ad5c32d3d78cea">&#9670;&#160;</a></span>delete() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.ClosePath.delete </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_segment.html#a9b59b9b80d1bed2d429d7b653e97db42">com.datalogics.PDFL.Segment</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#aff61c7472aeb923691ad5c32d3d78cea">delete()</a>, and <a class="el" href="#a90a03df4c5edb05ba275ae53cc6b972d">finalize()</a>.</p>
+
+</div>
+</div>
+<a id="acf61a0ef5bd12378438d7f2b80656900" name="acf61a0ef5bd12378438d7f2b80656900"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf61a0ef5bd12378438d7f2b80656900">&#9670;&#160;</a></span>delete() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.ClosePath.delete </td>
+          <td>(</td>
+          <td class="paramtype">Boolean</td>          <td class="paramname"><span class="paramname"><em>disposing</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_segment.html#a5e4f7f9b8e9454939cb23b6a8eb0cdd8">com.datalogics.PDFL.Segment</a>.</p>
+
+</div>
+</div>
+<a id="a90a03df4c5edb05ba275ae53cc6b972d" name="a90a03df4c5edb05ba275ae53cc6b972d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90a03df4c5edb05ba275ae53cc6b972d">&#9670;&#160;</a></span>finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.ClosePath.finalize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_segment.html#a214d8287251018fa154b99de63308919">com.datalogics.PDFL.Segment</a>.</p>
+
+</div>
+</div>
+<a id="a61604e4e0608b6ee3294189687ac38db" name="a61604e4e0608b6ee3294189687ac38db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61604e4e0608b6ee3294189687ac38db">&#9670;&#160;</a></span>getCPtr() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long com.datalogics.PDFL.ClosePath.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_close_path.html">ClosePath</a></td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6d2fa78d13a8a0a260032f77573cf640" name="a6d2fa78d13a8a0a260032f77573cf640"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d2fa78d13a8a0a260032f77573cf640">&#9670;&#160;</a></span>getCPtr() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long com.datalogics.PDFL.Segment.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_segment.html">Segment</a></td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel protected">protected</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a209a6b77c0eb7c99a94dcae9d007f5f2" name="a209a6b77c0eb7c99a94dcae9d007f5f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a209a6b77c0eb7c99a94dcae9d007f5f2">&#9670;&#160;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.datalogics.PDFL.ClosePath.toString </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_segment.html#a44098e602cf6ffdcf048b2f7c853d3af">com.datalogics.PDFL.Segment</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>

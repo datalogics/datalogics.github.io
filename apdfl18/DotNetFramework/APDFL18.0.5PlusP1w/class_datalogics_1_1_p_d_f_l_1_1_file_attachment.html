@@ -1,0 +1,586 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library .NET Framework Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-csharp-dotnet-framework-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://www.nuget.org/packages/Adobe.PDF.Library.LM.NETFramework" id="pkglink"><img id="pkg-download-img" alt="Nuget Trial Download" src="https://img.shields.io/nuget/dt/Adobe.PDF.Library.LM.NETFramework?color=blue&label=APDFL%20.NET%20Framework%20Free%20Trial&logo=NuGet&style=plastic"/></a>
+        </p>
+      </div></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_datalogics_1_1_p_d_f_l_1_1_file_attachment.html','','class_datalogics_1_1_p_d_f_l_1_1_file_attachment-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Datalogics.PDFL.FileAttachment Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a4beaac2994adb4ad2a9a30ccf8ce5a11" id="r_a4beaac2994adb4ad2a9a30ccf8ce5a11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4beaac2994adb4ad2a9a30ccf8ce5a11">Dispose</a> ()</td></tr>
+<tr class="memitem:aa8d26fe0feaac3302c23ce69db0f3039" id="r_aa8d26fe0feaac3302c23ce69db0f3039"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8d26fe0feaac3302c23ce69db0f3039">Dispose</a> (bool disposing)</td></tr>
+<tr class="memitem:ac55e835d189a75314a2a3da4c23339b2" id="r_ac55e835d189a75314a2a3da4c23339b2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac55e835d189a75314a2a3da4c23339b2">FileAttachment</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html">Document</a> doc, string fileName)</td></tr>
+<tr class="memitem:a89ec718f5ef29213df79038d852f482b" id="r_a89ec718f5ef29213df79038d852f482b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89ec718f5ef29213df79038d852f482b">FileAttachment</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html">Document</a> doc, string fileName, string keyName)</td></tr>
+<tr class="memitem:ad4e68c17f146336bcec596fb3ac0fa35" id="r_ad4e68c17f146336bcec596fb3ac0fa35"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4e68c17f146336bcec596fb3ac0fa35">GetCollectionItemNumber</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_collection_schema_field.html">CollectionSchemaField</a> collectionField)</td></tr>
+<tr class="memitem:ac5dd582ca64abb75cc4eaaf8fc891e52" id="r_ac5dd582ca64abb75cc4eaaf8fc891e52"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5dd582ca64abb75cc4eaaf8fc891e52">GetCollectionItemString</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_collection_schema_field.html">CollectionSchemaField</a> collectionField)</td></tr>
+<tr class="memitem:ab77ed644d92c0999be5e680f7c64c09b" id="r_ab77ed644d92c0999be5e680f7c64c09b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab77ed644d92c0999be5e680f7c64c09b">SaveToFile</a> (string fileName)</td></tr>
+<tr class="memitem:a85887b9d6f6e99a11c7550f4d90ae408" id="r_a85887b9d6f6e99a11c7550f4d90ae408"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85887b9d6f6e99a11c7550f4d90ae408">SaveToStream</a> (System.IO.Stream stream)</td></tr>
+<tr class="memitem:aa21cad8c0e8589299afcb28fc0b6a421" id="r_aa21cad8c0e8589299afcb28fc0b6a421"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa21cad8c0e8589299afcb28fc0b6a421">SetCollectionItemNumber</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_collection_schema_field.html">CollectionSchemaField</a> collectionField, float value)</td></tr>
+<tr class="memitem:aca9e8351c55780ebf5eb378dddad8cbc" id="r_aca9e8351c55780ebf5eb378dddad8cbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca9e8351c55780ebf5eb378dddad8cbc">SetCollectionItemString</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_collection_schema_field.html">CollectionSchemaField</a> collectionField, string value)</td></tr>
+<tr class="memitem:a822ff99f7c8a70f8e439b0739d749a34" id="r_a822ff99f7c8a70f8e439b0739d749a34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a822ff99f7c8a70f8e439b0739d749a34">UpdateFromFile</a> (string fileName)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a8a34e97d953e68034ba08dd3b9c0a8d3" id="r_a8a34e97d953e68034ba08dd3b9c0a8d3"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a34e97d953e68034ba08dd3b9c0a8d3">FileName</a><code> [get]</code></td></tr>
+<tr class="memitem:a0c2e4ff9efab8c2f27b4c9a9db67b907" id="r_a0c2e4ff9efab8c2f27b4c9a9db67b907"><td class="memItemLeft" align="right" valign="top">uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c2e4ff9efab8c2f27b4c9a9db67b907">FileSize</a><code> [get]</code></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A file attachment. Any file can be attached to the PDF document. </p>
+<p>The class allows to create attachment and manipulate by its content. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac55e835d189a75314a2a3da4c23339b2" name="ac55e835d189a75314a2a3da4c23339b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac55e835d189a75314a2a3da4c23339b2">&#9670;&#160;</a></span>FileAttachment() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.FileAttachment.FileAttachment </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html">Document</a></td>          <td class="paramname"><span class="paramname"><em>doc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>fileName</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Allows to add attachment into the PDF document.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">doc</td><td>The PDF document (reference). </td></tr>
+    <tr><td class="paramname">fileName</td><td>The path to file which will be attached to the document.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a89ec718f5ef29213df79038d852f482b" name="a89ec718f5ef29213df79038d852f482b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89ec718f5ef29213df79038d852f482b">&#9670;&#160;</a></span>FileAttachment() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.FileAttachment.FileAttachment </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html">Document</a></td>          <td class="paramname"><span class="paramname"><em>doc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>fileName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>keyName</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Allows to add attachment into the PDF document using the specified key name.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">doc</td><td>The PDF document (reference). </td></tr>
+    <tr><td class="paramname">fileName</td><td>The path to file which will be attached to the document. </td></tr>
+    <tr><td class="paramname">keyName</td><td>The name of the key. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a4beaac2994adb4ad2a9a30ccf8ce5a11" name="a4beaac2994adb4ad2a9a30ccf8ce5a11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4beaac2994adb4ad2a9a30ccf8ce5a11">&#9670;&#160;</a></span>Dispose() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.FileAttachment.Dispose </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="#a4beaac2994adb4ad2a9a30ccf8ce5a11">Dispose()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#a4beaac2994adb4ad2a9a30ccf8ce5a11">Dispose()</a>.</p>
+
+</div>
+</div>
+<a id="aa8d26fe0feaac3302c23ce69db0f3039" name="aa8d26fe0feaac3302c23ce69db0f3039"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8d26fe0feaac3302c23ce69db0f3039">&#9670;&#160;</a></span>Dispose() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Datalogics.PDFL.FileAttachment.Dispose </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>disposing</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad4e68c17f146336bcec596fb3ac0fa35" name="ad4e68c17f146336bcec596fb3ac0fa35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4e68c17f146336bcec596fb3ac0fa35">&#9670;&#160;</a></span>GetCollectionItemNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Datalogics.PDFL.FileAttachment.GetCollectionItemNumber </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_collection_schema_field.html">CollectionSchemaField</a></td>          <td class="paramname"><span class="paramname"><em>collectionField</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>GetCollectionItemNumber allows to obtain collection item according to the specified schema field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collectionField</td><td>the field for which item value should be retrieved.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>collection items value </dd></dl>
+
+</div>
+</div>
+<a id="ac5dd582ca64abb75cc4eaaf8fc891e52" name="ac5dd582ca64abb75cc4eaaf8fc891e52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5dd582ca64abb75cc4eaaf8fc891e52">&#9670;&#160;</a></span>GetCollectionItemString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Datalogics.PDFL.FileAttachment.GetCollectionItemString </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_collection_schema_field.html">CollectionSchemaField</a></td>          <td class="paramname"><span class="paramname"><em>collectionField</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>GetCollectionItemString allows to obtain collection item value according to the specified schema field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collectionField</td><td>the field for which item value should be retrieved.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>collection items value </dd></dl>
+
+</div>
+</div>
+<a id="ab77ed644d92c0999be5e680f7c64c09b" name="ab77ed644d92c0999be5e680f7c64c09b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab77ed644d92c0999be5e680f7c64c09b">&#9670;&#160;</a></span>SaveToFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.FileAttachment.SaveToFile </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>fileName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Allows to save attachment to the specified file.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>The path where attachment will be saved. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a85887b9d6f6e99a11c7550f4d90ae408" name="a85887b9d6f6e99a11c7550f4d90ae408"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85887b9d6f6e99a11c7550f4d90ae408">&#9670;&#160;</a></span>SaveToStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.FileAttachment.SaveToStream </td>
+          <td>(</td>
+          <td class="paramtype">System.IO.Stream</td>          <td class="paramname"><span class="paramname"><em>stream</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Saves a FileAttachment to a Stream.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>The Stream to which the FileAttachment is saved.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa21cad8c0e8589299afcb28fc0b6a421" name="aa21cad8c0e8589299afcb28fc0b6a421"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa21cad8c0e8589299afcb28fc0b6a421">&#9670;&#160;</a></span>SetCollectionItemNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.FileAttachment.SetCollectionItemNumber </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_collection_schema_field.html">CollectionSchemaField</a></td>          <td class="paramname"><span class="paramname"><em>collectionField</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>SetCollectionItemNumber allows to add key to the collection item dictionary. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collectionField</td><td>schema field which contains information about data type. The parameter's subtype should be a Number.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">bad</td><td>parameter exception if CollectionSchema doesn't contain specified field.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the item's value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aca9e8351c55780ebf5eb378dddad8cbc" name="aca9e8351c55780ebf5eb378dddad8cbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca9e8351c55780ebf5eb378dddad8cbc">&#9670;&#160;</a></span>SetCollectionItemString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.FileAttachment.SetCollectionItemString </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_collection_schema_field.html">CollectionSchemaField</a></td>          <td class="paramname"><span class="paramname"><em>collectionField</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>SetCollectionItemString allows to add key to the collection item dictionary. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collectionField</td><td>schema field which contains information about data type. The parameter's subtype should be a Text.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">bad</td><td>parameter exception if CollectionSchema doesn't contain specified field.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the item's value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a822ff99f7c8a70f8e439b0739d749a34" name="a822ff99f7c8a70f8e439b0739d749a34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a822ff99f7c8a70f8e439b0739d749a34">&#9670;&#160;</a></span>UpdateFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.FileAttachment.UpdateFromFile </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>fileName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Allows to update attachment from another file.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>The path to the file from which attachment will be updated. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
+<a id="a8a34e97d953e68034ba08dd3b9c0a8d3" name="a8a34e97d953e68034ba08dd3b9c0a8d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a34e97d953e68034ba08dd3b9c0a8d3">&#9670;&#160;</a></span>FileName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Datalogics.PDFL.FileAttachment.FileName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0c2e4ff9efab8c2f27b4c9a9db67b907" name="a0c2e4ff9efab8c2f27b4c9a9db67b907"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c2e4ff9efab8c2f27b4c9a9db67b907">&#9670;&#160;</a></span>FileSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint Datalogics.PDFL.FileAttachment.FileSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>

@@ -1,0 +1,844 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library .NET Framework Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-csharp-dotnet-framework-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://www.nuget.org/packages/Adobe.PDF.Library.LM.NETFramework" id="pkglink"><img id="pkg-download-img" alt="Nuget Trial Download" src="https://img.shields.io/nuget/dt/Adobe.PDF.Library.LM.NETFramework?color=blue&label=APDFL%20.NET%20Framework%20Free%20Trial&logo=NuGet&style=plastic"/></a>
+        </p>
+      </div></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_datalogics_1_1_p_d_f_l_1_1_path.html','','class_datalogics_1_1_p_d_f_l_1_1_path-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Datalogics.PDFL.Path Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a34ecc3f34cb5635741dab0448536a900" id="r_a34ecc3f34cb5635741dab0448536a900"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34ecc3f34cb5635741dab0448536a900">AddCurve</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> Point1, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> Point2, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> Point3)</td></tr>
+<tr class="memitem:ae4eb686c335ded42e4c1f1561dc7b0cb" id="r_ae4eb686c335ded42e4c1f1561dc7b0cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4eb686c335ded42e4c1f1561dc7b0cb">AddCurveV</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> Point1, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> Point2)</td></tr>
+<tr class="memitem:a4dd4e96387619ee68bc64f090d1416f1" id="r_a4dd4e96387619ee68bc64f090d1416f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4dd4e96387619ee68bc64f090d1416f1">AddCurveY</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> Point1, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> Point2)</td></tr>
+<tr class="memitem:a5928cf9105e27db12c867735bb6cc382" id="r_a5928cf9105e27db12c867735bb6cc382"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5928cf9105e27db12c867735bb6cc382">AddLine</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>)</td></tr>
+<tr class="memitem:a483dd96cd31eafaed2858c22801ccd8b" id="r_a483dd96cd31eafaed2858c22801ccd8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a483dd96cd31eafaed2858c22801ccd8b">AddRect</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>, double Width, double Height)</td></tr>
+<tr class="memitem:a9f446fff6f3a39ef865a4d117a737506" id="r_a9f446fff6f3a39ef865a4d117a737506"><td class="memItemLeft" align="right" valign="top">new <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_path.html">Path</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f446fff6f3a39ef865a4d117a737506">Clone</a> ()</td></tr>
+<tr class="memitem:ac50cdc857e702d0f8dcaa99e2b15894c" id="r_ac50cdc857e702d0f8dcaa99e2b15894c"><td class="memItemLeft" align="right" valign="top">new <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_path.html">Path</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac50cdc857e702d0f8dcaa99e2b15894c">Clone</a> (<a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#aebcca62c5660caa71d9000ba2c4fc056">ElementCloneFlags</a> cloneFlags)</td></tr>
+<tr class="memitem:a0993549327a56e8cdc67bb90f568e0e7" id="r_a0993549327a56e8cdc67bb90f568e0e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0993549327a56e8cdc67bb90f568e0e7">ClosePath</a> ()</td></tr>
+<tr class="memitem:ac5ae8a3d4c542950b582d80c72de4f6e" id="r_ac5ae8a3d4c542950b582d80c72de4f6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_path.html">Path</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5ae8a3d4c542950b582d80c72de4f6e">ColorConvert</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html">Document</a> document, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a42d73e0c8bd2fe82076bee066838a2da">ColorProfile</a> prof, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a14814eefe68c3ace20bb4b9b355f1a5a">RenderIntent</a> intent, bool embed)</td></tr>
+<tr class="memitem:aac97ffd66e9328f0a621ce862bcf3f2a" id="r_aac97ffd66e9328f0a621ce862bcf3f2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_element.html#aac97ffd66e9328f0a621ce862bcf3f2a">Dispose</a> ()</td></tr>
+<tr class="memitem:a9537753033148fcbddc14d851156b913" id="r_a9537753033148fcbddc14d851156b913"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9537753033148fcbddc14d851156b913">Dispose</a> (bool disposing)</td></tr>
+<tr class="memitem:a802f538823203d6d49e3e857b3cb9f0c" id="r_a802f538823203d6d49e3e857b3cb9f0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a802f538823203d6d49e3e857b3cb9f0c">MoveTo</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>)</td></tr>
+<tr class="memitem:af62d60ddef13489efbe497bfb3fbbfad" id="r_af62d60ddef13489efbe497bfb3fbbfad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af62d60ddef13489efbe497bfb3fbbfad">Path</a> ()</td></tr>
+<tr class="memitem:a59ef55b99cb170402195e8ff4f8fefcc" id="r_a59ef55b99cb170402195e8ff4f8fefcc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59ef55b99cb170402195e8ff4f8fefcc">Path</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_graphic_state.html">GraphicState</a> graphicState)</td></tr>
+<tr class="memitem:a314c0603bad2cb15c49725bb7817a4cb" id="r_a314c0603bad2cb15c49725bb7817a4cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_element.html#a314c0603bad2cb15c49725bb7817a4cb">Rotate</a> (double theta)</td></tr>
+<tr class="memitem:af5fc1eaee42d45ba85162e31e45ee4f0" id="r_af5fc1eaee42d45ba85162e31e45ee4f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_element.html#af5fc1eaee42d45ba85162e31e45ee4f0">Scale</a> (double sx, double sy)</td></tr>
+<tr class="memitem:a90b055f53ac41dcde1a9dd1a9e11b15e" id="r_a90b055f53ac41dcde1a9dd1a9e11b15e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_element.html#a90b055f53ac41dcde1a9dd1a9e11b15e">Translate</a> (double tx, double ty)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:af9afded4c8f29a0a73d249950e8b9ac2" id="r_af9afded4c8f29a0a73d249950e8b9ac2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_element.html#af9afded4c8f29a0a73d249950e8b9ac2">BoundingBox</a><code> [get]</code></td></tr>
+<tr class="memitem:a6bd82950d730a84d2f335f520599328d" id="r_a6bd82950d730a84d2f335f520599328d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_clip.html">Clip</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_element.html#a6bd82950d730a84d2f335f520599328d">Clip</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a4800395759aaba0edec5d05e0e831fc4" id="r_a4800395759aaba0edec5d05e0e831fc4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_graphic_state.html">GraphicState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4800395759aaba0edec5d05e0e831fc4">GraphicState</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a74efccd68b2554c3eb4146b25ff306f3" id="r_a74efccd68b2554c3eb4146b25ff306f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_element.html#a74efccd68b2554c3eb4146b25ff306f3">Matrix</a><code> [get, set]</code></td></tr>
+<tr class="memitem:ac94f35b4e6c47b34cd19a300dae96b8c" id="r_ac94f35b4e6c47b34cd19a300dae96b8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a530880a98bde9b7019c116a41c4eb38c">PathPaintOpFlags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac94f35b4e6c47b34cd19a300dae96b8c">PaintOp</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a3291475f75441bcf8f54791fb4c5405b" id="r_a3291475f75441bcf8f54791fb4c5405b"><td class="memItemLeft" align="right" valign="top">System.Collections.Generic.IList&lt; <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_segment.html">Segment</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3291475f75441bcf8f54791fb4c5405b">Segments</a><code> [get, set]</code></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A path in a PDF file defines shapes. </p>
+<p>Paths in PDF files are used to draw lines, define filled areas, and define boundaries for clipping graphics. A path is composed of straight and curved line segments. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af62d60ddef13489efbe497bfb3fbbfad" name="af62d60ddef13489efbe497bfb3fbbfad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af62d60ddef13489efbe497bfb3fbbfad">&#9670;&#160;</a></span>Path() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.Path.Path </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a path.</p>
+
+</div>
+</div>
+<a id="a59ef55b99cb170402195e8ff4f8fefcc" name="a59ef55b99cb170402195e8ff4f8fefcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59ef55b99cb170402195e8ff4f8fefcc">&#9670;&#160;</a></span>Path() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.Path.Path </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_graphic_state.html">GraphicState</a></td>          <td class="paramname"><span class="paramname"><em>graphicState</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a path with a given graphic state.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">graphicState</td><td>the initial graphic state for the path</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="#a4800395759aaba0edec5d05e0e831fc4">GraphicState</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a34ecc3f34cb5635741dab0448536a900" name="a34ecc3f34cb5635741dab0448536a900"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34ecc3f34cb5635741dab0448536a900">&#9670;&#160;</a></span>AddCurve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Path.AddCurve </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a></td>          <td class="paramname"><span class="paramname"><em>Point1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a></td>          <td class="paramname"><span class="paramname"><em>Point2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a></td>          <td class="paramname"><span class="paramname"><em>Point3</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds a Bezier curve from the current path using the first two points specified as Bezier control points ending at the third point. The new current point is then set to the third point.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Point1</td><td>first Bezier control point </td></tr>
+    <tr><td class="paramname">Point2</td><td>second Bezier control point </td></tr>
+    <tr><td class="paramname">Point3</td><td>the ending Point of the Bezier curve which will also be the current point of the current path.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae4eb686c335ded42e4c1f1561dc7b0cb" name="ae4eb686c335ded42e4c1f1561dc7b0cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4eb686c335ded42e4c1f1561dc7b0cb">&#9670;&#160;</a></span>AddCurveV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Path.AddCurveV </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a></td>          <td class="paramname"><span class="paramname"><em>Point1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a></td>          <td class="paramname"><span class="paramname"><em>Point2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds a Bezier curve from the current path. This extends from the current path to the point Point2 using the current point and the first point specified as Bezier control points ending at the second point. The new current point is then set to the second point.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Point1</td><td>first Bezier control point </td></tr>
+    <tr><td class="paramname">Point2</td><td>the ending Point of the Bezier curve which will also be the new current point of the path.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4dd4e96387619ee68bc64f090d1416f1" name="a4dd4e96387619ee68bc64f090d1416f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dd4e96387619ee68bc64f090d1416f1">&#9670;&#160;</a></span>AddCurveY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Path.AddCurveY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a></td>          <td class="paramname"><span class="paramname"><em>Point1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a></td>          <td class="paramname"><span class="paramname"><em>Point2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds a Bezier curve from the current path. This extends from the current path to the point Point2 using the two points specified as Bezier control points ending at the second point. The new current point is then set to the second point.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Point1</td><td>first Bezier control point </td></tr>
+    <tr><td class="paramname">Point2</td><td>second Bezier control point and the ending Point of the Bezier curve which will also be the new current point of the path.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5928cf9105e27db12c867735bb6cc382" name="a5928cf9105e27db12c867735bb6cc382"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5928cf9105e27db12c867735bb6cc382">&#9670;&#160;</a></span>AddLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Path.AddLine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a></td>          <td class="paramname"><span class="paramname"><em>Point</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds a line to the current path from the current path position. The given point becomes the new current position.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Point</td><td>the coordinates of the endpoint of the new line.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a483dd96cd31eafaed2858c22801ccd8b" name="a483dd96cd31eafaed2858c22801ccd8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a483dd96cd31eafaed2858c22801ccd8b">&#9670;&#160;</a></span>AddRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Path.AddRect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a></td>          <td class="paramname"><span class="paramname"><em>Point</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>Width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>Height</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds a rectangle to the current path with the lower left corner at the give point, and with the width and height specified.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Point</td><td>the coordinates of the lower left corner of the new rectangle. </td></tr>
+    <tr><td class="paramname">Width</td><td>the width of the new rectangle. </td></tr>
+    <tr><td class="paramname">Height</td><td>the height of the new rectangle.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9f446fff6f3a39ef865a4d117a737506" name="a9f446fff6f3a39ef865a4d117a737506"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f446fff6f3a39ef865a4d117a737506">&#9670;&#160;</a></span>Clone() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">new <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_path.html">Path</a> Datalogics.PDFL.Path.Clone </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Makes a copy of the path.</p>
+<p>Make a copy of an path to obtain a new path that has a distinct set of attributes.</p>
+<dl class="section return"><dt>Returns</dt><dd>The copied path.</dd></dl>
+
+</div>
+</div>
+<a id="ac50cdc857e702d0f8dcaa99e2b15894c" name="ac50cdc857e702d0f8dcaa99e2b15894c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac50cdc857e702d0f8dcaa99e2b15894c">&#9670;&#160;</a></span>Clone() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">new <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_path.html">Path</a> Datalogics.PDFL.Path.Clone </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#aebcca62c5660caa71d9000ba2c4fc056">ElementCloneFlags</a></td>          <td class="paramname"><span class="paramname"><em>cloneFlags</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Makes a copy of the path.</p>
+<p>Make a copy of an path to obtain a new path that has a distinct set of attributes.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloneFlags</td><td>Flags that modify the cloning operation.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The copied path.</dd></dl>
+
+</div>
+</div>
+<a id="a0993549327a56e8cdc67bb90f568e0e7" name="a0993549327a56e8cdc67bb90f568e0e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0993549327a56e8cdc67bb90f568e0e7">&#9670;&#160;</a></span>ClosePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Path.ClosePath </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Closes the current subpath.</p>
+
+</div>
+</div>
+<a id="ac5ae8a3d4c542950b582d80c72de4f6e" name="ac5ae8a3d4c542950b582d80c72de4f6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5ae8a3d4c542950b582d80c72de4f6e">&#9670;&#160;</a></span>ColorConvert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_path.html">Path</a> Datalogics.PDFL.Path.ColorConvert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html">Document</a></td>          <td class="paramname"><span class="paramname"><em>document</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a42d73e0c8bd2fe82076bee066838a2da">ColorProfile</a></td>          <td class="paramname"><span class="paramname"><em>prof</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a14814eefe68c3ace20bb4b9b355f1a5a">RenderIntent</a></td>          <td class="paramname"><span class="paramname"><em>intent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>embed</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Applies the specified ICC ColorProfile to the Path</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">document</td><td>The document the element belongs to.</td></tr>
+    <tr><td class="paramname">prof</td><td>The ICC ColorProfile to be applied.</td></tr>
+    <tr><td class="paramname">intent</td><td>The ICC Rendering Intent for the ColorProfile</td></tr>
+    <tr><td class="paramname">embed</td><td>If true, embed the color space and make the object calibrated. If it is false and the target profile is CMYK, RGB, or Gray, the colors space of the resulting object, after conversion, will be DeviceCMYK, DeviceRGB, or DeviceGray, respectively.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new Path with the applied ICC ColorProfile. </dd></dl>
+
+</div>
+</div>
+<a id="aac97ffd66e9328f0a621ce862bcf3f2a" name="aac97ffd66e9328f0a621ce862bcf3f2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac97ffd66e9328f0a621ce862bcf3f2a">&#9670;&#160;</a></span>Dispose() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Element.Dispose </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_element.html#aac97ffd66e9328f0a621ce862bcf3f2a">Dispose()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_element.html#aac97ffd66e9328f0a621ce862bcf3f2a">Dispose()</a>.</p>
+
+</div>
+</div>
+<a id="a9537753033148fcbddc14d851156b913" name="a9537753033148fcbddc14d851156b913"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9537753033148fcbddc14d851156b913">&#9670;&#160;</a></span>Dispose() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void Datalogics.PDFL.Path.Dispose </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>disposing</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_element.html#a7b09831ca907df392b1c799d6b951a1f">Datalogics.PDFL.Element</a>.</p>
+
+</div>
+</div>
+<a id="a802f538823203d6d49e3e857b3cb9f0c" name="a802f538823203d6d49e3e857b3cb9f0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a802f538823203d6d49e3e857b3cb9f0c">&#9670;&#160;</a></span>MoveTo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Path.MoveTo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_point.html">Point</a></td>          <td class="paramname"><span class="paramname"><em>Point</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Moves the current point of the path to the given point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Point</td><td>the coordinates of the new current point.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a314c0603bad2cb15c49725bb7817a4cb" name="a314c0603bad2cb15c49725bb7817a4cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a314c0603bad2cb15c49725bb7817a4cb">&#9670;&#160;</a></span>Rotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Element.Rotate </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>theta</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Rotate an element by T degrees counterclockwise units using the matrix [ cos T sin T -sin T cos T 0 0 ]. </p>
+
+</div>
+</div>
+<a id="af5fc1eaee42d45ba85162e31e45ee4f0" name="af5fc1eaee42d45ba85162e31e45ee4f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5fc1eaee42d45ba85162e31e45ee4f0">&#9670;&#160;</a></span>Scale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Element.Scale </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>sx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>sy</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Scale an element by (sx,sy) units using the matrix [ sx 0 0 sy 0 0 ]. </p>
+
+</div>
+</div>
+<a id="a90b055f53ac41dcde1a9dd1a9e11b15e" name="a90b055f53ac41dcde1a9dd1a9e11b15e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90b055f53ac41dcde1a9dd1a9e11b15e">&#9670;&#160;</a></span>Translate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.Element.Translate </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>tx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>ty</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Translate an element by (tx,ty) units using the matrix [ 1 0 0 1 tx ty ]. </p>
+
+</div>
+</div>
+<a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
+<a id="af9afded4c8f29a0a73d249950e8b9ac2" name="af9afded4c8f29a0a73d249950e8b9ac2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9afded4c8f29a0a73d249950e8b9ac2">&#9670;&#160;</a></span>BoundingBox</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a> Datalogics.PDFL.Element.BoundingBox</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6bd82950d730a84d2f335f520599328d" name="a6bd82950d730a84d2f335f520599328d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bd82950d730a84d2f335f520599328d">&#9670;&#160;</a></span>Clip</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_clip.html">Clip</a> Datalogics.PDFL.Element.Clip</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4800395759aaba0edec5d05e0e831fc4" name="a4800395759aaba0edec5d05e0e831fc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4800395759aaba0edec5d05e0e831fc4">&#9670;&#160;</a></span>GraphicState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_graphic_state.html">GraphicState</a> Datalogics.PDFL.Path.GraphicState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="#a59ef55b99cb170402195e8ff4f8fefcc">Path()</a>.</p>
+
+</div>
+</div>
+<a id="a74efccd68b2554c3eb4146b25ff306f3" name="a74efccd68b2554c3eb4146b25ff306f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74efccd68b2554c3eb4146b25ff306f3">&#9670;&#160;</a></span>Matrix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> Datalogics.PDFL.Element.Matrix</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_text.html#a646d3a0667e14c369d7caae866025da4">Datalogics.PDFL.Text.AddGlyphs()</a>, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_text.html#ad209c35ce41273e5703efd0a418814d3">Datalogics.PDFL.Text.AddGlyphs()</a>, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_text.html#a400df2a88be9d0e62fbe40d98b19399e">Datalogics.PDFL.Text.ChangeMatrixForTextRun()</a>, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_text.html#a787cccb248c013ae42abe48995b49c70">Datalogics.PDFL.Text.ChangeTextMatrixForTextRun()</a>, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_text.html#af510c6f9dd83fe8bf1b82843d7236a9a">Datalogics.PDFL.Text.GetTextMatrixForCharacter()</a>, <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_text.html#a7b116fc6e762652ad9f9a4f81b04443b">Datalogics.PDFL.Text.GetTextMatrixForTextRun()</a>, and <a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_text_run.html#a632b5794fb8d89e9ca5e8f71ca377b32">Datalogics.PDFL.TextRun.TextRun()</a>.</p>
+
+</div>
+</div>
+<a id="ac94f35b4e6c47b34cd19a300dae96b8c" name="ac94f35b4e6c47b34cd19a300dae96b8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac94f35b4e6c47b34cd19a300dae96b8c">&#9670;&#160;</a></span>PaintOp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a530880a98bde9b7019c116a41c4eb38c">PathPaintOpFlags</a> Datalogics.PDFL.Path.PaintOp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3291475f75441bcf8f54791fb4c5405b" name="a3291475f75441bcf8f54791fb4c5405b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3291475f75441bcf8f54791fb4c5405b">&#9670;&#160;</a></span>Segments</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">System.Collections.Generic.IList&lt;<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_segment.html">Segment</a>&gt; Datalogics.PDFL.Path.Segments</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>

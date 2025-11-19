@@ -1,0 +1,790 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library .NET Framework Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-csharp-dotnet-framework-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://www.nuget.org/packages/Adobe.PDF.Library.LM.NETFramework" id="pkglink"><img id="pkg-download-img" alt="Nuget Trial Download" src="https://img.shields.io/nuget/dt/Adobe.PDF.Library.LM.NETFramework?color=blue&label=APDFL%20.NET%20Framework%20Free%20Trial&logo=NuGet&style=plastic"/></a>
+        </p>
+      </div></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_datalogics_1_1_p_d_f_l_1_1_sign_doc.html','','class_datalogics_1_1_p_d_f_l_1_1_sign_doc-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Datalogics.PDFL.SignDoc Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:abea9d1b38ce6df18c1a70f5f6b528931" id="r_abea9d1b38ce6df18c1a70f5f6b528931"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abea9d1b38ce6df18c1a70f5f6b528931">AddDigitalSignature</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html">Document</a> document)</td></tr>
+<tr class="memitem:acdd877e5a60276b47926b3bc17913480" id="r_acdd877e5a60276b47926b3bc17913480"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdd877e5a60276b47926b3bc17913480">CreateCancelProc</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_cancel_proc.html">CancelProc</a> cancelProc)</td></tr>
+<tr class="memitem:af9a47856f4331915ac1c9b182e9d4288" id="r_af9a47856f4331915ac1c9b182e9d4288"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9a47856f4331915ac1c9b182e9d4288">CreateProgressMonitor</a> (<a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_progress_monitor.html">ProgressMonitor</a> progMon)</td></tr>
+<tr class="memitem:ae5c22d1a7583a9514d8b89f47b54ca6f" id="r_ae5c22d1a7583a9514d8b89f47b54ca6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5c22d1a7583a9514d8b89f47b54ca6f">Dispose</a> ()</td></tr>
+<tr class="memitem:aede6cfe399b33633772aa1f0e050ab4a" id="r_aede6cfe399b33633772aa1f0e050ab4a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aede6cfe399b33633772aa1f0e050ab4a">Dispose</a> (bool disposing)</td></tr>
+<tr class="memitem:ac188387693901e2c61843ed588e57063" id="r_ac188387693901e2c61843ed588e57063"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac188387693901e2c61843ed588e57063">SetFieldObject</a> (int aValue, int bValue)</td></tr>
+<tr class="memitem:a264caff059d7b0e0ca60be8093657f2e" id="r_a264caff059d7b0e0ca60be8093657f2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a264caff059d7b0e0ca60be8093657f2e">SetNonPfxPassPhrase</a> (string passPhrase, uint passphraseSize, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#af10b3040cdf4ec51b55fc4df3cedfeb8">CredentialStorageFmt</a> storageFmt)</td></tr>
+<tr class="memitem:a63bcc04270cdb048b19085e836ad01d9" id="r_a63bcc04270cdb048b19085e836ad01d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63bcc04270cdb048b19085e836ad01d9">SetNonPfxPrivateKey</a> (string privateKey, uint keySize, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#af10b3040cdf4ec51b55fc4df3cedfeb8">CredentialStorageFmt</a> storageFmt)</td></tr>
+<tr class="memitem:a7e526c6fed957c921b90af06576c1daa" id="r_a7e526c6fed957c921b90af06576c1daa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e526c6fed957c921b90af06576c1daa">SetNonPfxSignerCert</a> (string signerCert, uint certSize, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#af10b3040cdf4ec51b55fc4df3cedfeb8">CredentialStorageFmt</a> storageFmt)</td></tr>
+<tr class="memitem:ac64d9b2a63e4b74a3bb6823e321bf8a4" id="r_ac64d9b2a63e4b74a3bb6823e321bf8a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac64d9b2a63e4b74a3bb6823e321bf8a4">SetPfxCredentials</a> (string credentials, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#af10b3040cdf4ec51b55fc4df3cedfeb8">CredentialStorageFmt</a> storageFmt)</td></tr>
+<tr class="memitem:a586882b2937ff2037fe2bdd94cf7aea4" id="r_a586882b2937ff2037fe2bdd94cf7aea4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a586882b2937ff2037fe2bdd94cf7aea4">SetPfxPassPhrase</a> (string passphrase, uint passphraseSize, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#af10b3040cdf4ec51b55fc4df3cedfeb8">CredentialStorageFmt</a> storageFmt)</td></tr>
+<tr class="memitem:a8cb479a6bdb5b0fddf581992cd16059e" id="r_a8cb479a6bdb5b0fddf581992cd16059e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cb479a6bdb5b0fddf581992cd16059e">SetSignerInfo</a> (string logoFilePath, float logoOpacity, string name, string location, string reason, string contactInfo, <a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a84d480454646b00daac1788868871acf">DisplayTraits</a> displayTraits)</td></tr>
+<tr class="memitem:a35d337a99d164a63d510e652bf052686" id="r_a35d337a99d164a63d510e652bf052686"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35d337a99d164a63d510e652bf052686">SignDoc</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a04d6cfb0048837c0254705a6898ce50c" id="r_a04d6cfb0048837c0254705a6898ce50c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a134cb8f321db0d6a8e95ab5a78aa0f28">CredentialDataFmt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04d6cfb0048837c0254705a6898ce50c">CredentialDataFormat</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a6b239d767355d3d7f38738f2e8982291" id="r_a6b239d767355d3d7f38738f2e8982291"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a3494823aa266ddbaf1a06fee88d10b74">DigestCategory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b239d767355d3d7f38738f2e8982291">DigestCategory</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a728e040fc6c2c43549527aacf5dd1c12" id="r_a728e040fc6c2c43549527aacf5dd1c12"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#af39a762c2f3a0d734e7409c5fd3dd6d0">SignatureType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a728e040fc6c2c43549527aacf5dd1c12">DocSignType</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a40da83a916c6258df796d937eaf42a38" id="r_a40da83a916c6258df796d937eaf42a38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#aee1637f86cac7f765b9e7c574c7f6424">SignatureFieldID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40da83a916c6258df796d937eaf42a38">FieldID</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a1ef26326ce454fe5cbeb7b3272ec727f" id="r_a1ef26326ce454fe5cbeb7b3272ec727f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ef26326ce454fe5cbeb7b3272ec727f">FieldName</a><code> [get, set]</code></td></tr>
+<tr class="memitem:ad12c3afe18ed29c31486fa3c0fc83b2c" id="r_ad12c3afe18ed29c31486fa3c0fc83b2c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad12c3afe18ed29c31486fa3c0fc83b2c">OutputPath</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a4a50ae92a586c7b8501e5edbaa08bb9c" id="r_a4a50ae92a586c7b8501e5edbaa08bb9c"><td class="memItemLeft" align="right" valign="top">uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a50ae92a586c7b8501e5edbaa08bb9c">SignatureBoxPageNumber</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a0c3c91619aabb01ad5b813f048e15e30" id="r_a0c3c91619aabb01ad5b813f048e15e30"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c3c91619aabb01ad5b813f048e15e30">SignatureBoxRectangle</a><code> [get, set]</code></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the PDF SignDoc function. </p>
+<p>Use the SignDoc object to digitally sign a document </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a35d337a99d164a63d510e652bf052686" name="a35d337a99d164a63d510e652bf052686"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35d337a99d164a63d510e652bf052686">&#9670;&#160;</a></span>SignDoc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.SignDoc.SignDoc </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Creates an empty SignDoc object and initializes memory for its parameters. </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="abea9d1b38ce6df18c1a70f5f6b528931" name="abea9d1b38ce6df18c1a70f5f6b528931"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abea9d1b38ce6df18c1a70f5f6b528931">&#9670;&#160;</a></span>AddDigitalSignature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.SignDoc.AddDigitalSignature </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_document.html">Document</a></td>          <td class="paramname"><span class="paramname"><em>document</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds a digital signature using the specified credentials. If the document has not been previously signed, signs and saves the entire document. If the document has been previously signed, signs and saves only the portions of the document that have changed. If the document has been previously signed and the path to which the file is saved is NULL or the same as the path specified by the parameter, doc, signs and copies the document, saving only the portions of the document that have changed. </p>
+
+</div>
+</div>
+<a id="acdd877e5a60276b47926b3bc17913480" name="acdd877e5a60276b47926b3bc17913480"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdd877e5a60276b47926b3bc17913480">&#9670;&#160;</a></span>CreateCancelProc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.SignDoc.CreateCancelProc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_cancel_proc.html">CancelProc</a></td>          <td class="paramname"><span class="paramname"><em>cancelProc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create Cancel Callback </p>
+
+</div>
+</div>
+<a id="af9a47856f4331915ac1c9b182e9d4288" name="af9a47856f4331915ac1c9b182e9d4288"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9a47856f4331915ac1c9b182e9d4288">&#9670;&#160;</a></span>CreateProgressMonitor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.SignDoc.CreateProgressMonitor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_progress_monitor.html">ProgressMonitor</a></td>          <td class="paramname"><span class="paramname"><em>progMon</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create Progress Monitor </p>
+
+</div>
+</div>
+<a id="ae5c22d1a7583a9514d8b89f47b54ca6f" name="ae5c22d1a7583a9514d8b89f47b54ca6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5c22d1a7583a9514d8b89f47b54ca6f">&#9670;&#160;</a></span>Dispose() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.SignDoc.Dispose </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="#ae5c22d1a7583a9514d8b89f47b54ca6f">Dispose()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#ae5c22d1a7583a9514d8b89f47b54ca6f">Dispose()</a>.</p>
+
+</div>
+</div>
+<a id="aede6cfe399b33633772aa1f0e050ab4a" name="aede6cfe399b33633772aa1f0e050ab4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aede6cfe399b33633772aa1f0e050ab4a">&#9670;&#160;</a></span>Dispose() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Datalogics.PDFL.SignDoc.Dispose </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>disposing</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac188387693901e2c61843ed588e57063" name="ac188387693901e2c61843ed588e57063"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac188387693901e2c61843ed588e57063">&#9670;&#160;</a></span>SetFieldObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.SignDoc.SetFieldObject </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>aValue</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>bValue</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the form field CosObject option.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aValue</td><td>a value of the CosObject. </td></tr>
+    <tr><td class="paramname">bValue</td><td>b value of the CosObject.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a264caff059d7b0e0ca60be8093657f2e" name="a264caff059d7b0e0ca60be8093657f2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a264caff059d7b0e0ca60be8093657f2e">&#9670;&#160;</a></span>SetNonPfxPassPhrase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.SignDoc.SetNonPfxPassPhrase </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>passPhrase</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>passphraseSize</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#af10b3040cdf4ec51b55fc4df3cedfeb8">CredentialStorageFmt</a></td>          <td class="paramname"><span class="paramname"><em>storageFmt</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the passphrase used to decrypt Non-PFX credentials.</p>
+<p>Note: The passphrase provided must use the exact same character encoding used to encrypt the private key. The application makes no effort whatsoever to re-encode the same. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">passPhrase</td><td>Passphrase used to encrypt Non-PFX private key. Should be set to NULL if unencrypted. </td></tr>
+    <tr><td class="paramname">passphraseSize</td><td>Passphrase size in bytes. Shall be set to 0 if private key is unencrypted or passphrase is stored on disk. </td></tr>
+    <tr><td class="paramname">storageFmt</td><td>Storage format for passphrase.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a63bcc04270cdb048b19085e836ad01d9" name="a63bcc04270cdb048b19085e836ad01d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63bcc04270cdb048b19085e836ad01d9">&#9670;&#160;</a></span>SetNonPfxPrivateKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.SignDoc.SetNonPfxPrivateKey </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>privateKey</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>keySize</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#af10b3040cdf4ec51b55fc4df3cedfeb8">CredentialStorageFmt</a></td>          <td class="paramname"><span class="paramname"><em>storageFmt</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the private key for Non-PFX credentials..</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">privateKey</td><td>Private key. </td></tr>
+    <tr><td class="paramname">keySize</td><td>Size of private key in bytes. Shall be set to 0 if key is stored on disk. </td></tr>
+    <tr><td class="paramname">storageFmt</td><td>Storage format for private key.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7e526c6fed957c921b90af06576c1daa" name="a7e526c6fed957c921b90af06576c1daa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e526c6fed957c921b90af06576c1daa">&#9670;&#160;</a></span>SetNonPfxSignerCert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.SignDoc.SetNonPfxSignerCert </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>signerCert</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>certSize</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#af10b3040cdf4ec51b55fc4df3cedfeb8">CredentialStorageFmt</a></td>          <td class="paramname"><span class="paramname"><em>storageFmt</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the signer certificate for Non-PFX credentials.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">signerCert</td><td>Signer certificate </td></tr>
+    <tr><td class="paramname">certSize</td><td>Size of signer certificate in bytes. Shall be set to 0 if certificate is stored on disk. </td></tr>
+    <tr><td class="paramname">storageFmt</td><td>Storage format for the signer certificate.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac64d9b2a63e4b74a3bb6823e321bf8a4" name="ac64d9b2a63e4b74a3bb6823e321bf8a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac64d9b2a63e4b74a3bb6823e321bf8a4">&#9670;&#160;</a></span>SetPfxCredentials()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.SignDoc.SetPfxCredentials </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>credentials</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#af10b3040cdf4ec51b55fc4df3cedfeb8">CredentialStorageFmt</a></td>          <td class="paramname"><span class="paramname"><em>storageFmt</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set PFX/PKCS#12 credentials.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">credentials</td><td>Credentials in PFX/PKCS#12 file format. </td></tr>
+    <tr><td class="paramname">storageFmt</td><td>Storage format for the signer certificate. (Only OnDisk is allowed for this option)</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a586882b2937ff2037fe2bdd94cf7aea4" name="a586882b2937ff2037fe2bdd94cf7aea4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a586882b2937ff2037fe2bdd94cf7aea4">&#9670;&#160;</a></span>SetPfxPassPhrase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.SignDoc.SetPfxPassPhrase </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>passphrase</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>passphraseSize</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#af10b3040cdf4ec51b55fc4df3cedfeb8">CredentialStorageFmt</a></td>          <td class="paramname"><span class="paramname"><em>storageFmt</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the passphrase used to decrypt PFX/PKCS#12 credentials. Note: The passphrase provided must use the exact same character encoding used to encrypt the PFX credentials. The application makes no effort whatsoever to re-encode the same. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">passphrase</td><td>Passphrase used to encrypt PFX/PKCS#12 credentials. Shall be set to NULL if credentials are unencrypted. </td></tr>
+    <tr><td class="paramname">passphraseSize</td><td>Passphrase size in bytes. Shall be set to 0 if PFX credentials are unencrypted or passphrase is stored on disk. </td></tr>
+    <tr><td class="paramname">storageFmt</td><td>Storage format for PFX/PKCS#12 credentials.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8cb479a6bdb5b0fddf581992cd16059e" name="a8cb479a6bdb5b0fddf581992cd16059e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cb479a6bdb5b0fddf581992cd16059e">&#9670;&#160;</a></span>SetSignerInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.SignDoc.SetSignerInfo </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>logoFilePath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>logoOpacity</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>reason</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>contactInfo</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a84d480454646b00daac1788868871acf">DisplayTraits</a></td>          <td class="paramname"><span class="paramname"><em>displayTraits</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set Signer Info.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logoFilePath</td><td>Image to display as part of signature appearance. </td></tr>
+    <tr><td class="paramname">logoOpacity</td><td>Opacity of image to display as part of signature appearance. </td></tr>
+    <tr><td class="paramname">name</td><td>Name of the person or authority signing the document. </td></tr>
+    <tr><td class="paramname">location</td><td>CPU host name or physical location of the signing. </td></tr>
+    <tr><td class="paramname">reason</td><td>Reason for signing the document. </td></tr>
+    <tr><td class="paramname">contactInfo</td><td>Information provided by the signer to enable recipients to contact signer for signature verification. </td></tr>
+    <tr><td class="paramname">displayTraits</td><td>Fields to display as part of signature appearance.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
+<a id="a04d6cfb0048837c0254705a6898ce50c" name="a04d6cfb0048837c0254705a6898ce50c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04d6cfb0048837c0254705a6898ce50c">&#9670;&#160;</a></span>CredentialDataFormat</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a134cb8f321db0d6a8e95ab5a78aa0f28">CredentialDataFmt</a> Datalogics.PDFL.SignDoc.CredentialDataFormat</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6b239d767355d3d7f38738f2e8982291" name="a6b239d767355d3d7f38738f2e8982291"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b239d767355d3d7f38738f2e8982291">&#9670;&#160;</a></span>DigestCategory</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#a3494823aa266ddbaf1a06fee88d10b74">DigestCategory</a> Datalogics.PDFL.SignDoc.DigestCategory</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a728e040fc6c2c43549527aacf5dd1c12" name="a728e040fc6c2c43549527aacf5dd1c12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a728e040fc6c2c43549527aacf5dd1c12">&#9670;&#160;</a></span>DocSignType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#af39a762c2f3a0d734e7409c5fd3dd6d0">SignatureType</a> Datalogics.PDFL.SignDoc.DocSignType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a40da83a916c6258df796d937eaf42a38" name="a40da83a916c6258df796d937eaf42a38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40da83a916c6258df796d937eaf42a38">&#9670;&#160;</a></span>FieldID</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_datalogics_1_1_p_d_f_l.html#aee1637f86cac7f765b9e7c574c7f6424">SignatureFieldID</a> Datalogics.PDFL.SignDoc.FieldID</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ef26326ce454fe5cbeb7b3272ec727f" name="a1ef26326ce454fe5cbeb7b3272ec727f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ef26326ce454fe5cbeb7b3272ec727f">&#9670;&#160;</a></span>FieldName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Datalogics.PDFL.SignDoc.FieldName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad12c3afe18ed29c31486fa3c0fc83b2c" name="ad12c3afe18ed29c31486fa3c0fc83b2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad12c3afe18ed29c31486fa3c0fc83b2c">&#9670;&#160;</a></span>OutputPath</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Datalogics.PDFL.SignDoc.OutputPath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4a50ae92a586c7b8501e5edbaa08bb9c" name="a4a50ae92a586c7b8501e5edbaa08bb9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a50ae92a586c7b8501e5edbaa08bb9c">&#9670;&#160;</a></span>SignatureBoxPageNumber</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint Datalogics.PDFL.SignDoc.SignatureBoxPageNumber</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0c3c91619aabb01ad5b813f048e15e30" name="a0c3c91619aabb01ad5b813f048e15e30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c3c91619aabb01ad5b813f048e15e30">&#9670;&#160;</a></span>SignatureBoxRectangle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a> Datalogics.PDFL.SignDoc.SignatureBoxRectangle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>

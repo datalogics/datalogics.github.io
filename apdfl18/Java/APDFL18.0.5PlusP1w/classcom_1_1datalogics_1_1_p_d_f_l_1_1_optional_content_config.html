@@ -1,0 +1,739 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_config.html','','classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_config-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">com.datalogics.PDFL.OptionalContentConfig Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a9272877b37f3a07247b4d78946c2ec09" id="r_a9272877b37f3a07247b4d78946c2ec09"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9272877b37f3a07247b4d78946c2ec09">delete</a> ()</td></tr>
+<tr class="memitem:a05722e1b5de280791ab6a6982246a2d4" id="r_a05722e1b5de280791ab6a6982246a2d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_base_state.html">OptionalContentBaseState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05722e1b5de280791ab6a6982246a2d4">getBaseState</a> ()</td></tr>
+<tr class="memitem:a7d9d9c8e0a461c675e82d175f877e003" id="r_a7d9d9c8e0a461c675e82d175f877e003"><td class="memItemLeft" align="right" valign="top">java.util.List&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d9d9c8e0a461c675e82d175f877e003">getIntent</a> ()</td></tr>
+<tr class="memitem:a870bfb9b7b116010c3cd39877d844f3b" id="r_a870bfb9b7b116010c3cd39877d844f3b"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a870bfb9b7b116010c3cd39877d844f3b">getName</a> ()</td></tr>
+<tr class="memitem:a0d487bd7ddc79dbde9937074aeac2ce5" id="r_a0d487bd7ddc79dbde9937074aeac2ce5"><td class="memItemLeft" align="right" valign="top">java.util.List&lt; <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d487bd7ddc79dbde9937074aeac2ce5">getOffArray</a> ()</td></tr>
+<tr class="memitem:ad6b1879eb0dc75c2d31b8fb1ad76afef" id="r_ad6b1879eb0dc75c2d31b8fb1ad76afef"><td class="memItemLeft" align="right" valign="top">java.util.List&lt; <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6b1879eb0dc75c2d31b8fb1ad76afef">getOnArray</a> ()</td></tr>
+<tr class="memitem:a7c41ea4f7407e6456157ba1c6f484c1d" id="r_a7c41ea4f7407e6456157ba1c6f484c1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_order_array.html">OptionalContentOrderArray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c41ea4f7407e6456157ba1c6f484c1d">getOrder</a> ()</td></tr>
+<tr class="memitem:a8bdf15c8a636b4af333a6f37fb733d3f" id="r_a8bdf15c8a636b4af333a6f37fb733d3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8bdf15c8a636b4af333a6f37fb733d3f">getPDFDict</a> ()</td></tr>
+<tr class="memitem:ad6b9ae18a304ca6518768ae03ed0150c" id="r_ad6b9ae18a304ca6518768ae03ed0150c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6b9ae18a304ca6518768ae03ed0150c">OptionalContentConfig</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a> doc)</td></tr>
+<tr class="memitem:a343049444c9319bcfc1ec3cc73b1e0fd" id="r_a343049444c9319bcfc1ec3cc73b1e0fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a343049444c9319bcfc1ec3cc73b1e0fd">setBaseState</a> (<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_base_state.html">OptionalContentBaseState</a> baseState)</td></tr>
+<tr class="memitem:aeb8fa001040600399c9d9449434b4ad1" id="r_aeb8fa001040600399c9d9449434b4ad1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb8fa001040600399c9d9449434b4ad1">setIntent</a> (java.util.List&lt; String &gt; intents)</td></tr>
+<tr class="memitem:af70bc41ab7d709358ea613f06f5bbe69" id="r_af70bc41ab7d709358ea613f06f5bbe69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af70bc41ab7d709358ea613f06f5bbe69">setName</a> (String name)</td></tr>
+<tr class="memitem:a5045555caa7522ebc39af6eff2cf7ec3" id="r_a5045555caa7522ebc39af6eff2cf7ec3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5045555caa7522ebc39af6eff2cf7ec3">setOffArray</a> (java.util.List&lt; <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a> &gt; ocgs)</td></tr>
+<tr class="memitem:a159dc1876fd5d8e03ec888078f0e06bc" id="r_a159dc1876fd5d8e03ec888078f0e06bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a159dc1876fd5d8e03ec888078f0e06bc">setOnArray</a> (java.util.List&lt; <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a> &gt; ocgs)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a89cfad6d5ab96941a01ce497c3093f8a" id="r_a89cfad6d5ab96941a01ce497c3093f8a"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89cfad6d5ab96941a01ce497c3093f8a">delete</a> (Boolean disposing)</td></tr>
+<tr class="memitem:afd8a695d60c41b3373657431371e6a26" id="r_afd8a695d60c41b3373657431371e6a26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd8a695d60c41b3373657431371e6a26">finalize</a> ()</td></tr>
+<tr class="memitem:a1af54921276f35a64f74eb63eab93bb0" id="r_a1af54921276f35a64f74eb63eab93bb0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1af54921276f35a64f74eb63eab93bb0">OptionalContentConfig</a> (long cPtr, boolean cMemoryOwn)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a0798fe42faa4e022a4736eb62eae1df0" id="r_a0798fe42faa4e022a4736eb62eae1df0"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0798fe42faa4e022a4736eb62eae1df0">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_config.html">OptionalContentConfig</a> obj)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A structure used to store data related to layers in a PDF. The Optional Content Configuration Structure is used to maintain a set of visibility states and other optional values related to layers, or Optional Content Groups, within a PDF file. </p>
+<p>These configuration values are stored for future use. </p>
+<p>The default configuration for a PDF document is stored in the D entry in the Optional Content Properties dictionary. </p>
+<p>An Optional Content Group, or layer, is a set of graphic images that can be made visible or invisible within a PDF file, and the Optional Content Configuration Structure is typically used to set the initial value for these images-On or Off, visible or invisible. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a1af54921276f35a64f74eb63eab93bb0" name="a1af54921276f35a64f74eb63eab93bb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1af54921276f35a64f74eb63eab93bb0">&#9670;&#160;</a></span>OptionalContentConfig() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptionalContentConfig.OptionalContentConfig </td>
+          <td>(</td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>cPtr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>cMemoryOwn</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="#a0798fe42faa4e022a4736eb62eae1df0">getCPtr()</a>.</p>
+
+</div>
+</div>
+<a id="ad6b9ae18a304ca6518768ae03ed0150c" name="ad6b9ae18a304ca6518768ae03ed0150c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6b9ae18a304ca6518768ae03ed0150c">&#9670;&#160;</a></span>OptionalContentConfig() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OptionalContentConfig.OptionalContentConfig </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a></td>          <td class="paramname"><span class="paramname"><em>doc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a new OptionalContentConfig. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">doc</td><td>The document that the new OptionalContentConfig will belong to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a9272877b37f3a07247b4d78946c2ec09" name="a9272877b37f3a07247b4d78946c2ec09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9272877b37f3a07247b4d78946c2ec09">&#9670;&#160;</a></span>delete() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.OptionalContentConfig.delete </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="#a9272877b37f3a07247b4d78946c2ec09">delete()</a>, and <a class="el" href="#afd8a695d60c41b3373657431371e6a26">finalize()</a>.</p>
+
+</div>
+</div>
+<a id="a89cfad6d5ab96941a01ce497c3093f8a" name="a89cfad6d5ab96941a01ce497c3093f8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89cfad6d5ab96941a01ce497c3093f8a">&#9670;&#160;</a></span>delete() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.OptionalContentConfig.delete </td>
+          <td>(</td>
+          <td class="paramtype">Boolean</td>          <td class="paramname"><span class="paramname"><em>disposing</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afd8a695d60c41b3373657431371e6a26" name="afd8a695d60c41b3373657431371e6a26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd8a695d60c41b3373657431371e6a26">&#9670;&#160;</a></span>finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.OptionalContentConfig.finalize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a05722e1b5de280791ab6a6982246a2d4" name="a05722e1b5de280791ab6a6982246a2d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05722e1b5de280791ab6a6982246a2d4">&#9670;&#160;</a></span>getBaseState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_base_state.html">OptionalContentBaseState</a> com.datalogics.PDFL.OptionalContentConfig.getBaseState </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the base state for this OptionalContentConfig. When this config is applied to an OptionalContentContext, all OptionalContentGroups will be set to according to this base state: </p>
+<ul>
+<li>
+<p class="startli"></p>
+<p class="endli">If BaseState is set to BaseStateOff, when this OptionalContentConfig is applied to an OptionalContentContext: </p><ul>
+<li>
+<p class="startli"></p>
+<p class="endli">All OptionalContentGroups in the document are set to OFF, and </p>
+</li>
+<li>
+<p class="startli"></p>
+<p class="endli">Any OptionalContentGroups in this OptionalContentConfig's ON array are then set to on. </p>
+</li>
+</ul>
+</li>
+<li>
+<p class="startli"></p>
+<p class="endli">If BaseState is set to BaseStateOn, when this OptionalContentConfig is applied to an OptionalContentContext: </p><ul>
+<li>
+<p class="startli"></p>
+<p class="endli">All OptionalContentGroups in the document are set to ON, and </p>
+</li>
+<li>
+<p class="startli"></p>
+<p class="endli">Any OptionalContentGroups in this OptionalContentConfig's OFF array are then set to off. </p>
+</li>
+</ul>
+</li>
+<li>
+<p class="startli"></p>
+<p class="endli">If BaseState is set to BaseStateUnchanged, when this OptionalContentConfig is applied to an OptionalContentContext: </p><ul>
+<li>
+<p class="startli"></p>
+<p class="endli">Any OptionalContentGroups in this OptionalContentConfig's ON array are set to on </p>
+</li>
+<li>
+<p class="startli"></p>
+<p class="endli">Any OptionalContentGroups in this OptionalContentConfig's OFF array are set to off </p>
+</li>
+<li>
+<p class="startli"></p>
+<p class="endli">Any OptionalContentGroups in neither the ON or OFF array are unaffected </p>
+</li>
+</ul>
+</li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd>The base state that will be applied to OptionalContentGroups. </dd></dl>
+
+</div>
+</div>
+<a id="a0798fe42faa4e022a4736eb62eae1df0" name="a0798fe42faa4e022a4736eb62eae1df0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0798fe42faa4e022a4736eb62eae1df0">&#9670;&#160;</a></span>getCPtr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long com.datalogics.PDFL.OptionalContentConfig.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_config.html">OptionalContentConfig</a></td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7d9d9c8e0a461c675e82d175f877e003" name="a7d9d9c8e0a461c675e82d175f877e003"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d9d9c8e0a461c675e82d175f877e003">&#9670;&#160;</a></span>getIntent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">java.util.List&lt; String &gt; com.datalogics.PDFL.OptionalContentConfig.getIntent </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the intent list for an OptionalContentConfig. An intent is a string value broadly describing the intended use, either View or Design. </p>
+<p>A config's intent is used to set the intent of an OptionalContentContext when this config is applied to the context. </p>
+<dl class="section return"><dt>Returns</dt><dd>An array containing intent strings. </dd></dl>
+
+</div>
+</div>
+<a id="a870bfb9b7b116010c3cd39877d844f3b" name="a870bfb9b7b116010c3cd39877d844f3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a870bfb9b7b116010c3cd39877d844f3b">&#9670;&#160;</a></span>getName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.datalogics.PDFL.OptionalContentConfig.getName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the name of the OptionalContentConfig </p>
+<dl class="section return"><dt>Returns</dt><dd>The name of this OptionalContentConfig. Use <code>null</code> to remove the name. </dd></dl>
+
+</div>
+</div>
+<a id="a0d487bd7ddc79dbde9937074aeac2ce5" name="a0d487bd7ddc79dbde9937074aeac2ce5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d487bd7ddc79dbde9937074aeac2ce5">&#9670;&#160;</a></span>getOffArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">java.util.List&lt; <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a> &gt; com.datalogics.PDFL.OptionalContentConfig.getOffArray </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the list of OptionalContentGroups in the OFF array. </p>
+<p>When this config is applied to an OptionalContentContext, the OptionalContentGroups in this array will be set to OFF. </p>
+<p>This list is ignored if the BaseState is BaseStateOff; please see the description of the BaseState property for details. </p>
+<p>Note that an OptionalContentGroup should not be in both the ON array and the OFF array. </p>
+<dl class="section return"><dt>Returns</dt><dd>A list of all OptionalContentGroups in the OFF array </dd></dl>
+
+</div>
+</div>
+<a id="ad6b1879eb0dc75c2d31b8fb1ad76afef" name="ad6b1879eb0dc75c2d31b8fb1ad76afef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6b1879eb0dc75c2d31b8fb1ad76afef">&#9670;&#160;</a></span>getOnArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">java.util.List&lt; <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a> &gt; com.datalogics.PDFL.OptionalContentConfig.getOnArray </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the list of OptionalContentGroups in the ON array. </p>
+<p>When this config is applied to an OptionalContentContext, the OptionalContentGroups in this array will be set to ON. </p>
+<p>This list is ignored if the BaseState is BaseStateOn; please see the description of the BaseState property for details. </p>
+<p>Note that an OptionalContentGroup should not be in both the ON array and the OFF array. </p>
+<dl class="section return"><dt>Returns</dt><dd>A list of all OptionalContentGroups in the ON array </dd></dl>
+
+</div>
+</div>
+<a id="a7c41ea4f7407e6456157ba1c6f484c1d" name="a7c41ea4f7407e6456157ba1c6f484c1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c41ea4f7407e6456157ba1c6f484c1d">&#9670;&#160;</a></span>getOrder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_order_array.html">OptionalContentOrderArray</a> com.datalogics.PDFL.OptionalContentConfig.getOrder </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the order list for the optional content in this optional content config. </p>
+<p>Note that you can set the Title property on this order list, just as on any other OptionalContentOrderArray, and it will save as a legal PDF. However, the Title property on the top level order array simply appears as an extraneous text label in a PDF Viewer Layers panel, so its use at this level is typically not required. </p>
+<dl class="section return"><dt>Returns</dt><dd>The OptionalContentOrderArray for optional content in this optional content config. </dd></dl>
+
+</div>
+</div>
+<a id="a8bdf15c8a636b4af333a6f37fb733d3f" name="a8bdf15c8a636b4af333a6f37fb733d3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bdf15c8a636b4af333a6f37fb733d3f">&#9670;&#160;</a></span>getPDFDict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a> com.datalogics.PDFL.OptionalContentConfig.getPDFDict </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Retrieve the PDFObject representation of this object </p>
+
+</div>
+</div>
+<a id="a343049444c9319bcfc1ec3cc73b1e0fd" name="a343049444c9319bcfc1ec3cc73b1e0fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a343049444c9319bcfc1ec3cc73b1e0fd">&#9670;&#160;</a></span>setBaseState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.OptionalContentConfig.setBaseState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_base_state.html">OptionalContentBaseState</a></td>          <td class="paramname"><span class="paramname"><em>baseState</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the base state for this OptionalContentConfig. When this config is applied to an OptionalContentContext, all OptionalContentGroups will be set to according to this base state: </p>
+<ul>
+<li>
+<p class="startli"></p>
+<p class="endli">If BaseState is set to BaseStateOff, when this OptionalContentConfig is applied to an OptionalContentContext: </p><ul>
+<li>
+<p class="startli"></p>
+<p class="endli">All OptionalContentGroups in the document are set to OFF, and </p>
+</li>
+<li>
+<p class="startli"></p>
+<p class="endli">Any OptionalContentGroups in this OptionalContentConfig's ON array are then set to on. </p>
+</li>
+</ul>
+</li>
+<li>
+<p class="startli"></p>
+<p class="endli">If BaseState is set to BaseStateOn, when this OptionalContentConfig is applied to an OptionalContentContext: </p><ul>
+<li>
+<p class="startli"></p>
+<p class="endli">All OptionalContentGroups in the document are set to ON, and </p>
+</li>
+<li>
+<p class="startli"></p>
+<p class="endli">Any OptionalContentGroups in this OptionalContentConfig's OFF array are then set to off. </p>
+</li>
+</ul>
+</li>
+<li>
+<p class="startli"></p>
+<p class="endli">If BaseState is set to BaseStateUnchanged, when this OptionalContentConfig is applied to an OptionalContentContext: </p><ul>
+<li>
+<p class="startli"></p>
+<p class="endli">Any OptionalContentGroups in this OptionalContentConfig's ON array are set to on </p>
+</li>
+<li>
+<p class="startli"></p>
+<p class="endli">Any OptionalContentGroups in this OptionalContentConfig's OFF array are set to off </p>
+</li>
+<li>
+<p class="startli"></p>
+<p class="endli">Any OptionalContentGroups in neither the ON or OFF array are unaffected </p>
+</li>
+</ul>
+</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">baseState</td><td>The base state that will be applied to OptionalContentGroups. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aeb8fa001040600399c9d9449434b4ad1" name="aeb8fa001040600399c9d9449434b4ad1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb8fa001040600399c9d9449434b4ad1">&#9670;&#160;</a></span>setIntent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.OptionalContentConfig.setIntent </td>
+          <td>(</td>
+          <td class="paramtype">java.util.List&lt; String &gt;</td>          <td class="paramname"><span class="paramname"><em>intents</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the intent list for an OptionalContentConfig. An intent is a string value broadly describing the intended use, either View or Design. </p>
+<p>A config's intent is used to set the intent of an OptionalContentContext when this config is applied to the context. </p>
+
+</div>
+</div>
+<a id="af70bc41ab7d709358ea613f06f5bbe69" name="af70bc41ab7d709358ea613f06f5bbe69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af70bc41ab7d709358ea613f06f5bbe69">&#9670;&#160;</a></span>setName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.OptionalContentConfig.setName </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the name of the optional content group </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of this OptionalContentConfig. Use <code>null</code> to remove the name. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5045555caa7522ebc39af6eff2cf7ec3" name="a5045555caa7522ebc39af6eff2cf7ec3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5045555caa7522ebc39af6eff2cf7ec3">&#9670;&#160;</a></span>setOffArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.OptionalContentConfig.setOffArray </td>
+          <td>(</td>
+          <td class="paramtype">java.util.List&lt; <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>ocgs</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the list of OptionalContentGroups in the OFF array. </p>
+<p>When this config is applied to an OptionalContentContext, the OptionalContentGroups in this array will be set to OFF. </p>
+<p>This list is ignored if the BaseState is BaseStateOff; please see the description of the BaseState property for details. </p>
+<p>Note that an OptionalContentGroup should not be in both the ON array and the OFF array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ocgs</td><td>A list of all OptionalContentGroups to be placed in the OFF array </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a159dc1876fd5d8e03ec888078f0e06bc" name="a159dc1876fd5d8e03ec888078f0e06bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a159dc1876fd5d8e03ec888078f0e06bc">&#9670;&#160;</a></span>setOnArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.OptionalContentConfig.setOnArray </td>
+          <td>(</td>
+          <td class="paramtype">java.util.List&lt; <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_optional_content_group.html">OptionalContentGroup</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>ocgs</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the list of OptionalContentGroups in the ON array. </p>
+<p>When this config is applied to an OptionalContentContext, the OptionalContentGroups in this array will be set to ON. </p>
+<p>This list is ignored if the BaseState is BaseStateOn; please see the description of the BaseState property for details. </p>
+<p>Note that an OptionalContentGroup should not be in both the ON array and the OFF array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ocgs</td><td>A list of all OptionalContentGroups to be placed in the ON array </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>
