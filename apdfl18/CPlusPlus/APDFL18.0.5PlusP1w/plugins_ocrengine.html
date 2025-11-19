@@ -31,12 +31,12 @@ APDFL Plugins: ocrengine
 <nav><dl>
 <dt><a href="#OCRLanguage">OCRLanguage</a></dt><dd> -  Enumeration to specify the language.</dd>
 <dt><a href="#OCRMissingFontStrategy">OCRMissingFontStrategy</a></dt><dd> -  Enumeration to specify how to handle missing fonts during OCR.</dd>
-<dt><a href="#OCRPageSegmentationMode">OCRPageSegmentationMode</a></dt><dd> -  Enumeration to specify the page segmentation mode.</dd>
+<dt><a href="#OCRPageSegmentationMode">OCRPageSegmentationMode</a></dt><dd> -  Enumeration to specify how the OCR engine will view the page, and how it detects text segments.</dd>
 <dt><a href="#OCRPerformance">OCRPerformance</a></dt><dd> -  Enumeration to specify OCR performance.</dd>
 </dl></nav>
 <section><div class="infoRow"><h3 id="OCRLanguage"><strong><span style="color:grey;">OCRLanguage</span></strong></h3>
 
-<div class="headerRef"><strong>Header:</strong> OCREngineExpT.h:61</div>
+<div class="headerRef"><strong>Header:</strong> OCREngineExpT.h:67</div>
 </div>
 
 <div><H4><strong>Description</strong></H4>
@@ -439,12 +439,12 @@ APDFL Plugins: ocrengine
 
 <H4><strong>Returned From</strong></H4>
 
-<nav><table><tr><td><a href="plugins_ocrengine.html#PDOCRGetLanguagesInstalled" title=" Get the Languages installed."><code>PDOCRGetLanguagesInstalled</code></a></td><td><a href="plugins_ocrengine.html#PDOCRParamsGetLanguagesConfigured" title=" Get the Languages configured to be recognized."><code>PDOCRParamsGetLanguagesConfigured</code></a></td></tr></table>
+<nav><table><tr><td><a href="plugins_ocrengine.html#PDOCRGetLanguagesInstalled" title=" Get the Languages installed as an array of OCRLanguage elements."><code>PDOCRGetLanguagesInstalled</code></a></td><td><a href="plugins_ocrengine.html#PDOCRParamsGetLanguagesConfigured" title=" Get the Languages configured to be recognized, as an array of OCRLanguage elements."><code>PDOCRParamsGetLanguagesConfigured</code></a></td></tr></table>
 </nav>
 
 <H4><strong>Used By</strong></H4>
 
-<nav><table><tr><td><a href="plugins_ocrengine.html#PDOCRParamsSetLanguagesConfigured" title=" Set the Languages configured to be recognized."><code>PDOCRParamsSetLanguagesConfigured</code></a></td><td><div></div>
+<nav><table><tr><td><a href="plugins_ocrengine.html#PDOCRParamsSetLanguagesConfigured" title=" Set the Languages configured to be recognized, as an array of OCRLanguage elements."><code>PDOCRParamsSetLanguagesConfigured</code></a></td><td><div></div>
 </td></tr></table>
 </nav>
 
@@ -470,26 +470,26 @@ APDFL Plugins: ocrengine
 </td><td><div>Raise an exception. </div>
 </td></tr>
 <tr><td><div class="enumEntry" id="OCRMissingFontStrategy_Ignore"><code>OCRMissingFontStrategy_Ignore</code></div>
-</td><td><div>Ignore the missing font. </div>
+</td><td><div>Ignore the missing font and continue recognizing the next word of text. </div>
 </td></tr>
 <tr><td><div class="enumEntry" id="OCRMissingFontStrategy_ReplacementText"><code>OCRMissingFontStrategy_ReplacementText</code></div>
-</td><td><div>Insert substitute character glyph. </div>
+</td><td><div>Replace the characters of text with the Unicode replacement Character. NOTE: * the CandidateFontsNames member of the <a href="plugins_ocrengine.html#OCRParams">OCRParams</a> instance must include a Font that * can represent this character or an exception will be raised. </div>
 </td></tr></table>
 
 <H4><strong>Used By</strong></H4>
 
-<nav><table><tr><td><a href="plugins_ocrengine.html#PDOCRCreateForm" title=" Recognizes Text in a PDEImage, at a specified resolution, creating a PDEForm with the Image and Text behind it."><code>PDOCRCreateForm</code></a></td><td><div></div>
+<nav><table><tr><td><a href="plugins_ocrengine.html#PDOCRCreateForm" title=" Recognizes Text in a PDEImage, at a specified resolution, creating a PDEForm with the Image and Text underneath it."><code>PDOCRCreateForm</code></a></td><td><div></div>
 </td></tr></table>
 </nav>
 </section>
 <section><div class="infoRow"><h3 id="OCRPageSegmentationMode"><strong><span style="color:grey;">OCRPageSegmentationMode</span></strong></h3>
 
-<div class="headerRef"><strong>Header:</strong> OCREngineExpT.h:31</div>
+<div class="headerRef"><strong>Header:</strong> OCREngineExpT.h:37</div>
 </div>
 
 <div><H4><strong>Description</strong></H4>
 
-<div>Enumeration to specify the page segmentation mode. </div>
+<div>Enumeration to specify how the OCR engine will view the page, and how it detects text segments. </div>
 </div>
 
 <H4><strong>Enum Constants</strong></H4>
@@ -534,6 +534,18 @@ APDFL Plugins: ocrengine
 </td><td><div>Treat as a raw line with no input processing. </div>
 </td></tr></table>
 
+<H4><strong>Returned From</strong></H4>
+
+<nav><table><tr><td><a href="plugins_ocrengine.html#PDOCRParamsGetPageSegmentationMode" title=" Get the page segmentation mode parameter for an OCRParams object."><code>PDOCRParamsGetPageSegmentationMode</code></a></td><td><div></div>
+</td></tr></table>
+</nav>
+
+<H4><strong>Used By</strong></H4>
+
+<nav><table><tr><td><a href="plugins_ocrengine.html#PDOCRParamsSetPageSegmentationMode" title=" Set the page segementation mode parameter for an OCRParams object."><code>PDOCRParamsSetPageSegmentationMode</code></a></td><td><div></div>
+</td></tr></table>
+</nav>
+
 <H4><strong>Used In</strong></H4>
 
 <nav><table><tr><td><a href="plugins_ocrengine.html#OCRParams"><code>OCRParams</code></a></td><td><div></div>
@@ -542,7 +554,7 @@ APDFL Plugins: ocrengine
 </section>
 <section><div class="infoRow"><h3 id="OCRPerformance"><strong><span style="color:grey;">OCRPerformance</span></strong></h3>
 
-<div class="headerRef"><strong>Header:</strong> OCREngineExpT.h:19</div>
+<div class="headerRef"><strong>Header:</strong> OCREngineExpT.h:21</div>
 </div>
 
 <div><H4><strong>Description</strong></H4>
@@ -553,7 +565,7 @@ APDFL Plugins: ocrengine
 <H4><strong>Enum Constants</strong></H4>
 
 <table class="enumTable"><tr><td><div class="enumEntry" id="OCRPerformance_Default"><code>OCRPerformance_Default</code><code>=</code><code>0</code></div>
-</td><td><div>Default performance. </div>
+</td><td><div>Default performance. * * The default performance is useful for most scenarios and is a reasonable * tradeoff of speed vs. accuracy, thus suitable for most languages. </div>
 </td></tr>
 <tr><td><div class="enumEntry" id="OCRPerformance_Accuracy"><code>OCRPerformance_Accuracy</code></div>
 </td><td><div>Blend accuracy with speed. </div>
@@ -591,7 +603,7 @@ APDFL Plugins: ocrengine
 </dl></nav>
 <section><div class="infoRow"><h3 id="OCRParams"><strong><span style="color:grey;">OCRParams</span></strong></h3>
 
-<div class="headerRef"><strong>Header:</strong> OCREngineExpT.h:194</div>
+<div class="headerRef"><strong>Header:</strong> OCREngineExpT.h:200</div>
 </div>
 
 <H4><strong>Syntax</strong></H4>
@@ -602,7 +614,7 @@ APDFL Plugins: ocrengine
 <tr><td><div class="structMember"><a href="plugins_ocrengine.html#OCRPerformance" title=" Enumeration to specify OCR performance."><code>OCRPerformance</code></a> <code>performance</code><code>;</code> </div>
 </td><td><div></div>
 </td></tr>
-<tr><td><div class="structMember"><a href="plugins_ocrengine.html#OCRPageSegmentationMode" title=" Enumeration to specify the page segmentation mode."><code>OCRPageSegmentationMode</code></a> <code>pageSegmentationMode</code><code>;</code> </div>
+<tr><td><div class="structMember"><a href="plugins_ocrengine.html#OCRPageSegmentationMode" title=" Enumeration to specify how the OCR engine will view the page, and how it detects text segments."><code>OCRPageSegmentationMode</code></a> <code>pageSegmentationMode</code><code>;</code> </div>
 </td><td><div></div>
 </td></tr>
 <tr><td><div class="structMember"><a href="plugins_ocrengine.html#OCRLanguage" title=" Enumeration to specify the language."><code>OCRLanguage</code></a> <code>*</code><code>languages</code><code>;</code> </div>
@@ -627,17 +639,18 @@ APDFL Plugins: ocrengine
 
 <H4><strong>Returned From</strong></H4>
 
-<nav><table><tr><td><a href="plugins_ocrengine.html#PDOCRDefaultParams" title=" This will return a reference to a set of OCRParams, already configured with defaults."><code>PDOCRDefaultParams</code></a></td><td><div></div>
+<nav><table><tr><td><a href="plugins_ocrengine.html#PDOCRDefaultParams" title=" Return a reference to a set of OCRParams, already configured with defaults."><code>PDOCRDefaultParams</code></a></td><td><div></div>
 </td></tr></table>
 </nav>
 
 <H4><strong>Used By</strong></H4>
 
-<nav><table><tr><td><a href="plugins_ocrengine.html#PDOCRCreateForm" title=" Recognizes Text in a PDEImage, at a specified resolution, creating a PDEForm with the Image and Text behind it."><code>PDOCRCreateForm</code></a></td><td><a href="plugins_ocrengine.html#PDOCRParamsGetCandidateFonts" title=" Get the Candidate Fonts used for Recognized Text."><code>PDOCRParamsGetCandidateFonts</code></a></td></tr>
-<tr><td><a href="plugins_ocrengine.html#PDOCRParamsGetLanguagesConfigured" title=" Get the Languages configured to be recognized."><code>PDOCRParamsGetLanguagesConfigured</code></a></td><td><a href="plugins_ocrengine.html#PDOCRParamsGetNumCandidateFonts" title=" Get the Number of Candidate Fonts used for Recognized Text."><code>PDOCRParamsGetNumCandidateFonts</code></a></td></tr>
-<tr><td><a href="plugins_ocrengine.html#PDOCRParamsGetNumLanguagesConfigured" title=" Get the Number of Languages configured to be recognized."><code>PDOCRParamsGetNumLanguagesConfigured</code></a></td><td><a href="plugins_ocrengine.html#PDOCRParamsGetPerformance" title=" Get the performance parameter from an OCRParams object."><code>PDOCRParamsGetPerformance</code></a></td></tr>
-<tr><td><a href="plugins_ocrengine.html#PDOCRParamsGetPreprocessing" title=" Get the Preprocessing setting."><code>PDOCRParamsGetPreprocessing</code></a></td><td><a href="plugins_ocrengine.html#PDOCRParamsSetCandidateFonts" title=" Set the Candidate Fonts used for Recognized Text."><code>PDOCRParamsSetCandidateFonts</code></a></td></tr>
-<tr><td><a href="plugins_ocrengine.html#PDOCRParamsSetLanguagesConfigured" title=" Set the Languages configured to be recognized."><code>PDOCRParamsSetLanguagesConfigured</code></a></td><td><a href="plugins_ocrengine.html#PDOCRParamsSetPerformance" title=" Set the performance parameter for an OCRParams object."><code>PDOCRParamsSetPerformance</code></a></td></tr>
+<nav><table><tr><td><a href="plugins_ocrengine.html#PDOCRCreateForm" title=" Recognizes Text in a PDEImage, at a specified resolution, creating a PDEForm with the Image and Text underneath it."><code>PDOCRCreateForm</code></a></td><td><a href="plugins_ocrengine.html#PDOCRParamsGetCandidateFonts" title=" Get the Candidate Fonts used to try to match recognized text, as an array of ASAtoms."><code>PDOCRParamsGetCandidateFonts</code></a></td></tr>
+<tr><td><a href="plugins_ocrengine.html#PDOCRParamsGetLanguagesConfigured" title=" Get the Languages configured to be recognized, as an array of OCRLanguage elements."><code>PDOCRParamsGetLanguagesConfigured</code></a></td><td><a href="plugins_ocrengine.html#PDOCRParamsGetNumCandidateFonts" title=" Get the Number of Candidate Fonts to try to match recognized text."><code>PDOCRParamsGetNumCandidateFonts</code></a></td></tr>
+<tr><td><a href="plugins_ocrengine.html#PDOCRParamsGetNumLanguagesConfigured" title=" Get the Number of Languages configured to be recognized."><code>PDOCRParamsGetNumLanguagesConfigured</code></a></td><td><a href="plugins_ocrengine.html#PDOCRParamsGetPageSegmentationMode" title=" Get the page segmentation mode parameter for an OCRParams object."><code>PDOCRParamsGetPageSegmentationMode</code></a></td></tr>
+<tr><td><a href="plugins_ocrengine.html#PDOCRParamsGetPerformance" title=" Get the performance parameter from an OCRParams object."><code>PDOCRParamsGetPerformance</code></a></td><td><a href="plugins_ocrengine.html#PDOCRParamsGetPreprocessing" title=" Get the Preprocessing setting."><code>PDOCRParamsGetPreprocessing</code></a></td></tr>
+<tr><td><a href="plugins_ocrengine.html#PDOCRParamsSetCandidateFonts" title=" Set the Candidate Fonts used to try to match recognized text."><code>PDOCRParamsSetCandidateFonts</code></a></td><td><a href="plugins_ocrengine.html#PDOCRParamsSetLanguagesConfigured" title=" Set the Languages configured to be recognized, as an array of OCRLanguage elements."><code>PDOCRParamsSetLanguagesConfigured</code></a></td></tr>
+<tr><td><a href="plugins_ocrengine.html#PDOCRParamsSetPageSegmentationMode" title=" Set the page segementation mode parameter for an OCRParams object."><code>PDOCRParamsSetPageSegmentationMode</code></a></td><td><a href="plugins_ocrengine.html#PDOCRParamsSetPerformance" title=" Set the performance parameter for an OCRParams object."><code>PDOCRParamsSetPerformance</code></a></td></tr>
 <tr><td><a href="plugins_ocrengine.html#PDOCRParamsSetPreprocessing" title=" Set the Preprocessing setting."><code>PDOCRParamsSetPreprocessing</code></a></td><td><a href="plugins_ocrengine.html#PDOCRReleaseParams" title=" Release an OCRParams obtained with PDOCRDefaultParams."><code>PDOCRReleaseParams</code></a></td></tr></table>
 </nav>
 </section>
@@ -647,18 +660,20 @@ APDFL Plugins: ocrengine
 <nav><dl>
 <dt><a href="#OCREngineInitialize">OCREngineInitialize</a></dt><dd> -  Initializes the OCREngine Plug-in.</dd>
 <dt><a href="#OCREngineTerminate">OCREngineTerminate</a></dt><dd> -  Terminates the OCREngine Plug-in.</dd>
-<dt><a href="#PDOCRCreateForm">PDOCRCreateForm</a></dt><dd> -  Recognizes Text in a PDEImage, at a specified resolution, creating a PDEForm with the Image and Text behind it.</dd>
-<dt><a href="#PDOCRDefaultParams">PDOCRDefaultParams</a></dt><dd> -  This will return a reference to a set of OCRParams, already configured with defaults.</dd>
-<dt><a href="#PDOCRGetLanguagesInstalled">PDOCRGetLanguagesInstalled</a></dt><dd> -  Get the Languages installed.</dd>
+<dt><a href="#PDOCRCreateForm">PDOCRCreateForm</a></dt><dd> -  Recognizes Text in a PDEImage, at a specified resolution, creating a PDEForm with the Image and Text underneath it.</dd>
+<dt><a href="#PDOCRDefaultParams">PDOCRDefaultParams</a></dt><dd> -  Return a reference to a set of OCRParams, already configured with defaults.</dd>
+<dt><a href="#PDOCRGetLanguagesInstalled">PDOCRGetLanguagesInstalled</a></dt><dd> -  Get the Languages installed as an array of OCRLanguage elements.</dd>
 <dt><a href="#PDOCRGetNumLanguagesInstalled">PDOCRGetNumLanguagesInstalled</a></dt><dd> -  Get the number of Languages installed.</dd>
-<dt><a href="#PDOCRParamsGetCandidateFonts">PDOCRParamsGetCandidateFonts</a></dt><dd> -  Get the Candidate Fonts used for Recognized Text.</dd>
-<dt><a href="#PDOCRParamsGetLanguagesConfigured">PDOCRParamsGetLanguagesConfigured</a></dt><dd> -  Get the Languages configured to be recognized.</dd>
-<dt><a href="#PDOCRParamsGetNumCandidateFonts">PDOCRParamsGetNumCandidateFonts</a></dt><dd> -  Get the Number of Candidate Fonts used for Recognized Text.</dd>
+<dt><a href="#PDOCRParamsGetCandidateFonts">PDOCRParamsGetCandidateFonts</a></dt><dd> -  Get the Candidate Fonts used to try to match recognized text, as an array of ASAtoms.</dd>
+<dt><a href="#PDOCRParamsGetLanguagesConfigured">PDOCRParamsGetLanguagesConfigured</a></dt><dd> -  Get the Languages configured to be recognized, as an array of OCRLanguage elements.</dd>
+<dt><a href="#PDOCRParamsGetNumCandidateFonts">PDOCRParamsGetNumCandidateFonts</a></dt><dd> -  Get the Number of Candidate Fonts to try to match recognized text.</dd>
 <dt><a href="#PDOCRParamsGetNumLanguagesConfigured">PDOCRParamsGetNumLanguagesConfigured</a></dt><dd> -  Get the Number of Languages configured to be recognized.</dd>
+<dt><a href="#PDOCRParamsGetPageSegmentationMode">PDOCRParamsGetPageSegmentationMode</a></dt><dd> -  Get the page segmentation mode parameter for an OCRParams object.</dd>
 <dt><a href="#PDOCRParamsGetPerformance">PDOCRParamsGetPerformance</a></dt><dd> -  Get the performance parameter from an OCRParams object.</dd>
 <dt><a href="#PDOCRParamsGetPreprocessing">PDOCRParamsGetPreprocessing</a></dt><dd> -  Get the Preprocessing setting.</dd>
-<dt><a href="#PDOCRParamsSetCandidateFonts">PDOCRParamsSetCandidateFonts</a></dt><dd> -  Set the Candidate Fonts used for Recognized Text.</dd>
-<dt><a href="#PDOCRParamsSetLanguagesConfigured">PDOCRParamsSetLanguagesConfigured</a></dt><dd> -  Set the Languages configured to be recognized.</dd>
+<dt><a href="#PDOCRParamsSetCandidateFonts">PDOCRParamsSetCandidateFonts</a></dt><dd> -  Set the Candidate Fonts used to try to match recognized text.</dd>
+<dt><a href="#PDOCRParamsSetLanguagesConfigured">PDOCRParamsSetLanguagesConfigured</a></dt><dd> -  Set the Languages configured to be recognized, as an array of OCRLanguage elements.</dd>
+<dt><a href="#PDOCRParamsSetPageSegmentationMode">PDOCRParamsSetPageSegmentationMode</a></dt><dd> -  Set the page segementation mode parameter for an OCRParams object.</dd>
 <dt><a href="#PDOCRParamsSetPerformance">PDOCRParamsSetPerformance</a></dt><dd> -  Set the performance parameter for an OCRParams object.</dd>
 <dt><a href="#PDOCRParamsSetPreprocessing">PDOCRParamsSetPreprocessing</a></dt><dd> -  Set the Preprocessing setting.</dd>
 <dt><a href="#PDOCRReleaseParams">PDOCRReleaseParams</a></dt><dd> -  Release an OCRParams obtained with PDOCRDefaultParams.</dd>
@@ -701,12 +716,12 @@ APDFL Plugins: ocrengine
 </section>
 <section><div class="infoRow"><h3 id="PDOCRCreateForm"><strong><span style="color:grey;">PDOCRCreateForm</span></strong></h3>
 
-<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:33</div>
+<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:43</div>
 </div>
 
 <div><H4><strong>Description</strong></H4>
 
-<div>Recognizes Text in a <a href="pdelayer_PDEImage.html#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a>, at a specified resolution, creating a <a href="pdelayer_PDEForm.html#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> with the Image and Text behind it. </div>
+<div>Recognizes Text in a <a href="pdelayer_PDEImage.html#PDEImage" title=" A PDEElement that contains an Image XObject or an inline image.">PDEImage</a>, at a specified resolution, creating a <a href="pdelayer_PDEForm.html#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> with the Image and Text underneath it. Knowing the image's resolution can enhance recognition. NOTE: Determining the resolution of the image is the caller's responsibility. Creates a <a href="pdelayer_PDEForm.html#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> element containing the image, and additional text underneath. The <a href="pdelayer_PDEForm.html#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> element has a transformation matrix which makes it directly substitutable for the image in a Content stream. The <a href="pdelayer_PDEForm.html#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> will be created in the specified document, sharing fonts with the results of recognizing text in other images. If a font that will represent all the characters in a word can't be found, the missingFontStrategy will determine the behavior to employ. </div>
 </div>
 
 <H4><strong>Syntax</strong></H4>
@@ -730,6 +745,10 @@ APDFL Plugins: ocrengine
 <tr><td><div><code>strategy</code></div>
 </td><td><div><a href="pdslayer_General.html#IN">IN</a> specifies the behavior to take if a Font isn't available to represent the Text </div>
 </td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>a <a href="pdelayer_PDEForm.html#PDEForm" title=" A PDEElement that corresponds to an instance of an XObject Form on a page (or another containing stream such as another XObject Form or annotation form).">PDEForm</a> composing the supplied image with the recognized text underneath </div>
 </section>
 <section><div class="infoRow"><h3 id="PDOCRDefaultParams"><strong><span style="color:grey;">PDOCRDefaultParams</span></strong></h3>
 
@@ -738,7 +757,7 @@ APDFL Plugins: ocrengine
 
 <div><H4><strong>Description</strong></H4>
 
-<div>This will return a reference to a set of <a href="plugins_ocrengine.html#OCRParams">OCRParams</a>, already configured with defaults. </div>
+<div>Return a reference to a set of <a href="plugins_ocrengine.html#OCRParams">OCRParams</a>, already configured with defaults. </div>
 </div>
 
 <H4><strong>Syntax</strong></H4>
@@ -751,21 +770,25 @@ APDFL Plugins: ocrengine
 </section>
 <section><div class="infoRow"><h3 id="PDOCRGetLanguagesInstalled"><strong><span style="color:grey;">PDOCRGetLanguagesInstalled</span></strong></h3>
 
-<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:44</div>
+<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:58</div>
 </div>
 
 <div><H4><strong>Description</strong></H4>
 
-<div>Get the Languages installed. </div>
+<div>Get the Languages installed as an array of <a href="plugins_ocrengine.html#OCRLanguage" title=" Enumeration to specify the language.">OCRLanguage</a> elements. This array isn't modifiable. The length is given by <a href="plugins_ocrengine.html#PDOCRGetNumLanguagesInstalled" title=" Get the number of Languages installed.">PDOCRGetNumLanguagesInstalled</a>(). </div>
 </div>
 
 <H4><strong>Syntax</strong></H4>
 
 <code><a href="plugins_ocrengine.html#OCRLanguage" title=" Enumeration to specify the language."><code>OCRLanguage</code></a> <code>*</code><code>PDOCRGetLanguagesInstalled(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<div>an array of <a href="plugins_ocrengine.html#OCRLanguage" title=" Enumeration to specify the language.">OCRLanguage</a> elements. </div>
 </section>
 <section><div class="infoRow"><h3 id="PDOCRGetNumLanguagesInstalled"><strong><span style="color:grey;">PDOCRGetNumLanguagesInstalled</span></strong></h3>
 
-<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:39</div>
+<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:50</div>
 </div>
 
 <div><H4><strong>Description</strong></H4>
@@ -776,15 +799,19 @@ APDFL Plugins: ocrengine
 <H4><strong>Syntax</strong></H4>
 
 <code><a href="aslayer_General.html#ASInt32" title=" 4-byte signed long numeric value."><code>ASInt32</code></a> <code>PDOCRGetNumLanguagesInstalled(</code><code>void</code><code>);</code> </code>
+
+<H4><strong>Returns</strong></H4>
+
+<div>number of languages installed. </div>
 </section>
 <section><div class="infoRow"><h3 id="PDOCRParamsGetCandidateFonts"><strong><span style="color:grey;">PDOCRParamsGetCandidateFonts</span></strong></h3>
 
-<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:103</div>
+<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:195</div>
 </div>
 
 <div><H4><strong>Description</strong></H4>
 
-<div>Get the Candidate Fonts used for Recognized Text. </div>
+<div>Get the Candidate Fonts used to try to match recognized text, as an array of ASAtoms. Each <a href="aslayer_ASAtom.html#ASAtom">ASAtom</a> represents a name for a font to try to use for text recognition. The default list should work well in most cases. If you're using text that isn't represented by Latin fonts, or by Chinese, Japanese, or Korean fonts, then retrieve this list, add the font that can represent that text, then set that new list on <a href="plugins_ocrengine.html#OCRParams">OCRParams</a>. Enough font names must be supplied to cover the expected languages/scripts in use. The code selects a font to represent each word. If a word code-switches between different scripts, for instance, if it contains non-Latin text and Arabic numerals, then make sure to supply the name of a font family that can handle both the text and the numerals. The quality of the results depends on the font choice. The list is searched in order until a font works for a particular word. To make the text fit better, it's recommended to list proportional fonts before fixed-width fonts. Decorative fonts with flourishes, like Zapf Chancery, deliver poor results. Generally, supply a font that would be used in block text, such as in a newspaper or work of literature, such as Times Roman, or a font already in the list, like MinionPro. If the <a href="plugins_ocrengine.html#PDOCRCreateForm" title=" Recognizes Text in a PDEImage, at a specified resolution, creating a PDEForm with the Image and Text underneath it.">PDOCRCreateForm</a>() function can't identify a font that covers the whole text of a word, it will follow the policy set by the <a href="plugins_ocrengine.html#OCRMissingFontStrategy" title=" Enumeration to specify how to handle missing fonts during OCR.">OCRMissingFontStrategy</a> parameter. Each element is an <a href="aslayer_ASAtom.html#ASAtom">ASAtom</a> corresponding to a string representing a candidate font. This array can only be modified by calling <a href="plugins_ocrengine.html#PDOCRParamsSetCandidateFonts" title=" Set the Candidate Fonts used to try to match recognized text.">PDOCRParamsSetCandidateFonts</a>(). The length is given by <a href="plugins_ocrengine.html#PDOCRParamsGetNumCandidateFonts" title=" Get the Number of Candidate Fonts to try to match recognized text.">PDOCRParamsGetNumCandidateFonts</a>(). </div>
 </div>
 
 <H4><strong>Syntax</strong></H4>
@@ -796,15 +823,19 @@ APDFL Plugins: ocrengine
 <Table class="paramsTable"><tr><td><div><code>params</code></div>
 </td><td><div><a href="pdslayer_General.html#IN">IN</a> <a href="plugins_ocrengine.html#OCRParams">OCRParams</a> object </div>
 </td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>an array of ASAtoms </div>
 </section>
 <section><div class="infoRow"><h3 id="PDOCRParamsGetLanguagesConfigured"><strong><span style="color:grey;">PDOCRParamsGetLanguagesConfigured</span></strong></h3>
 
-<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:83</div>
+<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:127</div>
 </div>
 
 <div><H4><strong>Description</strong></H4>
 
-<div>Get the Languages configured to be recognized. </div>
+<div>Get the Languages configured to be recognized, as an array of <a href="plugins_ocrengine.html#OCRLanguage" title=" Enumeration to specify the language.">OCRLanguage</a> elements. This array can only be modified by calling <a href="plugins_ocrengine.html#PDOCRParamsSetLanguagesConfigured" title=" Set the Languages configured to be recognized, as an array of OCRLanguage elements.">PDOCRParamsSetLanguagesConfigured</a>(). The length is given by <a href="plugins_ocrengine.html#PDOCRParamsGetNumLanguagesConfigured" title=" Get the Number of Languages configured to be recognized.">PDOCRParamsGetNumLanguagesConfigured</a>(). </div>
 </div>
 
 <H4><strong>Syntax</strong></H4>
@@ -816,15 +847,19 @@ APDFL Plugins: ocrengine
 <Table class="paramsTable"><tr><td><div><code>params</code></div>
 </td><td><div><a href="pdslayer_General.html#IN">IN</a> <a href="plugins_ocrengine.html#OCRParams">OCRParams</a> object </div>
 </td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>an array of <a href="plugins_ocrengine.html#OCRLanguage" title=" Enumeration to specify the language.">OCRLanguage</a> elements. </div>
 </section>
 <section><div class="infoRow"><h3 id="PDOCRParamsGetNumCandidateFonts"><strong><span style="color:grey;">PDOCRParamsGetNumCandidateFonts</span></strong></h3>
 
-<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:97</div>
+<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:162</div>
 </div>
 
 <div><H4><strong>Description</strong></H4>
 
-<div>Get the Number of Candidate Fonts used for Recognized Text. </div>
+<div>Get the Number of Candidate Fonts to try to match recognized text. The default list should work well in most cases. If you're using text that isn't represented by Latin fonts, or by Chinese, Japanese, or Korean fonts, then retrieve this list, add the font that can represent that text, then set that new list on <a href="plugins_ocrengine.html#OCRParams">OCRParams</a>. Enough font names must be supplied to cover the expected languages/scripts in use. The code selects a font to represent each word. If a word code-switches between different scripts, for instance, if it contains non-Latin text and Arabic numerals, then make sure to supply the name of a font family that can handle both the text and the numerals. The quality of the results depends on the font choice. The list is searched in order until a font works for a particular word. To make the text fit better, it's recommended to list proportional fonts before fixed-width fonts. Decorative fonts with flourishes, like Zapf Chancery, deliver poor results. Generally, supply a font that would be used in block text, such as in a newspaper or work of literature, such as Times Roman, or a font already in the list, like MinionPro. If the <a href="plugins_ocrengine.html#PDOCRCreateForm" title=" Recognizes Text in a PDEImage, at a specified resolution, creating a PDEForm with the Image and Text underneath it.">PDOCRCreateForm</a>() function can't identify a font that covers the whole text of a word, it will follow the policy set by the <a href="plugins_ocrengine.html#OCRMissingFontStrategy" title=" Enumeration to specify how to handle missing fonts during OCR.">OCRMissingFontStrategy</a> parameter. </div>
 </div>
 
 <H4><strong>Syntax</strong></H4>
@@ -836,10 +871,14 @@ APDFL Plugins: ocrengine
 <Table class="paramsTable"><tr><td><div><code>params</code></div>
 </td><td><div><a href="pdslayer_General.html#IN">IN</a> <a href="plugins_ocrengine.html#OCRParams">OCRParams</a> object </div>
 </td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>the number of candidate font members in the <a href="plugins_ocrengine.html#OCRParams">OCRParams</a> </div>
 </section>
 <section><div class="infoRow"><h3 id="PDOCRParamsGetNumLanguagesConfigured"><strong><span style="color:grey;">PDOCRParamsGetNumLanguagesConfigured</span></strong></h3>
 
-<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:77</div>
+<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:117</div>
 </div>
 
 <div><H4><strong>Description</strong></H4>
@@ -856,10 +895,38 @@ APDFL Plugins: ocrengine
 <Table class="paramsTable"><tr><td><div><code>params</code></div>
 </td><td><div><a href="pdslayer_General.html#IN">IN</a> <a href="plugins_ocrengine.html#OCRParams">OCRParams</a> object </div>
 </td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>the number of languages currently configured in the <a href="plugins_ocrengine.html#OCRParams">OCRParams</a> object </div>
+</section>
+<section><div class="infoRow"><h3 id="PDOCRParamsGetPageSegmentationMode"><strong><span style="color:grey;">PDOCRParamsGetPageSegmentationMode</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:101</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Get the page segmentation mode parameter for an <a href="plugins_ocrengine.html#OCRParams">OCRParams</a> object. Specifies how the OCR engine will view the page, and how it detects text segments. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><a href="plugins_ocrengine.html#OCRPageSegmentationMode" title=" Enumeration to specify how the OCR engine will view the page, and how it detects text segments."><code>OCRPageSegmentationMode</code></a> <code>PDOCRParamsGetPageSegmentationMode(</code><a href="plugins_ocrengine.html#OCRParams"><code>OCRParams</code></a> <code>params</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>params</code></div>
+</td><td><div><a href="pdslayer_General.html#IN">IN</a> <a href="plugins_ocrengine.html#OCRParams">OCRParams</a> object </div>
+</td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>the <a href="plugins_ocrengine.html#OCRPageSegmentationMode" title=" Enumeration to specify how the OCR engine will view the page, and how it detects text segments.">OCRPageSegmentationMode</a> value set in the <a href="plugins_ocrengine.html#OCRParams">OCRParams</a> object. </div>
 </section>
 <section><div class="infoRow"><h3 id="PDOCRParamsGetPerformance"><strong><span style="color:grey;">PDOCRParamsGetPerformance</span></strong></h3>
 
-<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:51</div>
+<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:65</div>
 </div>
 
 <div><H4><strong>Description</strong></H4>
@@ -883,12 +950,12 @@ APDFL Plugins: ocrengine
 </section>
 <section><div class="infoRow"><h3 id="PDOCRParamsGetPreprocessing"><strong><span style="color:grey;">PDOCRParamsGetPreprocessing</span></strong></h3>
 
-<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:64</div>
+<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:82</div>
 </div>
 
 <div><H4><strong>Description</strong></H4>
 
-<div>Get the Preprocessing setting. </div>
+<div>Get the Preprocessing setting. Indicates if image preprocessing (including rescaling, denoising, and deskewing) is enabled before OCR to improve character recognition. </div>
 </div>
 
 <H4><strong>Syntax</strong></H4>
@@ -900,15 +967,19 @@ APDFL Plugins: ocrengine
 <Table class="paramsTable"><tr><td><div><code>params</code></div>
 </td><td><div><a href="pdslayer_General.html#IN">IN</a> <a href="plugins_ocrengine.html#OCRParams">OCRParams</a> object </div>
 </td></tr></Table>
+
+<H4><strong>Returns</strong></H4>
+
+<div>the state of the preprocess flag </div>
 </section>
 <section><div class="infoRow"><h3 id="PDOCRParamsSetCandidateFonts"><strong><span style="color:grey;">PDOCRParamsSetCandidateFonts</span></strong></h3>
 
-<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:111</div>
+<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:225</div>
 </div>
 
 <div><H4><strong>Description</strong></H4>
 
-<div>Set the Candidate Fonts used for Recognized Text. </div>
+<div>Set the Candidate Fonts used to try to match recognized text. The default list should work well in most cases. If you're using text that isn't represented by Latin fonts, or by Chinese, Japanese, or Korean fonts, then retrieve this list, add the font that can represent that text, then set that new list on <a href="plugins_ocrengine.html#OCRParams">OCRParams</a>. Enough font names must be supplied to cover the expected languages/scripts in use. The code selects a font to represent each word. If a word code-switches between different scripts, for instance, if it contains non-Latin text and Arabic numerals, then make sure to supply the name of a font family that can handle both the text and the numerals. The quality of the results depends on the font choice. The list is searched in order until a font works for a particular word. To make the text fit better, it's recommended to list proportional fonts before fixed-width fonts. Decorative fonts with flourishes, like Zapf Chancery, deliver poor results. Generally, supply a font that would be used in block text, such as in a newspaper or work of literature, such as Times Roman, or a font already in the list, like MinionPro. If the <a href="plugins_ocrengine.html#PDOCRCreateForm" title=" Recognizes Text in a PDEImage, at a specified resolution, creating a PDEForm with the Image and Text underneath it.">PDOCRCreateForm</a>() function can't identify a font that covers the whole text of a word, it will follow the policy set by the <a href="plugins_ocrengine.html#OCRMissingFontStrategy" title=" Enumeration to specify how to handle missing fonts during OCR.">OCRMissingFontStrategy</a> parameter. Each element is an <a href="aslayer_ASAtom.html#ASAtom">ASAtom</a> corresponding to a string representing a candidate font. </div>
 </div>
 
 <H4><strong>Syntax</strong></H4>
@@ -921,20 +992,20 @@ APDFL Plugins: ocrengine
 </td><td><div><a href="pdslayer_General.html#IN">IN</a> <a href="plugins_ocrengine.html#OCRParams">OCRParams</a> object </div>
 </td></tr>
 <tr><td><div><code>fonts</code></div>
-</td><td><div><a href="pdslayer_General.html#IN">IN</a> fonts to set as candidate fonts </div>
+</td><td><div><a href="pdslayer_General.html#IN">IN</a> an array of ASAtoms to set as candidate fonts </div>
 </td></tr>
 <tr><td><div><code>numFonts</code></div>
-</td><td><div></div>
+</td><td><div>the size of the fonts array </div>
 </td></tr></Table>
 </section>
 <section><div class="infoRow"><h3 id="PDOCRParamsSetLanguagesConfigured"><strong><span style="color:grey;">PDOCRParamsSetLanguagesConfigured</span></strong></h3>
 
-<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:91</div>
+<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:135</div>
 </div>
 
 <div><H4><strong>Description</strong></H4>
 
-<div>Set the Languages configured to be recognized. </div>
+<div>Set the Languages configured to be recognized, as an array of <a href="plugins_ocrengine.html#OCRLanguage" title=" Enumeration to specify the language.">OCRLanguage</a> elements. </div>
 </div>
 
 <H4><strong>Syntax</strong></H4>
@@ -950,12 +1021,35 @@ APDFL Plugins: ocrengine
 </td><td><div><a href="pdslayer_General.html#IN">IN</a> languages to configure OCREngine with </div>
 </td></tr>
 <tr><td><div><code>numLanguages</code></div>
-</td><td><div></div>
+</td><td><div>the size of the languages array </div>
+</td></tr></Table>
+</section>
+<section><div class="infoRow"><h3 id="PDOCRParamsSetPageSegmentationMode"><strong><span style="color:grey;">PDOCRParamsSetPageSegmentationMode</span></strong></h3>
+
+<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:110</div>
+</div>
+
+<div><H4><strong>Description</strong></H4>
+
+<div>Set the page segementation mode parameter for an <a href="plugins_ocrengine.html#OCRParams">OCRParams</a> object. Specifies how the OCR engine will view the page, and how it detects text segments. </div>
+</div>
+
+<H4><strong>Syntax</strong></H4>
+
+<code><code>void</code> <code>PDOCRParamsSetPageSegmentationMode(</code><a href="plugins_ocrengine.html#OCRParams"><code>OCRParams</code></a> <code>params</code><code>,</code> <a href="plugins_ocrengine.html#OCRPageSegmentationMode" title=" Enumeration to specify how the OCR engine will view the page, and how it detects text segments."><code>OCRPageSegmentationMode</code></a> <code>pageSegmentationMode</code><code>);</code> </code>
+
+<H4><strong>Parameters</strong></H4>
+
+<Table class="paramsTable"><tr><td><div><code>params</code></div>
+</td><td><div><a href="pdslayer_General.html#IN">IN</a> <a href="plugins_ocrengine.html#OCRParams">OCRParams</a> object to be modified. </div>
+</td></tr>
+<tr><td><div><code>performance</code></div>
+</td><td><div><a href="pdslayer_General.html#IN">IN</a> the <a href="plugins_ocrengine.html#OCRPageSegmentationMode" title=" Enumeration to specify how the OCR engine will view the page, and how it detects text segments.">OCRPageSegmentationMode</a> value to set on the <a href="plugins_ocrengine.html#OCRParams">OCRParams</a> object. </div>
 </td></tr></Table>
 </section>
 <section><div class="infoRow"><h3 id="PDOCRParamsSetPerformance"><strong><span style="color:grey;">PDOCRParamsSetPerformance</span></strong></h3>
 
-<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:58</div>
+<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:72</div>
 </div>
 
 <div><H4><strong>Description</strong></H4>
@@ -978,12 +1072,12 @@ APDFL Plugins: ocrengine
 </section>
 <section><div class="infoRow"><h3 id="PDOCRParamsSetPreprocessing"><strong><span style="color:grey;">PDOCRParamsSetPreprocessing</span></strong></h3>
 
-<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:71</div>
+<div class="headerRef"><strong>Header:</strong> OCREngineProcs.h:92</div>
 </div>
 
 <div><H4><strong>Description</strong></H4>
 
-<div>Set the Preprocessing setting. </div>
+<div>Set the Preprocessing setting. Indicates if image preprocessing (including rescaling, denoising, and deskewing) is enabled before OCR to improve character recognition. </div>
 </div>
 
 <H4><strong>Syntax</strong></H4>
@@ -1006,7 +1100,7 @@ APDFL Plugins: ocrengine
 
 <div><H4><strong>Description</strong></H4>
 
-<div>Release an <a href="plugins_ocrengine.html#OCRParams">OCRParams</a> obtained with <a href="plugins_ocrengine.html#PDOCRDefaultParams" title=" This will return a reference to a set of OCRParams, already configured with defaults.">PDOCRDefaultParams</a>. </div>
+<div>Release an <a href="plugins_ocrengine.html#OCRParams">OCRParams</a> obtained with <a href="plugins_ocrengine.html#PDOCRDefaultParams" title=" Return a reference to a set of OCRParams, already configured with defaults.">PDOCRDefaultParams</a>. </div>
 </div>
 
 <H4><strong>Syntax</strong></H4>
