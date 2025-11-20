@@ -1,0 +1,2211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library Java Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('enumcom_1_1datalogics_1_1_p_d_f_l_1_1_language.html','','enumcom_1_1datalogics_1_1_p_d_f_l_1_1_language-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">com.datalogics.PDFL.Language Enum Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ab2cd8b1d237b7a8eaea2a9e9db82b72c" id="r_ab2cd8b1d237b7a8eaea2a9e9db82b72c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2cd8b1d237b7a8eaea2a9e9db82b72c">AFRIKAANS</a></td></tr>
+<tr class="memitem:ac947d48ec6204094debbf0292d5b5bab" id="r_ac947d48ec6204094debbf0292d5b5bab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac947d48ec6204094debbf0292d5b5bab">ALBANIAN</a></td></tr>
+<tr class="memitem:a2822f5f8879f28b03de5b1177395e5a7" id="r_a2822f5f8879f28b03de5b1177395e5a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2822f5f8879f28b03de5b1177395e5a7">AMHARIC</a></td></tr>
+<tr class="memitem:af00221b947d752cea597359a33d57963" id="r_af00221b947d752cea597359a33d57963"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af00221b947d752cea597359a33d57963">ARABIC</a></td></tr>
+<tr class="memitem:a45caa4b3c1a18593957eb305d6fd9dd3" id="r_a45caa4b3c1a18593957eb305d6fd9dd3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45caa4b3c1a18593957eb305d6fd9dd3">ASSAMESE</a></td></tr>
+<tr class="memitem:a296dbd08aee135fc50c8eb33e75bea71" id="r_a296dbd08aee135fc50c8eb33e75bea71"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a296dbd08aee135fc50c8eb33e75bea71">AZERBAIJANI</a></td></tr>
+<tr class="memitem:adbadc996a2b09b4a03da0f41e2bed953" id="r_adbadc996a2b09b4a03da0f41e2bed953"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbadc996a2b09b4a03da0f41e2bed953">AZERBAIJANI_CYRILLIC</a></td></tr>
+<tr class="memitem:a5821d00d367e68bc9c4f3f210cb6aac5" id="r_a5821d00d367e68bc9c4f3f210cb6aac5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5821d00d367e68bc9c4f3f210cb6aac5">BASQUE</a></td></tr>
+<tr class="memitem:a1ea10918c786e1734b8934de94ec6e7d" id="r_a1ea10918c786e1734b8934de94ec6e7d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ea10918c786e1734b8934de94ec6e7d">BELARUSIAN</a></td></tr>
+<tr class="memitem:a76056a310fee86d2e561e342951e27c5" id="r_a76056a310fee86d2e561e342951e27c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76056a310fee86d2e561e342951e27c5">BENGALI</a></td></tr>
+<tr class="memitem:a031318ac75c45ef113d98ebfddff8f1b" id="r_a031318ac75c45ef113d98ebfddff8f1b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a031318ac75c45ef113d98ebfddff8f1b">BOSNIAN</a></td></tr>
+<tr class="memitem:a6dd20bd27947258ec677000a030802d7" id="r_a6dd20bd27947258ec677000a030802d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6dd20bd27947258ec677000a030802d7">BRETON</a></td></tr>
+<tr class="memitem:a89f8af194a1062f432795f3edcf9791b" id="r_a89f8af194a1062f432795f3edcf9791b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89f8af194a1062f432795f3edcf9791b">BULGARIAN</a></td></tr>
+<tr class="memitem:ae654525963bb277aa25527dcc3475184" id="r_ae654525963bb277aa25527dcc3475184"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae654525963bb277aa25527dcc3475184">BURMESE</a></td></tr>
+<tr class="memitem:a6aa097b87f734b91f8bae4c1739d02b7" id="r_a6aa097b87f734b91f8bae4c1739d02b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6aa097b87f734b91f8bae4c1739d02b7">CATALAN</a></td></tr>
+<tr class="memitem:aa82add905850d026292b4506829ef93c" id="r_aa82add905850d026292b4506829ef93c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa82add905850d026292b4506829ef93c">CEBUANO</a></td></tr>
+<tr class="memitem:a72a27faa005ad3a5ba52c58e6291cdd7" id="r_a72a27faa005ad3a5ba52c58e6291cdd7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72a27faa005ad3a5ba52c58e6291cdd7">CENTRAL_KHMER</a></td></tr>
+<tr class="memitem:ac09d51d2679087239a5932d6c3be584c" id="r_ac09d51d2679087239a5932d6c3be584c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac09d51d2679087239a5932d6c3be584c">CHEROKEE</a></td></tr>
+<tr class="memitem:a3a243388ccd27bacd4161652841f2de2" id="r_a3a243388ccd27bacd4161652841f2de2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a243388ccd27bacd4161652841f2de2">CHINESE_SIMPLIFIED</a></td></tr>
+<tr class="memitem:a163e7dcb75312e97b6ff148be2ff6355" id="r_a163e7dcb75312e97b6ff148be2ff6355"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a163e7dcb75312e97b6ff148be2ff6355">CHINESE_SIMPLIFIED_VERTICAL</a></td></tr>
+<tr class="memitem:aa233f6e61dc0cb6400c4cbd5104a793f" id="r_aa233f6e61dc0cb6400c4cbd5104a793f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa233f6e61dc0cb6400c4cbd5104a793f">CHINESE_TRADITIONAL</a></td></tr>
+<tr class="memitem:a45ad37a0e3d0209a4659e56ab440acfc" id="r_a45ad37a0e3d0209a4659e56ab440acfc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45ad37a0e3d0209a4659e56ab440acfc">CHINESE_TRADITIONAL_VERTICAL</a></td></tr>
+<tr class="memitem:af7bfb57b9ce29aa5abdd59716ddab982" id="r_af7bfb57b9ce29aa5abdd59716ddab982"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7bfb57b9ce29aa5abdd59716ddab982">CORSICAN</a></td></tr>
+<tr class="memitem:a60f14819744574caad0582995d2f73c9" id="r_a60f14819744574caad0582995d2f73c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60f14819744574caad0582995d2f73c9">CROATIAN</a></td></tr>
+<tr class="memitem:a39f79205c1e0c59bbc45a53004eae06d" id="r_a39f79205c1e0c59bbc45a53004eae06d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39f79205c1e0c59bbc45a53004eae06d">CZECH</a></td></tr>
+<tr class="memitem:a9d6687dd4ebfc60e59c8ee4b5db9632e" id="r_a9d6687dd4ebfc60e59c8ee4b5db9632e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d6687dd4ebfc60e59c8ee4b5db9632e">DANISH</a></td></tr>
+<tr class="memitem:ab03ace74280e4dac144732aea4b97824" id="r_ab03ace74280e4dac144732aea4b97824"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab03ace74280e4dac144732aea4b97824">DANISH_FRAKTUR</a></td></tr>
+<tr class="memitem:a6ce8c2f59e0c2cd57e9d7aa268241b68" id="r_a6ce8c2f59e0c2cd57e9d7aa268241b68"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ce8c2f59e0c2cd57e9d7aa268241b68">DUTCH</a></td></tr>
+<tr class="memitem:aaf66874fe8b85cb27a93939c6494d5fd" id="r_aaf66874fe8b85cb27a93939c6494d5fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf66874fe8b85cb27a93939c6494d5fd">DZONGKHA</a></td></tr>
+<tr class="memitem:ad2fbc8d105c9d20b836a1226856b79db" id="r_ad2fbc8d105c9d20b836a1226856b79db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2fbc8d105c9d20b836a1226856b79db">ENGLISH</a></td></tr>
+<tr class="memitem:a92afde455908d2a85e9ea54935e1ecb6" id="r_a92afde455908d2a85e9ea54935e1ecb6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92afde455908d2a85e9ea54935e1ecb6">ENGLISH_MIDDLE</a></td></tr>
+<tr class="memitem:a55d5fd9d969e02d5acc44c2bae605145" id="r_a55d5fd9d969e02d5acc44c2bae605145"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55d5fd9d969e02d5acc44c2bae605145">ESPERANTO</a></td></tr>
+<tr class="memitem:aa49752d7f5b4b02cbc328c7a0fb34957" id="r_aa49752d7f5b4b02cbc328c7a0fb34957"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa49752d7f5b4b02cbc328c7a0fb34957">ESTONIAN</a></td></tr>
+<tr class="memitem:a69b95e8aa23356c3268e6aa12c943672" id="r_a69b95e8aa23356c3268e6aa12c943672"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69b95e8aa23356c3268e6aa12c943672">FAROESE</a></td></tr>
+<tr class="memitem:ad6249f5e089d140c2451243e84c5058f" id="r_ad6249f5e089d140c2451243e84c5058f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6249f5e089d140c2451243e84c5058f">FILIPINO</a></td></tr>
+<tr class="memitem:ada6aebe8e3357609fbc351e96bab4351" id="r_ada6aebe8e3357609fbc351e96bab4351"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada6aebe8e3357609fbc351e96bab4351">FINNISH</a></td></tr>
+<tr class="memitem:a0e11e2453fd6edcd9228ae98e7130fbc" id="r_a0e11e2453fd6edcd9228ae98e7130fbc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e11e2453fd6edcd9228ae98e7130fbc">FRENCH</a></td></tr>
+<tr class="memitem:ae37cefd9353ebece945e07b95d70b959" id="r_ae37cefd9353ebece945e07b95d70b959"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae37cefd9353ebece945e07b95d70b959">FRENCH_MIDDLE</a></td></tr>
+<tr class="memitem:a9e0374930b4bd612e046b776932fc08b" id="r_a9e0374930b4bd612e046b776932fc08b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e0374930b4bd612e046b776932fc08b">FRISIAN</a></td></tr>
+<tr class="memitem:ad41bf162008dc14ad39f0b4f97cc9cee" id="r_ad41bf162008dc14ad39f0b4f97cc9cee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad41bf162008dc14ad39f0b4f97cc9cee">GALICIAN</a></td></tr>
+<tr class="memitem:a9aabd220acc29d38e7429e8793e47212" id="r_a9aabd220acc29d38e7429e8793e47212"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9aabd220acc29d38e7429e8793e47212">GEORGIAN</a></td></tr>
+<tr class="memitem:aeb9074ca8e9d13813d64ac93775fe59a" id="r_aeb9074ca8e9d13813d64ac93775fe59a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb9074ca8e9d13813d64ac93775fe59a">GEORGIAN_OLD</a></td></tr>
+<tr class="memitem:a52ffe9533bfff89c5ae3ce5a7d49d08d" id="r_a52ffe9533bfff89c5ae3ce5a7d49d08d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52ffe9533bfff89c5ae3ce5a7d49d08d">GERMAN</a></td></tr>
+<tr class="memitem:a20dc6c65be92b7b6c356a6a5af6e3bb4" id="r_a20dc6c65be92b7b6c356a6a5af6e3bb4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20dc6c65be92b7b6c356a6a5af6e3bb4">GERMAN_FRAKTUR</a></td></tr>
+<tr class="memitem:a3e4e6d45be51b306b1120d1c35a2482b" id="r_a3e4e6d45be51b306b1120d1c35a2482b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e4e6d45be51b306b1120d1c35a2482b">GREEK</a></td></tr>
+<tr class="memitem:af382dbe97b4429a19f7fe85c8084c52d" id="r_af382dbe97b4429a19f7fe85c8084c52d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af382dbe97b4429a19f7fe85c8084c52d">GREEK_ANCIENT</a></td></tr>
+<tr class="memitem:af67ed6a4bcb793eb71a586a5de477efa" id="r_af67ed6a4bcb793eb71a586a5de477efa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af67ed6a4bcb793eb71a586a5de477efa">GUJARATI</a></td></tr>
+<tr class="memitem:ac7c9f1a0a3b4a0f86c98aba71591d9ff" id="r_ac7c9f1a0a3b4a0f86c98aba71591d9ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7c9f1a0a3b4a0f86c98aba71591d9ff">HAITIAN</a></td></tr>
+<tr class="memitem:a32eec4249261b9099f8c2a7b4ba3c376" id="r_a32eec4249261b9099f8c2a7b4ba3c376"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32eec4249261b9099f8c2a7b4ba3c376">HEBREW</a></td></tr>
+<tr class="memitem:a2a4d404cf18152fcb15ed1ffe0a40d99" id="r_a2a4d404cf18152fcb15ed1ffe0a40d99"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a4d404cf18152fcb15ed1ffe0a40d99">HINDI</a></td></tr>
+<tr class="memitem:afe005121c7588720bb0d2e879d13595e" id="r_afe005121c7588720bb0d2e879d13595e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe005121c7588720bb0d2e879d13595e">HUNGARIAN</a></td></tr>
+<tr class="memitem:a7345885d7e8433d0d32edc53a85fa6cb" id="r_a7345885d7e8433d0d32edc53a85fa6cb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7345885d7e8433d0d32edc53a85fa6cb">ICELANDIC</a></td></tr>
+<tr class="memitem:acaa0ba2fb25bdb09b69c7cbff3cff6c3" id="r_acaa0ba2fb25bdb09b69c7cbff3cff6c3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acaa0ba2fb25bdb09b69c7cbff3cff6c3">INDONESIAN</a></td></tr>
+<tr class="memitem:ae4873b85b3eff63b09a5e2c383b9f2b9" id="r_ae4873b85b3eff63b09a5e2c383b9f2b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4873b85b3eff63b09a5e2c383b9f2b9">INUKTITUT</a></td></tr>
+<tr class="memitem:af2910bbe9690be97bc66532fc8eafea3" id="r_af2910bbe9690be97bc66532fc8eafea3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2910bbe9690be97bc66532fc8eafea3">IRISH</a></td></tr>
+<tr class="memitem:a0582803fe32e7f74fa22090b5e983267" id="r_a0582803fe32e7f74fa22090b5e983267"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0582803fe32e7f74fa22090b5e983267">ITALIAN</a></td></tr>
+<tr class="memitem:a1c03fb3d7a2d891997eaae145e025871" id="r_a1c03fb3d7a2d891997eaae145e025871"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c03fb3d7a2d891997eaae145e025871">ITALIAN_OLD</a></td></tr>
+<tr class="memitem:a2a586251523a354944544213cfcda7dc" id="r_a2a586251523a354944544213cfcda7dc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a586251523a354944544213cfcda7dc">JAPANESE</a></td></tr>
+<tr class="memitem:ae95de7cab08b80ad374a0571996cc8bc" id="r_ae95de7cab08b80ad374a0571996cc8bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae95de7cab08b80ad374a0571996cc8bc">JAPANESE_VERTICAL</a></td></tr>
+<tr class="memitem:a6215b534ed0255f09457fea661757e99" id="r_a6215b534ed0255f09457fea661757e99"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6215b534ed0255f09457fea661757e99">JAVANESE</a></td></tr>
+<tr class="memitem:a840bd5ed0701f06408f4d3783c604531" id="r_a840bd5ed0701f06408f4d3783c604531"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a840bd5ed0701f06408f4d3783c604531">KANNADA</a></td></tr>
+<tr class="memitem:a5f32cf8c568c5098749e7b6a582e88e4" id="r_a5f32cf8c568c5098749e7b6a582e88e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f32cf8c568c5098749e7b6a582e88e4">KAZAKH</a></td></tr>
+<tr class="memitem:a8ec52e0295514f29c0dbaa49b5b1ea6e" id="r_a8ec52e0295514f29c0dbaa49b5b1ea6e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ec52e0295514f29c0dbaa49b5b1ea6e">KOREAN</a></td></tr>
+<tr class="memitem:a332e06d87bee88dccbbee11b4c2aaacc" id="r_a332e06d87bee88dccbbee11b4c2aaacc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a332e06d87bee88dccbbee11b4c2aaacc">KOREAN_VERTICAL</a></td></tr>
+<tr class="memitem:a62812a3eef79594850834dfd9f820594" id="r_a62812a3eef79594850834dfd9f820594"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62812a3eef79594850834dfd9f820594">KURMANJI</a></td></tr>
+<tr class="memitem:af527d2ee1ce3bf321930d17be8d1b3ed" id="r_af527d2ee1ce3bf321930d17be8d1b3ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af527d2ee1ce3bf321930d17be8d1b3ed">KYRGYZ</a></td></tr>
+<tr class="memitem:a047cc33eebe5e522f8d3c6163004873b" id="r_a047cc33eebe5e522f8d3c6163004873b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a047cc33eebe5e522f8d3c6163004873b">LAO</a></td></tr>
+<tr class="memitem:a0ee80b029009c55cd04ccd181020f062" id="r_a0ee80b029009c55cd04ccd181020f062"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ee80b029009c55cd04ccd181020f062">LATIN</a></td></tr>
+<tr class="memitem:a6b3a5be93504cf3457e56124e79c8027" id="r_a6b3a5be93504cf3457e56124e79c8027"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b3a5be93504cf3457e56124e79c8027">LATVIAN</a></td></tr>
+<tr class="memitem:a92fab99df7b657cd65887bcb6d349d02" id="r_a92fab99df7b657cd65887bcb6d349d02"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92fab99df7b657cd65887bcb6d349d02">LITHUANIAN</a></td></tr>
+<tr class="memitem:ad7398a08f80fe6707c6b8e1c3f0b70ed" id="r_ad7398a08f80fe6707c6b8e1c3f0b70ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7398a08f80fe6707c6b8e1c3f0b70ed">LUXEMBOURGISH</a></td></tr>
+<tr class="memitem:ad61ddbc33209c88d11d89aa16c8eed0f" id="r_ad61ddbc33209c88d11d89aa16c8eed0f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad61ddbc33209c88d11d89aa16c8eed0f">MACEDONIAN</a></td></tr>
+<tr class="memitem:a9f0e91c56a132e34db7644b15e444462" id="r_a9f0e91c56a132e34db7644b15e444462"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f0e91c56a132e34db7644b15e444462">MALAY</a></td></tr>
+<tr class="memitem:a45e87164bc6253d5d820e7ec65fe3a35" id="r_a45e87164bc6253d5d820e7ec65fe3a35"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45e87164bc6253d5d820e7ec65fe3a35">MALAYALAM</a></td></tr>
+<tr class="memitem:ac21d052c6c61e37f4faf688711f3d6af" id="r_ac21d052c6c61e37f4faf688711f3d6af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac21d052c6c61e37f4faf688711f3d6af">MALTESE</a></td></tr>
+<tr class="memitem:a96f4ee585f6a63e7708281ebc1ad0129" id="r_a96f4ee585f6a63e7708281ebc1ad0129"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96f4ee585f6a63e7708281ebc1ad0129">MAORI</a></td></tr>
+<tr class="memitem:a5be92c3df40a3106e9231a3aa648edab" id="r_a5be92c3df40a3106e9231a3aa648edab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5be92c3df40a3106e9231a3aa648edab">MARATHI</a></td></tr>
+<tr class="memitem:a0a6213f4a5240cc701cc9db2f99f2f25" id="r_a0a6213f4a5240cc701cc9db2f99f2f25"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a6213f4a5240cc701cc9db2f99f2f25">MATH_EQUATION_DETECTION</a></td></tr>
+<tr class="memitem:a22797aa96372521ae45d8a744c57cbd7" id="r_a22797aa96372521ae45d8a744c57cbd7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22797aa96372521ae45d8a744c57cbd7">MONGOLIAN</a></td></tr>
+<tr class="memitem:a2e71eabdad4d30d47a28fece63a07e90" id="r_a2e71eabdad4d30d47a28fece63a07e90"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e71eabdad4d30d47a28fece63a07e90">NEPALI</a></td></tr>
+<tr class="memitem:acac94e1c8dcf75e0a91bf926a06583dd" id="r_acac94e1c8dcf75e0a91bf926a06583dd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acac94e1c8dcf75e0a91bf926a06583dd">NORWEGIAN</a></td></tr>
+<tr class="memitem:a29e0ee3e961c72c2ac8ce77a2e760804" id="r_a29e0ee3e961c72c2ac8ce77a2e760804"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29e0ee3e961c72c2ac8ce77a2e760804">OCCITAN</a></td></tr>
+<tr class="memitem:af1a847bbd80eb4edf82b03a985a939ad" id="r_af1a847bbd80eb4edf82b03a985a939ad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1a847bbd80eb4edf82b03a985a939ad">ORIENTATION_AND_SCRIPT_DETECTION</a></td></tr>
+<tr class="memitem:a2273e832557be00c77364aa13e04f7d5" id="r_a2273e832557be00c77364aa13e04f7d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2273e832557be00c77364aa13e04f7d5">ORIYA</a></td></tr>
+<tr class="memitem:a43b655e5bd1f59245ea8ed192cb02879" id="r_a43b655e5bd1f59245ea8ed192cb02879"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43b655e5bd1f59245ea8ed192cb02879">PANJABI</a></td></tr>
+<tr class="memitem:a7ac7c4b829950508d7daeb1c142956c8" id="r_a7ac7c4b829950508d7daeb1c142956c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ac7c4b829950508d7daeb1c142956c8">PASHTO</a></td></tr>
+<tr class="memitem:a446c31af2be5c3e615e64e83419f3cec" id="r_a446c31af2be5c3e615e64e83419f3cec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a446c31af2be5c3e615e64e83419f3cec">PERSIAN</a></td></tr>
+<tr class="memitem:a53954c9e1354c79d3b6c21a3107a8025" id="r_a53954c9e1354c79d3b6c21a3107a8025"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53954c9e1354c79d3b6c21a3107a8025">POLISH</a></td></tr>
+<tr class="memitem:acb07f610ba0ab65505d21fcf2c408359" id="r_acb07f610ba0ab65505d21fcf2c408359"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb07f610ba0ab65505d21fcf2c408359">PORTUGUESE</a></td></tr>
+<tr class="memitem:a361ad97bdade98aa671eca37c59f7cb7" id="r_a361ad97bdade98aa671eca37c59f7cb7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a361ad97bdade98aa671eca37c59f7cb7">QUECHUA</a></td></tr>
+<tr class="memitem:a58be767d332ffe1b27a1b6ba19225af0" id="r_a58be767d332ffe1b27a1b6ba19225af0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58be767d332ffe1b27a1b6ba19225af0">ROMANIAN</a></td></tr>
+<tr class="memitem:a89668252143e30c66dca3b1817c350a8" id="r_a89668252143e30c66dca3b1817c350a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89668252143e30c66dca3b1817c350a8">RUSSIAN</a></td></tr>
+<tr class="memitem:a971aa49cc2772c1e3a5778e8636b5c9e" id="r_a971aa49cc2772c1e3a5778e8636b5c9e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a971aa49cc2772c1e3a5778e8636b5c9e">SANSKRIT</a></td></tr>
+<tr class="memitem:abb96809d1933d0ac527e21de2be87816" id="r_abb96809d1933d0ac527e21de2be87816"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb96809d1933d0ac527e21de2be87816">SCOTTISH_GAELIC</a></td></tr>
+<tr class="memitem:aa65197d76fe462619cf7a8334628f28b" id="r_aa65197d76fe462619cf7a8334628f28b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa65197d76fe462619cf7a8334628f28b">SERBIAN</a></td></tr>
+<tr class="memitem:af458fb65302e3d9a2f63a344b8b6e658" id="r_af458fb65302e3d9a2f63a344b8b6e658"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af458fb65302e3d9a2f63a344b8b6e658">SERBIAN_LATIN</a></td></tr>
+<tr class="memitem:a9cd8ca6e359542d387b72e1bdd59b613" id="r_a9cd8ca6e359542d387b72e1bdd59b613"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9cd8ca6e359542d387b72e1bdd59b613">SINDHI</a></td></tr>
+<tr class="memitem:ae898ecc5db607851daef4e0c79d4bfb7" id="r_ae898ecc5db607851daef4e0c79d4bfb7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae898ecc5db607851daef4e0c79d4bfb7">SINHALA</a></td></tr>
+<tr class="memitem:acec3c10665af0deeb904c5604e5fc934" id="r_acec3c10665af0deeb904c5604e5fc934"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acec3c10665af0deeb904c5604e5fc934">SLOVAK</a></td></tr>
+<tr class="memitem:ad1e228b1b39081807b0b8cf311a5b7bc" id="r_ad1e228b1b39081807b0b8cf311a5b7bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1e228b1b39081807b0b8cf311a5b7bc">SLOVAK_FRAKTUR</a></td></tr>
+<tr class="memitem:a2847132d33b1899adc8f531d29839caa" id="r_a2847132d33b1899adc8f531d29839caa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2847132d33b1899adc8f531d29839caa">SLOVENIAN</a></td></tr>
+<tr class="memitem:a0e725700fd7b2410ea92e9ed7d01b524" id="r_a0e725700fd7b2410ea92e9ed7d01b524"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e725700fd7b2410ea92e9ed7d01b524">SPANISH</a></td></tr>
+<tr class="memitem:ac3725e467fb11f5779ceed97f2860d60" id="r_ac3725e467fb11f5779ceed97f2860d60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3725e467fb11f5779ceed97f2860d60">SPANISH_OLD</a></td></tr>
+<tr class="memitem:af9351d61860bb9f6d476a1d321b89e67" id="r_af9351d61860bb9f6d476a1d321b89e67"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9351d61860bb9f6d476a1d321b89e67">SUNDANESE</a></td></tr>
+<tr class="memitem:a94214276eb1f81f4d791bff3fd0eda1d" id="r_a94214276eb1f81f4d791bff3fd0eda1d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94214276eb1f81f4d791bff3fd0eda1d">SWAHILI</a></td></tr>
+<tr class="memitem:a0e4ea9608a0ebb96fab794594db25891" id="r_a0e4ea9608a0ebb96fab794594db25891"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e4ea9608a0ebb96fab794594db25891">SWEDISH</a></td></tr>
+<tr class="memitem:ad88bcecbd0ebdcba4c1ecff3a2500fed" id="r_ad88bcecbd0ebdcba4c1ecff3a2500fed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad88bcecbd0ebdcba4c1ecff3a2500fed">TAGALOG</a></td></tr>
+<tr class="memitem:aadc98484e51c7db739251d77d404ce1e" id="r_aadc98484e51c7db739251d77d404ce1e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadc98484e51c7db739251d77d404ce1e">TAJIK</a></td></tr>
+<tr class="memitem:a9ca7d74af881b86d7801d8bba8768b00" id="r_a9ca7d74af881b86d7801d8bba8768b00"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ca7d74af881b86d7801d8bba8768b00">TAMIL</a></td></tr>
+<tr class="memitem:abbe18c87a689b877b9f4b5ba4e135e7f" id="r_abbe18c87a689b877b9f4b5ba4e135e7f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbe18c87a689b877b9f4b5ba4e135e7f">TATAR</a></td></tr>
+<tr class="memitem:a9614323506960d8a2273844d48316185" id="r_a9614323506960d8a2273844d48316185"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9614323506960d8a2273844d48316185">TELUGU</a></td></tr>
+<tr class="memitem:a525024e902f404acec0d306fcbb5f446" id="r_a525024e902f404acec0d306fcbb5f446"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a525024e902f404acec0d306fcbb5f446">THAI</a></td></tr>
+<tr class="memitem:a4d17b1cda14ef59c8e9e012186230c3f" id="r_a4d17b1cda14ef59c8e9e012186230c3f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d17b1cda14ef59c8e9e012186230c3f">TIBETAN</a></td></tr>
+<tr class="memitem:a45f95fb80fdf7cecbed4beb66d472c7e" id="r_a45f95fb80fdf7cecbed4beb66d472c7e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45f95fb80fdf7cecbed4beb66d472c7e">TIGRINYA</a></td></tr>
+<tr class="memitem:aa72b9f604541c9824246a21898c6e2d2" id="r_aa72b9f604541c9824246a21898c6e2d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa72b9f604541c9824246a21898c6e2d2">TONGA</a></td></tr>
+<tr class="memitem:a9f7995370510e498dbed2cccd0a8833a" id="r_a9f7995370510e498dbed2cccd0a8833a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f7995370510e498dbed2cccd0a8833a">TURKISH</a></td></tr>
+<tr class="memitem:a7d1b51e3a95fb965bbee12faabb8b78f" id="r_a7d1b51e3a95fb965bbee12faabb8b78f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d1b51e3a95fb965bbee12faabb8b78f">UKRAINIAN</a></td></tr>
+<tr class="memitem:a54951b034ddd3f7991230862bef674f8" id="r_a54951b034ddd3f7991230862bef674f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54951b034ddd3f7991230862bef674f8">URDU</a></td></tr>
+<tr class="memitem:aa263c80f7282058bc117480352f53c7c" id="r_aa263c80f7282058bc117480352f53c7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa263c80f7282058bc117480352f53c7c">UYGHUR</a></td></tr>
+<tr class="memitem:aa5835da4c1b65aae3eb7d9c527c68c16" id="r_aa5835da4c1b65aae3eb7d9c527c68c16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5835da4c1b65aae3eb7d9c527c68c16">UZBEK</a></td></tr>
+<tr class="memitem:a34ea0b13cbba006ad8aa107c812480e1" id="r_a34ea0b13cbba006ad8aa107c812480e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34ea0b13cbba006ad8aa107c812480e1">UZBEK_CYRILLIC</a></td></tr>
+<tr class="memitem:a02be14c0baeabe8a95cfaa51302b936b" id="r_a02be14c0baeabe8a95cfaa51302b936b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02be14c0baeabe8a95cfaa51302b936b">VIETNAMESE</a></td></tr>
+<tr class="memitem:a7979a5e6dcb819cfe6f7e66bb5ba9af0" id="r_a7979a5e6dcb819cfe6f7e66bb5ba9af0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7979a5e6dcb819cfe6f7e66bb5ba9af0">WELSH</a></td></tr>
+<tr class="memitem:a4314cf8659bdbd11435d82999e188ab1" id="r_a4314cf8659bdbd11435d82999e188ab1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4314cf8659bdbd11435d82999e188ab1">YIDDISH</a></td></tr>
+<tr class="memitem:a58391d09f6fb69a691ee54fa4dbf9155" id="r_a58391d09f6fb69a691ee54fa4dbf9155"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58391d09f6fb69a691ee54fa4dbf9155">YORUBA</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Languages which may be selected. To find if a language is available, call IsLanguageAvailable() on the OCREngine. </p>
+</div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="ab2cd8b1d237b7a8eaea2a9e9db82b72c" name="ab2cd8b1d237b7a8eaea2a9e9db82b72c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2cd8b1d237b7a8eaea2a9e9db82b72c">&#9670;&#160;</a></span>AFRIKAANS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.AFRIKAANS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Afrikaans (afr). </p>
+
+</div>
+</div>
+<a id="ac947d48ec6204094debbf0292d5b5bab" name="ac947d48ec6204094debbf0292d5b5bab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac947d48ec6204094debbf0292d5b5bab">&#9670;&#160;</a></span>ALBANIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.ALBANIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Albanian (sqi). </p>
+
+</div>
+</div>
+<a id="a2822f5f8879f28b03de5b1177395e5a7" name="a2822f5f8879f28b03de5b1177395e5a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2822f5f8879f28b03de5b1177395e5a7">&#9670;&#160;</a></span>AMHARIC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.AMHARIC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Amharic (amh). </p>
+
+</div>
+</div>
+<a id="af00221b947d752cea597359a33d57963" name="af00221b947d752cea597359a33d57963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af00221b947d752cea597359a33d57963">&#9670;&#160;</a></span>ARABIC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.ARABIC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Arabic (ara). </p>
+
+</div>
+</div>
+<a id="a45caa4b3c1a18593957eb305d6fd9dd3" name="a45caa4b3c1a18593957eb305d6fd9dd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45caa4b3c1a18593957eb305d6fd9dd3">&#9670;&#160;</a></span>ASSAMESE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.ASSAMESE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Assamese (asm). </p>
+
+</div>
+</div>
+<a id="a296dbd08aee135fc50c8eb33e75bea71" name="a296dbd08aee135fc50c8eb33e75bea71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a296dbd08aee135fc50c8eb33e75bea71">&#9670;&#160;</a></span>AZERBAIJANI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.AZERBAIJANI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Azerbaijani (aze). </p>
+
+</div>
+</div>
+<a id="adbadc996a2b09b4a03da0f41e2bed953" name="adbadc996a2b09b4a03da0f41e2bed953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbadc996a2b09b4a03da0f41e2bed953">&#9670;&#160;</a></span>AZERBAIJANI_CYRILLIC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.AZERBAIJANI_CYRILLIC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Azerbaijani - Cyrillic (aze-cyrl). </p>
+
+</div>
+</div>
+<a id="a5821d00d367e68bc9c4f3f210cb6aac5" name="a5821d00d367e68bc9c4f3f210cb6aac5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5821d00d367e68bc9c4f3f210cb6aac5">&#9670;&#160;</a></span>BASQUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.BASQUE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Basque (eus). </p>
+
+</div>
+</div>
+<a id="a1ea10918c786e1734b8934de94ec6e7d" name="a1ea10918c786e1734b8934de94ec6e7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ea10918c786e1734b8934de94ec6e7d">&#9670;&#160;</a></span>BELARUSIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.BELARUSIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Belarusian (bel). </p>
+
+</div>
+</div>
+<a id="a76056a310fee86d2e561e342951e27c5" name="a76056a310fee86d2e561e342951e27c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76056a310fee86d2e561e342951e27c5">&#9670;&#160;</a></span>BENGALI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.BENGALI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Bengali (ben). </p>
+
+</div>
+</div>
+<a id="a031318ac75c45ef113d98ebfddff8f1b" name="a031318ac75c45ef113d98ebfddff8f1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a031318ac75c45ef113d98ebfddff8f1b">&#9670;&#160;</a></span>BOSNIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.BOSNIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Bosnian (bos). </p>
+
+</div>
+</div>
+<a id="a6dd20bd27947258ec677000a030802d7" name="a6dd20bd27947258ec677000a030802d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dd20bd27947258ec677000a030802d7">&#9670;&#160;</a></span>BRETON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.BRETON</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Breton (bre). </p>
+
+</div>
+</div>
+<a id="a89f8af194a1062f432795f3edcf9791b" name="a89f8af194a1062f432795f3edcf9791b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89f8af194a1062f432795f3edcf9791b">&#9670;&#160;</a></span>BULGARIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.BULGARIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Bulgarian (bul). </p>
+
+</div>
+</div>
+<a id="ae654525963bb277aa25527dcc3475184" name="ae654525963bb277aa25527dcc3475184"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae654525963bb277aa25527dcc3475184">&#9670;&#160;</a></span>BURMESE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.BURMESE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Burmese (mya). </p>
+
+</div>
+</div>
+<a id="a6aa097b87f734b91f8bae4c1739d02b7" name="a6aa097b87f734b91f8bae4c1739d02b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aa097b87f734b91f8bae4c1739d02b7">&#9670;&#160;</a></span>CATALAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.CATALAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Catalan; Valencian (cat). </p>
+
+</div>
+</div>
+<a id="aa82add905850d026292b4506829ef93c" name="aa82add905850d026292b4506829ef93c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa82add905850d026292b4506829ef93c">&#9670;&#160;</a></span>CEBUANO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.CEBUANO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Cebuano (ceb). </p>
+
+</div>
+</div>
+<a id="a72a27faa005ad3a5ba52c58e6291cdd7" name="a72a27faa005ad3a5ba52c58e6291cdd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72a27faa005ad3a5ba52c58e6291cdd7">&#9670;&#160;</a></span>CENTRAL_KHMER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.CENTRAL_KHMER</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Central Khmer (khm). </p>
+
+</div>
+</div>
+<a id="ac09d51d2679087239a5932d6c3be584c" name="ac09d51d2679087239a5932d6c3be584c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac09d51d2679087239a5932d6c3be584c">&#9670;&#160;</a></span>CHEROKEE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.CHEROKEE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Cherokee (chr). </p>
+
+</div>
+</div>
+<a id="a3a243388ccd27bacd4161652841f2de2" name="a3a243388ccd27bacd4161652841f2de2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a243388ccd27bacd4161652841f2de2">&#9670;&#160;</a></span>CHINESE_SIMPLIFIED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.CHINESE_SIMPLIFIED</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Simplified Chinese (chi_sim). </p>
+
+</div>
+</div>
+<a id="a163e7dcb75312e97b6ff148be2ff6355" name="a163e7dcb75312e97b6ff148be2ff6355"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a163e7dcb75312e97b6ff148be2ff6355">&#9670;&#160;</a></span>CHINESE_SIMPLIFIED_VERTICAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.CHINESE_SIMPLIFIED_VERTICAL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Simplified Chinese, vertical (chi_sim_vert). </p>
+
+</div>
+</div>
+<a id="aa233f6e61dc0cb6400c4cbd5104a793f" name="aa233f6e61dc0cb6400c4cbd5104a793f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa233f6e61dc0cb6400c4cbd5104a793f">&#9670;&#160;</a></span>CHINESE_TRADITIONAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.CHINESE_TRADITIONAL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Traditional Chinese (chi_tra). </p>
+
+</div>
+</div>
+<a id="a45ad37a0e3d0209a4659e56ab440acfc" name="a45ad37a0e3d0209a4659e56ab440acfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45ad37a0e3d0209a4659e56ab440acfc">&#9670;&#160;</a></span>CHINESE_TRADITIONAL_VERTICAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.CHINESE_TRADITIONAL_VERTICAL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Traditional Chinese, vertical (chi_tra_vert). </p>
+
+</div>
+</div>
+<a id="af7bfb57b9ce29aa5abdd59716ddab982" name="af7bfb57b9ce29aa5abdd59716ddab982"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7bfb57b9ce29aa5abdd59716ddab982">&#9670;&#160;</a></span>CORSICAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.CORSICAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Corsican (cos). </p>
+
+</div>
+</div>
+<a id="a60f14819744574caad0582995d2f73c9" name="a60f14819744574caad0582995d2f73c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60f14819744574caad0582995d2f73c9">&#9670;&#160;</a></span>CROATIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.CROATIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Coratian (hrv). </p>
+
+</div>
+</div>
+<a id="a39f79205c1e0c59bbc45a53004eae06d" name="a39f79205c1e0c59bbc45a53004eae06d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39f79205c1e0c59bbc45a53004eae06d">&#9670;&#160;</a></span>CZECH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.CZECH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Czech (ces). </p>
+
+</div>
+</div>
+<a id="a9d6687dd4ebfc60e59c8ee4b5db9632e" name="a9d6687dd4ebfc60e59c8ee4b5db9632e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d6687dd4ebfc60e59c8ee4b5db9632e">&#9670;&#160;</a></span>DANISH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.DANISH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Danish (dan). </p>
+
+</div>
+</div>
+<a id="ab03ace74280e4dac144732aea4b97824" name="ab03ace74280e4dac144732aea4b97824"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab03ace74280e4dac144732aea4b97824">&#9670;&#160;</a></span>DANISH_FRAKTUR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.DANISH_FRAKTUR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Danish Fraktur (dan_frak) Fraktur, a set of typefaces developed in the early 16th century. </p>
+
+</div>
+</div>
+<a id="a6ce8c2f59e0c2cd57e9d7aa268241b68" name="a6ce8c2f59e0c2cd57e9d7aa268241b68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ce8c2f59e0c2cd57e9d7aa268241b68">&#9670;&#160;</a></span>DUTCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.DUTCH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dutch; Flemish (nld). </p>
+
+</div>
+</div>
+<a id="aaf66874fe8b85cb27a93939c6494d5fd" name="aaf66874fe8b85cb27a93939c6494d5fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf66874fe8b85cb27a93939c6494d5fd">&#9670;&#160;</a></span>DZONGKHA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.DZONGKHA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dzongkha (dzo). </p>
+
+</div>
+</div>
+<a id="ad2fbc8d105c9d20b836a1226856b79db" name="ad2fbc8d105c9d20b836a1226856b79db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2fbc8d105c9d20b836a1226856b79db">&#9670;&#160;</a></span>ENGLISH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.ENGLISH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>English. </p>
+
+</div>
+</div>
+<a id="a92afde455908d2a85e9ea54935e1ecb6" name="a92afde455908d2a85e9ea54935e1ecb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92afde455908d2a85e9ea54935e1ecb6">&#9670;&#160;</a></span>ENGLISH_MIDDLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.ENGLISH_MIDDLE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>English, Middle (1100-1500) (enm). </p>
+
+</div>
+</div>
+<a id="a55d5fd9d969e02d5acc44c2bae605145" name="a55d5fd9d969e02d5acc44c2bae605145"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55d5fd9d969e02d5acc44c2bae605145">&#9670;&#160;</a></span>ESPERANTO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.ESPERANTO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Esperanto (epo). </p>
+
+</div>
+</div>
+<a id="aa49752d7f5b4b02cbc328c7a0fb34957" name="aa49752d7f5b4b02cbc328c7a0fb34957"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa49752d7f5b4b02cbc328c7a0fb34957">&#9670;&#160;</a></span>ESTONIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.ESTONIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Estonian (est). </p>
+
+</div>
+</div>
+<a id="a69b95e8aa23356c3268e6aa12c943672" name="a69b95e8aa23356c3268e6aa12c943672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69b95e8aa23356c3268e6aa12c943672">&#9670;&#160;</a></span>FAROESE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.FAROESE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Faroese (fao). </p>
+
+</div>
+</div>
+<a id="ad6249f5e089d140c2451243e84c5058f" name="ad6249f5e089d140c2451243e84c5058f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6249f5e089d140c2451243e84c5058f">&#9670;&#160;</a></span>FILIPINO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.FILIPINO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Filipino (fil). </p>
+
+</div>
+</div>
+<a id="ada6aebe8e3357609fbc351e96bab4351" name="ada6aebe8e3357609fbc351e96bab4351"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada6aebe8e3357609fbc351e96bab4351">&#9670;&#160;</a></span>FINNISH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.FINNISH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Finnish (fin). </p>
+
+</div>
+</div>
+<a id="a0e11e2453fd6edcd9228ae98e7130fbc" name="a0e11e2453fd6edcd9228ae98e7130fbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e11e2453fd6edcd9228ae98e7130fbc">&#9670;&#160;</a></span>FRENCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.FRENCH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>French (fra). </p>
+
+</div>
+</div>
+<a id="ae37cefd9353ebece945e07b95d70b959" name="ae37cefd9353ebece945e07b95d70b959"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae37cefd9353ebece945e07b95d70b959">&#9670;&#160;</a></span>FRENCH_MIDDLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.FRENCH_MIDDLE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>French, Middle (ca.1400-1600) (frm). </p>
+
+</div>
+</div>
+<a id="a9e0374930b4bd612e046b776932fc08b" name="a9e0374930b4bd612e046b776932fc08b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e0374930b4bd612e046b776932fc08b">&#9670;&#160;</a></span>FRISIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.FRISIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Frisian (fry). </p>
+
+</div>
+</div>
+<a id="ad41bf162008dc14ad39f0b4f97cc9cee" name="ad41bf162008dc14ad39f0b4f97cc9cee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad41bf162008dc14ad39f0b4f97cc9cee">&#9670;&#160;</a></span>GALICIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.GALICIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Galacian (glg). </p>
+
+</div>
+</div>
+<a id="a9aabd220acc29d38e7429e8793e47212" name="a9aabd220acc29d38e7429e8793e47212"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aabd220acc29d38e7429e8793e47212">&#9670;&#160;</a></span>GEORGIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.GEORGIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Georgian (kat). </p>
+
+</div>
+</div>
+<a id="aeb9074ca8e9d13813d64ac93775fe59a" name="aeb9074ca8e9d13813d64ac93775fe59a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb9074ca8e9d13813d64ac93775fe59a">&#9670;&#160;</a></span>GEORGIAN_OLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.GEORGIAN_OLD</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Georgian, old (before 1000) (kat_old). </p>
+
+</div>
+</div>
+<a id="a52ffe9533bfff89c5ae3ce5a7d49d08d" name="a52ffe9533bfff89c5ae3ce5a7d49d08d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52ffe9533bfff89c5ae3ce5a7d49d08d">&#9670;&#160;</a></span>GERMAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.GERMAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>German (deu). </p>
+
+</div>
+</div>
+<a id="a20dc6c65be92b7b6c356a6a5af6e3bb4" name="a20dc6c65be92b7b6c356a6a5af6e3bb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20dc6c65be92b7b6c356a6a5af6e3bb4">&#9670;&#160;</a></span>GERMAN_FRAKTUR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.GERMAN_FRAKTUR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>German Fraktur (frk) Fraktur, a set of typefaces developed in the early 16th century. </p>
+
+</div>
+</div>
+<a id="a3e4e6d45be51b306b1120d1c35a2482b" name="a3e4e6d45be51b306b1120d1c35a2482b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e4e6d45be51b306b1120d1c35a2482b">&#9670;&#160;</a></span>GREEK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.GREEK</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Greek, Modern (1453-) (ell). </p>
+
+</div>
+</div>
+<a id="af382dbe97b4429a19f7fe85c8084c52d" name="af382dbe97b4429a19f7fe85c8084c52d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af382dbe97b4429a19f7fe85c8084c52d">&#9670;&#160;</a></span>GREEK_ANCIENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.GREEK_ANCIENT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Greek, Ancient (to 1453) (grc). </p>
+
+</div>
+</div>
+<a id="af67ed6a4bcb793eb71a586a5de477efa" name="af67ed6a4bcb793eb71a586a5de477efa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af67ed6a4bcb793eb71a586a5de477efa">&#9670;&#160;</a></span>GUJARATI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.GUJARATI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gujarati (guj). </p>
+
+</div>
+</div>
+<a id="ac7c9f1a0a3b4a0f86c98aba71591d9ff" name="ac7c9f1a0a3b4a0f86c98aba71591d9ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7c9f1a0a3b4a0f86c98aba71591d9ff">&#9670;&#160;</a></span>HAITIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.HAITIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Hatian; Hatian Creole (hat). </p>
+
+</div>
+</div>
+<a id="a32eec4249261b9099f8c2a7b4ba3c376" name="a32eec4249261b9099f8c2a7b4ba3c376"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32eec4249261b9099f8c2a7b4ba3c376">&#9670;&#160;</a></span>HEBREW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.HEBREW</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Hebrew (heb). </p>
+
+</div>
+</div>
+<a id="a2a4d404cf18152fcb15ed1ffe0a40d99" name="a2a4d404cf18152fcb15ed1ffe0a40d99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a4d404cf18152fcb15ed1ffe0a40d99">&#9670;&#160;</a></span>HINDI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.HINDI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Hindi (hin). </p>
+
+</div>
+</div>
+<a id="afe005121c7588720bb0d2e879d13595e" name="afe005121c7588720bb0d2e879d13595e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe005121c7588720bb0d2e879d13595e">&#9670;&#160;</a></span>HUNGARIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.HUNGARIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Hungarian (hun). </p>
+
+</div>
+</div>
+<a id="a7345885d7e8433d0d32edc53a85fa6cb" name="a7345885d7e8433d0d32edc53a85fa6cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7345885d7e8433d0d32edc53a85fa6cb">&#9670;&#160;</a></span>ICELANDIC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.ICELANDIC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Icelandic (isl). </p>
+
+</div>
+</div>
+<a id="acaa0ba2fb25bdb09b69c7cbff3cff6c3" name="acaa0ba2fb25bdb09b69c7cbff3cff6c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaa0ba2fb25bdb09b69c7cbff3cff6c3">&#9670;&#160;</a></span>INDONESIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.INDONESIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indonesian (ind). </p>
+
+</div>
+</div>
+<a id="ae4873b85b3eff63b09a5e2c383b9f2b9" name="ae4873b85b3eff63b09a5e2c383b9f2b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4873b85b3eff63b09a5e2c383b9f2b9">&#9670;&#160;</a></span>INUKTITUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.INUKTITUT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Inuktitut (iku). </p>
+
+</div>
+</div>
+<a id="af2910bbe9690be97bc66532fc8eafea3" name="af2910bbe9690be97bc66532fc8eafea3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2910bbe9690be97bc66532fc8eafea3">&#9670;&#160;</a></span>IRISH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.IRISH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Irish (gle). </p>
+
+</div>
+</div>
+<a id="a0582803fe32e7f74fa22090b5e983267" name="a0582803fe32e7f74fa22090b5e983267"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0582803fe32e7f74fa22090b5e983267">&#9670;&#160;</a></span>ITALIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.ITALIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Italian (ita). </p>
+
+</div>
+</div>
+<a id="a1c03fb3d7a2d891997eaae145e025871" name="a1c03fb3d7a2d891997eaae145e025871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c03fb3d7a2d891997eaae145e025871">&#9670;&#160;</a></span>ITALIAN_OLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.ITALIAN_OLD</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Italian, old (before 1800) (ita_old). </p>
+
+</div>
+</div>
+<a id="a2a586251523a354944544213cfcda7dc" name="a2a586251523a354944544213cfcda7dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a586251523a354944544213cfcda7dc">&#9670;&#160;</a></span>JAPANESE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.JAPANESE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Japanese (jpn). </p>
+
+</div>
+</div>
+<a id="ae95de7cab08b80ad374a0571996cc8bc" name="ae95de7cab08b80ad374a0571996cc8bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae95de7cab08b80ad374a0571996cc8bc">&#9670;&#160;</a></span>JAPANESE_VERTICAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.JAPANESE_VERTICAL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Japanese, vertical (jpn_vert). </p>
+
+</div>
+</div>
+<a id="a6215b534ed0255f09457fea661757e99" name="a6215b534ed0255f09457fea661757e99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6215b534ed0255f09457fea661757e99">&#9670;&#160;</a></span>JAVANESE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.JAVANESE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Javanese (jav). </p>
+
+</div>
+</div>
+<a id="a840bd5ed0701f06408f4d3783c604531" name="a840bd5ed0701f06408f4d3783c604531"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a840bd5ed0701f06408f4d3783c604531">&#9670;&#160;</a></span>KANNADA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.KANNADA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Kannada (kan). </p>
+
+</div>
+</div>
+<a id="a5f32cf8c568c5098749e7b6a582e88e4" name="a5f32cf8c568c5098749e7b6a582e88e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f32cf8c568c5098749e7b6a582e88e4">&#9670;&#160;</a></span>KAZAKH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.KAZAKH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Kazakh (kaz). </p>
+
+</div>
+</div>
+<a id="a8ec52e0295514f29c0dbaa49b5b1ea6e" name="a8ec52e0295514f29c0dbaa49b5b1ea6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ec52e0295514f29c0dbaa49b5b1ea6e">&#9670;&#160;</a></span>KOREAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.KOREAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Korean (kor). </p>
+
+</div>
+</div>
+<a id="a332e06d87bee88dccbbee11b4c2aaacc" name="a332e06d87bee88dccbbee11b4c2aaacc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a332e06d87bee88dccbbee11b4c2aaacc">&#9670;&#160;</a></span>KOREAN_VERTICAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.KOREAN_VERTICAL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Korean, vertical (kor_vert). </p>
+
+</div>
+</div>
+<a id="a62812a3eef79594850834dfd9f820594" name="a62812a3eef79594850834dfd9f820594"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62812a3eef79594850834dfd9f820594">&#9670;&#160;</a></span>KURMANJI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.KURMANJI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Kurmanji (Kurdish - Latin Script). </p>
+
+</div>
+</div>
+<a id="af527d2ee1ce3bf321930d17be8d1b3ed" name="af527d2ee1ce3bf321930d17be8d1b3ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af527d2ee1ce3bf321930d17be8d1b3ed">&#9670;&#160;</a></span>KYRGYZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.KYRGYZ</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Kirghiz; Kyrgyz. </p>
+
+</div>
+</div>
+<a id="a047cc33eebe5e522f8d3c6163004873b" name="a047cc33eebe5e522f8d3c6163004873b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a047cc33eebe5e522f8d3c6163004873b">&#9670;&#160;</a></span>LAO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.LAO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Lao (lao). </p>
+
+</div>
+</div>
+<a id="a0ee80b029009c55cd04ccd181020f062" name="a0ee80b029009c55cd04ccd181020f062"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ee80b029009c55cd04ccd181020f062">&#9670;&#160;</a></span>LATIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.LATIN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Latin (lat). </p>
+
+</div>
+</div>
+<a id="a6b3a5be93504cf3457e56124e79c8027" name="a6b3a5be93504cf3457e56124e79c8027"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b3a5be93504cf3457e56124e79c8027">&#9670;&#160;</a></span>LATVIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.LATVIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Latvian (lav). </p>
+
+</div>
+</div>
+<a id="a92fab99df7b657cd65887bcb6d349d02" name="a92fab99df7b657cd65887bcb6d349d02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92fab99df7b657cd65887bcb6d349d02">&#9670;&#160;</a></span>LITHUANIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.LITHUANIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Lithuanian (lit). </p>
+
+</div>
+</div>
+<a id="ad7398a08f80fe6707c6b8e1c3f0b70ed" name="ad7398a08f80fe6707c6b8e1c3f0b70ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7398a08f80fe6707c6b8e1c3f0b70ed">&#9670;&#160;</a></span>LUXEMBOURGISH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.LUXEMBOURGISH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Luxembourgish (ltz). </p>
+
+</div>
+</div>
+<a id="ad61ddbc33209c88d11d89aa16c8eed0f" name="ad61ddbc33209c88d11d89aa16c8eed0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad61ddbc33209c88d11d89aa16c8eed0f">&#9670;&#160;</a></span>MACEDONIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.MACEDONIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Macedonian (mkd). </p>
+
+</div>
+</div>
+<a id="a9f0e91c56a132e34db7644b15e444462" name="a9f0e91c56a132e34db7644b15e444462"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f0e91c56a132e34db7644b15e444462">&#9670;&#160;</a></span>MALAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.MALAY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Malay (msa). </p>
+
+</div>
+</div>
+<a id="a45e87164bc6253d5d820e7ec65fe3a35" name="a45e87164bc6253d5d820e7ec65fe3a35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45e87164bc6253d5d820e7ec65fe3a35">&#9670;&#160;</a></span>MALAYALAM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.MALAYALAM</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Malayalam (mal). </p>
+
+</div>
+</div>
+<a id="ac21d052c6c61e37f4faf688711f3d6af" name="ac21d052c6c61e37f4faf688711f3d6af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac21d052c6c61e37f4faf688711f3d6af">&#9670;&#160;</a></span>MALTESE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.MALTESE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Maltese (mlt). </p>
+
+</div>
+</div>
+<a id="a96f4ee585f6a63e7708281ebc1ad0129" name="a96f4ee585f6a63e7708281ebc1ad0129"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96f4ee585f6a63e7708281ebc1ad0129">&#9670;&#160;</a></span>MAORI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.MAORI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Maori (mri). </p>
+
+</div>
+</div>
+<a id="a5be92c3df40a3106e9231a3aa648edab" name="a5be92c3df40a3106e9231a3aa648edab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5be92c3df40a3106e9231a3aa648edab">&#9670;&#160;</a></span>MARATHI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.MARATHI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Marathi (mar). </p>
+
+</div>
+</div>
+<a id="a0a6213f4a5240cc701cc9db2f99f2f25" name="a0a6213f4a5240cc701cc9db2f99f2f25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a6213f4a5240cc701cc9db2f99f2f25">&#9670;&#160;</a></span>MATH_EQUATION_DETECTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.MATH_EQUATION_DETECTION</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Math / equation detection module (equ). </p>
+
+</div>
+</div>
+<a id="a22797aa96372521ae45d8a744c57cbd7" name="a22797aa96372521ae45d8a744c57cbd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22797aa96372521ae45d8a744c57cbd7">&#9670;&#160;</a></span>MONGOLIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.MONGOLIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Mongolian (mon). </p>
+
+</div>
+</div>
+<a id="a2e71eabdad4d30d47a28fece63a07e90" name="a2e71eabdad4d30d47a28fece63a07e90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e71eabdad4d30d47a28fece63a07e90">&#9670;&#160;</a></span>NEPALI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.NEPALI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Nepali (nep). </p>
+
+</div>
+</div>
+<a id="acac94e1c8dcf75e0a91bf926a06583dd" name="acac94e1c8dcf75e0a91bf926a06583dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acac94e1c8dcf75e0a91bf926a06583dd">&#9670;&#160;</a></span>NORWEGIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.NORWEGIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Norwegian (nor). </p>
+
+</div>
+</div>
+<a id="a29e0ee3e961c72c2ac8ce77a2e760804" name="a29e0ee3e961c72c2ac8ce77a2e760804"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29e0ee3e961c72c2ac8ce77a2e760804">&#9670;&#160;</a></span>OCCITAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.OCCITAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Occitan (post 1500) (oci). </p>
+
+</div>
+</div>
+<a id="af1a847bbd80eb4edf82b03a985a939ad" name="af1a847bbd80eb4edf82b03a985a939ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1a847bbd80eb4edf82b03a985a939ad">&#9670;&#160;</a></span>ORIENTATION_AND_SCRIPT_DETECTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.ORIENTATION_AND_SCRIPT_DETECTION</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Orientation and script detection module (osd). </p>
+
+</div>
+</div>
+<a id="a2273e832557be00c77364aa13e04f7d5" name="a2273e832557be00c77364aa13e04f7d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2273e832557be00c77364aa13e04f7d5">&#9670;&#160;</a></span>ORIYA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.ORIYA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Oriya (ori). </p>
+
+</div>
+</div>
+<a id="a43b655e5bd1f59245ea8ed192cb02879" name="a43b655e5bd1f59245ea8ed192cb02879"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43b655e5bd1f59245ea8ed192cb02879">&#9670;&#160;</a></span>PANJABI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.PANJABI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Panjabi; Punujabi (pan). </p>
+
+</div>
+</div>
+<a id="a7ac7c4b829950508d7daeb1c142956c8" name="a7ac7c4b829950508d7daeb1c142956c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ac7c4b829950508d7daeb1c142956c8">&#9670;&#160;</a></span>PASHTO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.PASHTO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pashto; Pushto (pus). </p>
+
+</div>
+</div>
+<a id="a446c31af2be5c3e615e64e83419f3cec" name="a446c31af2be5c3e615e64e83419f3cec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a446c31af2be5c3e615e64e83419f3cec">&#9670;&#160;</a></span>PERSIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.PERSIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Persian (fas). </p>
+
+</div>
+</div>
+<a id="a53954c9e1354c79d3b6c21a3107a8025" name="a53954c9e1354c79d3b6c21a3107a8025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53954c9e1354c79d3b6c21a3107a8025">&#9670;&#160;</a></span>POLISH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.POLISH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Polish (pol). </p>
+
+</div>
+</div>
+<a id="acb07f610ba0ab65505d21fcf2c408359" name="acb07f610ba0ab65505d21fcf2c408359"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb07f610ba0ab65505d21fcf2c408359">&#9670;&#160;</a></span>PORTUGUESE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.PORTUGUESE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Portuguese (por). </p>
+
+</div>
+</div>
+<a id="a361ad97bdade98aa671eca37c59f7cb7" name="a361ad97bdade98aa671eca37c59f7cb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a361ad97bdade98aa671eca37c59f7cb7">&#9670;&#160;</a></span>QUECHUA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.QUECHUA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Quechua (que). </p>
+
+</div>
+</div>
+<a id="a58be767d332ffe1b27a1b6ba19225af0" name="a58be767d332ffe1b27a1b6ba19225af0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58be767d332ffe1b27a1b6ba19225af0">&#9670;&#160;</a></span>ROMANIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.ROMANIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Romanian; Moldavian; Moldovan (ron). </p>
+
+</div>
+</div>
+<a id="a89668252143e30c66dca3b1817c350a8" name="a89668252143e30c66dca3b1817c350a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89668252143e30c66dca3b1817c350a8">&#9670;&#160;</a></span>RUSSIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.RUSSIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Russian (rus). </p>
+
+</div>
+</div>
+<a id="a971aa49cc2772c1e3a5778e8636b5c9e" name="a971aa49cc2772c1e3a5778e8636b5c9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a971aa49cc2772c1e3a5778e8636b5c9e">&#9670;&#160;</a></span>SANSKRIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.SANSKRIT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sanskrit (san). </p>
+
+</div>
+</div>
+<a id="abb96809d1933d0ac527e21de2be87816" name="abb96809d1933d0ac527e21de2be87816"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb96809d1933d0ac527e21de2be87816">&#9670;&#160;</a></span>SCOTTISH_GAELIC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.SCOTTISH_GAELIC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Scottish Gaelic (gla). </p>
+
+</div>
+</div>
+<a id="aa65197d76fe462619cf7a8334628f28b" name="aa65197d76fe462619cf7a8334628f28b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa65197d76fe462619cf7a8334628f28b">&#9670;&#160;</a></span>SERBIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.SERBIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Serbian (srp). </p>
+
+</div>
+</div>
+<a id="af458fb65302e3d9a2f63a344b8b6e658" name="af458fb65302e3d9a2f63a344b8b6e658"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af458fb65302e3d9a2f63a344b8b6e658">&#9670;&#160;</a></span>SERBIAN_LATIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.SERBIAN_LATIN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Serbian - Latin (srp_latn). </p>
+
+</div>
+</div>
+<a id="a9cd8ca6e359542d387b72e1bdd59b613" name="a9cd8ca6e359542d387b72e1bdd59b613"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cd8ca6e359542d387b72e1bdd59b613">&#9670;&#160;</a></span>SINDHI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.SINDHI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sindhi (snd). </p>
+
+</div>
+</div>
+<a id="ae898ecc5db607851daef4e0c79d4bfb7" name="ae898ecc5db607851daef4e0c79d4bfb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae898ecc5db607851daef4e0c79d4bfb7">&#9670;&#160;</a></span>SINHALA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.SINHALA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sinhala; Sinhalese (sin). </p>
+
+</div>
+</div>
+<a id="acec3c10665af0deeb904c5604e5fc934" name="acec3c10665af0deeb904c5604e5fc934"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acec3c10665af0deeb904c5604e5fc934">&#9670;&#160;</a></span>SLOVAK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.SLOVAK</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Slovak (slk). </p>
+
+</div>
+</div>
+<a id="ad1e228b1b39081807b0b8cf311a5b7bc" name="ad1e228b1b39081807b0b8cf311a5b7bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1e228b1b39081807b0b8cf311a5b7bc">&#9670;&#160;</a></span>SLOVAK_FRAKTUR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.SLOVAK_FRAKTUR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Slovak Fraktur (slk_frak) Fraktur, a set of typefaces developed in the early 16th century. </p>
+
+</div>
+</div>
+<a id="a2847132d33b1899adc8f531d29839caa" name="a2847132d33b1899adc8f531d29839caa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2847132d33b1899adc8f531d29839caa">&#9670;&#160;</a></span>SLOVENIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.SLOVENIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Slovenian (slv). </p>
+
+</div>
+</div>
+<a id="a0e725700fd7b2410ea92e9ed7d01b524" name="a0e725700fd7b2410ea92e9ed7d01b524"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e725700fd7b2410ea92e9ed7d01b524">&#9670;&#160;</a></span>SPANISH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.SPANISH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Spanish; Castilian (spa). </p>
+
+</div>
+</div>
+<a id="ac3725e467fb11f5779ceed97f2860d60" name="ac3725e467fb11f5779ceed97f2860d60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3725e467fb11f5779ceed97f2860d60">&#9670;&#160;</a></span>SPANISH_OLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.SPANISH_OLD</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Spanish; Castilian (before 1400) (spa_old). </p>
+
+</div>
+</div>
+<a id="af9351d61860bb9f6d476a1d321b89e67" name="af9351d61860bb9f6d476a1d321b89e67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9351d61860bb9f6d476a1d321b89e67">&#9670;&#160;</a></span>SUNDANESE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.SUNDANESE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sundanese (sun). </p>
+
+</div>
+</div>
+<a id="a94214276eb1f81f4d791bff3fd0eda1d" name="a94214276eb1f81f4d791bff3fd0eda1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94214276eb1f81f4d791bff3fd0eda1d">&#9670;&#160;</a></span>SWAHILI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.SWAHILI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Swahili (swa). </p>
+
+</div>
+</div>
+<a id="a0e4ea9608a0ebb96fab794594db25891" name="a0e4ea9608a0ebb96fab794594db25891"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e4ea9608a0ebb96fab794594db25891">&#9670;&#160;</a></span>SWEDISH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.SWEDISH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Swedish (swe). </p>
+
+</div>
+</div>
+<a id="ad88bcecbd0ebdcba4c1ecff3a2500fed" name="ad88bcecbd0ebdcba4c1ecff3a2500fed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad88bcecbd0ebdcba4c1ecff3a2500fed">&#9670;&#160;</a></span>TAGALOG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.TAGALOG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tagalag (new, Filipino) (tgl). </p>
+
+</div>
+</div>
+<a id="aadc98484e51c7db739251d77d404ce1e" name="aadc98484e51c7db739251d77d404ce1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadc98484e51c7db739251d77d404ce1e">&#9670;&#160;</a></span>TAJIK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.TAJIK</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tajik (tgk). </p>
+
+</div>
+</div>
+<a id="a9ca7d74af881b86d7801d8bba8768b00" name="a9ca7d74af881b86d7801d8bba8768b00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ca7d74af881b86d7801d8bba8768b00">&#9670;&#160;</a></span>TAMIL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.TAMIL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tamil (tam). </p>
+
+</div>
+</div>
+<a id="abbe18c87a689b877b9f4b5ba4e135e7f" name="abbe18c87a689b877b9f4b5ba4e135e7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbe18c87a689b877b9f4b5ba4e135e7f">&#9670;&#160;</a></span>TATAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.TATAR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tatar (tat). </p>
+
+</div>
+</div>
+<a id="a9614323506960d8a2273844d48316185" name="a9614323506960d8a2273844d48316185"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9614323506960d8a2273844d48316185">&#9670;&#160;</a></span>TELUGU</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.TELUGU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Telugu (tel). </p>
+
+</div>
+</div>
+<a id="a525024e902f404acec0d306fcbb5f446" name="a525024e902f404acec0d306fcbb5f446"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a525024e902f404acec0d306fcbb5f446">&#9670;&#160;</a></span>THAI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.THAI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Thai (tha). </p>
+
+</div>
+</div>
+<a id="a4d17b1cda14ef59c8e9e012186230c3f" name="a4d17b1cda14ef59c8e9e012186230c3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d17b1cda14ef59c8e9e012186230c3f">&#9670;&#160;</a></span>TIBETAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.TIBETAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tibetan (bod). </p>
+
+</div>
+</div>
+<a id="a45f95fb80fdf7cecbed4beb66d472c7e" name="a45f95fb80fdf7cecbed4beb66d472c7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45f95fb80fdf7cecbed4beb66d472c7e">&#9670;&#160;</a></span>TIGRINYA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.TIGRINYA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tigrinya (tir). </p>
+
+</div>
+</div>
+<a id="aa72b9f604541c9824246a21898c6e2d2" name="aa72b9f604541c9824246a21898c6e2d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa72b9f604541c9824246a21898c6e2d2">&#9670;&#160;</a></span>TONGA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.TONGA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tonga (ton). </p>
+
+</div>
+</div>
+<a id="a9f7995370510e498dbed2cccd0a8833a" name="a9f7995370510e498dbed2cccd0a8833a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f7995370510e498dbed2cccd0a8833a">&#9670;&#160;</a></span>TURKISH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.TURKISH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Turkish (tur). </p>
+
+</div>
+</div>
+<a id="a7d1b51e3a95fb965bbee12faabb8b78f" name="a7d1b51e3a95fb965bbee12faabb8b78f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d1b51e3a95fb965bbee12faabb8b78f">&#9670;&#160;</a></span>UKRAINIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.UKRAINIAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Ukrainian (ukr). </p>
+
+</div>
+</div>
+<a id="a54951b034ddd3f7991230862bef674f8" name="a54951b034ddd3f7991230862bef674f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54951b034ddd3f7991230862bef674f8">&#9670;&#160;</a></span>URDU</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.URDU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Urdu (urd). </p>
+
+</div>
+</div>
+<a id="aa263c80f7282058bc117480352f53c7c" name="aa263c80f7282058bc117480352f53c7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa263c80f7282058bc117480352f53c7c">&#9670;&#160;</a></span>UYGHUR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.UYGHUR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Uyghur; Uighur (uig). </p>
+
+</div>
+</div>
+<a id="aa5835da4c1b65aae3eb7d9c527c68c16" name="aa5835da4c1b65aae3eb7d9c527c68c16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5835da4c1b65aae3eb7d9c527c68c16">&#9670;&#160;</a></span>UZBEK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.UZBEK</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Uzbek (uzb). </p>
+
+</div>
+</div>
+<a id="a34ea0b13cbba006ad8aa107c812480e1" name="a34ea0b13cbba006ad8aa107c812480e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34ea0b13cbba006ad8aa107c812480e1">&#9670;&#160;</a></span>UZBEK_CYRILLIC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.UZBEK_CYRILLIC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Uzbek - Cyrillic (uzb_cyrl). </p>
+
+</div>
+</div>
+<a id="a02be14c0baeabe8a95cfaa51302b936b" name="a02be14c0baeabe8a95cfaa51302b936b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02be14c0baeabe8a95cfaa51302b936b">&#9670;&#160;</a></span>VIETNAMESE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.VIETNAMESE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Vietnamese (vie). </p>
+
+</div>
+</div>
+<a id="a7979a5e6dcb819cfe6f7e66bb5ba9af0" name="a7979a5e6dcb819cfe6f7e66bb5ba9af0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7979a5e6dcb819cfe6f7e66bb5ba9af0">&#9670;&#160;</a></span>WELSH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.WELSH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Welsh (cym). </p>
+
+</div>
+</div>
+<a id="a4314cf8659bdbd11435d82999e188ab1" name="a4314cf8659bdbd11435d82999e188ab1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4314cf8659bdbd11435d82999e188ab1">&#9670;&#160;</a></span>YIDDISH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.YIDDISH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Yiddish (yid). </p>
+
+</div>
+</div>
+<a id="a58391d09f6fb69a691ee54fa4dbf9155" name="a58391d09f6fb69a691ee54fa4dbf9155"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58391d09f6fb69a691ee54fa4dbf9155">&#9670;&#160;</a></span>YORUBA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Language.YORUBA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Yoruba (yor). </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>

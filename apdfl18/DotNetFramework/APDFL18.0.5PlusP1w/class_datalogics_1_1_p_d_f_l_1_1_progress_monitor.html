@@ -1,0 +1,482 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library .NET Framework Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-csharp-dotnet-framework-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://www.nuget.org/packages/Adobe.PDF.Library.LM.NETFramework" id="pkglink"><img id="pkg-download-img" alt="Nuget Trial Download" src="https://img.shields.io/nuget/dt/Adobe.PDF.Library.LM.NETFramework?color=blue&label=APDFL%20.NET%20Framework%20Free%20Trial&logo=NuGet&style=plastic"/></a>
+        </p>
+      </div></td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_datalogics_1_1_p_d_f_l_1_1_progress_monitor.html','','class_datalogics_1_1_p_d_f_l_1_1_progress_monitor-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Datalogics.PDFL.ProgressMonitor Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a0e3429ee912cf598a136f2c4a6876fce" id="r_a0e3429ee912cf598a136f2c4a6876fce"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e3429ee912cf598a136f2c4a6876fce">BeginOperation</a> ()</td></tr>
+<tr class="memitem:aff15a2ebad5255126878050e7c221e90" id="r_aff15a2ebad5255126878050e7c221e90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff15a2ebad5255126878050e7c221e90">Dispose</a> ()</td></tr>
+<tr class="memitem:a17d6970d8c72c273459f71bc40ea1704" id="r_a17d6970d8c72c273459f71bc40ea1704"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17d6970d8c72c273459f71bc40ea1704">Dispose</a> (bool disposing)</td></tr>
+<tr class="memitem:a6cde36ad2806b9e9cf63a5d1f4898034" id="r_a6cde36ad2806b9e9cf63a5d1f4898034"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6cde36ad2806b9e9cf63a5d1f4898034">EndOperation</a> ()</td></tr>
+<tr class="memitem:a849075164d5d03df2fb2438f1b9c8750" id="r_a849075164d5d03df2fb2438f1b9c8750"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a849075164d5d03df2fb2438f1b9c8750">GetCurrentValue</a> ()</td></tr>
+<tr class="memitem:ad9388b9928726aefb5acd09bbab12b2d" id="r_ad9388b9928726aefb5acd09bbab12b2d"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9388b9928726aefb5acd09bbab12b2d">GetDuration</a> ()</td></tr>
+<tr class="memitem:a24921f9d716642700d0fbfbbe965a116" id="r_a24921f9d716642700d0fbfbbe965a116"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24921f9d716642700d0fbfbbe965a116">ProgressMonitor</a> ()</td></tr>
+<tr class="memitem:a71398d5fa39e18d9f8571b153ba4a254" id="r_a71398d5fa39e18d9f8571b153ba4a254"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71398d5fa39e18d9f8571b153ba4a254">SetCurrentValue</a> (int currentValue)</td></tr>
+<tr class="memitem:a20910b0241a9f0b148b7bca12634ca50" id="r_a20910b0241a9f0b148b7bca12634ca50"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20910b0241a9f0b148b7bca12634ca50">SetDuration</a> (int duration)</td></tr>
+<tr class="memitem:a9a2b041bc0476a2eaa995c3284f0e202" id="r_a9a2b041bc0476a2eaa995c3284f0e202"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a2b041bc0476a2eaa995c3284f0e202">SetText</a> (string text)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents the progress of an operation. </p>
+<p>The class can display a dialog if a process will take time, and the Progress method can indicate how long the process will last. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a24921f9d716642700d0fbfbbe965a116" name="a24921f9d716642700d0fbfbbe965a116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24921f9d716642700d0fbfbbe965a116">&#9670;&#160;</a></span>ProgressMonitor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.ProgressMonitor.ProgressMonitor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a0e3429ee912cf598a136f2c4a6876fce" name="a0e3429ee912cf598a136f2c4a6876fce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e3429ee912cf598a136f2c4a6876fce">&#9670;&#160;</a></span>BeginOperation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Datalogics.PDFL.ProgressMonitor.BeginOperation </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Initializes the progress monitor and displays it with a current value of zero. This method will be called first when the progress monitor is used. </p>
+
+</div>
+</div>
+<a id="aff15a2ebad5255126878050e7c221e90" name="aff15a2ebad5255126878050e7c221e90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff15a2ebad5255126878050e7c221e90">&#9670;&#160;</a></span>Dispose() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.ProgressMonitor.Dispose </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="#aff15a2ebad5255126878050e7c221e90">Dispose()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#aff15a2ebad5255126878050e7c221e90">Dispose()</a>.</p>
+
+</div>
+</div>
+<a id="a17d6970d8c72c273459f71bc40ea1704" name="a17d6970d8c72c273459f71bc40ea1704"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17d6970d8c72c273459f71bc40ea1704">&#9670;&#160;</a></span>Dispose() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Datalogics.PDFL.ProgressMonitor.Dispose </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>disposing</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6cde36ad2806b9e9cf63a5d1f4898034" name="a6cde36ad2806b9e9cf63a5d1f4898034"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cde36ad2806b9e9cf63a5d1f4898034">&#9670;&#160;</a></span>EndOperation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Datalogics.PDFL.ProgressMonitor.EndOperation </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Draws the progress monitor with its current value set to the progress monitor's duration (a full progress monitor), then removes the progress monitor from the display. </p>
+
+</div>
+</div>
+<a id="a849075164d5d03df2fb2438f1b9c8750" name="a849075164d5d03df2fb2438f1b9c8750"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a849075164d5d03df2fb2438f1b9c8750">&#9670;&#160;</a></span>GetCurrentValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int Datalogics.PDFL.ProgressMonitor.GetCurrentValue </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The current value of the progress monitor. The allowed value ranges from 0 (empty) to the value passed to SetDuration.</p>
+<p>For example, if the progress monitor's duration is 10, the current value must be between 0 and 10, inclusive. </p>
+
+</div>
+</div>
+<a id="ad9388b9928726aefb5acd09bbab12b2d" name="ad9388b9928726aefb5acd09bbab12b2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9388b9928726aefb5acd09bbab12b2d">&#9670;&#160;</a></span>GetDuration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int Datalogics.PDFL.ProgressMonitor.GetDuration </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The progress monitor's duration. </p>
+
+</div>
+</div>
+<a id="a71398d5fa39e18d9f8571b153ba4a254" name="a71398d5fa39e18d9f8571b153ba4a254"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71398d5fa39e18d9f8571b153ba4a254">&#9670;&#160;</a></span>SetCurrentValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Datalogics.PDFL.ProgressMonitor.SetCurrentValue </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>currentValue</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the current value of the progress monitor and updates the display. The allowed value ranges from 0 (empty) to the value passed to SetDuration.</p>
+<p>For example, if the progress monitor's duration is 10, the current value must be between 0 and 10, inclusive.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">currentValue</td><td>The progress monitor's current value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a20910b0241a9f0b148b7bca12634ca50" name="a20910b0241a9f0b148b7bca12634ca50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20910b0241a9f0b148b7bca12634ca50">&#9670;&#160;</a></span>SetDuration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Datalogics.PDFL.ProgressMonitor.SetDuration </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>duration</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the value that corresponds to a full progress monitor display. The progress monitor is subsequently filled in by setting its current value. This method will be called before setting the progress monitor's current value.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">duration</td><td>The maximum value the progress monitor will be allowed to have. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9a2b041bc0476a2eaa995c3284f0e202" name="a9a2b041bc0476a2eaa995c3284f0e202"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a2b041bc0476a2eaa995c3284f0e202">&#9670;&#160;</a></span>SetText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Datalogics.PDFL.ProgressMonitor.SetText </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Display a text string in the progress monitor. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>

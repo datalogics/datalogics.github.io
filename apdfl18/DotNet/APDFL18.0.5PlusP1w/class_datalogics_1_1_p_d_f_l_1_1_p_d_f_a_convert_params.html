@@ -1,0 +1,606 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Adobe PDF Library .NET Documentation</title>
+<link rel="shortcut icon" href="Datalogics.ico" type="image/x-icon">
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-csharp-dotnet-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://www.nuget.org/packages/Adobe.PDF.Library.LM.NET" id="pkglink"><img id="pkg-download-img" alt="Nuget Trial Download" src="https://img.shields.io/nuget/dt/Adobe.PDF.Library.LM.NET?color=blue&label=APDFL%20.NET%20Free%20Trial&logo=NuGet&style=plastic"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_datalogics_1_1_p_d_f_l_1_1_p_d_f_a_convert_params.html','','class_datalogics_1_1_p_d_f_l_1_1_p_d_f_a_convert_params-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Datalogics.PDFL.PDFAConvertParams Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aad12e884db0f6fa9a1266019adb5ad5e" id="r_aad12e884db0f6fa9a1266019adb5ad5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad12e884db0f6fa9a1266019adb5ad5e">Dispose</a> ()</td></tr>
+<tr class="memitem:a8a024f5d001586d3806876d4e310d2af" id="r_a8a024f5d001586d3806876d4e310d2af"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a024f5d001586d3806876d4e310d2af">Dispose</a> (bool disposing)</td></tr>
+<tr class="memitem:a4d3cfde186ad9ea51c013b5b64aad7d6" id="r_a4d3cfde186ad9ea51c013b5b64aad7d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d3cfde186ad9ea51c013b5b64aad7d6">PDFAConvertParams</a> ()</td></tr>
+<tr class="memitem:ad281056da6100b49e0996e726c0ec8df" id="r_ad281056da6100b49e0996e726c0ec8df"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad281056da6100b49e0996e726c0ec8df">PDFAConvertParams</a> (bool <a class="el" href="#a6d3a791cc99fc97617c7df67bbdd30e1">RemoveAllAnnotations</a>, bool <a class="el" href="#a50afab1126c9cdba38c1fd776ef5357b">IgnoreFontErrors</a>, bool <a class="el" href="#a0038138e8ea0d91fd2cd14f2f7eeced1">AbortIfXFAIsPresent</a>)</td></tr>
+<tr class="memitem:a3627a52165ae1d73eeec00571bc21de8" id="r_a3627a52165ae1d73eeec00571bc21de8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3627a52165ae1d73eeec00571bc21de8">PDFAConvertParams</a> (bool removeAllAnnotations, bool ignoreFontErrors, bool abortIfXFAIsPresent, bool noValidationErrors, ushort rasterizationResolution)</td></tr>
+<tr class="memitem:a9f971c3b5bb6ee4b42d1e2c481b9f250" id="r_a9f971c3b5bb6ee4b42d1e2c481b9f250"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f971c3b5bb6ee4b42d1e2c481b9f250">PDFAConvertParams</a> (bool removeAllAnnotations, bool ignoreFontErrors, bool abortIfXFAIsPresent, bool noValidationErrors, ushort rasterizationResolution, bool validateImplementationLimitsOfDocument)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a0038138e8ea0d91fd2cd14f2f7eeced1" id="r_a0038138e8ea0d91fd2cd14f2f7eeced1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0038138e8ea0d91fd2cd14f2f7eeced1">AbortIfXFAIsPresent</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a50afab1126c9cdba38c1fd776ef5357b" id="r_a50afab1126c9cdba38c1fd776ef5357b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50afab1126c9cdba38c1fd776ef5357b">IgnoreFontErrors</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a34cad07651726fb3c6f4c93bb970064d" id="r_a34cad07651726fb3c6f4c93bb970064d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34cad07651726fb3c6f4c93bb970064d">NoValidationErrors</a><code> [get, set]</code></td></tr>
+<tr class="memitem:aaf8704fe999957764108821975fd3b83" id="r_aaf8704fe999957764108821975fd3b83"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf8704fe999957764108821975fd3b83">ProfileDesc</a><code> [get, set]</code></td></tr>
+<tr class="memitem:ad681d080b9295a16d550011705ee4d66" id="r_ad681d080b9295a16d550011705ee4d66"><td class="memItemLeft" align="right" valign="top">ushort&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad681d080b9295a16d550011705ee4d66">RasterizationResolution</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a6d3a791cc99fc97617c7df67bbdd30e1" id="r_a6d3a791cc99fc97617c7df67bbdd30e1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d3a791cc99fc97617c7df67bbdd30e1">RemoveAllAnnotations</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a7ac44599ac115357318acb682abe00d7" id="r_a7ac44599ac115357318acb682abe00d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ac44599ac115357318acb682abe00d7">ValidateImplementationLimitsOfDocument</a><code> [get, set]</code></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Parameters for converting a document to PDF/A compliance. </p>
+<p>These parameters control how a Document is converted to the PDF/A standard.</p>
+<ul>
+<li>
+<code>RemoveAllAnnotations</code> if true, will remove all Annotations and Actions from the output</li>
+<li>
+<code>IgnoreFontErrors</code> if true, will try to rasterize the page when fonts cannot be embedded</li>
+<li>
+<code>AbortIfXFAIsPresent</code> if true, will abort conversion process if XFA form entry is detected</li>
+<li>
+<code>NoValidationErrors</code> if true, will ignore validation errors</li>
+<li>
+<code>RasterizationResolution</code> rasterization resolution; if 0, use 72 DPI</li>
+<li>
+<code>ValidateImplementationLimitsOfDocument</code> Validate PDF Implementation Limits of the Document.</li>
+</ul>
+<p>PDF/A is an ISO-standard version the PDF format. It is designed to be used with PDF files that need to be archived and stored for long periods. For example, the fonts in a PDF/A file are embedded in the file itself, rather than accessed through a link to a font directory on a local server.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a4d3cfde186ad9ea51c013b5b64aad7d6" name="a4d3cfde186ad9ea51c013b5b64aad7d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d3cfde186ad9ea51c013b5b64aad7d6">&#9670;&#160;</a></span>PDFAConvertParams() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.PDFAConvertParams.PDFAConvertParams </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad281056da6100b49e0996e726c0ec8df" name="ad281056da6100b49e0996e726c0ec8df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad281056da6100b49e0996e726c0ec8df">&#9670;&#160;</a></span>PDFAConvertParams() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.PDFAConvertParams.PDFAConvertParams </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>RemoveAllAnnotations</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>IgnoreFontErrors</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>AbortIfXFAIsPresent</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Parameters for converting to PDF/A.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">RemoveAllAnnotations</td><td>Remove all annotations whether legal or illegal. </td></tr>
+    <tr><td class="paramname">IgnoreFontErrors</td><td>Rasterize a page when fonts cannot be embedded. </td></tr>
+    <tr><td class="paramname">AbortIfXFAIsPresent</td><td>Abort when XFA is present for PDF/A-1. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="#a0038138e8ea0d91fd2cd14f2f7eeced1">AbortIfXFAIsPresent</a>, <a class="el" href="#a50afab1126c9cdba38c1fd776ef5357b">IgnoreFontErrors</a>, and <a class="el" href="#a6d3a791cc99fc97617c7df67bbdd30e1">RemoveAllAnnotations</a>.</p>
+
+</div>
+</div>
+<a id="a3627a52165ae1d73eeec00571bc21de8" name="a3627a52165ae1d73eeec00571bc21de8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3627a52165ae1d73eeec00571bc21de8">&#9670;&#160;</a></span>PDFAConvertParams() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.PDFAConvertParams.PDFAConvertParams </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>removeAllAnnotations</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>ignoreFontErrors</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>abortIfXFAIsPresent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>noValidationErrors</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ushort</td>          <td class="paramname"><span class="paramname"><em>rasterizationResolution</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Parameters for converting to PDF/A.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">removeAllAnnotations</td><td>Remove all annotations whether legal or illegal. </td></tr>
+    <tr><td class="paramname">ignoreFontErrors</td><td>Rasterize a page when fonts cannot be embedded. </td></tr>
+    <tr><td class="paramname">abortIfXFAIsPresent</td><td>Abort when XFA is present for PDF/A-1. </td></tr>
+    <tr><td class="paramname">noValidationErrors</td><td>Ignore validation errors.</td></tr>
+    <tr><td class="paramname">rasterizationResolution</td><td>Rasterization resolution.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9f971c3b5bb6ee4b42d1e2c481b9f250" name="a9f971c3b5bb6ee4b42d1e2c481b9f250"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f971c3b5bb6ee4b42d1e2c481b9f250">&#9670;&#160;</a></span>PDFAConvertParams() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Datalogics.PDFL.PDFAConvertParams.PDFAConvertParams </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>removeAllAnnotations</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>ignoreFontErrors</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>abortIfXFAIsPresent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>noValidationErrors</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ushort</td>          <td class="paramname"><span class="paramname"><em>rasterizationResolution</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>validateImplementationLimitsOfDocument</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Parameters for converting to PDF/A.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">removeAllAnnotations</td><td>Remove all annotations whether legal or illegal. </td></tr>
+    <tr><td class="paramname">ignoreFontErrors</td><td>Rasterize a page when fonts cannot be embedded. </td></tr>
+    <tr><td class="paramname">abortIfXFAIsPresent</td><td>Abort when XFA is present for PDF/A-1. </td></tr>
+    <tr><td class="paramname">noValidationErrors</td><td>Ignore validation errors.</td></tr>
+    <tr><td class="paramname">rasterizationResolution</td><td>Rasterization resolution.</td></tr>
+    <tr><td class="paramname">validateImplementationLimitsOfDocument</td><td>Validate PDF Implementation Limits of the Document.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="aad12e884db0f6fa9a1266019adb5ad5e" name="aad12e884db0f6fa9a1266019adb5ad5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad12e884db0f6fa9a1266019adb5ad5e">&#9670;&#160;</a></span>Dispose() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Datalogics.PDFL.PDFAConvertParams.Dispose </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="#aad12e884db0f6fa9a1266019adb5ad5e">Dispose()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#aad12e884db0f6fa9a1266019adb5ad5e">Dispose()</a>.</p>
+
+</div>
+</div>
+<a id="a8a024f5d001586d3806876d4e310d2af" name="a8a024f5d001586d3806876d4e310d2af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a024f5d001586d3806876d4e310d2af">&#9670;&#160;</a></span>Dispose() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Datalogics.PDFL.PDFAConvertParams.Dispose </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>disposing</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
+<a id="a0038138e8ea0d91fd2cd14f2f7eeced1" name="a0038138e8ea0d91fd2cd14f2f7eeced1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0038138e8ea0d91fd2cd14f2f7eeced1">&#9670;&#160;</a></span>AbortIfXFAIsPresent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.PDFAConvertParams.AbortIfXFAIsPresent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="#ad281056da6100b49e0996e726c0ec8df">PDFAConvertParams()</a>.</p>
+
+</div>
+</div>
+<a id="a50afab1126c9cdba38c1fd776ef5357b" name="a50afab1126c9cdba38c1fd776ef5357b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50afab1126c9cdba38c1fd776ef5357b">&#9670;&#160;</a></span>IgnoreFontErrors</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.PDFAConvertParams.IgnoreFontErrors</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="#ad281056da6100b49e0996e726c0ec8df">PDFAConvertParams()</a>.</p>
+
+</div>
+</div>
+<a id="a34cad07651726fb3c6f4c93bb970064d" name="a34cad07651726fb3c6f4c93bb970064d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34cad07651726fb3c6f4c93bb970064d">&#9670;&#160;</a></span>NoValidationErrors</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.PDFAConvertParams.NoValidationErrors</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaf8704fe999957764108821975fd3b83" name="aaf8704fe999957764108821975fd3b83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf8704fe999957764108821975fd3b83">&#9670;&#160;</a></span>ProfileDesc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Datalogics.PDFL.PDFAConvertParams.ProfileDesc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad681d080b9295a16d550011705ee4d66" name="ad681d080b9295a16d550011705ee4d66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad681d080b9295a16d550011705ee4d66">&#9670;&#160;</a></span>RasterizationResolution</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ushort Datalogics.PDFL.PDFAConvertParams.RasterizationResolution</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6d3a791cc99fc97617c7df67bbdd30e1" name="a6d3a791cc99fc97617c7df67bbdd30e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d3a791cc99fc97617c7df67bbdd30e1">&#9670;&#160;</a></span>RemoveAllAnnotations</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.PDFAConvertParams.RemoveAllAnnotations</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="#ad281056da6100b49e0996e726c0ec8df">PDFAConvertParams()</a>.</p>
+
+</div>
+</div>
+<a id="a7ac44599ac115357318acb682abe00d7" name="a7ac44599ac115357318acb682abe00d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ac44599ac115357318acb682abe00d7">&#9670;&#160;</a></span>ValidateImplementationLimitsOfDocument</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Datalogics.PDFL.PDFAConvertParams.ValidateImplementationLimitsOfDocument</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>
