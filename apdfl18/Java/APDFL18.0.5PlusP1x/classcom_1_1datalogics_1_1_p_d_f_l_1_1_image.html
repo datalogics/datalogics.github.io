@@ -1,0 +1,1353 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Java API Reference: com.datalogics.PDFL.Image Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html','','classcom_1_1datalogics_1_1_p_d_f_l_1_1_image-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">com.datalogics.PDFL.Image Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a3fe6e7b92d00db297fba837b5c5daf89" id="r_a3fe6e7b92d00db297fba837b5c5daf89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html">Image</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fe6e7b92d00db297fba837b5c5daf89">changeResolution</a> (int dpi)</td></tr>
+<tr class="memitem:a41466b89371461f8c819abb69b73fbc2" id="r_a41466b89371461f8c819abb69b73fbc2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html">Image</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41466b89371461f8c819abb69b73fbc2">clone</a> ()</td></tr>
+<tr class="memitem:ad31d08c97ba15f9339041258618d5c01" id="r_ad31d08c97ba15f9339041258618d5c01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html">Image</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad31d08c97ba15f9339041258618d5c01">clone</a> (java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_element_clone_flags.html">ElementCloneFlags</a> &gt; cloneFlags)</td></tr>
+<tr class="memitem:a645395f6e3b8e56c56a8463e97ef8cab" id="r_a645395f6e3b8e56c56a8463e97ef8cab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html">Image</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a645395f6e3b8e56c56a8463e97ef8cab">colorConvert</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a> document, <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_profile.html">ColorProfile</a> prof, <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_render_intent.html">RenderIntent</a> intent, boolean embed)</td></tr>
+<tr class="memitem:a3f1fd3ef75dcf6bfeeef91f3ebfffa8f" id="r_a3f1fd3ef75dcf6bfeeef91f3ebfffa8f"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f1fd3ef75dcf6bfeeef91f3ebfffa8f">delete</a> ()</td></tr>
+<tr class="memitem:a991bbf3cea064aad8cc10373106e8049" id="r_a991bbf3cea064aad8cc10373106e8049"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a991bbf3cea064aad8cc10373106e8049">getBitsPerComponent</a> ()</td></tr>
+<tr class="memitem:ae355bd6ed68d9deebff59c03523190c9" id="r_ae355bd6ed68d9deebff59c03523190c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#ae355bd6ed68d9deebff59c03523190c9">getBoundingBox</a> ()</td></tr>
+<tr class="memitem:ae1be31d3b7ddb2c1f0916f2503383881" id="r_ae1be31d3b7ddb2c1f0916f2503383881"><td class="memItemLeft" align="right" valign="top">java.awt.image.BufferedImage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1be31d3b7ddb2c1f0916f2503383881">getBufferedImage</a> ()</td></tr>
+<tr class="memitem:a97accb896872fa192e3d0b76fe8cec62" id="r_a97accb896872fa192e3d0b76fe8cec62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html">Clip</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a97accb896872fa192e3d0b76fe8cec62">getClip</a> ()</td></tr>
+<tr class="memitem:a51f20c0b775c75dec11f6f36ca641fac" id="r_a51f20c0b775c75dec11f6f36ca641fac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51f20c0b775c75dec11f6f36ca641fac">getColorSpace</a> ()</td></tr>
+<tr class="memitem:ab43cc342de378cc0b3f8d5f228d57a15" id="r_ab43cc342de378cc0b3f8d5f228d57a15"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_compression_code.html">CompressionCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab43cc342de378cc0b3f8d5f228d57a15">getCompression</a> ()</td></tr>
+<tr class="memitem:a37e1e5e7e7823fc44a08674544022dce" id="r_a37e1e5e7e7823fc44a08674544022dce"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37e1e5e7e7823fc44a08674544022dce">getData</a> ()</td></tr>
+<tr class="memitem:a4a994deca6dc238bc71eb6a732bffd16" id="r_a4a994deca6dc238bc71eb6a732bffd16"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a994deca6dc238bc71eb6a732bffd16">getDidWarningsOccurDuringImport</a> ()</td></tr>
+<tr class="memitem:a39891d810c8920405b894fe7fa3f5cf7" id="r_a39891d810c8920405b894fe7fa3f5cf7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_graphic_state.html">GraphicState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39891d810c8920405b894fe7fa3f5cf7">getGraphicState</a> ()</td></tr>
+<tr class="memitem:aadb92aeb6fa75e2e71d1de3004aa1860" id="r_aadb92aeb6fa75e2e71d1de3004aa1860"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadb92aeb6fa75e2e71d1de3004aa1860">getHeight</a> ()</td></tr>
+<tr class="memitem:aca6af555bb5cdad29b1965ebf4eb7818" id="r_aca6af555bb5cdad29b1965ebf4eb7818"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca6af555bb5cdad29b1965ebf4eb7818">getIntent</a> ()</td></tr>
+<tr class="memitem:a00e4df6c4fdc814e761175e44b1ec95c" id="r_a00e4df6c4fdc814e761175e44b1ec95c"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00e4df6c4fdc814e761175e44b1ec95c">getIsImageMask</a> ()</td></tr>
+<tr class="memitem:a18dd5ea9c6889d177cdd69a85a3f1a69" id="r_a18dd5ea9c6889d177cdd69a85a3f1a69"><td class="memItemLeft" align="right" valign="top">java.util.List&lt; <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image_data.html">ImageData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18dd5ea9c6889d177cdd69a85a3f1a69">getLargeData</a> ()</td></tr>
+<tr class="memitem:a5351ee3176b673773a6d86c5116023fe" id="r_a5351ee3176b673773a6d86c5116023fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a5351ee3176b673773a6d86c5116023fe">getMatrix</a> ()</td></tr>
+<tr class="memitem:a2dc2dd27c3aab1c14c9683c1d7b06ab8" id="r_a2dc2dd27c3aab1c14c9683c1d7b06ab8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2dc2dd27c3aab1c14c9683c1d7b06ab8">getNumberComponents</a> ()</td></tr>
+<tr class="memitem:a37e05dd9915f02354c1f3c6e804f99b7" id="r_a37e05dd9915f02354c1f3c6e804f99b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html">Image</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37e05dd9915f02354c1f3c6e804f99b7">getSoftMask</a> ()</td></tr>
+<tr class="memitem:a34b197bbf4d752752ab002a675a89c1d" id="r_a34b197bbf4d752752ab002a675a89c1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_stream.html">PDFStream</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34b197bbf4d752752ab002a675a89c1d">getStream</a> ()</td></tr>
+<tr class="memitem:a01bce0f1a075a3c5f8b79eb738c5b58f" id="r_a01bce0f1a075a3c5f8b79eb738c5b58f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01bce0f1a075a3c5f8b79eb738c5b58f">getWidth</a> ()</td></tr>
+<tr class="memitem:aa3ac2d15ac39cf76df4e4e953a62ae66" id="r_aa3ac2d15ac39cf76df4e4e953a62ae66"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3ac2d15ac39cf76df4e4e953a62ae66">Image</a> (byte[] buffer, int width, int height, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a> colorSpace)</td></tr>
+<tr class="memitem:ad95d960986f93293258c7dc4c31bb86d" id="r_ad95d960986f93293258c7dc4c31bb86d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad95d960986f93293258c7dc4c31bb86d">Image</a> (javax.imageio.stream.ImageInputStream stream)  throws java.io.IOException </td></tr>
+<tr class="memitem:a6560824256675bf36c1719c1f0a7598e" id="r_a6560824256675bf36c1719c1f0a7598e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6560824256675bf36c1719c1f0a7598e">Image</a> (String fileName)</td></tr>
+<tr class="memitem:ac51a665719f665494eeda53186877363" id="r_ac51a665719f665494eeda53186877363"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac51a665719f665494eeda53186877363">Image</a> (String fileName, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a> document)</td></tr>
+<tr class="memitem:a70d4a627d96d5c4f90eaf0a877c80654" id="r_a70d4a627d96d5c4f90eaf0a877c80654"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70d4a627d96d5c4f90eaf0a877c80654">rotate</a> (double angle)</td></tr>
+<tr class="memitem:a4bc448fcd10f73b1196b84c702b72f9a" id="r_a4bc448fcd10f73b1196b84c702b72f9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4bc448fcd10f73b1196b84c702b72f9a">save</a> (String imagefilename, <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_image_type.html">ImageType</a> imageType)</td></tr>
+<tr class="memitem:ae0ade2024375b6c75deda3edfbfd08b2" id="r_ae0ade2024375b6c75deda3edfbfd08b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0ade2024375b6c75deda3edfbfd08b2">save</a> (String imagefilename, <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_image_type.html">ImageType</a> imageType, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image_save_params.html">ImageSaveParams</a> saveparams)</td></tr>
+<tr class="memitem:af6fdbf1e92c9a2b0ad72f3a3c8c79aef" id="r_af6fdbf1e92c9a2b0ad72f3a3c8c79aef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#af6fdbf1e92c9a2b0ad72f3a3c8c79aef">scale</a> (double sx, double sy)</td></tr>
+<tr class="memitem:a78d1dc631176e2fcbbb4f76f2c25cdd0" id="r_a78d1dc631176e2fcbbb4f76f2c25cdd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a78d1dc631176e2fcbbb4f76f2c25cdd0">setClip</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html">Clip</a> clip)</td></tr>
+<tr class="memitem:a67dfd7ca9c8686b4a8925ab95cbeec48" id="r_a67dfd7ca9c8686b4a8925ab95cbeec48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67dfd7ca9c8686b4a8925ab95cbeec48">setCompression</a> (<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_compression_code.html">CompressionCode</a> code)</td></tr>
+<tr class="memitem:aae7064f97e502ad4441561407c914ae4" id="r_aae7064f97e502ad4441561407c914ae4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae7064f97e502ad4441561407c914ae4">setGraphicState</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_graphic_state.html">GraphicState</a> gstate)</td></tr>
+<tr class="memitem:a17bc6637c008a705e3ee67fff77564ec" id="r_a17bc6637c008a705e3ee67fff77564ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17bc6637c008a705e3ee67fff77564ec">setIntent</a> (String intent)</td></tr>
+<tr class="memitem:a417520d327ced87abe28d6c9dbe2382b" id="r_a417520d327ced87abe28d6c9dbe2382b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a417520d327ced87abe28d6c9dbe2382b">setMatrix</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> matrix)</td></tr>
+<tr class="memitem:a1c05f28f69a3d24e903ab752efe58e82" id="r_a1c05f28f69a3d24e903ab752efe58e82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c05f28f69a3d24e903ab752efe58e82">setSoftMask</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html">Image</a> softMask)</td></tr>
+<tr class="memitem:a7d9f9f8687328d8d62dcddc1799619ed" id="r_a7d9f9f8687328d8d62dcddc1799619ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d9f9f8687328d8d62dcddc1799619ed">translate</a> (double tx, double ty)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:ad1a176fdbe276b21315365bd96f313f4" id="r_ad1a176fdbe276b21315365bd96f313f4"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1a176fdbe276b21315365bd96f313f4">delete</a> (Boolean disposing)</td></tr>
+<tr class="memitem:ad64d826faeae46a40baec52234a7d357" id="r_ad64d826faeae46a40baec52234a7d357"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad64d826faeae46a40baec52234a7d357">finalize</a> ()</td></tr>
+<tr class="memitem:a785fd327c4c080f2b78044268f1e3c5e" id="r_a785fd327c4c080f2b78044268f1e3c5e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a785fd327c4c080f2b78044268f1e3c5e">Image</a> (long cPtr, boolean cMemoryOwn)</td></tr>
+<tr class="memitem:ad5459e56908ba4d0da347edaa9557a89" id="r_ad5459e56908ba4d0da347edaa9557a89"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5459e56908ba4d0da347edaa9557a89">Image</a> (StreamFile sf, boolean ignore)  throws java.io.IOException </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a861d73f98ab05cfe69f82f1d6b5e21e5" id="r_a861d73f98ab05cfe69f82f1d6b5e21e5"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a861d73f98ab05cfe69f82f1d6b5e21e5">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html">Element</a> obj)</td></tr>
+<tr class="memitem:a09df9f4eaffb66c11be20aa79910a6e8" id="r_a09df9f4eaffb66c11be20aa79910a6e8"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09df9f4eaffb66c11be20aa79910a6e8">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html">Image</a> obj)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>An image resource can either be an image XObject or inline image found in a page's content stream. An Image Xobject is stored separately from the graphics content stream in a PDF, and so can be used multiple times in the document, even across pages. The image is described in the /Xobject entry in the resources dictionary on the PDF page. </p>
+<p>Image size and resoultion: For images that are imported from raster image files, the design width and height are stored in the Image object's Matrix, in the A (width) and D (depth) Matrix members, when the image is imported. These are stored in PDF units. </p>
+<p>To derive the effective resolution of an image imported from a raster image file: </p>
+<p>Horizontal resolution: divide the Image Width by the Image's Matrix A member and multiply by 72 to scale to DPI (dots per inch). </p>
+<p>Vertical resolution: divide the Image Height by the Image's Matrix D member and multiply by 72 to scale to DPI (dots per inch). </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a785fd327c4c080f2b78044268f1e3c5e" name="a785fd327c4c080f2b78044268f1e3c5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a785fd327c4c080f2b78044268f1e3c5e">&#9670;&#160;</a></span>Image() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Image.Image </td>
+          <td>(</td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>cPtr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>cMemoryOwn</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="#a3fe6e7b92d00db297fba837b5c5daf89">changeResolution()</a>, <a class="el" href="#a41466b89371461f8c819abb69b73fbc2">clone()</a>, <a class="el" href="#ad31d08c97ba15f9339041258618d5c01">clone()</a>, <a class="el" href="#a645395f6e3b8e56c56a8463e97ef8cab">colorConvert()</a>, <a class="el" href="#a09df9f4eaffb66c11be20aa79910a6e8">getCPtr()</a>, <a class="el" href="#a37e05dd9915f02354c1f3c6e804f99b7">getSoftMask()</a>, and <a class="el" href="#a1c05f28f69a3d24e903ab752efe58e82">setSoftMask()</a>.</p>
+
+</div>
+</div>
+<a id="ad95d960986f93293258c7dc4c31bb86d" name="ad95d960986f93293258c7dc4c31bb86d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad95d960986f93293258c7dc4c31bb86d">&#9670;&#160;</a></span>Image() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Image.Image </td>
+          <td>(</td>
+          <td class="paramtype">javax.imageio.stream.ImageInputStream</td>          <td class="paramname"><span class="paramname"><em>stream</em></span></td><td>)</td>
+          <td> throws java.io.IOException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Allows to create Image object from ImageInputStream. </p>
+
+</div>
+</div>
+<a id="ad5459e56908ba4d0da347edaa9557a89" name="ad5459e56908ba4d0da347edaa9557a89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5459e56908ba4d0da347edaa9557a89">&#9670;&#160;</a></span>Image() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Image.Image </td>
+          <td>(</td>
+          <td class="paramtype">StreamFile</td>          <td class="paramname"><span class="paramname"><em>sf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>ignore</em></span>&#160;) throws java.io.IOException</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6560824256675bf36c1719c1f0a7598e" name="a6560824256675bf36c1719c1f0a7598e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6560824256675bf36c1719c1f0a7598e">&#9670;&#160;</a></span>Image() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Image.Image </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>fileName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a new Image from an existing physical file. This file can be a bitmap, gif, jpeg, png, or a tiff file. An exception will be thrown if the image file is not any of the above. </p>
+<p>NOTICE on tiff files: If the tiff file is multi-paged, then the first "page" only of the file will be converted to an Image. See ImageCollection to convert each page in a multi-page tiff file to an Image.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>the filename of the image file. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac51a665719f665494eeda53186877363" name="ac51a665719f665494eeda53186877363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac51a665719f665494eeda53186877363">&#9670;&#160;</a></span>Image() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Image.Image </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>fileName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a></td>          <td class="paramname"><span class="paramname"><em>document</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a new Image from an existing physical file. This file can be a bitmap, gif, jpeg, png, or a tiff file. An exception will be thrown if the image file is not any of the above. </p>
+<p>Specifying the document optimizes data usage for this image within that document. </p>
+<p>NOTICE on tiff files: If the tiff file is multi-paged, then the first "page" only of the file will be converted to an Image. See ImageCollection to convert each page in a multi-page tiff file to an Image.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>the filename of the image file. </td></tr>
+    <tr><td class="paramname">document</td><td>the document in which the image is intended to be used. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa3ac2d15ac39cf76df4e4e953a62ae66" name="aa3ac2d15ac39cf76df4e4e953a62ae66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3ac2d15ac39cf76df4e4e953a62ae66">&#9670;&#160;</a></span>Image() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Image.Image </td>
+          <td>(</td>
+          <td class="paramtype">byte[]</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a></td>          <td class="paramname"><span class="paramname"><em>colorSpace</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create an image from byte array. This constructor expects that input buffer is non-padded. If buffer doesn't correspond to the expected format, it will be stripped. </p><ul>
+<li>
+<p class="startli"></p>
+<p class="endli">For example: The bitmap data generated by Page's drawContents(DrawParams) function is 32-bit aligned. The PDF image operator expects, however, 8-bit aligned image data. To remedy this difference, we check to see if the 32-bit aligned width is different from the 8-bit aligned width. If so, we fix the image data by stripping off the padding at the end.</p>
+</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>contains Image's data </td></tr>
+    <tr><td class="paramname">width</td><td>width of the image </td></tr>
+    <tr><td class="paramname">height</td><td>height of the image </td></tr>
+    <tr><td class="paramname">colorSpace</td><td>colorspace with wich Image object will be created </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a3fe6e7b92d00db297fba837b5c5daf89" name="a3fe6e7b92d00db297fba837b5c5daf89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fe6e7b92d00db297fba837b5c5daf89">&#9670;&#160;</a></span>changeResolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html">Image</a> com.datalogics.PDFL.Image.changeResolution </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>dpi</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a new image from an existing one modifying the resolution (dots per inch)</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dpi</td><td>the new resolution </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>newimage - the original image modified to the new resolution. </dd></dl>
+
+</div>
+</div>
+<a id="a41466b89371461f8c819abb69b73fbc2" name="a41466b89371461f8c819abb69b73fbc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41466b89371461f8c819abb69b73fbc2">&#9670;&#160;</a></span>clone() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html">Image</a> com.datalogics.PDFL.Image.clone </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Makes a copy of the image. </p>
+<p>Make a copy of an image to obtain a new image that has a distinct set of attributes. </p>
+<dl class="section return"><dt>Returns</dt><dd>The copied image. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#af6c55cf47bb9a28072ac895ab0b2873d">com.datalogics.PDFL.Element</a>.</p>
+
+</div>
+</div>
+<a id="ad31d08c97ba15f9339041258618d5c01" name="ad31d08c97ba15f9339041258618d5c01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad31d08c97ba15f9339041258618d5c01">&#9670;&#160;</a></span>clone() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html">Image</a> com.datalogics.PDFL.Image.clone </td>
+          <td>(</td>
+          <td class="paramtype">java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_element_clone_flags.html">ElementCloneFlags</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>cloneFlags</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Makes a copy of the image. </p>
+<p>Make a copy of an image to obtain a new image that has a distinct set of attributes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloneFlags</td><td>Flags that modify the cloning operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The copied image. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a2c8db0575b8f2354ea938f836891a32a">com.datalogics.PDFL.Element</a>.</p>
+
+</div>
+</div>
+<a id="a645395f6e3b8e56c56a8463e97ef8cab" name="a645395f6e3b8e56c56a8463e97ef8cab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a645395f6e3b8e56c56a8463e97ef8cab">&#9670;&#160;</a></span>colorConvert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html">Image</a> com.datalogics.PDFL.Image.colorConvert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a></td>          <td class="paramname"><span class="paramname"><em>document</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_profile.html">ColorProfile</a></td>          <td class="paramname"><span class="paramname"><em>prof</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_render_intent.html">RenderIntent</a></td>          <td class="paramname"><span class="paramname"><em>intent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>embed</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Applies the specified ICC ColorProfile to the Image </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">document</td><td>The document the element belongs to. </td></tr>
+    <tr><td class="paramname">prof</td><td>The ICC ColorProfile to be applied. </td></tr>
+    <tr><td class="paramname">intent</td><td>The ICC Rendering Intent for the ColorProfile </td></tr>
+    <tr><td class="paramname">embed</td><td>If true, embed the color space and make the object calibrated. If it is false and the target profile is CMYK, RGB, or Gray, the colors space of the resulting object, after conversion, will be DeviceCMYK, DeviceRGB, or DeviceGray, respectively. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new Image with the applied ICC ColorProfile. </dd></dl>
+
+</div>
+</div>
+<a id="a3f1fd3ef75dcf6bfeeef91f3ebfffa8f" name="a3f1fd3ef75dcf6bfeeef91f3ebfffa8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f1fd3ef75dcf6bfeeef91f3ebfffa8f">&#9670;&#160;</a></span>delete() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.Image.delete </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a8afc1124db761b2077004ba387df0326">com.datalogics.PDFL.Element</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#a3f1fd3ef75dcf6bfeeef91f3ebfffa8f">delete()</a>, and <a class="el" href="#ad64d826faeae46a40baec52234a7d357">finalize()</a>.</p>
+
+</div>
+</div>
+<a id="ad1a176fdbe276b21315365bd96f313f4" name="ad1a176fdbe276b21315365bd96f313f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1a176fdbe276b21315365bd96f313f4">&#9670;&#160;</a></span>delete() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.Image.delete </td>
+          <td>(</td>
+          <td class="paramtype">Boolean</td>          <td class="paramname"><span class="paramname"><em>disposing</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#ad1c2482b575b7a8112df5f52fb559a84">com.datalogics.PDFL.Element</a>.</p>
+
+</div>
+</div>
+<a id="ad64d826faeae46a40baec52234a7d357" name="ad64d826faeae46a40baec52234a7d357"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad64d826faeae46a40baec52234a7d357">&#9670;&#160;</a></span>finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Image.finalize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#ab5642d16085224eca829ace3ad075e6f">com.datalogics.PDFL.Element</a>.</p>
+
+</div>
+</div>
+<a id="a991bbf3cea064aad8cc10373106e8049" name="a991bbf3cea064aad8cc10373106e8049"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a991bbf3cea064aad8cc10373106e8049">&#9670;&#160;</a></span>getBitsPerComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int com.datalogics.PDFL.Image.getBitsPerComponent </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The number of bits per component in the image. </p>
+
+</div>
+</div>
+<a id="ae355bd6ed68d9deebff59c03523190c9" name="ae355bd6ed68d9deebff59c03523190c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae355bd6ed68d9deebff59c03523190c9">&#9670;&#160;</a></span>getBoundingBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a> com.datalogics.PDFL.Element.getBoundingBox </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The bounding box for this element. </p>
+<p>The bounding box is a rectangle that is guaranteed to encompass the element, but it is not guaranteed to be the smallest box that could contain the element. For example, if the element is a Path that contains an arc, the bounding box encompasses the bezier control points, and not just the curve itself. </p>
+<dl class="section return"><dt>Returns</dt><dd>The bounding box for this element. The coordinates of the bounding box are specified in user space coordinates, relative to the element's Content. Note that user space coordinates correspond to unrotated pages; any rotation specified in the page dictionary is not taken into account. </dd></dl>
+
+</div>
+</div>
+<a id="ae1be31d3b7ddb2c1f0916f2503383881" name="ae1be31d3b7ddb2c1f0916f2503383881"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1be31d3b7ddb2c1f0916f2503383881">&#9670;&#160;</a></span>getBufferedImage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">java.awt.image.BufferedImage com.datalogics.PDFL.Image.getBufferedImage </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Return this PDF image as a Java BufferedImage.</p>
+<p>Images in Gray or RGB color spaces are returned without conversion, while images in other spaces are first converted to RGB. </p>
+
+</div>
+</div>
+<a id="a97accb896872fa192e3d0b76fe8cec62" name="a97accb896872fa192e3d0b76fe8cec62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97accb896872fa192e3d0b76fe8cec62">&#9670;&#160;</a></span>getClip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html">Clip</a> com.datalogics.PDFL.Element.getClip </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the current Clip for an Element. </p>
+<dl class="section return"><dt>Returns</dt><dd>- The current Clip for this Element. </dd></dl>
+
+</div>
+</div>
+<a id="a51f20c0b775c75dec11f6f36ca641fac" name="a51f20c0b775c75dec11f6f36ca641fac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51f20c0b775c75dec11f6f36ca641fac">&#9670;&#160;</a></span>getColorSpace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color_space.html">ColorSpace</a> com.datalogics.PDFL.Image.getColorSpace </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>return the ColorSpace with which this Image was created. </p>
+
+</div>
+</div>
+<a id="ab43cc342de378cc0b3f8d5f228d57a15" name="ab43cc342de378cc0b3f8d5f228d57a15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab43cc342de378cc0b3f8d5f228d57a15">&#9670;&#160;</a></span>getCompression()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_compression_code.html">CompressionCode</a> com.datalogics.PDFL.Image.getCompression </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>A compression code which represents the filter used in the image data. </dd></dl>
+
+</div>
+</div>
+<a id="a861d73f98ab05cfe69f82f1d6b5e21e5" name="a861d73f98ab05cfe69f82f1d6b5e21e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a861d73f98ab05cfe69f82f1d6b5e21e5">&#9670;&#160;</a></span>getCPtr() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long com.datalogics.PDFL.Element.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html">Element</a></td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel protected">protected</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html#ae4ec59218d64f1c621ebf9f11122695d">com.datalogics.PDFL.Clip.addElement()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html#a844fd0e5692b58d2443ac20223193399">com.datalogics.PDFL.Clip.addElement()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html#afba3f35911043f67e3bf68f58f0b5c11">com.datalogics.PDFL.Content.addElement()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html#a250d99991700931477142c2e8d547995">com.datalogics.PDFL.Content.addElement()</a>, and <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html#aa044b1e7b8e5484d21615d71fec8b51b">com.datalogics.PDFL.Content.Content()</a>.</p>
+
+</div>
+</div>
+<a id="a09df9f4eaffb66c11be20aa79910a6e8" name="a09df9f4eaffb66c11be20aa79910a6e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09df9f4eaffb66c11be20aa79910a6e8">&#9670;&#160;</a></span>getCPtr() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long com.datalogics.PDFL.Image.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html">Image</a></td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image_collection.html#a0b9c9941de2889c0780e5b440c0aa001">com.datalogics.PDFL.ImageCollection.append()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image_collection.html#a56c041fcf686070439229b019b8a833a">com.datalogics.PDFL.ImageCollection.ImageCollection()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_o_c_r_engine.html#ad9837d80da413fd533d953475ab7e13a">com.datalogics.PDFL.OCREngine.placeTextUnder()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_o_c_r_engine.html#a0c68814ebf1db4063cedf4b1a8884e56">com.datalogics.PDFL.OCREngine.placeTextUnder()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_o_c_r_engine.html#a76a9800edc9711b1019ed534ea3b25b0">com.datalogics.PDFL.OCREngine.placeTextUnder()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_o_c_r_engine.html#a4c0cc099c71fd92eda8a95b86e98f7c7">com.datalogics.PDFL.OCREngine.placeTextUnder()</a>, and <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_o_c_r_engine.html#ab9f1ceb1ef6fd60e6a5c57a86ff08a8e">com.datalogics.PDFL.OCREngine.placeTextUnder()</a>.</p>
+
+</div>
+</div>
+<a id="a37e1e5e7e7823fc44a08674544022dce" name="a37e1e5e7e7823fc44a08674544022dce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37e1e5e7e7823fc44a08674544022dce">&#9670;&#160;</a></span>getData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte[] com.datalogics.PDFL.Image.getData </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The actual bytes that make up the image, exactly as they appear in the image data. </p>
+
+</div>
+</div>
+<a id="a4a994deca6dc238bc71eb6a732bffd16" name="a4a994deca6dc238bc71eb6a732bffd16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a994deca6dc238bc71eb6a732bffd16">&#9670;&#160;</a></span>getDidWarningsOccurDuringImport()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.Image.getDidWarningsOccurDuringImport </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets whether or not warnings occurred during import of the raster image file. </p>
+
+</div>
+</div>
+<a id="a39891d810c8920405b894fe7fa3f5cf7" name="a39891d810c8920405b894fe7fa3f5cf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39891d810c8920405b894fe7fa3f5cf7">&#9670;&#160;</a></span>getGraphicState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_graphic_state.html">GraphicState</a> com.datalogics.PDFL.Image.getGraphicState </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the graphic state of the current element. </p>
+
+</div>
+</div>
+<a id="aadb92aeb6fa75e2e71d1de3004aa1860" name="aadb92aeb6fa75e2e71d1de3004aa1860"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadb92aeb6fa75e2e71d1de3004aa1860">&#9670;&#160;</a></span>getHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int com.datalogics.PDFL.Image.getHeight </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The height of the image in pixels. </p>
+
+<p class="reference">Referenced by <a class="el" href="#ae1be31d3b7ddb2c1f0916f2503383881">getBufferedImage()</a>.</p>
+
+</div>
+</div>
+<a id="aca6af555bb5cdad29b1965ebf4eb7818" name="aca6af555bb5cdad29b1965ebf4eb7818"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca6af555bb5cdad29b1965ebf4eb7818">&#9670;&#160;</a></span>getIntent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.datalogics.PDFL.Image.getIntent </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The color rendering intent for the image </p>
+
+</div>
+</div>
+<a id="a00e4df6c4fdc814e761175e44b1ec95c" name="a00e4df6c4fdc814e761175e44b1ec95c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00e4df6c4fdc814e761175e44b1ec95c">&#9670;&#160;</a></span>getIsImageMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.Image.getIsImageMask </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check that Image is ImageMask object </p>
+
+</div>
+</div>
+<a id="a18dd5ea9c6889d177cdd69a85a3f1a69" name="a18dd5ea9c6889d177cdd69a85a3f1a69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18dd5ea9c6889d177cdd69a85a3f1a69">&#9670;&#160;</a></span>getLargeData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">java.util.List&lt; <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image_data.html">ImageData</a> &gt; com.datalogics.PDFL.Image.getLargeData </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the decompressed image data from very large images. </p>
+<p>NOTE: This function is only supported in 64-bit, only if enough contiguous memory is available. The data size must exceed nearly 2GB, otherwise an exception is thrown and you would use the Data member instead to access the image data. The first members of the list returned contain a close to 2GB chunk of the data, but the last member containing the remaining data will be smaller in size. This faciliates retrieving the data in .NET and Java which have 2GB limits on object sizes. </p>
+
+</div>
+</div>
+<a id="a5351ee3176b673773a6d86c5116023fe" name="a5351ee3176b673773a6d86c5116023fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5351ee3176b673773a6d86c5116023fe">&#9670;&#160;</a></span>getMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> com.datalogics.PDFL.Element.getMatrix </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The transformation matrix for the element. </p>
+
+</div>
+</div>
+<a id="a2dc2dd27c3aab1c14c9683c1d7b06ab8" name="a2dc2dd27c3aab1c14c9683c1d7b06ab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dc2dd27c3aab1c14c9683c1d7b06ab8">&#9670;&#160;</a></span>getNumberComponents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int com.datalogics.PDFL.Image.getNumberComponents </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The number of components </p>
+
+<p class="reference">Referenced by <a class="el" href="#ae1be31d3b7ddb2c1f0916f2503383881">getBufferedImage()</a>.</p>
+
+</div>
+</div>
+<a id="a37e05dd9915f02354c1f3c6e804f99b7" name="a37e05dd9915f02354c1f3c6e804f99b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37e05dd9915f02354c1f3c6e804f99b7">&#9670;&#160;</a></span>getSoftMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html">Image</a> com.datalogics.PDFL.Image.getSoftMask </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets, for this image, the soft mask (also an image). </p>
+<dl class="section return"><dt>Returns</dt><dd>image - an image, the soft mask </dd></dl>
+
+</div>
+</div>
+<a id="a34b197bbf4d752752ab002a675a89c1d" name="a34b197bbf4d752752ab002a675a89c1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34b197bbf4d752752ab002a675a89c1d">&#9670;&#160;</a></span>getStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_stream.html">PDFStream</a> com.datalogics.PDFL.Image.getStream </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The PDFStream object or null if there is no stream associated with the image </p>
+
+</div>
+</div>
+<a id="a01bce0f1a075a3c5f8b79eb738c5b58f" name="a01bce0f1a075a3c5f8b79eb738c5b58f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01bce0f1a075a3c5f8b79eb738c5b58f">&#9670;&#160;</a></span>getWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int com.datalogics.PDFL.Image.getWidth </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The width of the image in pixels. </p>
+
+<p class="reference">Referenced by <a class="el" href="#ae1be31d3b7ddb2c1f0916f2503383881">getBufferedImage()</a>.</p>
+
+</div>
+</div>
+<a id="a70d4a627d96d5c4f90eaf0a877c80654" name="a70d4a627d96d5c4f90eaf0a877c80654"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70d4a627d96d5c4f90eaf0a877c80654">&#9670;&#160;</a></span>rotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Image.rotate </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>angle</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Rotate an image on (angle) degree using the matrix [cos(a), sin(a), -sin(a), cos(a), 0, 0]. For images, this rotate is done without regard to the primary scaling of the original image </p>
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a18e35d241cef53d1306e215d40c5543b">com.datalogics.PDFL.Element</a>.</p>
+
+</div>
+</div>
+<a id="a4bc448fcd10f73b1196b84c702b72f9a" name="a4bc448fcd10f73b1196b84c702b72f9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bc448fcd10f73b1196b84c702b72f9a">&#9670;&#160;</a></span>save() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Image.save </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>imagefilename</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_image_type.html">ImageType</a></td>          <td class="paramname"><span class="paramname"><em>imageType</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Save an image into a particular file format with default parameters for saving.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">imagefilename</td><td>The physical image file which will be created. </td></tr>
+    <tr><td class="paramname">imageType</td><td>The IMAGETYPE used for saving the image. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae0ade2024375b6c75deda3edfbfd08b2" name="ae0ade2024375b6c75deda3edfbfd08b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0ade2024375b6c75deda3edfbfd08b2">&#9670;&#160;</a></span>save() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Image.save </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>imagefilename</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_image_type.html">ImageType</a></td>          <td class="paramname"><span class="paramname"><em>imageType</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image_save_params.html">ImageSaveParams</a></td>          <td class="paramname"><span class="paramname"><em>saveparams</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Save an image into a particular file format with the given parameters for saving.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">imagefilename</td><td>The physical image file which will be created. </td></tr>
+    <tr><td class="paramname">imageType</td><td>The ImageType used for saving the image. </td></tr>
+    <tr><td class="paramname">saveparams</td><td>The ImageSaveParams for saving the image. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af6fdbf1e92c9a2b0ad72f3a3c8c79aef" name="af6fdbf1e92c9a2b0ad72f3a3c8c79aef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6fdbf1e92c9a2b0ad72f3a3c8c79aef">&#9670;&#160;</a></span>scale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Element.scale </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>sx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>sy</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Scale an element by (sx,sy) units using the matrix [ sx 0 0 sy 0 0 ]. </p>
+
+</div>
+</div>
+<a id="a78d1dc631176e2fcbbb4f76f2c25cdd0" name="a78d1dc631176e2fcbbb4f76f2c25cdd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78d1dc631176e2fcbbb4f76f2c25cdd0">&#9670;&#160;</a></span>setClip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Element.setClip </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html">Clip</a></td>          <td class="paramname"><span class="paramname"><em>clip</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the current Clip for an Element. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clip</td><td>The clip to set as the current clip for this element. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a67dfd7ca9c8686b4a8925ab95cbeec48" name="a67dfd7ca9c8686b4a8925ab95cbeec48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67dfd7ca9c8686b4a8925ab95cbeec48">&#9670;&#160;</a></span>setCompression()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Image.setCompression </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_compression_code.html">CompressionCode</a></td>          <td class="paramname"><span class="paramname"><em>code</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set a Compression scheme for the image data.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">code</td><td>The new new compression scheme to be applied. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aae7064f97e502ad4441561407c914ae4" name="aae7064f97e502ad4441561407c914ae4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae7064f97e502ad4441561407c914ae4">&#9670;&#160;</a></span>setGraphicState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Image.setGraphicState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_graphic_state.html">GraphicState</a></td>          <td class="paramname"><span class="paramname"><em>gstate</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the Graphic State of the current element.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gstate</td><td>the new/updated Graphic State for the element. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a17bc6637c008a705e3ee67fff77564ec" name="a17bc6637c008a705e3ee67fff77564ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17bc6637c008a705e3ee67fff77564ec">&#9670;&#160;</a></span>setIntent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Image.setIntent </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>intent</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>SetIntent allows to set color rendering intent for the image.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">intent</td><td>the intent name </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a417520d327ced87abe28d6c9dbe2382b" name="a417520d327ced87abe28d6c9dbe2382b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a417520d327ced87abe28d6c9dbe2382b">&#9670;&#160;</a></span>setMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Element.setMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a></td>          <td class="paramname"><span class="paramname"><em>matrix</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Set the transformation matrix for the element.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">matrix</td><td>the transformation matrix for the element. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1c05f28f69a3d24e903ab752efe58e82" name="a1c05f28f69a3d24e903ab752efe58e82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c05f28f69a3d24e903ab752efe58e82">&#9670;&#160;</a></span>setSoftMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Image.setSoftMask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html">Image</a></td>          <td class="paramname"><span class="paramname"><em>softMask</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets, for this image, the soft mask (also an image). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">softMask</td><td>an image, the soft mask. If set to NULL, the soft mask is removed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7d9f9f8687328d8d62dcddc1799619ed" name="a7d9f9f8687328d8d62dcddc1799619ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d9f9f8687328d8d62dcddc1799619ed">&#9670;&#160;</a></span>translate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Image.translate </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>tx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>ty</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Translate an image by (tx,ty) units using the matrix [ 1 0 0 1 tx ty ]. For images, this translation is done without regard to the scaling and rotation of the original image. </p>
+<p>To ensure that this translation can be done, do the translation before any further rotation or scaling. </p>
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a22d4ed5c1a9bebaab64263221319e336">com.datalogics.PDFL.Element</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>

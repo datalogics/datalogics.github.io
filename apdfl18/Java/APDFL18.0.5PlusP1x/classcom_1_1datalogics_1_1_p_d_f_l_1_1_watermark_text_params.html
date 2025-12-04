@@ -1,0 +1,558 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Java API Reference: com.datalogics.PDFL.WatermarkTextParams Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classcom_1_1datalogics_1_1_p_d_f_l_1_1_watermark_text_params.html','','classcom_1_1datalogics_1_1_p_d_f_l_1_1_watermark_text_params-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">com.datalogics.PDFL.WatermarkTextParams Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a4a770b46d4822b1134fa723b8de68129" id="r_a4a770b46d4822b1134fa723b8de68129"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a770b46d4822b1134fa723b8de68129">delete</a> ()</td></tr>
+<tr class="memitem:a946620e17c04cc29bb5b14a0e11d7403" id="r_a946620e17c04cc29bb5b14a0e11d7403"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color.html">Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a946620e17c04cc29bb5b14a0e11d7403">getColor</a> ()</td></tr>
+<tr class="memitem:ab8c003dde2c8a3996bee1d22fa48777a" id="r_ab8c003dde2c8a3996bee1d22fa48777a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_font.html">Font</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8c003dde2c8a3996bee1d22fa48777a">getFont</a> ()</td></tr>
+<tr class="memitem:aa627d0e8cba1be20ddf6ef3291f5e918" id="r_aa627d0e8cba1be20ddf6ef3291f5e918"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa627d0e8cba1be20ddf6ef3291f5e918">getFontSize</a> ()</td></tr>
+<tr class="memitem:a2fabf23bdddf7b454d4355a3080ede51" id="r_a2fabf23bdddf7b454d4355a3080ede51"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2fabf23bdddf7b454d4355a3080ede51">getText</a> ()</td></tr>
+<tr class="memitem:a923592fdab4cc9cc86a3ae5446fde8b0" id="r_a923592fdab4cc9cc86a3ae5446fde8b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_horizontal_alignment.html">HorizontalAlignment</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a923592fdab4cc9cc86a3ae5446fde8b0">getTextAlign</a> ()</td></tr>
+<tr class="memitem:a1eec6feae8b2d8efb935bfc162a9d0ce" id="r_a1eec6feae8b2d8efb935bfc162a9d0ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1eec6feae8b2d8efb935bfc162a9d0ce">setColor</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color.html">Color</a> color)</td></tr>
+<tr class="memitem:a193652eba56bcfc78a5c11a567c98482" id="r_a193652eba56bcfc78a5c11a567c98482"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a193652eba56bcfc78a5c11a567c98482">setFont</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_font.html">Font</a> font)</td></tr>
+<tr class="memitem:a4d4356109f2fa2043d62af42cda792b9" id="r_a4d4356109f2fa2043d62af42cda792b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d4356109f2fa2043d62af42cda792b9">setFontSize</a> (float value)</td></tr>
+<tr class="memitem:a0d94861d2bc5195eb29f3f12b0312436" id="r_a0d94861d2bc5195eb29f3f12b0312436"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d94861d2bc5195eb29f3f12b0312436">setText</a> (String arg0)</td></tr>
+<tr class="memitem:a8ea559a67afb44ce2dab93a6019771d3" id="r_a8ea559a67afb44ce2dab93a6019771d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ea559a67afb44ce2dab93a6019771d3">setTextAlign</a> (<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_horizontal_alignment.html">HorizontalAlignment</a> h)</td></tr>
+<tr class="memitem:ac080eda64ddda25bb39d5a1a92b2239b" id="r_ac080eda64ddda25bb39d5a1a92b2239b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac080eda64ddda25bb39d5a1a92b2239b">WatermarkTextParams</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:ab8fbcd376c6ebde277b93a49ad9ec727" id="r_ab8fbcd376c6ebde277b93a49ad9ec727"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8fbcd376c6ebde277b93a49ad9ec727">delete</a> (Boolean disposing)</td></tr>
+<tr class="memitem:a3d3c5641d753b0ca4ff715cda424abbd" id="r_a3d3c5641d753b0ca4ff715cda424abbd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d3c5641d753b0ca4ff715cda424abbd">finalize</a> ()</td></tr>
+<tr class="memitem:ae77a282bc66ef678416b07d057c4b6cc" id="r_ae77a282bc66ef678416b07d057c4b6cc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae77a282bc66ef678416b07d057c4b6cc">WatermarkTextParams</a> (long cPtr, boolean cMemoryOwn)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:abac6df878a8d9ccd52ce8301957d7e6f" id="r_abac6df878a8d9ccd52ce8301957d7e6f"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abac6df878a8d9ccd52ce8301957d7e6f">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_watermark_text_params.html">WatermarkTextParams</a> obj)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Watermark settings to control the appearance of text in a text-based watermark. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae77a282bc66ef678416b07d057c4b6cc" name="ae77a282bc66ef678416b07d057c4b6cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae77a282bc66ef678416b07d057c4b6cc">&#9670;&#160;</a></span>WatermarkTextParams() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.WatermarkTextParams.WatermarkTextParams </td>
+          <td>(</td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>cPtr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>cMemoryOwn</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="#abac6df878a8d9ccd52ce8301957d7e6f">getCPtr()</a>.</p>
+
+</div>
+</div>
+<a id="ac080eda64ddda25bb39d5a1a92b2239b" name="ac080eda64ddda25bb39d5a1a92b2239b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac080eda64ddda25bb39d5a1a92b2239b">&#9670;&#160;</a></span>WatermarkTextParams() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.WatermarkTextParams.WatermarkTextParams </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a4a770b46d4822b1134fa723b8de68129" name="a4a770b46d4822b1134fa723b8de68129"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a770b46d4822b1134fa723b8de68129">&#9670;&#160;</a></span>delete() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.WatermarkTextParams.delete </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="#a4a770b46d4822b1134fa723b8de68129">delete()</a>, and <a class="el" href="#a3d3c5641d753b0ca4ff715cda424abbd">finalize()</a>.</p>
+
+</div>
+</div>
+<a id="ab8fbcd376c6ebde277b93a49ad9ec727" name="ab8fbcd376c6ebde277b93a49ad9ec727"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8fbcd376c6ebde277b93a49ad9ec727">&#9670;&#160;</a></span>delete() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.WatermarkTextParams.delete </td>
+          <td>(</td>
+          <td class="paramtype">Boolean</td>          <td class="paramname"><span class="paramname"><em>disposing</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d3c5641d753b0ca4ff715cda424abbd" name="a3d3c5641d753b0ca4ff715cda424abbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d3c5641d753b0ca4ff715cda424abbd">&#9670;&#160;</a></span>finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.WatermarkTextParams.finalize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a946620e17c04cc29bb5b14a0e11d7403" name="a946620e17c04cc29bb5b14a0e11d7403"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a946620e17c04cc29bb5b14a0e11d7403">&#9670;&#160;</a></span>getColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color.html">Color</a> com.datalogics.PDFL.WatermarkTextParams.getColor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The color to be used when generating a text-based watermark. </p>
+
+</div>
+</div>
+<a id="abac6df878a8d9ccd52ce8301957d7e6f" name="abac6df878a8d9ccd52ce8301957d7e6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abac6df878a8d9ccd52ce8301957d7e6f">&#9670;&#160;</a></span>getCPtr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long com.datalogics.PDFL.WatermarkTextParams.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_watermark_text_params.html">WatermarkTextParams</a></td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html#a09b216d47bbb92d885861321a8a50da1">com.datalogics.PDFL.Document.watermark()</a>.</p>
+
+</div>
+</div>
+<a id="ab8c003dde2c8a3996bee1d22fa48777a" name="ab8c003dde2c8a3996bee1d22fa48777a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8c003dde2c8a3996bee1d22fa48777a">&#9670;&#160;</a></span>getFont()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_font.html">Font</a> com.datalogics.PDFL.WatermarkTextParams.getFont </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The Font to be used when generating a text-based watermark. </p>
+
+</div>
+</div>
+<a id="aa627d0e8cba1be20ddf6ef3291f5e918" name="aa627d0e8cba1be20ddf6ef3291f5e918"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa627d0e8cba1be20ddf6ef3291f5e918">&#9670;&#160;</a></span>getFontSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float com.datalogics.PDFL.WatermarkTextParams.getFontSize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2fabf23bdddf7b454d4355a3080ede51" name="a2fabf23bdddf7b454d4355a3080ede51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fabf23bdddf7b454d4355a3080ede51">&#9670;&#160;</a></span>getText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.datalogics.PDFL.WatermarkTextParams.getText </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The text to be used when generating a text-based watermark. </p>
+
+</div>
+</div>
+<a id="a923592fdab4cc9cc86a3ae5446fde8b0" name="a923592fdab4cc9cc86a3ae5446fde8b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a923592fdab4cc9cc86a3ae5446fde8b0">&#9670;&#160;</a></span>getTextAlign()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_horizontal_alignment.html">HorizontalAlignment</a> com.datalogics.PDFL.WatermarkTextParams.getTextAlign </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the alignment to be used when justifying a text-based watermark. </p>
+
+</div>
+</div>
+<a id="a1eec6feae8b2d8efb935bfc162a9d0ce" name="a1eec6feae8b2d8efb935bfc162a9d0ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eec6feae8b2d8efb935bfc162a9d0ce">&#9670;&#160;</a></span>setColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.WatermarkTextParams.setColor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_color.html">Color</a></td>          <td class="paramname"><span class="paramname"><em>color</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The color to be used when generating a text-based watermark. </p>
+
+</div>
+</div>
+<a id="a193652eba56bcfc78a5c11a567c98482" name="a193652eba56bcfc78a5c11a567c98482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a193652eba56bcfc78a5c11a567c98482">&#9670;&#160;</a></span>setFont()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.WatermarkTextParams.setFont </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_font.html">Font</a></td>          <td class="paramname"><span class="paramname"><em>font</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The Font to be used when generating a text-based watermark. </p>
+
+</div>
+</div>
+<a id="a4d4356109f2fa2043d62af42cda792b9" name="a4d4356109f2fa2043d62af42cda792b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d4356109f2fa2043d62af42cda792b9">&#9670;&#160;</a></span>setFontSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.WatermarkTextParams.setFontSize </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0d94861d2bc5195eb29f3f12b0312436" name="a0d94861d2bc5195eb29f3f12b0312436"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d94861d2bc5195eb29f3f12b0312436">&#9670;&#160;</a></span>setText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.WatermarkTextParams.setText </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>arg0</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The text to be used when generating a text-based watermark. </p>
+
+</div>
+</div>
+<a id="a8ea559a67afb44ce2dab93a6019771d3" name="a8ea559a67afb44ce2dab93a6019771d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ea559a67afb44ce2dab93a6019771d3">&#9670;&#160;</a></span>setTextAlign()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.WatermarkTextParams.setTextAlign </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_horizontal_alignment.html">HorizontalAlignment</a></td>          <td class="paramname"><span class="paramname"><em>h</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The alignment to be used when justifying a text-based watermark. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>
