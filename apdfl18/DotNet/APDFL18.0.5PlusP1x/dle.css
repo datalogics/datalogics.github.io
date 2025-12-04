@@ -1,0 +1,379 @@
+:root {
+  --dl-blue-color: #0C70F2;
+
+  --light-theme-bg-color: #E6F2FF;
+  --light-theme-fg-color: Black;
+  --light-theme-link-visited-color: #2A3798;
+  --light-api-parameter-color: #602020;
+  --light-api-signature-color: #FAFAFA;
+  --light-api-signature-text-color: Black;
+  --light-api-tabs-dropdown-bg-color: White;
+  --light-api-tabs-dropdown-fg-color: Black;
+  --light-search-results-bg-color: var(--light-theme-bg-color);
+
+  --dark-theme-bg-color: #1A1A1A;
+  --dark-theme-fg-color: DarkGrey;
+  --dark-theme-link-visited-color: Orchid;
+  --dark-api-parameter-color: Red;
+  --dark-api-signature-color: #592222;
+  --dark-api-signature-text-color: White;
+  --dark-api-tabs-dropdown-bg-color: Black;
+  --dark-api-tabs-dropdown-fg-color: White;
+  --dark-search-results-bg-color: Bisque;
+
+  --default-bg-color: var(--light-theme-bg-color);
+  --default-fg-color: var(--light-theme-fg-color);
+  --default-link-visited-color: var(--light-theme-link-visited-color);
+  --default-slider-theme-color: #BBBBBB;
+  --default-api-parameter-color: var(--light-api-parameter-color);
+  --default-api-signature-color: var(--light-api-signature-color);
+  --default-api-signature-text-color: var(--light-api-signature-text-color);
+  --default-api-tabs-dropdown-bg-color: var(--light-api-tabs-dropdown-bg-color);
+  --default-api-tabs-dropdown-fg-color: var(--light-api-tabs-dropdown-fg-color);
+  --default-search-results-bg-color: var(--light-search-results-bg-color);
+}
+
+#version-selector-label {
+	font: Verdana;
+	font-weight: bold;
+}
+
+#version-select {
+	width: 150px;
+}
+
+#MSearchResultsWindow {
+    /*Doxygen's search stylesheet uses an ID selector and since that html is generated dynamically, we need to use !important to override that level of specificity.*/
+    background-color: var(--default-search-results-bg-color)!important;
+    border: 5px groove var(--dl-blue-color);
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+#themeslider {
+  -webkit-appearance: none;
+  width: 40px;
+  height: 20px;
+  background: var(--default-slider-theme-color);
+  border-radius: 5px;
+  outline: none;
+}
+
+#darkthemelabel {
+	margin-right: 5px;
+}
+
+#nav-tree
+{
+    background-color: var(--default-bg-color);
+    background-image: none;
+}
+
+/*Split bar*/
+.ui-resizable-e {
+  background-image:url("splitbar.png");
+  background-size:100%;
+  background-repeat:repeat-y;
+  background-position-y:center;
+  background-attachment: scroll;
+  cursor:ew-resize;
+  height:100%;
+  right:0;
+  top:0;
+  width:8px;
+}
+
+#pkg-download-img
+{
+  transition:box-shadow 1s;
+}
+
+#pkg-download-img:hover {
+  box-shadow: 0px 0px 25px var(--default-fg-color);
+}
+
+BODY,H1,H2,H3,H4,H5,H6,P,CENTER,TD,TR,TH,UL,DL,DIV {
+	font-family: Verdana, sans-serif;
+}
+BODY,TD {
+       font-size: 90%;
+}
+BODY {
+	background: var(--default-bg-color);
+	color: var(--default-fg-color);
+	margin-right: 20px;
+	margin-left: 20px;
+}
+H1 {
+	text-align: center;
+       font-size: 160%;
+}
+H2 {
+       font-size: 120%;
+}
+H3 {
+       font-size: 100%;
+}
+CAPTION { font-weight: bold }
+TD.navtab {
+       font-size: 70%;
+}
+
+HR { height: 1px;
+     border: none;
+     border-top: 1px solid var(--default-fg-color);
+}
+
+/*Links*/
+a.el { text-decoration: none; font-weight: bold }
+a.elRef { font-weight: bold }
+a.code:link { text-decoration: none; font-weight: normal; color: #0000FF}
+a.code:visited { text-decoration: none; font-weight: normal; color: #0000FF}
+a.codeRef:link { font-weight: normal; color: #0000FF}
+a.codeRef:visited { font-weight: normal; color: #0000FF}
+a:hover { text-decoration: none; background-color: transparent}
+a {
+	color: var(--dl-blue-color);
+}
+a:visited {
+	color: var(--default-link-visited-color)
+}
+DL.el { margin-left: -1cm }
+.fragment {
+       font-family: monospace, fixed;
+       font-size: 95%;
+}
+TR.memlist {
+   background-color: #f0f0f0; 
+}
+P.formulaDsp { text-align: center; }
+IMG.formulaDsp { }
+IMG.formulaInl { vertical-align: middle; }
+SPAN.keyword       { color: #008000 }
+SPAN.keywordtype   { color: #604020 }
+SPAN.keywordflow   { color: #e08000 }
+SPAN.comment       { color: #800000 }
+SPAN.preprocessor  { color: #806020 }
+SPAN.stringliteral { color: #002080 }
+SPAN.charliteral   { color: #008080 }
+
+/* API member documentation */
+.mdescLeft {
+       padding: 0px 8px 4px 8px;
+	font-size: 80%;
+	font-style: italic;
+	background-color: #FAFAFA;
+	border-top: 1px none #E0E0E0;
+	border-right: 1px none #E0E0E0;
+	border-bottom: 1px none #E0E0E0;
+	border-left: 1px none #E0E0E0;
+	margin: 0px;
+}
+.mdescRight {
+       padding: 0px 8px 4px 8px;
+	font-size: 80%;
+	font-style: italic;
+	background-color: #FAFAFA;
+	border-top: 1px none #E0E0E0;
+	border-right: 1px none #E0E0E0;
+	border-bottom: 1px none #E0E0E0;
+	border-left: 1px none #E0E0E0;
+	margin: 0px;
+}
+.memItemLeft {
+	padding: 1px 0px 0px 8px;
+	margin: 4px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-color: #E0E0E0;
+	border-right-color: #E0E0E0;
+	border-bottom-color: #E0E0E0;
+	border-left-color: #E0E0E0;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	background-color: var(--default-api-signature-color);
+	color: var(--default-api-signature-text-color);
+	font-size: 80%;
+}
+.memItemRight {
+	padding: 1px 8px 0px 8px;
+	margin: 4px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-color: #E0E0E0;
+	border-right-color: #E0E0E0;
+	border-bottom-color: #E0E0E0;
+	border-left-color: #E0E0E0;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	background-color: var(--default-api-signature-color);
+	color: var(--default-api-signature-text-color);
+	font-size: 80%;
+}
+.memTemplItemLeft {
+	padding: 1px 0px 0px 8px;
+	margin: 4px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-color: #E0E0E0;
+	border-right-color: #E0E0E0;
+	border-bottom-color: #E0E0E0;
+	border-left-color: #E0E0E0;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	background-color: #FAFAFA;
+	font-size: 80%;
+}
+.memTemplItemRight {
+	padding: 1px 8px 0px 8px;
+	margin: 4px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-color: #E0E0E0;
+	border-right-color: #E0E0E0;
+	border-bottom-color: #E0E0E0;
+	border-left-color: #E0E0E0;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	background-color: #FAFAFA;
+	font-size: 80%;
+}
+.memTemplParams {
+	padding: 1px 0px 0px 8px;
+	margin: 4px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-color: #E0E0E0;
+	border-right-color: #E0E0E0;
+	border-bottom-color: #E0E0E0;
+	border-left-color: #E0E0E0;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+       color: #606060;
+	background-color: #FAFAFA;
+	font-size: 80%;
+}
+TD.tiny      { font-size: 75%;
+}
+.icon {
+    font-family: Arial, Helvetica;
+    font-weight: bold;
+    height: 14px;
+    width: 16px;
+    display: inline-block;
+    background-color: var(--dl-blue-color);
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.dirtab { padding: 4px;
+          border-collapse: collapse;
+          border: 1px solid #84b0c7;
+}
+TH.dirtab { background: #e8eef2;
+            font-weight: bold;
+}
+
+.memtemplate {
+  font-size: 80%;
+  color: #606060;
+  font-weight: normal;
+} 
+.memnav { 
+  background-color: #e8eef2;
+  border: 1px solid #84b0c7;
+  text-align: center;
+  margin: 2px;
+  margin-right: 15px;
+  padding: 2px;
+}
+.memitem {
+  padding: 4px;
+  background-color: var(--main-bg-color);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #dedeee;
+  -moz-border-radius: 8px 8px 8px 8px;
+}
+.memname {
+  white-space: nowrap;
+  font-weight: bold;
+}
+.memdoc{
+  padding-left: 10px;
+}
+.memproto {
+  background-color: var(--main-bg-color);
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--main-fg-color);
+  font-weight: bold;
+  -moz-border-radius: 8px 8px 8px 8px;
+}
+.paramkey {
+  text-align: right;
+}
+.paramtype {
+  white-space: nowrap;
+}
+.paramname {
+  color: var(--default-api-parameter-color);
+  font-style: italic;
+  white-space: nowrap;
+}
+
+/* for the tree view */
+.ftvtree {
+	font-family: sans-serif;
+	margin:0.5em;
+}
+.directory { font-size: 9pt; font-weight: bold; }
+.directory h3 { margin: 0px; margin-top: 1em; font-size: 11pt; }
+.directory > h3 { margin-top: 0; }
+.directory p { margin: 0px; white-space: nowrap; }
+.directory div { display: none; margin: 0px; }
+.directory img { vertical-align: -30%; }
+
+/*API Page Tabs (Main Page, Namespaces, Classes*/
+.sm-dox {
+  /* background-image: linear-gradient(to right, rgba(187,212,240,0), var(--dl-blue-color));*/
+}
+.sm-dox a {
+  color: var(--default-api-tabs-dropdown-fg-color);
+  text-shadow: none;/*The shadow effect isn't necessary for links on the banner and gets in the way of the dark mode looking correct and we're already using a gradient.*/
+}
+
+.sm-dox ul {
+  background: var(--dl-blue-color);
+}
+
+.sm-dox ul a {
+  color: var(--default-api-tabs-dropdown-fg-color);
+  background-color: var(--default-api-tabs-dropdown-bg-color);
+}

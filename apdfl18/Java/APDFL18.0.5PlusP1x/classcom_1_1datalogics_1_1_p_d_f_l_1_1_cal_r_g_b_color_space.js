@@ -1,0 +1,26 @@
+var classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space =
+[
+    [ "CalRGBColorSpace", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#a00ebdd3b0fcb70abce073912a922c8e0", null ],
+    [ "CalRGBColorSpace", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#aa37b714257eb24e06cf9b9d4649c7f3a", null ],
+    [ "CalRGBColorSpace", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#a6142422541c48332b3c7906a38f96661", null ],
+    [ "delete", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#a180fe0d801f76c6eb459e9251d69760a", null ],
+    [ "delete", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#afcda04b02b9ee121cbaded7c93d62278", null ],
+    [ "equals", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#a9e34d1bb0acdd44e93d883c42ed9abe7", null ],
+    [ "finalize", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#a289dbff6e2f04c97619dd9e192dc207d", null ],
+    [ "getBlackPoint", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#acda80fafbe98b3489c35bffe9a6ced19", null ],
+    [ "getCPtr", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#aec4e8b93f6d2986b2acf5bf5b7f9b1cd", null ],
+    [ "getCPtr", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#a3f7c3905f654c98f0cb9941017fd668c", null ],
+    [ "getGamma", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#a81be4d6ece5e389e969ff82abc2efb65", null ],
+    [ "getMatrix", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#a6a1b5dbe3dd48811fb20a0ac50e86bdf", null ],
+    [ "getName", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#aa5dab964afb49bf6ec8b4b8edba0cb12", null ],
+    [ "getNumComponents", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#a847316c5cb286f6865bb46027df3c52d", null ],
+    [ "getPDFObject", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#a25fe716fc90b8f6f2d1f59bd3c28a60b", null ],
+    [ "getWhitePoint", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#a980d09f2053e3bbcfb62cdd58ff06768", null ],
+    [ "toString", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#ada85cef74f1402eec3090629dfd086af", null ],
+    [ "DEVICE_CMYK", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#a56d3989e2f0b46a13baad7ac5afe118e", null ],
+    [ "DEVICE_GRAY", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#a4a9838e6668cebff8185325171571741", null ],
+    [ "DEVICE_RGB", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#a402b1dacae757b2544e3e14457822f4a", null ],
+    [ "DEVICE_RGBA", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#a9c72d92b28c4187a9474fbe8db1338f2", null ],
+    [ "LAB", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#a8d831743d91df2a73f66f047373afde6", null ],
+    [ "LAB_A", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_cal_r_g_b_color_space.html#acc80d8eb7876f5ab657d68c80330cb27", null ]
+];
