@@ -1,0 +1,711 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Java API Reference: com.datalogics.PDFL.OCRParams Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classcom_1_1datalogics_1_1_p_d_f_l_1_1_o_c_r_params.html','','classcom_1_1datalogics_1_1_p_d_f_l_1_1_o_c_r_params-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">com.datalogics.PDFL.OCRParams Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a37f7f22f531f6015aebceb58c432f5e6" id="r_a37f7f22f531f6015aebceb58c432f5e6"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37f7f22f531f6015aebceb58c432f5e6">delete</a> ()</td></tr>
+<tr class="memitem:a77ad0bffeb5827b7dbfc92c0c875142e" id="r_a77ad0bffeb5827b7dbfc92c0c875142e"><td class="memItemLeft" align="right" valign="top">java.util.List&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77ad0bffeb5827b7dbfc92c0c875142e">getCandidateFontNames</a> ()</td></tr>
+<tr class="memitem:ae9f437128f3584514fbead0ff1d01fcc" id="r_ae9f437128f3584514fbead0ff1d01fcc"><td class="memItemLeft" align="right" valign="top">java.util.Map&lt; String, String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9f437128f3584514fbead0ff1d01fcc">getConfigurationParameters</a> ()</td></tr>
+<tr class="memitem:ae73e3aa8c6d5401a8988e97471862cfe" id="r_ae73e3aa8c6d5401a8988e97471862cfe"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae73e3aa8c6d5401a8988e97471862cfe">getEnableImagePreprocessing</a> ()</td></tr>
+<tr class="memitem:a105e9097b225deb09d92b4dacc1a8bf7" id="r_a105e9097b225deb09d92b4dacc1a8bf7"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a105e9097b225deb09d92b4dacc1a8bf7">getEngine</a> ()</td></tr>
+<tr class="memitem:aad0efdde9bbf19fc2a5a886c7056718a" id="r_aad0efdde9bbf19fc2a5a886c7056718a"><td class="memItemLeft" align="right" valign="top">java.util.List&lt; <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_language_setting.html">LanguageSetting</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad0efdde9bbf19fc2a5a886c7056718a">getLanguages</a> ()</td></tr>
+<tr class="memitem:a96371c760345966864c55e3f7db60b59" id="r_a96371c760345966864c55e3f7db60b59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_segmentation_mode.html">PageSegmentationMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96371c760345966864c55e3f7db60b59">getPageSegmentationMode</a> ()</td></tr>
+<tr class="memitem:afbb9757629b4214282f0443f758949a6" id="r_afbb9757629b4214282f0443f758949a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_performance.html">Performance</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afbb9757629b4214282f0443f758949a6">getPerformance</a> ()</td></tr>
+<tr class="memitem:ab355cf8cfb65b4367e763a6f3396d847" id="r_ab355cf8cfb65b4367e763a6f3396d847"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab355cf8cfb65b4367e763a6f3396d847">getResolution</a> ()</td></tr>
+<tr class="memitem:a663e1e10724c83a9dbfb0190f8064213" id="r_a663e1e10724c83a9dbfb0190f8064213"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a663e1e10724c83a9dbfb0190f8064213">OCRParams</a> ()</td></tr>
+<tr class="memitem:a0a2d7b759c013317b56f6b1bfcff7198" id="r_a0a2d7b759c013317b56f6b1bfcff7198"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a2d7b759c013317b56f6b1bfcff7198">setCandidateFontNames</a> (java.util.List&lt; String &gt; candidateFontNames)</td></tr>
+<tr class="memitem:a8717feec43348d78292440bb86d25d94" id="r_a8717feec43348d78292440bb86d25d94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8717feec43348d78292440bb86d25d94">setConfigurationParameters</a> (java.util.Map&lt; String, String &gt; configurationParameters)</td></tr>
+<tr class="memitem:aa3cb2f5380627fbe64b57b35d31dd786" id="r_aa3cb2f5380627fbe64b57b35d31dd786"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3cb2f5380627fbe64b57b35d31dd786">setEnableImagePreprocessing</a> (boolean enable)</td></tr>
+<tr class="memitem:a08bebff928c8e8f1be5a69f86929abdf" id="r_a08bebff928c8e8f1be5a69f86929abdf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08bebff928c8e8f1be5a69f86929abdf">setEngine</a> (String engine)</td></tr>
+<tr class="memitem:ad88c064a2cb19f5ad60b7e7cb0cf3b3d" id="r_ad88c064a2cb19f5ad60b7e7cb0cf3b3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad88c064a2cb19f5ad60b7e7cb0cf3b3d">setLanguages</a> (java.util.List&lt; <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_language_setting.html">LanguageSetting</a> &gt; languages)</td></tr>
+<tr class="memitem:a89ff9e94053520d611f36214694520d5" id="r_a89ff9e94053520d611f36214694520d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89ff9e94053520d611f36214694520d5">setPageSegmentationMode</a> (<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_segmentation_mode.html">PageSegmentationMode</a> mode)</td></tr>
+<tr class="memitem:a69da6f2bd95e7e224a223fe6acb02b23" id="r_a69da6f2bd95e7e224a223fe6acb02b23"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69da6f2bd95e7e224a223fe6acb02b23">setPerformance</a> (<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_performance.html">Performance</a> performance)</td></tr>
+<tr class="memitem:a9ecf6236edbafa7d0ecc3fab0ba29bf8" id="r_a9ecf6236edbafa7d0ecc3fab0ba29bf8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ecf6236edbafa7d0ecc3fab0ba29bf8">setResolution</a> (double resolution)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a537d42746e5c7ac0dbfdf208a19b21c9" id="r_a537d42746e5c7ac0dbfdf208a19b21c9"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a537d42746e5c7ac0dbfdf208a19b21c9">getTesseract4Engine</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a703569e383fef6d5f98a9e99d6e28fa5" id="r_a703569e383fef6d5f98a9e99d6e28fa5"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a703569e383fef6d5f98a9e99d6e28fa5">delete</a> (Boolean disposing)</td></tr>
+<tr class="memitem:a57afef5e9ac7bd4ac2ea025ca480040b" id="r_a57afef5e9ac7bd4ac2ea025ca480040b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57afef5e9ac7bd4ac2ea025ca480040b">finalize</a> ()</td></tr>
+<tr class="memitem:ac5b83e5dc241e1dc1cf8ec7b0f3eb052" id="r_ac5b83e5dc241e1dc1cf8ec7b0f3eb052"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5b83e5dc241e1dc1cf8ec7b0f3eb052">OCRParams</a> (long cPtr, boolean cMemoryOwn)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a44fae5d4317acb3fd5b113a63220977e" id="r_a44fae5d4317acb3fd5b113a63220977e"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44fae5d4317acb3fd5b113a63220977e">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_o_c_r_params.html">OCRParams</a> obj)</td></tr>
+</table>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac5b83e5dc241e1dc1cf8ec7b0f3eb052" name="ac5b83e5dc241e1dc1cf8ec7b0f3eb052"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5b83e5dc241e1dc1cf8ec7b0f3eb052">&#9670;&#160;</a></span>OCRParams() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OCRParams.OCRParams </td>
+          <td>(</td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>cPtr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>cMemoryOwn</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="#a44fae5d4317acb3fd5b113a63220977e">getCPtr()</a>.</p>
+
+</div>
+</div>
+<a id="a663e1e10724c83a9dbfb0190f8064213" name="a663e1e10724c83a9dbfb0190f8064213"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a663e1e10724c83a9dbfb0190f8064213">&#9670;&#160;</a></span>OCRParams() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.OCRParams.OCRParams </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create an OCRParams structure with defaults. </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a37f7f22f531f6015aebceb58c432f5e6" name="a37f7f22f531f6015aebceb58c432f5e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37f7f22f531f6015aebceb58c432f5e6">&#9670;&#160;</a></span>delete() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.OCRParams.delete </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="#a37f7f22f531f6015aebceb58c432f5e6">delete()</a>, and <a class="el" href="#a57afef5e9ac7bd4ac2ea025ca480040b">finalize()</a>.</p>
+
+</div>
+</div>
+<a id="a703569e383fef6d5f98a9e99d6e28fa5" name="a703569e383fef6d5f98a9e99d6e28fa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a703569e383fef6d5f98a9e99d6e28fa5">&#9670;&#160;</a></span>delete() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.OCRParams.delete </td>
+          <td>(</td>
+          <td class="paramtype">Boolean</td>          <td class="paramname"><span class="paramname"><em>disposing</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a57afef5e9ac7bd4ac2ea025ca480040b" name="a57afef5e9ac7bd4ac2ea025ca480040b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57afef5e9ac7bd4ac2ea025ca480040b">&#9670;&#160;</a></span>finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.OCRParams.finalize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a77ad0bffeb5827b7dbfc92c0c875142e" name="a77ad0bffeb5827b7dbfc92c0c875142e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77ad0bffeb5827b7dbfc92c0c875142e">&#9670;&#160;</a></span>getCandidateFontNames()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">java.util.List&lt; String &gt; com.datalogics.PDFL.OCRParams.getCandidateFontNames </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The names of candidate fonts for placing text under an image. The default list should work well in most cases. If you're using text that isn't represented by Latin fonts, or by Chinese, Japanese, or Korean fonts, then retrieve this list, add the font that can represent that text, then set that new list on this object. </p>
+<p>Enough font names must be supplied to cover the expected languages/scripts in use. </p>
+<p>The code selects a font to represent each word. If a word code-switches between different scripts, for instance, if it contains non-Latin text and Arabic numerals, then make sure to supply the name of a font family that can handle both the text and the numerals. </p>
+<p>The quality of the results depends on the font choice. The list is searched in order until a font works for a particular word. To make the text fit better, it's recommended to list proportional fonts before fixed-width fonts. Decorative fonts with flourishes, like Zapf Chancery, deliver poor results. Generally, supply a font that would be used in block text, such as in a newspaper or work of literature, such as Times Roman, or a font already in the list, like MinionPro. </p>
+<p>If the PlaceTextUnder method in OCREngine can't identify a font that covers the whole text of a word, an exception will be thrown. </p>
+
+</div>
+</div>
+<a id="ae9f437128f3584514fbead0ff1d01fcc" name="ae9f437128f3584514fbead0ff1d01fcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9f437128f3584514fbead0ff1d01fcc">&#9670;&#160;</a></span>getConfigurationParameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">java.util.Map&lt; String, String &gt; com.datalogics.PDFL.OCRParams.getConfigurationParameters </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the configuration parameters. Note: Reserved for internal use. Do not use unless directed to by Datalogics Support. </p>
+
+</div>
+</div>
+<a id="a44fae5d4317acb3fd5b113a63220977e" name="a44fae5d4317acb3fd5b113a63220977e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44fae5d4317acb3fd5b113a63220977e">&#9670;&#160;</a></span>getCPtr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long com.datalogics.PDFL.OCRParams.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_o_c_r_params.html">OCRParams</a></td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_o_c_r_engine.html#ad0aa13ddc3fb2a4fd3db7be9ab49a154">com.datalogics.PDFL.OCREngine.OCREngine()</a>.</p>
+
+</div>
+</div>
+<a id="ae73e3aa8c6d5401a8988e97471862cfe" name="ae73e3aa8c6d5401a8988e97471862cfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae73e3aa8c6d5401a8988e97471862cfe">&#9670;&#160;</a></span>getEnableImagePreprocessing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.OCRParams.getEnableImagePreprocessing </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the image preprocessing enable state.True if any image preprocessing is on. </p>
+
+</div>
+</div>
+<a id="a105e9097b225deb09d92b4dacc1a8bf7" name="a105e9097b225deb09d92b4dacc1a8bf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a105e9097b225deb09d92b4dacc1a8bf7">&#9670;&#160;</a></span>getEngine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.datalogics.PDFL.OCRParams.getEngine </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The engine in use. </p>
+
+</div>
+</div>
+<a id="aad0efdde9bbf19fc2a5a886c7056718a" name="aad0efdde9bbf19fc2a5a886c7056718a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad0efdde9bbf19fc2a5a886c7056718a">&#9670;&#160;</a></span>getLanguages()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">java.util.List&lt; <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_language_setting.html">LanguageSetting</a> &gt; com.datalogics.PDFL.OCRParams.getLanguages </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The list of languages to use. </p>
+
+</div>
+</div>
+<a id="a96371c760345966864c55e3f7db60b59" name="a96371c760345966864c55e3f7db60b59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96371c760345966864c55e3f7db60b59">&#9670;&#160;</a></span>getPageSegmentationMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_segmentation_mode.html">PageSegmentationMode</a> com.datalogics.PDFL.OCRParams.getPageSegmentationMode </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The page segmentation mode. </p>
+
+</div>
+</div>
+<a id="afbb9757629b4214282f0443f758949a6" name="afbb9757629b4214282f0443f758949a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbb9757629b4214282f0443f758949a6">&#9670;&#160;</a></span>getPerformance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_performance.html">Performance</a> com.datalogics.PDFL.OCRParams.getPerformance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The desired engine performance. </p>
+
+</div>
+</div>
+<a id="ab355cf8cfb65b4367e763a6f3396d847" name="ab355cf8cfb65b4367e763a6f3396d847"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab355cf8cfb65b4367e763a6f3396d847">&#9670;&#160;</a></span>getResolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double com.datalogics.PDFL.OCRParams.getResolution </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Each image will use this resolution by default. </p>
+
+</div>
+</div>
+<a id="a537d42746e5c7ac0dbfdf208a19b21c9" name="a537d42746e5c7ac0dbfdf208a19b21c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a537d42746e5c7ac0dbfdf208a19b21c9">&#9670;&#160;</a></span>getTesseract4Engine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.datalogics.PDFL.OCRParams.getTesseract4Engine </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Specify the Tesseract v4 engine.Pass this to the engine property. </p>
+
+</div>
+</div>
+<a id="a0a2d7b759c013317b56f6b1bfcff7198" name="a0a2d7b759c013317b56f6b1bfcff7198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a2d7b759c013317b56f6b1bfcff7198">&#9670;&#160;</a></span>setCandidateFontNames()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.OCRParams.setCandidateFontNames </td>
+          <td>(</td>
+          <td class="paramtype">java.util.List&lt; String &gt;</td>          <td class="paramname"><span class="paramname"><em>candidateFontNames</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The names of candidate fonts for placing text under an image. The default list should work well in most cases. If you're using text that isn't represented by Latin fonts, or by Chinese, Japanese, or Korean fonts, then retrieve this list, add the font that can represent that text, then set that new list on this object. </p>
+<p>Enough font names must be supplied to cover the expected languages/scripts in use. </p>
+<p>The code selects a font to represent each word. If a word code-switches between different scripts, for instance, if it contains non-Latin text and Arabic numerals, then make sure to supply the name of a font family that can handle both the text and the numerals. </p>
+<p>The quality of the results depends on the font choice. The list is searched in order until a font works for a particular word. To make the text fit better, it's recommended to list proportional fonts before fixed-width fonts. Decorative fonts with flourishes, like Zapf Chancery, deliver poor results. Generally, supply a font that would be used in block text, such as in a newspaper or work of literature, such as Times Roman, or a font already in the list, like MinionPro. </p>
+<p>If the PlaceTextUnder method in OCREngine can't identify a font that covers the whole text of a word, an exception will be thrown. </p>
+
+</div>
+</div>
+<a id="a8717feec43348d78292440bb86d25d94" name="a8717feec43348d78292440bb86d25d94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8717feec43348d78292440bb86d25d94">&#9670;&#160;</a></span>setConfigurationParameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.OCRParams.setConfigurationParameters </td>
+          <td>(</td>
+          <td class="paramtype">java.util.Map&lt; String, String &gt;</td>          <td class="paramname"><span class="paramname"><em>configurationParameters</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the configuration parameters. Note: Reserved for internal use. Do not use unless directed to by Datalogics Support. </p>
+
+</div>
+</div>
+<a id="aa3cb2f5380627fbe64b57b35d31dd786" name="aa3cb2f5380627fbe64b57b35d31dd786"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3cb2f5380627fbe64b57b35d31dd786">&#9670;&#160;</a></span>setEnableImagePreprocessing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.OCRParams.setEnableImagePreprocessing </td>
+          <td>(</td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>enable</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Enable all image preprocessing, default enabled.Note that once the OCREngine is initialized, this setting is permanent. </p>
+
+</div>
+</div>
+<a id="a08bebff928c8e8f1be5a69f86929abdf" name="a08bebff928c8e8f1be5a69f86929abdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08bebff928c8e8f1be5a69f86929abdf">&#9670;&#160;</a></span>setEngine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.OCRParams.setEngine </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>engine</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The engine in use. </p>
+
+</div>
+</div>
+<a id="ad88c064a2cb19f5ad60b7e7cb0cf3b3d" name="ad88c064a2cb19f5ad60b7e7cb0cf3b3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad88c064a2cb19f5ad60b7e7cb0cf3b3d">&#9670;&#160;</a></span>setLanguages()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.OCRParams.setLanguages </td>
+          <td>(</td>
+          <td class="paramtype">java.util.List&lt; <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_language_setting.html">LanguageSetting</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>languages</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The list of languages to use. </p>
+
+</div>
+</div>
+<a id="a89ff9e94053520d611f36214694520d5" name="a89ff9e94053520d611f36214694520d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89ff9e94053520d611f36214694520d5">&#9670;&#160;</a></span>setPageSegmentationMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.OCRParams.setPageSegmentationMode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_page_segmentation_mode.html">PageSegmentationMode</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The page segmentation mode. </p>
+
+</div>
+</div>
+<a id="a69da6f2bd95e7e224a223fe6acb02b23" name="a69da6f2bd95e7e224a223fe6acb02b23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69da6f2bd95e7e224a223fe6acb02b23">&#9670;&#160;</a></span>setPerformance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.OCRParams.setPerformance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_performance.html">Performance</a></td>          <td class="paramname"><span class="paramname"><em>performance</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The desired engine performance. </p>
+
+</div>
+</div>
+<a id="a9ecf6236edbafa7d0ecc3fab0ba29bf8" name="a9ecf6236edbafa7d0ecc3fab0ba29bf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ecf6236edbafa7d0ecc3fab0ba29bf8">&#9670;&#160;</a></span>setResolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.OCRParams.setResolution </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>resolution</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Each image will use this resolution by default. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>
