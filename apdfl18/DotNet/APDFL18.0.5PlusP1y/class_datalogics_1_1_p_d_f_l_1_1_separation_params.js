@@ -1,0 +1,27 @@
+var class_datalogics_1_1_p_d_f_l_1_1_separation_params =
+[
+    [ "SeparationParams", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#ae36945e182b2c71b91225577d6f8e58f", null ],
+    [ "Dispose", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#ace966a0c9f422671cd2bb2e17dea2b04", null ],
+    [ "Dispose", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a3a00d63ad61bb9e23e97e7237641e796", null ],
+    [ "ApplyOCGPrintOverrides", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#aa32732421c48f347753be914f60e8ddd", null ],
+    [ "BinaryChannelAvailable", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a195b78d43a3386609da766116441c453", null ],
+    [ "ConvertToProcessUsingOPP", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a77de825826f730951de96ee1880b770c", null ],
+    [ "ConvertTrueTypeToType42", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a0366310bb8cb58ebfce424d94ab9fcf4", null ],
+    [ "DestinationProfileString", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#ab9d1df258b6d942f7cb35542a267155b", null ],
+    [ "EmitAnnotations", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#aa58dc1203f4b3395add8614845863a2d", null ],
+    [ "EmitFontOption", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#afa642bdd2a5568bbd98a479c80908c08", null ],
+    [ "EmitHalftones", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#af2726d48db1494a8df480b3c271d7d82", null ],
+    [ "EmitSeparableImagesOnly", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#aa87bece3e542e22c3b2ea627c507b856", null ],
+    [ "EmitTransferFunctions", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a04f0507f354d6150a6b3335fbb3e6db2", null ],
+    [ "InvertPlates", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a435b87946b624497cf89676c04b70bec", null ],
+    [ "MirrorPrint", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#aab9868eabb85c3b7d9b08f0ec737b041", null ],
+    [ "OCContext", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a08387631b0ed16e2d074bd39552ffbd8", null ],
+    [ "PageMarksToEmit", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a7e123a224557e0d621f8c611e062eb44", null ],
+    [ "Plates", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a49a785d0dabb6db0070d1a87fa38e7c3", null ],
+    [ "PostScriptLevel", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#aa1ea2748cefc7c6e2769a3e098962b66", null ],
+    [ "PrinterHasFarEastFonts", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a37f490d98829ae83eedc2cf09b9355d8", null ],
+    [ "SuppressCJKSubstitution", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a2d287c2ccdad5a5e2ef27c10903cf894", null ],
+    [ "TransparencyLevel", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a96b9a0b3fa22edf5a5a1cb6bb0219227", null ],
+    [ "UseCMYKWorkingColorSpace", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a142f2f285dc346aa3428bf6dc460c92a", null ],
+    [ "UseWesternStylePageMarks", "class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a064fc7adabfb491f3c475b74c76eef3e", null ]
+];

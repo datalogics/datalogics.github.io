@@ -1,0 +1,1160 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Java API Reference: com.datalogics.PDFL.PDFStream Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_stream.html','','classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_stream-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">com.datalogics.PDFL.PDFStream Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:adc48c48c9cbfad3cb085a7528c66213f" id="r_adc48c48c9cbfad3cb085a7528c66213f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#adc48c48c9cbfad3cb085a7528c66213f">clone</a> ()</td></tr>
+<tr class="memitem:a0759ed8272bd54d451ca4c417c47e575" id="r_a0759ed8272bd54d451ca4c417c47e575"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#a0759ed8272bd54d451ca4c417c47e575">clone</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a> doc)</td></tr>
+<tr class="memitem:a8da3873ba1e812dfe3b0cad1d5e9354a" id="r_a8da3873ba1e812dfe3b0cad1d5e9354a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#a8da3873ba1e812dfe3b0cad1d5e9354a">clone</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a> doc, boolean indirect)</td></tr>
+<tr class="memitem:a3f49a31d497f4de664fa73ce40bb22d9" id="r_a3f49a31d497f4de664fa73ce40bb22d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#a3f49a31d497f4de664fa73ce40bb22d9">clone</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a> obj)</td></tr>
+<tr class="memitem:a84b16a797a320ebc0d85be3885bd9583" id="r_a84b16a797a320ebc0d85be3885bd9583"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#a84b16a797a320ebc0d85be3885bd9583">clone</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a> obj, boolean indirect)</td></tr>
+<tr class="memitem:a7355bc3b1fd4b345190931bdc8139c17" id="r_a7355bc3b1fd4b345190931bdc8139c17"><td class="memItemLeft" align="right" valign="top">PDFObjectComparison&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#a7355bc3b1fd4b345190931bdc8139c17">compareTo</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a> rhs)</td></tr>
+<tr class="memitem:ae7c6a8e10f3aa42f521e1bdc528f28bf" id="r_ae7c6a8e10f3aa42f521e1bdc528f28bf"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7c6a8e10f3aa42f521e1bdc528f28bf">delete</a> ()</td></tr>
+<tr class="memitem:a0d7750edc31d1bcdbf3e98d1507c50ea" id="r_a0d7750edc31d1bcdbf3e98d1507c50ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#a0d7750edc31d1bcdbf3e98d1507c50ea">destroy</a> ()</td></tr>
+<tr class="memitem:a07ee547b32039a55140ccc8ed3889236" id="r_a07ee547b32039a55140ccc8ed3889236"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#a07ee547b32039a55140ccc8ed3889236">enumPDFObjects</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object_enum_proc.html">PDFObjectEnumProc</a> enumProc)</td></tr>
+<tr class="memitem:a19060591a6ec213bec6530347a9b296f" id="r_a19060591a6ec213bec6530347a9b296f"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#a19060591a6ec213bec6530347a9b296f">equals</a> (Object rhs)</td></tr>
+<tr class="memitem:aa5758aa31a01e61287cd13341068b879" id="r_aa5758aa31a01e61287cd13341068b879"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5758aa31a01e61287cd13341068b879">getDict</a> ()</td></tr>
+<tr class="memitem:abcbe9ec872f22e4ac699afdcb134f1ac" id="r_abcbe9ec872f22e4ac699afdcb134f1ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#abcbe9ec872f22e4ac699afdcb134f1ac">getDocument</a> ()</td></tr>
+<tr class="memitem:a750ca9d22da42c6fb4e37bafdef9306a" id="r_a750ca9d22da42c6fb4e37bafdef9306a"><td class="memItemLeft" align="right" valign="top">java.io.InputStream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a750ca9d22da42c6fb4e37bafdef9306a">getFilteredStream</a> ()</td></tr>
+<tr class="memitem:a9f34d3d44e10eae34e6ad6b7ee2b0c5c" id="r_a9f34d3d44e10eae34e6ad6b7ee2b0c5c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#a9f34d3d44e10eae34e6ad6b7ee2b0c5c">getGeneration</a> ()</td></tr>
+<tr class="memitem:a7e992832b9f5a3d39ab9c600a7ebe48e" id="r_a7e992832b9f5a3d39ab9c600a7ebe48e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#a7e992832b9f5a3d39ab9c600a7ebe48e">getID</a> ()</td></tr>
+<tr class="memitem:af1d2f2190bac8dc24615502b67ca1a41" id="r_af1d2f2190bac8dc24615502b67ca1a41"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#af1d2f2190bac8dc24615502b67ca1a41">getIndirect</a> ()</td></tr>
+<tr class="memitem:a957f8e8d190538e4ca16cdf24922b7bb" id="r_a957f8e8d190538e4ca16cdf24922b7bb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a957f8e8d190538e4ca16cdf24922b7bb">getLength</a> ()</td></tr>
+<tr class="memitem:ac8a31ffdc4ecaeb692ec175b9687b134" id="r_ac8a31ffdc4ecaeb692ec175b9687b134"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#ac8a31ffdc4ecaeb692ec175b9687b134">getPDFHashValue</a> ()</td></tr>
+<tr class="memitem:aa5e2e648102198296e492f793485f24a" id="r_aa5e2e648102198296e492f793485f24a"><td class="memItemLeft" align="right" valign="top">java.io.InputStream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5e2e648102198296e492f793485f24a">getStream</a> (<a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_stream_open_mode.html">PDFStreamOpenMode</a> mode)</td></tr>
+<tr class="memitem:a85b9b6a40ac85eed04c66f881ba9e76f" id="r_a85b9b6a40ac85eed04c66f881ba9e76f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85b9b6a40ac85eed04c66f881ba9e76f">getStreamPos</a> ()</td></tr>
+<tr class="memitem:a81376068347ff84e5294b39220a1a513" id="r_a81376068347ff84e5294b39220a1a513"><td class="memItemLeft" align="right" valign="top">java.io.InputStream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81376068347ff84e5294b39220a1a513">getUnfilteredStream</a> ()</td></tr>
+<tr class="memitem:ac3e71809d0221c240ce8b4b9e7cf5f0f" id="r_ac3e71809d0221c240ce8b4b9e7cf5f0f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3e71809d0221c240ce8b4b9e7cf5f0f">PDFStream</a> (java.io.InputStream stream, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a> doc, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a> encoding_dict, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_array.html">PDFArray</a> encoding_params)</td></tr>
+<tr class="memitem:a6035e4b361d67c8eb0b9182a95b31d4d" id="r_a6035e4b361d67c8eb0b9182a95b31d4d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6035e4b361d67c8eb0b9182a95b31d4d">PDFStream</a> (java.io.InputStream stream, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a> docFromObj, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a> encoding_dict, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_array.html">PDFArray</a> encoding_params)</td></tr>
+<tr class="memitem:a557caa082d6d4a9bf5705dce8766078e" id="r_a557caa082d6d4a9bf5705dce8766078e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a557caa082d6d4a9bf5705dce8766078e">SetData</a> (java.io.InputStream stream, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a> encoding_dict, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_array.html">PDFArray</a> encoding_params)</td></tr>
+<tr class="memitem:aa0180d6309051060ab15bee234592287" id="r_aa0180d6309051060ab15bee234592287"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0180d6309051060ab15bee234592287">toString</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:af4bf4eed3cb7b5869349a8bfc8552b11" id="r_af4bf4eed3cb7b5869349a8bfc8552b11"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4bf4eed3cb7b5869349a8bfc8552b11">delete</a> (Boolean disposing)</td></tr>
+<tr class="memitem:a9338963fb9f7787b6d3479ad7890dd80" id="r_a9338963fb9f7787b6d3479ad7890dd80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9338963fb9f7787b6d3479ad7890dd80">finalize</a> ()</td></tr>
+<tr class="memitem:a00f97c941f4c89776d99ff3325241ac2" id="r_a00f97c941f4c89776d99ff3325241ac2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00f97c941f4c89776d99ff3325241ac2">PDFStream</a> (BaseInputNozzle nozzle, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a> doc, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a> encoding_dict, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_array.html">PDFArray</a> encoding_params)</td></tr>
+<tr class="memitem:a95857e4233bb9ea21e400ee2d141ffb7" id="r_a95857e4233bb9ea21e400ee2d141ffb7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95857e4233bb9ea21e400ee2d141ffb7">PDFStream</a> (BaseInputNozzle nozzle, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a> docFromObj, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a> encoding_dict, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_array.html">PDFArray</a> encoding_params)</td></tr>
+<tr class="memitem:a01c5d104d43a54ad987ddfa759c38f06" id="r_a01c5d104d43a54ad987ddfa759c38f06"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01c5d104d43a54ad987ddfa759c38f06">PDFStream</a> (long cPtr, boolean cMemoryOwn)</td></tr>
+<tr class="memitem:aac31ae15b65af57ea8c9d773e8778c1f" id="r_aac31ae15b65af57ea8c9d773e8778c1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac31ae15b65af57ea8c9d773e8778c1f">setDataInternal</a> (BaseInputNozzle nozzle, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a> encoding_dict, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_array.html">PDFArray</a> encoding_params)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a859e213d4f676472cfb6b9fbf9653375" id="r_a859e213d4f676472cfb6b9fbf9653375"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#a859e213d4f676472cfb6b9fbf9653375">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a> obj)</td></tr>
+<tr class="memitem:ab82846e10b8de3519f8084778a0b9710" id="r_ab82846e10b8de3519f8084778a0b9710"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab82846e10b8de3519f8084778a0b9710">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_stream.html">PDFStream</a> obj)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents a stream of data within a PDF document. All objects in a PDF document are built from a collection of simpler objects that represent fundamental datatypes like numbers, strings and arrays. </p>
+<p>PDFObject and its subclasses allow direct access and manipulation of these simple objects. Some subclasses represent single data elements (e.g. PDFInteger represents a single integer value); other subclasses represent a collection of PDFObjects (e.g. PDFArray is an indexed array of data elements). </p>
+<p>A PDFStream represents a stream of unsigned bytes, and may be inserted into any collection object. It includes a dictionary that describes how the data in the stream is encoded and other useful information about the stream. A PDFStream is always an indirect object. </p>
+<p>PDFStreams can be encoded using built-in filters. These filters include compression schemes for most popular image formats, and text encoding translators to permit safe transmission of the document over the Internet. The data in a PDFStream will be automatically encoded when it is created; the user can read either the encoded (raw) or decoded (filtered) data. </p>
+<p>PDFStreams can be used for any large collection of data that need not be read into memory all at once, including image data, multimedia data or XML markup. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a01c5d104d43a54ad987ddfa759c38f06" name="a01c5d104d43a54ad987ddfa759c38f06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01c5d104d43a54ad987ddfa759c38f06">&#9670;&#160;</a></span>PDFStream() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PDFStream.PDFStream </td>
+          <td>(</td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>cPtr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>cMemoryOwn</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="#ab82846e10b8de3519f8084778a0b9710">getCPtr()</a>.</p>
+
+</div>
+</div>
+<a id="ac3e71809d0221c240ce8b4b9e7cf5f0f" name="ac3e71809d0221c240ce8b4b9e7cf5f0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3e71809d0221c240ce8b4b9e7cf5f0f">&#9670;&#160;</a></span>PDFStream() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PDFStream.PDFStream </td>
+          <td>(</td>
+          <td class="paramtype">java.io.InputStream</td>          <td class="paramname"><span class="paramname"><em>stream</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a></td>          <td class="paramname"><span class="paramname"><em>doc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a></td>          <td class="paramname"><span class="paramname"><em>encoding_dict</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_array.html">PDFArray</a></td>          <td class="paramname"><span class="paramname"><em>encoding_params</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6035e4b361d67c8eb0b9182a95b31d4d" name="a6035e4b361d67c8eb0b9182a95b31d4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6035e4b361d67c8eb0b9182a95b31d4d">&#9670;&#160;</a></span>PDFStream() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PDFStream.PDFStream </td>
+          <td>(</td>
+          <td class="paramtype">java.io.InputStream</td>          <td class="paramname"><span class="paramname"><em>stream</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a></td>          <td class="paramname"><span class="paramname"><em>docFromObj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a></td>          <td class="paramname"><span class="paramname"><em>encoding_dict</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_array.html">PDFArray</a></td>          <td class="paramname"><span class="paramname"><em>encoding_params</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a00f97c941f4c89776d99ff3325241ac2" name="a00f97c941f4c89776d99ff3325241ac2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00f97c941f4c89776d99ff3325241ac2">&#9670;&#160;</a></span>PDFStream() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PDFStream.PDFStream </td>
+          <td>(</td>
+          <td class="paramtype">BaseInputNozzle</td>          <td class="paramname"><span class="paramname"><em>nozzle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a></td>          <td class="paramname"><span class="paramname"><em>doc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a></td>          <td class="paramname"><span class="paramname"><em>encoding_dict</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_array.html">PDFArray</a></td>          <td class="paramname"><span class="paramname"><em>encoding_params</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a95857e4233bb9ea21e400ee2d141ffb7" name="a95857e4233bb9ea21e400ee2d141ffb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95857e4233bb9ea21e400ee2d141ffb7">&#9670;&#160;</a></span>PDFStream() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.PDFStream.PDFStream </td>
+          <td>(</td>
+          <td class="paramtype">BaseInputNozzle</td>          <td class="paramname"><span class="paramname"><em>nozzle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a></td>          <td class="paramname"><span class="paramname"><em>docFromObj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a></td>          <td class="paramname"><span class="paramname"><em>encoding_dict</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_array.html">PDFArray</a></td>          <td class="paramname"><span class="paramname"><em>encoding_params</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="adc48c48c9cbfad3cb085a7528c66213f" name="adc48c48c9cbfad3cb085a7528c66213f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc48c48c9cbfad3cb085a7528c66213f">&#9670;&#160;</a></span>clone() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a> com.datalogics.PDFL.PDFObject.clone </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Makes a new copy of this PDFObject in memory, in the same document and using same direct/indirect setting as this PDFObject. </p>
+
+</div>
+</div>
+<a id="a0759ed8272bd54d451ca4c417c47e575" name="a0759ed8272bd54d451ca4c417c47e575"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0759ed8272bd54d451ca4c417c47e575">&#9670;&#160;</a></span>clone() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a> com.datalogics.PDFL.PDFObject.clone </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a></td>          <td class="paramname"><span class="paramname"><em>doc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Makes a new copy of this PDFObject in memory, in the supplied document, using the same direct/indirect setting as this PDFObject. </p>
+
+</div>
+</div>
+<a id="a8da3873ba1e812dfe3b0cad1d5e9354a" name="a8da3873ba1e812dfe3b0cad1d5e9354a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8da3873ba1e812dfe3b0cad1d5e9354a">&#9670;&#160;</a></span>clone() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a> com.datalogics.PDFL.PDFObject.clone </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a></td>          <td class="paramname"><span class="paramname"><em>doc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>indirect</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Makes a new copy of this PDFObject in memory, in the supplied document, using supplied direct/indirect setting. </p>
+
+</div>
+</div>
+<a id="a3f49a31d497f4de664fa73ce40bb22d9" name="a3f49a31d497f4de664fa73ce40bb22d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f49a31d497f4de664fa73ce40bb22d9">&#9670;&#160;</a></span>clone() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a> com.datalogics.PDFL.PDFObject.clone </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a></td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Makes a new copy of this PDFObject in memory, in the same document as another object, using the same direct/indirect setting as this PDFObject. </p>
+
+</div>
+</div>
+<a id="a84b16a797a320ebc0d85be3885bd9583" name="a84b16a797a320ebc0d85be3885bd9583"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84b16a797a320ebc0d85be3885bd9583">&#9670;&#160;</a></span>clone() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a> com.datalogics.PDFL.PDFObject.clone </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a></td>          <td class="paramname"><span class="paramname"><em>obj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>indirect</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Makes a new copy of this PDFObject in memory, in the same document as another object, using supplied direct/indirect setting. </p>
+
+</div>
+</div>
+<a id="a7355bc3b1fd4b345190931bdc8139c17" name="a7355bc3b1fd4b345190931bdc8139c17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7355bc3b1fd4b345190931bdc8139c17">&#9670;&#160;</a></span>compareTo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PDFObjectComparison com.datalogics.PDFL.PDFObject.compareTo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a></td>          <td class="paramname"><span class="paramname"><em>rhs</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Compares this object to another object. The result is useful for ordering or sorting PDFObjects. No other significance should be attached to the result. In particular, an unequal result indicates nothing about the type of either object. </p>
+<p>The result is valid only within a single instance of the document. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>the other PDFObject to compare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A PDFObjectComparison value that relates this object to the rhs object </dd></dl>
+
+</div>
+</div>
+<a id="ae7c6a8e10f3aa42f521e1bdc528f28bf" name="ae7c6a8e10f3aa42f521e1bdc528f28bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7c6a8e10f3aa42f521e1bdc528f28bf">&#9670;&#160;</a></span>delete() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.PDFStream.delete </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#a9158c91de7453877fa9485d3935d9b8b">com.datalogics.PDFL.PDFObject</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#ae7c6a8e10f3aa42f521e1bdc528f28bf">delete()</a>, and <a class="el" href="#a9338963fb9f7787b6d3479ad7890dd80">finalize()</a>.</p>
+
+</div>
+</div>
+<a id="af4bf4eed3cb7b5869349a8bfc8552b11" name="af4bf4eed3cb7b5869349a8bfc8552b11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4bf4eed3cb7b5869349a8bfc8552b11">&#9670;&#160;</a></span>delete() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.PDFStream.delete </td>
+          <td>(</td>
+          <td class="paramtype">Boolean</td>          <td class="paramname"><span class="paramname"><em>disposing</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#a9bb9e5d8c6c577332ee4a63268ebc4fa">com.datalogics.PDFL.PDFObject</a>.</p>
+
+</div>
+</div>
+<a id="a0d7750edc31d1bcdbf3e98d1507c50ea" name="a0d7750edc31d1bcdbf3e98d1507c50ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d7750edc31d1bcdbf3e98d1507c50ea">&#9670;&#160;</a></span>destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PDFObject.destroy </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Destroys this object. </p>
+<p>This method does nothing if this object is a direct scalar object. </p>
+<p>If a composite object (an array, dictionary or stream) is destroyed: </p><ul>
+<li>
+<p class="startli"></p>
+<p class="endli">All the direct objects in it are automatically destroyed. </p>
+</li>
+<li>
+<p class="startli"></p>
+<p class="endli">The indirect objects in it are not destroyed. </p>
+</li>
+</ul>
+
+</div>
+</div>
+<a id="a07ee547b32039a55140ccc8ed3889236" name="a07ee547b32039a55140ccc8ed3889236"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07ee547b32039a55140ccc8ed3889236">&#9670;&#160;</a></span>enumPDFObjects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.PDFObject.enumPDFObjects </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object_enum_proc.html">PDFObjectEnumProc</a></td>          <td class="paramname"><span class="paramname"><em>enumProc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Enumerates the elements of a PDFObject by calling a user-supplied procedure for each component of the object. </p><ul>
+<li>
+<p class="startli"></p>
+<p class="endli">For scalars or strings, the proc is not called, and CosObjEnum() returns true. </p>
+</li>
+<li>
+<p class="startli"></p>
+<p class="endli">For dictionaries, proc is called for each key-value pair. The order in which the key-value pairs are enumerated is undefined. </p>
+</li>
+<li>
+<p class="startli"></p>
+<p class="endli">For arrays, proc is called with each element as the first paramater to proc, and the NULL object as the second parameter. Array elements are enumerated in ascending order of index. </p>
+</li>
+<li>
+<p class="startli"></p>
+<p class="endli">For streams, proc is called once, with the stream's dictionary as the first parameter to the proc and the NULL object as the second parameter. </p>
+</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enumProc</td><td>A user-supplied callback to call for each element of the object. of obj. Neither proc nor any routine called by proc may modify the object. Doing so can produce undefined results or errors. For example, if the object is an array, enumProc must not call Remove(); if the object is a dictionary, enumProc must not call Put(). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if every call to enumProc returned true. As soon as any call to enumProc returns false, the enumeration stops and EnumPDFObject() returns false. </dd></dl>
+
+</div>
+</div>
+<a id="a19060591a6ec213bec6530347a9b296f" name="a19060591a6ec213bec6530347a9b296f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19060591a6ec213bec6530347a9b296f">&#9670;&#160;</a></span>equals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.PDFObject.equals </td>
+          <td>(</td>
+          <td class="paramtype">Object</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9338963fb9f7787b6d3479ad7890dd80" name="a9338963fb9f7787b6d3479ad7890dd80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9338963fb9f7787b6d3479ad7890dd80">&#9670;&#160;</a></span>finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PDFStream.finalize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#a08a789a45aad8f68ffb48748a56b3855">com.datalogics.PDFL.PDFObject</a>.</p>
+
+</div>
+</div>
+<a id="a859e213d4f676472cfb6b9fbf9653375" name="a859e213d4f676472cfb6b9fbf9653375"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a859e213d4f676472cfb6b9fbf9653375">&#9670;&#160;</a></span>getCPtr() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long com.datalogics.PDFL.PDFObject.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html">PDFObject</a></td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel protected">protected</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object_enum_proc.html#a901a6015475c6bba77b7092ffdbbe0ee">com.datalogics.PDFL.PDFObjectEnumProc.Call()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_name_tree.html#a3859d85d6161d836d5fa2d7dc626ae5c">com.datalogics.PDFL.NameTree.put()</a>, and <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_number_tree.html#a647d458dbb23a4497266fb8ba5167fd2">com.datalogics.PDFL.NumberTree.put()</a>.</p>
+
+</div>
+</div>
+<a id="ab82846e10b8de3519f8084778a0b9710" name="ab82846e10b8de3519f8084778a0b9710"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab82846e10b8de3519f8084778a0b9710">&#9670;&#160;</a></span>getCPtr() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long com.datalogics.PDFL.PDFStream.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_stream.html">PDFStream</a></td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_i_c_c_based_color_space.html#ae4548df5bb878e2f302390fa8bb07650">com.datalogics.PDFL.ICCBasedColorSpace.ICCBasedColorSpace()</a>, and <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_i_c_c_based_color_space.html#a6a3fbde5069d2d47a60937b065466d26">com.datalogics.PDFL.ICCBasedColorSpace.ICCBasedColorSpace()</a>.</p>
+
+</div>
+</div>
+<a id="aa5758aa31a01e61287cd13341068b879" name="aa5758aa31a01e61287cd13341068b879"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5758aa31a01e61287cd13341068b879">&#9670;&#160;</a></span>getDict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a> com.datalogics.PDFL.PDFStream.getDict </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The encoding dictionary for the stream. This includes all required information for decoding the stream. </p>
+
+</div>
+</div>
+<a id="abcbe9ec872f22e4ac699afdcb134f1ac" name="abcbe9ec872f22e4ac699afdcb134f1ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcbe9ec872f22e4ac699afdcb134f1ac">&#9670;&#160;</a></span>getDocument()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a> com.datalogics.PDFL.PDFObject.getDocument </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The Document of which this object is a member. </p>
+<p>Returns null if the Document is not known by PDFL, or if it is a temporary document. </p>
+<p>If the Document is not null, then it shares the same internal data with other Document objects that refer to the same file. Document objects returned this way do not contribute to the internal count that keeps the Document open, and will become invalid if the main reference to the document is disposed. </p>
+<dl class="section return"><dt>Returns</dt><dd>the Document in which the object resides. </dd></dl>
+
+</div>
+</div>
+<a id="a750ca9d22da42c6fb4e37bafdef9306a" name="a750ca9d22da42c6fb4e37bafdef9306a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a750ca9d22da42c6fb4e37bafdef9306a">&#9670;&#160;</a></span>getFilteredStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">java.io.InputStream com.datalogics.PDFL.PDFStream.getFilteredStream </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9f34d3d44e10eae34e6ad6b7ee2b0c5c" name="a9f34d3d44e10eae34e6ad6b7ee2b0c5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f34d3d44e10eae34e6ad6b7ee2b0c5c">&#9670;&#160;</a></span>getGeneration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int com.datalogics.PDFL.PDFObject.getGeneration </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The generation number for this object. Only indirect objects have a generation number. </p>
+
+</div>
+</div>
+<a id="a7e992832b9f5a3d39ab9c600a7ebe48e" name="a7e992832b9f5a3d39ab9c600a7ebe48e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e992832b9f5a3d39ab9c600a7ebe48e">&#9670;&#160;</a></span>getID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int com.datalogics.PDFL.PDFObject.getID </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The ID number for this object. Only indirect objects have an ID number. </p>
+
+</div>
+</div>
+<a id="af1d2f2190bac8dc24615502b67ca1a41" name="af1d2f2190bac8dc24615502b67ca1a41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1d2f2190bac8dc24615502b67ca1a41">&#9670;&#160;</a></span>getIndirect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.PDFObject.getIndirect </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Indicates if this object is indirect or direct. </p>
+
+</div>
+</div>
+<a id="a957f8e8d190538e4ca16cdf24922b7bb" name="a957f8e8d190538e4ca16cdf24922b7bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a957f8e8d190538e4ca16cdf24922b7bb">&#9670;&#160;</a></span>getLength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int com.datalogics.PDFL.PDFStream.getLength </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The encoded length of the stream. </p>
+
+</div>
+</div>
+<a id="ac8a31ffdc4ecaeb692ec175b9687b134" name="ac8a31ffdc4ecaeb692ec175b9687b134"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8a31ffdc4ecaeb692ec175b9687b134">&#9670;&#160;</a></span>getPDFHashValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int com.datalogics.PDFL.PDFObject.getPDFHashValue </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The 32-bit hash value for this object. The hash value is used internally to quickly access the object, and is not generally useful for PDFObject users. Note that two PDFObjects with equal hash values are not necessarily equal; use Equals() to check for equality. </p>
+
+</div>
+</div>
+<a id="aa5e2e648102198296e492f793485f24a" name="aa5e2e648102198296e492f793485f24a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5e2e648102198296e492f793485f24a">&#9670;&#160;</a></span>getStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">java.io.InputStream com.datalogics.PDFL.PDFStream.getStream </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_stream_open_mode.html">PDFStreamOpenMode</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85b9b6a40ac85eed04c66f881ba9e76f" name="a85b9b6a40ac85eed04c66f881ba9e76f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85b9b6a40ac85eed04c66f881ba9e76f">&#9670;&#160;</a></span>getStreamPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int com.datalogics.PDFL.PDFStream.getStreamPos </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The byte offset of this stream in the PDF file. </p>
+
+</div>
+</div>
+<a id="a81376068347ff84e5294b39220a1a513" name="a81376068347ff84e5294b39220a1a513"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81376068347ff84e5294b39220a1a513">&#9670;&#160;</a></span>getUnfilteredStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">java.io.InputStream com.datalogics.PDFL.PDFStream.getUnfilteredStream </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a557caa082d6d4a9bf5705dce8766078e" name="a557caa082d6d4a9bf5705dce8766078e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a557caa082d6d4a9bf5705dce8766078e">&#9670;&#160;</a></span>SetData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PDFStream.SetData </td>
+          <td>(</td>
+          <td class="paramtype">java.io.InputStream</td>          <td class="paramname"><span class="paramname"><em>stream</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a></td>          <td class="paramname"><span class="paramname"><em>encoding_dict</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_array.html">PDFArray</a></td>          <td class="paramname"><span class="paramname"><em>encoding_params</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aac31ae15b65af57ea8c9d773e8778c1f" name="aac31ae15b65af57ea8c9d773e8778c1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac31ae15b65af57ea8c9d773e8778c1f">&#9670;&#160;</a></span>setDataInternal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.PDFStream.setDataInternal </td>
+          <td>(</td>
+          <td class="paramtype">BaseInputNozzle</td>          <td class="paramname"><span class="paramname"><em>nozzle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_dict.html">PDFDict</a></td>          <td class="paramname"><span class="paramname"><em>encoding_dict</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_array.html">PDFArray</a></td>          <td class="paramname"><span class="paramname"><em>encoding_params</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="#a557caa082d6d4a9bf5705dce8766078e">SetData()</a>.</p>
+
+</div>
+</div>
+<a id="aa0180d6309051060ab15bee234592287" name="aa0180d6309051060ab15bee234592287"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0180d6309051060ab15bee234592287">&#9670;&#160;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.datalogics.PDFL.PDFStream.toString </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_p_d_f_object.html#a726a503429acda60aee31be1fd30bc46">com.datalogics.PDFL.PDFObject</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>

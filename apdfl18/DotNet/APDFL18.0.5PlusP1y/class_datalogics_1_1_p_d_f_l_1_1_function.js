@@ -1,0 +1,15 @@
+var class_datalogics_1_1_p_d_f_l_1_1_function =
+[
+    [ "Apply", "class_datalogics_1_1_p_d_f_l_1_1_function.html#a395c85d12fa1e5ea28be4fbfb79089ef", null ],
+    [ "Dispose", "class_datalogics_1_1_p_d_f_l_1_1_function.html#a95a1fa6f3eb1533cd24adf35e1b07faa", null ],
+    [ "Dispose", "class_datalogics_1_1_p_d_f_l_1_1_function.html#ad480422c28a10ed2d1881b3de3118eb7", null ],
+    [ "operator!=", "class_datalogics_1_1_p_d_f_l_1_1_function.html#aa12f80638f842e5c4dc4bb4ef44432cc", null ],
+    [ "operator==", "class_datalogics_1_1_p_d_f_l_1_1_function.html#a5052c3f2380244a4f84b5953da7f9825", null ],
+    [ "ToString", "class_datalogics_1_1_p_d_f_l_1_1_function.html#ac40b9f5e4b8263ae54fe6c2fc4f0df5c", null ],
+    [ "Default", "class_datalogics_1_1_p_d_f_l_1_1_function.html#a2810d95aa501badb77008240b37a36f8", null ],
+    [ "Domain", "class_datalogics_1_1_p_d_f_l_1_1_function.html#adf9807146c83bf19db1b06b8d387340f", null ],
+    [ "Identity", "class_datalogics_1_1_p_d_f_l_1_1_function.html#a57d0cc4c9ee1c23cc37e0d6b2965ffa3", null ],
+    [ "NInputs", "class_datalogics_1_1_p_d_f_l_1_1_function.html#a23bbafc8a849f2c158f09760a5843059", null ],
+    [ "NOutputs", "class_datalogics_1_1_p_d_f_l_1_1_function.html#a04bc9c804c091fba9ccb607c3cbcd84f", null ],
+    [ "Range", "class_datalogics_1_1_p_d_f_l_1_1_function.html#a27fb65a445e63445d4f1c289d770ef88", null ]
+];
