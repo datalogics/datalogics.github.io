@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['objectcompression_0',['ObjectCompression',['../class_datalogics_1_1_p_d_f_l_1_1_p_d_f_optimizer.html#afc0f14aa407c17877e63f293940ae8bb',1,'Datalogics::PDFL::PDFOptimizer']]],
+  ['objectname_1',['ObjectName',['../class_datalogics_1_1_p_d_f_l_1_1_library_exception.html#a089df00a23a2fe39d5251a7e17ec8560',1,'Datalogics::PDFL::LibraryException']]],
+  ['occontext_2',['OCContext',['../class_datalogics_1_1_p_d_f_l_1_1_separation_params.html#a08387631b0ed16e2d074bd39552ffbd8',1,'Datalogics::PDFL::SeparationParams']]],
+  ['offarray_3',['OffArray',['../class_datalogics_1_1_p_d_f_l_1_1_optional_content_config.html#ae1ec4de29b803cc96d152ac74d46ce1e',1,'Datalogics::PDFL::OptionalContentConfig']]],
+  ['onarray_4',['OnArray',['../class_datalogics_1_1_p_d_f_l_1_1_optional_content_config.html#ac32f90650ad97b8f78b0e86708ab7a36',1,'Datalogics::PDFL::OptionalContentConfig']]],
+  ['opacity_5',['Opacity',['../class_datalogics_1_1_p_d_f_l_1_1_annotation.html#aed6a6c0268e0cc71deed139f8fd4d4a7',1,'Datalogics.PDFL.Annotation.Opacity'],['../class_datalogics_1_1_p_d_f_l_1_1_watermark_params.html#a2d206bc78ba0204182626fc4a1dc1c25',1,'Datalogics.PDFL.WatermarkParams.Opacity']]],
+  ['opacityforotherthanstroking_6',['OpacityForOtherThanStroking',['../class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#ae9d64faf5feaeba42fa5adcb5dab93f1',1,'Datalogics::PDFL::ExtendedGraphicState']]],
+  ['opacityforstroking_7',['OpacityForStroking',['../class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#a4b4281e6b0fcfdb210c61d812d5aa228',1,'Datalogics::PDFL::ExtendedGraphicState']]],
+  ['open_8',['Open',['../class_datalogics_1_1_p_d_f_l_1_1_bookmark.html#a5e6af7afe342188d4a2981b06149f9e4',1,'Datalogics::PDFL::Bookmark']]],
+  ['optimizeforspeed_9',['OptimizeForSpeed',['../class_datalogics_1_1_p_d_f_l_1_1_print_params.html#abbf1676ae896974463987aee3c4b6ce9',1,'Datalogics::PDFL::PrintParams']]],
+  ['optionalcontentconfigs_10',['OptionalContentConfigs',['../class_datalogics_1_1_p_d_f_l_1_1_document.html#ae104c1d0fc4259a90da15e2e2d605da2',1,'Datalogics::PDFL::Document']]],
+  ['optionalcontentcontext_11',['OptionalContentContext',['../class_datalogics_1_1_p_d_f_l_1_1_document.html#a685f019af99ade8c3a5a31f855f2b52b',1,'Datalogics.PDFL.Document.OptionalContentContext'],['../class_datalogics_1_1_p_d_f_l_1_1_draw_params.html#a7fd79965abf05b6442955d3e866c5d84',1,'Datalogics.PDFL.DrawParams.OptionalContentContext'],['../class_datalogics_1_1_p_d_f_l_1_1_print_params.html#aee62d6991c1ef0b2e94b207c4bf4d495',1,'Datalogics.PDFL.PrintParams.OptionalContentContext']]],
+  ['optionalcontentgroup_12',['OptionalContentGroup',['../class_datalogics_1_1_p_d_f_l_1_1_optional_content_order_leaf.html#a8c3317b8db97fe331e923bb71997ab0d',1,'Datalogics::PDFL::OptionalContentOrderLeaf']]],
+  ['optionalcontentgroups_13',['OptionalContentGroups',['../class_datalogics_1_1_p_d_f_l_1_1_document.html#abfff6a172fc5ed8c7b0662e8142e1ca5',1,'Datalogics.PDFL.Document.OptionalContentGroups'],['../class_datalogics_1_1_p_d_f_l_1_1_optional_content_membership_dict.html#a077a3fa0a0d2b5aebf5c9ec26c5e693c',1,'Datalogics.PDFL.OptionalContentMembershipDict.OptionalContentGroups']]],
+  ['optionalcontentmembershipdict_14',['OptionalContentMembershipDict',['../class_datalogics_1_1_p_d_f_l_1_1_annotation.html#a5f81a22062ba9b3e530641741d04aefc',1,'Datalogics.PDFL.Annotation.OptionalContentMembershipDict'],['../class_datalogics_1_1_p_d_f_l_1_1_container.html#a15d9dbd35e0e59cea2b60076ba67cbd4',1,'Datalogics.PDFL.Container.OptionalContentMembershipDict'],['../class_datalogics_1_1_p_d_f_l_1_1_form.html#ad8973b67bff7359060c45afad622dc25',1,'Datalogics.PDFL.Form.OptionalContentMembershipDict']]],
+  ['order_15',['Order',['../class_datalogics_1_1_p_d_f_l_1_1_optional_content_config.html#af4ceea258ce68f14b5a5052ac74d98db',1,'Datalogics::PDFL::OptionalContentConfig']]],
+  ['outfilename_16',['OutFileName',['../class_datalogics_1_1_p_d_f_l_1_1_print_user_params.html#a226d5a3815cf0b5e4141a3b0fb80802c',1,'Datalogics::PDFL::PrintUserParams']]],
+  ['outputpath_17',['OutputPath',['../class_datalogics_1_1_p_d_f_l_1_1_sign_doc.html#ad12c3afe18ed29c31486fa3c0fc83b2c',1,'Datalogics::PDFL::SignDoc']]],
+  ['outputtype_18',['OutputType',['../class_datalogics_1_1_p_d_f_l_1_1_print_params.html#aa349abe69eb9fc144e0eb76242167b84',1,'Datalogics::PDFL::PrintParams']]],
+  ['overlayfont_19',['OverlayFont',['../class_datalogics_1_1_p_d_f_l_1_1_redaction.html#a5af5983aa8e27a977434e86f25ea11f3',1,'Datalogics::PDFL::Redaction']]],
+  ['overlaytext_20',['OverlayText',['../class_datalogics_1_1_p_d_f_l_1_1_redaction.html#af5e3ccf7eb09b7885ac18e7d033bb47e',1,'Datalogics::PDFL::Redaction']]],
+  ['overprintmode_21',['OverprintMode',['../class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#a6c0218444d69a6aa796232af35bd6a8e',1,'Datalogics::PDFL::ExtendedGraphicState']]]
+];
