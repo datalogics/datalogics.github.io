@@ -3942,7 +3942,7 @@ PD Layer: PDDoc
 <p>This method also works for non-Roman (CJK or Chinese-Japanese-Korean) viewers. In this case, words are extracted to the host encoding. Developers desiring Unicode output must use <a href="pdlayer_PDDoc.html#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file.">PDDocCreateWordFinderUCS</a>(), which does the extraction for Roman or non-Roman text.<br/></p>
 
 <p>
-<p>The type of <a href="pdlayer_PDWord.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document.">PDWordFinder</a> determines the encoding of the string returned by <a href="pdlayer_PDWord.html#PDWordGetString" title=" This method gets a word's text.">PDWordGetString</a>(). For instance, if <a href="pdlayer_PDDoc.html#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file.">PDDocCreateWordFinderUCS</a>() is used to create the word finder, <a href="pdlayer_PDWord.html#PDWordGetString" title=" This method gets a word's text.">PDWordGetString</a>() returns only Unicode.<br/></p>
+<p>The type of <a href="pdlayer_PDWordFinder.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document.">PDWordFinder</a> determines the encoding of the string returned by <a href="pdlayer_PDWord.html#PDWordGetString" title=" This method gets a word's text.">PDWordGetString</a>(). For instance, if <a href="pdlayer_PDDoc.html#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file.">PDDocCreateWordFinderUCS</a>() is used to create the word finder, <a href="pdlayer_PDWord.html#PDWordGetString" title=" This method gets a word's text.">PDWordGetString</a>() returns only Unicode.<br/></p>
 
 <p>
 <p>For CJK viewers, words are stored internally using CID encoding.<br/>
@@ -3975,7 +3975,7 @@ PD Layer: PDDoc
 
 <H4><strong>Syntax</strong></H4>
 
-<code><a href="pdlayer_PDWord.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>PDDocCreateWordFinder(</code><a href="pdlayer_PDDoc.html#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <a href="aslayer_General.html#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>*</code><code>outEncInfo</code><code>,</code> <code>char</code> <code>*</code><code>*</code><code>outEncVec</code><code>,</code> <code>char</code> <code>*</code><code>*</code><code>ligatureTbl</code><code>,</code> <a href="aslayer_General.html#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>algVersion</code><code>,</code> <a href="aslayer_General.html#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>rdFlags</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+<code><a href="pdlayer_PDWordFinder.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>PDDocCreateWordFinder(</code><a href="pdlayer_PDDoc.html#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <a href="aslayer_General.html#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>*</code><code>outEncInfo</code><code>,</code> <code>char</code> <code>*</code><code>*</code><code>outEncVec</code><code>,</code> <code>char</code> <code>*</code><code>*</code><code>ligatureTbl</code><code>,</code> <a href="aslayer_General.html#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>algVersion</code><code>,</code> <a href="aslayer_General.html#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>rdFlags</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
 
 <H4><strong>Parameters</strong></H4>
 
@@ -4057,7 +4057,7 @@ PD Layer: PDDoc
 
 <H4><strong>Syntax</strong></H4>
 
-<code><a href="pdlayer_PDWord.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>PDDocCreateWordFinderEx(</code><a href="pdlayer_PDDoc.html#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <a href="aslayer_General.html#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>algVersion</code><code>,</code> <a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>outUnicode</code><code>,</code> <a href="pdlayer_PDWord.html#_t_PDWordFinderConfig" title=" A word finder configuration that customizes the way the extraction is performed."><code>PDWordFinderConfig</code></a> <code>wbConfig</code><code>);</code> </code>
+<code><a href="pdlayer_PDWordFinder.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>PDDocCreateWordFinderEx(</code><a href="pdlayer_PDDoc.html#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <a href="aslayer_General.html#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>algVersion</code><code>,</code> <a href="aslayer_General.html#ASBool" title=" ASBool"><code>ASBool</code></a> <code>outUnicode</code><code>,</code> <a href="pdlayer_PDWordFinder.html#_t_PDWordFinderConfig" title=" A word finder configuration that customizes the way the extraction is performed."><code>PDWordFinderConfig</code></a> <code>wbConfig</code><code>);</code> </code>
 
 <H4><strong>Parameters</strong></H4>
 
@@ -4109,7 +4109,7 @@ PD Layer: PDDoc
 <p><a href="pdlayer_PDDoc.html#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file.">PDDocCreateWordFinder</a>() also works for non-Roman character set viewers. For <a href="pdlayer_PDDoc.html#PDDocCreateWordFinder" title=" Creates a word finder that is used to extract text in the host encoding from a PDF file.">PDDocCreateWordFinder</a>(), words are extracted to the host encoding. Users desiring Unicode output should use <a href="pdlayer_PDDoc.html#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file.">PDDocCreateWordFinderUCS</a>().<br/></p>
 
 <p>
-<p>The type of <a href="pdlayer_PDWord.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document.">PDWordFinder</a> determines the encoding of the string returned by <a href="pdlayer_PDWord.html#PDWordGetString" title=" This method gets a word's text.">PDWordGetString</a>(). If <a href="pdlayer_PDDoc.html#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file.">PDDocCreateWordFinderUCS</a>() is used to create the word finder, <a href="pdlayer_PDWord.html#PDWordGetString" title=" This method gets a word's text.">PDWordGetString</a>() returns only Unicode. Note that there is no way to detect Unicode strings returned by <a href="pdlayer_PDWord.html#PDWordGetString" title=" This method gets a word's text.">PDWordGetString</a>(), since there is no UCS header (FEFF) added to each string returned.<br/></p>
+<p>The type of <a href="pdlayer_PDWordFinder.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document.">PDWordFinder</a> determines the encoding of the string returned by <a href="pdlayer_PDWord.html#PDWordGetString" title=" This method gets a word's text.">PDWordGetString</a>(). If <a href="pdlayer_PDDoc.html#PDDocCreateWordFinderUCS" title=" Creates a word finder that is used to extract text in Unicode format from a PDF file.">PDDocCreateWordFinderUCS</a>() is used to create the word finder, <a href="pdlayer_PDWord.html#PDWordGetString" title=" This method gets a word's text.">PDWordGetString</a>() returns only Unicode. Note that there is no way to detect Unicode strings returned by <a href="pdlayer_PDWord.html#PDWordGetString" title=" This method gets a word's text.">PDWordGetString</a>(), since there is no UCS header (FEFF) added to each string returned.<br/></p>
 
 <p>
 <p>In CJK viewers, words are stored internally using CID encoding. See the description of Composite Fonts and CIDFonts in the ISO 32000-1:2008, Document Management-Portable Document Format-Part 1: PDF 1.7, section 9.7, page 267.<br/></p>
@@ -4145,7 +4145,7 @@ PD Layer: PDDoc
 
 <H4><strong>Syntax</strong></H4>
 
-<code><a href="pdlayer_PDWord.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>PDDocCreateWordFinderUCS(</code><a href="pdlayer_PDDoc.html#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <a href="aslayer_General.html#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>algVersion</code><code>,</code> <a href="aslayer_General.html#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>rdFlags</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
+<code><a href="pdlayer_PDWordFinder.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>PDDocCreateWordFinderUCS(</code><a href="pdlayer_PDDoc.html#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>doc</code><code>,</code> <a href="aslayer_General.html#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>algVersion</code><code>,</code> <a href="aslayer_General.html#ASUns16" title=" 2-byte unsigned short numeric value."><code>ASUns16</code></a> <code>rdFlags</code><code>,</code> <code>void</code> <code>*</code><code>clientData</code><code>);</code> </code>
 
 <H4><strong>Parameters</strong></H4>
 
@@ -5920,7 +5920,7 @@ PD Layer: PDDoc
 
 <H4><strong>Syntax</strong></H4>
 
-<code><a href="pdlayer_PDWord.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>PDDocGetWordFinder(</code><a href="pdlayer_PDDoc.html#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>docP</code><code>,</code> <a href="aslayer_General.html#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>WXEVersion</code><code>);</code> </code>
+<code><a href="pdlayer_PDWordFinder.html#PDWordFinder" title=" Extracts words from a PDF file, and enumerates the words on a single page or on all pages in a document."><code>PDWordFinder</code></a> <code>PDDocGetWordFinder(</code><a href="pdlayer_PDDoc.html#PDDoc" title=" The underlying PDF representation of a document."><code>PDDoc</code></a> <code>docP</code><code>,</code> <a href="aslayer_General.html#ASInt16" title=" 2-byte signed short numeric value."><code>ASInt16</code></a> <code>WXEVersion</code><code>);</code> </code>
 
 <H4><strong>Parameters</strong></H4>
 
@@ -6082,7 +6082,7 @@ PD Layer: PDDoc
 </td><td><div>A user-supplied progress monitor. </div>
 </td></tr>
 <tr><td><div><code>monClientData</code></div>
-</td><td><div>Data supplied by the monitoring routine. </div>
+</td><td><div><a href="dlextras_PDFileAttachment.html#Data" title=" Information used to derive a visual presentation, e.g.">Data</a> supplied by the monitoring routine. </div>
 </td></tr>
 <tr><td><div><code>importFilter</code></div>
 </td><td><div>A user-supplied filter which determines what type of notes will be exported. </div>
