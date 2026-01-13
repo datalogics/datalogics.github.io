@@ -18,7 +18,7 @@ function goToPage(ver) {
 } 
 
 function changeResult(lang) {
-var verDict = ['APDFL18.0.5PlusP1y', 'APDFL18.0.5PlusP1x', 'APDFL18.0.5PlusP1w', 'APDFL18.0.5PlusP1u']
+var verDict = ['APDFL18.0.5PlusP1y', 'APDFL18.0.5PlusP1x', 'APDFL18.0.5PlusP1w']
     selct = document.getElementById("verDrop")
     selct.textContent = ''
     selct.appendChild(new Option("-"))
