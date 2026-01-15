@@ -68,7 +68,7 @@ var searchData=
   ['greater_65',['Greater',['../namespace_datalogics_1_1_p_d_f_l.html#a41f3b2f1f9947a9c189d392e467670c7a8768a6821cd735aea4f5b0df88c1fc6a',1,'Datalogics::PDFL']]],
   ['greek_66',['Greek',['../namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a0aafa497807d5ac9b509656bd13b5283',1,'Datalogics::PDFL']]],
   ['greekancient_67',['GreekAncient',['../namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ab5ede8b7e110cc0c77540d3be727b5fe',1,'Datalogics::PDFL']]],
-  ['green_68',['Green',['../class_datalogics_1_1_p_d_f_l_1_1_ink.html#af749e05b8973eb5a102ad564d62c548f',1,'Datalogics::PDFL::Ink']]],
+  ['green_68',['Green',['../class_datalogics_1_1_p_d_f_l_1_1_ink.html#af749e05b8973eb5a102ad564d62c548f',1,'Datalogics.PDFL.Ink.Green'],['../class_datalogics_1_1_p_d_f_l_1_1_q_r_color.html#a72b33dd6c3b0de4b05e1cb26dcb5cc5b',1,'Datalogics.PDFL.QRColor.Green']]],
   ['group_69',['Group',['../class_datalogics_1_1_p_d_f_l_1_1_group.html',1,'Datalogics.PDFL.Group'],['../class_datalogics_1_1_p_d_f_l_1_1_group.html#a302bad205b8695e7c0bb502ca3c28225',1,'Datalogics.PDFL.Group.Group()'],['../class_datalogics_1_1_p_d_f_l_1_1_group.html#a3942afa296cb6f47b3c1729b201e79ef',1,'Datalogics.PDFL.Group.Group(Content content)']]],
   ['group_2ecs_70',['Group.cs',['../_group_8cs.html',1,'']]],
   ['gujarati_71',['Gujarati',['../namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ad1a59333c7e56205fed9bda9da34b201',1,'Datalogics::PDFL']]]

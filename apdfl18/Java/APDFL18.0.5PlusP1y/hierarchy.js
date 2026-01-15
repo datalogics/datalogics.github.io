@@ -9,6 +9,7 @@ var hierarchy =
       [ "com.datalogics.PDFL.URIAction", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_u_r_i_action.html", null ]
     ] ],
     [ "com.datalogics.PDFL.AddPageFlags", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_add_page_flags.html", null ],
+    [ "com.datalogics.PDFL.AFRelationship", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_a_f_relationship.html", null ],
     [ "com.datalogics.PDFL.Annotation", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_annotation.html", [
       [ "com.datalogics.PDFL.CircleAnnotation", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_circle_annotation.html", null ],
       [ "com.datalogics.PDFL.FreeTextAnnotation", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_free_text_annotation.html", null ],
@@ -207,6 +208,9 @@ var hierarchy =
     [ "com.datalogics.PDFL.PrintWhat", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_print_what.html", null ],
     [ "com.datalogics.PDFL.PrintWhatAnnotFlags", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_print_what_annot_flags.html", null ],
     [ "com.datalogics.PDFL.ProgressMonitor", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_progress_monitor.html", null ],
+    [ "com.datalogics.PDFL.QRColor", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_color.html", null ],
+    [ "com.datalogics.PDFL.QREncodeParams", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html", null ],
+    [ "com.datalogics.PDFL.QRErrorCorrectionLevel", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_error_correction_level.html", null ],
     [ "com.datalogics.PDFL.Quad", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_quad.html", null ],
     [ "com.datalogics.PDFL.Rect", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html", null ],
     [ "com.datalogics.PDFL.RemoteDestination", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_remote_destination.html", null ],

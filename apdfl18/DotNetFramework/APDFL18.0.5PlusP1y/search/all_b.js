@@ -77,7 +77,7 @@ var searchData=
   ['lookforkidsinnametree_74',['LookForKidsInNameTree',['../class_datalogics_1_1_p_d_f_l_1_1_document.html#a92102db46e7b2cbb2735e4263e3a3802',1,'Datalogics::PDFL::Document']]],
   ['lookup_75',['Lookup',['../class_datalogics_1_1_p_d_f_l_1_1_indexed_color_space.html#a0b402c1671dae05fe051046c7dc7377d',1,'Datalogics::PDFL::IndexedColorSpace']]],
   ['lossless_76',['Lossless',['../namespace_datalogics_1_1_p_d_f_l.html#a8707edcb7aa054973c6cd4f2f41e0acbab7048ff6b4f97b9230b2365b31d16713',1,'Datalogics::PDFL']]],
-  ['low_77',['Low',['../namespace_datalogics_1_1_p_d_f_l.html#a8707edcb7aa054973c6cd4f2f41e0acba28d0edd045e05cf5af64e35ae0c4c6ef',1,'Datalogics.PDFL.Low'],['../namespace_datalogics_1_1_p_d_f_l.html#ac3c617437abaa51a2a60b388aea9d3afa28d0edd045e05cf5af64e35ae0c4c6ef',1,'Datalogics.PDFL.Low']]],
+  ['low_77',['Low',['../namespace_datalogics_1_1_p_d_f_l.html#a8707edcb7aa054973c6cd4f2f41e0acba28d0edd045e05cf5af64e35ae0c4c6ef',1,'Datalogics.PDFL.Low'],['../namespace_datalogics_1_1_p_d_f_l.html#ac3c617437abaa51a2a60b388aea9d3afa28d0edd045e05cf5af64e35ae0c4c6ef',1,'Datalogics.PDFL.Low'],['../namespace_datalogics_1_1_p_d_f_l.html#a711fec299044b9c4ecd03b1d7dbe8a27a28d0edd045e05cf5af64e35ae0c4c6ef',1,'Datalogics.PDFL.Low']]],
   ['lower_78',['Lower',['../class_datalogics_1_1_p_d_f_l_1_1_paper_source.html#ac64fce2c0c9b10215d68e521b230cd78',1,'Datalogics::PDFL::PaperSource']]],
   ['luminosity_79',['Luminosity',['../namespace_datalogics_1_1_p_d_f_l.html#a4af994216aeba6c496a2ec5374df7fada46aa9fb99dc9c6f04b0b13a5db67f120',1,'Datalogics::PDFL']]],
   ['luxembourgish_80',['Luxembourgish',['../namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ac0b9b1fdf1a21bf34ba8467790496b0e',1,'Datalogics::PDFL']]],

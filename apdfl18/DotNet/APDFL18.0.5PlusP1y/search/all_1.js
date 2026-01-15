@@ -1,7 +1,7 @@
 var searchData=
 [
   ['b_0',['B',['../class_datalogics_1_1_p_d_f_l_1_1_matrix.html#ac810c1fd417ea0ed4ae17b7e5be18ef9',1,'Datalogics::PDFL::Matrix']]],
-  ['backgroundcolor_1',['BackgroundColor',['../class_datalogics_1_1_p_d_f_l_1_1_shading_pattern.html#a09227b6d28d5c534247afe04af224a26',1,'Datalogics::PDFL::ShadingPattern']]],
+  ['backgroundcolor_1',['BackgroundColor',['../class_datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#a6ac60a2ef06bcdd313263b4b05bc708b',1,'Datalogics.PDFL.QREncodeParams.BackgroundColor'],['../class_datalogics_1_1_p_d_f_l_1_1_shading_pattern.html#a09227b6d28d5c534247afe04af224a26',1,'Datalogics.PDFL.ShadingPattern.BackgroundColor']]],
   ['barcodeplaintext_2',['BarcodePlaintext',['../namespace_datalogics_1_1_p_d_f_l.html#a44716142969711c2802aa39b4cbf38daada40a0a21dce86df8bdf77393d86a480',1,'Datalogics::PDFL']]],
   ['base_3',['Base',['../class_datalogics_1_1_p_d_f_l_1_1_indexed_color_space.html#ac0ea2efb68cf3102b7e4e6ff85d9dc1e',1,'Datalogics::PDFL::IndexedColorSpace']]],
   ['basestate_4',['BaseState',['../class_datalogics_1_1_p_d_f_l_1_1_optional_content_config.html#aa58ba66205795865c104ceef15d0cb0e',1,'Datalogics::PDFL::OptionalContentConfig']]],
@@ -32,7 +32,7 @@ var searchData=
   ['bleedmarks_29',['BleedMarks',['../namespace_datalogics_1_1_p_d_f_l.html#aed8ff078d4bfdba0fd3b7a5ff7114f7da7d6d18d766c8d5c76d6cff3e120c84ae',1,'Datalogics::PDFL']]],
   ['blendmode_30',['BlendMode',['../class_datalogics_1_1_p_d_f_l_1_1_extended_graphic_state.html#ae1f9a5a16aac78701dd673a42f18875d',1,'Datalogics.PDFL.ExtendedGraphicState.BlendMode'],['../namespace_datalogics_1_1_p_d_f_l.html#a4af994216aeba6c496a2ec5374df7fad',1,'Datalogics.PDFL.BlendMode']]],
   ['blendmode_2ecs_31',['BlendMode.cs',['../_blend_mode_8cs.html',1,'']]],
-  ['blue_32',['Blue',['../class_datalogics_1_1_p_d_f_l_1_1_ink.html#abfa12fb19bf2ae899bb198020e3cf025',1,'Datalogics::PDFL::Ink']]],
+  ['blue_32',['Blue',['../class_datalogics_1_1_p_d_f_l_1_1_ink.html#abfa12fb19bf2ae899bb198020e3cf025',1,'Datalogics.PDFL.Ink.Blue'],['../class_datalogics_1_1_p_d_f_l_1_1_q_r_color.html#a3d060b66dcfde47329afd3aca2b176ef',1,'Datalogics.PDFL.QRColor.Blue']]],
   ['bmp_33',['BMP',['../namespace_datalogics_1_1_p_d_f_l.html#a516027aec13e78961d7057517dbac4d6aa5d5ca1447586e23dc011f8c0cc0a6db',1,'Datalogics::PDFL']]],
   ['bold_34',['Bold',['../namespace_datalogics_1_1_p_d_f_l.html#aeb07aab56d3ce8b5e07595d7c112ef3aa114c3050111d8b8ddd830b99ccebd246',1,'Datalogics::PDFL']]],
   ['bookmark_35',['Bookmark',['../class_datalogics_1_1_p_d_f_l_1_1_bookmark.html',1,'Datalogics::PDFL']]],

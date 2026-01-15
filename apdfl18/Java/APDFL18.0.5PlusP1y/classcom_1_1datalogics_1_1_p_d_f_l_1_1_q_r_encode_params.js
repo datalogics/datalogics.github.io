@@ -1,0 +1,27 @@
+var classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params =
+[
+    [ "QREncodeParams", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#aeb89c4278f9c250352af4fb7832341e9", null ],
+    [ "QREncodeParams", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#a2e673f93fc22e671f77e4396f4ce448a", null ],
+    [ "delete", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#ac1c382b60f560ea3cb4dd56e5810e6a2", null ],
+    [ "delete", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#a260ddff5d4e6417e347f94b5ebbccf2f", null ],
+    [ "finalize", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#a8cf7027e6efba0fde9156b73447fc72b", null ],
+    [ "getBackgroundColor", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#ad37656da7b9e34f8503ba67022d207d1", null ],
+    [ "getCodeColor", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#ac98057a7f9af83bcd2d7c643bf9b4809", null ],
+    [ "getCPtr", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#a9cb20fe20b7479cfd9a16e88a5303896", null ],
+    [ "getErrorCorrectionLevel", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#ae2ddd31abbbdc83dfea606555e041609", null ],
+    [ "getHeight", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#a892a02170a44eb782075789213f8abb0", null ],
+    [ "getQuietZoneSize", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#a94766dbd5a85144cf86dbf537aa86f37", null ],
+    [ "getTextToEncode", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#a3863d69c9c07780cc2064b60842335ab", null ],
+    [ "getWidth", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#ac5d44ac644e9d4da964f23a0551251cb", null ],
+    [ "getX", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#a432efc10ef744fe84c4f1ec7e3286c67", null ],
+    [ "getY", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#a1c4277990c9f04f6ca38f30dd501c47f", null ],
+    [ "setBackgroundColor", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#aa45155e56bf2a6df70a63736d77130cc", null ],
+    [ "setCodeColor", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#a8d342bd64f91eb3b2ec332f8183bb639", null ],
+    [ "setErrorCorrectionLevel", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#a0feb7e30d70e7045961c2349be392d57", null ],
+    [ "setHeight", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#a8c617d98d5ae3412732499e8b4316b9e", null ],
+    [ "setQuietZoneSize", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#a6471ac42ef28b47299eab53d78b7a79d", null ],
+    [ "setTextToEncode", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#a6efaf410a3c85c39f6250dc3ef2d9d0d", null ],
+    [ "setWidth", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#ad4ad9425c69ae0d20bb90d8dbaf6de53", null ],
+    [ "setX", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#a7cb39575ae01c368c7e87096a5a9f2dd", null ],
+    [ "setY", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#a081b11b7c5b36bb1e1b9261cc5e4f372", null ]
+];

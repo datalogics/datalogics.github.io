@@ -129,6 +129,8 @@ var hierarchy =
       [ "Datalogics.PDFL.PrintProgressProc", "class_datalogics_1_1_p_d_f_l_1_1_print_progress_proc.html", null ],
       [ "Datalogics.PDFL.PrintUserParams", "class_datalogics_1_1_p_d_f_l_1_1_print_user_params.html", null ],
       [ "Datalogics.PDFL.ProgressMonitor", "class_datalogics_1_1_p_d_f_l_1_1_progress_monitor.html", null ],
+      [ "Datalogics.PDFL.QRColor", "class_datalogics_1_1_p_d_f_l_1_1_q_r_color.html", null ],
+      [ "Datalogics.PDFL.QREncodeParams", "class_datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html", null ],
       [ "Datalogics.PDFL.Quad", "class_datalogics_1_1_p_d_f_l_1_1_quad.html", null ],
       [ "Datalogics.PDFL.Rect", "class_datalogics_1_1_p_d_f_l_1_1_rect.html", null ],
       [ "Datalogics.PDFL.RemoteDestination", "class_datalogics_1_1_p_d_f_l_1_1_remote_destination.html", null ],

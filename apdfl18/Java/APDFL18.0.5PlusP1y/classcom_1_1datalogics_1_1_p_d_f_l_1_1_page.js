@@ -5,6 +5,7 @@ var classcom_1_1datalogics_1_1_p_d_f_l_1_1_page =
     [ "Page", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#a44a21e8037e300ebd677860c9d57a3b9", null ],
     [ "addAnnotation", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#a8e0d66862aa7143b526c76a1982dd94a", null ],
     [ "addNewAnnotation", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#af7ac6e369b266556486b799ac2817994", null ],
+    [ "addQRBarcode", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#a80ef3fed29cd5fc02a3a7e1e54ec2ed4", null ],
     [ "addQRBarcode", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#a56bb841f01ac2ed6f857f4c72f910e12", null ],
     [ "colorConvertContent", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#a012bddfbedaf08ae8a3bec656d4291ec", null ],
     [ "createAnnotation", "classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#a55031a444d0a0c01419e4f40346e5e01", null ],

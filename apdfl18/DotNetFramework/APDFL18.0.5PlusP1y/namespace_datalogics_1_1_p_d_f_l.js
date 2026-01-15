@@ -111,6 +111,8 @@ var namespace_datalogics_1_1_p_d_f_l =
     [ "PrintProgressProc", "class_datalogics_1_1_p_d_f_l_1_1_print_progress_proc.html", "class_datalogics_1_1_p_d_f_l_1_1_print_progress_proc" ],
     [ "PrintUserParams", "class_datalogics_1_1_p_d_f_l_1_1_print_user_params.html", "class_datalogics_1_1_p_d_f_l_1_1_print_user_params" ],
     [ "ProgressMonitor", "class_datalogics_1_1_p_d_f_l_1_1_progress_monitor.html", "class_datalogics_1_1_p_d_f_l_1_1_progress_monitor" ],
+    [ "QRColor", "class_datalogics_1_1_p_d_f_l_1_1_q_r_color.html", "class_datalogics_1_1_p_d_f_l_1_1_q_r_color" ],
+    [ "QREncodeParams", "class_datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html", "class_datalogics_1_1_p_d_f_l_1_1_q_r_encode_params" ],
     [ "Quad", "class_datalogics_1_1_p_d_f_l_1_1_quad.html", "class_datalogics_1_1_p_d_f_l_1_1_quad" ],
     [ "Rect", "class_datalogics_1_1_p_d_f_l_1_1_rect.html", "class_datalogics_1_1_p_d_f_l_1_1_rect" ],
     [ "RectSegment", "class_datalogics_1_1_p_d_f_l_1_1_rect_segment.html", "class_datalogics_1_1_p_d_f_l_1_1_rect_segment" ],
@@ -156,6 +158,16 @@ var namespace_datalogics_1_1_p_d_f_l =
     ] ],
     [ "AddPageFlags", "namespace_datalogics_1_1_p_d_f_l.html#af4a25c5cb9953a8c4f11b421a0a59efa", [
       [ "AllAnnotations", "namespace_datalogics_1_1_p_d_f_l.html#af4a25c5cb9953a8c4f11b421a0a59efaa4a1400f3703677d0482690fdde5ce644", null ]
+    ] ],
+    [ "AFRelationship", "namespace_datalogics_1_1_p_d_f_l.html#a8d86229bdb0c17cdee0b29d545a0f0da", [
+      [ "Source", "namespace_datalogics_1_1_p_d_f_l.html#a8d86229bdb0c17cdee0b29d545a0f0daaf31bbdd1b3e85bccd652680e16935819", null ],
+      [ "Data", "namespace_datalogics_1_1_p_d_f_l.html#a8d86229bdb0c17cdee0b29d545a0f0daaf6068daa29dbb05a7ead1e3b5a48bbee", null ],
+      [ "Alternative", "namespace_datalogics_1_1_p_d_f_l.html#a8d86229bdb0c17cdee0b29d545a0f0daaa84d05159672cf1971a2923f3579bbe6", null ],
+      [ "Supplement", "namespace_datalogics_1_1_p_d_f_l.html#a8d86229bdb0c17cdee0b29d545a0f0daa8e39cd2566c95ebe23311c2bf3882595", null ],
+      [ "EncryptedPayload", "namespace_datalogics_1_1_p_d_f_l.html#a8d86229bdb0c17cdee0b29d545a0f0daa52220bf5943d0fb7e5720ae055966301", null ],
+      [ "FormData", "namespace_datalogics_1_1_p_d_f_l.html#a8d86229bdb0c17cdee0b29d545a0f0daa908d0753ae299ed477152d731af64177", null ],
+      [ "Schema", "namespace_datalogics_1_1_p_d_f_l.html#a8d86229bdb0c17cdee0b29d545a0f0daa7146a60667b422e69fd050fe1df6859a", null ],
+      [ "Unspecified", "namespace_datalogics_1_1_p_d_f_l.html#a8d86229bdb0c17cdee0b29d545a0f0daa6fcdc090caeade09d0efd6253932b6f5", null ]
     ] ],
     [ "AnnotationFlags", "namespace_datalogics_1_1_p_d_f_l.html#a6e26ca4b1fbde86af8a2f0a3bdbeb0bf", [
       [ "Invisible", "namespace_datalogics_1_1_p_d_f_l.html#a6e26ca4b1fbde86af8a2f0a3bdbeb0bfa8bcda43732b0928d269955e0f09ff76f", null ],
@@ -1078,6 +1090,12 @@ var namespace_datalogics_1_1_p_d_f_l =
       [ "NoExtras", "namespace_datalogics_1_1_p_d_f_l.html#ac2d7f875d7a9af745e56e72cb41f84ffa072601947228e42c4cd3eb5d3a7fd831", null ],
       [ "TrapAnnots", "namespace_datalogics_1_1_p_d_f_l.html#ac2d7f875d7a9af745e56e72cb41f84ffab2d292debf118166f2fac20a7477af1c", null ],
       [ "PrinterMarks", "namespace_datalogics_1_1_p_d_f_l.html#ac2d7f875d7a9af745e56e72cb41f84ffa9bb2982e4edca88ec9a6d9f04f14c76f", null ]
+    ] ],
+    [ "QRErrorCorrectionLevel", "namespace_datalogics_1_1_p_d_f_l.html#a711fec299044b9c4ecd03b1d7dbe8a27", [
+      [ "Low", "namespace_datalogics_1_1_p_d_f_l.html#a711fec299044b9c4ecd03b1d7dbe8a27a28d0edd045e05cf5af64e35ae0c4c6ef", null ],
+      [ "Medium", "namespace_datalogics_1_1_p_d_f_l.html#a711fec299044b9c4ecd03b1d7dbe8a27a87f8a6ab85c9ced3702b4ea641ad4bb5", null ],
+      [ "Quartile", "namespace_datalogics_1_1_p_d_f_l.html#a711fec299044b9c4ecd03b1d7dbe8a27a63737798eedcc41c50770bbb3e6c06b5", null ],
+      [ "High", "namespace_datalogics_1_1_p_d_f_l.html#a711fec299044b9c4ecd03b1d7dbe8a27a655d20c1ca69519ca647684edbb2db35", null ]
     ] ],
     [ "RenderIntent", "namespace_datalogics_1_1_p_d_f_l.html#a14814eefe68c3ace20bb4b9b355f1a5a", [
       [ "Perceptual", "namespace_datalogics_1_1_p_d_f_l.html#a14814eefe68c3ace20bb4b9b355f1a5aa09ab3095e9b2d0a7773cc3d2f0f879cd", null ],
