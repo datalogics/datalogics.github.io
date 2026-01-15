@@ -16,7 +16,7 @@ var searchData=
   ['addnextsibling_13',['AddNextSibling',['../class_datalogics_1_1_p_d_f_l_1_1_bookmark.html#ae3f5e0f1a3947cc7afb6eeceffba2350',1,'Datalogics::PDFL::Bookmark']]],
   ['addpage_14',['AddPage',['../class_datalogics_1_1_p_d_f_l_1_1_content.html#ad2386b4f393e06bd6e11201a273a89ed',1,'Datalogics::PDFL::Content']]],
   ['addprevioussibling_15',['AddPreviousSibling',['../class_datalogics_1_1_p_d_f_l_1_1_bookmark.html#a569275e85f11ca1db33920d9b6ca5efe',1,'Datalogics::PDFL::Bookmark']]],
-  ['addqrbarcode_16',['AddQRBarcode',['../class_datalogics_1_1_p_d_f_l_1_1_page.html#a528b6db648a3d8c71ad65d6cae3e4655',1,'Datalogics::PDFL::Page']]],
+  ['addqrbarcode_16',['AddQRBarcode',['../class_datalogics_1_1_p_d_f_l_1_1_page.html#a528b6db648a3d8c71ad65d6cae3e4655',1,'Datalogics.PDFL.Page.AddQRBarcode(string textToEncode, double x, double y, double width, double height)'],['../class_datalogics_1_1_p_d_f_l_1_1_page.html#a84c5ffa761208432f0568618fe0c3b3d',1,'Datalogics.PDFL.Page.AddQRBarcode(QREncodeParams params_)']]],
   ['addrect_17',['AddRect',['../class_datalogics_1_1_p_d_f_l_1_1_path.html#a483dd96cd31eafaed2858c22801ccd8b',1,'Datalogics::PDFL::Path']]],
   ['addrun_18',['AddRun',['../class_datalogics_1_1_p_d_f_l_1_1_text.html#a5cd4de2f9554b1b223846b1012852dbf',1,'Datalogics.PDFL.Text.AddRun(TextRun run)'],['../class_datalogics_1_1_p_d_f_l_1_1_text.html#a9a9a14661ad393a46a6428b3b5357abf',1,'Datalogics.PDFL.Text.AddRun(TextRun run, int index)']]],
   ['addscribble_19',['AddScribble',['../class_datalogics_1_1_p_d_f_l_1_1_ink_annotation.html#a7710b55a29d4a70d6f2def5b87bb8b91',1,'Datalogics::PDFL::InkAnnotation']]],

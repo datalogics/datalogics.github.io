@@ -16,7 +16,7 @@ var searchData=
   ['addnextsibling_13',['addNextSibling',['../classcom_1_1datalogics_1_1_p_d_f_l_1_1_bookmark.html#a8fb7639df149ab52dd425d2952535655',1,'com::datalogics::PDFL::Bookmark']]],
   ['addpage_14',['addPage',['../classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html#ac5bea8c5eb7e2acb5aa8caac9db45e68',1,'com::datalogics::PDFL::Content']]],
   ['addprevioussibling_15',['addPreviousSibling',['../classcom_1_1datalogics_1_1_p_d_f_l_1_1_bookmark.html#ac9779e49cc83dcf1aded318f2e92a2cd',1,'com::datalogics::PDFL::Bookmark']]],
-  ['addqrbarcode_16',['addQRBarcode',['../classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#a56bb841f01ac2ed6f857f4c72f910e12',1,'com::datalogics::PDFL::Page']]],
+  ['addqrbarcode_16',['addQRBarcode',['../classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#a56bb841f01ac2ed6f857f4c72f910e12',1,'com.datalogics.PDFL.Page.addQRBarcode(String textToEncode, double x, double y, double width, double height)'],['../classcom_1_1datalogics_1_1_p_d_f_l_1_1_page.html#a80ef3fed29cd5fc02a3a7e1e54ec2ed4',1,'com.datalogics.PDFL.Page.addQRBarcode(QREncodeParams params)']]],
   ['addrect_17',['addRect',['../classcom_1_1datalogics_1_1_p_d_f_l_1_1_path.html#ac2b926a7fdabb59a627a82a26f58c7e9',1,'com::datalogics::PDFL::Path']]],
   ['addrun_18',['addRun',['../classcom_1_1datalogics_1_1_p_d_f_l_1_1_text.html#ac714f58b8a9bea9c6df6d70d0159dd8e',1,'com.datalogics.PDFL.Text.addRun(TextRun run)'],['../classcom_1_1datalogics_1_1_p_d_f_l_1_1_text.html#acf062901530733f16c48a2c6b40dc8d3',1,'com.datalogics.PDFL.Text.addRun(TextRun run, int index)']]],
   ['addscribble_19',['addScribble',['../classcom_1_1datalogics_1_1_p_d_f_l_1_1_ink_annotation.html#ac267cbb3aed6ca0441ea2d243016b6b7',1,'com::datalogics::PDFL::InkAnnotation']]],

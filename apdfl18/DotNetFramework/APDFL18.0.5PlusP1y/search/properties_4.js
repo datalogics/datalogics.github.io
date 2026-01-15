@@ -35,8 +35,9 @@ var searchData=
   ['engine_32',['Engine',['../class_datalogics_1_1_p_d_f_l_1_1_o_c_r_params.html#ac46510b35b323966283b4e7b0b5ff6d5',1,'Datalogics::PDFL::OCRParams']]],
   ['epsoutput_33',['EPSOutput',['../class_datalogics_1_1_p_d_f_l_1_1_separation_plate.html#af1a978f0aec43518383d654832f1316b',1,'Datalogics::PDFL::SeparationPlate']]],
   ['errorcode_34',['ErrorCode',['../class_datalogics_1_1_p_d_f_l_1_1_library_exception.html#a9670cb23c56dad891fa40605481cfd1e',1,'Datalogics::PDFL::LibraryException']]],
-  ['expandtofit_35',['ExpandToFit',['../class_datalogics_1_1_p_d_f_l_1_1_print_params.html#a43d108fb0eeb83e5cc3e224fb25e5783',1,'Datalogics::PDFL::PrintParams']]],
-  ['extend_36',['Extend',['../class_datalogics_1_1_p_d_f_l_1_1_axial_shading_pattern.html#a5a3fdc6487c573bdd1f3ae618bccaa00',1,'Datalogics::PDFL::AxialShadingPattern']]],
-  ['extendedgraphicstate_37',['ExtendedGraphicState',['../class_datalogics_1_1_p_d_f_l_1_1_graphic_state.html#a4d9d034090323d48956347acbd055c5b',1,'Datalogics::PDFL::GraphicState']]],
-  ['externaldpi_38',['ExternalDPI',['../class_datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#ac7b3fbf0f7451ef9ad2b8dd6e54a0219',1,'Datalogics::PDFL::FlattenTransparencyParams']]]
+  ['errorcorrectionlevel_35',['ErrorCorrectionLevel',['../class_datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html#a0224e5b7b03f3cdb7566aaa8e81c30d1',1,'Datalogics::PDFL::QREncodeParams']]],
+  ['expandtofit_36',['ExpandToFit',['../class_datalogics_1_1_p_d_f_l_1_1_print_params.html#a43d108fb0eeb83e5cc3e224fb25e5783',1,'Datalogics::PDFL::PrintParams']]],
+  ['extend_37',['Extend',['../class_datalogics_1_1_p_d_f_l_1_1_axial_shading_pattern.html#a5a3fdc6487c573bdd1f3ae618bccaa00',1,'Datalogics::PDFL::AxialShadingPattern']]],
+  ['extendedgraphicstate_38',['ExtendedGraphicState',['../class_datalogics_1_1_p_d_f_l_1_1_graphic_state.html#a4d9d034090323d48956347acbd055c5b',1,'Datalogics::PDFL::GraphicState']]],
+  ['externaldpi_39',['ExternalDPI',['../class_datalogics_1_1_p_d_f_l_1_1_flatten_transparency_params.html#ac7b3fbf0f7451ef9ad2b8dd6e54a0219',1,'Datalogics::PDFL::FlattenTransparencyParams']]]
 ];

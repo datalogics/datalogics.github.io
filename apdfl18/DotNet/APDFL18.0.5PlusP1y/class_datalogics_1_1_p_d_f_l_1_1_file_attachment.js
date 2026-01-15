@@ -11,6 +11,7 @@ var class_datalogics_1_1_p_d_f_l_1_1_file_attachment =
     [ "SetCollectionItemNumber", "class_datalogics_1_1_p_d_f_l_1_1_file_attachment.html#aa21cad8c0e8589299afcb28fc0b6a421", null ],
     [ "SetCollectionItemString", "class_datalogics_1_1_p_d_f_l_1_1_file_attachment.html#aca9e8351c55780ebf5eb378dddad8cbc", null ],
     [ "UpdateFromFile", "class_datalogics_1_1_p_d_f_l_1_1_file_attachment.html#a822ff99f7c8a70f8e439b0739d749a34", null ],
+    [ "AFRelationship", "class_datalogics_1_1_p_d_f_l_1_1_file_attachment.html#ac454377d2ce422f7aece78f0a8215548", null ],
     [ "FileName", "class_datalogics_1_1_p_d_f_l_1_1_file_attachment.html#a8a34e97d953e68034ba08dd3b9c0a8d3", null ],
     [ "FileSize", "class_datalogics_1_1_p_d_f_l_1_1_file_attachment.html#a0c2e4ff9efab8c2f27b4c9a9db67b907", null ]
 ];

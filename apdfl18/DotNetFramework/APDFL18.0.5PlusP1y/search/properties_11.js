@@ -6,7 +6,7 @@ var searchData=
   ['rawdata_3',['RawData',['../class_datalogics_1_1_p_d_f_l_1_1_image_data.html#a4ba36ab909ae444ff85c142d99f6bb31',1,'Datalogics::PDFL::ImageData']]],
   ['rawtext_4',['RawText',['../class_datalogics_1_1_p_d_f_l_1_1_text_run.html#a76c6593567e98485f5651c990ded1829',1,'Datalogics::PDFL::TextRun']]],
   ['rect_5',['Rect',['../class_datalogics_1_1_p_d_f_l_1_1_annotation.html#afbec91b60e74bdf7e4f6acfe0284f05a',1,'Datalogics::PDFL::Annotation']]],
-  ['red_6',['Red',['../class_datalogics_1_1_p_d_f_l_1_1_ink.html#af75f31c331221ab9d279ad17956b3e77',1,'Datalogics::PDFL::Ink']]],
+  ['red_6',['Red',['../class_datalogics_1_1_p_d_f_l_1_1_ink.html#af75f31c331221ab9d279ad17956b3e77',1,'Datalogics.PDFL.Ink.Red'],['../class_datalogics_1_1_p_d_f_l_1_1_q_r_color.html#af1ab38c75b0db90f670b7b7c70b2d334',1,'Datalogics.PDFL.QRColor.Red']]],
   ['releaseversion_7',['releaseVersion',['../class_datalogics_1_1_p_d_f_l_1_1_forms_extension_version_rec.html#aef6bc01615cbc464a450c2437c2ae2f3',1,'Datalogics::PDFL::FormsExtensionVersionRec']]],
   ['remotedestination_8',['RemoteDestination',['../class_datalogics_1_1_p_d_f_l_1_1_remote_go_to_action.html#aebe2c004f0a05706994e78448f46dad6',1,'Datalogics::PDFL::RemoteGoToAction']]],
   ['removeallannotations_9',['RemoveAllAnnotations',['../class_datalogics_1_1_p_d_f_l_1_1_p_d_f_a_convert_params.html#a6d3a791cc99fc97617c7df67bbdd30e1',1,'Datalogics.PDFL.PDFAConvertParams.RemoveAllAnnotations'],['../class_datalogics_1_1_p_d_f_l_1_1_p_d_f_x_convert_params.html#a3b49b3b0bafd64af488997eccefb32fe',1,'Datalogics.PDFL.PDFXConvertParams.RemoveAllAnnotations']]],

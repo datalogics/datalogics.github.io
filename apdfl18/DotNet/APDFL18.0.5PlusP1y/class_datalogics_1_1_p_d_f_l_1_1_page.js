@@ -4,6 +4,7 @@ var class_datalogics_1_1_p_d_f_l_1_1_page =
     [ "Page", "class_datalogics_1_1_p_d_f_l_1_1_page.html#a96c67e3302ef7bcf1be9039f44424d61", null ],
     [ "AddAnnotation", "class_datalogics_1_1_p_d_f_l_1_1_page.html#aaa0287b50f9ae83cfd1dc1a23ea97ec4", null ],
     [ "AddNewAnnotation", "class_datalogics_1_1_p_d_f_l_1_1_page.html#abcca0177317e8071c9bd7946aecfdb9c", null ],
+    [ "AddQRBarcode", "class_datalogics_1_1_p_d_f_l_1_1_page.html#a84c5ffa761208432f0568618fe0c3b3d", null ],
     [ "AddQRBarcode", "class_datalogics_1_1_p_d_f_l_1_1_page.html#a528b6db648a3d8c71ad65d6cae3e4655", null ],
     [ "ColorConvertContent", "class_datalogics_1_1_p_d_f_l_1_1_page.html#a5c57172e8c2af5453f4eace9330d99dc", null ],
     [ "CreateAnnotation", "class_datalogics_1_1_p_d_f_l_1_1_page.html#ac4af02bf1fc9ae99e721c6ea7fde8101", null ],

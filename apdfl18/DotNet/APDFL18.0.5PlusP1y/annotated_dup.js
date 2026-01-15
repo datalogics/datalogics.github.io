@@ -113,6 +113,8 @@ var annotated_dup =
         [ "PrintProgressProc", "class_datalogics_1_1_p_d_f_l_1_1_print_progress_proc.html", "class_datalogics_1_1_p_d_f_l_1_1_print_progress_proc" ],
         [ "PrintUserParams", "class_datalogics_1_1_p_d_f_l_1_1_print_user_params.html", "class_datalogics_1_1_p_d_f_l_1_1_print_user_params" ],
         [ "ProgressMonitor", "class_datalogics_1_1_p_d_f_l_1_1_progress_monitor.html", "class_datalogics_1_1_p_d_f_l_1_1_progress_monitor" ],
+        [ "QRColor", "class_datalogics_1_1_p_d_f_l_1_1_q_r_color.html", "class_datalogics_1_1_p_d_f_l_1_1_q_r_color" ],
+        [ "QREncodeParams", "class_datalogics_1_1_p_d_f_l_1_1_q_r_encode_params.html", "class_datalogics_1_1_p_d_f_l_1_1_q_r_encode_params" ],
         [ "Quad", "class_datalogics_1_1_p_d_f_l_1_1_quad.html", "class_datalogics_1_1_p_d_f_l_1_1_quad" ],
         [ "Rect", "class_datalogics_1_1_p_d_f_l_1_1_rect.html", "class_datalogics_1_1_p_d_f_l_1_1_rect" ],
         [ "RectSegment", "class_datalogics_1_1_p_d_f_l_1_1_rect_segment.html", "class_datalogics_1_1_p_d_f_l_1_1_rect_segment" ],

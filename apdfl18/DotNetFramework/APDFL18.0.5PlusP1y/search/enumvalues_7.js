@@ -15,7 +15,7 @@ var searchData=
   ['hasuppercase_12',['HasUppercase',['../namespace_datalogics_1_1_p_d_f_l.html#a4c1f9940d0d283c447b3f29c708fa06ba4d3dfab79c1c09e1c6e0aa03d203bcf3',1,'Datalogics::PDFL']]],
   ['hebrew_13',['Hebrew',['../namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7ac6c1f81a46666385fa7d85df7eaf8763',1,'Datalogics::PDFL']]],
   ['hidden_14',['Hidden',['../namespace_datalogics_1_1_p_d_f_l.html#a6e26ca4b1fbde86af8a2f0a3bdbeb0bfa7acdf85c69cc3c5305456a293524386e',1,'Datalogics::PDFL']]],
-  ['high_15',['High',['../namespace_datalogics_1_1_p_d_f_l.html#a8707edcb7aa054973c6cd4f2f41e0acba655d20c1ca69519ca647684edbb2db35',1,'Datalogics.PDFL.High'],['../namespace_datalogics_1_1_p_d_f_l.html#ac3c617437abaa51a2a60b388aea9d3afa655d20c1ca69519ca647684edbb2db35',1,'Datalogics.PDFL.High']]],
+  ['high_15',['High',['../namespace_datalogics_1_1_p_d_f_l.html#a8707edcb7aa054973c6cd4f2f41e0acba655d20c1ca69519ca647684edbb2db35',1,'Datalogics.PDFL.High'],['../namespace_datalogics_1_1_p_d_f_l.html#ac3c617437abaa51a2a60b388aea9d3afa655d20c1ca69519ca647684edbb2db35',1,'Datalogics.PDFL.High'],['../namespace_datalogics_1_1_p_d_f_l.html#a711fec299044b9c4ecd03b1d7dbe8a27a655d20c1ca69519ca647684edbb2db35',1,'Datalogics.PDFL.High']]],
   ['highprint_16',['HighPrint',['../namespace_datalogics_1_1_p_d_f_l.html#a7b303a30e632b68fada86e32156504a2a5f88eaa260808b5be7876f1e6413f7ba',1,'Datalogics::PDFL']]],
   ['hindi_17',['Hindi',['../namespace_datalogics_1_1_p_d_f_l.html#a2b6ae7fbc3bcde62944d9e086ad7d0e7a45c3171ef193c74b402f407fba9d955b',1,'Datalogics::PDFL']]],
   ['horizontal_18',['Horizontal',['../namespace_datalogics_1_1_p_d_f_l.html#ab1e5f7b0f0f334863e111bc10d28bc95ac1b5fa03ecdb95d4a45dd1c40b02527f',1,'Datalogics::PDFL']]],
