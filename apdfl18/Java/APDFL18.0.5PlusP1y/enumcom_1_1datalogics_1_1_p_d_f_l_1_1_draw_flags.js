@@ -1,0 +1,27 @@
+var enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags =
+[
+    [ "FlagsToInt", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#ac755480ccbd9f8ff9ab45e569b9ea63b", null ],
+    [ "IntToFlags", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a52ba51608090d88d43095b082e8dc9f6", null ],
+    [ "DIRECTLY_IMPOSED", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a0a130549f69481cd0b87d7a3b8491774", null ],
+    [ "DISPLAY_OVER_PRINT_PREVIEW", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a5968ce5ccfae2b263efef182fb9ab8ab", null ],
+    [ "DO_LAZY_ERASE", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a6daff07b4c417d1346ea43a1f06edd7e", null ],
+    [ "DO_NOT_DOWNLOAD_FONTS", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a7c52b7cf8290388c3e7fb2454dda2560", null ],
+    [ "DO_NOT_SUBSTITUTE_WORKING_SPACES", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a61512d5e6ffa47e1975a6a3d10a9ecad", null ],
+    [ "EMIT_PAGE_GROUP", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#aea6dc060b302ea86fcc76b2a906965c1", null ],
+    [ "FORCE_GDIPORT", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a90abb75decea09b80e7aef045b9ab13b", null ],
+    [ "IS_PRINT_PREVIEWING", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#af0a4b38ec6db1f1c3575f20096932c65", null ],
+    [ "IS_PRINTING", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#ab3ae8c42ab2fc4b2a5f91330c39753a3", null ],
+    [ "IS_PSPRINTING", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#aa34145ce2695647d1b206e5cec719def", null ],
+    [ "OPTIMIZE_FOR_INTERACTIVE", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a02b77cb1d878305c3edeb6aa872b9564", null ],
+    [ "PASS_METADATATO_AGMPORT", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a7d0f002c175aca81fef606d7462b6726", null ],
+    [ "PASS_OCTO_AGMPORT", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a70c05dfcdfbe9d6327ff4e75bcb9578e", null ],
+    [ "PASS_OPITO_AGMPORT", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a11416acf1ecdc26c62f4de85bd3585c3", null ],
+    [ "SUPPRESS_RASTER_ALPHA", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#aac2d9a860ca1f2fce05f06ac95bfe54f", null ],
+    [ "SWAP_COMPONENTS", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a33ffb32c6fc2abf20610df51208c42df", null ],
+    [ "USE_ANNOT_FACES", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#aff35d5e6f6ef9f539849a16f88733def", null ],
+    [ "USE_PRINTER_MARK_ANNOTS", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a22b0ac8bbae562c86dd53ebe206f1bcb", null ],
+    [ "USE_STAMP_ANNOTS_ONLY", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#ac21dc105f6fb5b1b637a847afb07912c", null ],
+    [ "USE_TRAP_ANNOTS", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a364c1e07b3bd479b0a81d0f54d3578e7", null ],
+    [ "WORKING_SPACES_ONLY_FOR_CHANGE", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#a71212599ef489c288dcef216af4f3297", null ],
+    [ "WRITING_TO_EMF", "enumcom_1_1datalogics_1_1_p_d_f_l_1_1_draw_flags.html#ac0cf71c2ef5ccc60511d6235374a5f75", null ]
+];
