@@ -1,0 +1,811 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Java API Reference: com.datalogics.PDFL.Group Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classcom_1_1datalogics_1_1_p_d_f_l_1_1_group.html','','classcom_1_1datalogics_1_1_p_d_f_l_1_1_group-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">com.datalogics.PDFL.Group Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a5db564968697eaf16841ba5deed3d665" id="r_a5db564968697eaf16841ba5deed3d665"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_group.html">Group</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5db564968697eaf16841ba5deed3d665">clone</a> ()</td></tr>
+<tr class="memitem:ac03a9fb18058ba78305a42565eaad17f" id="r_ac03a9fb18058ba78305a42565eaad17f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_group.html">Group</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac03a9fb18058ba78305a42565eaad17f">clone</a> (java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_element_clone_flags.html">ElementCloneFlags</a> &gt; cloneFlags)</td></tr>
+<tr class="memitem:a42e793ed620c28549e7de46d1f39f764" id="r_a42e793ed620c28549e7de46d1f39f764"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_group.html">Group</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42e793ed620c28549e7de46d1f39f764">colorConvert</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a> document, <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_profile.html">ColorProfile</a> prof, <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_render_intent.html">RenderIntent</a> intent, boolean embed)</td></tr>
+<tr class="memitem:ac245a681406a8c60c9570995a03c0956" id="r_ac245a681406a8c60c9570995a03c0956"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac245a681406a8c60c9570995a03c0956">delete</a> ()</td></tr>
+<tr class="memitem:ae355bd6ed68d9deebff59c03523190c9" id="r_ae355bd6ed68d9deebff59c03523190c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#ae355bd6ed68d9deebff59c03523190c9">getBoundingBox</a> ()</td></tr>
+<tr class="memitem:a97accb896872fa192e3d0b76fe8cec62" id="r_a97accb896872fa192e3d0b76fe8cec62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html">Clip</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a97accb896872fa192e3d0b76fe8cec62">getClip</a> ()</td></tr>
+<tr class="memitem:a580c40122bab079183587b3cf4485fa8" id="r_a580c40122bab079183587b3cf4485fa8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html">Content</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a580c40122bab079183587b3cf4485fa8">getContent</a> ()</td></tr>
+<tr class="memitem:a5351ee3176b673773a6d86c5116023fe" id="r_a5351ee3176b673773a6d86c5116023fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a5351ee3176b673773a6d86c5116023fe">getMatrix</a> ()</td></tr>
+<tr class="memitem:a5bfe06356d8159c4f6909c32a9fdfe79" id="r_a5bfe06356d8159c4f6909c32a9fdfe79"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5bfe06356d8159c4f6909c32a9fdfe79">Group</a> ()</td></tr>
+<tr class="memitem:ade4bfaa53946b1dbdb739985bc1cd619" id="r_ade4bfaa53946b1dbdb739985bc1cd619"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade4bfaa53946b1dbdb739985bc1cd619">Group</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html">Content</a> content)</td></tr>
+<tr class="memitem:a18e35d241cef53d1306e215d40c5543b" id="r_a18e35d241cef53d1306e215d40c5543b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a18e35d241cef53d1306e215d40c5543b">rotate</a> (double theta)</td></tr>
+<tr class="memitem:af6fdbf1e92c9a2b0ad72f3a3c8c79aef" id="r_af6fdbf1e92c9a2b0ad72f3a3c8c79aef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#af6fdbf1e92c9a2b0ad72f3a3c8c79aef">scale</a> (double sx, double sy)</td></tr>
+<tr class="memitem:a78d1dc631176e2fcbbb4f76f2c25cdd0" id="r_a78d1dc631176e2fcbbb4f76f2c25cdd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a78d1dc631176e2fcbbb4f76f2c25cdd0">setClip</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html">Clip</a> clip)</td></tr>
+<tr class="memitem:a0ff2d1ac009fab0ed825b1979614ffda" id="r_a0ff2d1ac009fab0ed825b1979614ffda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ff2d1ac009fab0ed825b1979614ffda">setContent</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html">Content</a> content)</td></tr>
+<tr class="memitem:a417520d327ced87abe28d6c9dbe2382b" id="r_a417520d327ced87abe28d6c9dbe2382b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a417520d327ced87abe28d6c9dbe2382b">setMatrix</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> matrix)</td></tr>
+<tr class="memitem:a22d4ed5c1a9bebaab64263221319e336" id="r_a22d4ed5c1a9bebaab64263221319e336"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a22d4ed5c1a9bebaab64263221319e336">translate</a> (double tx, double ty)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a0941ef33768ab054119f2dc7b9ccfca1" id="r_a0941ef33768ab054119f2dc7b9ccfca1"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0941ef33768ab054119f2dc7b9ccfca1">delete</a> (Boolean disposing)</td></tr>
+<tr class="memitem:a63275c29f565f320aaffde3e3cc57d69" id="r_a63275c29f565f320aaffde3e3cc57d69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63275c29f565f320aaffde3e3cc57d69">finalize</a> ()</td></tr>
+<tr class="memitem:a1d9ad56fb2e6fe60b9983de3c94da992" id="r_a1d9ad56fb2e6fe60b9983de3c94da992"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d9ad56fb2e6fe60b9983de3c94da992">Group</a> (long cPtr, boolean cMemoryOwn)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a861d73f98ab05cfe69f82f1d6b5e21e5" id="r_a861d73f98ab05cfe69f82f1d6b5e21e5"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a861d73f98ab05cfe69f82f1d6b5e21e5">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html">Element</a> obj)</td></tr>
+<tr class="memitem:a3f640e409aad52b78b6efb66b45ca43b" id="r_a3f640e409aad52b78b6efb66b45ca43b"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f640e409aad52b78b6efb66b45ca43b">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_group.html">Group</a> obj)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A set of elements to be used within a PDF document. A Group represents objects in a content object, but it resides in memory. </p>
+<p>Therefore the group has no state and is not represented in any way in a PDF content stream. When used in a Clip, a group is used to associate Text objects into a single clipping object. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a1d9ad56fb2e6fe60b9983de3c94da992" name="a1d9ad56fb2e6fe60b9983de3c94da992"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d9ad56fb2e6fe60b9983de3c94da992">&#9670;&#160;</a></span>Group() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Group.Group </td>
+          <td>(</td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>cPtr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>cMemoryOwn</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="#a5db564968697eaf16841ba5deed3d665">clone()</a>, <a class="el" href="#ac03a9fb18058ba78305a42565eaad17f">clone()</a>, <a class="el" href="#a42e793ed620c28549e7de46d1f39f764">colorConvert()</a>, and <a class="el" href="#a3f640e409aad52b78b6efb66b45ca43b">getCPtr()</a>.</p>
+
+</div>
+</div>
+<a id="a5bfe06356d8159c4f6909c32a9fdfe79" name="a5bfe06356d8159c4f6909c32a9fdfe79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bfe06356d8159c4f6909c32a9fdfe79">&#9670;&#160;</a></span>Group() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Group.Group </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a new Group. </p>
+
+</div>
+</div>
+<a id="ade4bfaa53946b1dbdb739985bc1cd619" name="ade4bfaa53946b1dbdb739985bc1cd619"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade4bfaa53946b1dbdb739985bc1cd619">&#9670;&#160;</a></span>Group() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Group.Group </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html">Content</a></td>          <td class="paramname"><span class="paramname"><em>content</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a Group with the given Content. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">content</td><td>The new Content of the group. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a5db564968697eaf16841ba5deed3d665" name="a5db564968697eaf16841ba5deed3d665"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5db564968697eaf16841ba5deed3d665">&#9670;&#160;</a></span>clone() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_group.html">Group</a> com.datalogics.PDFL.Group.clone </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Makes a copy of the group. </p>
+<p>Make a copy of an group to obtain a new group that has a distinct set of attributes. </p>
+<dl class="section return"><dt>Returns</dt><dd>The copied group. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#af6c55cf47bb9a28072ac895ab0b2873d">com.datalogics.PDFL.Element</a>.</p>
+
+</div>
+</div>
+<a id="ac03a9fb18058ba78305a42565eaad17f" name="ac03a9fb18058ba78305a42565eaad17f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac03a9fb18058ba78305a42565eaad17f">&#9670;&#160;</a></span>clone() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_group.html">Group</a> com.datalogics.PDFL.Group.clone </td>
+          <td>(</td>
+          <td class="paramtype">java.util.EnumSet&lt; <a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_element_clone_flags.html">ElementCloneFlags</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>cloneFlags</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Makes a copy of the group. </p>
+<p>Make a copy of an group to obtain a new group that has a distinct set of attributes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloneFlags</td><td>Flags that modify the cloning operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The copied group. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a2c8db0575b8f2354ea938f836891a32a">com.datalogics.PDFL.Element</a>.</p>
+
+</div>
+</div>
+<a id="a42e793ed620c28549e7de46d1f39f764" name="a42e793ed620c28549e7de46d1f39f764"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42e793ed620c28549e7de46d1f39f764">&#9670;&#160;</a></span>colorConvert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_group.html">Group</a> com.datalogics.PDFL.Group.colorConvert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_document.html">Document</a></td>          <td class="paramname"><span class="paramname"><em>document</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_color_profile.html">ColorProfile</a></td>          <td class="paramname"><span class="paramname"><em>prof</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumcom_1_1datalogics_1_1_p_d_f_l_1_1_render_intent.html">RenderIntent</a></td>          <td class="paramname"><span class="paramname"><em>intent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>embed</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Applies the specified ICC ColorProfile to the elements in the Group object </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">document</td><td>The document the element belongs to. </td></tr>
+    <tr><td class="paramname">prof</td><td>The ICC ColorProfile to be applied. </td></tr>
+    <tr><td class="paramname">intent</td><td>The ICC Rendering Intent for the ColorProfile </td></tr>
+    <tr><td class="paramname">embed</td><td>If true, embed the color space and make the object calibrated. If it is false and the target profile is CMYK, RGB, or Gray, the colors space of the resulting objects, after conversion, will be DeviceCMYK, DeviceRGB, or DeviceGray, respectively. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new Group object with the applied ICC ColorProfile. </dd></dl>
+
+</div>
+</div>
+<a id="ac245a681406a8c60c9570995a03c0956" name="ac245a681406a8c60c9570995a03c0956"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac245a681406a8c60c9570995a03c0956">&#9670;&#160;</a></span>delete() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.Group.delete </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#a8afc1124db761b2077004ba387df0326">com.datalogics.PDFL.Element</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#ac245a681406a8c60c9570995a03c0956">delete()</a>, and <a class="el" href="#a63275c29f565f320aaffde3e3cc57d69">finalize()</a>.</p>
+
+</div>
+</div>
+<a id="a0941ef33768ab054119f2dc7b9ccfca1" name="a0941ef33768ab054119f2dc7b9ccfca1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0941ef33768ab054119f2dc7b9ccfca1">&#9670;&#160;</a></span>delete() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.Group.delete </td>
+          <td>(</td>
+          <td class="paramtype">Boolean</td>          <td class="paramname"><span class="paramname"><em>disposing</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#ad1c2482b575b7a8112df5f52fb559a84">com.datalogics.PDFL.Element</a>.</p>
+
+</div>
+</div>
+<a id="a63275c29f565f320aaffde3e3cc57d69" name="a63275c29f565f320aaffde3e3cc57d69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63275c29f565f320aaffde3e3cc57d69">&#9670;&#160;</a></span>finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Group.finalize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html#ab5642d16085224eca829ace3ad075e6f">com.datalogics.PDFL.Element</a>.</p>
+
+</div>
+</div>
+<a id="ae355bd6ed68d9deebff59c03523190c9" name="ae355bd6ed68d9deebff59c03523190c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae355bd6ed68d9deebff59c03523190c9">&#9670;&#160;</a></span>getBoundingBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a> com.datalogics.PDFL.Element.getBoundingBox </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The bounding box for this element. </p>
+<p>The bounding box is a rectangle that is guaranteed to encompass the element, but it is not guaranteed to be the smallest box that could contain the element. For example, if the element is a Path that contains an arc, the bounding box encompasses the bezier control points, and not just the curve itself. </p>
+<dl class="section return"><dt>Returns</dt><dd>The bounding box for this element. The coordinates of the bounding box are specified in user space coordinates, relative to the element's Content. Note that user space coordinates correspond to unrotated pages; any rotation specified in the page dictionary is not taken into account. </dd></dl>
+
+</div>
+</div>
+<a id="a97accb896872fa192e3d0b76fe8cec62" name="a97accb896872fa192e3d0b76fe8cec62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97accb896872fa192e3d0b76fe8cec62">&#9670;&#160;</a></span>getClip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html">Clip</a> com.datalogics.PDFL.Element.getClip </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the current Clip for an Element. </p>
+<dl class="section return"><dt>Returns</dt><dd>- The current Clip for this Element. </dd></dl>
+
+</div>
+</div>
+<a id="a580c40122bab079183587b3cf4485fa8" name="a580c40122bab079183587b3cf4485fa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a580c40122bab079183587b3cf4485fa8">&#9670;&#160;</a></span>getContent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html">Content</a> com.datalogics.PDFL.Group.getContent </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Obtain the content of a Group. </p>
+
+</div>
+</div>
+<a id="a861d73f98ab05cfe69f82f1d6b5e21e5" name="a861d73f98ab05cfe69f82f1d6b5e21e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a861d73f98ab05cfe69f82f1d6b5e21e5">&#9670;&#160;</a></span>getCPtr() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long com.datalogics.PDFL.Element.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_element.html">Element</a></td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel protected">protected</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html#ae4ec59218d64f1c621ebf9f11122695d">com.datalogics.PDFL.Clip.addElement()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html#a844fd0e5692b58d2443ac20223193399">com.datalogics.PDFL.Clip.addElement()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html#afba3f35911043f67e3bf68f58f0b5c11">com.datalogics.PDFL.Content.addElement()</a>, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html#a250d99991700931477142c2e8d547995">com.datalogics.PDFL.Content.addElement()</a>, and <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html#aa044b1e7b8e5484d21615d71fec8b51b">com.datalogics.PDFL.Content.Content()</a>.</p>
+
+</div>
+</div>
+<a id="a3f640e409aad52b78b6efb66b45ca43b" name="a3f640e409aad52b78b6efb66b45ca43b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f640e409aad52b78b6efb66b45ca43b">&#9670;&#160;</a></span>getCPtr() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long com.datalogics.PDFL.Group.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_group.html">Group</a></td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5351ee3176b673773a6d86c5116023fe" name="a5351ee3176b673773a6d86c5116023fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5351ee3176b673773a6d86c5116023fe">&#9670;&#160;</a></span>getMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> com.datalogics.PDFL.Element.getMatrix </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The transformation matrix for the element. </p>
+
+</div>
+</div>
+<a id="a18e35d241cef53d1306e215d40c5543b" name="a18e35d241cef53d1306e215d40c5543b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18e35d241cef53d1306e215d40c5543b">&#9670;&#160;</a></span>rotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Element.rotate </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>theta</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Rotate an element by T degrees counterclockwise units using the matrix [ cos T sin T -sin T cos T 0 0 ]. </p>
+
+<p>Reimplemented in <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html#a70d4a627d96d5c4f90eaf0a877c80654">com.datalogics.PDFL.Image</a>.</p>
+
+</div>
+</div>
+<a id="af6fdbf1e92c9a2b0ad72f3a3c8c79aef" name="af6fdbf1e92c9a2b0ad72f3a3c8c79aef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6fdbf1e92c9a2b0ad72f3a3c8c79aef">&#9670;&#160;</a></span>scale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Element.scale </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>sx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>sy</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Scale an element by (sx,sy) units using the matrix [ sx 0 0 sy 0 0 ]. </p>
+
+</div>
+</div>
+<a id="a78d1dc631176e2fcbbb4f76f2c25cdd0" name="a78d1dc631176e2fcbbb4f76f2c25cdd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78d1dc631176e2fcbbb4f76f2c25cdd0">&#9670;&#160;</a></span>setClip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Element.setClip </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_clip.html">Clip</a></td>          <td class="paramname"><span class="paramname"><em>clip</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the current Clip for an Element. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clip</td><td>The clip to set as the current clip for this element. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0ff2d1ac009fab0ed825b1979614ffda" name="a0ff2d1ac009fab0ed825b1979614ffda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ff2d1ac009fab0ed825b1979614ffda">&#9670;&#160;</a></span>setContent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Group.setContent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_content.html">Content</a></td>          <td class="paramname"><span class="paramname"><em>content</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the content of a Group. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">content</td><td>The new Content of the group. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a417520d327ced87abe28d6c9dbe2382b" name="a417520d327ced87abe28d6c9dbe2382b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a417520d327ced87abe28d6c9dbe2382b">&#9670;&#160;</a></span>setMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Element.setMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a></td>          <td class="paramname"><span class="paramname"><em>matrix</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Set the transformation matrix for the element.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">matrix</td><td>the transformation matrix for the element. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a22d4ed5c1a9bebaab64263221319e336" name="a22d4ed5c1a9bebaab64263221319e336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22d4ed5c1a9bebaab64263221319e336">&#9670;&#160;</a></span>translate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Element.translate </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>tx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>ty</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Translate an element by (tx,ty) units using the matrix [ 1 0 0 1 tx ty ]. </p>
+
+<p>Reimplemented in <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_image.html#a7d9f9f8687328d8d62dcddc1799619ed">com.datalogics.PDFL.Image</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>
