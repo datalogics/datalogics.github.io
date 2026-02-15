@@ -1,0 +1,553 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Java API Reference: com.datalogics.PDFL.Quad Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="dle.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4MQFNK7VK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  gtag('config', 'G-L4MQFNK7VK');
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    currVer = window.location.pathname.split("/").slice(-3)[0]
+    document.getElementById("ver").src +=  "?=" + currVer 
+  });
+</script>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table style="width:100%">
+ <tbody>
+ <tr>
+  <td id="projectlogo"><a href="http://www.datalogics.com/"><img id="projectlogoimage" alt="Datalogics" width="200" height="43" src="DL-doc-logo.png"/></a></td>
+  <td id="samples" style="text-align:right">
+      <div class="slidecontainer">
+        <p id="themelabel">
+            <img id="lightthemelabel" alt="Light Theme" src="light-switch-light-background.png"/>
+            <input type="range" min="0" max="1" value="0" id="themeslider">
+            <img id="darkthemelabel" alt="Dark Theme" src="dark-switch-light-background.png"/>
+            <a href="https://github.com/datalogics/apdfl-java-maven-samples" id="sampleslink"><img alt="GitHub Samples" src="https://img.shields.io/badge/Samples-blue?style=plastic&logo=github&labelColor=blue"/></a>
+            <a href="https://central.sonatype.com/artifact/com.datalogics.pdfl/pdfl" id="pkglink"><img id="pkg-download-img" alt="Maven Trial Download" src="https://img.shields.io/badge/maven%20package-APDFL%20Free%20Trial-blue?style=plastic&logo=apachemaven"/></a>
+        </p>
+      </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<script>
+    var slider = document.getElementById('themeslider');
+    const headerimage = document.getElementById("projectlogoimage");
+    const ligthtimage = document.getElementById("lightthemelabel");
+    const darkimage = document.getElementById("darkthemelabel");
+    function updateColorsBasedOnTheme() {
+        if (slider.value == 0)
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--light-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--light-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--light-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--light-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--light-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--light-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--light-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--light-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--light-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo.png";
+            ligthtimage.src = "light-switch-light-background.png";
+            darkimage.src = "dark-switch-light-background.png";
+            localStorage.setItem("theme", "light");
+        }
+        else
+        {
+            document.documentElement.style.setProperty("--default-bg-color", "var(--dark-theme-bg-color)");
+            document.documentElement.style.setProperty("--default-fg-color", "var(--dark-theme-fg-color)");
+            document.documentElement.style.setProperty("--default-link-visited-color", "var(--dark-theme-link-visited-color)");
+            document.documentElement.style.setProperty("--default-api-parameter-color", "var(--dark-api-parameter-color)");
+            document.documentElement.style.setProperty("--default-api-signature-color", "var(--dark-api-signature-color)");
+            document.documentElement.style.setProperty("--default-api-signature-text-color", "var(--dark-api-signature-text-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-bg-color", "var(--dark-api-tabs-dropdown-bg-color)");
+            document.documentElement.style.setProperty("--default-api-tabs-dropdown-fg-color", "var(--dark-api-tabs-dropdown-fg-color)");
+            document.documentElement.style.setProperty("--default-search-results-bg-color", "var(--dark-search-results-bg-color)");
+            headerimage.src = "DL-doc-logo-dark.png";
+            ligthtimage.src = "light-switch-dark-background.png";
+            darkimage.src = "dark-switch-dark-background.png";
+            localStorage.setItem("theme", "dark");
+        }
+    }
+    slider.oninput = function() {
+        updateColorsBasedOnTheme();
+    }
+    window.onload = function() {
+        var theme = localStorage.getItem("theme");
+        if (theme == null)
+        {
+            localStorage.setItem("theme", "light");
+        }
+        else if (theme == "light")
+        {
+            slider.value = 0;
+        }
+        else
+        {
+            slider.value = 1;
+        }
+        updateColorsBasedOnTheme();
+    }
+</script>
+<hr></hr>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classcom_1_1datalogics_1_1_p_d_f_l_1_1_quad.html','','classcom_1_1datalogics_1_1_p_d_f_l_1_1_quad-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">com.datalogics.PDFL.Quad Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a321b31ec2e990bcbf293103ec14e1fbd" id="r_a321b31ec2e990bcbf293103ec14e1fbd"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a321b31ec2e990bcbf293103ec14e1fbd">delete</a> ()</td></tr>
+<tr class="memitem:a32f9ee45a9429a9d42d4fd090c25d8ca" id="r_a32f9ee45a9429a9d42d4fd090c25d8ca"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32f9ee45a9429a9d42d4fd090c25d8ca">equals</a> (Object rhs)</td></tr>
+<tr class="memitem:ac2a2d98eff5abea14b1c9451b19c8f3d" id="r_ac2a2d98eff5abea14b1c9451b19c8f3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2a2d98eff5abea14b1c9451b19c8f3d">getBottomLeft</a> ()</td></tr>
+<tr class="memitem:a73d6f5f3f330beb63b83a6933cf5b930" id="r_a73d6f5f3f330beb63b83a6933cf5b930"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73d6f5f3f330beb63b83a6933cf5b930">getBottomRight</a> ()</td></tr>
+<tr class="memitem:a9ace070fed8f75f32b01b7ac3eea3305" id="r_a9ace070fed8f75f32b01b7ac3eea3305"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ace070fed8f75f32b01b7ac3eea3305">getTopLeft</a> ()</td></tr>
+<tr class="memitem:acbd184773e62f2bf990499fcccdc20c5" id="r_acbd184773e62f2bf990499fcccdc20c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbd184773e62f2bf990499fcccdc20c5">getTopRight</a> ()</td></tr>
+<tr class="memitem:ac3e894f2da62cefe902459bbe59b1f5a" id="r_ac3e894f2da62cefe902459bbe59b1f5a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3e894f2da62cefe902459bbe59b1f5a">Quad</a> ()</td></tr>
+<tr class="memitem:a581c446e9b0d5af6bdcd254818baea85" id="r_a581c446e9b0d5af6bdcd254818baea85"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a581c446e9b0d5af6bdcd254818baea85">Quad</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> nTopLeft, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> nTopRight, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> nBottomLeft, <a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> nBottomRight)</td></tr>
+<tr class="memitem:a8f0d6237952cc1dd36a291af66fe1723" id="r_a8f0d6237952cc1dd36a291af66fe1723"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f0d6237952cc1dd36a291af66fe1723">toRect</a> ()</td></tr>
+<tr class="memitem:a1639edce7fb5a733e289958d0abb200d" id="r_a1639edce7fb5a733e289958d0abb200d"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1639edce7fb5a733e289958d0abb200d">toString</a> ()</td></tr>
+<tr class="memitem:a285f8556819e46edff38ace4e62ca2fe" id="r_a285f8556819e46edff38ace4e62ca2fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_quad.html">Quad</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a285f8556819e46edff38ace4e62ca2fe">transform</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a> arg0)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a5660d74849af6d81964d5d85725d04ff" id="r_a5660d74849af6d81964d5d85725d04ff"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5660d74849af6d81964d5d85725d04ff">delete</a> (Boolean disposing)</td></tr>
+<tr class="memitem:abdd3083ad284d0fc638b8d7451bab870" id="r_abdd3083ad284d0fc638b8d7451bab870"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abdd3083ad284d0fc638b8d7451bab870">finalize</a> ()</td></tr>
+<tr class="memitem:a9b58cceb8bbc84283fb6a284f479e3ef" id="r_a9b58cceb8bbc84283fb6a284f479e3ef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b58cceb8bbc84283fb6a284f479e3ef">Quad</a> (long cPtr, boolean cMemoryOwn)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:aa946b378af50a02586ff5b69d04bf334" id="r_aa946b378af50a02586ff5b69d04bf334"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa946b378af50a02586ff5b69d04bf334">getCPtr</a> (<a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_quad.html">Quad</a> obj)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents a quadrilateral in a program. A quadrilateral is a polygon graphic that has four sides or edges and four corners, Bottom Left, Bottom Right, Top Left, and Top Right. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9b58cceb8bbc84283fb6a284f479e3ef" name="a9b58cceb8bbc84283fb6a284f479e3ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b58cceb8bbc84283fb6a284f479e3ef">&#9670;&#160;</a></span>Quad() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Quad.Quad </td>
+          <td>(</td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>cPtr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean</td>          <td class="paramname"><span class="paramname"><em>cMemoryOwn</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="#a32f9ee45a9429a9d42d4fd090c25d8ca">equals()</a>, <a class="el" href="#aa946b378af50a02586ff5b69d04bf334">getCPtr()</a>, and <a class="el" href="#a285f8556819e46edff38ace4e62ca2fe">transform()</a>.</p>
+
+</div>
+</div>
+<a id="ac3e894f2da62cefe902459bbe59b1f5a" name="ac3e894f2da62cefe902459bbe59b1f5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3e894f2da62cefe902459bbe59b1f5a">&#9670;&#160;</a></span>Quad() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Quad.Quad </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Creates a Quad with all points at the origin. </p>
+
+</div>
+</div>
+<a id="a581c446e9b0d5af6bdcd254818baea85" name="a581c446e9b0d5af6bdcd254818baea85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a581c446e9b0d5af6bdcd254818baea85">&#9670;&#160;</a></span>Quad() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.datalogics.PDFL.Quad.Quad </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a></td>          <td class="paramname"><span class="paramname"><em>nTopLeft</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a></td>          <td class="paramname"><span class="paramname"><em>nTopRight</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a></td>          <td class="paramname"><span class="paramname"><em>nBottomLeft</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a></td>          <td class="paramname"><span class="paramname"><em>nBottomRight</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Creates a Quad from a set of 4 points. </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a321b31ec2e990bcbf293103ec14e1fbd" name="a321b31ec2e990bcbf293103ec14e1fbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a321b31ec2e990bcbf293103ec14e1fbd">&#9670;&#160;</a></span>delete() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.Quad.delete </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="#a321b31ec2e990bcbf293103ec14e1fbd">delete()</a>, and <a class="el" href="#abdd3083ad284d0fc638b8d7451bab870">finalize()</a>.</p>
+
+</div>
+</div>
+<a id="a5660d74849af6d81964d5d85725d04ff" name="a5660d74849af6d81964d5d85725d04ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5660d74849af6d81964d5d85725d04ff">&#9670;&#160;</a></span>delete() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.datalogics.PDFL.Quad.delete </td>
+          <td>(</td>
+          <td class="paramtype">Boolean</td>          <td class="paramname"><span class="paramname"><em>disposing</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a32f9ee45a9429a9d42d4fd090c25d8ca" name="a32f9ee45a9429a9d42d4fd090c25d8ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32f9ee45a9429a9d42d4fd090c25d8ca">&#9670;&#160;</a></span>equals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.datalogics.PDFL.Quad.equals </td>
+          <td>(</td>
+          <td class="paramtype">Object</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abdd3083ad284d0fc638b8d7451bab870" name="abdd3083ad284d0fc638b8d7451bab870"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdd3083ad284d0fc638b8d7451bab870">&#9670;&#160;</a></span>finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.datalogics.PDFL.Quad.finalize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac2a2d98eff5abea14b1c9451b19c8f3d" name="ac2a2d98eff5abea14b1c9451b19c8f3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2a2d98eff5abea14b1c9451b19c8f3d">&#9670;&#160;</a></span>getBottomLeft()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> com.datalogics.PDFL.Quad.getBottomLeft </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Bottom left corner of the Quad. </p>
+
+</div>
+</div>
+<a id="a73d6f5f3f330beb63b83a6933cf5b930" name="a73d6f5f3f330beb63b83a6933cf5b930"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73d6f5f3f330beb63b83a6933cf5b930">&#9670;&#160;</a></span>getBottomRight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> com.datalogics.PDFL.Quad.getBottomRight </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Bottom right corner of the Quad. </p>
+
+</div>
+</div>
+<a id="aa946b378af50a02586ff5b69d04bf334" name="aa946b378af50a02586ff5b69d04bf334"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa946b378af50a02586ff5b69d04bf334">&#9670;&#160;</a></span>getCPtr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long com.datalogics.PDFL.Quad.getCPtr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_quad.html">Quad</a></td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9ace070fed8f75f32b01b7ac3eea3305" name="a9ace070fed8f75f32b01b7ac3eea3305"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ace070fed8f75f32b01b7ac3eea3305">&#9670;&#160;</a></span>getTopLeft()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> com.datalogics.PDFL.Quad.getTopLeft </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Top left corner of the Quad. </p>
+
+</div>
+</div>
+<a id="acbd184773e62f2bf990499fcccdc20c5" name="acbd184773e62f2bf990499fcccdc20c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbd184773e62f2bf990499fcccdc20c5">&#9670;&#160;</a></span>getTopRight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_point.html">Point</a> com.datalogics.PDFL.Quad.getTopRight </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Top right corner of the Quad. </p>
+
+</div>
+</div>
+<a id="a8f0d6237952cc1dd36a291af66fe1723" name="a8f0d6237952cc1dd36a291af66fe1723"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f0d6237952cc1dd36a291af66fe1723">&#9670;&#160;</a></span>toRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_rect.html">Rect</a> com.datalogics.PDFL.Quad.toRect </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns a rectangle describing the same area as the quad. </p>
+
+</div>
+</div>
+<a id="a1639edce7fb5a733e289958d0abb200d" name="a1639edce7fb5a733e289958d0abb200d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1639edce7fb5a733e289958d0abb200d">&#9670;&#160;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.datalogics.PDFL.Quad.toString </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns a string representation of the quad by calling each point's ToString function. </p>
+
+</div>
+</div>
+<a id="a285f8556819e46edff38ace4e62ca2fe" name="a285f8556819e46edff38ace4e62ca2fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a285f8556819e46edff38ace4e62ca2fe">&#9670;&#160;</a></span>transform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_quad.html">Quad</a> com.datalogics.PDFL.Quad.transform </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1datalogics_1_1_p_d_f_l_1_1_matrix.html">Matrix</a></td>          <td class="paramname"><span class="paramname"><em>arg0</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a new quad from the results of a Transform on each point of the Quad. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath">
+<hr></hr>
+  <div id="footer-div">
+    <div id="support-div" align="center">
+      <table style="width:100%">
+        <tbody>
+          <tr>
+            <td id="support" style="text-align:center"><img alt="Support" align="center" src="support.png"/>  Need Assistance Getting Started? Contact <a href="mailto:evalsupport@datalogics.com">Evaluation Support</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="version-div" align="right"  style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <label id="version-selector-label" for="version-selector">Looking for another version?</label>
+      <iframe id="ver" src="../ver.html" style="height: 35px; border-width: 0px; width: 170px;">
+    </div>
+  <div>
+</div>
+</body>
+</html>
